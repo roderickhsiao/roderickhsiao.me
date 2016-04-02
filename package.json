@@ -2,6 +2,11 @@
     "name": "roderickhsiao.me",
     "description": "Roderick Hsiao",
     "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
+    "scripts": {
+        "start": "node server",
+        "monitor": "nodemon server",
+        "deploy": "gcloud preview app deploy"
+    },
     "dependencies": {
         "express": "^4.0.0",
         "react": "^15.0.0-rc.1"
@@ -22,5 +27,8 @@
         "type": "git",
         "url": "https://github.com/roderickhsiao/roderickhsiao.me"
     },
-    "license": "BSD-3-Clause"
+    "license": "BSD-3-Clause",
+    "engines": {
+        "node": "^5.0.0"
+    }
 }
