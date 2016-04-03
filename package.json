@@ -72,7 +72,7 @@
         "deploy": "gcloud preview app deploy",
         "dev": "grunt",
         "monitor": "nodemon server",
-        "postinstall": "npm run build",
+        "postinstall": "./node_modules/grunt-cli/bin/grunt --target=prod",
         "start": "node start"
     }
 }
