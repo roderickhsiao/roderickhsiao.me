@@ -5,7 +5,8 @@
     "main": "start.js",
     "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
     "scripts": {
-        "dev": "node webpack-dev-server & PORT=3001 ./node_modules/.bin/nodemon start -e js,jsx",
+        "build": "grunt --target=prod",
+        "dev": "grunt",
         "start": "node start",
         "monitor": "nodemon server",
         "deploy": "gcloud preview app deploy"
@@ -13,6 +14,7 @@
     "dependencies": {
         "body-parser": "^1.6.4",
         "classnames": "^2.1.3",
+        "compression": "^1.0.0",
         "cookie-parser": "^1.3.3",
         "csurf": "^1.6.3",
         "debug": "^2.0.0",
@@ -59,6 +61,6 @@
     },
     "license": "BSD-3-Clause",
     "engines": {
-        "node": "^4.0.0"
+        "node": "~4.2.2"
     }
 }

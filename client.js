@@ -10,8 +10,8 @@ import {createElementWithContext as createElement} from 'fluxible-addons-react';
 import {navigateAction} from 'fluxible-router';
 import app from './app';
 
-var debug = Debug('roderickhsiao.me');
-var dehydratedState = window.App || {}; // Sent from the server
+const debug = Debug('roderickhsiao.me');
+const dehydratedState = window.App || {}; // Sent from the server
 
 const WIN = window;
 

@@ -8,6 +8,7 @@ import {navigateAction} from 'fluxible-router';
 import app from './app';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
+import compression from 'compression';
 import csrf from 'csurf';
 import express from 'express';
 import favicon from 'serve-favicon';
@@ -20,8 +21,9 @@ const server = express();
 
 server.set('state namespace', 'App');
 server.use('/public', express['static'](__dirname + '/build'));
-server.use(cookieParser());
 server.use(bodyParser.json());
+server.use(compression());
+server.use(cookieParser());
 server.use(csrf({cookie: true}));
 
 // Get access to the fetchr plugin instance
