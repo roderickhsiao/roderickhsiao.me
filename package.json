@@ -6,10 +6,11 @@
     "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
     "scripts": {
         "build": "grunt --target=prod",
+        "deploy": "gcloud preview app deploy --project",
         "dev": "grunt",
-        "start": "node start",
         "monitor": "nodemon server",
-        "deploy": "gcloud preview app deploy"
+        "postinstall": "./node_modules/grunt-cli/bin/grunt build",
+        "start": "node start"
     },
     "dependencies": {
         "body-parser": "^1.6.4",
