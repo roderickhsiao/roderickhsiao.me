@@ -4,15 +4,22 @@ class HtmlComponent extends Component {
     render () {
         let {markup, state} = this.props;
         return (
-            <html>
+            <html id='atomic'>
                 <head>
                     <meta charSet='utf-8' />
-                    <meta name='viewport' content='width=device-width, user-scalable=no' />
+                    <meta name='viewport' content='width=device-width,minimum-scale=1,initial-scale=1' />
+                    <link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic' rel='stylesheet' type='text/css' />
+                    <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.css' rel='stylesheet' type='text/css' />
+                    <link href='/public/css/atomic.css' rel='stylesheet' type='text/css' />
+                    <link href='/public/css/theme.css' rel='stylesheet' type='text/css' />
+                    <script src='/public/js/client.js' defer async />
                 </head>
-                <body>
-                    <div id='app' dangerouslySetInnerHTML={{__html: markup}}></div>
-                    <script dangerouslySetInnerHTML={{__html: state}}></script>
-                    <script src='/public/js/client.js' defer></script>
+                <body className='Bgc($c-grey-50)'>
+                    <div
+                        id='app'
+                        dangerouslySetInnerHTML={{__html: markup}}
+                    />
+                    <script dangerouslySetInnerHTML={{__html: state}} />
                 </body>
             </html>
         );

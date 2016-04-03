@@ -17,7 +17,6 @@ function getWebpackConfig (opts) {
             loaders: [
                 {
                     test: /\.(js|jsx)$/,
-                    exclude: /node_modules/,
                     loader: require.resolve('babel-loader')
                 }
             ]
@@ -40,9 +39,9 @@ function getWebpackConfig (opts) {
             colors: true
         };
         baseConfig.devtool = 'souce-map';
-        baseConfig.watch = true;
-        baseConfig.keepalive = true;
-        baseConfig.failOnError = false;
+        // baseConfig.watch = true;
+        // baseConfig.keepalive = true;
+        // baseConfig.failOnError = false;
     } else {
         // prod
         baseConfig.plugins.push(
@@ -63,6 +62,60 @@ module.exports = function (grunt) {
     var target = grunt.option('target') || 'dev';
     var isDev = target === 'dev';
     var config = {
+        project: {
+            app: './app',
+            build: 'build',
+            public: '/public'
+        },
+        atomizer: {
+            app: {
+                options: {
+                    ie: true,
+                    namespace: '#atomic',
+                    configFile: 'configs/atomizer.js',
+                    configOutput: './build/atomizer.json'
+                },
+                src: ['components/**/*.js', 'components/**/*.jsx'],
+                dest: '<%= project.build %>/css/atomic.css'
+            }
+        },
+        cssmin: {
+            app: {
+                options: {
+                    report: 'gzip',
+                    compatibility: 'ie7',
+                    sourceMap: false
+                },
+                files: [{
+                    src: ['assets/css/theme.css'],
+                    dest: '<%= project.build %>/css/theme.css'
+                }]
+            }
+        },
+        postcss: {
+            app: {
+               options: {
+                   processors: [
+                       require('autoprefixer')({
+                            browsers: [
+                                '> 1%',
+                                'last 2 versions',
+                                'Firefox ESR',
+                                'Opera 12.1',
+                                'iOS 5'
+                            ]
+                       })
+                   ]
+               },
+               files: [{
+                   src: ['<%= project.build %>/css/atomic.css'],
+                   dest: '<%= project.build %>/css/atomic.css'
+               },{
+                   src: ['<%= project.build %>/css/theme.css'],
+                   dest: '<%= project.build %>/css/theme.css'
+               }]
+           }
+        },
         clean: ['./build'],
         concurrent: {
             dev: ['nodemon:dev', 'webpack:' + target],
@@ -70,12 +123,32 @@ module.exports = function (grunt) {
                 logConcurrentOutput: true
             }
         },
+        // nodemon to restart server if files change
         nodemon: {
             dev: {
                 script: './start.js',
                 options: {
-                    ignore: ['build/**'],
-                    ext: 'js,jsx'
+                    args: ['--dev'],
+                    env: {
+                        PORT: '3000'
+                    },
+                    ext: 'jsx,js',
+                    ignore: ['node_modules/**', '.rebooted', 'build/**'],
+                    watch: 'app',
+                    delay: 1000,
+                    callback: function(nodemon) {
+                        nodemon.on('log', function(event) {
+                            console.log(event.colour);
+                        });
+
+                        // refreshes browser when server reboots
+                        nodemon.on('restart', function() {
+                            // Delay before server listens on port
+                            setTimeout(function() {
+                                require('fs').writeFileSync('.rebooted', 'rebooted');
+                            }, 1000);
+                        });
+                    }
                 }
             }
         },
@@ -87,11 +160,15 @@ module.exports = function (grunt) {
 
     grunt.initConfig(config);
 
+    grunt.loadNpmTasks('grunt-atomizer');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-nodemon');
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-webpack');
 
-    grunt.registerTask('default', ['clean', 'concurrent:dev']);
+    grunt.registerTask('default', ['clean', 'css', 'concurrent:dev']);
+    grunt.registerTask('css', ['atomizer:app', 'cssmin', 'postcss:app']);
     grunt.registerTask('dev', ['default']);
 };

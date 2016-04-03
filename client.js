@@ -1,7 +1,7 @@
 /* global App, document, window, location */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 
 import Debug from 'debug';
 import RouteStore from './stores/RouteStore';
@@ -9,11 +9,11 @@ import RouteStore from './stores/RouteStore';
 import {createElementWithContext as createElement} from 'fluxible-addons-react';
 import {navigateAction} from 'fluxible-router';
 import app from './app';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 const debug = Debug('roderickhsiao.me');
-const dehydratedState = window.App || {}; // Sent from the server
-
 const WIN = window;
+const dehydratedState = WIN.App || {}; // Sent from the server
 
 debug('rehydrating app');
 app.rehydrate(dehydratedState, function (err, context) {
@@ -27,19 +27,8 @@ app.rehydrate(dehydratedState, function (err, context) {
     debug('React Rendering');
     var mountNode = document.getElementById('app');
 
-    ReactDOM.render(createElement(context), mountNode, function reactRender () {
+    render(createElement(context), mountNode, () => {
         debug('React Rendered');
+        injectTapEventPlugin();
     });
-
-    // If server did not load data, fire off the navigateAction
-    if (!context.getStore(RouteStore).getCurrentRoute()) {
-        setTimeout(function () {
-            context.executeAction(navigateAction, {
-                url: WIN.location.pathname + WIN.location.search,
-                type: 'pageload'
-            }, function (err) {
-                throw err;
-            });
-        }, 1000);
-    }
 });

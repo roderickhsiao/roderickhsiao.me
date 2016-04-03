@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 
+import Layout from './layouts/Main.jsx';
+
 import {provideContext} from 'fluxible-addons-react';
 import {handleHistory} from 'fluxible-router';
 
@@ -11,14 +13,16 @@ class App extends Component {
 
     constructor(props, context) {
         super(props, context);
+        this.routeStore = this.context.getStore('RouteStore');
     }
 
     render () {
         //render content
+        var route = this.routeStore.getCurrentRoute() || {name: 'home'};
         return (
-            <div className='main-app'>
-                Hey, this is Roderick.
-            </div>
+            <main className='main-app'>
+                <Layout route={route}/>
+            </main>
         );
     }
 }

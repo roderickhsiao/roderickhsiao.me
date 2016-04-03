@@ -1,3 +1,6 @@
 build
 node_modules
 npm-debug.*
+.rebooted
+.idea
+.DS_Store
