@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 
 import EmailIcon from 'react-material-icons/icons/communication/email';
+import SocialPersonOutline from 'react-material-icons/icons/social/person-outline';
 
 class HeaderComponent extends Component {
     render () {
@@ -11,6 +12,13 @@ class HeaderComponent extends Component {
                     <a href='mailto:roderickhsiao@gmail.com' title='email'>
                         <EmailIcon
                             className='Fill(#fff)!:h'
+                            color='rgba(255,255,255,.54)'
+                            style={{width:30, height:30}}
+                        />
+                    </a>
+                    <a download href='https://docs.google.com/uc?authuser=0&id=0B6if6pP4EgBiWTFaLV9PNVZnc0E&export=download' title='resume'>
+                        <SocialPersonOutline
+                            className='Fill(#fff)!:h Mstart(20px)'
                             color='rgba(255,255,255,.54)'
                             style={{width:30, height:30}}
                         />
