@@ -39,9 +39,9 @@ function getWebpackConfig (opts) {
             colors: true
         };
         baseConfig.devtool = 'souce-map';
-        // baseConfig.watch = true;
-        // baseConfig.keepalive = true;
-        // baseConfig.failOnError = false;
+        baseConfig.watch = true;
+        baseConfig.keepalive = true;
+        baseConfig.failOnError = false;
     } else {
         // prod
         baseConfig.plugins.push(
@@ -59,8 +59,6 @@ function getWebpackConfig (opts) {
 }
 
 module.exports = function (grunt) {
-    var target = grunt.option('target') || 'dev';
-    var isDev = target === 'dev';
     var config = {
         project: {
             app: './app',
@@ -118,7 +116,7 @@ module.exports = function (grunt) {
         },
         clean: ['./build'],
         concurrent: {
-            dev: ['nodemon:dev', 'webpack:' + target],
+            dev: ['nodemon:dev', 'webpack:dev'],
             options: {
                 logConcurrentOutput: true
             }
@@ -153,8 +151,8 @@ module.exports = function (grunt) {
             }
         },
         webpack: {
-            dev: getWebpackConfig({isDev: isDev, entry: './client.js'}),
-            prod: getWebpackConfig({isDev: isDev, entry: './client.js'})
+            dev: getWebpackConfig({isDev: true, entry: './client.js'}),
+            prod: getWebpackConfig({isDev: false, entry: './client.js'})
         }
     };
 
@@ -169,6 +167,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-webpack');
 
     grunt.registerTask('default', ['clean', 'css', 'concurrent:dev']);
+    grunt.registerTask('build', ['clean', 'css', 'webpack:prod']);
     grunt.registerTask('css', ['atomizer:app', 'cssmin', 'postcss:app']);
     grunt.registerTask('dev', ['default']);
 };
