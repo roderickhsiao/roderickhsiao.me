@@ -17,10 +17,8 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: 'style!css' },
             {
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
                 loaders: [
                     require.resolve('react-hot-loader'),
                     require.resolve('babel-loader')

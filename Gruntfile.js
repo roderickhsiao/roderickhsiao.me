@@ -92,9 +92,9 @@ module.exports = function (grunt) {
         },
         postcss: {
             app: {
-               options: {
-                   processors: [
-                       require('autoprefixer')({
+                options: {
+                    processors: [
+                        require('autoprefixer')({
                             browsers: [
                                 '> 1%',
                                 'last 2 versions',
@@ -102,17 +102,17 @@ module.exports = function (grunt) {
                                 'Opera 12.1',
                                 'iOS 5'
                             ]
-                       })
-                   ]
-               },
-               files: [{
-                   src: ['<%= project.build %>/css/atomic.css'],
-                   dest: '<%= project.build %>/css/atomic.css'
-               },{
-                   src: ['<%= project.build %>/css/theme.css'],
-                   dest: '<%= project.build %>/css/theme.css'
-               }]
-           }
+                        })
+                    ]
+                },
+                files: [{
+                    src: ['<%= project.build %>/css/atomic.css'],
+                    dest: '<%= project.build %>/css/atomic.css'
+                },{
+                    src: ['<%= project.build %>/css/theme.css'],
+                    dest: '<%= project.build %>/css/theme.css'
+                }]
+            }
         },
         clean: ['./build'],
         concurrent: {
