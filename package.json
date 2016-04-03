@@ -6,7 +6,7 @@
     "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
     "scripts": {
         "build": "grunt --target=prod",
-        "deploy": "gcloud preview app deploy --project",
+        "deploy": "gcloud preview app deploy",
         "dev": "grunt",
         "monitor": "nodemon server",
         "postinstall": "./node_modules/grunt-cli/bin/grunt build",
