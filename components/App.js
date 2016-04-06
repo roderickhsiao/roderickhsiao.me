@@ -8,8 +8,9 @@ import {handleHistory} from 'fluxible-router';
 class App extends Component {
     static contextTypes = {
         getStore: PropTypes.func,
-        executeAction: PropTypes.func
-    };
+        executeAction: PropTypes.func,
+        ua: PropTypes.object
+    }
 
     constructor(props, context) {
         super(props, context);
@@ -18,10 +19,11 @@ class App extends Component {
 
     render () {
         //render content
-        var route = this.routeStore.getCurrentRoute() || {name: 'home'};
+        let route = this.routeStore.getCurrentRoute() || {name: 'home'};
+        let {ua} = this.props;
         return (
             <main className='main-app'>
-                <Layout route={route}/>
+                <Layout route={route} ua={ua}/>
             </main>
         );
     }

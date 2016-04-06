@@ -15,6 +15,7 @@ import favicon from 'serve-favicon';
 import serialize from 'serialize-javascript';
 
 import HtmlComponent from './components/Html';
+import UAParser from 'ua-parser-js';
 
 const debug = Debug('roderickhsiao.me');
 const server = express();
@@ -33,13 +34,16 @@ server.use(fetchrPlugin.getXhrPath(), fetchrPlugin.getMiddleware());
 
 function renderPage(req, res, context) {
     debug('Exposing context state');
+    let customContext = {
+        ua: new UAParser().setUA(req.headers['user-agent']).getResult()
+    };
     const exposed = 'window.App=' + serialize(app.dehydrate(context)) + ';';
 
     debug('Rendering Application component into html');
     const html = ReactDOM.renderToStaticMarkup(
         React.createElement(HtmlComponent, {
             state: exposed,
-            markup: ReactDOM.renderToString(createElement(context)),
+            markup: ReactDOM.renderToString(createElement(context, customContext)),
             context: context.getComponentContext()
         }
     ));

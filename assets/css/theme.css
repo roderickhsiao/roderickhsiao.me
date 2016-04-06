@@ -2,11 +2,6 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-html {
-  color: rgba(0,0,0,.87);
-  font-size: 1em;
-  line-height: 1.4;
-}
 
 /*
  * Remove text-shadow in selection highlight:
@@ -33,6 +28,12 @@ html {
   height: 100%;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
+  color: rgba(0,0,0,.87);
+  font-size: 1em;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /*
@@ -43,6 +44,10 @@ body {
   width: 100%;
   min-height: 100%;
   margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /*
@@ -132,4 +137,100 @@ h6 {
   letter-spacing: 0.04em;
   margin-top: 24px;
   margin-bottom: 16px;
+}
+
+/**
+ * Margins
+ */
+blockquote,
+dd,
+dl,
+ol,
+ul,
+p,
+pre,
+table,
+ul {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* TODO: rtl version of this? */
+ul,
+ol,
+dd {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+blockquote {
+    border-left: 7px solid rgba(2, 128, 174, 0.3);
+    color: #000;
+    font-style: italic;
+    margin-left: 0;
+    padding: 1px 0 1px 2em;
+}
+
+/**
+ * 1. reset UA list-style
+ */
+ol,
+ul {
+    list-style-type: none;
+}
+
+/**
+ * 1. Remove border when inside "a" element in IE 8/9/10.
+ * 2. Prevent image from sticking out of their container.
+ * 3. Prevent "mysterious gaps below images" (descender).
+ */
+img {
+    border: 0; /* 1 */
+    height: auto; /* 2 */
+    max-width: 100%; /* 2 */
+    vertical-align: bottom; /* 3 */
+}
+
+/**
+ * 1. Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+    overflow: visible; /* 1 */
+}
+
+/**
+ * 1. Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+    overflow: hidden; /* 1 */
+}
+
+/**
+ * =============================================================================
+ * Links
+ * =============================================================================
+ */
+/**
+ * Remove the gray background *color* from active links in IE 10.
+ */
+a {
+    background-color: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+    outline: 0;
+}
+
+:link,
+:visited {
+    text-decoration: none;
+    color: #0280AE;
+}
+
+a:hover {
+    text-decoration: underline;
 }

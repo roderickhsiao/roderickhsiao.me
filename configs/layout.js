@@ -3,14 +3,18 @@ module.exports = {
         components: {
             HeaderComponent: {
                 path: 'common/HeaderComponent',
-                props: {
-
-                }
+                props: {}
+            },
+            MainCard: {
+                path: 'MainBrief'
             }
         },
         regions: {
             header: [
                 'HeaderComponent'
+            ],
+            main: [
+                'MainCard'
             ]
         }
     }

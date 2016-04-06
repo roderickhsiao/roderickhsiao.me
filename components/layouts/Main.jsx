@@ -1,16 +1,12 @@
 import React, {Component, PropTypes} from 'react';
 
 import {get} from 'lodash';
-// TODO, this should come from PageStore
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
+// TODO, this should come from PageStore
 import layout from  '../../configs/layout';
 import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
 
-const muiTheme = getMuiTheme({
-    userAgent: 'all',
-});
-
-function loadComponent (regions, components) {
+function loadComponent (regions, components, context) {
     if (!regions || !regions.length) {
         return null;
     }
@@ -24,7 +20,7 @@ function loadComponent (regions, components) {
         if (Component) {
             var props = components[path].props || {};
             Components.push(
-                <Component {...props} key={idx} />
+                <Component {...props} key={idx} context={context}/>
             );
         }
     });
@@ -33,28 +29,42 @@ function loadComponent (regions, components) {
 
 class Main extends Component {
     render () {
-        const {header, leftRail, main, rightRail, footer, route} = this.props;
+        const {header, leftRail, main, rightRail, footer, route, ua} = this.props;
         const config = layout[route.name];
         const regions = config.regions;
         const components = config.components;
-
+        const context = {
+            route: route
+        };
+        const muiTheme = getMuiTheme({}, {
+            userAgent: ua && ua.ua
+        });
         return (
             <MuiThemeProvider muiTheme={muiTheme}>
                 <section className='main-layout'>
                     <header className='layout-head'>
                         {
-                            loadComponent(regions.header, components)
+                            loadComponent(regions.header, components, context)
                         }
                     </header>
-                    <section className='layout-left-rail'>
-                        {leftRail}
+                    <section className='main-canvas My(20px) Mx(a) Maw(1240px)'>
+                        <section className='layout-lead-section'>
+                            {
+                                loadComponent(regions.lead, components, context)
+                            }
+                        </section>
+                        <section className='layout-main-section W(60%) Bxz(bb) Pend(20px)'>
+                            {
+                                loadComponent(regions.main, components, context)
+                            }
+                        </section>
+                        <section className='layout-right-rail W(40)% Bxz(bb)'>
+                            {
+                                loadComponent(regions.right, components, context)
+                            }
+                        </section>
                     </section>
-                    <section className='layout-main-section'>
-                        {main}
-                    </section>
-                    <section className='layout-right-rail'>
-                        {rightRail}
-                    </section>
+
                     <footer>
                         {footer}
                     </footer>
