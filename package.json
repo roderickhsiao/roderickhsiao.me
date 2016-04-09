@@ -36,6 +36,7 @@
         "grunt-contrib-clean": "^1.0.0",
         "grunt-contrib-cssmin": "^1.0.0",
         "grunt-nodemon": "^0.4.0",
+        "grunt-penthouse": "^0.3.0",
         "grunt-postcss": "^0.8.0",
         "grunt-webpack": "^1.0.8",
         "grunt": "^0.4.5",

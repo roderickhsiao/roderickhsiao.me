@@ -117,6 +117,9 @@ module.exports = function (grunt) {
                 },{
                     src: ['<%= project.build %>/css/theme.css'],
                     dest: '<%= project.build %>/css/theme.css'
+                },{
+                    src: ['<%= project.build %>/css/normalize.css'],
+                    dest: '<%= project.build %>/css/normalize.css'
                 }]
             }
         },

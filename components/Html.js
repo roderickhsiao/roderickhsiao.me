@@ -9,7 +9,7 @@ class HtmlComponent extends Component {
                     <meta charSet='utf-8' />
                     <meta name='viewport' content='width=device-width,minimum-scale=1,initial-scale=1' />
                     <link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic' rel='stylesheet' type='text/css' />
-                    <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.css' rel='stylesheet' type='text/css' />
+                    <link href='/public/css/normalize.css' rel='stylesheet' type='text/css' />
                     <link href='/public/css/atomic.css' rel='stylesheet' type='text/css' />
                     <link href='/public/css/theme.css' rel='stylesheet' type='text/css' />
                     <script src='/public/js/client.js' defer async />
