@@ -83,6 +83,14 @@ module.exports = function (grunt) {
                 dest: '<%= project.build %>/css/atomic.css'
             }
         },
+        copy: {
+            css: {
+                expand: true,
+                src: 'css/*.css',
+                dest: 'build',
+                cwd: 'assets'
+            }
+        },
         cssmin: {
             app: {
                 options: {
@@ -91,11 +99,14 @@ module.exports = function (grunt) {
                     sourceMap: false
                 },
                 files: [{
-                    src: ['assets/css/theme.css'],
+                    src: ['<%= project.build %>/css/theme.css'],
                     dest: '<%= project.build %>/css/theme.css'
-                },{
-                    src: ['assets/css/normalize.css'],
+                }, {
+                    src: ['<%= project.build %>/css/normalize.css'],
                     dest: '<%= project.build %>/css/normalize.css'
+                }, {
+                    src: ['<%= project.build %>/css/atomic.css'],
+                    dest: '<%= project.build %>/css/atomic.css'
                 }]
             }
         },
@@ -170,6 +181,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-atomizer');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-postcss');
@@ -177,6 +189,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', ['clean', 'css', 'concurrent:dev']);
     grunt.registerTask('build', ['clean', 'css', 'webpack:prod']);
-    grunt.registerTask('css', ['atomizer:app', 'cssmin', 'postcss:app']);
+    grunt.registerTask('css', ['atomizer:app', 'copy:css', 'cssmin', 'postcss:app']);
     grunt.registerTask('dev', ['default']);
 };

@@ -34,6 +34,7 @@
         "grunt-cli": "^1.0.0",
         "grunt-concurrent": "^1.0.0",
         "grunt-contrib-clean": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
         "grunt-contrib-cssmin": "^1.0.0",
         "grunt-nodemon": "^0.4.0",
         "grunt-penthouse": "^0.3.0",
@@ -52,14 +53,14 @@
         "serialize-javascript": "^1.0.0",
         "serve-favicon": "^2.1.6",
         "ua-parser-js": "^0.7.10",
-        "webpack": "^1.4.12"
+        "webpack": "^1.4.12",
+        "webpack-dev-server": "^1.6.5"
     },
     "description": "Roderick Hsiao",
     "devDependencies": {
         "eslint": "^2.2.0",
         "nodemon": "1.7.3",
-        "pre-commit": "^1.0.0",
-        "webpack-dev-server": "^1.6.5"
+        "pre-commit": "^1.0.0"
     },
     "engines": {
         "node": "~4.2.2"
