@@ -39,9 +39,9 @@ function getWebpackConfig (opts) {
             colors: true
         };
         // baseConfig.devtool = 'souce-map';
-        baseConfig.watch = true;
-        baseConfig.keepalive = true;
-        baseConfig.failOnError = false;
+        // baseConfig.watch = true;
+        // baseConfig.keepalive = true;
+        // baseConfig.failOnError = false;
     } else {
         // prod
         baseConfig.plugins.push(
@@ -151,7 +151,12 @@ module.exports = function (grunt) {
                         PORT: '3000'
                     },
                     ext: 'jsx,js',
-                    ignore: ['node_modules/**', '.rebooted', 'build/**'],
+                    ignore: [
+                        'node_modules/**',
+                        '.rebooted',
+                        'build/**',
+                        'config/atomizer.js'
+                    ],
                     watch: 'app',
                     delay: 1000,
                     callback: function(nodemon) {

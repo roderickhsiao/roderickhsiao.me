@@ -7,6 +7,9 @@ module.exports = {
             },
             MainCard: {
                 path: 'MainBrief'
+            },
+            Experience: {
+                path: 'Experience'
             }
         },
         regions: {
@@ -14,7 +17,8 @@ module.exports = {
                 'HeaderComponent'
             ],
             main: [
-                'MainCard'
+                'MainCard',
+                'Experience'
             ]
         }
     }

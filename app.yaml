@@ -3,5 +3,3 @@ vm: true
 
 skip_files:
   - ^(.*/)?.*/node_modules/.*$
-health_check:
-  enable_health_check: false
