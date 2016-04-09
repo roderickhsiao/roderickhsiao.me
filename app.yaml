@@ -1,5 +1,8 @@
 runtime: nodejs
 vm: true
 
+env_variables:
+  OAUTH2_CALLBACK: https://roderick-1268.appspot.com/oauth2callback
+
 skip_files:
   - ^(.*/)?.*/node_modules/.*$
