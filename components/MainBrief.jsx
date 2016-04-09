@@ -41,10 +41,10 @@ class MainBrief extends Component {
     renderSummary (data) {
         return (
             <div className='BdT Bdtc($c-black-4) Mt(10px)'>
-                <h5 className='My(10px) Mx(0)'>
+                <h5 className='My(10px) Mx(0) C($c-black-2) Fw(400)'>
                     Summary
                 </h5>
-                <ol className='Bdstart Bdstart($c-black-4) Mend(10px)'>
+                <ol className='Mend(10px)'>
                     {
                         map(data, function eachNode (item, i) {
                             return (

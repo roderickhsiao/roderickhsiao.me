@@ -16,7 +16,7 @@ module.exports = {
         '$card-padding': '16px',
         '$header-box-shadow': '0 2px 5px rgba(0,0,0,0.26)',
         '$top-header-height': '54px',
-        // material design shadow
+        // material design shadow https://github.com/google/material-design-lite/blob/master/src/_mixins.scss#L226
         '$shadow-1dp':
             '0 2px 1px -1px rgba(0,0,0,.2),' +
             '0 1px 1px 0 rgba(0,0,0,.14),' +
@@ -33,6 +33,14 @@ module.exports = {
             '0 2px 4px -1px rgba(0,0,0,.2),' +
             '0 4px 5px 0 rgba(0,0,0,.14),' +
             '0 1px 10px 0 rgba(0,0,0,.12)',
+        '$shadow-5dp':
+            '0 3px 5px -1px rgba(0,0,0,.2),' +
+            '0 5px 8px 0 rgba(0,0,0,.14),' +
+            '0 1px 14px 0 rgba(0,0,0,.12)',
+        '$shadow-6dp':
+            '0 3px 5px -1px rgba(0,0,0,.2),' +
+            '0 6px 10px 0 rgba(0,0,0,.14),' +
+            '0 1px 18px 0 rgba(0,0,0,.12)',
         // transition
         '$trsdu-fast': '.3s'
     }
