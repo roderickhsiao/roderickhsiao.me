@@ -6,6 +6,11 @@ module.exports = {
         'lg': '@media screen and (min-width:1200px)'
     },
     custom: {
+        '$c-black-0': '#000',
+        '$c-black-1': 'rgba(0,0,0,.87)',
+        '$c-black-2': 'rgba(0,0,0,.54)',
+        '$c-black-3': 'rgba(0,0,0,.38)',
+        '$c-black-4': 'rgba(0,0,0,.12)',
         '$c-grey-50': '#fafafa',
         '$c-indigo-500': '#3f51b5',
         '$card-padding': '16px',
@@ -27,6 +32,8 @@ module.exports = {
         '$shadow-4dp':
             '0 2px 4px -1px rgba(0,0,0,.2),' +
             '0 4px 5px 0 rgba(0,0,0,.14),' +
-            '0 1px 10px 0 rgba(0,0,0,.12)'
+            '0 1px 10px 0 rgba(0,0,0,.12)',
+        // transition
+        '$trsdu-fast': '.3s'
     }
 };

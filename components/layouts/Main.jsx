@@ -47,18 +47,18 @@ class Main extends Component {
                             loadComponent(regions.header, components, context)
                         }
                     </header>
-                    <section className='main-canvas My(20px) Mx(a) Maw(1240px)'>
+                    <section className='main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(20)--xs'>
                         <section className='layout-lead-section'>
                             {
                                 loadComponent(regions.lead, components, context)
                             }
                         </section>
-                        <section className='layout-main-section W(60%) Bxz(bb) Pend(20px)'>
+                        <section className='layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs'>
                             {
                                 loadComponent(regions.main, components, context)
                             }
                         </section>
-                        <section className='layout-right-rail W(40)% Bxz(bb)'>
+                        <section className='layout-right-rail W(40)% Bxz(bb) W(100%)--sm'>
                             {
                                 loadComponent(regions.right, components, context)
                             }

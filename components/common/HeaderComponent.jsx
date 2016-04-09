@@ -57,7 +57,9 @@ class HeaderComponent extends Component {
                         </a>
                         <a
                             className='D(tbc) Va(m)'
-                            href='https://drive.google.com/file/d/0B6if6pP4EgBiWTFaLV9PNVZnc0E/view' title='resume'>
+                            href='https://drive.google.com/file/d/0B6if6pP4EgBiWTFaLV9PNVZnc0E/view'
+                            title='resume'
+                        >
                             <SocialPersonOutline
                                 className='Fill(#fff)!:h Mx(20px)'
                                 color='rgba(255,255,255,.54)'

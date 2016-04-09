@@ -38,7 +38,7 @@ function getWebpackConfig (opts) {
         baseConfig.stats = {
             colors: true
         };
-        baseConfig.devtool = 'souce-map';
+        // baseConfig.devtool = 'souce-map';
         baseConfig.watch = true;
         baseConfig.keepalive = true;
         baseConfig.failOnError = false;
@@ -73,7 +73,13 @@ module.exports = function (grunt) {
                     configFile: 'configs/atomizer.js',
                     configOutput: './build/atomizer.json'
                 },
-                src: ['components/**/*.js', 'components/**/*.jsx'],
+                src: [
+                    'components/**/*.js',
+                    'components/**/*.jsx',
+                    'data/**.js',
+                    'configs/**.js',
+                    '!configs/atomizer.js'
+                ],
                 dest: '<%= project.build %>/css/atomic.css'
             }
         },
