@@ -11,30 +11,55 @@ class Experience extends Component {
             return null;
         }
         let {thumbnail} = smartlink || {};
+        let ratio = thumbnail.height / thumbnail.width * 100;
         return (
             <a
                 className='Bd My(10px) Bdc($c-black-4) Cf D(b) Cur(p) Td(n) Td(n):h Bxsh($shadow-2dp) Bxsh($shadow-4dp):h Trsdu($trsdu-fast)'
                 href={smartlink.url}
                 target='_black'
             >
-                <div
-                    className='Bgz(ct) W(150px) H(150px) D(ib) Bgr(nr) Fl(start) Bgc(#400090)'
-                    style={{
-                        backgroundImage: `url(${thumbnail.url})`
-                    }}
-                />
-                <div className='Va(t) P(10px) C($c-black-1) Mstart(160px) Bxz(bb)'>
-                    <div className='Fz(1.4em) My(10px)'>
-                        {
-                            smartlink.title
-                        }
+            {
+                smartlink.type === 'large' ? (
+                    <div>
+                    <div className='H(0) Pos(r) W(100%)' style={{paddingBottom: ratio + '%'}}>
+                        <img src={thumbnail.url} className='StretchedBox H(100%) W(100%)' />
                     </div>
-                    <div className='C($c-black-2) My(10px)'>
-                        {
-                            smartlink.description
-                        }
+                    <div className='Va(t) P(10px) C($c-black-1) Bxz(bb)'>
+                        <div className='Fz(1.4em) My(10px)'>
+                            {
+                                smartlink.title
+                            }
+                        </div>
+                        <div className='C($c-black-2) My(10px)'>
+                            {
+                                smartlink.description
+                            }
+                        </div>
                     </div>
-                </div>
+                    </div>
+                ) : (
+                    <div>
+                    <div
+                        className='Bgz(ct) W(150px) H(150px) D(ib) Bgr(nr) Fl(start) Bgc(#400090)'
+                        style={{
+                            backgroundImage: `url(${thumbnail.url})`
+                        }}
+                    />
+                    <div className='Va(t) P(10px) C($c-black-1) Mstart(160px) Bxz(bb)'>
+                        <div className='Fz(1.4em) My(10px)'>
+                            {
+                                smartlink.title
+                            }
+                        </div>
+                        <div className='C($c-black-2) My(10px)'>
+                            {
+                                smartlink.description
+                            }
+                        </div>
+                    </div>
+                    </div>
+                )
+            }
             </a>
         );
     }
