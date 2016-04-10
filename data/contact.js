@@ -12,7 +12,7 @@ module.exports = [
     {
         name: 'LinkedIn',
         value: '//www.linkedin.com/in/roderickhsiao',
-        icon: '//guardianscifi.com/rw_common/themes/atlas/images/linkedin-icon-dark.png'
+        icon: '//cdn3.iconfinder.com/data/icons/picons-social/57/51-linkedin-128.png'
     },
     {
         name: 'GitHub',

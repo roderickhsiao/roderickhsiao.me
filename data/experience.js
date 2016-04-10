@@ -47,7 +47,7 @@ module.exports = {
                     url: '//www.yahoo.com/digest',
                     smartlink: {
                         thumbnail: {
-                            url: '//www.filecluster.com/news/wp-content/uploads/2014/05/Yahoo-News-Digest-Logo.png',
+                            url: '//lh5.ggpht.com/0TavkkXqQT-WEnwRd2nVhBKzxg4i0h6yFnx4-j6wW9Hww65Ov1xslfprPFNz95x_IIs=w300',
                             width: 200,
                             height: 200
                         },
@@ -104,7 +104,7 @@ module.exports = {
                     smartlink: {
                         type: 'large',
                         thumbnail: {
-                            url: '//rack.0.mshcdn.com/media/ZgkyMDEyLzExLzA2LzA5XzQ0XzQzXzcxOF9maWxlCnAJdGh1bWIJODUweDg1MD4KZQlqcGc/c3cccabe.jpg',
+                            url: 'https://s.yimg.com/bt/api/res/1.2/.ZOSbjhMbX60nWirk2BViA--/YXBwaWQ9eW5ld3NfbGVnbztxPTg1/http://media.zenfs.com/en-US/blogs/ept_beta_stage/YodelElections21.jpg',
                             width: 615,
                             height: 425
                         },
