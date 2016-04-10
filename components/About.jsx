@@ -1,13 +1,17 @@
 import React, {Component, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
-import {map} from 'lodash';
 
+import {map} from 'lodash';
+import shallowCompare from 'react-addons-shallow-compare';
 import sites from '../data/about';
 
 class About extends Component {
+    shouldComponentUpdate (nextProps, nextState) {
+        return shallowCompare(this, nextProps, nextState);
+    }
     renderLink () {
-        let nodes = map(sites, function eachSite (site, i) {
+        let nodes = map(sites, (site, i) => {
             return (
                 <li key={i} className='D(ib) W(1/4) Va(t)'>
                     <a className='D(b) My(6px)' href={site.url} target='_blank'>

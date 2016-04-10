@@ -3,9 +3,13 @@ import React, {Component, PropTypes} from 'react';
 import Card from './common/Card.jsx';
 
 import {map} from 'lodash';
+import shallowCompare from 'react-addons-shallow-compare';
 import summary from '../data/summary';
 
 class MainBrief extends Component {
+    shouldComponentUpdate (nextProps, nextState) {
+        return shallowCompare(this, nextProps, nextState);
+    }
     renderThumbnail (data, name) {
         let {url, width, height} = data;
         return (
@@ -25,7 +29,7 @@ class MainBrief extends Component {
             return null;
         }
 
-        let node = map(list, function eachItem (item, i) {
+        let node = map(list, (item, i) => {
             let {className} = item.props || {};
             return (
                 <li className={className} key={i}>
@@ -46,7 +50,7 @@ class MainBrief extends Component {
                 </h5>
                 <ol className='Mend(10px)'>
                     {
-                        map(data, function eachNode (item, i) {
+                        map(data, (item, i) => {
                             return (
                                 <li key={i}>
                                     {

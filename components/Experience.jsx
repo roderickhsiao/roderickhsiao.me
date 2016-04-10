@@ -5,8 +5,12 @@ import Card from './common/Card.jsx';
 import {map} from 'lodash';
 import classNames from 'classnames';
 import experience from '../data/experience';
+import shallowCompare from 'react-addons-shallow-compare';
 
 class Experience extends Component {
+    shouldComponentUpdate (nextProps, nextState) {
+        return shallowCompare(this, nextProps, nextState);
+    }
     renderSmartlink (smartlink) {
         if (!smartlink) {
             return null;
@@ -64,7 +68,7 @@ class Experience extends Component {
         if (!projects || !projects.length) {
             return null;
         }
-        let nodes = map(projects, function eachProject (project, i) {
+        let nodes = map(projects, (project, i) => {
             let {smartlink} = project;
             return (
                 <li className='Px(20px) Py(10px) Mb(20px) BdStart Bdstartc($c-black-4)' key={i}>

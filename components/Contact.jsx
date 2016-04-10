@@ -6,17 +6,21 @@ import SocialPersonOutline from 'react-material-icons/icons/social/person-outlin
 
 import {map} from 'lodash';
 import contact from '../data/contact';
+import shallowCompare from 'react-addons-shallow-compare';
 
 const ICON_MAP = {
     email: EmailIcon,
     'person-outline': SocialPersonOutline
 }
 class Contact extends Component {
+    shouldComponentUpdate (nextProps, nextState) {
+        return shallowCompare(this, nextProps, nextState);
+    }
     renderContact (contact) {
         if (!contact || !contact.length) {
             return null;
         }
-        let nodes = map(contact, function eachContact (contact, i) {
+        let nodes = map(contact, (contact, i) => {
             let {icon} = contact;
             let Icon;
 

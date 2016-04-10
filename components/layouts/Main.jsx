@@ -2,6 +2,8 @@ import React, {Component, PropTypes} from 'react';
 
 import {get} from 'lodash';
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
+import shallowCompare from 'react-addons-shallow-compare';
+
 // TODO, this should come from PageStore
 import layout from  '../../configs/layout';
 import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
@@ -28,6 +30,9 @@ function loadComponent (regions, components, context) {
 }
 
 class Main extends Component {
+    shouldComponentUpdate (nextProps, nextState) {
+        return shallowCompare(this, nextProps, nextState);
+    }
     render () {
         const {header, leftRail, main, rightRail, footer, route, ua} = this.props;
 
