@@ -29,6 +29,8 @@ server.use(csrf({cookie: true}));
 
 // Get access to the fetchr plugin instance
 var fetchrPlugin = app.getPlugin('FetchrPlugin');
+fetchrPlugin.registerService(require('./services/fetchStaticData'));
+
 // Set up the fetchr middleware
 server.use(fetchrPlugin.getXhrPath(), fetchrPlugin.getMiddleware());
 
