@@ -12,6 +12,7 @@ module.exports = {
         '$c-black-3': 'rgba(0,0,0,.38)',
         '$c-black-4': 'rgba(0,0,0,.12)',
         '$c-grey-50': '#fafafa',
+        '$c-green-500': '#4caf50',
         '$c-indigo-500': '#3f51b5',
         '$card-padding': '16px',
         '$header-box-shadow': '0 2px 5px rgba(0,0,0,0.26)',

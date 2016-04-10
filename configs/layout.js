@@ -31,5 +31,69 @@ module.exports = {
                 'About'
             ]
         }
+    },
+    education: {
+        components: {
+            HeaderComponent: {
+                path: 'common/HeaderComponent',
+                props: {}
+            },
+            MainCard: {
+                path: 'MainBrief'
+            },
+            Experience: {
+                path: 'Experience'
+            },
+            Contact: {
+                path: 'Contact'
+            },
+            About: {
+                path: 'About'
+            }
+        },
+        regions: {
+            header: [
+                'HeaderComponent'
+            ],
+            main: [
+                'MainCard',
+                'Experience'
+            ],
+            right: [
+                'About'
+            ]
+        }
+    },
+    activity: {
+        components: {
+            HeaderComponent: {
+                path: 'common/HeaderComponent',
+                props: {}
+            },
+            MainCard: {
+                path: 'MainBrief'
+            },
+            Experience: {
+                path: 'Experience'
+            },
+            Contact: {
+                path: 'Contact'
+            },
+            About: {
+                path: 'About'
+            }
+        },
+        regions: {
+            header: [
+                'HeaderComponent'
+            ],
+            main: [
+                'MainCard',
+                'Experience'
+            ],
+            right: [
+                'About'
+            ]
+        }
     }
 };

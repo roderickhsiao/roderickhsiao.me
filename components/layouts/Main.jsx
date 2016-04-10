@@ -30,6 +30,7 @@ function loadComponent (regions, components, context) {
 class Main extends Component {
     render () {
         const {header, leftRail, main, rightRail, footer, route, ua} = this.props;
+
         const config = layout[route.name];
         const regions = config.regions;
         const components = config.components;
