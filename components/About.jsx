@@ -40,7 +40,7 @@ class About extends Component {
                     }
                 </div>
                 <footer className='BdT Bdtc($c-black-4) Pt(10px)'>
-                    <a className='C($c-black-2)' href='//github.com/roderickhsiao/roderickhsiao.me'>
+                    <a className='C($c-black-2)' href='https://github.com/roderickhsiao/roderickhsiao.me'>
                         Source Code
                     </a>
                 </footer>
