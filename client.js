@@ -16,7 +16,7 @@ const WIN = window;
 const dehydratedState = WIN.App || {}; // Sent from the server
 
 debug('rehydrating app');
-app.rehydrate(dehydratedState, function (err, context) {
+app.rehydrate(dehydratedState, (err, context) => {
     if (err) {
         throw err;
     }

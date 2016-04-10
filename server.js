@@ -4,14 +4,14 @@ import Debug from 'debug';
 
 import {createElementWithContext as createElement} from 'fluxible-addons-react';
 import {navigateAction} from 'fluxible-router';
-
 import app from './app';
 import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
 import compression from 'compression';
+import cookieParser from 'cookie-parser';
 import csrf from 'csurf';
 import express from 'express';
 import favicon from 'serve-favicon';
+import fetchAllStaticData from './actions/fetchAllStaticData';
 import serialize from 'serialize-javascript';
 
 import HtmlComponent from './components/Html';
@@ -54,7 +54,7 @@ function renderPage(req, res, context) {
     res.send(html);
 }
 
-server.use(function (req, res, next) {
+server.use((req, res, next) => {
     var context = app.createContext({
         req: req, // The fetchr plugin depends on this
         xhrContext: {
@@ -62,7 +62,7 @@ server.use(function (req, res, next) {
         }
     });
 
-    context.executeAction(navigateAction, { url: req.url, type: 'pageload' }, function (err) {
+    context.executeAction(navigateAction, { url: req.url, type: 'pageload' }, (err) => {
         if (err) {
             if (err.statusCode && err.statusCode === 404) {
                 next();
@@ -71,7 +71,9 @@ server.use(function (req, res, next) {
             }
             return;
         }
-        renderPage(req, res, context);
+        context.executeAction(fetchAllStaticData, {resources: 'summary'}, () => {
+            renderPage(req, res, context);
+        });
     });
 });
 
