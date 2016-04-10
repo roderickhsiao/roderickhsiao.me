@@ -8,7 +8,7 @@ new WebpackDevServer(webpack(config), {
     historyApiFallback: true,
     quiet: true,
     proxy: {
-        '*': { target: 'http://localhost:3001' }
+        '*': { target: '//localhost:3001' }
     }
 }).listen(3000, function () {
     console.log('Webpack Dev Server listening on port 3000');

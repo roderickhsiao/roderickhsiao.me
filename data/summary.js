@@ -6,7 +6,7 @@ module.exports = {
         sector: 'Internet',
         location: 'San Francisco Bay Area | Internet',
         thumbnail: {
-            url: 'https://c2.staticflickr.com/2/1443/25886145665_513240793e_q.jpg',
+            url: '//c2.staticflickr.com/2/1443/25886145665_513240793e_q.jpg',
             width: 75,
             height: 75
         },

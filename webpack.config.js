@@ -6,7 +6,7 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     entry: [
-        'webpack-dev-server/client?http://localhost:3000',
+        'webpack-dev-server/client?//localhost:3000',
         'webpack/hot/only-dev-server',
         './client.js'
     ],

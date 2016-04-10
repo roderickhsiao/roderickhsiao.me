@@ -12,9 +12,9 @@ class HtmlComponent extends Component {
                     <title>Roderick Hsiao</title>
                     <meta name='description' content='Nothing important' />
                     <meta property='og:type' content='website' />
-                    <meta property='og:image' content='https://c2.staticflickr.com/2/1585/25832501265_89b28a6aa5_b.jpg' />
+                    <meta property='og:image' content='//c2.staticflickr.com/2/1585/25832501265_89b28a6aa5_b.jpg' />
 
-                    <link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic' rel='stylesheet' type='text/css' />
+                    <link href='//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic' rel='stylesheet' type='text/css' />
                     <link href='/public/css/normalize.css' rel='stylesheet' type='text/css' />
                     <link href='/public/css/atomic.css' rel='stylesheet' type='text/css' />
                     <link href='/public/css/theme.css' rel='stylesheet' type='text/css' />

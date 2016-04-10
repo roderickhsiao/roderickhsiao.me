@@ -5,7 +5,7 @@
 
 /*
  * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
+ * //twitter.com/miketaylr/status/12228805301
  *
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
@@ -52,7 +52,7 @@ body {
 
 /*
  * Main display reset for IE support.
- * Source: http://weblog.west-wind.com/posts/2015/Jan/12/main-HTML5-Tag-not-working-in-Internet-Explorer-91011
+ * Source: //weblog.west-wind.com/posts/2015/Jan/12/main-HTML5-Tag-not-working-in-Internet-Explorer-91011
  */
 main {
   display: block;

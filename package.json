@@ -76,7 +76,7 @@
     "private": true,
     "repository": {
         "type": "git",
-        "url": "https://github.com/roderickhsiao/roderickhsiao.me"
+        "url": "//github.com/roderickhsiao/roderickhsiao.me"
     },
     "pre-commit": [
         "lint"
