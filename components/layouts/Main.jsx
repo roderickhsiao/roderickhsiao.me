@@ -48,12 +48,12 @@ class Main extends Component {
         return (
             <MuiThemeProvider muiTheme={muiTheme}>
                 <section className='main-layout'>
-                    <header className='layout-head'>
+                    <header className='layout-head Bgc($c-green-500)'>
                         {
                             loadComponent(regions.header, components, context)
                         }
                     </header>
-                    <section className='main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(20)--xs'>
+                    <section className='main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(10px)--xs'>
                         <section className='layout-lead-section'>
                             {
                                 loadComponent(regions.lead, components, context)

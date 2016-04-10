@@ -27,6 +27,10 @@ class MainBrief extends Component {
         return shallowCompare(this, nextProps, nextState);
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState(nextProps);
+    }
+
     renderThumbnail (data, name) {
         let {url, width, height} = data;
         return (

@@ -14,7 +14,7 @@ module.exports = {
                     techStack: 'ExpressJS, ReactJS (Fluxible), and Atomic CSS',
                     smartlink: {
                         thumbnail: {
-                            url: '//s.yimg.com/dh/ap/default/130909/y_200_a.png',
+                            url: 'https://s.yimg.com/dh/ap/default/130909/y_200_a.png',
                             width: 200,
                             height: 200
                         },
@@ -78,11 +78,11 @@ module.exports = {
                     techStack: 'ExpressJS, DustJS, CSS, and YUI',
                     smartlink: {
                         thumbnail: {
-                            url: '//s.yimg.com/ud/hp/ud/mit/td/hr/1126/appicon_72.png',
+                            url: 'https://s.yimg.com/ud/hp/ud/mit/td/hr/1126/appicon_72.png',
                             width: 200,
                             height: 200
                         },
-                        title: 'Yahoo行動版 - Yahoo行動版',
+                        title: 'Yahoo行動版',
                         description: '提供最方便的網站搜尋、即時新聞、生活資訊和Yahoo奇摩服務入口。',
                         url: '//tw.mobi.yahoo.com/'
                     }

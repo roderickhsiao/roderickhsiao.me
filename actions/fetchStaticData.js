@@ -5,20 +5,20 @@ module.exports = function (context, payload, done) {
     var successEvent = ['RECEIVE', resource.toUpperCase(), 'SUCCESS'].join('_');
     var failureEvent = ['RECEIVE', resource.toUpperCase(), 'FAILURE'].join('_');
 
-    context.service.read('staticData', {resource: resource}, {}, function (err, todos) {
+    context.service.read('staticData', {resource: resource}, {}, function (err, results) {
         var store = context.getStore(StaticContentStore);
         var data = store.getData(resource);
-        if (data) {
+        if (data && Object.keys(data).length > 0) {
             // if store already has data, skip it.
             context.dispatch(successEvent, data);
             return done && done (null, data);
         }
 
         if (err) {
-            context.dispatch(failureEvent, payload);
+            context.dispatch(failureEvent);
             return done && done();
         }
-        context.dispatch(successEvent, payload);
+        context.dispatch(successEvent, results);
         done();
     });
 };
