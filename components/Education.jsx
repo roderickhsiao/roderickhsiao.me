@@ -43,7 +43,7 @@ class Education extends Component {
                 <li
                     key={i}
                     className={classNames('Py(10px) Cf', {
-                        'Bdbw(1px) Bdbs(s) Bdbc($c-black-4)': i !== edu.length - 1
+                        'Bdbw(1px) Bdbs(s) Bdbc($c-black-4)': i !== data.length - 1
                     })}
                 >
                     <div className='D(ib) Va(m)'>
