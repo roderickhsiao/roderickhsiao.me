@@ -1,23 +1,6 @@
 module.exports = {
     home: {
-        components: {
-            HeaderComponent: {
-                path: 'common/HeaderComponent',
-                props: {}
-            },
-            MainCard: {
-                path: 'MainBrief'
-            },
-            Experience: {
-                path: 'Experience'
-            },
-            Contact: {
-                path: 'Contact'
-            },
-            About: {
-                path: 'About'
-            }
-        },
+        prefetch: 'about,contact,summary,experience,menu',
         regions: {
             header: [
                 'HeaderComponent'
@@ -33,56 +16,22 @@ module.exports = {
         }
     },
     education: {
-        components: {
-            HeaderComponent: {
-                path: 'common/HeaderComponent',
-                props: {}
-            },
-            MainCard: {
-                path: 'MainBrief'
-            },
-            Experience: {
-                path: 'Experience'
-            },
-            Contact: {
-                path: 'Contact'
-            },
-            About: {
-                path: 'About'
-            }
-        },
+        prefetch: 'about,contact,summary,education,menu',
         regions: {
             header: [
                 'HeaderComponent'
             ],
             main: [
-                'MainCard',
-                'Experience'
+                'Education'
             ],
             right: [
+                'MainCard',
+                'Contact',
                 'About'
             ]
         }
     },
     activity: {
-        components: {
-            HeaderComponent: {
-                path: 'common/HeaderComponent',
-                props: {}
-            },
-            MainCard: {
-                path: 'MainBrief'
-            },
-            Experience: {
-                path: 'Experience'
-            },
-            Contact: {
-                path: 'Contact'
-            },
-            About: {
-                path: 'About'
-            }
-        },
         regions: {
             header: [
                 'HeaderComponent'
@@ -92,6 +41,7 @@ module.exports = {
                 'Experience'
             ],
             right: [
+                'Contact',
                 'About'
             ]
         }

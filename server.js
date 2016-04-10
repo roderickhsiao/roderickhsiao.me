@@ -1,8 +1,10 @@
+/* global setImmediate */
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import Debug from 'debug';
 
 import {createElementWithContext as createElement} from 'fluxible-addons-react';
+import {get} from 'lodash';
 import {navigateAction} from 'fluxible-router';
 import app from './app';
 import bodyParser from 'body-parser';
@@ -12,6 +14,7 @@ import csrf from 'csurf';
 import express from 'express';
 import favicon from 'serve-favicon';
 import fetchAllStaticData from './actions/fetchAllStaticData';
+import layout from './configs/layout';
 import serialize from 'serialize-javascript';
 
 import HtmlComponent from './components/Html';
@@ -71,9 +74,19 @@ server.use((req, res, next) => {
             }
             return;
         }
-        context.executeAction(fetchAllStaticData, {resources: 'summary'}, () => {
+        let routeStore = context.getStore('RouteStore');
+        let {name} = routeStore.getCurrentRoute();
+        let prefetch = get(layout, [name, 'prefetch']);
+
+        if (!prefetch || !prefetch.length) {
             renderPage(req, res, context);
-        });
+        } else {
+            setImmediate(()=> {
+                context.executeAction(fetchAllStaticData, {resources: prefetch}, () => {
+                    renderPage(req, res, context);
+                });
+            });
+        }
     });
 });
 

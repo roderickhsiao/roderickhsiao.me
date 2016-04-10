@@ -3,9 +3,11 @@ import React, {Component, PropTypes} from 'react';
 import Card from './common/Card.jsx';
 import EmailIcon from 'react-material-icons/icons/communication/email';
 import SocialPersonOutline from 'react-material-icons/icons/social/person-outline';
+import StaticContentStore from '../stores/StaticContentStore';
 
+import {connectToStores} from 'fluxible-addons-react';
 import {map} from 'lodash';
-import contact from '../data/contact';
+import fetchStaticDataAction from '../actions/fetchStaticData';
 import shallowCompare from 'react-addons-shallow-compare';
 
 const ICON_MAP = {
@@ -13,6 +15,23 @@ const ICON_MAP = {
     'person-outline': SocialPersonOutline
 }
 class Contact extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.store = context.getStore(StaticContentStore);
+        this.state = {
+            contact: this.store.getData('contact') || {}
+        }
+    }
+
+    componentWillMount () {
+        this.context.executeAction(fetchStaticDataAction, {
+            resource: 'contact'
+        });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState(nextProps);
+    }
     shouldComponentUpdate (nextProps, nextState) {
         return shallowCompare(this, nextProps, nextState);
     }
@@ -62,11 +81,19 @@ class Contact extends Component {
         );
     }
     render () {
+        let {contact} = this.state;
+        if (!contact) {
+            return null;
+        }
+
         return (
             <Card>
                 <h5 className='M(0)'>
                     Contact
                 </h5>
+                <div className='My(10px) Fs(i) C($c-black-3)'>
+                    Mandarin/English
+                </div>
                 {
                     this.renderContact(contact)
                 }
@@ -74,5 +101,17 @@ class Contact extends Component {
         )
     };
 }
+
+Contact.contextTypes = {
+    executeAction: PropTypes.func,
+    getStore: PropTypes.func
+};
+
+Contact = connectToStores(Contact, [StaticContentStore], (context, props) => {
+    return {
+        contact: context.getStore(StaticContentStore).getData('contact')
+    };
+});
+
 
 export default Contact

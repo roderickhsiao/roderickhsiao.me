@@ -1,13 +1,32 @@
 import React, {Component, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
+import StaticContentStore from '../stores/StaticContentStore';
 
+import {connectToStores} from 'fluxible-addons-react';
 import {map} from 'lodash';
 import classNames from 'classnames';
-import experience from '../data/experience';
+import fetchStaticDataAction from '../actions/fetchStaticData';
 import shallowCompare from 'react-addons-shallow-compare';
 
 class Experience extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.store = context.getStore(StaticContentStore);
+        this.state = {
+            experience: this.store.getData('experience') || {}
+        }
+    }
+
+    componentWillMount () {
+        this.context.executeAction(fetchStaticDataAction, {
+            resource: 'experience'
+        });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState(nextProps);
+    }
     shouldComponentUpdate (nextProps, nextState) {
         return shallowCompare(this, nextProps, nextState);
     }
@@ -107,7 +126,7 @@ class Experience extends Component {
             return (
                 <div key={i}
                     className={classNames('Py(10px)', {
-                        'Bdbw(2px) Bdbs(s) Bdbc($c-black-4)': i === companies.length
+                        'Bdbw(2px) Bdbs(s) Bdbc($c-black-4)': i !== companies.length - 1
                     })}
                 >
                     <div className='Cf Mt(10px)'>
@@ -154,6 +173,10 @@ class Experience extends Component {
     }
 
     render () {
+        let {experience} = this.state;
+        if (!experience || !Object.keys(experience).length) {
+            return null;
+        }
         let {companies} = experience;
         return (
             <Card>
@@ -167,5 +190,16 @@ class Experience extends Component {
         );
     }
 }
+
+Experience.contextTypes = {
+    executeAction: PropTypes.func,
+    getStore: PropTypes.func
+};
+
+Experience = connectToStores(Experience, [StaticContentStore], (context, props) => {
+    return {
+        experience: context.getStore(StaticContentStore).getData('experience')
+    };
+});
 
 export default Experience;

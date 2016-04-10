@@ -5,6 +5,7 @@ import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
 import shallowCompare from 'react-addons-shallow-compare';
 
 // TODO, this should come from PageStore
+import components from '../../configs/components';
 import layout from  '../../configs/layout';
 import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
 
@@ -38,7 +39,6 @@ class Main extends Component {
 
         const config = layout[route.name];
         const regions = config.regions;
-        const components = config.components;
         const context = {
             route: route
         };
