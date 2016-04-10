@@ -53,12 +53,12 @@ class Main extends Component {
                                 loadComponent(regions.lead, components, context)
                             }
                         </section>
-                        <section className='layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs Pend(0)--xs'>
+                        <section className='layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs Pend(0)--xs D(ib)'>
                             {
                                 loadComponent(regions.main, components, context)
                             }
                         </section>
-                        <section className='layout-right-rail W(40)% Bxz(bb) W(100%)--sm'>
+                        <section className='layout-right-rail W(40%) Bxz(bb) W(100%)--xs D(ib) Va(t)'>
                             {
                                 loadComponent(regions.right, components, context)
                             }

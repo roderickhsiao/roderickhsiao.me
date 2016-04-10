@@ -52,7 +52,7 @@ module.exports = {
                             height: 200
                         },
                         title: 'Yahoo News Digest',
-                        description: 'Yahoo News Digest provides a definitive summary of all the important, need-to-know news. Digests are delivered twice a day - once in the morning and once in the evening. All the top stories are summarized and presented with the key information that you need to stay on top of what’s happening.',
+                        description: 'Yahoo News Digest provides a definitive summary of all the important, need-to-know news. Digests are delivered twice a day - once in the morning and once in the evening.',
                         url: 'https://www.yahoo.com/digest'
                     }
                 },
@@ -75,7 +75,7 @@ module.exports = {
                     name: 'Yahoo APAC Mobile Homepage (Taiwan and Hongkong)',
                     time: 'April 2013 - Oct 2013',
                     summary: 'Lead a team of 5 developers to build content consumption experience',
-                    techStack: 'ExpressJS, DustJS, and YUI',
+                    techStack: 'ExpressJS, DustJS, CSS, and YUI',
                     smartlink: {
                         thumbnail: {
                             url: 'https://s.yimg.com/ud/hp/ud/mit/td/hr/1126/appicon_72.png',
@@ -100,16 +100,32 @@ module.exports = {
                     name: 'Yahoo 2012 Presidential Election',
                     time: 'June 2012 - Dec 2012',
                     summary: 'Interactive control room experience for 2012 US presidential election.',
-                    techStack: 'PHP and YUI',
+                    techStack: 'CSS, PHP and YUI',
                     smartlink: {
                         type: 'large',
                         thumbnail: {
-                            url: 'https://mir-s3-cdn-cf.behance.net/project_modules/disp/070ac318476459.562ca18f0ed35.png',
-                            width: 600,
-                            height: 371
+                            url: 'http://rack.0.mshcdn.com/media/ZgkyMDEyLzExLzA2LzA5XzQ0XzQzXzcxOF9maWxlCnAJdGh1bWIJODUweDg1MD4KZQlqcGc/c3cccabe.jpg',
+                            width: 615,
+                            height: 425
                         },
                         title: 'Yahoo 2012 Presidential Election',
-                        description: 'Full coverage of 2012 US presidential election.',
+                        description: 'Yahoo\'s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.',
+                        url: 'https://books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false'
+                    }
+                },
+                {
+                    name: 'Yahoo Global News',
+                    time: 'Nov 2009 - June 2012',
+                    summary: 'Build a single platform to serve all Yahoo properties around thw world. In charge of front end testing strategy, framework and automation.',
+                    techStack: 'Java, Selenium, WebdriverJS and YUI',
+                    smartlink: {
+                        thumbnail: {
+                            url: 'https://pbs.twimg.com/profile_images/461884598608080896/-JRj7OdX_400x400.jpeg',
+                            width: 200,
+                            height: 200
+                        },
+                        title: 'Yahoo News',
+                        description: 'Browse latest news on Yahoo News.',
                         url: 'https://www.yahoo.com/news'
                     }
                 }

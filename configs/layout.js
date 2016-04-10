@@ -10,6 +10,12 @@ module.exports = {
             },
             Experience: {
                 path: 'Experience'
+            },
+            Contact: {
+                path: 'Contact'
+            },
+            About: {
+                path: 'About'
             }
         },
         regions: {
@@ -19,6 +25,10 @@ module.exports = {
             main: [
                 'MainCard',
                 'Experience'
+            ],
+            right: [
+                'Contact',
+                'About'
             ]
         }
     }

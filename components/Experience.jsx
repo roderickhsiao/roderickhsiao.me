@@ -3,6 +3,7 @@ import React, {Component, PropTypes} from 'react';
 import Card from './common/Card.jsx';
 
 import {map} from 'lodash';
+import classNames from 'classnames';
 import experience from '../data/experience';
 
 class Experience extends Component {
@@ -12,19 +13,36 @@ class Experience extends Component {
         }
         let {thumbnail} = smartlink || {};
         let ratio = thumbnail.height / thumbnail.width * 100;
+        const isLargeTemplate = smartlink.type === 'large';
+
         return (
             <a
                 className='Bd My(10px) Bdc($c-black-4) Cf D(b) Cur(p) Td(n) Td(n):h Bxsh($shadow-2dp) Bxsh($shadow-4dp):h Trsdu($trsdu-fast)'
                 href={smartlink.url}
                 target='_black'
             >
-            {
-                smartlink.type === 'large' ? (
-                    <div>
-                    <div className='H(0) Pos(r) W(100%)' style={{paddingBottom: ratio + '%'}}>
-                        <img src={thumbnail.url} className='StretchedBox H(100%) W(100%)' />
-                    </div>
-                    <div className='Va(t) P(10px) C($c-black-1) Bxz(bb)'>
+                <div>
+                    {
+                        isLargeTemplate ? (
+                            <div className='H(0) Pos(r) W(100%)' style={{paddingBottom: ratio + '%'}}>
+                                <img src={thumbnail.url} className='StretchedBox H(100%) W(100%)' />
+                            </div>
+                        ) : (
+                            <div
+                                className='Bgz(ct) W(150px) H(150px) D(ib) Bgr(nr) Fl(start) Bgc(#400090)'
+                                style={{
+                                    backgroundImage: `url(${thumbnail.url})`
+                                }}
+                            />
+                        )
+                    }
+                    <div className={
+                            classNames(
+                                'P(10px) C($c-black-1)', {
+                                'Va(t)  Mstart(160px) Bxz(bb)': !isLargeTemplate
+                            })
+                        }
+                    >
                         <div className='Fz(1.4em) My(10px)'>
                             {
                                 smartlink.title
@@ -36,30 +54,7 @@ class Experience extends Component {
                             }
                         </div>
                     </div>
-                    </div>
-                ) : (
-                    <div>
-                    <div
-                        className='Bgz(ct) W(150px) H(150px) D(ib) Bgr(nr) Fl(start) Bgc(#400090)'
-                        style={{
-                            backgroundImage: `url(${thumbnail.url})`
-                        }}
-                    />
-                    <div className='Va(t) P(10px) C($c-black-1) Mstart(160px) Bxz(bb)'>
-                        <div className='Fz(1.4em) My(10px)'>
-                            {
-                                smartlink.title
-                            }
-                        </div>
-                        <div className='C($c-black-2) My(10px)'>
-                            {
-                                smartlink.description
-                            }
-                        </div>
-                    </div>
-                    </div>
-                )
-            }
+                </div>
             </a>
         );
     }
@@ -72,7 +67,7 @@ class Experience extends Component {
         let nodes = map(projects, function eachProject (project, i) {
             let {smartlink} = project;
             return (
-                <li className='Px(20px) Mb(20px) BdStart Bdstartc($c-black-4)' key={i}>
+                <li className='Px(20px) Py(10px) Mb(20px) BdStart Bdstartc($c-black-4)' key={i}>
                     <div className='Fz(1.2em) Mb(6px)'>
                         {project.name}
                     </div>
@@ -106,7 +101,11 @@ class Experience extends Component {
         let nodes = map(companies, function eachCompany (company, i) {
             let {projects} = company;
             return (
-                <div key={i} className='BdB Bdbc($c-black-4)'>
+                <div key={i}
+                    className={classNames('Py(10px)', {
+                        'Bdbw(2px) Bdbs(s) Bdbc($c-black-4)': i === companies.length
+                    })}
+                >
                     <div className='Cf Mt(10px)'>
                         <div
                             className='Bgz(ct) W(100px) H(30px) Bgr(nr) Fl(end)'
