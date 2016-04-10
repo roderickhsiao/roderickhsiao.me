@@ -17,6 +17,6 @@ module.exports = [
     {
         name: 'GitHub',
         value: 'https://github.com/roderickhsiao',
-        icon: '//www.thoughtworks.com/imgs/icons/social/github.png'
+        icon: '//i.imgsafe.org/6eb249b.png'
     }
 ];

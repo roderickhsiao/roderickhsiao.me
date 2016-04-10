@@ -48,7 +48,7 @@ class Main extends Component {
         return (
             <MuiThemeProvider muiTheme={muiTheme}>
                 <section className='main-layout'>
-                    <header className='layout-head Bgc($c-green-500) Mih($top-header-height)'>
+                    <header className='layout-head Bgc($c-green-500) Mih($top-header-heigh)'>
                         {
                             loadComponent(regions.header, components, context)
                         }

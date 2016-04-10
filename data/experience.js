@@ -30,7 +30,7 @@ module.exports = {
                     techStack: 'ExpressJS, ReactJS (Fluxible), and Atomic CSS',
                     smartlink: {
                         thumbnail: {
-                            url: '//lh6.ggpht.com/AQgEWq9WMSMD1MPd2RDqS6HJCzq8nu-iRFW3PvKqTb1IglzRh5DChrruWlcJmvoQ_zo=w300',
+                            url: '//i.imgsafe.org/007c514.png',
                             width: 200,
                             height: 200
                         },
