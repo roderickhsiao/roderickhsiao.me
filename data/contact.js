@@ -12,11 +12,11 @@ module.exports = [
     {
         name: 'LinkedIn',
         value: 'https://www.linkedin.com/in/roderickhsiao',
-        icon: '//cdn3.iconfinder.com/data/icons/picons-social/57/51-linkedin-128.png'
+        icon: '//i.imgsafe.org/6eb249b.png'
     },
     {
         name: 'GitHub',
         value: 'https://github.com/roderickhsiao',
-        icon: '//i.imgsafe.org/6eb249b.png'
+        icon: '//i.imgsafe.org/279a782.png'
     }
 ];

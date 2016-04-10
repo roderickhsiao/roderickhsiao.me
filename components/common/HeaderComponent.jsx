@@ -45,7 +45,7 @@ class HeaderComponent extends Component {
         let menuItems = get(menuConfig, [route.name], {});
         return (
             <div className='Bxz(bb) W(100%) Bgc($c-green-500) C(#fff) Pb(30px) Px(20px) Bxsh($header-box-shadow) Mih($top-header-heigh) Bxsh(n)--xs'>
-                <div className='Fz(56px) Mx(20px) Lh(1.5) D(ib) Mt($top-header-height) Tt(c) Op(1) Trsdu($trsdu-fast) hasScrolled_Op(0) D(n)--xs'>
+                <div className='Fz(56px) Mx(20px) Lh(1.5) D(ib) Mt($top-header-height) Tt(c) Op(1) Trsdu($trsdu-fast) hasScrolled_Op(0)'>
                     {
                         menuItems.name
                     }
