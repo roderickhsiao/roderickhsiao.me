@@ -44,13 +44,13 @@ class HeaderComponent extends Component {
         let {route} = this.props.context;
         let menuItems = get(menuConfig, [route.name], {});
         return (
-            <div className='Bxz(bb) W(100%) Bgc($c-green-500) C(#fff) Pb(30px) Px(20px) Bxsh($header-box-shadow)'>
+            <div className='Bxz(bb) W(100%) Bgc($c-green-500) C(#fff) Pb(30px) Px(20px) Bxsh($header-box-shadow) Mih($top-header-heigh) Bxsh(n)--xs'>
                 <div className='Fz(56px) Mx(20px) Lh(1.5) D(ib) Mt($top-header-height) Tt(c) Op(1) Trsdu($trsdu-fast) hasScrolled_Op(0) D(n)--xs'>
                     {
                         menuItems.name
                     }
                 </div>
-                <div className='top-header Pos(f) T(0) End(0) Start(0) Bgc($c-green-500) H($top-header-height) Z(10) uhHide_Bxsh($header-box-shadow) Bxsh(n)!--xs'>
+                <div className='top-header Pos(f) T(0) End(0) Start(0) Bgc($c-green-500) H($top-header-height) Z(10) uhHide_Bxsh($header-box-shadow)'>
                     <div className='name D(tb) Pos(a) Start(0) H(100%) Op(0) Trsdu($trsdu-fast) hasScrolled_Op(1) D(n)--xs'>
                         <h5 className='D(tbc) Va(m) C(#fff) Px(20px) Mx(20px)'>
                             Roderick Hsiao

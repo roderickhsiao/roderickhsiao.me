@@ -7,9 +7,9 @@ module.exports = [
         department: 'Department of Management Information Systems (MIS)',
         time: 'Sep 2004 - Jun 2008',
         thumbnail: {
-            url: '//upload.wikimedia.org/wikipedia/en/thumb/2/20/National_Chengchi_University_Seal.svg/1048px-National_Chengchi_University_Seal.svg.png',
-            width: 533,
-            height: 520
+            url: '//i.imgsafe.org/78580aa.png',
+            width: 200,
+            height: 195
         }
     },
     {
@@ -19,9 +19,9 @@ module.exports = [
         degree: 'Exchange program',
         time: 'Jan 2008 - Jun 2008',
         thumbnail: {
-            url: '//upload.wikimedia.org/wikipedia/commons/0/04/University_of_Mannheim.svg',
-            width: 1800,
-            height: 350
+            url: '//i.imgsafe.org/f5b003b.gif',
+            width: 200,
+            height: 201
         }
     }
 ];

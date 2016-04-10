@@ -2,7 +2,7 @@ module.exports = {
     companies: [
         {
             name: 'Yahoo',
-            logo: '//upload.wikimedia.org/wikipedia/commons/thumb/2/24/Yahoo!_logo.svg/2000px-Yahoo!_logo.svg.png',
+            logo: '//i.imgsafe.org/ed2072e.png',
             time: 'Nov 2009 - present',
             title: 'Senior Software Engineer',
             location: 'Sunnyvale, CA',
@@ -66,7 +66,7 @@ module.exports = {
         },
         {
             name: 'Yahoo',
-            logo: '//upload.wikimedia.org/wikipedia/commons/thumb/2/24/Yahoo!_logo.svg/2000px-Yahoo!_logo.svg.png',
+            logo: '//i.imgsafe.org/ed2072e.png',
             time: 'April 2013 - Oct 2013',
             title: 'Engineering Team Lead',
             location: 'Taipei, Taiwan',
@@ -91,7 +91,7 @@ module.exports = {
         },
         {
             name: 'Yahoo',
-            logo: '//upload.wikimedia.org/wikipedia/commons/thumb/2/24/Yahoo!_logo.svg/2000px-Yahoo!_logo.svg.png',
+            logo: '//i.imgsafe.org/ed2072e.png',
             time: 'Nov 2009 - April 2013',
             title: 'Quality Engineering Lead / Software Engineer',
             location: 'Taipei, Taiwan',
@@ -137,7 +137,7 @@ module.exports = {
                     techStack: 'Java, Selenium, WebdriverJS and YUI',
                     smartlink: {
                         thumbnail: {
-                            url: '//pbs.twimg.com/profile_images/461884598608080896/-JRj7OdX_400x400.jpeg',
+                            url: '//i.imgsafe.org/cbf361d.jpeg',
                             width: 200,
                             height: 200
                         },
