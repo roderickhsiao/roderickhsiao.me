@@ -30,6 +30,7 @@
         "fluxible-plugin-fetchr": "^0.3.3",
         "fluxible-router": "^0.4.0",
         "fluxible": "^1.0.0",
+        "fumble": "^0.1.0",
         "grunt-atomizer": "^3.0.0",
         "grunt-cli": "^1.0.0",
         "grunt-concurrent": "^1.0.0",

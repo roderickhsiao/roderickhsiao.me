@@ -1,5 +1,3 @@
-// can be a restful api result
-
 module.exports = {
     profile: {
         name: 'Roderick Hsiao',

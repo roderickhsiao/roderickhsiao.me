@@ -1,15 +1,32 @@
 import React, {Component, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
+import StaticContentStore from '../stores/StaticContentStore';
 
+import {connectToStores} from 'fluxible-addons-react';
 import {map} from 'lodash';
+import fetchStaticDataAction from '../actions/fetchStaticData';
 import shallowCompare from 'react-addons-shallow-compare';
-import summary from '../data/summary';
 
 class MainBrief extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.store = context.getStore(StaticContentStore);
+        this.state = {
+            summary: this.store.getData('summary') || {}
+        }
+    }
+
+    componentWillMount () {
+        this.context.executeAction(fetchStaticDataAction, {
+            resource: 'summary'
+        });
+    }
+
     shouldComponentUpdate (nextProps, nextState) {
         return shallowCompare(this, nextProps, nextState);
     }
+
     renderThumbnail (data, name) {
         let {url, width, height} = data;
         return (
@@ -66,7 +83,10 @@ class MainBrief extends Component {
     }
 
     render () {
-        let {profile} = summary;
+        let {profile} = this.state.summary;
+        if (!profile) {
+            return null;
+        }
         return (
             <Card>
                 <div className='D(ib) Va(t)'>
@@ -88,5 +108,16 @@ class MainBrief extends Component {
         );
     }
 }
+
+MainBrief.contextTypes = {
+    executeAction: PropTypes.func,
+    getStore: PropTypes.func
+};
+
+MainBrief = connectToStores(MainBrief, [StaticContentStore], (context, props) => {
+    return {
+        summary: context.getStore(StaticContentStore).getData('summary')
+    };
+});
 
 export default MainBrief;

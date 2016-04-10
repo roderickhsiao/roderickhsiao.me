@@ -9,21 +9,15 @@ import {subscribe} from 'subscribe-ui-event';
 import shallowCompare from 'react-addons-shallow-compare';
 
 class App extends Component {
-    static contextTypes = {
-        getStore: PropTypes.func,
-        executeAction: PropTypes.func,
-        ua: PropTypes.object
-    }
-
-    shouldComponentUpdate (nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
-    }
-
     constructor(props, context) {
         super(props, context);
         this.routeStore = this.context.getStore('RouteStore');
         this.scrollHandler = this.scrollHandler.bind(this);
         this.subscription = [];
+    }
+
+    shouldComponentUpdate (nextProps, nextState) {
+        return shallowCompare(this, nextProps, nextState);
     }
 
     scrollHandler (e, payload) {
@@ -65,6 +59,11 @@ class App extends Component {
         );
     }
 }
+App.contextTypes = {
+    executeAction: PropTypes.func,
+    getStore: PropTypes.func,
+    ua: PropTypes.object
+};
 App = provideContext(App);
 App = handleHistory(App);
 
