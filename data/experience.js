@@ -74,7 +74,7 @@ module.exports = {
                 {
                     name: 'Yahoo APAC Mobile Homepage (Taiwan and Hongkong)',
                     time: 'April 2013 - Oct 2013',
-                    summary: 'Lead a team of 5 developers to build content consumption experience',
+                    summary: 'Lead a team of 5 developers to build content consumption experience.',
                     techStack: 'ExpressJS, DustJS, CSS, and YUI',
                     smartlink: {
                         thumbnail: {
@@ -97,16 +97,33 @@ module.exports = {
             location: 'Taipei, Taiwan',
             projects: [
                 {
-                    name: 'Yahoo 2012 Presidential Election',
-                    time: 'June 2012 - Dec 2012',
-                    summary: 'Interactive control room experience for 2012 US presidential election.',
+                    name: 'Yahoo 2012 Presidential Election - Control Room',
+                    time: 'Sep 2012 - Dec 2012',
+                    summary: 'Control Room is a comprehensive coverage tablet app with a human touch, where the news is an experience with original content and curated stories from leading sources.',
                     techStack: 'CSS, PHP and YUI',
                     smartlink: {
                         type: 'large',
                         thumbnail: {
-                            url: 'https://s.yimg.com/bt/api/res/1.2/.ZOSbjhMbX60nWirk2BViA--/YXBwaWQ9eW5ld3NfbGVnbztxPTg1/http://media.zenfs.com/en-US/blogs/ept_beta_stage/YodelElections21.jpg',
-                            width: 615,
-                            height: 425
+                            url: '//i.imgsafe.org/989a6c6.jpg',
+                            width: 444,
+                            height: 355
+                        },
+                        title: 'Yahoo 2012 Presidential Election',
+                        description: 'Yahoo\'s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.',
+                        url: '//books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false'
+                    }
+                },
+                {
+                    name: 'Yahoo 2012 Presidential Election - #Hashout',
+                    time: 'June 2012 - Sep 2012',
+                    summary: '#Hashout is an online talk show that engages perspectives to spark a conversation',
+                    techStack: 'CSS, PHP and YUI',
+                    smartlink: {
+                        type: 'large',
+                        thumbnail: {
+                            url: '//i.imgsafe.org/4fb36db.jpg',
+                            width: 630,
+                            height: 355
                         },
                         title: 'Yahoo 2012 Presidential Election',
                         description: 'Yahoo\'s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.',

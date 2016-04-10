@@ -13,7 +13,7 @@ class About extends Component {
     renderLink () {
         let nodes = map(sites, (site, i) => {
             return (
-                <li key={i} className='D(ib) W(1/4) Va(t)'>
+                <li key={i} className='D(ib) W(1/4) Va(t) W(1/3)--xs'>
                     <a className='D(b) My(6px)' href={site.url} target='_blank'>
                         {site.name}
                     </a>

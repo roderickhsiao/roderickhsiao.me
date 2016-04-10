@@ -42,7 +42,7 @@ class Contact extends Component {
             }
 
             return (
-                <li className='My(20px) W(1/3) D(ib)' key={i}>
+                <li className='My(20px) W(1/3) D(ib) W(1/2)--xs' key={i}>
                     {Icon}
                     <a className='Fz(1.1em) C($c-black-2) Va(m)' href={contact.value} target='_blank'>
                         {
