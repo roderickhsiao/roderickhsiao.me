@@ -44,6 +44,7 @@
         "history": "^1.17.0",
         "lodash": "^4.0.0",
         "material-ui": "^0.14.4",
+        "react-addons-shallow-compare": "^0.14.4",
         "react-dom": "^0.14.0",
         "react-hot-loader": "^1.2.8",
         "react-material-icons": "^1.0.0",
