@@ -137,7 +137,7 @@ module.exports = {
                     techStack: 'Java, Selenium, WebdriverJS and YUI',
                     smartlink: {
                         thumbnail: {
-                            url: '//i.imgsafe.org/cbf361d.jpeg',
+                            url: '//i.imgsafe.org/f696ea7.png',
                             width: 200,
                             height: 200
                         },
