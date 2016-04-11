@@ -58,10 +58,22 @@ function getWebpackConfig (opts) {
     return baseConfig;
 }
 
+function getPenthouseConfig () {
+    var baseConfig = {
+        outfile : './assets/css/critial.css',
+        css : './build/css/rollup.css',
+        url : 'http://localhost:3000'
+    };
+    // TODO, should we load for different devices?
+    var baseConfig = Object.assign({}, baseConfig, {width: 1300,  height: 900});
+    return baseConfig;
+}
+
 module.exports = function (grunt) {
     var config = {
         project: {
             app: './app',
+            assets: 'assets',
             build: 'build',
             public: '/public'
         },
@@ -71,7 +83,7 @@ module.exports = function (grunt) {
                     ie: true,
                     namespace: '#atomic',
                     configFile: 'configs/atomizer.js',
-                    configOutput: './build/atomizer.json'
+                    configOutput: '<%= project.build %>/atomizer.json'
                 },
                 src: [
                     'components/**/*.js',
@@ -87,10 +99,28 @@ module.exports = function (grunt) {
             css: {
                 expand: true,
                 src: 'css/*.css',
-                dest: 'build',
-                cwd: 'assets'
+                dest: '<%= project.build %>',
+                cwd: '<%= project.assets %>'
+            },
+            image: {
+                expand: true,
+                src: 'images/*',
+                dest: '<%= project.build %>',
+                cwd: '<%= project.assets %>'
             }
         },
+        // concat all css for penthpuse
+        concat: {
+            css: {
+                src: [
+                    'build/css/atomic.css',
+                    'build/css/normalize.css',
+                    'build/css/theme.css'
+                ],
+                dest: 'build/css/rollup.css'
+            }
+        },
+
         cssmin: {
             app: {
                 options: {
@@ -107,6 +137,17 @@ module.exports = function (grunt) {
                 }, {
                     src: ['<%= project.build %>/css/atomic.css'],
                     dest: '<%= project.build %>/css/atomic.css'
+                }]
+            },
+            critial: {
+                options: {
+                    report: 'gzip',
+                    compatibility: 'ie7',
+                    sourceMap: false
+                },
+                files: [{
+                    src: ['<%= project.assets %>/css/critial.css'],
+                    dest: '<%= project.assets %>/css/critial.css'
                 }]
             }
         },
@@ -135,6 +176,9 @@ module.exports = function (grunt) {
             }
         },
         clean: ['./build'],
+        penthouse: {
+            extract: getPenthouseConfig()
+        },
         concurrent: {
             dev: ['nodemon:dev', 'webpack:dev'],
             options: {
@@ -186,14 +230,18 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-atomizer');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-nodemon');
+    grunt.loadNpmTasks('grunt-penthouse');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-webpack');
 
     grunt.registerTask('default', ['clean', 'css', 'concurrent:dev']);
     grunt.registerTask('build', ['clean', 'css', 'webpack:prod']);
-    grunt.registerTask('css', ['atomizer:app', 'copy:css', 'cssmin', 'postcss:app']);
+    grunt.registerTask('css', ['atomizer:app', 'copy', 'cssmin', 'postcss:app']);
+    // need to run after server up
+    grunt.registerTask('penthouse-tasks', ['concat', 'penthouse']);
     grunt.registerTask('dev', ['default']);
 };

@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 
 class HtmlComponent extends Component {
     render () {
-        let {markup, state} = this.props;
+        let {markup, state, inlineScript, inlineStyle} = this.props;
         return (
             <html id='atomic'>
                 <head>
@@ -14,10 +14,22 @@ class HtmlComponent extends Component {
                     <meta property='og:type' content='website' />
                     <meta property='og:image' content='//c2.staticflickr.com/2/1585/25832501265_89b28a6aa5_b.jpg' />
 
-                    <link href='//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic' rel='stylesheet' type='text/css' />
-                    <link href='/public/css/normalize.css' rel='stylesheet' type='text/css' />
-                    <link href='/public/css/atomic.css' rel='stylesheet' type='text/css' />
-                    <link href='/public/css/theme.css' rel='stylesheet' type='text/css' />
+                    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic' />
+                    <link rel='preload' href='/public/css/normalize.css' data-as='style' onLoad='this.rel="stylesheet"' />
+                    <link rel='preload' href='/public/css/atomic.css' data-as='style' onLoad='this.rel="stylesheet"' />
+                    <link rel='preload' href='/public/css/theme.css' data-as='style' onLoad='this.rel="stylesheet"' />
+
+                    <style dangerouslySetInnerHTML={{__html: inlineStyle}}/>
+                    <script dangerouslySetInnerHTML={{__html: inlineScript}} />
+                    <noscript>
+                        <link rel='stylesheet' href='/public/css/normalize.css' />
+                    </noscript>
+                    <noscript>
+                        <link rel='stylesheet' href='/public/css/atomic.css' />
+                    </noscript>
+                    <noscript>
+                        <link rel='stylesheet' href='/public/css/theme.css' />
+                    </noscript>
                     <script src='/public/js/client.js' defer async />
                 </head>
                 <body className='Bgc($c-grey-50)'>

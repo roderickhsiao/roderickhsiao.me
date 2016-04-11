@@ -33,6 +33,9 @@ class MainBrief extends Component {
 
     renderThumbnail (data, name) {
         let {url, width, height} = data;
+        if (!url) {
+            return null;
+        }
         return (
             <img
                 src={url}
