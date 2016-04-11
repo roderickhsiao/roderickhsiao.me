@@ -1,23 +1,8 @@
 # Roderick Hsiao
-__//roderick-1268.appspot.com__
+---
+_Software engineer located in San Fransisco Bay Area._
 
-Software engineer located in San Fransisco Bay Area.
+This is just a personal website using lots of open source stack.
 
-This app is build on top of below npm package running on `node`
-
-Server side
-
-1. express
-1. fluxible
-
-Client side
-
-1. react
-
-Presentation
-
-1. atomic (CSS)
-1. material-ui
-1. normalize.css
-
-Hosted on `gcloud`.
+Please visit __[Live site](//roderick-1268.appspot.com)__
+for more information.
