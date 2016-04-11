@@ -37,7 +37,6 @@ class Experience extends Component {
         let {thumbnail} = smartlink || {};
         let ratio = thumbnail.height / thumbnail.width * 100;
         const isLargeTemplate = smartlink.type === 'large';
-
         return (
             <a
                 className='Bd My(10px) Bdc($c-black-4) Cf D(b) Cur(p) Td(n) Td(n):h Bxsh($shadow-2dp) Bxsh($shadow-4dp):h Trsdu($trsdu-fast)'
@@ -104,7 +103,7 @@ class Experience extends Component {
                         Tech stack: {project.techStack}
                     </div>
                     {
-                        self.renderSmartlink(smartlink)
+                        smartlink ? self.renderSmartlink(smartlink) : null
                     }
                 </li>
             );
@@ -130,12 +129,16 @@ class Experience extends Component {
                     })}
                 >
                     <div className='Cf Mt(10px)'>
-                        <div
-                            className='Bgz(ct) W(100px) H(30px) Bgr(nr) Fl(end)'
-                            style={{
-                                backgroundImage: `url(${company.logo})`
-                            }}
-                        />
+                        {
+                            company.logo ? (
+                                <div
+                                    className='Bgz(ct) W(100px) H(30px) Bgr(nr) Fl(end)'
+                                    style={{
+                                        backgroundImage: `url(${company.logo})`
+                                    }}
+                                />
+                            ) : null
+                        }
                         <h4 className='M(0)'>
                             {
                                 company.name

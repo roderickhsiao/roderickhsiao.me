@@ -63,10 +63,14 @@ class Education extends Component {
                             {edu.degree}
                         </div>
                     </div>
-                    <div
-                        className='Bgz(ct) Bgr(nr) Fl(end) W(100px) D(n)--xs'
-                        style={{backgroundImage: `url(${thumbnail.url})`, height: height}}
-                    />
+                    {
+                        thumbnail.url ? (
+                            <div
+                                className='Bgz(ct) Bgr(nr) Fl(end) W(100px) D(n)--xs'
+                                style={{backgroundImage: `url(${thumbnail.url})`, height: height}}
+                            />
+                        ): null
+                    }
                 </li>
             );
         });

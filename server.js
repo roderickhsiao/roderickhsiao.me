@@ -12,6 +12,7 @@ import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import csrf from 'csurf';
 import express from 'express';
+import fs from 'fs';
 import favicon from 'serve-favicon';
 import fetchAllStaticData from './actions/fetchAllStaticData';
 import layout from './configs/layout';
@@ -22,9 +23,12 @@ import UAParser from 'ua-parser-js';
 
 const debug = Debug('roderickhsiao.me');
 const server = express();
+const inlineScript = fs.readFileSync('./utils/asyncLoadCSS.js', 'utf-8');
+const inlineStyle = fs.readFileSync('./build/css/critial.css', 'utf-8');
 
 server.set('state namespace', 'App');
 server.use('/public', express['static'](__dirname + '/build'));
+server.use(favicon(__dirname + '/build/images/favicon.ico'));
 server.use(bodyParser.json());
 server.use(compression());
 server.use(cookieParser());
@@ -49,7 +53,9 @@ function renderPage(req, res, context) {
         React.createElement(HtmlComponent, {
             state: exposed,
             markup: ReactDOM.renderToString(createElement(context, customContext)),
-            context: context.getComponentContext()
+            context: context.getComponentContext(),
+            inlineScript: inlineScript,
+            inlineStyle: inlineStyle
         }
     ));
 

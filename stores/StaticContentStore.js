@@ -1,6 +1,4 @@
-'use strict';
 var createStore = require('fluxible/addons/createStore');
-
 
 module.exports = createStore({
     storeName: 'StaticContentStore',
@@ -12,6 +10,7 @@ module.exports = createStore({
         'RECEIVE_MENU_SUCCESS': '_receiveMenu',
         'RECEIVE_SUMMARY_SUCCESS': '_receiveSummary'
     },
+    
     initialize: function () {
         this.about = [];
         this.contact = [];

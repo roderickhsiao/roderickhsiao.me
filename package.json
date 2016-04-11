@@ -36,6 +36,7 @@
         "grunt-cli": "^1.0.0",
         "grunt-concurrent": "^1.0.0",
         "grunt-contrib-clean": "^1.0.0",
+        "grunt-contrib-concat": "^1.0.0",
         "grunt-contrib-copy": "^1.0.0",
         "grunt-contrib-cssmin": "^1.0.0",
         "grunt-nodemon": "^0.4.0",
@@ -69,7 +70,7 @@
         "webpack-dev-server": "^1.6.5"
     },
     "engines": {
-        "node": "~4.2.2"
+        "node": "^4.2.2"
     },
     "license": "BSD-3-Clause",
     "main": "start.js",
@@ -88,6 +89,7 @@
         "dev": "grunt",
         "lint": "eslint .",
         "monitor": "nodemon server",
+        "penthouse": "grunt penthouse-tasks",
         "postinstall": "./node_modules/grunt-cli/bin/grunt build",
         "start": "node start"
     }
