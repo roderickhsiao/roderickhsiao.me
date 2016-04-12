@@ -8,20 +8,9 @@
   border-right-width: 0;
 }
 
-#atomic .Bd,
-.Bd {
-  border-width: 1px;
-}
-
-#atomic .Bd,
-.Bd,
 .BdStart,
 .BdT {
   border-style: solid;
-}
-
-#atomic .Bdc\(\$c-black-4\) {
-  border-color: rgba(0,0,0,.12);
 }
 
 #atomic .Bdtc\(\$c-black-4\) {
@@ -60,10 +49,6 @@
   background-color: #fafafa;
 }
 
-#atomic .Bgc\(\#400090\) {
-  background-color: #400090;
-}
-
 #atomic .Bgc\(\#fff\) {
   background-color: #fff;
 }
@@ -82,10 +67,6 @@
 
 #atomic .Bxz\(bb\) {
   box-sizing: border-box;
-}
-
-#atomic .Bxsh\(\$shadow-2dp\) {
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 #atomic .Bxsh\(\$shadow-1dp\) {
@@ -116,8 +97,6 @@
   color: #fff;
 }
 
-
-
 #atomic .D\(ib\) {
   display: inline-block;
   *display: inline;
@@ -144,10 +123,6 @@
   float: right;
 }
 
-#atomic .Fl\(start\) {
-  float: left;
-}
-
 #atomic .Fw\(b\) {
   font-weight: 700;
 }
@@ -162,10 +137,6 @@
 
 #atomic .Fz\(\.9em\) {
   font-size: .9em;
-}
-
-#atomic .Fz\(1\.4em\) {
-  font-size: 1.4em;
 }
 
 #atomic .Fz\(1\.2em\) {
@@ -192,10 +163,6 @@
   height: 100%;
 }
 
-#atomic .H\(150px\) {
-  height: 150px;
-}
-
 #atomic .H\(\$top-header-height\) {
   height: 54px;
 }
@@ -206,10 +173,6 @@
 
 #atomic .M\(0\) {
   margin: 0;
-}
-
-#atomic .M\(-1px\) {
-  margin: -1px;
 }
 
 #atomic .Mx\(0\) {
@@ -270,10 +233,6 @@
   margin-bottom: 4px;
 }
 
-#atomic .Mstart\(160px\) {
-  margin-left: 160px;
-}
-
 #atomic .Maw\(1240px\) {
   max-width: 1240px;
 }
@@ -308,10 +267,6 @@
 
 #atomic .Op\(0\) {
   opacity: 0;
-}
-
-#atomic .P\(10px\) {
-  padding: 10px;
 }
 
 #atomic .P\(\$card-padding\) {
@@ -396,10 +351,6 @@
   width: 100%;
 }
 
-#atomic .W\(150px\) {
-  width: 150px;
-}
-
 #atomic .W\(60\%\) {
   width: 60%;
 }
@@ -433,22 +384,8 @@
   display: table;
 }
 
-[class*=LineClamp] {
-  display: -webkit-box;
-}
-
 .Cf:after {
   clear: both;
-}
-
-[class*=LineClamp] {
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.LineClamp\(3\,84px\) {
-  -webkit-line-clamp: 3;
-  max-height: 84px;
 }
 
 @media screen and (max-width:700px) {
@@ -460,38 +397,17 @@
     display: none;
   }
 
-  #atomic .Fz\(1\.2em\)--xs {
-    font-size: 1.2em;
-  }
-
-  #atomic .H\(100px\)--xs {
-    height: 100px;
-  }
-
   #atomic .Mx\(10px\)--xs {
     margin-left: 10px;
     margin-right: 10px;
-  }
-
-  #atomic .My\(2px\)--xs {
-    margin-top: 2px;
-    margin-bottom: 2px;
   }
 
   #atomic .Mb\(10px\)--xs {
     margin-bottom: 10px;
   }
 
-  #atomic .Mstart\(100px\)--xs {
-    margin-left: 100px;
-  }
-
   #atomic .Start\(0\)--xs {
     left: 0;
-  }
-
-  #atomic .P\(6px\)--xs {
-    padding: 6px;
   }
 
   #atomic .Pend\(0\)--xs {
@@ -508,10 +424,6 @@
 
   #atomic .W\(1\/2\)--xs {
     width: 50%;
-  }
-
-  #atomic .W\(100px\)--xs {
-    width: 100px;
   }
 
   #atomic .W\(100\%\)--xs {
