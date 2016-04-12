@@ -18,6 +18,10 @@ function getWebpackConfig (opts) {
                 {
                     test: /\.(js|jsx)$/,
                     loader: require.resolve('babel-loader')
+                },
+                {
+                    test: /\.(json)$/,
+                    loader: require.resolve('json-loader')
                 }
             ]
         },
@@ -222,6 +226,21 @@ module.exports = function (grunt) {
         webpack: {
             dev: getWebpackConfig({isDev: true, entry: './client.js'}),
             prod: getWebpackConfig({isDev: false, entry: './client.js'})
+        },
+        hash: {
+            options: {
+                mapping: '<%= project.build %>/assets.json', //mapping file so your server can serve the right files
+                srcBasePath: '<%= project.build %>/', // the base Path you want to remove from the `key` string in the mapping file
+                destBasePath: '<%= project.build %>/'
+            },
+            js: {
+                src: '<%= project.build %>/js/*.js',
+                dest: '<%= project.build %>/js/'
+            },
+            css: {
+                src: '<%= project.build %>/css/*.css',
+                dest: '<%= project.build %>/css/'
+            }
         }
     };
 
@@ -233,13 +252,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-hash');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-penthouse');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-webpack');
 
-    grunt.registerTask('default', ['clean', 'css', 'concurrent:dev']);
-    grunt.registerTask('build', ['clean', 'css', 'webpack:prod']);
+    grunt.registerTask('default', ['clean', 'css', 'hash', 'concurrent:dev']);
+    grunt.registerTask('build', ['clean', 'css', 'webpack:prod', 'hash']);
     grunt.registerTask('css', ['atomizer:app', 'copy', 'cssmin', 'postcss:app']);
     // need to run after server up
     grunt.registerTask('penthouse-tasks', ['concat', 'penthouse', 'cssmin:critial']);
