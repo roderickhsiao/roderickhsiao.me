@@ -242,6 +242,6 @@ module.exports = function (grunt) {
     grunt.registerTask('build', ['clean', 'css', 'webpack:prod']);
     grunt.registerTask('css', ['atomizer:app', 'copy', 'cssmin', 'postcss:app']);
     // need to run after server up
-    grunt.registerTask('penthouse-tasks', ['concat', 'penthouse']);
+    grunt.registerTask('penthouse-tasks', ['concat', 'penthouse', 'cssmin:critial']);
     grunt.registerTask('dev', ['default']);
 };
