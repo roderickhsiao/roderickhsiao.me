@@ -259,7 +259,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-webpack');
 
     grunt.registerTask('default', ['clean', 'css', 'hash', 'concurrent:dev']);
-    grunt.registerTask('build', ['clean', 'css', 'webpack:prod', 'hash']);
+    grunt.registerTask('build', ['clean', 'css', 'hash:css', 'webpack:prod', 'hash:js']);
     grunt.registerTask('css', ['atomizer:app', 'copy', 'cssmin', 'postcss:app']);
     // need to run after server up
     grunt.registerTask('penthouse-tasks', ['concat', 'penthouse', 'cssmin:critial']);
