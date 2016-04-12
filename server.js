@@ -26,7 +26,7 @@ const server = express();
 const inlineScript = fs.readFileSync('./utils/asyncLoadCSS.js', 'utf-8');
 const inlineStyle = fs.readFileSync('./build/css/critial.css', 'utf-8');
 
-const SEVEN_DAY = 86400000;
+const ONE_DAY = 86400000;
 
 server.set('state namespace', 'App');
 server.use('/public', express['static'](__dirname + '/build', {maxage: ONE_DAY}));
@@ -82,6 +82,7 @@ server.use((req, res, next) => {
             }
             return;
         }
+        res.setHeader('Cache-Control', 'public, max-age=0');
         let routeStore = context.getStore('RouteStore');
         let {name} = routeStore.getCurrentRoute();
         let prefetch = get(layout, [name, 'prefetch']);
