@@ -6,7 +6,7 @@ module.exports = {
         sector: 'Internet',
         location: 'San Francisco Bay Area | Internet',
         thumbnail: {
-            url: '//i.imgsafe.org/587dcc9.jpg',
+            url: '//i.imgsafe.org/dc4bc52.jpg',
             width: 75,
             height: 75
         },
