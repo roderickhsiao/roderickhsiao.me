@@ -53,7 +53,7 @@ class Experience extends Component {
                                 </div>
                             ) : (
                                 <div
-                                    className='M(-1px) Bgz(ct) W(150px) H(150px) H(100px)--xs W(100px)--xs D(ib) Bgr(nr) Fl(start) Bgc(#400090)'
+                                    className='M(-1px) Bgz(ct) W(150px) H(150px) H(100px)!--xs W(100px)!--xs D(ib) Bgr(nr) Fl(start) Bgc(#400090)'
                                     style={{
                                         backgroundImage: `url(${thumbnail.url})`
                                     }}
@@ -62,17 +62,17 @@ class Experience extends Component {
                         }
                         <div className={
                                 classNames(
-                                    'P(10px) C($c-black-1) P(6px)--xs', {
-                                    'Va(t) Mstart(160px) Mstart(100px)--xs Bxz(bb)': !isLargeTemplate
+                                    'P(10px) C($c-black-1) P(6px)!--xs', {
+                                    'Va(t) Mstart(160px) Mstart(100px)!--xs Bxz(bb)': !isLargeTemplate
                                 })
                             }
                         >
-                            <div className='Fz(1.4em) Fz(1.2em)--xs My(10px) My(2px)--xs'>
+                            <div className='Fz(1.4em) Fz(1.2em)!--xs My(10px) My(2px)!--xs'>
                                 {
                                     smartlink.title
                                 }
                             </div>
-                            <div className='C($c-black-2) My(10px) My(2px)--xs LineClamp(3,84px)'>
+                            <div className='C($c-black-2) My(10px) My(2px)!--xs LineClamp(3,84px)'>
                                 {
                                     smartlink.description
                                 }
@@ -92,7 +92,7 @@ class Experience extends Component {
         let nodes = map(projects, (project, i) => {
             let {smartlink} = project;
             return (
-                <li className='Pstart(20px) Pstart(10px)--xs Py(10px) Mb(20px) Mb(10px)--xs BdStart Bdstartc($c-black-4)' key={i}>
+                <li className='Pstart(20px) Pstart(10px)!--xs Py(10px) Mb(20px) Mb(10px)!--xs BdStart Bdstartc($c-black-4)' key={i}>
                     <div className='Fz(1.2em) Mb(6px)'>
                         {project.name}
                     </div>
