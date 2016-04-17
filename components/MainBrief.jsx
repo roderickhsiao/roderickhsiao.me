@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
+import Img from './common/Img.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
 import {connectToStores} from 'fluxible-addons-react';
@@ -37,7 +38,7 @@ class MainBrief extends Component {
             return null;
         }
         return (
-            <img
+            <Img
                 src={url}
                 width={width}
                 height={height}
