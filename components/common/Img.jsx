@@ -18,7 +18,7 @@ import shallowCompare from 'react-addons-shallow-compare';
 class Img extends Component {
     constructor (props, context) {
         super(props, context);
-
+        this.image = null;
         this.loadImage = this.loadImage.bind(this);
         this.handleOnLoad = this.handleOnLoad.bind(this);
         this.handleOnError = this.handleOnError.bind(this);
@@ -39,11 +39,11 @@ class Img extends Component {
     }
 
     loadImage () {
-        let image = new Image();
+        this.image = new Image();
 
-        image.onload = this.handleOnLoad;
-        image.onerror = this.handleOnError;
-        image.src = this.props.src;
+        this.image.onload = this.handleOnLoad;
+        this.image.onerror = this.handleOnError;
+        this.image.src = this.props.src;
     }
 
     handleOnLoad () {
@@ -75,7 +75,7 @@ class Img extends Component {
         if (isImage) {
             props.src = this.state.status ? this.props.src : DUMMY_IMAGE_SRC;
         }
-        if (this.state.status === IMAGE_STATUS_LOADING) {
+        if (!this.image && this.state.status === IMAGE_STATUS_LOADING) {
             this.loadImage();
         }
         return (
