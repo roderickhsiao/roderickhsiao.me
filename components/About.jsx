@@ -69,7 +69,7 @@ class About extends Component {
                         <li className='My(6px)'>
                         PageSpeed Test Score:
                             <a
-                                className='Mstart(4px) D(ib)'
+                                className='Mstart(6px) P(6px) D(ib)'
                                 target='_blank'
                                 href='https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Froderick-1268.appspot.com%2F&tab=mobile'
                             >
@@ -79,7 +79,7 @@ class About extends Component {
                         <li className='My(6px)' >
                         Web Page Test:
                             <a
-                                className='Mstart(4px) D(ib)'
+                                className='Mstart(4px) P(6px) D(ib)'
                                 target='_blank'
                                 href='http://www.webpagetest.org/result/160416_WD_122G/'
                             >
@@ -89,7 +89,7 @@ class About extends Component {
                         <li className='My(6px)'>
                             Optimize mobile device by implementing
                             <a
-                                className='Mstart(4px) D(ib)'
+                                className='Mstart(4px) P(6px) D(ib)'
                                 target='_blank'
                                 href='https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=en'
                             >

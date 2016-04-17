@@ -4,24 +4,40 @@ module.exports = createStore({
     storeName: 'StaticContentStore',
     handlers: {
         'RECEIVE_ABOUT_SUCCESS': '_receiveAbout',
+        'RECEIVE_ACTIVITY_SUCCESS': '_receiveActivity',
         'RECEIVE_CONTACT_SUCCESS': '_receiveContact',
+        'RECEIVE_COUNTRY_SUCCESS': '_receiveCountry',
         'RECEIVE_EDUCATION_SUCCESS': '_receiveEducation',
         'RECEIVE_EXPERIENCE_SUCCESS': '_receiveExperience',
+        'RECEIVE_INTEREST_SUCCESS': '_receiveInterest',
         'RECEIVE_MENU_SUCCESS': '_receiveMenu',
         'RECEIVE_SUMMARY_SUCCESS': '_receiveSummary'
     },
-    
+
     initialize: function () {
         this.about = [];
+        this.activity = [];
         this.contact = [];
+        this.country = {};
         this.education = [];
         this.experience = {};
+        this.interest = [];
         this.menu = {};
         this.summary = {};
     },
 
     _receiveAbout: function (payload) {
         this.about = payload;
+        this.emitChange();
+    },
+
+    _receiveActivity: function (payload) {
+        this.activity = payload;
+        this.emitChange();
+    },
+
+    _receiveCountry: function (payload) {
+        this.country = payload;
         this.emitChange();
     },
 
@@ -37,6 +53,11 @@ module.exports = createStore({
 
     _receiveExperience: function (payload) {
         this.experience = payload;
+        this.emitChange();
+    },
+
+    _receiveInterest: function (payload) {
+        this.interest = payload;
         this.emitChange();
     },
 
@@ -57,18 +78,24 @@ module.exports = createStore({
     dehydrate: function () {
         return {
             about: this.about,
+            activity: this.activity,
             contact: this.contact,
+            country: this.country,
             education: this.education,
             experience: this.experience,
+            interest: this.interest,
             menu: this.menu,
             summary: this.summary
         };
     },
     rehydrate: function (state) {
         this.about = state.about;
+        this.activity = state.activity;
         this.contact = state.contact;
+        this.country = state.country;
         this.education = state.education;
         this.experience = state.experience;
+        this.interest = state.interest;
         this.menu = state.menu;
         this.summary = state.summary;
     }

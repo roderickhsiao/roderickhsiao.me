@@ -104,7 +104,7 @@ module.exports = {
                     smartlink: {
                         type: 'large',
                         thumbnail: {
-                            url: '//i.imgsafe.org/989a6c6.jpg',
+                            url: '//i.imgsafe.org/18f026e.jpg',
                             width: 444,
                             height: 355
                         },
