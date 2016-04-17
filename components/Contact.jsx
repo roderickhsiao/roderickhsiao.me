@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
 import EmailIcon from 'react-material-icons/icons/communication/email';
+import Img from './common/Img.jsx';
 import SocialPersonOutline from 'react-material-icons/icons/social/person-outline';
 import StaticContentStore from '../stores/StaticContentStore';
 
@@ -46,7 +47,7 @@ class Contact extends Component {
             if (icon.indexOf('//') > -1) {
                 // URL
                 Icon = (
-                    <img className='W(30px) H(30px) Mend(10px) Bd(n) Va(m)' src={icon} />
+                    <Img className='W(30px) H(30px) Mend(10px) Bd(n) Va(m)' src={icon} />
                 );
             } else {
                 // material design icon

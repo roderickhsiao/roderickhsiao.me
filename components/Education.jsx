@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
+import Img from './common/Img.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
 import {connectToStores} from 'fluxible-addons-react';
@@ -65,9 +66,11 @@ class Education extends Component {
                     </div>
                     {
                         thumbnail.url ? (
-                            <div
+                            <Img
+                                nodeName='div'
+                                src={thumbnail.url}
                                 className='Bgz(ct) Bgr(nr) Fl(end) W(100px) D(n)--xs'
-                                style={{backgroundImage: `url(${thumbnail.url})`, height: height}}
+                                style={{height: height}}
                             />
                         ): null
                     }
