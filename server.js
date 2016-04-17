@@ -12,10 +12,11 @@ import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import csrf from 'csurf';
 import express from 'express';
-import fs from 'fs';
 import favicon from 'serve-favicon';
 import fetchAllStaticData from './actions/fetchAllStaticData';
+import fs from 'fs';
 import layout from './configs/layout';
+import robots from 'robots.txt';
 import serialize from 'serialize-javascript';
 
 import HtmlComponent from './components/Html';
@@ -30,6 +31,7 @@ const ONE_YEAR = 31556952000;
 
 server.set('state namespace', 'App');
 server.use('/public', express['static'](__dirname + '/build', {maxAge: ONE_YEAR}));
+server.use(robots(__dirname + '/robots.txt'));
 server.use(favicon(__dirname + '/build/images/favicon.ico'));
 server.use(bodyParser.json());
 server.use(compression());
