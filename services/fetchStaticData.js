@@ -1,9 +1,12 @@
 var DATA_MAPPING = {
     about: require('../data/about'),
+    activity: require('../data/activity'),
     component: require('../configs/components'),
     contact: require('../data/contact'),
+    country: require('../data/country'),
     education: require('../data/education'),
     experience: require('../data/experience'),
+    interest: require('../data/interest'),
     layout: require('../configs/layout'),
     menu: require('../data/menu'),
     summary: require('../data/summary')

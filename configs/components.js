@@ -17,5 +17,11 @@ module.exports = {
     },
     Education: {
         path: 'Education'
+    },
+    Activity: {
+        path: 'Activity'
+    },
+    Interest: {
+        path: 'Interest'
     }
 };

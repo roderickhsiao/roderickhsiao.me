@@ -32,15 +32,16 @@ module.exports = {
         }
     },
     activity: {
+        prefetch: 'about,contact,country,activity,interest,menu',
         regions: {
             header: [
                 'HeaderComponent'
             ],
             main: [
-                'MainCard',
-                'Experience'
+                'Activity'
             ],
             right: [
+                'Interest',
                 'Contact',
                 'About'
             ]

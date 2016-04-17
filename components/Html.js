@@ -45,7 +45,6 @@ class HtmlComponent extends Component {
                     <noscript>
                         <link rel='stylesheet' href={this.getHashAssets('/public/css/theme.css')} />
                     </noscript>
-                    <script src={this.getHashAssets('/public/js/client.js')} defer async />
                 </head>
                 <body className='Bgc($c-grey-50)'>
                     <div
@@ -53,6 +52,7 @@ class HtmlComponent extends Component {
                         dangerouslySetInnerHTML={{__html: markup}}
                     />
                     <script dangerouslySetInnerHTML={{__html: state}} />
+                    <script src={this.getHashAssets('/public/js/client.js')} defer async />
                 </body>
             </html>
         );
