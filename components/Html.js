@@ -57,6 +57,7 @@ class HtmlComponent extends Component {
                     />
                     <script dangerouslySetInnerHTML={{__html: state}} />
                     <script src={this.getHashAssets('/public/js/client.js')} defer async />
+                    <script src={this.getHashAssets('/public/js/modernizr.js')} defer async />
                 </body>
             </html>
         );

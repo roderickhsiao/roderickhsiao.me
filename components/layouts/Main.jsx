@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
+import Sticky from 'react-stickynode';
 
 import {get} from 'lodash';
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
@@ -8,7 +10,6 @@ import shallowCompare from 'react-addons-shallow-compare';
 // TODO, this should come from PageStore
 import components from '../../configs/components';
 import layout from  '../../configs/layout';
-import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
 
 function loadComponent (regions, components, context) {
     if (!regions || !regions.length) {
@@ -54,22 +55,24 @@ class Main extends Component {
                             loadComponent(regions.header, components, context)
                         }
                     </header>
-                    <ReactCSSTransitionGroup transitionName='page' transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionAppear={true} transitionAppearTimeout={500}>
+                    <ReactCSSTransitionGroup transitionName='page' transitionEnterTimeout={300} transitionLeaveTimeout={300}>
                         <section className='main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(10px)--xs' key={route.name}>
                             <section className='layout-lead-section'>
                                 {
                                     loadComponent(regions.lead, components, context)
                                 }
                             </section>
-                            <section className='layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs Pend(0)--xs D(ib)'>
+                            <section id='main' className='layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs Pend(0)--xs D(ib)'>
                                 {
                                     loadComponent(regions.main, components, context)
                                 }
                             </section>
                             <section className='layout-right-rail W(40%) Bxz(bb) W(100%)--xs D(ib) Va(t)'>
-                                {
-                                    loadComponent(regions.right, components, context)
-                                }
+                                <Sticky top='#fix-header' bottomBoundary='#main'>
+                                    {
+                                        loadComponent(regions.right, components, context)
+                                    }
+                                </Sticky>
                             </section>
                         </section>
                     </ReactCSSTransitionGroup>

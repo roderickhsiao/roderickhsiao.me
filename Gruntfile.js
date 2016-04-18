@@ -250,6 +250,20 @@ module.exports = function (grunt) {
                 src: '<%= project.build %>/css/*.css',
                 dest: '<%= project.build %>/css/'
             }
+        },
+        modernizr: {
+            dist: {
+                dest: '<%= project.build %>/js/modernizr.js',
+                tests: [
+                    'csstransforms3d'
+                ],
+                options: [
+                    'prefixed',
+                    'setClasses'
+                ],
+                uglify: true,
+                crawl: false
+            }
         }
     };
 
@@ -262,13 +276,15 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-hash');
+    grunt.loadNpmTasks('grunt-modernizr');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-penthouse');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-webpack');
 
-    grunt.registerTask('default', ['clean', 'css', 'hash', 'concurrent:dev']);
-    grunt.registerTask('build', ['clean', 'css', 'hash:css', 'webpack:prod', 'hash:js']);
+
+    grunt.registerTask('default', ['clean', 'css', 'modernizr:dist', 'hash', 'concurrent:dev']);
+    grunt.registerTask('build', ['clean', 'modernizr:dist', 'css', 'hash:css', 'webpack:prod', 'hash:js']);
     grunt.registerTask('css', ['atomizer:app', 'copy', 'cssmin', 'postcss:app']);
     // need to run after server up
     grunt.registerTask('penthouse-tasks', ['concat', 'penthouse', 'cssmin:critial']);
