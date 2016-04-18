@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import {get} from 'lodash';
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
@@ -53,24 +54,25 @@ class Main extends Component {
                             loadComponent(regions.header, components, context)
                         }
                     </header>
-                    <section className='main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(10px)--xs'>
-                        <section className='layout-lead-section'>
-                            {
-                                loadComponent(regions.lead, components, context)
-                            }
+                    <ReactCSSTransitionGroup transitionName='page' transitionEnterTimeout={500} transitionLeaveTimeout={500} transitionAppear={true} transitionAppearTimeout={500}>
+                        <section className='main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(10px)--xs' key={route.name}>
+                            <section className='layout-lead-section'>
+                                {
+                                    loadComponent(regions.lead, components, context)
+                                }
+                            </section>
+                            <section className='layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs Pend(0)--xs D(ib)'>
+                                {
+                                    loadComponent(regions.main, components, context)
+                                }
+                            </section>
+                            <section className='layout-right-rail W(40%) Bxz(bb) W(100%)--xs D(ib) Va(t)'>
+                                {
+                                    loadComponent(regions.right, components, context)
+                                }
+                            </section>
                         </section>
-                        <section className='layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs Pend(0)--xs D(ib)'>
-                            {
-                                loadComponent(regions.main, components, context)
-                            }
-                        </section>
-                        <section className='layout-right-rail W(40%) Bxz(bb) W(100%)--xs D(ib) Va(t)'>
-                            {
-                                loadComponent(regions.right, components, context)
-                            }
-                        </section>
-                    </section>
-
+                    </ReactCSSTransitionGroup>
                     <footer>
                         {footer}
                     </footer>

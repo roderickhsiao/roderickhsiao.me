@@ -1,0 +1,23 @@
+.page-enter, .page-appear {
+    opacity: 0.01;
+    transform: translate3d(0, 5%, 0) scale(.9);
+    transition: all .3s ease-in-out;
+    transform-origin: top;
+}
+
+.page-enter.page-enter-active, .page-appear.page-appear-active {
+    opacity: 1;
+    transform: none;
+}
+
+.page-leave {
+    opacity: 1;
+    transform: none;
+    transition: all .3s ease-in-out;
+    transform-origin: top;
+}
+
+.page-leave.page-leave-active {
+    opacity: 0.01;
+    transform: translate3d(0, 5%, 0) scale(.9);
+}

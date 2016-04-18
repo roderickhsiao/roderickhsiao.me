@@ -113,7 +113,7 @@ module.exports = function (grunt) {
                 cwd: '<%= project.assets %>'
             }
         },
-        // concat all css for penthpuse
+        // concat all css for penthhouse
         concat: {
             css: {
                 src: [
@@ -141,6 +141,9 @@ module.exports = function (grunt) {
                 }, {
                     src: ['<%= project.build %>/css/atomic.css'],
                     dest: '<%= project.build %>/css/atomic.css'
+                },{
+                    src: ['<%= project.build %>/css/transition.css'],
+                    dest: '<%= project.build %>/css/transition.css'
                 }]
             },
             critial: {
@@ -176,6 +179,12 @@ module.exports = function (grunt) {
                 },{
                     src: ['<%= project.build %>/css/theme.css'],
                     dest: '<%= project.build %>/css/theme.css'
+                },{
+                    src: ['<%= project.build %>/css/critial.css'],
+                    dest: '<%= project.build %>/css/critial.css'
+                },{
+                    src: ['<%= project.build %>/css/transition.css'],
+                    dest: '<%= project.build %>/css/transition.css'
                 }]
             }
         },
