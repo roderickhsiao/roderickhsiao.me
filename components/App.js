@@ -21,13 +21,15 @@ class App extends Component {
     }
 
     scrollHandler (e, payload) {
-        if (payload.scroll.top > 0) {
+        let {top} = payload.scroll;
+        if (top > 0) {
             this.DOC.classList.add('hasScrolled');
-        } else {
+        }
+        if (top === 0) {
             this.DOC.classList.remove('hasScrolled');
         }
 
-        if (payload.scroll.top > 154) {
+        if (top >= 154) {
             this.DOC.classList.add('uhHide');
         } else {
             this.DOC.classList.remove('uhHide');
@@ -38,7 +40,7 @@ class App extends Component {
     componentDidMount () {
         this.DOC = document.documentElement;
         this.subscription = [
-            subscribe('scroll', this.scrollHandler, {enableScrollInfo: true})
+            subscribe('scroll', this.scrollHandler, {enableScrollInfo: true, useRAF: true})
         ];
     }
 
