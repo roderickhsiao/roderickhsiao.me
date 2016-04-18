@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/server';
 import Debug from 'debug';
 
 import {createElementWithContext as createElement} from 'fluxible-addons-react';
-import {get} from 'lodash';
+import {get, map} from 'lodash';
 import {navigateAction} from 'fluxible-router';
 import app from './app';
 import bodyParser from 'body-parser';
@@ -17,7 +17,9 @@ import fetchAllStaticData from './actions/fetchAllStaticData';
 import fs from 'fs';
 import layout from './configs/layout';
 import robots from 'robots.txt';
+import routes from './configs/routes';
 import serialize from 'serialize-javascript';
+import sitemap from 'sitemap';
 
 import HtmlComponent from './components/Html';
 import UAParser from 'ua-parser-js';
@@ -39,11 +41,31 @@ server.use(cookieParser());
 server.use(csrf({cookie: true}));
 
 // Get access to the fetchr plugin instance
-var fetchrPlugin = app.getPlugin('FetchrPlugin');
+let fetchrPlugin = app.getPlugin('FetchrPlugin');
 fetchrPlugin.registerService(require('./services/fetchStaticData'));
 
 // Set up the fetchr middleware
 server.use(fetchrPlugin.getXhrPath(), fetchrPlugin.getMiddleware());
+
+// sitemap
+let routeConfig = map(routes, (route) => {
+    return { url: route.path };
+});
+let sm = sitemap.createSitemap({
+    hostname: 'http://roderickhsiao.me',
+    cacheTime: 600000,
+    urls: routeConfig
+});
+
+server.get('/sitemap.xml', (req, res) => {
+    sm.toXML((err, xml) => {
+        if (err) {
+            return res.status(500).end();
+        }
+        res.header('Content-Type', 'application/xml');
+        res.send(xml);
+    });
+});
 
 function renderPage(req, res, context) {
     debug('Exposing context state');

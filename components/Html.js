@@ -3,6 +3,7 @@ import React, {Component, PropTypes} from 'react';
 import assetsMapping from '../build/assets.json';
 
 const pathPrefix = '/public/';
+const inlineJSDetect = '(function(html){var c = html.className;c += " JsEnabled";c = c.replace("NoJs","");html.className = c;})(document.documentElement)';
 
 class HtmlComponent extends Component {
     getHashAssets (assetsPath) {
@@ -13,7 +14,7 @@ class HtmlComponent extends Component {
     render () {
         let {markup, state, inlineScript, inlineStyle} = this.props;
         return (
-            <html id='atomic'>
+            <html lang='en' id='atomic' className='NoJs'>
                 <head>
                     <meta charSet='utf-8' />
                     <meta name='viewport' content='width=device-width,minimum-scale=1,initial-scale=1' />
@@ -49,6 +50,7 @@ class HtmlComponent extends Component {
                     <noscript>
                         <link rel='stylesheet' href={this.getHashAssets('/public/css/transition.css')} />
                     </noscript>
+                    <script dangerouslySetInnerHTML={{__html: inlineJSDetect}} />
                 </head>
                 <body className='Bgc($c-grey-50)'>
                     <div
