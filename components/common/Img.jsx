@@ -60,12 +60,13 @@ class Img extends Component {
         let props = {
             className: classNames({
                 'Op(0)': this.state.status === IMAGE_STATUS_INIT,
-                'Op(100%)': this.state.status === IMAGE_STATUS_LOADING,
-                'Op(100%)': this.state.status === IMAGE_STATUS_LOADED,
+                'JsEnabled_Op(1)!': this.state.status === IMAGE_STATUS_LOADING,
+                'JsEnabled_Op(1)!': this.state.status === IMAGE_STATUS_LOADED,
                 // background image
-                'Bgi(n)!': this.state.status === IMAGE_STATUS_INIT,
-                'Bgi(n)!': isImage
-            }, 'Trsdu(.3s)', this.props.className),
+                'JsEnabled_Bg(n)!': this.state.status === IMAGE_STATUS_INIT,
+                'JsEnabled_Bg(n)! JsEnabled_Op(0)': isImage,
+                'NoJs_Bgz(cv) NoJs_Op(1)': this.state.status === IMAGE_STATUS_INIT
+            }, 'JsEnabled_Trsdu(.3s)', this.props.className),
             width: this.props.width,
             height: this.props.height,
             style: Object.assign({

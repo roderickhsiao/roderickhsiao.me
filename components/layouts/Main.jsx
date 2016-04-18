@@ -55,7 +55,7 @@ class Main extends Component {
                             loadComponent(regions.header, components, context)
                         }
                     </header>
-                    <ReactCSSTransitionGroup transitionName='page' transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+                    <ReactCSSTransitionGroup transitionName='page' transitionEnterTimeout={500} transitionLeaveTimeout={300}>
                         <section className='main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(10px)--xs' key={route.name}>
                             <section className='layout-lead-section'>
                                 {

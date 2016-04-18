@@ -44,6 +44,7 @@ class MainBrief extends Component {
                 height={height}
                 className='Bdrs(100%) Mend(10px)'
                 alt={name}
+                itemProp='image'
             />
         );
     }
@@ -55,9 +56,8 @@ class MainBrief extends Component {
         }
 
         let node = map(list, (item, i) => {
-            let {className} = item.props || {};
             return (
-                <li className={className} key={i}>
+                <li {...item.props} key={i}>
                     {
                         data[item.field]
                     }
@@ -96,7 +96,7 @@ class MainBrief extends Component {
             return null;
         }
         return (
-            <Card>
+            <Card itemScope itemType='http://schema.org/Person'>
                 <div className='D(ib) Va(t)'>
                     {
                         this.renderThumbnail(profile.thumbnail, profile.name)
