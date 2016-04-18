@@ -46,6 +46,7 @@
         "json-loader": "^0.5.4",
         "lodash": "^4.0.0",
         "material-ui": "^0.14.4",
+        "react-addons-css-transition-group": "^0.14.4",
         "react-addons-shallow-compare": "^0.14.4",
         "react-dom": "^0.14.0",
         "react-material-icons": "^1.0.0",

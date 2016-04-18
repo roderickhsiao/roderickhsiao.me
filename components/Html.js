@@ -29,6 +29,7 @@ class HtmlComponent extends Component {
                     <link rel='preload' href={this.getHashAssets('/public/css/normalize.css')} data-as='style' onLoad='this.rel="stylesheet"' />
                     <link rel='preload' href={this.getHashAssets('/public/css/atomic.css')} data-as='style' onLoad='this.rel="stylesheet"' />
                     <link rel='preload' href={this.getHashAssets('/public/css/theme.css')} data-as='style' onLoad='this.rel="stylesheet"' />
+                    <link rel='preload' href={this.getHashAssets('/public/css/transition.css')} data-as='style' onLoad='this.rel="stylesheet"' />
 
                     <style dangerouslySetInnerHTML={{__html: inlineStyle}}/>
                     <script dangerouslySetInnerHTML={{__html: inlineScript}} />
@@ -44,6 +45,9 @@ class HtmlComponent extends Component {
                     </noscript>
                     <noscript>
                         <link rel='stylesheet' href={this.getHashAssets('/public/css/theme.css')} />
+                    </noscript>
+                    <noscript>
+                        <link rel='stylesheet' href={this.getHashAssets('/public/css/transition.css')} />
                     </noscript>
                 </head>
                 <body className='Bgc($c-grey-50)'>
