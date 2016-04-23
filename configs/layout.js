@@ -38,7 +38,8 @@ module.exports = {
                 'HeaderComponent'
             ],
             main: [
-                'Activity'
+                'Activity',
+                'Country'
             ],
             right: [
                 'Interest',

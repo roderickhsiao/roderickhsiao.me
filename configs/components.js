@@ -1,7 +1,9 @@
 module.exports = {
     HeaderComponent: {
-        path: 'common/HeaderComponent',
-        props: {}
+        path: 'common/HeaderComponent'
+    },
+    Country: {
+        path: 'Country'
     },
     MainCard: {
         path: 'MainBrief'
