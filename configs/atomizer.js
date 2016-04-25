@@ -18,6 +18,7 @@ module.exports = {
         '$header-box-shadow': '0 2px 5px rgba(0,0,0,0.26)',
         '$top-header-height': '54px',
         // material design shadow //github.com/google/material-design-lite/blob/master/src/_mixins.scss#L226
+        "$shadow-card": '0 1px 4px 0 rgba(0,0,0,.14)',
         '$shadow-1dp':
             '0 2px 1px -1px rgba(0,0,0,.2),' +
             '0 1px 1px 0 rgba(0,0,0,.14),' +
