@@ -96,7 +96,7 @@ class MainBrief extends Component {
             return null;
         }
         return (
-            <Card itemScope itemType='http://schema.org/Person'>
+            <Card itemScope='' itemType='http://schema.org/Person'>
                 <div className='D(ib) Va(t)'>
                     {
                         this.renderThumbnail(profile.thumbnail, profile.name)
