@@ -23,7 +23,7 @@ class Menu extends Component {
                     <NavLink
                         activeElement='a'
                         href={config.path}
-                        className='Pb(10px) C(#fff.83) C(#fff):h Td(n) Td(n):h D(b) Bdbc(#fff.83) Bdbw(2px) Bdbc(#fff):h Trsdu($trsdu-fast) Bdbs(s)'
+                        className='Pb(10px) C(#fff.83) C(#fff):h Td(n) Td(n):h D(b) Bdbc(#fff.0) Bdbw(2px) Bdbc(#fff):h Trsdu($trsdu-fast) Bdbs(s)'
                         activeClass='C(#fff) Bdbc(#fff)!'
                     >
                         {
