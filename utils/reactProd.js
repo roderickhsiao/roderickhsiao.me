@@ -13,7 +13,8 @@ var reactPath = {
 };
 
 require(reactPath.reactDist);
-require(reactPath.reactDistDom);
-
 require.cache[reactPath.react] = require.cache[reactPath.reactDist];
+
+// react dom reuiqre react
+require(reactPath.reactDistDom);
 require.cache[reactPath.reactDom] = require.cache[reactPath.reactDistDom];

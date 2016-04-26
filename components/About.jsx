@@ -71,7 +71,7 @@ class About extends Component {
                             <a
                                 className='Mstart(6px) P(6px) D(ib)'
                                 target='_blank'
-                                href='https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Froderick-1268.appspot.com%2F&tab=mobile'
+                                href='https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Froderickhsiao.me'
                             >
                                 100 / 100
                             </a>
