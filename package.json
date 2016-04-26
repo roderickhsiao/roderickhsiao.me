@@ -87,7 +87,7 @@
     ],
     "scripts": {
         "build": "grunt build",
-        "deploy": "gcloud preview app deploy --stop-previous-version",
+        "deploy": "gcloud preview app deploy --stop-previous-version --force",
         "dev": "grunt",
         "lint": "eslint .",
         "monitor": "nodemon server",
