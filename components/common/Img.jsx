@@ -64,7 +64,7 @@ class Img extends Component {
                 'JsEnabled_Op(1)!': this.state.status === IMAGE_STATUS_LOADED,
                 // background image
                 'JsEnabled_Bg(n)!': this.state.status === IMAGE_STATUS_INIT,
-                'JsEnabled_Bg(n)! JsEnabled_Op(0)': isImage,
+                'JsEnabled_Bg(n)!': isImage,
                 'NoJs_Bgz(cv) NoJs_Op(1)': this.state.status === IMAGE_STATUS_INIT
             }, 'JsEnabled_Trsdu(.3s)', this.props.className),
             width: this.props.width,

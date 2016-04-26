@@ -1,10 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
 import Sticky from 'react-stickynode';
 
 import {get} from 'lodash';
-import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
 import shallowCompare from 'react-addons-shallow-compare';
 
 // TODO, this should come from PageStore
@@ -44,43 +42,39 @@ class Main extends Component {
         const context = {
             route: route
         };
-        const muiTheme = getMuiTheme({}, {
-            userAgent: ua && ua.ua
-        });
+
         return (
-            <MuiThemeProvider muiTheme={muiTheme}>
-                <section className='main-layout'>
-                    <header className='layout-head Bgc($c-green-500) Mih($top-header-heigh)'>
-                        {
-                            loadComponent(regions.header, components, context)
-                        }
-                    </header>
-                    <ReactCSSTransitionGroup transitionName='page' transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-                        <section className='main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(10px)--xs' key={route.name}>
-                            <section className='layout-lead-section'>
-                                {
-                                    loadComponent(regions.lead, components, context)
-                                }
-                            </section>
-                            <section id='main' className='layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs Pend(0)--xs D(ib)'>
-                                {
-                                    loadComponent(regions.main, components, context)
-                                }
-                            </section>
-                            <section className='layout-right-rail W(40%) Bxz(bb) W(100%)--xs D(ib) Va(t)'>
-                                <Sticky top='#fix-header' bottomBoundary='#main'>
-                                    {
-                                        loadComponent(regions.right, components, context)
-                                    }
-                                </Sticky>
-                            </section>
+            <section className='main-layout'>
+                <header className='layout-head Bgc($c-green-500) Mih($top-header-heigh)'>
+                    {
+                        loadComponent(regions.header, components, context)
+                    }
+                </header>
+                <ReactCSSTransitionGroup transitionName='page' transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+                    <section className='main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(10px)--xs' key={route.name}>
+                        <section className='layout-lead-section'>
+                            {
+                                loadComponent(regions.lead, components, context)
+                            }
                         </section>
-                    </ReactCSSTransitionGroup>
-                    <footer>
-                        {footer}
-                    </footer>
-                </section>
-            </MuiThemeProvider>
+                        <section id='main' className='layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs Pend(0)--xs D(ib)'>
+                            {
+                                loadComponent(regions.main, components, context)
+                            }
+                        </section>
+                        <section className='layout-right-rail W(40%) Bxz(bb) W(100%)--xs D(ib) Va(t)'>
+                            <Sticky top='#fix-header' bottomBoundary='#main'>
+                                {
+                                    loadComponent(regions.right, components, context)
+                                }
+                            </Sticky>
+                        </section>
+                    </section>
+                </ReactCSSTransitionGroup>
+                <footer>
+                    {footer}
+                </footer>
+            </section>
         );
     }
 }

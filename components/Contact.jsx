@@ -1,9 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
-import EmailIcon from 'react-material-icons/icons/communication/email';
-import Img from './common/Img.jsx';
-import SocialPersonOutline from 'react-material-icons/icons/social/person-outline';
 import StaticContentStore from '../stores/StaticContentStore';
 
 import {connectToStores} from 'fluxible-addons-react';
@@ -11,10 +8,6 @@ import {map} from 'lodash';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 import shallowCompare from 'react-addons-shallow-compare';
 
-const ICON_MAP = {
-    email: EmailIcon,
-    'person-outline': SocialPersonOutline
-}
 class Contact extends Component {
     constructor(props, context) {
         super(props, context);
@@ -42,29 +35,9 @@ class Contact extends Component {
         }
         let nodes = map(contact, (contact, i) => {
             let {icon} = contact;
-            let Icon;
-
-            if (icon.indexOf('//') > -1) {
-                // URL
-                Icon = (
-                    <Img className='W(30px) H(30px) Mend(10px) Bd(n) Va(m)' src={icon} />
-                );
-            } else {
-                // material design icon
-                Icon = ICON_MAP[icon]
-                Icon = (
-                    <Icon
-                        className='W(30px) H(30px) Mend(10px) Va(m)'
-                        color='rgba(0,0,0,.54)'
-                        style={{width:30, height:30}}
-                    />
-                );
-            }
-
             return (
-                <li className='My(20px) W(1/3) D(ib) W(1/2)--xs' key={i}>
-                    {Icon}
-                    <a className='Fz(1.1em) C($c-black-2) Va(m)' href={contact.value} target='_blank'>
+                <li className='My(20px) W(1/4) D(ib) W(1/3)--xs' key={i}>
+                    <a className='Fz(1.1em) Va(m)' href={contact.value} target='_blank'>
                         {
                             contact.name
                         }
