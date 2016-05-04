@@ -84,6 +84,7 @@ class Img extends Component {
         );
     }
 }
+Img.displayName = 'Img';
 
 Img.propTypes = {
     className: PropTypes.string,

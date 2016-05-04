@@ -67,6 +67,7 @@ class HtmlComponent extends Component {
         );
     }
 }
+HtmlComponent.displayName = 'HtmlComponent';
 
 HtmlComponent.propTypes = {
     context: PropTypes.object.isRequired,

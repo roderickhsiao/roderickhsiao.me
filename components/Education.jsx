@@ -101,6 +101,7 @@ class Education extends Component {
         );
     }
 }
+Education.displayName = 'Education';
 
 Education.contextTypes = {
     executeAction: PropTypes.func,

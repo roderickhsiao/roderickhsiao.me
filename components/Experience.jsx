@@ -142,6 +142,7 @@ class Experience extends Component {
         );
     }
 }
+Experience.displayName = 'Experience';
 
 Experience.contextTypes = {
     executeAction: PropTypes.func,

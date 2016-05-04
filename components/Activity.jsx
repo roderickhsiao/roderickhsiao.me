@@ -76,6 +76,7 @@ class Activity extends Component {
         );
     }
 }
+Activity.displayName = 'Activity';
 
 Activity.contextTypes = {
     executeAction: PropTypes.func,

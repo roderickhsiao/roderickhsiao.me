@@ -69,6 +69,7 @@ class Country extends Component {
         );
     }
 }
+Country.displayName = 'Country';
 
 Country.contextTypes = {
     executeAction: PropTypes.func,

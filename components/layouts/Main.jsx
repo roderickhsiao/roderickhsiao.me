@@ -78,5 +78,6 @@ class Main extends Component {
         );
     }
 }
+Main.displayName = 'Main';
 
 export default Main;

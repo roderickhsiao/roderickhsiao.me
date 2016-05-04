@@ -137,5 +137,6 @@ function detectViewport (ComponentToRender) {
         }
     }
 }
+detectViewport.displayName = 'detectViewport';
 
 export default detectViewport;

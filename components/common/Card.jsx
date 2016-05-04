@@ -17,4 +17,6 @@ class Card extends Component {
     }
 }
 
+Card.displayName = 'Card';
+
 export default Card;

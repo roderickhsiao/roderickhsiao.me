@@ -107,6 +107,7 @@ class About extends Component {
         );
     }
 }
+About.displayName = 'About';
 
 About.contextTypes = {
     executeAction: PropTypes.func,

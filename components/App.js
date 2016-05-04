@@ -61,6 +61,8 @@ class App extends Component {
         );
     }
 }
+App.displayName = 'App';
+
 App.contextTypes = {
     executeAction: PropTypes.func,
     getStore: PropTypes.func,

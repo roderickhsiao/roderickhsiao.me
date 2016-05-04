@@ -75,6 +75,7 @@ class Contact extends Component {
         )
     };
 }
+Contact.displayName = 'Contact';
 
 Contact.contextTypes = {
     executeAction: PropTypes.func,

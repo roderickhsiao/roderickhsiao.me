@@ -57,5 +57,6 @@ class Smartlink extends Component {
         );
     }
 }
+Smartlink.displayName = 'Smartlink';
 
 export default Smartlink;

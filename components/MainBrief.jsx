@@ -116,6 +116,7 @@ class MainBrief extends Component {
         );
     }
 }
+MainBrief.displayName = 'MainBrief';
 
 MainBrief.contextTypes = {
     executeAction: PropTypes.func,

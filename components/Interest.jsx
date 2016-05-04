@@ -82,6 +82,7 @@ class Interest extends Component {
         );
     }
 }
+Interest.displayName = 'Interest';
 
 Interest.contextTypes = {
     executeAction: PropTypes.func,

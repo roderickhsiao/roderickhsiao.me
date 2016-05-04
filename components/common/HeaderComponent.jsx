@@ -69,5 +69,6 @@ class HeaderComponent extends Component {
         );
     }
 }
+HeaderComponent.displayName = 'HeaderComponent';
 
 export default HeaderComponent;
