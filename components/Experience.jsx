@@ -48,7 +48,7 @@ class Experience extends Component {
                     <div className='Fs(i) Mb(6px) Fz(.9em) C($c-black-3)'>
                         {project.time}
                     </div>
-                    <div clasName='Mb(6px)'>
+                    <div className='Mb(6px)'>
                         {project.summary}
                     </div>
                     <div className='C($c-black-3)'>

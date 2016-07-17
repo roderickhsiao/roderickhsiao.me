@@ -1,4 +1,4 @@
-import async from 'async';
+import parallel from 'async/parallel';
 import fetchStaticDataAction from './fetchStaticData';
 
 import {forEach} from 'lodash';
@@ -12,7 +12,7 @@ module.exports = function (context, payload, done) {
                 fetchStaticDataAction,
                 {
                     resource: resource
-                }, 
+                },
                 callback
             );
         });
@@ -20,7 +20,7 @@ module.exports = function (context, payload, done) {
     if (!functions || !functions.length) {
         return done && done();
     }
-    async.parallel(functions, () => {
+    parallel(functions, () => {
         done && done();
     });
 };

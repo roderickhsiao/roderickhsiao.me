@@ -1,7 +1,7 @@
 {
     "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
     "dependencies": {
-        "async": "^1.0.0",
+        "async": "^2.0.0",
         "autoprefixer": "^6.0.0",
         "babel-core": "^6.6.4",
         "babel-eslint": "^6.0.0",
