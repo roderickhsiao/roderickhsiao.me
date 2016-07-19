@@ -16,7 +16,7 @@ function loadComponent (regions, components, context) {
 
     let Components = [];
 
-    regions.forEach(function eachComponent (path, idx) {
+    regions.forEach((path, idx) => {
         var file = require('../' + components[path].path).default;
         var Component = file.hasOwnProperty('default') ? file.default : file;
 

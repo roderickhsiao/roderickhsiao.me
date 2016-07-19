@@ -20,7 +20,5 @@ module.exports = function (context, payload, done) {
     if (!functions || !functions.length) {
         return done && done();
     }
-    parallel(functions, () => {
-        done && done();
-    });
+    parallel(functions, done);
 };
