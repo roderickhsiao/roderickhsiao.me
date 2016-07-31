@@ -1,9 +1,16 @@
 module.exports = {
     companies: [
         {
+            name: 'Branch',
+            logo: '//i.imgsafe.org/e39ee18dfb.png',
+            time: 'July 2016 - present',
+            title: 'Software Engineer',
+            location: 'Palo Alto, CA'
+        },
+        {
             name: 'Yahoo',
             logo: '//i.imgsafe.org/ed2072e.png',
-            time: 'Nov 2009 - present',
+            time: 'Nov 2009 - July 2016',
             title: 'Senior Software Engineer',
             location: 'Sunnyvale, CA',
             projects: [
