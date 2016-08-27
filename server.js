@@ -39,6 +39,7 @@ server.use(bodyParser.json());
 server.use(compression());
 server.use(cookieParser());
 server.use(csrf({cookie: true}));
+server.use(helmet());
 
 // Get access to the fetchr plugin instance
 let fetchrPlugin = app.getPlugin('FetchrPlugin');
