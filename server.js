@@ -15,6 +15,7 @@ import express from 'express';
 import favicon from 'serve-favicon';
 import fetchAllStaticData from './actions/fetchAllStaticData';
 import fs from 'fs';
+import helmet from 'helmet';
 import layout from './configs/layout';
 import robots from 'robots.txt';
 import routes from './configs/routes';
