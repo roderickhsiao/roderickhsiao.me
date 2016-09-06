@@ -45,7 +45,7 @@ class Main extends Component {
 
         return (
             <section className='main-layout'>
-                <header className='layout-head Bgc($c-green-500) Mih($top-header-heigh)'>
+                <header className='layout-head Bgc($c-green-500) Mih($top-header-height)'>
                     {
                         loadComponent(regions.header, components, context)
                     }
