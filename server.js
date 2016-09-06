@@ -32,16 +32,15 @@ const inlineStyle = fs.readFileSync('./build/css/critial.css', 'utf-8');
 
 const ONE_YEAR = 31556952000;
 
-server.use(compression());
-server.use(csrf({cookie: true}));
-server.use(bodyParser.json());
-server.use(cookieParser());
-server.use(helmet());
-
 server.set('state namespace', 'App');
 server.use('/public', express['static'](__dirname + '/build', {maxAge: ONE_YEAR}));
 server.use(robots(__dirname + '/robots.txt'));
 server.use(favicon(__dirname + '/build/images/favicon.ico'));
+server.use(bodyParser.json());
+server.use(compression());
+server.use(cookieParser());
+server.use(csrf({cookie: true}));
+server.use(helmet());
 
 // Get access to the fetchr plugin instance
 let fetchrPlugin = app.getPlugin('FetchrPlugin');

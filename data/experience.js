@@ -2,7 +2,7 @@ module.exports = {
     companies: [
         {
             name: 'Branch',
-            logo: '//i.imgsafe.org/e39ee18dfb.png',
+            logo: '//s12.postimg.io/rs31f1n6l/logo_black_1.png',
             time: 'July 2016 - present',
             title: 'Software Engineer',
             location: 'Palo Alto, CA'
