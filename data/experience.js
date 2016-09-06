@@ -73,7 +73,7 @@ module.exports = {
         },
         {
             name: 'Yahoo',
-            logo: '//i.imgsafe.org/ed2072e.png',
+            logo: '//s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
             time: 'April 2013 - Oct 2013',
             title: 'Engineering Team Lead',
             location: 'Taipei, Taiwan',
@@ -98,7 +98,7 @@ module.exports = {
         },
         {
             name: 'Yahoo',
-            logo: '//i.imgsafe.org/ed2072e.png',
+            logo: '//s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
             time: 'Nov 2009 - April 2013',
             title: 'Quality Engineering Lead / Software Engineer',
             location: 'Taipei, Taiwan',
