@@ -9,7 +9,7 @@ module.exports = {
         },
         {
             name: 'Yahoo',
-            logo: '//i.imgsafe.org/ed2072e.png',
+            logo: '//s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
             time: 'Nov 2009 - July 2016',
             title: 'Senior Software Engineer',
             location: 'Sunnyvale, CA',
