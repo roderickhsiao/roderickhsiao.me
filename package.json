@@ -31,7 +31,7 @@
         "express": "^4.0.0",
         "fluxible-addons-react": "^0.2.0",
         "fluxible-plugin-fetchr": "^0.3.3",
-        "fluxible-router": "^1.0.0",
+        "fluxible-router": "^1.0.0 || ^1.0.0-alpha.5",
         "fluxible": "^1.0.0",
         "fumble": "^0.1.0",
         "grunt-atomizer": "^3.0.0",
