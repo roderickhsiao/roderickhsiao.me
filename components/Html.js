@@ -28,10 +28,10 @@ class HtmlComponent extends Component {
                     <meta property='og:type' content='website' />
                     <meta property='og:image' content='//c2.staticflickr.com/2/1585/25832501265_89b28a6aa5_b.jpg' />
 
-                    <link rel='preload' href={this.getHashAssets('/public/css/normalize.css')} data-as='style' onLoad='this.rel="stylesheet"' />
-                    <link rel='preload' href={this.getHashAssets('/public/css/atomic.css')} data-as='style' onLoad='this.rel="stylesheet"' />
-                    <link rel='preload' href={this.getHashAssets('/public/css/theme.css')} data-as='style' onLoad='this.rel="stylesheet"' />
-                    <link rel='preload' href={this.getHashAssets('/public/css/transition.css')} data-as='style' onLoad='this.rel="stylesheet"' />
+                    <link rel='preload' href={this.getHashAssets('/public/css/normalize.css')} as='style' onLoad='this.rel="stylesheet"' />
+                    <link rel='preload' href={this.getHashAssets('/public/css/atomic.css')} as='style' onLoad='this.rel="stylesheet"' />
+                    <link rel='preload' href={this.getHashAssets('/public/css/theme.css')} as='style' onLoad='this.rel="stylesheet"' />
+                    <link rel='preload' href={this.getHashAssets('/public/css/transition.css')} as='style' onLoad='this.rel="stylesheet"' />
 
                     <style dangerouslySetInnerHTML={{__html: inlineStyle}}/>
                     <script dangerouslySetInnerHTML={{__html: inlineScript}} />
