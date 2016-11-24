@@ -57,7 +57,6 @@
     "react-dom": "^15.0.0",
     "react-router": "^2.6.0",
     "react-stickynode": "^1.0.0",
-    "react-tap-event-plugin": "^1.0.0",
     "resolve": "^1.0.0",
     "robots.txt": "^1.0.0",
     "serialize-javascript": "^1.0.0",

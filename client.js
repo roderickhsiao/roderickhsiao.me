@@ -9,7 +9,6 @@ import RouteStore from './stores/RouteStore';
 import {createElementWithContext as createElement} from 'fluxible-addons-react';
 import {navigateAction} from 'fluxible-router';
 import app from './app';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
 const debug = Debug('roderickhsiao.me');
 const WIN = window;
@@ -29,6 +28,5 @@ app.rehydrate(dehydratedState, (err, context) => {
 
     render(createElement(context), mountNode, () => {
         debug('React Rendered');
-        injectTapEventPlugin();
     });
 });
