@@ -7,7 +7,7 @@ import {connectToStores} from 'fluxible-addons-react';
 import {map} from 'lodash';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
-class Contact extends Component {
+class Contact extends PureComponent {
     constructor(props, context) {
         super(props, context);
         this.store = context.getStore(StaticContentStore);
@@ -25,7 +25,7 @@ class Contact extends Component {
     componentWillReceiveProps(nextProps) {
         this.setState(nextProps);
     }
-    
+
     renderContact (contact) {
         if (!contact || !contact.length) {
             return null;
