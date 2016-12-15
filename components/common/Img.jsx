@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 
 // From google
 const DUMMY_IMAGE_SRC = '//www.gstatic.com/psa/static/1.gif';
@@ -10,12 +10,11 @@ const IMAGE_STATUS_LOADED = 2;
 import {forEach} from 'lodash';
 import classNames from 'classnames';
 import detectViewport from './Viewport.jsx';
-import shallowCompare from 'react-addons-shallow-compare';
 
 /**
  * An image lazyload component, probably can also be used for other blocking assets like iframe
  */
-class Img extends Component {
+class Img extends PureComponent {
     constructor (props, context) {
         super(props, context);
         this.image = null;
@@ -26,10 +25,6 @@ class Img extends Component {
         this.state = {
             status: this.props.isInViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
         };
-    }
-
-    shouldComponentUpdate (nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
     }
 
     componentWillReceiveProps (newProps) {

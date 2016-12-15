@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 
 import assetsMapping from '../build/assets.json';
 
@@ -6,7 +6,7 @@ const ga = '(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||f
 const inlineJSDetect = '(function(html){var c = html.className;c += " JsEnabled";c = c.replace("NoJs","");html.className = c;})(document.documentElement)';
 const pathPrefix = '/public/';
 
-class HtmlComponent extends Component {
+class HtmlComponent extends PureComponent {
     getHashAssets (assetsPath) {
         let key =  assetsPath.replace(pathPrefix, '');
         let match = assetsMapping[key];

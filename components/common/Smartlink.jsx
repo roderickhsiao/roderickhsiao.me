@@ -1,10 +1,10 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 
 import Img from './Img.jsx';
 
 import classNames from 'classnames';
 
-class Smartlink extends Component {
+class Smartlink extends PureComponent {
     render () {
         let {smartlink} = this.props;
 

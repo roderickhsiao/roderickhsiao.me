@@ -1,9 +1,8 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Sticky from 'react-stickynode';
 
 import {get} from 'lodash';
-import shallowCompare from 'react-addons-shallow-compare';
 
 // TODO, this should come from PageStore
 import components from '../../configs/components';
@@ -30,10 +29,7 @@ function loadComponent (regions, components, context) {
     return Components;
 }
 
-class Main extends Component {
-    shouldComponentUpdate (nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
-    }
+class Main extends PureComponent {
     render () {
         const {header, leftRail, main, rightRail, footer, route, ua} = this.props;
 

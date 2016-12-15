@@ -1,18 +1,11 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 
 import NavLink from 'fluxible-router/lib/NavLink';
 
 import {get, map} from 'lodash';
 import menuConfig from '../../data/menu';
-import shallowCompare from 'react-addons-shallow-compare';
 
-class Menu extends Component {
-    constructor (props) {
-        super(props);
-    }
-    shouldComponentUpdate (nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
-    }
+class Menu extends PureComponent {
     render () {
         let {menuConfig} = this.props;
         let {order} = menuConfig;
@@ -41,10 +34,7 @@ class Menu extends Component {
     }
 }
 
-class HeaderComponent extends Component {
-    shouldComponentUpdate (nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
-    }
+class HeaderComponent extends PureComponent {
     render () {
         let {route} = this.props.context;
         let menuItems = get(menuConfig, [route.name], {});

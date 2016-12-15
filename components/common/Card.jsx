@@ -1,12 +1,6 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 
-import shallowCompare from 'react-addons-shallow-compare';
-
-class Card extends Component {
-    shouldComponentUpdate (nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
-    }
-
+class Card extends PureComponent {
     render () {
         var {title, children, footer} = this.props;
         return (

@@ -1,11 +1,10 @@
 /** global setImmediate **/
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 
 import {forEach} from 'lodash';
 import {get} from 'lodash';
 import {subscribe} from  'subscribe-ui-event';
-import shallowCompare from 'react-addons-shallow-compare';
 
 let DOC_BODY;
 let DOC_EL;
@@ -19,7 +18,7 @@ if (typeof window !== 'undefined') {
     WIN = window;
 }
 function detectViewport (ComponentToRender) {
-    return class extends Component {
+    return class extends PureComponent {
         static defaultProps = {
             boundary: {
                 top: 50,
@@ -36,10 +35,6 @@ function detectViewport (ComponentToRender) {
             this.handleScroll = this.handleScroll.bind(this);
             this.handleScrollStart = this.handleScrollStart.bind(this);
             this.subscribe = this.subscribe.bind(this);
-        }
-
-        shouldComponentUpdate (nextProps, nextState) {
-            return shallowCompare(this, nextProps, nextState);
         }
 
         componentDidMount () {

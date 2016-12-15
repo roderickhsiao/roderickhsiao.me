@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
 import Smartlink from './common/Smartlink.jsx';
@@ -7,10 +7,9 @@ import StaticContentStore from '../stores/StaticContentStore';
 import {connectToStores} from 'fluxible-addons-react';
 import {map} from 'lodash';
 
-import shallowCompare from 'react-addons-shallow-compare';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
-class Activity extends Component {
+class Activity extends PureComponent {
     constructor(props, context) {
         super(props, context);
         this.store = context.getStore(StaticContentStore);
@@ -26,9 +25,6 @@ class Activity extends Component {
     }
     componentWillReceiveProps(nextProps) {
         this.setState(nextProps);
-    }
-    shouldComponentUpdate (nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
     }
     renderActivities (activities) {
         if (!activities || !activities.length) {

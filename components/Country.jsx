@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
@@ -6,10 +6,9 @@ import StaticContentStore from '../stores/StaticContentStore';
 import {connectToStores} from 'fluxible-addons-react';
 import {map} from 'lodash';
 
-import shallowCompare from 'react-addons-shallow-compare';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
-class Country extends Component {
+class Country extends PureComponent {
     constructor(props, context) {
         super(props, context);
         this.store = context.getStore(StaticContentStore);
@@ -27,9 +26,7 @@ class Country extends Component {
     componentWillReceiveProps(nextProps) {
         this.setState(nextProps);
     }
-    shouldComponentUpdate (nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
-    }
+
     renderCountries (countries) {
         var names = Object.keys(countries).sort();
         var nodes = map(names, (country, i) => {

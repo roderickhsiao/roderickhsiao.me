@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
 import Img from './common/Img.jsx';
@@ -8,9 +8,8 @@ import {connectToStores} from 'fluxible-addons-react';
 import {map} from 'lodash';
 import classNames from 'classnames';
 import fetchStaticDataAction from '../actions/fetchStaticData';
-import shallowCompare from 'react-addons-shallow-compare';
 
-class Education extends Component {
+class Education extends PureComponent {
     constructor(props, context) {
         super(props, context);
         this.store = context.getStore(StaticContentStore);
@@ -27,10 +26,6 @@ class Education extends Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState(nextProps);
-    }
-
-    shouldComponentUpdate (nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
     }
 
     renderEducation(data) {

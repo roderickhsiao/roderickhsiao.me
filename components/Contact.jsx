@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 
 import Card from './common/Card.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
@@ -6,7 +6,6 @@ import StaticContentStore from '../stores/StaticContentStore';
 import {connectToStores} from 'fluxible-addons-react';
 import {map} from 'lodash';
 import fetchStaticDataAction from '../actions/fetchStaticData';
-import shallowCompare from 'react-addons-shallow-compare';
 
 class Contact extends Component {
     constructor(props, context) {
@@ -26,9 +25,7 @@ class Contact extends Component {
     componentWillReceiveProps(nextProps) {
         this.setState(nextProps);
     }
-    shouldComponentUpdate (nextProps, nextState) {
-        return shallowCompare(this, nextProps, nextState);
-    }
+    
     renderContact (contact) {
         if (!contact || !contact.length) {
             return null;
