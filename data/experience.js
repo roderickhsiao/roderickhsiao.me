@@ -5,7 +5,26 @@ module.exports = {
             logo: '//s12.postimg.io/rs31f1n6l/logo_black_1.png',
             time: 'July 2016 - present',
             title: 'Software Engineer',
-            location: 'Palo Alto, CA'
+            location: 'Palo Alto, CA',
+            projects: [
+                {
+                    name: 'Branch Dashboard and solutions',
+                    time: 'July 2016 - present',
+                    summary: 'Building frontend infrastructure, Engineering practice and website optimizations.',
+                    techStack: 'NodeJS, React and Redux',
+                    smartlink: {
+                        type: 'large',
+                        thumbnail: {
+                            url: 'https://external.fsnc1-5.fna.fbcdn.net/safe_image.php?d=AQBPe3DzsJu0udiD&w=476&h=249&url=https%3A%2F%2Fbranch.io%2Fimg%2Fopen-graph%2Fog-img.png&cfs=1&upscale=1',
+                            width: 476,
+                            height: 249
+                        },
+                        description: 'Number 1 in deep linking. Integrate robust, durable links into email, SEM, ads and other traditional marketing channels for improved app growth.',
+                        title: 'Branch Metrics - Deep Linking, Attribution and Mobile Marketing',
+                        url: '//branch.io'
+                    }
+                }
+            ]
         },
         {
             name: 'Yahoo',
