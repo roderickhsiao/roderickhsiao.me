@@ -89,7 +89,7 @@ function detectViewport (ComponentToRender) {
         }
 
         handleScroll (e, payload) {
-            let scrollTop = get(payload, ['scroll', top], this.getPageScrollTop());
+            let scrollTop = get(payload, ['scroll', 'top'], this.getPageScrollTop());
             this.checkViewport(scrollTop);
         }
 
