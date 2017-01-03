@@ -16,8 +16,8 @@ module.exports = [
         url: 'https://acss.io/'
     },
     {
-        name: 'Google Cloud',
-        url: 'https://cloud.google.com/'
+        name: 'Heroku',
+        url: 'https://www.heroku.com/'
     },
     {
         name: 'Material Design',
