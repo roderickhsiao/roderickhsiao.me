@@ -7,9 +7,9 @@ import menuConfig from '../../data/menu';
 
 class Menu extends PureComponent {
     render () {
-        let {menuConfig} = this.props;
-        let {order} = menuConfig;
-        let node = map(order, (menu, i) => {
+        const {menuConfig} = this.props;
+        const {order} = menuConfig;
+        const node = map(order, (menu, i) => {
             let config = menuConfig[menu];
             return (
                 <li className='D(ib) Mx(20px) Fz(1.2em) Tt(u)' key={i}>
@@ -36,8 +36,8 @@ class Menu extends PureComponent {
 
 class HeaderComponent extends PureComponent {
     render () {
-        let {route} = this.props.context;
-        let menuItems = get(menuConfig, [route.name], {});
+        const {route} = this.props.context;
+        const menuItems = get(menuConfig, [route.name], {});
         return (
             <div className='Bxz(bb) W(100%) Bgc($c-green-500) C(#fff) Pb(30px) Px(20px) Bxsh($header-box-shadow) Mih($top-header-heigh) Bxsh(n)--xs'>
                 <div className='Fz(56px) Mx(20px) Lh(1.5) D(ib) Mt($top-header-height) Tt(c) Op(1) Trsdu($trsdu-fast) hasScrolled_Op(0)'>

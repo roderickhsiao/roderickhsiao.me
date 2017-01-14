@@ -31,10 +31,6 @@ function detectViewport (ComponentToRender) {
             this.state = {
                 isInViewport: false
             };
-            this.checkViewport = this.checkViewport.bind(this);
-            this.handleScroll = this.handleScroll.bind(this);
-            this.handleScrollStart = this.handleScrollStart.bind(this);
-            this.subscribe = this.subscribe.bind(this);
         }
 
         componentDidMount () {
@@ -47,7 +43,7 @@ function detectViewport (ComponentToRender) {
             return DOC_BODY.scrollTop + DOC_EL.scrollTop;
         }
 
-        getElementBoundingClientRect (e, payload) {
+        getElementBoundingClientRect = (e, payload) => {
             let element = ReactDOM.findDOMNode(this);
             let containerBoundingClientReact;
             let {container} = this.props;
@@ -69,7 +65,7 @@ function detectViewport (ComponentToRender) {
             return this._viewport.boundingClientReact;
         }
 
-        subscribe () {
+        subscribe = () => {
             if (!this._viewport.subscriptions) {
                 let self = this;
                 let options = {
@@ -88,16 +84,16 @@ function detectViewport (ComponentToRender) {
             }
         }
 
-        handleScroll (e, payload) {
+        handleScroll = (e, payload) => {
             let scrollTop = get(payload, ['scroll', 'top'], this.getPageScrollTop());
             this.checkViewport(scrollTop);
         }
 
-        handleScrollStart (e, payload) {
+        handleScrollStart = (e, payload) => {
             this.getElementBoundingClientRect.apply(this, arguments);
         }
 
-        unsubscribe () {
+        unsubscribe = () => {
             if (this._viewport.subscriptions) {
                 forEach(this._viewport.subscriptions, (subscription) => {
                     subscription.unsubscribe();

@@ -6,13 +6,13 @@ import classNames from 'classnames';
 
 class Smartlink extends PureComponent {
     render () {
-        let {smartlink} = this.props;
+        const {smartlink} = this.props;
 
         if (!smartlink) {
             return null;
         }
-        let {thumbnail} = smartlink || {};
-        let ratio = thumbnail.height / thumbnail.width * 100;
+        const {thumbnail} = smartlink || {};
+        const ratio = thumbnail.height / thumbnail.width * 100;
         const isLargeTemplate = smartlink.type === 'large';
         return (
             <a

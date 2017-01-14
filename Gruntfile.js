@@ -6,7 +6,11 @@ function getWebpackConfig (opts) {
 
     var baseConfig = {
         resolve: {
-            extensions: ['', '.js', '.jsx']
+            extensions: ['', '.js', '.jsx'],
+            alias: {
+                'react': 'inferno-compat',
+                'react-dom': 'inferno-compat'
+            }
         },
         entry: entry,
         output: {
@@ -129,7 +133,7 @@ module.exports = function (grunt) {
             app: {
                 options: {
                     report: 'gzip',
-                    compatibility: 'ie7',
+                    compatibility: 'ie8',
                     sourceMap: false
                 },
                 files: [{
@@ -149,7 +153,7 @@ module.exports = function (grunt) {
             critial: {
                 options: {
                     report: 'gzip',
-                    compatibility: 'ie7',
+                    compatibility: 'ie8',
                     sourceMap: false
                 },
                 files: [{

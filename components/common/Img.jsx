@@ -18,10 +18,6 @@ class Img extends PureComponent {
     constructor (props, context) {
         super(props, context);
         this.image = null;
-        this.loadImage = this.loadImage.bind(this);
-        this.handleOnLoad = this.handleOnLoad.bind(this);
-        this.handleOnError = this.handleOnError.bind(this);
-
         this.state = {
             status: this.props.isInViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
         };
@@ -33,7 +29,7 @@ class Img extends PureComponent {
         });
     }
 
-    loadImage () {
+    loadImage = () => {
         this.image = new Image();
 
         this.image.onload = this.handleOnLoad;
@@ -41,16 +37,16 @@ class Img extends PureComponent {
         this.image.src = this.props.src;
     }
 
-    handleOnLoad () {
+    handleOnLoad = () => {
         this.setState({status: IMAGE_STATUS_LOADED});
     }
 
-    handleOnError () {
+    handleOnError = () => {
 
     }
 
     render () {
-        let {nodeName = 'img'} = this.props;
+        const {nodeName = 'img'} = this.props;
         const isImage = nodeName === 'img';
         let props = {
             className: classNames({
