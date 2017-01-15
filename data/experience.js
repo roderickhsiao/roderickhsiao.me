@@ -2,7 +2,7 @@ module.exports = {
     companies: [
         {
             name: 'Branch',
-            logo: 'https://s12.postimg.io/rs31f1n6l/logo_black_1.png',
+            logo: 'https://i.imgsafe.org/b44e2125b7.png',
             time: 'July 2016 - present',
             title: 'Software Engineer',
             location: 'Palo Alto, CA',
@@ -28,7 +28,7 @@ module.exports = {
         },
         {
             name: 'Yahoo',
-            logo: 'https://s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
+            logo: 'https://i.imgsafe.org/b4501a69ca.png',
             time: 'Nov 2009 - July 2016',
             title: 'Senior Software Engineer',
             location: 'Sunnyvale, CA',
@@ -40,7 +40,7 @@ module.exports = {
                     techStack: 'ExpressJS, ReactJS (Fluxible), and Atomic CSS',
                     smartlink: {
                         thumbnail: {
-                            url: 'https://s.yimg.com/dh/ap/default/130909/y_200_a.png',
+                            url: 'https://i.imgsafe.org/b45162ee19.png',
                             width: 200,
                             height: 200
                         },
@@ -92,7 +92,7 @@ module.exports = {
         },
         {
             name: 'Yahoo',
-            logo: 'https://s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
+            logo: 'https://i.imgsafe.org/b4501a69ca.png',
             time: 'April 2013 - Oct 2013',
             title: 'Engineering Team Lead',
             location: 'Taipei, Taiwan',
@@ -104,7 +104,7 @@ module.exports = {
                     techStack: 'ExpressJS, DustJS, CSS, and YUI',
                     smartlink: {
                         thumbnail: {
-                            url: 'https://s.yimg.com/ud/hp/ud/mit/td/hr/1126/appicon_72.png',
+                            url: 'https://i.imgsafe.org/b454f98a9d.png',
                             width: 200,
                             height: 200
                         },
@@ -117,7 +117,7 @@ module.exports = {
         },
         {
             name: 'Yahoo',
-            logo: 'https://s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
+            logo: 'https://i.imgsafe.org/b4501a69ca.png',
             time: 'Nov 2009 - April 2013',
             title: 'Quality Engineering Lead / Software Engineer',
             location: 'Taipei, Taiwan',
