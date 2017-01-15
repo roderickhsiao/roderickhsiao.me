@@ -1,5 +1,15 @@
 /* global App, document, window, location */
-require('offline-plugin/runtime').install();
+(function() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+        .then((registration) => {
+            console.log('Service Worker Registered', registration.scope);
+        })
+        .catch((err) => {
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    }
+})();
 
 import React from 'react';
 import {render} from 'react-dom';

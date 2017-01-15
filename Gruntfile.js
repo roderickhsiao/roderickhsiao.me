@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var OfflinePlugin = require('offline-plugin');
+var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const OptimizeJsPlugin = require('optimize-js-plugin');
 
 function getWebpackConfig (opts) {
@@ -13,8 +13,7 @@ function getWebpackConfig (opts) {
         entry: entry,
         output: {
             path: './build/js',
-            filename: 'client.js',
-            publicPath: '/public/js/'
+            filename: 'client.js'
         },
         module: {
             loaders: [
@@ -41,7 +40,17 @@ function getWebpackConfig (opts) {
             new OptimizeJsPlugin({
                 sourceMap: false
             }),
-            new OfflinePlugin()
+            new SWPrecacheWebpackPlugin({
+                cacheId: 'roderickhsiao',
+                filename: 'sw.js',
+                staticFileGlobs: ['build/**/*.*.{js,html,css,png,jpg,gif}'],
+                stripPrefix: 'build',
+                runtimeCaching: [{
+                    // Use a network first strategy for everything else.
+                    default: 'networkFirst'
+                }],
+                navigateFallback: '/'
+            })
         ]
     };
 
@@ -86,7 +95,7 @@ module.exports = function (grunt) {
             app: './app',
             assets: 'assets',
             build: 'build',
-            public: '/public'
+            public: '/'
         },
         atomizer: {
             app: {

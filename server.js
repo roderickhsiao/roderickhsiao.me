@@ -48,7 +48,10 @@ server.use(csrf({cookie: true}));
 server.use(helmet());
 
 server.set('state namespace', 'App');
-server.use('/public', express['static'](__dirname + '/build', {maxAge: ONE_YEAR}));
+server.use('/', express['static'](__dirname + '/build', {maxAge: ONE_YEAR}));
+server.use('/', express['static'](__dirname + '/build/js', {maxAge: ONE_YEAR}));
+server.use('/', express['static'](__dirname + '/build/css', {maxAge: ONE_YEAR}));
+
 server.use(robots(__dirname + '/robots.txt'));
 
 

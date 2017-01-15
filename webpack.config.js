@@ -13,7 +13,7 @@ module.exports = {
     output: {
         path: path.resolve('./build/js'),
         filename: 'client.js',
-        publicPath: '/public/js/'
+        publicPath: '/js/'
     },
     module: {
         loaders: [
