@@ -35,6 +35,7 @@ module.exports = {
         ],
         summary: [
             'HTML, CSS, Javascript (Vanilla Javascript, ReactJS and YUI), NodeJS',
+            'Web UI component and front-end infra',
             'High performance web development',
             'Mobile web developer',
             'Large scale website',

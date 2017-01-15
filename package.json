@@ -30,6 +30,7 @@
     "csurf": "^1.6.3",
     "debug": "^2.0.0",
     "express": "^4.0.0",
+    "express-sslify":" ^1.2.0",
     "fluxible-addons-react": "^0.2.0",
     "fluxible-plugin-fetchr": "^0.3.3",
     "fluxible-router": "^1.0.0 || ^1.0.0-alpha.5",

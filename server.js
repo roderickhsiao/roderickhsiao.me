@@ -25,6 +25,8 @@ import sitemap from 'sitemap';
 import HtmlComponent from './components/Html';
 import UAParser from 'ua-parser-js';
 
+import {HTTPS} from 'express-sslify';
+
 const debug = Debug('roderickhsiao.me');
 const server = express();
 const inlineScript = fs.readFileSync('./utils/asyncLoadCSS.js', 'utf-8');
@@ -32,6 +34,12 @@ const inlineStyle = fs.readFileSync('./build/css/critial.css', 'utf-8');
 
 const ONE_YEAR = 31556952000;
 
+if ('production' === process.env.NODE_ENV) {
+    server.use(HTTPS({
+        trustProtoHeader: true,
+        trustXForwardedHostHeader: true
+    }));
+}
 server.use(favicon(__dirname + '/build/images/favicon.ico'));
 server.use(bodyParser.json());
 server.use(compression());
@@ -56,7 +64,7 @@ let routeConfig = map(routes, (route) => {
     return { url: route.path };
 });
 let sm = sitemap.createSitemap({
-    hostname: 'http://www.roderickhsiao.me',
+    hostname: 'https://www.roderickhsiao.me',
     cacheTime: 600000,
     urls: routeConfig
 });
