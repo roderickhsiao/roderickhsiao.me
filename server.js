@@ -21,6 +21,7 @@ import robots from 'robots.txt';
 import routes from './configs/routes';
 import serialize from 'serialize-javascript';
 import sitemap from 'sitemap';
+import spdy from 'spdy';
 
 import HtmlComponent from './components/Html';
 import UAParser from 'ua-parser-js';
@@ -33,8 +34,8 @@ const inlineScript = fs.readFileSync('./utils/asyncLoadCSS.js', 'utf-8');
 const inlineStyle = fs.readFileSync('./build/css/critial.css', 'utf-8');
 
 const ONE_YEAR = 31556952000;
-
-if ('production' === process.env.NODE_ENV) {
+const IS_PROD = 'production' === process.env.NODE_ENV;
+if (IS_PROD) {
     server.use(HTTPS({
         trustProtoHeader: true,
         trustXForwardedHostHeader: true
@@ -139,5 +140,18 @@ server.use((req, res, next) => {
 });
 
 var port = process.env.PORT || 3000;
-server.listen(port);
-console.log('Listening on port ' + port);
+var expressApp = server;
+
+if (IS_PROD) {
+    spdy.createServer({
+        key: fs.readFileSync(__dirname + '/server.key'),
+        cert:  fs.readFileSync(__dirname + '/server.crt')
+    }, server);
+}
+expressApp.listen(port, (err) => {
+    if (err) {
+        console.error(error);
+        return process.exit(1);
+    }
+    console.log('Listening on port', port);
+})
