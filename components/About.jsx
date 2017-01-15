@@ -68,9 +68,9 @@ class About extends PureComponent {
                             <a
                                 className='Mstart(6px) P(6px) D(ib)'
                                 target='_blank'
-                                href='https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Froderickhsiao.me'
+                                href='https://developers.google.com/speed/pagespeed/insights/?url=http://www.roderickhsiao.me'
                             >
-                                100 / 100
+                                97 / 100
                             </a>
                         </li>
                         <li className='My(6px)' >

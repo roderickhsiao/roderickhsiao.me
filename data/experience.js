@@ -15,7 +15,7 @@ module.exports = {
                     smartlink: {
                         type: 'large',
                         thumbnail: {
-                            url: 'https://external.fsnc1-5.fna.fbcdn.net/safe_image.php?d=AQBPe3DzsJu0udiD&w=476&h=249&url=https%3A%2F%2Fbranch.io%2Fimg%2Fopen-graph%2Fog-img.png&cfs=1&upscale=1',
+                            url: '//i.imgsafe.org/abff4b8869.png',
                             width: 476,
                             height: 249
                         },
@@ -130,7 +130,7 @@ module.exports = {
                     smartlink: {
                         type: 'large',
                         thumbnail: {
-                            url: '//i.imgsafe.org/18f026e.jpg',
+                            url: '//i.imgsafe.org/abf903ffd4.jpg',
                             width: 444,
                             height: 355
                         },
