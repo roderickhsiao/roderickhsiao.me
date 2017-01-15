@@ -70,7 +70,7 @@ class About extends PureComponent {
                                 target='_blank' rel='noopener'
                                 href='https://developers.google.com/speed/pagespeed/insights/?url=https://www.roderickhsiao.me'
                             >
-                                100 / 100
+                                99 / 100
                             </a>
                         </li>
                         <li className='My(6px)' >
@@ -78,9 +78,9 @@ class About extends PureComponent {
                             <a
                                 className='Mstart(4px) P(6px) D(ib) Fw(b)'
                                 target='_blank' rel='noopener'
-                                href='http://www.webpagetest.org/result/160416_WD_122G/'
+                                href='http://www.webpagetest.org/result/170115_D8_DW9/'
                             >
-                                Speed Index: 713
+                                Speed Index: 825
                             </a>
                         </li>
                         <li className='My(6px)'>
