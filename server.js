@@ -43,7 +43,9 @@ if (IS_PROD) {
 }
 server.use(favicon(__dirname + '/build/images/favicon.ico'));
 server.use(bodyParser.json());
-server.use(compression());
+server.use(compression({
+    threshold: false
+}));
 server.use(cookieParser());
 server.use(csrf({cookie: true}));
 server.use(helmet());
