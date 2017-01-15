@@ -66,17 +66,17 @@ class About extends PureComponent {
                         <li className='My(6px)'>
                         PageSpeed Test Score:
                             <a
-                                className='Mstart(6px) P(6px) D(ib)'
+                                className='Mstart(6px) P(6px) D(ib) Fw(b)'
                                 target='_blank' rel='noopener'
                                 href='https://developers.google.com/speed/pagespeed/insights/?url=https://www.roderickhsiao.me'
                             >
-                                97 / 100
+                                100 / 100
                             </a>
                         </li>
                         <li className='My(6px)' >
                         Web Page Test:
                             <a
-                                className='Mstart(4px) P(6px) D(ib)'
+                                className='Mstart(4px) P(6px) D(ib) Fw(b)'
                                 target='_blank' rel='noopener'
                                 href='http://www.webpagetest.org/result/160416_WD_122G/'
                             >
@@ -86,11 +86,21 @@ class About extends PureComponent {
                         <li className='My(6px)'>
                             Optimize mobile device by implementing
                             <a
-                                className='Mstart(4px) P(6px) D(ib)'
+                                className='Mstart(4px) P(6px) D(ib) Fw(b)'
                                 target='_blank' rel='noopener'
                                 href='https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=en'
                             >
                                 Critial Rendering Path
+                            </a>
+                        </li>
+                        <li className='My(6px)'>
+                            Lighthouse progressive web app score:
+                            <a
+                                className='Mstart(4px) P(6px) D(ib) Fw(b)'
+                                target='_blank' rel='noopener'
+                                href='https://github.com/GoogleChrome/lighthouse'
+                            >
+                                100 / 100
                             </a>
                         </li>
                     </ul>
