@@ -21,7 +21,14 @@ class HtmlComponent extends PureComponent {
                     <meta name='viewport' content='width=device-width,minimum-scale=1,initial-scale=1' />
                     <meta name='render-optimize-policy' content='first-screen-advance;enable' />
                     <meta httpEquiv='x-dns-prefetch-control' content='on' />
-                    <meta name="theme-color" content="#4caf50"/>
+                    <meta name='apple-mobile-web-app-title' content='Roderick Hsiao' />
+                    <meta name='apple-mobile-web-app-capable' content='yes' />
+                    <meta name='apple-mobile-web-app-status-bar-style' content='#4caf50' />
+                    <meta name='theme-color' content='#4caf50'/>
+                    <link rel='apple-touch-icon' href='taz-1x.png' />
+                    <link rel='apple-touch-icon' sizes='144x144' href='taz-2x.png' />
+                    <link rel='apple-touch-icon' sizes='192x192' href='taz-3x.png' />
+
                     <link rel='dns-prefetch' href='https://i.imgsafe.org' />
                     <link rel='preconnect' href='https://i.imgsafe.org' />
                     <link rel='dns-prefetch' href='https://www.google-analytics.com' />

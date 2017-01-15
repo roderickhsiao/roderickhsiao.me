@@ -52,6 +52,7 @@ server.use(helmet());
 
 server.set('state namespace', 'App');
 server.use('/', express['static'](__dirname + '/build', {maxAge: ONE_YEAR}));
+server.use('/', express['static'](__dirname + '/build/images', {maxAge: ONE_YEAR}));
 server.use('/', express['static'](__dirname + '/build/js', {maxAge: ONE_YEAR}));
 server.use('/', express['static'](__dirname + '/build/css', {maxAge: ONE_YEAR}));
 
