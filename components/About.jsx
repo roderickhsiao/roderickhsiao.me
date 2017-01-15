@@ -31,7 +31,7 @@ class About extends PureComponent {
         let nodes = map(sites, (site, i) => {
             return (
                 <li key={i} className='D(ib) W(1/4) Va(t) W(1/3)--xs'>
-                    <a className='D(b) My(6px)' href={site.url} target='_blank'>
+                    <a className='D(b) My(6px)' href={site.url} target='_blank' rel='noopener'>
                         {site.name}
                     </a>
                 </li>
@@ -67,7 +67,7 @@ class About extends PureComponent {
                         PageSpeed Test Score:
                             <a
                                 className='Mstart(6px) P(6px) D(ib)'
-                                target='_blank'
+                                target='_blank' rel='noopener'
                                 href='https://developers.google.com/speed/pagespeed/insights/?url=http://www.roderickhsiao.me'
                             >
                                 97 / 100
@@ -77,7 +77,7 @@ class About extends PureComponent {
                         Web Page Test:
                             <a
                                 className='Mstart(4px) P(6px) D(ib)'
-                                target='_blank'
+                                target='_blank' rel='noopener'
                                 href='http://www.webpagetest.org/result/160416_WD_122G/'
                             >
                                 Speed Index: 713
@@ -87,7 +87,7 @@ class About extends PureComponent {
                             Optimize mobile device by implementing
                             <a
                                 className='Mstart(4px) P(6px) D(ib)'
-                                target='_blank'
+                                target='_blank' rel='noopener'
                                 href='https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=en'
                             >
                                 Critial Rendering Path

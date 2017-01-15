@@ -127,6 +127,12 @@ module.exports = function (grunt) {
                 src: 'images/*',
                 dest: '<%= project.build %>',
                 cwd: '<%= project.assets %>'
+            },
+            manifest: {
+                expand: true,
+                src: '*.json',
+                dest: '<%= project.build %>',
+                cwd: '<%= project.assets %>'
             }
         },
         // concat all css for penthhouse

@@ -1,0 +1,25 @@
+{
+  "short_name": "Rod Hsiao",
+  "name": "Something about Roderick Hsiao (and Taz)",
+  "icons": [
+    {
+      "src": "taz-1x.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "taz-2x.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "taz-3x.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#4caf50",
+}

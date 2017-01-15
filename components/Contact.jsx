@@ -34,7 +34,7 @@ class Contact extends PureComponent {
             let {icon} = contact;
             return (
                 <li className='My(20px) W(1/4) D(ib) W(1/3)--xs' key={i}>
-                    <a className='Fz(1.1em) Va(m)' href={contact.value} target='_blank'>
+                    <a className='Fz(1.1em) Va(m)' href={contact.value} target='_blank' rel='noopener'>
                         {
                             contact.name
                         }
