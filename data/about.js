@@ -12,10 +12,6 @@ module.exports = [
         url: 'https://fluxible.io/'
     },
     {
-        name: 'Progressive Web App',
-        url: 'https://developers.google.com/web/progressive-web-apps/'
-    },
-    {
         name: 'Atomic CSS',
         url: 'https://acss.io/'
     },
@@ -46,5 +42,9 @@ module.exports = [
     {
         name: 'Normalize CSS',
         url: 'https://necolas.github.io/normalize.css'
+    },
+    {
+        name: 'Progressive Web App',
+        url: 'https://developers.google.com/web/progressive-web-apps/'
     }
 ];
