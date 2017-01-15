@@ -6,11 +6,7 @@ function getWebpackConfig (opts) {
 
     var baseConfig = {
         resolve: {
-            extensions: ['', '.js', '.jsx'],
-            alias: {
-                'react': 'inferno-compat',
-                'react-dom': 'inferno-compat'
-            }
+            extensions: ['', '.js', '.jsx']
         },
         entry: entry,
         output: {
