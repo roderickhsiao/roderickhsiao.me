@@ -2,7 +2,7 @@ module.exports = [
     {
         name: 'Travel',
         thumbnail: {
-            url: '//i.imgsafe.org/82e1539.jpg',
+            url: 'https://i.imgsafe.org/82e1539.jpg',
             width: 417,
             height: 218
         },
@@ -11,7 +11,7 @@ module.exports = [
     {
         name: 'Music',
         thumbnail: {
-            url: '//i.imgsafe.org/0db3e3b.jpg',
+            url: 'https://i.imgsafe.org/0db3e3b.jpg',
             width: 415,
             height: 278
         },
@@ -20,7 +20,7 @@ module.exports = [
     {
         name: 'Couchsurfing',
         thumbnail: {
-            url: '//i.imgsafe.org/9f1a6da.jpg',
+            url: 'https://i.imgsafe.org/9f1a6da.jpg',
             width: 929,
             height: 334
         },
@@ -29,7 +29,7 @@ module.exports = [
     {
         name: 'Challenge',
         thumbnail: {
-            url: '//i.imgsafe.org/bd2f200.jpg',
+            url: 'https://i.imgsafe.org/bd2f200.jpg',
             width: 370,
             height: 278
         },
@@ -38,7 +38,7 @@ module.exports = [
     {
         name: 'Having fun',
         thumbnail: {
-            url: '//i.imgsafe.org/21ac1c6.jpg',
+            url: 'https://i.imgsafe.org/21ac1c6.jpg',
             width: 417,
             height: 278
         },

@@ -7,7 +7,7 @@ module.exports = [
         department: 'Department of Management Information Systems (MIS)',
         time: 'Sep 2004 - Jun 2008',
         thumbnail: {
-            url: '//i.imgsafe.org/78580aa.png',
+            url: 'https://i.imgsafe.org/78580aa.png',
             width: 200,
             height: 195
         }
@@ -19,7 +19,7 @@ module.exports = [
         degree: 'Exchange program',
         time: 'Jan 2008 - Jun 2008',
         thumbnail: {
-            url: '//i.imgsafe.org/f5b003b.gif',
+            url: 'https://i.imgsafe.org/f5b003b.gif',
             width: 200,
             height: 201
         }

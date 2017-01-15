@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /api
 
-Sitemap: http://roderickhsiao.me/sitemap.xml
+Sitemap: https://roderickhsiao.me/sitemap.xml

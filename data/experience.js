@@ -2,7 +2,7 @@ module.exports = {
     companies: [
         {
             name: 'Branch',
-            logo: '//s12.postimg.io/rs31f1n6l/logo_black_1.png',
+            logo: 'https://s12.postimg.io/rs31f1n6l/logo_black_1.png',
             time: 'July 2016 - present',
             title: 'Software Engineer',
             location: 'Palo Alto, CA',
@@ -15,20 +15,20 @@ module.exports = {
                     smartlink: {
                         type: 'large',
                         thumbnail: {
-                            url: '//i.imgsafe.org/abff4b8869.png',
+                            url: 'https://i.imgsafe.org/abff4b8869.png',
                             width: 476,
                             height: 249
                         },
                         description: 'Number 1 in deep linking. Integrate robust, durable links into email, SEM, ads and other traditional marketing channels for improved app growth.',
                         title: 'Branch Metrics - Deep Linking, Attribution and Mobile Marketing',
-                        url: '//branch.io'
+                        url: 'https://branch.io'
                     }
                 }
             ]
         },
         {
             name: 'Yahoo',
-            logo: '//s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
+            logo: 'https://s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
             time: 'Nov 2009 - July 2016',
             title: 'Senior Software Engineer',
             location: 'Sunnyvale, CA',
@@ -46,7 +46,7 @@ module.exports = {
                         },
                         title: 'Yahoo',
                         description: 'A new welcome to Yahoo. The new Yahoo experience makes it easier to discover the news and information that you care about most. It\'s the web ordered for you.',
-                        url: '//www.yahoo.com/'
+                        url: 'https://www.yahoo.com/'
                     }
                 },
                 {
@@ -56,13 +56,13 @@ module.exports = {
                     techStack: 'ExpressJS, ReactJS (Fluxible), and Atomic CSS',
                     smartlink: {
                         thumbnail: {
-                            url: '//i.imgsafe.org/007c514.png',
+                            url: 'https://i.imgsafe.org/007c514.png',
                             width: 200,
                             height: 200
                         },
                         title: 'Yahoo Weather',
                         description: 'Prepare for your day with the most accurate hourly, 5-day, and 10-day forecasts. Stunning Flickr photos match your location, time of day, and current conditions.',
-                        url: '//www.yahoo.com/news/weather'
+                        url: 'https://www.yahoo.com/news/weather'
                     }
                 },
                 {
@@ -70,16 +70,16 @@ module.exports = {
                     time: 'June 2014 - present',
                     summary: 'Power our popular native app content - Yahoo News Digest on web for better SEO and deeplinking experience',
                     techStack: 'ExpressJS, ReactJS (Fluxible), and Atomic CSS',
-                    url: '//www.yahoo.com/digest',
+                    url: 'https://www.yahoo.com/digest',
                     smartlink: {
                         thumbnail: {
-                            url: '//lh5.ggpht.com/0TavkkXqQT-WEnwRd2nVhBKzxg4i0h6yFnx4-j6wW9Hww65Ov1xslfprPFNz95x_IIs=w300',
+                            url: 'https://lh5.ggpht.com/0TavkkXqQT-WEnwRd2nVhBKzxg4i0h6yFnx4-j6wW9Hww65Ov1xslfprPFNz95x_IIs=w300',
                             width: 200,
                             height: 200
                         },
                         title: 'Yahoo News Digest',
                         description: 'Yahoo News Digest provides a definitive summary of all the important, need-to-know news. Digests are delivered twice a day - once in the morning and once in the evening.',
-                        url: '//www.yahoo.com/digest'
+                        url: 'https://www.yahoo.com/digest'
                     }
                 },
                 {
@@ -92,7 +92,7 @@ module.exports = {
         },
         {
             name: 'Yahoo',
-            logo: '//s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
+            logo: 'https://s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
             time: 'April 2013 - Oct 2013',
             title: 'Engineering Team Lead',
             location: 'Taipei, Taiwan',
@@ -110,14 +110,14 @@ module.exports = {
                         },
                         title: 'Yahoo行動版',
                         description: '提供最方便的網站搜尋、即時新聞、生活資訊和Yahoo奇摩服務入口。',
-                        url: '//tw.mobi.yahoo.com/'
+                        url: 'https://tw.mobi.yahoo.com/'
                     }
                 }
             ]
         },
         {
             name: 'Yahoo',
-            logo: '//s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
+            logo: 'https://s21.postimg.io/51jibjvo7/1000px_yahoo_logo_svg.png',
             time: 'Nov 2009 - April 2013',
             title: 'Quality Engineering Lead / Software Engineer',
             location: 'Taipei, Taiwan',
@@ -130,13 +130,13 @@ module.exports = {
                     smartlink: {
                         type: 'large',
                         thumbnail: {
-                            url: '//i.imgsafe.org/abf903ffd4.jpg',
+                            url: 'https://i.imgsafe.org/abf903ffd4.jpg',
                             width: 444,
                             height: 355
                         },
                         title: 'Yahoo 2012 Presidential Election',
                         description: 'Yahoo\'s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.',
-                        url: '//books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false'
+                        url: 'https://books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false'
                     }
                 },
                 {
@@ -147,13 +147,13 @@ module.exports = {
                     smartlink: {
                         type: 'large',
                         thumbnail: {
-                            url: '//i.imgsafe.org/4fb36db.jpg',
+                            url: 'https://i.imgsafe.org/4fb36db.jpg',
                             width: 630,
                             height: 355
                         },
                         title: 'Yahoo 2012 Presidential Election',
                         description: 'Yahoo\'s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.',
-                        url: '//books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false'
+                        url: 'https://books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false'
                     }
                 },
                 {
@@ -163,13 +163,13 @@ module.exports = {
                     techStack: 'Java, Selenium, WebdriverJS and YUI',
                     smartlink: {
                         thumbnail: {
-                            url: '//i.imgsafe.org/f696ea7.png',
+                            url: 'https://i.imgsafe.org/f696ea7.png',
                             width: 200,
                             height: 200
                         },
                         title: 'Yahoo News',
                         description: 'Browse latest news on Yahoo News.',
-                        url: '//www.yahoo.com/news'
+                        url: 'https://www.yahoo.com/news'
                     }
                 }
             ]

@@ -22,18 +22,18 @@ class HtmlComponent extends PureComponent {
                     <meta name='render-optimize-policy' content='first-screen-advance;enable' />
                     <meta httpEquiv='x-dns-prefetch-control' content='on' />
                     <meta name="theme-color" content="#4caf50"/>
-                    <link rel='dns-prefetch' href='//i.imgsafe.org' />
-                    <link rel='preconnect' href='//i.imgsafe.org' />
-                    <link rel='dns-prefetch' href='//www.google-analytics.com' />
-                    <link rel='preconnect' href='//www.google-analytics.com' />
-                    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-                    <link rel='preconnect' href='//fonts.googleapis.com' />
+                    <link rel='dns-prefetch' href='https://i.imgsafe.org' />
+                    <link rel='preconnect' href='https://i.imgsafe.org' />
+                    <link rel='dns-prefetch' href='https://www.google-analytics.com' />
+                    <link rel='preconnect' href='https://www.google-analytics.com' />
+                    <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
+                    <link rel='preconnect' href='https://fonts.googleapis.com' />
                     <link rel='manifest' href='/manifest.json' />
 
                     <title>Roderick Hsiao</title>
                     <meta name='description' content='Nothing important' />
                     <meta property='og:type' content='website' />
-                    <meta property='og:image' content='//c2.staticflickr.com/2/1585/25832501265_89b28a6aa5_b.jpg' />
+                    <meta property='og:image' content='https://c2.staticflickr.com/2/1585/25832501265_89b28a6aa5_b.jpg' />
 
                     <link rel='preload' href={this.getHashAssets('/css/normalize.css')} as='style' onLoad='this.rel="stylesheet"' />
                     <link rel='preload' href={this.getHashAssets('/css/atomic.css')} as='style' onLoad='this.rel="stylesheet"' />
@@ -45,7 +45,7 @@ class HtmlComponent extends PureComponent {
                     <script dangerouslySetInnerHTML={{__html: inlineJSDetect}} />
 
                     <noscript>
-                        <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic' />
+                        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic' />
                     </noscript>
                     <noscript>
                         <link rel='stylesheet' href={this.getHashAssets('/css/normalize.css')} />

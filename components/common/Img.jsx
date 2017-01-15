@@ -1,7 +1,7 @@
 import React, {PureComponent, PropTypes} from 'react';
 
 // From google
-const DUMMY_IMAGE_SRC = '//www.gstatic.com/psa/static/1.gif';
+const DUMMY_IMAGE_SRC = 'https://www.gstatic.com/psa/static/1.gif';
 
 const IMAGE_STATUS_INIT = 0;
 const IMAGE_STATUS_LOADING = 1;
