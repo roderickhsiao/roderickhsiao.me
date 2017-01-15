@@ -42,9 +42,5 @@ module.exports = [
     {
         name: 'Normalize CSS',
         url: 'https://necolas.github.io/normalize.css'
-    },
-    {
-        name: 'Inferno JS',
-        url: 'https://infernojs.org/'
     }
 ];

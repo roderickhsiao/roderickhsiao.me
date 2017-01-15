@@ -51,8 +51,6 @@
     "helmet": "^2.1.2",
     "history": "^3.0.0",
     "json-loader": "^0.5.4",
-    "inferno": "^1.2.0",
-    "inferno-compat": "^1.2.0",
     "lodash": "^4.0.0",
     "react": "^15.0.0",
     "react-addons-css-transition-group": "^15.0.0",

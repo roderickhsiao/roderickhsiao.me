@@ -7,15 +7,14 @@ import {handleHistory} from 'fluxible-router';
 import {provideContext} from 'fluxible-addons-react';
 import {subscribe} from 'subscribe-ui-event';
 
-class App extends PureComponent {
+class App extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.routeStore = this.context.getStore('RouteStore');
-        this.scrollHandler = this.scrollHandler.bind(this);
         this.subscription = [];
     }
 
-    scrollHandler (e, payload) {
+    scrollHandler = (e, payload) => {
         let {top} = payload.scroll;
         if (top > 0) {
             this.DOC.classList.add('hasScrolled');
