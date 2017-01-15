@@ -1,4 +1,6 @@
 var webpack = require('webpack');
+var OfflinePlugin = require('offline-plugin');
+const OptimizeJsPlugin = require('optimize-js-plugin');
 
 function getWebpackConfig (opts) {
     var entry = opts.entry;
@@ -11,7 +13,8 @@ function getWebpackConfig (opts) {
         entry: entry,
         output: {
             path: './build/js',
-            filename: 'client.js'
+            filename: 'client.js',
+            publicPath: '/public/js/'
         },
         module: {
             loaders: [
@@ -34,7 +37,11 @@ function getWebpackConfig (opts) {
                     NODE_ENV: JSON.stringify(isDev ? 'development': 'production')
                 }
             }),
-            new webpack.optimize.OccurenceOrderPlugin()
+            new webpack.optimize.OccurenceOrderPlugin(),
+            new OptimizeJsPlugin({
+                sourceMap: false
+            }),
+            new OfflinePlugin()
         ]
     };
 
@@ -261,23 +268,11 @@ module.exports = function (grunt) {
                 uglify: true,
                 crawl: false
             }
-        },
-        'optimize-js': {
-            options: {
-                sourceMap: false
-            },
-            dist: {
-                files: {
-                    'build/js/client.js': 'build/js/client.js',
-                    'build/js/modernizr.js': 'build/js/modernizr.js'
-                }
-            }
         }
     };
 
     grunt.initConfig(config);
 
-    grunt.loadNpmTasks( 'grunt-optimize-js' );
     grunt.loadNpmTasks('grunt-atomizer');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -291,8 +286,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-webpack');
 
-    grunt.registerTask('default', ['clean', 'css', 'modernizr:dist', 'optimize-js', 'hash', 'concurrent:dev']);
-    grunt.registerTask('build', ['clean', 'modernizr:dist', 'css', 'hash:css', 'webpack:prod', 'optimize-js', 'hash:js']);
+    grunt.registerTask('default', ['clean', 'css', 'modernizr:dist', 'hash', 'concurrent:dev']);
+    grunt.registerTask('build', ['clean', 'modernizr:dist', 'css', 'hash:css', 'webpack:prod', 'hash:js']);
     grunt.registerTask('css', ['atomizer:app', 'copy', 'cssmin', 'postcss:app']);
     // need to run after server up
     grunt.registerTask('penthouse-tasks', ['concat', 'penthouse', 'cssmin:critial']);

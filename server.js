@@ -56,7 +56,7 @@ let routeConfig = map(routes, (route) => {
     return { url: route.path };
 });
 let sm = sitemap.createSitemap({
-    hostname: 'http://roderickhsiao.me',
+    hostname: 'http://www.roderickhsiao.me',
     cacheTime: 600000,
     urls: routeConfig
 });

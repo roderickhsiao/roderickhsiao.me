@@ -1,4 +1,5 @@
 /* global App, document, window, location */
+require('offline-plugin/runtime').install();
 
 import React from 'react';
 import {render} from 'react-dom';
