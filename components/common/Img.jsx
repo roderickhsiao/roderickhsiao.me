@@ -10,6 +10,7 @@ const IMAGE_STATUS_LOADED = 2;
 import {forEach} from 'lodash';
 import classNames from 'classnames';
 import detectViewport from './Viewport.jsx';
+import raf from 'raf';
 
 /**
  * An image lazyload component, probably can also be used for other blocking assets like iframe
@@ -34,7 +35,9 @@ class Img extends PureComponent {
 
         this.image.onload = this.handleOnLoad;
         this.image.onerror = this.handleOnError;
-        this.image.src = this.props.src;
+        raf(() => {
+            this.image.src = this.props.src;
+        });
     }
 
     handleOnLoad = () => {
