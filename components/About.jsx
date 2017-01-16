@@ -100,7 +100,7 @@ class About extends PureComponent {
                                 target='_blank' rel='noopener'
                                 href='https://github.com/GoogleChrome/lighthouse'
                             >
-                                100 / 100
+                                99 / 100
                             </a>
                         </li>
                     </ul>
