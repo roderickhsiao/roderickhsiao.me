@@ -80,9 +80,10 @@ function getWebpackConfig (opts) {
 
 function getPenthouseConfig () {
     var baseConfig = {
-        outfile : './assets/css/critial.css',
-        css : './build/css/rollup.css',
-        url : 'http://localhost:3000'
+        outfile: './assets/css/critial.css',
+        css: './build/css/rollup.css',
+        url: 'http://localhost:3000',
+        debug: true
     };
     // TODO, should we load for different devices?
     var baseConfig = Object.assign({}, baseConfig, {width: 1300,  height: 900});
