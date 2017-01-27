@@ -34,6 +34,8 @@ class HtmlComponent extends PureComponent {
                     <link rel='preconnect' href='https://www.google-analytics.com' />
                     <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
                     <link rel='preconnect' href='https://fonts.googleapis.com' />
+                    <link rel='dns-prefetch' href='https://cdn.polyfill.io' />
+                    <link rel='preconnect' href='https://cdn.polyfill.io' />
                     <link rel='manifest' href='/manifest.json' />
 
                     <title>Roderick Hsiao</title>
@@ -72,6 +74,7 @@ class HtmlComponent extends PureComponent {
                         dangerouslySetInnerHTML={{__html: markup}}
                     />
                     <script dangerouslySetInnerHTML={{__html: state}} />
+                    <script src="//cdn.polyfill.io/v2/polyfill.min.js" defer async></script>
                     <script src={this.getHashAssets('/js/client.js')} defer async />
                     <script src={this.getHashAssets('/js/modernizr.js')} defer async />
                 </body>

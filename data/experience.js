@@ -35,7 +35,7 @@ module.exports = {
             projects: [
                 {
                     name: 'Yahoo Homepage',
-                    time: 'June 2014 - present',
+                    time: 'June 2014 - July 2016',
                     summary: 'Building one of the most visited single web application of the world accross three screens. Building common UI components, utilities and NodeJS library.',
                     techStack: 'ExpressJS, ReactJS (Fluxible), and Atomic CSS',
                     smartlink: {
@@ -51,7 +51,7 @@ module.exports = {
                 },
                 {
                     name: 'Yahoo Weather',
-                    time: 'June 2014 - present',
+                    time: 'June 2014 - July 2016',
                     summary: 'Polish Yahoo Weather using isomorphic React',
                     techStack: 'ExpressJS, ReactJS (Fluxible), and Atomic CSS',
                     smartlink: {
@@ -67,7 +67,7 @@ module.exports = {
                 },
                 {
                     name: 'Yahoo News Digest',
-                    time: 'June 2014 - present',
+                    time: 'June 2014 - July 2016',
                     summary: 'Power our popular native app content - Yahoo News Digest on web for better SEO and deeplinking experience',
                     techStack: 'ExpressJS, ReactJS (Fluxible), and Atomic CSS',
                     url: 'https://www.yahoo.com/digest',
