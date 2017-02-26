@@ -64,7 +64,7 @@ class Experience extends PureComponent {
         if (!companies || !companies.length) {
             return null;
         }
-        let nodes = map(companies, function eachCompany (company, i) {
+        let nodes = map(companies, (company, i) => {
             let {projects} = company;
             return (
                 <div key={i}
