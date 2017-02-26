@@ -8,7 +8,14 @@ function getWebpackConfig (opts) {
 
     var baseConfig = {
         resolve: {
-            extensions: ['', '.js', '.jsx']
+            extensions: ['', '.js', '.jsx'],
+            resolve: {
+                alias: {
+                    'react': 'inferno-compat',
+                    'react-dom': 'inferno-compat',
+                    'react-addons-css-transition-group': 'inferno-transition-group'
+                }
+            }
         },
         entry: entry,
         output: {
