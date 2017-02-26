@@ -30,7 +30,6 @@ class Experience extends PureComponent {
     }
 
     renderProject (projects) {
-        let self = this;
         if (!projects || !projects.length) {
             return null;
         }
@@ -62,7 +61,6 @@ class Experience extends PureComponent {
     }
 
     renderCompanies (companies) {
-        let self = this;
         if (!companies || !companies.length) {
             return null;
         }
@@ -110,7 +108,7 @@ class Experience extends PureComponent {
                     </div>
                     <div>
                         {
-                            self.renderProject(projects)
+                            this.renderProject(projects)
                         }
                     </div>
                 </div>

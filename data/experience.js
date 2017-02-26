@@ -3,13 +3,13 @@ module.exports = {
         {
             name: 'Branch',
             logo: 'https://i.imgsafe.org/b44e2125b7.png',
-            time: 'July 2016 - present',
+            time: 'July 2016 - Jan 2017',
             title: 'Software Engineer',
             location: 'Palo Alto, CA',
             projects: [
                 {
                     name: 'Branch Dashboard and solutions',
-                    time: 'July 2016 - present',
+                    time: 'July 2016 - Jan 2017',
                     summary: 'Building frontend infrastructure, Engineering practice and website optimizations.',
                     techStack: 'NodeJS, React and Redux',
                     smartlink: {
