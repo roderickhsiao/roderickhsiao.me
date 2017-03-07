@@ -1,6 +1,13 @@
 module.exports = {
     companies: [
         {
+            name: 'Tinder',
+            logo: 'https://i.imgsafe.org/e3c3877dc8.png',
+            time: 'Feb 2017 - present',
+            title: 'Senior Software Engineer',
+            location: 'Palo Alto, CA'
+        },
+        {
             name: 'Branch',
             logo: 'https://i.imgsafe.org/b44e2125b7.png',
             time: 'July 2016 - Jan 2017',
