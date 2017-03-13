@@ -1,4 +1,5 @@
 import React, {PureComponent, PropTypes} from 'react';
+import AspectRatio from 'react-aspect-ratio';
 
 import Img from './Img.jsx';
 
@@ -12,7 +13,7 @@ class Smartlink extends PureComponent {
             return null;
         }
         const {thumbnail} = smartlink || {};
-        const ratio = thumbnail.height / thumbnail.width * 100;
+        const ratio = `${thumbnail.width}/${thumbnail.height}`;
         const isLargeTemplate = smartlink.type === 'large';
         return (
             <a
@@ -23,9 +24,9 @@ class Smartlink extends PureComponent {
                 <div>
                     {
                         isLargeTemplate ? (
-                            <div className='H(0) Pos(r) W(100%)' style={{paddingBottom: ratio + '%'}}>
-                                <Img src={thumbnail.url} className='StretchedBox H(100%) W(100%)' />
-                            </div>
+                            <AspectRatio ratio={ratio}>
+                                <Img src={thumbnail.url} />
+                            </AspectRatio>
                         ) : (
                             <Img
                                 nodeName='div'

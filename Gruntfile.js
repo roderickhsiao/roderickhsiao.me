@@ -140,6 +140,7 @@ module.exports = function (grunt) {
         concat: {
             css: {
                 src: [
+                    'node_modules/react-aspect-ratio/aspect-ratio.css',
                     'build/css/atomic.css',
                     'build/css/normalize.css',
                     'build/css/theme.css'
@@ -156,7 +157,7 @@ module.exports = function (grunt) {
                     sourceMap: false
                 },
                 files: [{
-                    src: ['<%= project.build %>/css/theme.css'],
+                    src: ['<%= project.build %>/css/theme.css', 'node_modules/react-aspect-ratio/aspect-ratio.css'],
                     dest: '<%= project.build %>/css/theme.css'
                 }, {
                     src: ['<%= project.build %>/css/normalize.css'],

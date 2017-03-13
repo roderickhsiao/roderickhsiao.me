@@ -33,7 +33,6 @@ class Interest extends PureComponent {
         }
         let nodes = map(interest, (item, i) => {
             let {thumbnail} = item;
-            let ratio = thumbnail.height / thumbnail.width * 100;
             return (
                 <li className='D(ib) W(100%)--xs W(1/2) Bxz(bb) Va(t)' key={i}>
                     <div className='M(10px) BdB--xs Bdbc($c-black-4)--xs'>
