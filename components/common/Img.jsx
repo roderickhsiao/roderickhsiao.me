@@ -9,14 +9,9 @@ const IMAGE_STATUS_LOADED = 2;
 
 import {forEach} from 'lodash';
 import classNames from 'classnames';
-import InViewport from 'react-in-viewport';
+import handleViewport from 'react-in-viewport';
 import raf from 'raf';
 
-const LazyImage = (props) => (
-  <InViewport>
-    <Img {...props} />
-  </InViewport>
-);
 /**
  * An image lazyload component, probably can also be used for other blocking assets like iframe
  */
@@ -90,4 +85,4 @@ Img.propTypes = {
     src: PropTypes.string.isRequired
 }
 
-export default LazyImage;
+export default handleViewport(Img);
