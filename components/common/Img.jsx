@@ -9,9 +9,14 @@ const IMAGE_STATUS_LOADED = 2;
 
 import {forEach} from 'lodash';
 import classNames from 'classnames';
-import detectViewport from './Viewport.jsx';
+import InViewport from 'react-in-viewport';
 import raf from 'raf';
 
+const LazyImage = (props) => (
+  <InViewport>
+    <Img {...props} />
+  </InViewport>
+);
 /**
  * An image lazyload component, probably can also be used for other blocking assets like iframe
  */
@@ -20,13 +25,13 @@ class Img extends PureComponent {
         super(props, context);
         this.image = null;
         this.state = {
-            status: this.props.isInViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
+            status: this.props.inViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
         };
     }
 
     componentWillReceiveProps (newProps) {
         this.setState({
-            status: newProps.isInViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
+            status: newProps.inViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
         });
     }
 
@@ -85,4 +90,4 @@ Img.propTypes = {
     src: PropTypes.string.isRequired
 }
 
-export default detectViewport(Img);
+export default LazyImage;
