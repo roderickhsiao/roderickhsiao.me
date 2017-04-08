@@ -47,6 +47,8 @@ class HtmlComponent extends PureComponent {
                     <link rel='preload' href={this.getHashAssets('/css/atomic.css')} as='style' onLoad='this.rel="stylesheet"' />
                     <link rel='preload' href={this.getHashAssets('/css/theme.css')} as='style' onLoad='this.rel="stylesheet"' />
                     <link rel='preload' href={this.getHashAssets('/css/transition.css')} as='style' onLoad='this.rel="stylesheet"' />
+                    <link rel='preload' href={this.getHashAssets('/js/client.js')} as='script' />
+                    <link rel='preload' href={this.getHashAssets('/js/modernizr.js')} as='script' />
 
                     <style dangerouslySetInnerHTML={{__html: inlineStyle}}/>
                     <script dangerouslySetInnerHTML={{__html: inlineScript}} />
