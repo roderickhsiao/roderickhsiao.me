@@ -98,7 +98,7 @@ class About extends PureComponent {
                             <a
                                 className='Mstart(4px) P(6px) D(ib) Fw(b) C(#009a2d)'
                                 target='_blank' rel='noopener'
-                                href='https://github.com/GoogleChrome/lighthouse'
+                                href='https://googlechrome.github.io/lighthouse/viewer/?gist=0effeeb873509db8af6f9b5c63326c95'
                             >
                                 100 / 100
                             </a>
