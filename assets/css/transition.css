@@ -1,10 +1,10 @@
-.page-enter, .page-appear {
+.page-enter {
     opacity: 0;
     transform: translate3d(0, 200px, 0) scale(.9);
     transform-origin: top;
 }
 
-.page-enter.page-enter-active, .page-appear.page-appear-active {
+.page-enter.page-enter-active {
     opacity: 1;
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
