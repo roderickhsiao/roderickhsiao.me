@@ -1,4 +1,4 @@
-import React, {PureComponent, PropTypes} from 'react';
+import React, { PureComponent } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Sticky from 'react-stickynode';
 

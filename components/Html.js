@@ -1,4 +1,6 @@
-import React, {PureComponent, PropTypes} from 'react';
+import React, { PureComponent } from 'react';
+
+import PropTypes from 'prop-types';
 
 import assetsMapping from '../build/assets.json';
 
@@ -6,14 +8,14 @@ const inlineJSDetect = '(function(html){var c = html.className;c += " JsEnabled"
 const pathPrefix = '/';
 
 class HtmlComponent extends PureComponent {
-    getHashAssets (assetsPath) {
-        let key =  assetsPath.replace(pathPrefix, '');
-        let match = assetsMapping[key];
-        return match ? (pathPrefix + assetsMapping[key]) : assetsPath;
-    }
-    render () {
-        let {markup, state, inlineScript, inlineStyle} = this.props;
-        return (
+  getHashAssets (assetsPath) {
+    let key =  assetsPath.replace(pathPrefix, '');
+    let match = assetsMapping[key];
+    return match ? (pathPrefix + assetsMapping[key]) : assetsPath;
+  }
+  render () {
+    let {markup, state, inlineScript, inlineStyle} = this.props;
+    return (
             <html lang='en' id='atomic' className='NoJs'>
                 <head>
                     <meta charSet='utf-8' />
@@ -79,15 +81,15 @@ class HtmlComponent extends PureComponent {
                     <script src={this.getHashAssets('/js/modernizr.js')} defer async />
                 </body>
             </html>
-        );
-    }
+    );
+  }
 }
 HtmlComponent.displayName = 'HtmlComponent';
 
 HtmlComponent.propTypes = {
-    context: PropTypes.object.isRequired,
-    markup: PropTypes.string.isRequired,
-    state: PropTypes.string.isRequired
+  context: PropTypes.object.isRequired,
+  markup: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired
 };
 
 export default HtmlComponent;

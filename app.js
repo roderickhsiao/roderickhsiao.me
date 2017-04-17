@@ -8,15 +8,15 @@ import RouteStore from './stores/RouteStore';
 import StaticContentStore from './stores/StaticContentStore';
 
 let app = new Fluxible({
-    component: App,
-    stores: [
-        RouteStore,
-        StaticContentStore
-    ]
+  component: App,
+  stores: [
+    RouteStore,
+    StaticContentStore
+  ]
 });
 app.plug(batchedUpdatePlugin());
 app.plug(fetchrPlugin({
-    xhrPath: '/api'
+  xhrPath: '/api'
 }));
 
 export default app;

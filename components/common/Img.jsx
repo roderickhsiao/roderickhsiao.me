@@ -1,4 +1,6 @@
-import React, {PureComponent, PropTypes} from 'react';
+import React, { PureComponent } from 'react';
+
+import PropTypes from 'prop-types';
 
 // From google
 const DUMMY_IMAGE_SRC = 'https://www.gstatic.com/psa/static/1.gif';
