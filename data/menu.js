@@ -12,4 +12,4 @@ module.exports = {
     name: 'Activity',
     path: '/activity'
   }
-}
+};

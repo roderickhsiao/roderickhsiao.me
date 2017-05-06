@@ -1,29 +1,26 @@
-var webpack = require('webpack');
-var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const webpack = require('webpack');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const OptimizeJsPlugin = require('optimize-js-plugin');
+const path = require('path');
 
-function getWebpackConfig (opts) {
+function getWebpackConfig(opts) {
   var entry = opts.entry;
   var isDev = opts.isDev;
 
   var baseConfig = {
     resolve: {
-      extensions: ['', '.js', '.jsx']
+      extensions: ['.js', '.jsx', '*', '.json']
     },
     entry: entry,
     output: {
-      path: './build/js',
+      path: path.resolve(__dirname, 'build/js'),
       filename: 'client.js'
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.(js|jsx)$/,
-          loader: require.resolve('babel-loader')
-        },
-        {
-          test: /\.(json)$/,
-          loader: require.resolve('json-loader')
+          use: ['babel-loader']
         }
       ]
     },
@@ -33,10 +30,9 @@ function getWebpackConfig (opts) {
     plugins: [
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: JSON.stringify(isDev ? 'development': 'production')
+          NODE_ENV: JSON.stringify(isDev ? 'development' : 'production')
         }
       }),
-      new webpack.optimize.OccurenceOrderPlugin(),
       new OptimizeJsPlugin({
         sourceMap: false
       }),
@@ -45,10 +41,12 @@ function getWebpackConfig (opts) {
         filename: 'sw.js',
         staticFileGlobs: ['build/**/*.*.{js,html,css,png,jpg,gif}'],
         stripPrefix: 'build',
-        runtimeCaching: [{
-                    // Use a network first strategy for everything else.
-          default: 'networkFirst'
-        }],
+        runtimeCaching: [
+          {
+            // Use a network first strategy for everything else.
+            default: 'networkFirst'
+          }
+        ],
         navigateFallback: '/'
       })
     ]
@@ -58,39 +56,41 @@ function getWebpackConfig (opts) {
     baseConfig.stats = {
       colors: true
     };
-        // baseConfig.devtool = 'souce-map';
-        // baseConfig.watch = true;
-        // baseConfig.keepalive = true;
-        // baseConfig.failOnError = false;
+    // baseConfig.devtool = 'souce-map';
+    // baseConfig.watch = true;
+    // baseConfig.keepalive = true;
+    // baseConfig.failOnError = false;
   } else {
-        // prod
+    // prod
     baseConfig.plugins.push(
-            new webpack.optimize.UglifyJsPlugin({
-              compress: {
-                warnings: false
-              }
-            })
-        );
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      })
+    );
     baseConfig.plugins.push(
-            new webpack.optimize.DedupePlugin()
-        );
+      new webpack.LoaderOptionsPlugin({
+        minimize: true
+      })
+    );
   }
   return baseConfig;
 }
 
-function getPenthouseConfig () {
+function getPenthouseConfig() {
   var baseConfig = {
     outfile: './assets/css/critial.css',
     css: './build/css/rollup.css',
     url: 'http://localhost:3000',
     debug: true
   };
-    // TODO, should we load for different devices?
-  var baseConfig = Object.assign({}, baseConfig, {width: 1300,  height: 900});
+  // TODO, should we load for different devices?
+  var baseConfig = Object.assign({}, baseConfig, { width: 1300, height: 900 });
   return baseConfig;
 }
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   var config = {
     project: {
       app: './app',
@@ -136,7 +136,7 @@ module.exports = function (grunt) {
         cwd: '<%= project.assets %>'
       }
     },
-        // concat all css for penthhouse
+    // concat all css for penthhouse
     concat: {
       css: {
         src: [
@@ -156,19 +156,27 @@ module.exports = function (grunt) {
           compatibility: 'ie8',
           sourceMap: false
         },
-        files: [{
-          src: ['<%= project.build %>/css/theme.css', 'node_modules/react-aspect-ratio/aspect-ratio.css'],
-          dest: '<%= project.build %>/css/theme.css'
-        }, {
-          src: ['<%= project.build %>/css/normalize.css'],
-          dest: '<%= project.build %>/css/normalize.css'
-        }, {
-          src: ['<%= project.build %>/css/atomic.css'],
-          dest: '<%= project.build %>/css/atomic.css'
-        },{
-          src: ['<%= project.build %>/css/transition.css'],
-          dest: '<%= project.build %>/css/transition.css'
-        }]
+        files: [
+          {
+            src: [
+              '<%= project.build %>/css/theme.css',
+              'node_modules/react-aspect-ratio/aspect-ratio.css'
+            ],
+            dest: '<%= project.build %>/css/theme.css'
+          },
+          {
+            src: ['<%= project.build %>/css/normalize.css'],
+            dest: '<%= project.build %>/css/normalize.css'
+          },
+          {
+            src: ['<%= project.build %>/css/atomic.css'],
+            dest: '<%= project.build %>/css/atomic.css'
+          },
+          {
+            src: ['<%= project.build %>/css/transition.css'],
+            dest: '<%= project.build %>/css/transition.css'
+          }
+        ]
       },
       critial: {
         options: {
@@ -176,10 +184,12 @@ module.exports = function (grunt) {
           compatibility: 'ie8',
           sourceMap: false
         },
-        files: [{
-          src: ['<%= project.assets %>/css/critial.css'],
-          dest: '<%= project.assets %>/css/critial.css'
-        }]
+        files: [
+          {
+            src: ['<%= project.assets %>/css/critial.css'],
+            dest: '<%= project.assets %>/css/critial.css'
+          }
+        ]
       }
     },
     postcss: {
@@ -187,26 +197,28 @@ module.exports = function (grunt) {
         options: {
           processors: [
             require('autoprefixer')({
-              browsers: [
-                '> 1%',
-                'last 2 versions'
-              ]
+              browsers: ['> 1%', 'last 2 versions']
             })
           ]
         },
-        files: [{
-          src: ['<%= project.build %>/css/atomic.css'],
-          dest: '<%= project.build %>/css/atomic.css'
-        },{
-          src: ['<%= project.build %>/css/theme.css'],
-          dest: '<%= project.build %>/css/theme.css'
-        },{
-          src: ['<%= project.build %>/css/critial.css'],
-          dest: '<%= project.build %>/css/critial.css'
-        },{
-          src: ['<%= project.build %>/css/transition.css'],
-          dest: '<%= project.build %>/css/transition.css'
-        }]
+        files: [
+          {
+            src: ['<%= project.build %>/css/atomic.css'],
+            dest: '<%= project.build %>/css/atomic.css'
+          },
+          {
+            src: ['<%= project.build %>/css/theme.css'],
+            dest: '<%= project.build %>/css/theme.css'
+          },
+          {
+            src: ['<%= project.build %>/css/critial.css'],
+            dest: '<%= project.build %>/css/critial.css'
+          },
+          {
+            src: ['<%= project.build %>/css/transition.css'],
+            dest: '<%= project.build %>/css/transition.css'
+          }
+        ]
       }
     },
     clean: ['./build'],
@@ -219,7 +231,7 @@ module.exports = function (grunt) {
         logConcurrentOutput: true
       }
     },
-        // nodemon to restart server if files change
+    // nodemon to restart server if files change
     nodemon: {
       dev: {
         script: './start.js',
@@ -242,9 +254,9 @@ module.exports = function (grunt) {
               console.log(event.colour);
             });
 
-                        // refreshes browser when server reboots
+            // refreshes browser when server reboots
             nodemon.on('restart', function() {
-                            // Delay before server listens on port
+              // Delay before server listens on port
               setTimeout(function() {
                 require('fs').writeFileSync('.rebooted', 'rebooted');
               }, 1000);
@@ -254,8 +266,8 @@ module.exports = function (grunt) {
       }
     },
     webpack: {
-      dev: getWebpackConfig({isDev: true, entry: './client.js'}),
-      prod: getWebpackConfig({isDev: false, entry: './client.js'})
+      dev: getWebpackConfig({ isDev: true, entry: './client.js' }),
+      prod: getWebpackConfig({ isDev: false, entry: './client.js' })
     },
     hash: {
       options: {
@@ -275,13 +287,8 @@ module.exports = function (grunt) {
     modernizr: {
       dist: {
         dest: '<%= project.build %>/js/modernizr.js',
-        tests: [
-          'csstransforms3d'
-        ],
-        options: [
-          'prefixed',
-          'setClasses'
-        ],
+        tests: ['csstransforms3d'],
+        options: ['prefixed', 'setClasses'],
         uglify: true,
         crawl: false
       }
@@ -303,10 +310,27 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-webpack');
 
-  grunt.registerTask('default', ['clean', 'css', 'modernizr:dist', 'hash', 'concurrent:dev']);
-  grunt.registerTask('build', ['clean', 'modernizr:dist', 'css', 'hash:css', 'webpack:prod', 'hash:js']);
+  grunt.registerTask('default', [
+    'clean',
+    'css',
+    'modernizr:dist',
+    'hash',
+    'concurrent:dev'
+  ]);
+  grunt.registerTask('build', [
+    'clean',
+    'modernizr:dist',
+    'css',
+    'hash:css',
+    'webpack:prod',
+    'hash:js'
+  ]);
   grunt.registerTask('css', ['atomizer:app', 'copy', 'cssmin', 'postcss:app']);
-    // need to run after server up
-  grunt.registerTask('penthouse-tasks', ['concat', 'penthouse', 'cssmin:critial']);
+  // need to run after server up
+  grunt.registerTask('penthouse-tasks', [
+    'concat',
+    'penthouse',
+    'cssmin:critial'
+  ]);
   grunt.registerTask('dev', ['default']);
 };

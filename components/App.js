@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import Layout from './layouts/Main.jsx';
 
-import {forEach} from 'lodash';
-import {handleHistory} from 'fluxible-router';
-import {provideContext} from 'fluxible-addons-react';
-import {subscribe} from 'subscribe-ui-event';
+import { forEach } from 'lodash';
+import { handleHistory } from 'fluxible-router';
+import { provideContext } from 'fluxible-addons-react';
+import { subscribe } from 'subscribe-ui-event';
 
 class App extends React.Component {
   constructor(props, context) {
@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   scrollHandler = (e, payload) => {
-    let {top} = payload.scroll;
+    let { top } = payload.scroll;
     if (top > 0) {
       this.DOC.classList.add('hasScrolled');
     }
@@ -30,30 +30,32 @@ class App extends React.Component {
     } else {
       this.DOC.classList.remove('uhHide');
     }
+  };
 
-  }
-
-  componentDidMount () {
+  componentDidMount() {
     this.DOC = document.documentElement;
     this.subscription = [
-      subscribe('scroll', this.scrollHandler, {enableScrollInfo: true, useRAF: true})
+      subscribe('scroll', this.scrollHandler, {
+        enableScrollInfo: true,
+        useRAF: true
+      })
     ];
   }
 
-  componentWillUnmount () {
-    forEach(this.subscription, function unsubscribe (sub) {
+  componentWillUnmount() {
+    forEach(this.subscription, function unsubscribe(sub) {
       sub.unsubscribe();
     });
   }
 
-  render () {
-        //render content
-    let route = this.routeStore.getCurrentRoute() || {name: 'home'};
-    let {ua} = this.props;
+  render() {
+    //render content
+    let route = this.routeStore.getCurrentRoute() || { name: 'home' };
+    let { ua } = this.props;
     return (
-            <main className='main-app'>
-                <Layout route={route} ua={ua}/>
-            </main>
+      <main className="main-app">
+        <Layout route={route} ua={ua} />
+      </main>
     );
   }
 }

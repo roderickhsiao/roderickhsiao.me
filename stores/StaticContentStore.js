@@ -3,18 +3,18 @@ var createStore = require('fluxible/addons/createStore');
 module.exports = createStore({
   storeName: 'StaticContentStore',
   handlers: {
-    'RECEIVE_ABOUT_SUCCESS': '_receiveAbout',
-    'RECEIVE_ACTIVITY_SUCCESS': '_receiveActivity',
-    'RECEIVE_CONTACT_SUCCESS': '_receiveContact',
-    'RECEIVE_COUNTRY_SUCCESS': '_receiveCountry',
-    'RECEIVE_EDUCATION_SUCCESS': '_receiveEducation',
-    'RECEIVE_EXPERIENCE_SUCCESS': '_receiveExperience',
-    'RECEIVE_INTEREST_SUCCESS': '_receiveInterest',
-    'RECEIVE_MENU_SUCCESS': '_receiveMenu',
-    'RECEIVE_SUMMARY_SUCCESS': '_receiveSummary'
+    RECEIVE_ABOUT_SUCCESS: '_receiveAbout',
+    RECEIVE_ACTIVITY_SUCCESS: '_receiveActivity',
+    RECEIVE_CONTACT_SUCCESS: '_receiveContact',
+    RECEIVE_COUNTRY_SUCCESS: '_receiveCountry',
+    RECEIVE_EDUCATION_SUCCESS: '_receiveEducation',
+    RECEIVE_EXPERIENCE_SUCCESS: '_receiveExperience',
+    RECEIVE_INTEREST_SUCCESS: '_receiveInterest',
+    RECEIVE_MENU_SUCCESS: '_receiveMenu',
+    RECEIVE_SUMMARY_SUCCESS: '_receiveSummary'
   },
 
-  initialize: function () {
+  initialize: function() {
     this.about = [];
     this.activity = [];
     this.contact = [];
@@ -26,56 +26,56 @@ module.exports = createStore({
     this.summary = {};
   },
 
-  _receiveAbout: function (payload) {
+  _receiveAbout: function(payload) {
     this.about = payload;
     this.emitChange();
   },
 
-  _receiveActivity: function (payload) {
+  _receiveActivity: function(payload) {
     this.activity = payload;
     this.emitChange();
   },
 
-  _receiveCountry: function (payload) {
+  _receiveCountry: function(payload) {
     this.country = payload;
     this.emitChange();
   },
 
-  _receiveContact: function (payload) {
+  _receiveContact: function(payload) {
     this.contact = payload;
     this.emitChange();
   },
 
-  _receiveEducation: function (payload) {
+  _receiveEducation: function(payload) {
     this.education = payload;
     this.emitChange();
   },
 
-  _receiveExperience: function (payload) {
+  _receiveExperience: function(payload) {
     this.experience = payload;
     this.emitChange();
   },
 
-  _receiveInterest: function (payload) {
+  _receiveInterest: function(payload) {
     this.interest = payload;
     this.emitChange();
   },
 
-  _receiveMenu: function (payload) {
+  _receiveMenu: function(payload) {
     this.menu = payload;
     this.emitChange();
   },
 
-  _receiveSummary: function (payload) {
+  _receiveSummary: function(payload) {
     this.summary = payload;
     this.emitChange();
   },
 
-  getData: function (name) {
+  getData: function(name) {
     return this[name] || {};
   },
 
-  dehydrate: function () {
+  dehydrate: function() {
     return {
       about: this.about,
       activity: this.activity,
@@ -88,7 +88,7 @@ module.exports = createStore({
       summary: this.summary
     };
   },
-  rehydrate: function (state) {
+  rehydrate: function(state) {
     this.about = state.about;
     this.activity = state.activity;
     this.contact = state.contact;

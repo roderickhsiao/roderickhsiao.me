@@ -4,26 +4,18 @@ var keyBy = require('lodash/keyBy');
 module.exports = createStore({
   storeName: 'PageStore',
   handlers: {
-    'RECEIVE_ASSETS_SUCCESS': '_receiveAssets'
+    RECEIVE_ASSETS_SUCCESS: '_receiveAssets'
   },
 
-  initialize: function () {
-    this.state = {
-
-    };
+  initialize: function() {
+    this.state = {};
   },
 
-  _receiveAssets: function (payload) {
+  _receiveAssets: function(payload) {},
 
+  dehydrate: function() {
+    return {};
   },
 
-  dehydrate: function () {
-    return {
-
-    };
-  },
-
-  rehydrate: function (state) {
-
-  }
+  rehydrate: function(state) {}
 });

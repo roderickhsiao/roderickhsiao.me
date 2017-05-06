@@ -9,14 +9,13 @@ import StaticContentStore from './stores/StaticContentStore';
 
 let app = new Fluxible({
   component: App,
-  stores: [
-    RouteStore,
-    StaticContentStore
-  ]
+  stores: [RouteStore, StaticContentStore]
 });
 app.plug(batchedUpdatePlugin());
-app.plug(fetchrPlugin({
-  xhrPath: '/api'
-}));
+app.plug(
+  fetchrPlugin({
+    xhrPath: '/api'
+  })
+);
 
 export default app;
