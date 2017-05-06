@@ -52,7 +52,7 @@ module.exports = {
               height: 200
             },
             title: 'Yahoo',
-            description: "A new welcome to Yahoo. The new Yahoo experience makes it easier to discover the news and information that you care about most. It's the web ordered for you.",
+            description: 'A new welcome to Yahoo. The new Yahoo experience makes it easier to discover the news and information that you care about most. It\'s the web ordered for you.',
             url: 'https://www.yahoo.com/'
           }
         },
@@ -142,7 +142,7 @@ module.exports = {
               height: 355
             },
             title: 'Yahoo 2012 Presidential Election',
-            description: "Yahoo's Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.",
+            description: 'Yahoo\'s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.',
             url: 'https://books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false'
           }
         },
@@ -159,7 +159,7 @@ module.exports = {
               height: 355
             },
             title: 'Yahoo 2012 Presidential Election',
-            description: "Yahoo's Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.",
+            description: 'Yahoo\'s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.',
             url: 'https://books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false'
           }
         },
