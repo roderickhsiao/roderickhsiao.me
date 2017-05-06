@@ -2,7 +2,7 @@
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "dependencies": {
     "async": "^2.0.0",
-    "autoprefixer": "^6.0.0",
+    "autoprefixer": "^7.0.0",
     "babel": "^6.5.2",
     "babel-core": "^6.6.4",
     "babel-eslint": "^7.1.1",
@@ -43,7 +43,7 @@
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.0.0",
     "grunt-hash": "^0.5.0",
     "grunt-modernizr": "^1.0.0",
     "grunt-postcss": "^0.8.0",
