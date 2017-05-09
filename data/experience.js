@@ -15,7 +15,7 @@ module.exports = {
       location: 'Palo Alto, CA',
       projects: [
         {
-          name: 'Branch Dashboard and solutions',
+          name: 'Branch Dashboard and Solutions',
           time: 'July 2016 - Jan 2017',
           summary: 'Building frontend infrastructure, Engineering practice and website optimizations.',
           techStack: 'NodeJS, React and Redux',

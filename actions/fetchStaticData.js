@@ -1,4 +1,4 @@
-var StaticContentStore = require('../stores/StaticContentStore');
+import StaticContentStore from '../stores/StaticContentStore';
 
 module.exports = function(context, payload, done) {
   var resource = payload.resource;

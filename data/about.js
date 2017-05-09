@@ -40,10 +40,6 @@ module.exports = [
     url: 'https://www.npmjs.com/package/penthouse'
   },
   {
-    name: 'Normalize CSS',
-    url: 'https://necolas.github.io/normalize.css'
-  },
-  {
     name: 'Progressive Web App',
     url: 'https://developers.google.com/web/progressive-web-apps/'
   }

@@ -22,7 +22,7 @@ class Smartlink extends PureComponent {
         href={smartlink.url}
         target="_black"
       >
-        <div>
+        <span>
           {isLargeTemplate
             ? <AspectRatio ratio={ratio}>
                 <Img src={thumbnail.url} />
@@ -44,7 +44,7 @@ class Smartlink extends PureComponent {
               {smartlink.description}
             </div>
           </div>
-        </div>
+        </span>
       </a>
     );
   }
