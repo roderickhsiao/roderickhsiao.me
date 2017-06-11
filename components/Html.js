@@ -38,7 +38,6 @@ class HtmlComponent extends PureComponent {
           <link rel="dns-prefetch" href="https://i.imgsafe.org" />
           <link rel="preconnect" href="https://i.imgsafe.org" />
           <link rel="dns-prefetch" href="https://www.gstatic.com/" />
-          <link rel="preconnect" href="https://www.gstatic.com/" />
           <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="dns-prefetch" href="https://cdn.polyfill.io" />
