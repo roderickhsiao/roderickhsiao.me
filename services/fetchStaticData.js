@@ -6,7 +6,6 @@ var DATA_MAPPING = {
   country: require('../data/country'),
   education: require('../data/education'),
   experience: require('../data/experience'),
-  interest: require('../data/interest'),
   layout: require('../configs/layout'),
   menu: require('../data/menu'),
   summary: require('../data/summary')

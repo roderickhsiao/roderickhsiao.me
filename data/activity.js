@@ -16,7 +16,7 @@ module.exports = [
     org: 'HSNU Alumni Windband',
     smartlink: {
       thumbnail: {
-        url: 'https://i.imgsafe.org/caa2a3c.png',
+        url: '/hsnu.png',
         width: 234,
         height: 234
       },

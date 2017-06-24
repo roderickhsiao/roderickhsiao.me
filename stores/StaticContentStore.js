@@ -9,7 +9,6 @@ module.exports = createStore({
     RECEIVE_COUNTRY_SUCCESS: '_receiveCountry',
     RECEIVE_EDUCATION_SUCCESS: '_receiveEducation',
     RECEIVE_EXPERIENCE_SUCCESS: '_receiveExperience',
-    RECEIVE_INTEREST_SUCCESS: '_receiveInterest',
     RECEIVE_MENU_SUCCESS: '_receiveMenu',
     RECEIVE_SUMMARY_SUCCESS: '_receiveSummary'
   },
@@ -21,7 +20,6 @@ module.exports = createStore({
     this.country = {};
     this.education = [];
     this.experience = {};
-    this.interest = [];
     this.menu = {};
     this.summary = {};
   },
@@ -56,11 +54,6 @@ module.exports = createStore({
     this.emitChange();
   },
 
-  _receiveInterest: function(payload) {
-    this.interest = payload;
-    this.emitChange();
-  },
-
   _receiveMenu: function(payload) {
     this.menu = payload;
     this.emitChange();
@@ -83,7 +76,6 @@ module.exports = createStore({
       country: this.country,
       education: this.education,
       experience: this.experience,
-      interest: this.interest,
       menu: this.menu,
       summary: this.summary
     };
@@ -95,7 +87,6 @@ module.exports = createStore({
     this.country = state.country;
     this.education = state.education;
     this.experience = state.experience;
-    this.interest = state.interest;
     this.menu = state.menu;
     this.summary = state.summary;
   }

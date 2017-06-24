@@ -67,9 +67,9 @@
     "sitemap": "^1.6.0",
     "spdy": "^3.4.4",
     "subscribe-ui-event": "^1.0.0",
-    "sw-precache-webpack-plugin": "^0.11.0",
+    "sw-precache-webpack-plugin": "^0.11.3",
     "ua-parser-js": "^0.7.10",
-    "webpack": "^2.5.0"
+    "webpack": "^3.0.0"
   },
   "description": "Roderick Hsiao",
   "devDependencies": {

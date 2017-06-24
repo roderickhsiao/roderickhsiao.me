@@ -16,11 +16,11 @@ module.exports = {
     }
   },
   activity: {
-    prefetch: 'about,contact,country,activity,interest,menu',
+    prefetch: 'about,contact,country,activity,menu',
     regions: {
       header: ['HeaderComponent'],
       main: ['Activity', 'Country'],
-      right: ['Interest', 'Contact', 'About']
+      right: ['Contact', 'About']
     }
   }
 };

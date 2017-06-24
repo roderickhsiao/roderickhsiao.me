@@ -36,6 +36,7 @@ function getWebpackConfig(opts) {
       new OptimizeJsPlugin({
         sourceMap: false
       }),
+      new webpack.optimize.ModuleConcatenationPlugin(),
       new SWPrecacheWebpackPlugin({
         cacheId: 'roderickhsiao',
         filename: 'sw.js',

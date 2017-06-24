@@ -2,14 +2,14 @@ module.exports = {
   companies: [
     {
       name: 'Tinder',
-      logo: 'https://i.imgsafe.org/e3c3877dc8.png',
+      logo: '/tinderLogo.png',
       time: 'Feb 2017 - present',
       title: 'Senior Software Engineer',
       location: 'Palo Alto, CA'
     },
     {
       name: 'Branch',
-      logo: 'https://i.imgsafe.org/b44e2125b7.png',
+      logo: '/branch.png',
       time: 'July 2016 - Jan 2017',
       title: 'Software Engineer',
       location: 'Palo Alto, CA',
@@ -20,14 +20,13 @@ module.exports = {
           summary: 'Building frontend infrastructure, Engineering practice and website optimizations.',
           techStack: 'NodeJS, React and Redux',
           smartlink: {
-            type: 'large',
             thumbnail: {
-              url: 'https://i.imgsafe.org/abff4b8869.png',
-              width: 476,
-              height: 249
+              url: '/branchSquare.jpg',
+              width: 200,
+              height: 200
             },
             description: 'Number 1 in deep linking. Integrate robust, durable links into email, SEM, ads and other traditional marketing channels for improved app growth.',
-            title: 'Branch Metrics - Deep Linking, Attribution and Mobile Marketing',
+            title: 'Branch',
             url: 'https://branch.io'
           }
         }
@@ -35,7 +34,7 @@ module.exports = {
     },
     {
       name: 'Yahoo',
-      logo: 'https://i.imgsafe.org/b4501a69ca.png',
+      logo: '/yahooLogo.png',
       time: 'Nov 2009 - July 2016',
       title: 'Senior Software Engineer',
       location: 'Sunnyvale, CA',
@@ -47,7 +46,7 @@ module.exports = {
           techStack: 'ExpressJS, ReactJS (Fluxible), and Atomic CSS',
           smartlink: {
             thumbnail: {
-              url: 'https://i.imgsafe.org/b45162ee19.png',
+              url: '/yahoo.jpg',
               width: 200,
               height: 200
             },
@@ -63,7 +62,7 @@ module.exports = {
           techStack: 'ExpressJS, ReactJS (Fluxible), and Atomic CSS',
           smartlink: {
             thumbnail: {
-              url: 'https://i.imgsafe.org/007c514.png',
+              url: '/yahooWeather.png',
               width: 200,
               height: 200
             },
@@ -80,7 +79,7 @@ module.exports = {
           url: 'https://www.yahoo.com/digest',
           smartlink: {
             thumbnail: {
-              url: 'https://lh5.ggpht.com/0TavkkXqQT-WEnwRd2nVhBKzxg4i0h6yFnx4-j6wW9Hww65Ov1xslfprPFNz95x_IIs=w300',
+              url: '/yahooNewsDigest.png',
               width: 200,
               height: 200
             },
@@ -99,7 +98,7 @@ module.exports = {
     },
     {
       name: 'Yahoo',
-      logo: 'https://i.imgsafe.org/b4501a69ca.png',
+      logo: '/yahooLogo.png',
       time: 'April 2013 - Oct 2013',
       title: 'Engineering Team Lead',
       location: 'Taipei, Taiwan',
@@ -111,7 +110,7 @@ module.exports = {
           techStack: 'ExpressJS, DustJS, CSS, and YUI',
           smartlink: {
             thumbnail: {
-              url: 'https://i.imgsafe.org/b454f98a9d.png',
+              url: '/yahoo.jpg',
               width: 200,
               height: 200
             },
@@ -124,7 +123,7 @@ module.exports = {
     },
     {
       name: 'Yahoo',
-      logo: 'https://i.imgsafe.org/b4501a69ca.png',
+      logo: '/yahooLogo.png',
       time: 'Nov 2009 - April 2013',
       title: 'Quality Engineering Lead / Software Engineer',
       location: 'Taipei, Taiwan',
@@ -137,9 +136,9 @@ module.exports = {
           smartlink: {
             type: 'large',
             thumbnail: {
-              url: 'https://i.imgsafe.org/abf903ffd4.jpg',
-              width: 444,
-              height: 355
+              url: '/controlRoom.jpg',
+              width: 640,
+              height: 511
             },
             title: 'Yahoo 2012 Presidential Election',
             description: 'Yahoo\'s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.',
@@ -154,7 +153,7 @@ module.exports = {
           smartlink: {
             type: 'large',
             thumbnail: {
-              url: 'https://i.imgsafe.org/4fb36db.jpg',
+              url: '/hashout.jpg',
               width: 630,
               height: 355
             },
@@ -170,7 +169,7 @@ module.exports = {
           techStack: 'Java, Selenium, WebdriverJS and YUI',
           smartlink: {
             thumbnail: {
-              url: 'https://i.imgsafe.org/f696ea7.png',
+              url: '/yahoo.jpg',
               width: 200,
               height: 200
             },

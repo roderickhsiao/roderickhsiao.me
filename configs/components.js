@@ -22,8 +22,5 @@ module.exports = {
   },
   Activity: {
     path: 'Activity'
-  },
-  Interest: {
-    path: 'Interest'
   }
 };

@@ -35,8 +35,6 @@ class HtmlComponent extends PureComponent {
           <link rel="apple-touch-icon" sizes="144x144" href="taz-2x.png" />
           <link rel="apple-touch-icon" sizes="192x192" href="taz-3x.png" />
 
-          <link rel="dns-prefetch" href="https://i.imgsafe.org" />
-          <link rel="preconnect" href="https://i.imgsafe.org" />
           <link rel="dns-prefetch" href="https://www.gstatic.com/" />
           <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
