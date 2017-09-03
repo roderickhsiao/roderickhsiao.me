@@ -28,19 +28,20 @@ module.exports = {
       {
         field: 'location',
         props: {
-          className: 'Fs(i) Mb(4px) C($c-black-2)',
+          className: 'Fs(i) Mb(4px)',
           itemProp: 'addressLocality'
         }
       }
     ],
     summary: [
-      'HTML, CSS, Javascript (Vanilla Javascript, ReactJS and YUI), NodeJS',
-      'Web UI component and front-end infra',
+      'HTML, CSS, Javascript (Client/Server)',
+      'Web UI component and front-end infra and architecture',
       'High performance web development',
       'Mobile web developer',
       'Large scale website',
       'International development',
-      'Agile development'
+      'Agile development',
+      'SEO optimization'
     ]
   }
 };

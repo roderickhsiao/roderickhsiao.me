@@ -64,17 +64,10 @@ class MainBrief extends PureComponent {
 
   renderSummary(data) {
     return (
-      <div className="BdT Bdtc($c-black-4) Mt(10px)">
-        <h5 className="My(10px) Mx(0) C($c-black-2) Fw(400)">
-          Summary
-        </h5>
-        <ol className="Mend(10px)">
+      <div className="Px($card-padding)">
+        <ol>
           {map(data, (item, i) => {
-            return (
-              <li key={i}>
-                {item}
-              </li>
-            );
+            return <li className="C(#fff)" key={i}>{item}</li>;
           })}
         </ol>
       </div>
@@ -87,17 +80,36 @@ class MainBrief extends PureComponent {
       return null;
     }
     return (
-      <Card itemScope="" itemType="http://schema.org/Person">
-        <div className="D(ib) Va(t)">
-          {this.renderThumbnail(profile.thumbnail, profile.name)}
+      <div
+        className="H(300px) Mb(20px) Pos(r) Bgc(#212121) Ov(h) mainBrief Bxsh($shadow-card) Bdrs(2px) Bxsh($shadow-2dp):h Trsdu($trsdu-fast)"
+        itemScope=""
+        itemType="http://schema.org/Person"
+      >
+        <div className="Pos(a) End(-15%) D(n) D(b)--md">
+          <Img
+            src={'/profile.jpg'}
+            width={400}
+            height={300}
+            itemProp="image"
+          />
+          <div
+            className="Pos(a) T(0) Bds(s)"
+            style={{
+              borderWidth: '300px 0 0 100px',
+              borderColor: 'transparent transparent transparent #212121'
+            }}
+          />
         </div>
-        <div className="D(ib) Va(t)">
-          <ul className="M(0) C($c-black-1)">
-            {this.renderListItem(profile)}
-          </ul>
+        <div className="Bgc(#212121)">
+          <div className="D(ib)--xs Va(t) D(n) Pt($card-padding) Pstart($card-padding)">
+            {this.renderThumbnail(profile.thumbnail, profile.name)}
+          </div>
+          <div className="D(ib) Va(t) P($card-padding)">
+            <ul className="M(0) C(#fff)">{this.renderListItem(profile)}</ul>
+          </div>
+          {this.renderSummary(profile.summary)}
         </div>
-        {this.renderSummary(profile.summary)}
-      </Card>
+      </div>
     );
   }
 }
