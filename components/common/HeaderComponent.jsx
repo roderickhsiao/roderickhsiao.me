@@ -55,7 +55,7 @@ class HeaderComponent extends PureComponent {
               Roderick Hsiao
             </h5>
           </div>
-          <menu className="D(tb) Pos(a) End(0) H(100%) M(0) P(0) Start(0)--xs">
+          <menu className="D(tb) Pos(a) End(0) H(100%) M(0) P(0) Start(0)--xs" itemScope itemType="http://schema.org/SiteNavigationElement">
             <Menu menuConfig={menuConfig} />
           </menu>
         </div>
