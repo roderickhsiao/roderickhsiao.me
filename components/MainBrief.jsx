@@ -85,7 +85,7 @@ class MainBrief extends PureComponent {
         itemScope=""
         itemType="http://schema.org/Person"
       >
-        <div className="Pos(a) End(-15%) D(n) D(b)--md">
+        <div className="Pos(a) End(-180px) D(n) D(b)--md">
           <Img
             src={'/profile.jpg'}
             width={400}
