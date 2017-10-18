@@ -49,6 +49,7 @@ server.use(compression({
 server.use(cookieParser());
 server.use(csrf({cookie: true}));
 server.use(helmet());
+server.use(helmet.dnsPrefetchControl({ allow: true }));
 
 server.set('state namespace', 'App');
 server.use('/', express['static'](__dirname + '/build', {maxAge: ONE_YEAR}));
