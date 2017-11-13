@@ -40,7 +40,7 @@ function getWebpackConfig(opts) {
       new SWPrecacheWebpackPlugin({
         cacheId: 'roderickhsiao',
         filename: 'sw.js',
-        staticFileGlobs: ['build/**/*.*.{js,html,css,png,jpg,gif}'],
+        staticFileGlobs: ['build/**/*.*.{js,html,css,gif}'],
         stripPrefix: 'build',
         runtimeCaching: [
           {
