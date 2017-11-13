@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+er import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 

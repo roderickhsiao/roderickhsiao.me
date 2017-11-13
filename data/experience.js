@@ -5,7 +5,25 @@ module.exports = {
       logo: '/tinderLogo.png',
       time: 'Feb 2017 - present',
       title: 'Senior Software Engineer',
-      location: 'Palo Alto, CA'
+      location: 'Palo Alto, CA',
+      projects: [
+        {
+          name: 'Tinder Online',
+          time: 'Feb 2017 - present',
+          summary: 'Tech lead for https://tinder.com',
+          techStack: 'NodeJS, React and Redux',
+          smartlink: {
+            thumbnail: {
+              url: '/tinder.jpg',
+              width: 200,
+              height: 200
+            },
+            description: 'With 20 billion matches to date, Tinder is the world\'s most popular app for meeting new people',
+            title: 'Tinder | Swipe. Match. Chat.',
+            url: 'https://tinder.com'
+          }
+        }
+      ]
     },
     {
       name: 'Branch',
