@@ -14,7 +14,7 @@ module.exports = {
           techStack: 'NodeJS, React and Redux',
           smartlink: {
             thumbnail: {
-              url: '/tinder.jpg',
+              url: '/tinder.jpeg',
               width: 200,
               height: 200
             },
