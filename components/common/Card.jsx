@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 
-class Card extends PureComponent {
+export default class Card extends PureComponent {
   render() {
     const { title, children, footer } = this.props;
     return (
@@ -15,7 +15,3 @@ class Card extends PureComponent {
     );
   }
 }
-
-Card.displayName = 'Card';
-
-export default Card;

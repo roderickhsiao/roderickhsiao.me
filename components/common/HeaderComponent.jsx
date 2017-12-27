@@ -26,15 +26,11 @@ class Menu extends PureComponent {
         </li>
       );
     });
-    return (
-      <ul>
-        {node}
-      </ul>
-    );
+    return <ul>{node}</ul>;
   }
 }
 
-class HeaderComponent extends PureComponent {
+export default class HeaderComponent extends PureComponent {
   render() {
     const { route } = this.props.context;
     const menuItems = get(menuConfig, [route.name], {});
@@ -55,7 +51,11 @@ class HeaderComponent extends PureComponent {
               Roderick Hsiao
             </h5>
           </div>
-          <menu className="D(tb) Pos(a) End(0) H(100%) M(0) P(0) Start(0)--xs" itemScope itemType="http://schema.org/SiteNavigationElement">
+          <menu
+            className="D(tb) Pos(a) End(0) H(100%) M(0) P(0) Start(0)--xs"
+            itemScope
+            itemType="http://schema.org/SiteNavigationElement"
+          >
             <Menu menuConfig={menuConfig} />
           </menu>
         </div>
@@ -63,6 +63,3 @@ class HeaderComponent extends PureComponent {
     );
   }
 }
-HeaderComponent.displayName = 'HeaderComponent';
-
-export default HeaderComponent;

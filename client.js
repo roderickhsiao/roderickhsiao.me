@@ -15,7 +15,7 @@
 })();
 
 import React from 'react';
-import { render } from 'react-dom';
+import { hydrate } from 'react-dom';
 
 import Debug from 'debug';
 import RouteStore from './stores/RouteStore';
@@ -42,7 +42,7 @@ app.rehydrate(dehydratedState, (err, context) => {
   debug('React Rendering');
   var mountNode = document.getElementById('app');
 
-  render(createElement(context), mountNode, () => {
+  hydrate(createElement(context), mountNode, () => {
     debug('React Rendered');
   });
 });
