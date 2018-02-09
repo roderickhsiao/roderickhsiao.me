@@ -1,5 +1,21 @@
 module.exports = [
   {
+    name: 'Website Board',
+    org: 'Str8jacket Dance Company',
+    year: '2017',
+    summary: 'Create and maintain website outside of dance practice.',
+    smartlink: {
+      thumbnail: {
+        url: 'https://scontent-sjc3-1.cdninstagram.com/vp/abed55d79c652d447aa0fa661fff1de2/5B124180/t51.2885-19/s320x320/20346786_225326937992058_8939540587682463744_a.jpg',
+        width: 320,
+        height: 320
+      },
+      title: 'Str8jacket Dance Company',
+      description: 'Based out of the San Francisco Bay Area, we are a hip hop dance team that strives to challenge the standards of hip hop dance while still preserving the culture and roots of hip hop.',
+      url: 'https://www.str8jacketdance.com/'
+    }
+  },
+  {
     name: 'Top 10 Travelers',
     org: 'Core Corner Organization',
     year: '2012',

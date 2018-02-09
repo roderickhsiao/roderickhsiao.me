@@ -28,7 +28,7 @@ html {
   height: 100%;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
-  color: rgba(0,0,0,.87);
+  color: rgba(0, 0, 0, 0.87);
   font-size: 1em;
   line-height: 1.4;
   -webkit-text-size-adjust: 100%;
@@ -58,21 +58,35 @@ main {
   display: block;
 }
 
-html, body {
-  font-family: "Helvetica", "Arial", sans-serif;
+html,
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 20px; }
+  line-height: 20px;
+}
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /**
   * Styles for HTML elements
   */
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 56px;
   font-weight: 400;
   line-height: 1.35;
@@ -82,7 +96,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 h1 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 56px;
   font-weight: 400;
   line-height: 1.35;
@@ -92,7 +106,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 45px;
   font-weight: 400;
   line-height: 48px;
@@ -101,7 +115,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 34px;
   font-weight: 400;
   line-height: 40px;
@@ -110,7 +124,7 @@ h3 {
 }
 
 h4 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
@@ -120,7 +134,7 @@ h4 {
 }
 
 h5 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
@@ -130,7 +144,7 @@ h5 {
 }
 
 h6 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -151,24 +165,24 @@ p,
 pre,
 table,
 ul {
-    margin-top: 1em;
-    margin-bottom: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 /* TODO: rtl version of this? */
 ul,
 ol,
 dd {
-    margin-left: 0;
-    padding-left: 0;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 blockquote {
-    border-left: 7px solid rgba(2, 128, 174, 0.3);
-    color: #000;
-    font-style: italic;
-    margin-left: 0;
-    padding: 1px 0 1px 2em;
+  border-left: 7px solid rgba(2, 128, 174, 0.3);
+  color: #000;
+  font-style: italic;
+  margin-left: 0;
+  padding: 1px 0 1px 2em;
 }
 
 /**
@@ -176,7 +190,7 @@ blockquote {
  */
 ol,
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 /**
@@ -185,24 +199,24 @@ ul {
  * 3. Prevent "mysterious gaps below images" (descender).
  */
 img {
-    border: 0; /* 1 */
-    height: auto; /* 2 */
-    max-width: 100%; /* 2 */
-    vertical-align: bottom; /* 3 */
+  border: 0; /* 1 */
+  height: auto; /* 2 */
+  max-width: 100%; /* 2 */
+  vertical-align: bottom; /* 3 */
 }
 
 /**
  * 1. Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
 button {
-    overflow: visible; /* 1 */
+  overflow: visible; /* 1 */
 }
 
 /**
  * 1. Correct overflow not hidden in IE 9/10/11.
  */
 svg:not(:root) {
-    overflow: hidden; /* 1 */
+  overflow: hidden; /* 1 */
 }
 
 /**
@@ -214,7 +228,7 @@ svg:not(:root) {
  * Remove the gray background *color* from active links in IE 10.
  */
 a {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /**
@@ -222,15 +236,15 @@ a {
  */
 a:active,
 a:hover {
-    outline: 0;
+  outline: 0;
 }
 
 :link,
 :visited {
-    text-decoration: none;
-    color: #0280ae;
+  text-decoration: none;
+  color: #0280ae;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }

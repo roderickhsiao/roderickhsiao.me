@@ -1,25 +1,25 @@
 .page-enter {
-    opacity: 0;
-    transform: translate3d(0, 200px, 0) scale(.9);
-    transform-origin: top;
+  opacity: 0;
+  transform: translate3d(0, 200px, 0) scale(0.9);
+  transform-origin: top;
 }
 
 .page-enter.page-enter-active {
-    opacity: 1;
-    transition-duration: .5s;
-    transition-timing-function: ease-in-out;
-    transform: none;
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transform: none;
 }
 
 .page-leave {
-    opacity: 1;
-    transform-origin: top;
-    transform: none;
+  opacity: 1;
+  transform-origin: top;
+  transform: none;
 }
 
 .page-leave.page-leave-active {
-    opacity: 0;
-    transition-duration: .3s;
-    transition-timing-function: ease-in;
-    transform: translate3d(0, 200px, 0) scale(.9);
+  opacity: 0;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+  transform: translate3d(0, 200px, 0) scale(0.9);
 }
