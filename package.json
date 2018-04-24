@@ -18,7 +18,7 @@
     "babel-plugin-transform-react-inline-elements": "^6.6.5",
     "babel-plugin-transform-react-jsx": "^6.7.4",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.1",
-    "babel-plugin-transform-replace-object-assign": "^0.2.0",
+    "babel-plugin-transform-replace-object-assign": "^1.0.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
@@ -75,7 +75,7 @@
   "devDependencies": {
     "eslint": "^3.1.1",
     "grunt-nodemon": "^0.4.0",
-    "grunt-penthouse": "^0.4.0",
+    "grunt-penthouse": "^1.0.0",
     "nodemon": "^1.7.3",
     "pre-commit": "^1.0.0",
     "webpack-dev-server": "^2.4.5"
