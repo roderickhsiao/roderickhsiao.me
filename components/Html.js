@@ -9,6 +9,12 @@ const inlineJSDetect =
 const pathPrefix = '/';
 
 class HtmlComponent extends PureComponent {
+  static propTypes = {
+    context: PropTypes.object.isRequired,
+    markup: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired
+  };
+
   getHashAssets(assetsPath) {
     let key = assetsPath.replace(pathPrefix, '');
     let match = assetsMapping[key];
@@ -131,12 +137,5 @@ class HtmlComponent extends PureComponent {
     );
   }
 }
-HtmlComponent.displayName = 'HtmlComponent';
-
-HtmlComponent.propTypes = {
-  context: PropTypes.object.isRequired,
-  markup: PropTypes.string.isRequired,
-  state: PropTypes.string.isRequired
-};
 
 export default HtmlComponent;

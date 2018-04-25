@@ -10,22 +10,28 @@ import { map } from 'lodash';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
 class Contact extends PureComponent {
-  constructor(props, context) {
-    super(props, context);
-    this.store = context.getStore(StaticContentStore);
-    this.state = {
-      contact: this.store.getData('contact') || {}
-    };
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.contact !== prevState.contact) {
+      return nextProps;
+    }
+
+    return null;
   }
 
-  componentWillMount() {
+  static contextTypes = {
+    executeAction: PropTypes.func,
+    getStore: PropTypes.func
+  };
+
+  store = this.context.getStore(StaticContentStore);
+  state = {
+    contact: this.props.contact
+  };
+
+  componentDidMount() {
     this.context.executeAction(fetchStaticDataAction, {
       resource: 'contact'
     });
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState(nextProps);
   }
 
   renderContact(contact) {
@@ -48,11 +54,7 @@ class Contact extends PureComponent {
       );
     });
 
-    return (
-      <ul>
-        {nodes}
-      </ul>
-    );
+    return <ul>{nodes}</ul>;
   }
   render() {
     let { contact } = this.state;
@@ -62,28 +64,20 @@ class Contact extends PureComponent {
 
     return (
       <Card>
-        <h5 className="M(0)">
-          Contact
-        </h5>
-        <div className="My(10px) Fs(i) C($c-black-3)">
-          Mandarin/English
-        </div>
+        <h5 className="M(0)">Contact</h5>
+        <div className="My(10px) Fs(i) C($c-black-3)">Mandarin/English</div>
         {this.renderContact(contact)}
       </Card>
     );
   }
 }
-Contact.displayName = 'Contact';
 
-Contact.contextTypes = {
-  executeAction: PropTypes.func,
-  getStore: PropTypes.func
-};
-
-Contact = connectToStores(Contact, [StaticContentStore], (context, props) => {
-  return {
-    contact: context.getStore(StaticContentStore).getData('contact')
-  };
-});
-
-export default Contact;
+export default connectToStores(
+  Contact,
+  [StaticContentStore],
+  (context, props) => {
+    return {
+      contact: context.getStore(StaticContentStore).getData('contact')
+    };
+  }
+);

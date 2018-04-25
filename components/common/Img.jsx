@@ -18,19 +18,21 @@ import raf from 'raf';
  * An image lazyload component, probably can also be used for other blocking assets like iframe
  */
 class Img extends PureComponent {
-  constructor(props, context) {
-    super(props, context);
-    this.image = null;
-    this.state = {
-      status: this.props.inViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return {
+      status: nextProps.isInViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
     };
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState({
-      status: newProps.inViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
-    });
-  }
+  static propTypes = {
+    className: PropTypes.string,
+    src: PropTypes.string.isRequired
+  };
+
+  image = null;
+  state = {
+    status: this.props.inViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
+  };
 
   loadImage = () => {
     this.image = new Image();
@@ -83,11 +85,5 @@ class Img extends PureComponent {
     return React.createElement(nodeName, props);
   }
 }
-Img.displayName = 'Img';
-
-Img.propTypes = {
-  className: PropTypes.string,
-  src: PropTypes.string.isRequired
-};
 
 export default handleViewport(Img);

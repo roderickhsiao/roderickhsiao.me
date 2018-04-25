@@ -49,6 +49,5 @@ class Smartlink extends PureComponent {
     );
   }
 }
-Smartlink.displayName = 'Smartlink';
 
 export default Smartlink;

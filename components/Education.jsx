@@ -12,22 +12,28 @@ import classNames from 'classnames';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
 class Education extends PureComponent {
-  constructor(props, context) {
-    super(props, context);
-    this.store = context.getStore(StaticContentStore);
-    this.state = {
-      education: this.store.getData('education') || {}
-    };
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.education !== prevState.education) {
+      return nextProps;
+    }
+
+    return null;
   }
 
-  componentWillMount() {
+  static contextTypes = {
+    executeAction: PropTypes.func,
+    getStore: PropTypes.func
+  };
+
+  store = this.context.getStore(StaticContentStore);
+  state = {
+    education: this.props.education
+  };
+
+  componentDidMount() {
     this.context.executeAction(fetchStaticDataAction, {
       resource: 'education'
     });
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState(nextProps);
   }
 
   renderEducation(data) {
@@ -45,38 +51,26 @@ class Education extends PureComponent {
           })}
         >
           <div className="D(ib) Va(m)">
-            <h6 className="M(0)">
-              {edu.name}
-            </h6>
+            <h6 className="M(0)">{edu.name}</h6>
             <span className="Fz(.9em) Fs(i) C($c-black-3)">
               {edu.location} | {edu.time}
             </span>
-            <div>
-              {edu.department}
-            </div>
-            <div>
-              {edu.college}
-            </div>
-            <div className="Fw(b)">
-              {edu.degree}
-            </div>
+            <div>{edu.department}</div>
+            <div>{edu.college}</div>
+            <div className="Fw(b)">{edu.degree}</div>
           </div>
-          {thumbnail.url
-            ? <Img
-                nodeName="div"
-                src={thumbnail.url}
-                className="Bgz(ct) Bgr(nr) Fl(end) W(100px) D(n)--xs"
-                style={{ height: height }}
-              />
-            : null}
+          {thumbnail.url ? (
+            <Img
+              nodeName="div"
+              src={thumbnail.url}
+              className="Bgz(ct) Bgr(nr) Fl(end) W(100px) D(n)--xs"
+              style={{ height: height }}
+            />
+          ) : null}
         </li>
       );
     });
-    return (
-      <ul>
-        {nodes}
-      </ul>
-    );
+    return <ul>{nodes}</ul>;
   }
 
   render() {
@@ -86,22 +80,14 @@ class Education extends PureComponent {
     }
     return (
       <Card>
-        <h5 className="My(10px) Mx(0) C($c-black-2) Fw(400)">
-          Education
-        </h5>
+        <h5 className="My(10px) Mx(0) C($c-black-2) Fw(400)">Education</h5>
         {this.renderEducation(education)}
       </Card>
     );
   }
 }
-Education.displayName = 'Education';
 
-Education.contextTypes = {
-  executeAction: PropTypes.func,
-  getStore: PropTypes.func
-};
-
-Education = connectToStores(
+export default connectToStores(
   Education,
   [StaticContentStore],
   (context, props) => {
@@ -110,5 +96,3 @@ Education = connectToStores(
     };
   }
 );
-
-export default Education;

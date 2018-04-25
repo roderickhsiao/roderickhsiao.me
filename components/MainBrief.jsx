@@ -11,22 +11,28 @@ import { map } from 'lodash';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
 class MainBrief extends PureComponent {
-  constructor(props, context) {
-    super(props, context);
-    this.store = context.getStore(StaticContentStore);
-    this.state = {
-      summary: this.store.getData('summary') || {}
-    };
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.summary !== prevState.summary) {
+      return nextProps;
+    }
+
+    return null;
   }
 
-  componentWillMount() {
+  static contextTypes = {
+    executeAction: PropTypes.func,
+    getStore: PropTypes.func
+  };
+
+  store = this.context.getStore(StaticContentStore);
+  state = {
+    summary: this.props.summary
+  };
+
+  componentDidMount() {
     this.context.executeAction(fetchStaticDataAction, {
       resource: 'summary'
     });
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState(nextProps);
   }
 
   renderThumbnail(data, name) {
@@ -67,7 +73,11 @@ class MainBrief extends PureComponent {
       <div className="Px($card-padding)">
         <ol>
           {map(data, (item, i) => {
-            return <li className="C(#fff)" key={i}>{item}</li>;
+            return (
+              <li className="C(#fff)" key={i}>
+                {item}
+              </li>
+            );
           })}
         </ol>
       </div>
@@ -86,12 +96,7 @@ class MainBrief extends PureComponent {
         itemType="http://schema.org/Person"
       >
         <div className="Pos(a) End(-180px) D(n) D(b)--md">
-          <Img
-            src={'/profile.jpg'}
-            width={400}
-            height={300}
-            itemProp="image"
-          />
+          <Img src={'/profile.jpg'} width={400} height={300} itemProp="image" />
           <div
             className="Pos(a) T(0) Bds(s)"
             style={{
@@ -113,14 +118,8 @@ class MainBrief extends PureComponent {
     );
   }
 }
-MainBrief.displayName = 'MainBrief';
 
-MainBrief.contextTypes = {
-  executeAction: PropTypes.func,
-  getStore: PropTypes.func
-};
-
-MainBrief = connectToStores(
+export default connectToStores(
   MainBrief,
   [StaticContentStore],
   (context, props) => {
@@ -129,5 +128,3 @@ MainBrief = connectToStores(
     };
   }
 );
-
-export default MainBrief;

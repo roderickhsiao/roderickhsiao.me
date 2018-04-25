@@ -11,22 +11,28 @@ import { map } from 'lodash';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
 class About extends PureComponent {
-  constructor(props, context) {
-    super(props, context);
-    this.store = context.getStore(StaticContentStore);
-    this.state = {
-      about: this.store.getData('about') || {}
-    };
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.about !== prevState.about) {
+      return nextProps;
+    }
+
+    return null;
   }
 
-  componentWillMount() {
+  static contextTypes = {
+    executeAction: PropTypes.func,
+    getStore: PropTypes.func
+  };
+
+  store = this.context.getStore(StaticContentStore);
+  state = {
+    about: this.props.about
+  };
+
+  componentDidMount() {
     this.context.executeAction(fetchStaticDataAction, {
       resource: 'about'
     });
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState(nextProps);
   }
 
   renderLink(sites) {
@@ -44,11 +50,7 @@ class About extends PureComponent {
         </li>
       );
     });
-    return (
-      <ul>
-        {nodes}
-      </ul>
-    );
+    return <ul>{nodes}</ul>;
   }
 
   render() {
@@ -58,9 +60,7 @@ class About extends PureComponent {
     }
     return (
       <Card>
-        <h5 className="M(0)">
-          About this site
-        </h5>
+        <h5 className="M(0)">About this site</h5>
         <div className="My(10px)">
           This website is build on
           {this.renderLink(about)}
@@ -126,17 +126,13 @@ class About extends PureComponent {
     );
   }
 }
-About.displayName = 'About';
 
-About.contextTypes = {
-  executeAction: PropTypes.func,
-  getStore: PropTypes.func
-};
-
-About = connectToStores(About, [StaticContentStore], (context, props) => {
-  return {
-    about: context.getStore(StaticContentStore).getData('about')
-  };
-});
-
-export default About;
+export default connectToStores(
+  About,
+  [StaticContentStore],
+  (context, props) => {
+    return {
+      about: context.getStore(StaticContentStore).getData('about')
+    };
+  }
+);

@@ -16,7 +16,7 @@ function loadComponent(regions, components, context) {
   let Components = [];
 
   regions.forEach((path, idx) => {
-    var file = require('../' + components[path].path).default;
+    var file = require(`../${components[path].path}`).default;
     var Component = file.hasOwnProperty('default') ? file.default : file;
 
     if (Component) {
@@ -67,13 +67,10 @@ class Main extends PureComponent {
             </section>
           </section>
         </ReactCSSTransitionGroup>
-        <footer>
-          {footer}
-        </footer>
+        <footer>{footer}</footer>
       </section>
     );
   }
 }
-Main.displayName = 'Main';
 
 export default Main;

@@ -11,22 +11,28 @@ import { map } from 'lodash';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
 class Country extends PureComponent {
-  constructor(props, context) {
-    super(props, context);
-    this.store = context.getStore(StaticContentStore);
-    this.state = {
-      country: this.store.getData('country') || {}
-    };
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.country !== prevState.country) {
+      return nextProps;
+    }
+
+    return null;
   }
 
-  componentWillMount() {
+  static contextTypes = {
+    executeAction: PropTypes.func,
+    getStore: PropTypes.func
+  };
+
+  store = this.context.getStore(StaticContentStore);
+  state = {
+    country: this.props.country
+  };
+
+  componentDidMount() {
     this.context.executeAction(fetchStaticDataAction, {
       resource: 'country'
     });
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState(nextProps);
   }
 
   renderCountries(countries) {
@@ -44,35 +50,25 @@ class Country extends PureComponent {
       );
     });
 
-    return (
-      <ul>
-        {nodes}
-      </ul>
-    );
+    return <ul>{nodes}</ul>;
   }
 
   render() {
     return (
       <Card>
-        <h5 className="M(0)">
-          Countries and Cities Visited
-        </h5>
+        <h5 className="M(0)">Countries and Cities Visited</h5>
         {this.renderCountries(this.state.country)}
       </Card>
     );
   }
 }
-Country.displayName = 'Country';
 
-Country.contextTypes = {
-  executeAction: PropTypes.func,
-  getStore: PropTypes.func
-};
-
-Country = connectToStores(Country, [StaticContentStore], (context, props) => {
-  return {
-    country: context.getStore(StaticContentStore).getData('country')
-  };
-});
-
-export default Country;
+export default connectToStores(
+  Country,
+  [StaticContentStore],
+  (context, props) => {
+    return {
+      country: context.getStore(StaticContentStore).getData('country')
+    };
+  }
+);
