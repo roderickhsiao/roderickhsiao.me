@@ -20,7 +20,7 @@ import raf from 'raf';
 class Img extends PureComponent {
   static getDerivedStateFromProps(nextProps, prevState) {
     return {
-      status: nextProps.isInViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
+      status: nextProps.inViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
     };
   }
 
