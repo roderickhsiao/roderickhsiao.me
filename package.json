@@ -50,7 +50,7 @@
     "grunt-webpack": "^3.0.0",
     "helmet": "^3.5.0",
     "history": "^4.5.1",
-    "lodash": "^4.0.0",
+    "lodash": "^4.17.10",
     "optimize-js-plugin": "~0.0.4",
     "prop-types": "^15.5.8",
     "raf": "^3.3.0",

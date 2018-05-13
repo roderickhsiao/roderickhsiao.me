@@ -37,7 +37,7 @@ function getWebpackConfig(opts) {
         globPatterns: ['**/*.{js,css,png,jpg}'],
         runtimeCaching: [
           {
-            urlPattern: '*',
+            urlPattern: '/api',
             handler: 'networkFirst'
           },
           {
