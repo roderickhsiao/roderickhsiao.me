@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 
-import NavLink from 'fluxible-router/lib/NavLink';
+import { NavLink } from 'fluxible-router';
 
 import { get, map } from 'lodash';
 import menuConfig from '../../data/menu';
