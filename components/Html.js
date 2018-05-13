@@ -8,6 +8,14 @@ const inlineJSDetect =
   '(function(html){var c = html.className;c += " JsEnabled";c = c.replace("NoJs","");html.className = c;})(document.documentElement)';
 const pathPrefix = '/';
 
+const inlineGA = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-76603120-1');
+`;
+
 class HtmlComponent extends PureComponent {
   static propTypes = {
     context: PropTypes.object.isRequired,
@@ -43,6 +51,7 @@ class HtmlComponent extends PureComponent {
 
           <link rel="dns-prefetch" href="https://www.gstatic.com/" />
           <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="dns-prefetch" href="https://cdn.polyfill.io" />
           <link rel="preconnect" href="https://cdn.polyfill.io" />
@@ -132,6 +141,11 @@ class HtmlComponent extends PureComponent {
           <script src="//cdn.polyfill.io/v2/polyfill.min.js" defer async />
           <script src={this.getHashAssets('/js/client.js')} defer async />
           <script src={this.getHashAssets('/js/modernizr.js')} defer async />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-76603120-1"
+          />
+          <script dangerouslySetInnerHTML={{ __html: inlineGA }} />
         </body>
       </html>
     );

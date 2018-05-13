@@ -39,6 +39,24 @@ function getWebpackConfig(opts) {
           {
             urlPattern: '*',
             handler: 'networkFirst'
+          },
+          {
+            urlPattern: new RegExp('https://www\.googletagmanager\.com/'),
+            handler: 'staleWhileRevalidate',
+            options: {
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          {
+            urlPattern: new RegExp('https://fonts\.googleapis\.com'),
+            handler: 'staleWhileRevalidate',
+            options: {
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
           }
         ],
         navigateFallback: '/'
