@@ -1,14 +1,14 @@
 module.exports = {
   home: {
     path: '/',
-    method: 'get'
+    method: 'GET'
   },
   education: {
     path: '/education',
-    method: 'get'
+    method: 'GET'
   },
   activity: {
     path: '/activity',
-    method: 'get'
+    method: 'GET'
   }
 };

@@ -37,7 +37,10 @@ class App extends React.Component {
     this.subscription = [
       subscribe('scroll', this.scrollHandler, {
         enableScrollInfo: true,
-        useRAF: true
+        useRAF: true,
+        eventOptions: {
+          passive: true
+        }
       })
     ];
   }
