@@ -96,13 +96,13 @@ function renderPage(req, res, context) {
 
   debug('Rendering Application component into html');
   const html = ReactDOM.renderToStaticMarkup(
-        React.createElement(HtmlComponent, {
-          state: exposed,
-          markup: ReactDOM.renderToString(createElement(context, customContext)),
-          context: context.getComponentContext(),
-          inlineScript: inlineScript,
-          inlineStyle: inlineStyle
-        }
+    React.createElement(HtmlComponent, {
+      state: exposed,
+      markup: ReactDOM.renderToString(createElement(context, customContext)),
+      context: context.getComponentContext(),
+      inlineScript: inlineScript,
+      inlineStyle: inlineStyle
+    }
     ));
 
   debug('Sending markup');

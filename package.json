@@ -2,14 +2,14 @@
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "dependencies": {
     "async": "^2.0.0",
-    "autoprefixer": "^7.0.0",
+    "autoprefixer": "^8.0.0",
     "babel": "^6.0.0",
     "babel-core": "^6.6.4",
-    "babel-eslint": "^7.1.1",
+    "babel-eslint": "^8.0.0",
     "babel-loader": "^7.0.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-lodash": "^3.2.4",
-    "babel-plugin-module-resolver": "^2.4.0",
+    "babel-plugin-module-resolver": "^3.0.0",
     "babel-plugin-syntax-decorators": "^6.5.0",
     "babel-plugin-transform-class-properties": "^6.6.0",
     "babel-plugin-transform-dev-warning": "^0.1.0",
@@ -46,7 +46,7 @@
     "grunt-contrib-cssmin": "^2.0.0",
     "grunt-hash": "^0.5.0",
     "grunt-modernizr": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
+    "grunt-postcss": "^0.9.0",
     "grunt-webpack": "^3.0.0",
     "helmet": "^3.5.0",
     "history": "^4.5.1",
@@ -67,18 +67,18 @@
     "sitemap": "^1.6.0",
     "spdy": "^3.4.4",
     "subscribe-ui-event": "^2.0.0",
-    "sw-precache-webpack-plugin": "^0.11.3",
     "ua-parser-js": "^0.7.10",
-    "webpack": "^3.0.0"
+    "webpack": "^4.0.0"
   },
   "description": "Roderick Hsiao",
   "devDependencies": {
-    "eslint": "^3.1.1",
+    "eslint": "^4.0.0",
     "grunt-nodemon": "^0.4.0",
     "grunt-penthouse": "^1.0.0",
     "nodemon": "^1.7.3",
     "pre-commit": "^1.0.0",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^3.0.0",
+    "workbox-webpack-plugin": "^3.2.0"
   },
   "engines": {
     "node": "^10.0.0 || ^8.0.0",

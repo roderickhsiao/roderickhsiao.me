@@ -29,7 +29,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-        // Protects against multiple React installs when npm linking
+    // Protects against multiple React installs when npm linking
     new webpack.NormalModuleReplacementPlugin(/^react?$/, require.resolve('react'))
   ],
   devtool: 'eval'

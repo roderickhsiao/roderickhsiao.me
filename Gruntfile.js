@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 const OptimizeJsPlugin = require('optimize-js-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 function getWebpackConfig(opts) {
   var entry = opts.entry;
@@ -27,55 +27,24 @@ function getWebpackConfig(opts) {
     node: {
       setImmidate: false
     },
+    mode: isDev ? 'development' : 'production',
     plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify(isDev ? 'development' : 'production')
-        }
-      }),
-      new OptimizeJsPlugin({
-        sourceMap: false
-      }),
-      new webpack.optimize.ModuleConcatenationPlugin(),
-      new SWPrecacheWebpackPlugin({
+      new GenerateSW({
         cacheId: 'roderickhsiao',
-        filename: 'sw.js',
-        staticFileGlobs: ['build/**/*.*.{js,html,css,gif}'],
-        stripPrefix: 'build',
+        swDest: 'sw.js',
+        include: [/\.html$/, /\.js$/, /\.css$/, /\.jpg$/, /\.png$/],
+        globDirectory: 'build',
+        globPatterns: ['**/*.{js,css,png,jpg}'],
         runtimeCaching: [
           {
-            // Use a network first strategy for everything else.
-            default: 'networkFirst'
+            urlPattern: '*',
+            handler: 'networkFirst'
           }
         ],
         navigateFallback: '/'
       })
     ]
   };
-
-  if (isDev) {
-    baseConfig.stats = {
-      colors: true
-    };
-    // baseConfig.devtool = 'souce-map';
-    // baseConfig.watch = true;
-    // baseConfig.keepalive = true;
-    // baseConfig.failOnError = false;
-  } else {
-    // prod
-    baseConfig.plugins.push(
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false
-        }
-      })
-    );
-    baseConfig.plugins.push(
-      new webpack.LoaderOptionsPlugin({
-        minimize: true
-      })
-    );
-  }
   return baseConfig;
 }
 
