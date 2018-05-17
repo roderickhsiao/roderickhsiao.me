@@ -45,7 +45,7 @@ class Contact extends PureComponent {
             className="Fz(1.1em) Va(m)"
             href={contact.value}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             {contact.name}
           </a>

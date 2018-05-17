@@ -42,7 +42,7 @@ class About extends PureComponent {
             className="D(b) My(6px)"
             href={site.url}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             {site.name}
           </a>
@@ -72,7 +72,7 @@ class About extends PureComponent {
               <a
                 className="Mstart(6px) P(6px) D(ib) Fw(b) C(#009a2d)"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 href="https://developers.google.com/speed/pagespeed/insights/?url=https://www.roderickhsiao.me"
               >
                 100 / 100
@@ -83,7 +83,7 @@ class About extends PureComponent {
               <a
                 className="Mstart(4px) P(6px) D(ib) Fw(b)"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 href="http://www.webpagetest.org/result/170115_D8_DW9/"
               >
                 Speed Index: 825
@@ -94,7 +94,7 @@ class About extends PureComponent {
               <a
                 className="Mstart(4px) P(6px) D(ib) Fw(b)"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=en"
               >
                 Critial Rendering Path
@@ -105,7 +105,7 @@ class About extends PureComponent {
               <a
                 className="Mstart(4px) P(6px) D(ib) Fw(b) C(#009a2d)"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 href="https://googlechrome.github.io/lighthouse/viewer/?gist=0effeeb873509db8af6f9b5c63326c95"
               >
                 100 / 100

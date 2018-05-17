@@ -11,6 +11,7 @@ module.exports = [
         height: 320
       },
       title: 'Str8jacket Dance Company',
+      description: 'Competition Hip Hop Team',
       url: 'https://www.str8jacketdance.com/'
     }
   },

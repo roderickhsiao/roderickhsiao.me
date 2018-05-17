@@ -19,6 +19,7 @@ module.exports = {
               height: 200
             },
             title: 'Tinder | Swipe. Match. Chat.',
+            description: 'Tinder Online, Swipe anywhere',
             url: 'https://tinder.com'
           }
         }
