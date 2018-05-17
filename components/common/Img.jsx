@@ -88,4 +88,4 @@ class Img extends PureComponent {
   }
 }
 
-export default handleViewport(Img);
+export default handleViewport(Img, {}, { disconnectOnLeave: true });
