@@ -60,9 +60,9 @@ class Img extends PureComponent {
       className: classNames(
         {
           'Op(0)': !loaded,
-          'JsEnabled_Op(1)': status === IMAGE_STATUS_LOADED,
+          'JsEnabled_Op(1)': loaded,
           // background image
-          'JsEnabled_Bg(n)!': isImage || (!isImage && (!loaded)),
+          'JsEnabled_Bg(n)!': isImage || (!isImage && !loaded),
           'NoJs_Bgz(cv) NoJs_Op(1)': status === IMAGE_STATUS_INIT
         },
         'JsEnabled_Trsdu(.3s)',
@@ -78,7 +78,8 @@ class Img extends PureComponent {
       )
     };
     if (isImage) {
-      props.src = status === IMAGE_STATUS_LOADED ? this.props.src : DUMMY_IMAGE_SRC;
+      props.src =
+        status === IMAGE_STATUS_LOADED ? this.props.src : DUMMY_IMAGE_SRC;
     }
     if (!this.image && this.state.status === IMAGE_STATUS_LOADING) {
       this.loadImage();
