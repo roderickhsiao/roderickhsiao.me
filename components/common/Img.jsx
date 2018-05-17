@@ -54,7 +54,8 @@ class Img extends PureComponent {
     const { nodeName = 'img', src } = this.props;
     const isImage = nodeName === 'img';
     const { status } = this.state;
-    const loaded = status !== IMAGE_STATUS_LOADED;
+    const loaded = status === IMAGE_STATUS_LOADED;
+
     let props = {
       className: classNames(
         {
