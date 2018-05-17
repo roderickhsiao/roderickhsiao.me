@@ -51,18 +51,18 @@ class Img extends PureComponent {
   handleOnError = () => {};
 
   render() {
-    const { nodeName = 'img' } = this.props;
+    const { nodeName = 'img', src } = this.props;
     const isImage = nodeName === 'img';
+    const { status } = this.state;
+    const loaded = status !== IMAGE_STATUS_LOADED;
     let props = {
       className: classNames(
         {
-          'Op(0)': this.state.status === IMAGE_STATUS_INIT,
-          'JsEnabled_Op(1)!': this.state.status === IMAGE_STATUS_LOADING,
-          'JsEnabled_Op(1)!': this.state.status === IMAGE_STATUS_LOADED,
+          'Op(0)': !loaded,
+          'JsEnabled_Op(1)': status === IMAGE_STATUS_LOADED,
           // background image
-          'JsEnabled_Bg(n)!': !isImage && (this.state.status !== IMAGE_STATUS_LOADED),
-          'JsEnabled_Bg(n)! isImage': isImage,
-          'NoJs_Bgz(cv) NoJs_Op(1)': this.state.status === IMAGE_STATUS_INIT
+          'JsEnabled_Bg(n)!': isImage || (!isImage && (!loaded)),
+          'NoJs_Bgz(cv) NoJs_Op(1)': status === IMAGE_STATUS_INIT
         },
         'JsEnabled_Trsdu(.3s)',
         this.props.className
@@ -71,15 +71,15 @@ class Img extends PureComponent {
       height: this.props.height,
       style: Object.assign(
         {
-          backgroundImage: `url("${this.props.src}")`
+          backgroundImage: `url("${src}")`
         },
         this.props.style
       )
     };
     if (isImage) {
-      props.src = this.state.status ? this.props.src : DUMMY_IMAGE_SRC;
+      props.src = status === IMAGE_STATUS_LOADED ? this.props.src : DUMMY_IMAGE_SRC;
     }
-    if (!this.image && this.state.status === IMAGE_STATUS_INIT) {
+    if (!this.image && this.state.status === IMAGE_STATUS_LOADING) {
       this.loadImage();
     }
     return React.createElement(nodeName, props);
