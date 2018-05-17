@@ -7,7 +7,6 @@ import Smartlink from './common/Smartlink.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
 import { connectToStores } from 'fluxible-addons-react';
-import { map } from 'lodash';
 
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
@@ -40,7 +39,7 @@ class Activity extends PureComponent {
     if (!activities || !activities.length) {
       return null;
     }
-    let nodes = map(activities, (activity, i) => {
+    let nodes = activities.map((activity, i) => {
       return (
         <li
           key={i}

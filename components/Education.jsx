@@ -7,7 +7,6 @@ import Img from './common/Img.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
 import { connectToStores } from 'fluxible-addons-react';
-import { map } from 'lodash';
 import classNames from 'classnames';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
@@ -40,7 +39,7 @@ class Education extends PureComponent {
     if (!data || !data.length) {
       return null;
     }
-    let nodes = map(data, (edu, i) => {
+    let nodes = data.map((edu, i) => {
       let { thumbnail } = edu || {};
       let height = thumbnail.height / thumbnail.width * 100;
       return (

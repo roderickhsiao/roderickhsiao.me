@@ -8,7 +8,7 @@ export default class Card extends PureComponent {
     return (
       <div
         {...this.props}
-        className="card Bxsh($shadow-card) Bdrs(2px) P($card-padding) Bxsh($shadow-2dp):h Trsdu($trsdu-fast) Bgc(#fff) Mb(20px)"
+        className="card Bxsh($shadow-card) Bdrs(8px) P($card-padding) Bxsh($shadow-2dp):h Trsdu($trsdu-fast) Bgc(#fff) Mb(20px)"
       >
         {children}
       </div>

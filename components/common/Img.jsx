@@ -35,7 +35,6 @@ class Img extends PureComponent {
   };
 
   loadImage = () => {
-    console.log('!!! load image');
     this.image = new Image();
 
     this.image.onload = this.handleOnLoad;
@@ -81,7 +80,6 @@ class Img extends PureComponent {
       props.src = this.state.status ? this.props.src : DUMMY_IMAGE_SRC;
     }
     if (!this.image && this.state.status === IMAGE_STATUS_LOADING) {
-      console.log('!!! load image in render');
       this.loadImage();
     }
     return React.createElement(nodeName, props);

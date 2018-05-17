@@ -8,7 +8,6 @@ import Smartlink from './common/Smartlink.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
 import { connectToStores } from 'fluxible-addons-react';
-import { map } from 'lodash';
 import classNames from 'classnames';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
@@ -41,7 +40,7 @@ class Experience extends PureComponent {
     if (!projects || !projects.length) {
       return null;
     }
-    let nodes = map(projects, (project, i) => {
+    let nodes = projects.map((project, i) => {
       let { smartlink } = project;
       return (
         <li
@@ -65,7 +64,7 @@ class Experience extends PureComponent {
     if (!companies || !companies.length) {
       return null;
     }
-    let nodes = map(companies, (company, i) => {
+    let nodes = companies.map((company, i) => {
       let { projects } = company;
       return (
         <div

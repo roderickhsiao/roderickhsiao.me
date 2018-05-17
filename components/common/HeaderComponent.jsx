@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 
 import { NavLink } from 'fluxible-router';
 
-import { get, map } from 'lodash';
+import { get } from 'lodash';
 import menuConfig from '../../data/menu';
 
 class Menu extends PureComponent {
   render() {
     const { menuConfig } = this.props;
     const { order } = menuConfig;
-    const node = map(order, (menu, i) => {
+    const node = order.map((menu, i) => {
       let config = menuConfig[menu];
       return (
         <li className="D(ib) Mx(20px) Fz(1.2em) Tt(u)" key={i}>

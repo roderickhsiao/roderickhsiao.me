@@ -6,7 +6,6 @@ import Card from './common/Card.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
 import { connectToStores } from 'fluxible-addons-react';
-import { map } from 'lodash';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
 class Contact extends PureComponent {
@@ -38,7 +37,7 @@ class Contact extends PureComponent {
     if (!contact || !contact.length) {
       return null;
     }
-    let nodes = map(contact, (contact, i) => {
+    let nodes = contact.map((contact, i) => {
       let { icon } = contact;
       return (
         <li className="My(20px) W(1/4) D(ib) W(1/3)--xs" key={i}>

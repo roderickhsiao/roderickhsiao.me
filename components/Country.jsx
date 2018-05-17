@@ -6,7 +6,6 @@ import Card from './common/Card.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
 import { connectToStores } from 'fluxible-addons-react';
-import { map } from 'lodash';
 
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
@@ -37,7 +36,7 @@ class Country extends PureComponent {
 
   renderCountries(countries) {
     var names = Object.keys(countries).sort();
-    var nodes = map(names, (country, i) => {
+    var nodes = names.map((country, i) => {
       return (
         <li className="My(10px)" key={i}>
           <div className="Fz(1.1em) BdB Bdbc($c-black-4) W(100%) Pt(10px)">

@@ -1,12 +1,10 @@
 import parallel from 'async/parallel';
 import fetchStaticDataAction from './fetchStaticData';
 
-import { map } from 'lodash';
-
 module.exports = function(context, payload, done) {
   var resources = (payload.resources && payload.resources.split(',')) || [];
   var functions = [];
-  functions = map(resources, resource => callback => {
+  functions = resources.map(resource => callback => {
     context.executeAction(
       fetchStaticDataAction,
       {

@@ -6,7 +6,6 @@ import Card from './common/Card.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
 import { connectToStores } from 'fluxible-addons-react';
-import { map } from 'lodash';
 
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
@@ -36,7 +35,7 @@ class About extends PureComponent {
   }
 
   renderLink(sites) {
-    let nodes = map(sites, (site, i) => {
+    let nodes = sites.map((site, i) => {
       return (
         <li key={i} className="D(ib) W(1/4) Va(t) W(1/3)--xs">
           <a

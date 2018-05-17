@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import Layout from './layouts/Main.jsx';
 
-import { forEach } from 'lodash';
 import { handleHistory } from 'fluxible-router';
 import { provideContext } from 'fluxible-addons-react';
 import { subscribe } from 'subscribe-ui-event';
@@ -46,7 +45,7 @@ class App extends React.Component {
   }
 
   componentWillUnmount() {
-    forEach(this.subscription, function unsubscribe(sub) {
+    this.subscription.forEach(function unsubscribe(sub) {
       sub.unsubscribe();
     });
   }

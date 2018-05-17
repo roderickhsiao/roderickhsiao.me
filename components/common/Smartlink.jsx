@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import AspectRatio from 'react-aspect-ratio';
 
@@ -22,12 +22,18 @@ class Smartlink extends PureComponent {
         href={smartlink.url}
         target="_black"
       >
-        <Fragment>
-          {
+        <span>
+          {isLargeTemplate ? (
             <AspectRatio ratio={ratio}>
               <Img src={thumbnail.url} />
             </AspectRatio>
-          }
+          ) : (
+            <Img
+              nodeName="div"
+              src={thumbnail.url}
+              className="M(-1px) Bgz(ct) W(150px) H(150px) H(100px)!--xs W(100px)!--xs D(ib) Bgr(nr) Fl(start) Bgc(#000.12)"
+            />
+          )}
           <div
             className={classNames('P(10px) C($c-black-1) P(6px)!--xs', {
               'Va(t) Mstart(160px) Mstart(100px)!--xs Bxz(bb)': !isLargeTemplate
@@ -40,7 +46,7 @@ class Smartlink extends PureComponent {
               {smartlink.description}
             </div>
           </div>
-        </Fragment>
+        </span>
       </a>
     );
   }
