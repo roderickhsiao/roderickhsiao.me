@@ -61,7 +61,7 @@ class Img extends PureComponent {
           'JsEnabled_Op(1)!': this.state.status === IMAGE_STATUS_LOADED,
           // background image
           'JsEnabled_Bg(n)!': !isImage && (this.state.status !== IMAGE_STATUS_LOADED),
-          'JsEnabled_Bg(n)!': isImage,
+          'JsEnabled_Bg(n)! isImage': isImage,
           'NoJs_Bgz(cv) NoJs_Op(1)': this.state.status === IMAGE_STATUS_INIT
         },
         'JsEnabled_Trsdu(.3s)',
