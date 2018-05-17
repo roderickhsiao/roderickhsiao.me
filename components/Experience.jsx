@@ -45,7 +45,7 @@ class Experience extends PureComponent {
       let { smartlink } = project;
       return (
         <li
-          className="Pstart(20px) Pstart(10px)!--xs Py(10px) Mb(20px) Mb(10px)!--xs BdStart Bdstartc($c-black-4)"
+          className="Pstart(20px) Pstart(0)--xs Py(10px) Mb(20px) Mb(10px)!--xs"
           key={i}
         >
           <div className="Fz(1.2em) Mb(6px)">{project.name}</div>

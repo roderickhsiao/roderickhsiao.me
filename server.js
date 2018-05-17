@@ -56,6 +56,11 @@ server.use(helmet());
 server.use(helmet.dnsPrefetchControl({ allow: true }));
 
 server.set('state namespace', 'App');
+server.use(
+  '/sw.js',
+  express['static'](__dirname + '/build/js/sw.js', { maxAge: 0 })
+);
+
 server.use('/', express['static'](__dirname + '/build', { maxAge: ONE_YEAR }));
 server.use(
   '/',

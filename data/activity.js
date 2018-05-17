@@ -11,7 +11,6 @@ module.exports = [
         height: 320
       },
       title: 'Str8jacket Dance Company',
-      description: 'Based out of the San Francisco Bay Area, we are a hip hop dance team that strives to challenge the standards of hip hop dance while still preserving the culture and roots of hip hop.',
       url: 'https://www.str8jacketdance.com/'
     }
   },

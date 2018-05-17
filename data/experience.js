@@ -18,7 +18,6 @@ module.exports = {
               width: 200,
               height: 200
             },
-            description: 'With 20 billion matches to date, Tinder is the world\'s most popular app for meeting new people',
             title: 'Tinder | Swipe. Match. Chat.',
             url: 'https://tinder.com'
           }

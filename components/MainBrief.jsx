@@ -71,7 +71,7 @@ class MainBrief extends PureComponent {
   renderSummary(data) {
     return (
       <div className="Px($card-padding)">
-        <ol>
+        <ol className="M(0)">
           {map(data, (item, i) => {
             return (
               <li className="C(#fff)" key={i}>
