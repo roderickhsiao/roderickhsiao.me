@@ -79,7 +79,7 @@ class Img extends PureComponent {
     if (isImage) {
       props.src = this.state.status ? this.props.src : DUMMY_IMAGE_SRC;
     }
-    if (!this.image && this.state.status === IMAGE_STATUS_LOADING) {
+    if (!this.image && this.state.status === IMAGE_STATUS_INIT) {
       this.loadImage();
     }
     return React.createElement(nodeName, props);
