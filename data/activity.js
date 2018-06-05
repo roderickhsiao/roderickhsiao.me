@@ -6,9 +6,9 @@ module.exports = [
     summary: 'Create and maintain website outside of dance practice.',
     smartlink: {
       thumbnail: {
-        url: 'https://scontent-sjc3-1.cdninstagram.com/vp/abed55d79c652d447aa0fa661fff1de2/5B124180/t51.2885-19/s320x320/20346786_225326937992058_8939540587682463744_a.jpg',
-        width: 320,
-        height: 320
+        url: 'https://instagram.fsnc1-1.fna.fbcdn.net/vp/0fef61ce0a96ae0e2bcebd871aba5fc0/5B9E5070/t51.2885-19/s150x150/20346786_225326937992058_8939540587682463744_a.jpg',
+        width: 150,
+        height: 150
       },
       title: 'Str8jacket Dance Company',
       description: 'Competition Hip Hop Team',
