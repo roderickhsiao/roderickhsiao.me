@@ -32,7 +32,7 @@ function getWebpackConfig(opts) {
       new GenerateSW({
         cacheId: 'roderickhsiao',
         swDest: 'sw.js',
-        include: [/\.html$/, /\.js$/, /\.css$/, /\.jpg$/, /\.png$/],
+        include: [/\.js$/, /\.css$/, /\.jpg$/, /\.png$/],
         globDirectory: 'build',
         globPatterns: ['**/*.{js,css,png,jpg}'],
         runtimeCaching: [
