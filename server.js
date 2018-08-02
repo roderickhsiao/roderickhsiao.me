@@ -52,7 +52,12 @@ server.use(
 );
 server.use(cookieParser());
 server.use(csrf({ cookie: true }));
-server.use(helmet());
+server.use(helmet({
+  frameguard: {
+    action: 'allow-from',
+    domain: 'https://www.str8jacketdance.com/'
+   }
+}));
 server.use(helmet.dnsPrefetchControl({ allow: true }));
 
 server.set('state namespace', 'App');
