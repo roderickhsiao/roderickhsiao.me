@@ -53,10 +53,7 @@ server.use(
 server.use(cookieParser());
 server.use(csrf({ cookie: true }));
 server.use(helmet({
-  frameguard: {
-    action: 'allow-from',
-    domain: 'https://www.str8jacketdance.com/'
-   }
+  frameguard: false
 }));
 server.use(helmet.dnsPrefetchControl({ allow: true }));
 
