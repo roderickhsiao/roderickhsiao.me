@@ -149,6 +149,10 @@ server.use((req, res, next) => {
         return;
       }
       res.setHeader('Cache-Control', 'must_revalidate, public, max-age=3600');
+      // cors
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      
       let routeStore = context.getStore('RouteStore');
       let { name } = routeStore.getCurrentRoute();
       let prefetch = get(layout, [name, 'prefetch']);
