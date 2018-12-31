@@ -11,6 +11,7 @@
     "babel-plugin-lodash": "^3.2.4",
     "babel-plugin-module-resolver": "^3.0.0",
     "babel-plugin-syntax-decorators": "^6.5.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.6.0",
     "babel-plugin-transform-dev-warning": "^0.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.6.4",

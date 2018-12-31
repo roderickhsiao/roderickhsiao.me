@@ -125,7 +125,7 @@ function renderPage(req, res, context) {
   );
 
   debug('Sending markup');
-  res.send(html);
+  res.send('<!DOCTYPE html>' + html);
 }
 
 server.use((req, res, next) => {
@@ -150,9 +150,9 @@ server.use((req, res, next) => {
       }
       res.setHeader('Cache-Control', 'must_revalidate, public, max-age=3600');
       // cors
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-      
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
       let routeStore = context.getStore('RouteStore');
       let { name } = routeStore.getCurrentRoute();
       let prefetch = get(layout, [name, 'prefetch']);

@@ -19,22 +19,28 @@ module.exports = {
     '$top-header-height': '54px',
     // material design shadow //github.com/google/material-design-lite/blob/master/src/_mixins.scss#L226
     '$shadow-card': '0 1px 4px 0 rgba(0,0,0,.14)',
-    '$shadow-1dp': '0 2px 1px -1px rgba(0,0,0,.2),' +
+    '$shadow-1dp':
+      '0 2px 1px -1px rgba(0,0,0,.2),' +
       '0 1px 1px 0 rgba(0,0,0,.14),' +
       '0 1px 3px 0 rgba(0,0,0,.12)',
-    '$shadow-2dp': '0 3px 1px -2px rgba(0,0,0,.2),' +
+    '$shadow-2dp':
+      '0 3px 1px -2px rgba(0,0,0,.2),' +
       '0 2px 2px 0 rgba(0,0,0,.14),' +
       '0 1px 5px 0 rgba(0,0,0,.12)',
-    '$shadow-3dp': '0 3px 3px -2px rgba(0,0,0,.2),' +
+    '$shadow-3dp':
+      '0 3px 3px -2px rgba(0,0,0,.2),' +
       '0 3px 4px 0 rgba(0,0,0,.14),' +
       '0 1px 8px 0 rgba(0,0,0,.12)',
-    '$shadow-4dp': '0 2px 4px -1px rgba(0,0,0,.2),' +
+    '$shadow-4dp':
+      '0 2px 4px -1px rgba(0,0,0,.2),' +
       '0 4px 5px 0 rgba(0,0,0,.14),' +
       '0 1px 10px 0 rgba(0,0,0,.12)',
-    '$shadow-5dp': '0 3px 5px -1px rgba(0,0,0,.2),' +
+    '$shadow-5dp':
+      '0 3px 5px -1px rgba(0,0,0,.2),' +
       '0 5px 8px 0 rgba(0,0,0,.14),' +
       '0 1px 14px 0 rgba(0,0,0,.12)',
-    '$shadow-6dp': '0 3px 5px -1px rgba(0,0,0,.2),' +
+    '$shadow-6dp':
+      '0 3px 5px -1px rgba(0,0,0,.2),' +
       '0 6px 10px 0 rgba(0,0,0,.14),' +
       '0 1px 18px 0 rgba(0,0,0,.12)',
     // transition

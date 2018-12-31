@@ -91,4 +91,4 @@ class Img extends PureComponent {
   }
 }
 
-export default handleViewport(Img, {}, { disconnectOnLeave: true });
+export default handleViewport(Img, { threshold: 0.25 }, { disconnectOnLeave: true });
