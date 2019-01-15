@@ -1,7 +1,7 @@
 module.exports = [
   {
     name: 'Email',
-    value: 'mailto:roderickhsiao@gmail.com'
+    value: 'mailto:roderickhsiao+website@gmail.com'
   },
   {
     name: 'LinkedIn',

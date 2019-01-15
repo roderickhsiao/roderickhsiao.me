@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
 
-import PropTypes from 'prop-types';
-
 // From google
 const DUMMY_IMAGE_SRC = 'https://www.gstatic.com/psa/static/1.gif';
 
@@ -26,11 +24,6 @@ class Img extends PureComponent {
       status: nextProps.inViewport ? IMAGE_STATUS_LOADING : IMAGE_STATUS_INIT
     };
   }
-
-  static propTypes = {
-    className: PropTypes.string,
-    src: PropTypes.string.isRequired
-  };
 
   image = null;
   state = {

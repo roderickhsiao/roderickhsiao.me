@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
 
-import PropTypes from 'prop-types';
-
 export default class Card extends PureComponent {
   render() {
     const { title, children, footer } = this.props;

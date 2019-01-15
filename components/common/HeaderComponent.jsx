@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
 
-import PropTypes from 'prop-types';
-
 import { NavLink } from 'fluxible-router';
 
 import { get } from 'lodash';

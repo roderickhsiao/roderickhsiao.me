@@ -6,7 +6,7 @@ module.exports = [
     summary: 'Create and maintain website outside of dance practice.',
     smartlink: {
       thumbnail: {
-        url: 'https://instagram.fsnc1-1.fna.fbcdn.net/vp/0fef61ce0a96ae0e2bcebd871aba5fc0/5B9E5070/t51.2885-19/s150x150/20346786_225326937992058_8939540587682463744_a.jpg',
+        url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrY6DEahBHdT4NU62C1rCx1LhS4iRHqpZnMt6Fb8QmGkmgdSKNbRZyy4c',
         width: 150,
         height: 150
       },

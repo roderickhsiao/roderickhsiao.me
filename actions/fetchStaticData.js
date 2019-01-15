@@ -1,7 +1,7 @@
 import StaticContentStore from '../stores/StaticContentStore';
 
 module.exports = function(context, payload, done) {
-  var resource = payload.resource;
+  var { resource } = payload;
   var successEvent = ['RECEIVE', resource.toUpperCase(), 'SUCCESS'].join('_');
   var failureEvent = ['RECEIVE', resource.toUpperCase(), 'FAILURE'].join('_');
 
