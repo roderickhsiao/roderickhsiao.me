@@ -138,7 +138,7 @@ class HtmlComponent extends PureComponent {
         <body className="Bgc($c-grey-50)">
           <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
           <script dangerouslySetInnerHTML={{ __html: state }} />
-          <script src="//cdn.polyfill.io/v2/polyfill.min.js" defer async />
+          <script src="//cdn.polyfill.io/v3/polyfill.min.js" defer async />
           <script src={this.getHashAssets('/js/client.js')} defer async />
           <script src={this.getHashAssets('/js/modernizr.js')} defer async />
           <script
