@@ -103,8 +103,8 @@
     "lint": "eslint . --fix",
     "monitor": "nodemon server",
     "penthouse": "grunt penthouse-tasks",
-    "postinstall": "./node_modules/grunt-cli/bin/grunt build",
     "start": "node start"
   },
+  "heroku-run-build-script": true,
   "version": "1.0.0"
 }
