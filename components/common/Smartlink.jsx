@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
-import AspectRatio from 'react-aspect-ratio';
+import { AspectRatio } from 'react-aspect-ratio';
 
 import Img from './Img.jsx';
 
