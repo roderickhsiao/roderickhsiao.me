@@ -107,7 +107,7 @@ class HtmlComponent extends PureComponent {
           <noscript>
             <link
               rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic"
+              href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&font-display=swap"
             />
           </noscript>
           <noscript>
