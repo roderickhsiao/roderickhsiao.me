@@ -8,8 +8,8 @@ const IMAGE_STATUS_LOADING = 1;
 const IMAGE_STATUS_LOADED = 2;
 
 import { forEach } from 'lodash';
+import { handleViewport } from 'react-in-viewport';
 import classNames from 'classnames';
-import handleViewport from 'react-in-viewport';
 import raf from 'raf';
 
 /**
