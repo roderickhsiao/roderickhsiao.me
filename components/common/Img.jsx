@@ -47,7 +47,7 @@ class Img extends PureComponent {
   handleOnError = () => {};
 
   render() {
-    const { nodeName = 'img', src } = this.props;
+    const { nodeName = 'img', src, forwardedRef } = this.props;
     const isImage = nodeName === 'img';
     const { status } = this.state;
     const loaded = status === IMAGE_STATUS_LOADED;
@@ -71,7 +71,8 @@ class Img extends PureComponent {
           backgroundImage: `url("${src}")`
         },
         this.props.style
-      )
+      ),
+      ref: forwardedRef
     };
     if (isImage) {
       props.src =
