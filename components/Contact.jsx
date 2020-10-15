@@ -39,20 +39,20 @@ class Contact extends PureComponent {
     if (!contact || !contact.length) {
       return null;
     }
-    let nodes = contact.map((contact, i) => {
-      let { icon } = contact;
+    const nodes = contact.map((contact, i) => {
+      const { icon, name, value } = contact;
       return (
         <li className="My(20px) W(1/5) D(ib) W(1/3)--xs" key={i}>
           <a
             className="Fz(1.1em) Va(m)"
-            href={contact.value}
+            href={value}
             target="_blank"
             rel="noopener noreferrer"
           >
             <Img
-              src={contact.icon}
-              className="W(24px) H(24px)" 
-              title={conact.name}
+              src={icon}
+              className="W(24px) H(24px)"
+              title={name}
             />
           </a>
         </li>
