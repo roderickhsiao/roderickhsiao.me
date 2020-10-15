@@ -91,16 +91,16 @@ class MainBrief extends PureComponent {
     }
     return (
       <div
-        className="H(340px) Mb(20px) Pos(r) Bgc(#212121) Ov(h) mainBrief Bxsh($shadow-card) Bdrs(8px) Bxsh($shadow-2dp):h Trsdu($trsdu-fast)"
+        className="H(300px) Mb(20px) Pos(r) Bgc(#212121) Ov(h) mainBrief Bxsh($shadow-card) Bdrs(8px) Bxsh($shadow-2dp):h Trsdu($trsdu-fast)"
         itemScope=""
         itemType="http://schema.org/Person"
       >
         <div className="Pos(a) End(-180px) D(n) D(b)--md">
-          <Img src={'/profile.jpg'} width={400} height={340} itemProp="image" />
+          <Img src={'/profile.jpg'} width={400} height={300} itemProp="image" />
           <div
             className="Pos(a) T(0) Bds(s)"
             style={{
-              borderWidth: '340px 0 0 100px',
+              borderWidth: '300px 0 0 100px',
               borderColor: 'transparent transparent transparent #212121'
             }}
           />
