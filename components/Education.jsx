@@ -7,7 +7,7 @@ import Img from './common/Img.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
 import { connectToStores } from 'fluxible-addons-react';
-import classNames from 'classnames';
+import classNames from 'clsx';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
 class Education extends PureComponent {

@@ -3,7 +3,7 @@ import { AspectRatio } from 'react-aspect-ratio';
 
 import Img from './Img.jsx';
 
-import classNames from 'classnames';
+import classNames from 'clsx';
 
 const Smartlink = memo(props => {
   const { smartlink } = props;
