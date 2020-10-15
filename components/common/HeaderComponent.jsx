@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
-
+import { get } from 'lodash';
 import { NavLink } from 'fluxible-router';
 
-import { get } from 'lodash';
 import menuConfig from '../../data/menu';
 
 const Menu = memo(props => {

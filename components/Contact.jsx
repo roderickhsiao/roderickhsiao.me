@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-
+import { connectToStores } from 'fluxible-addons-react';
 import PropTypes from 'prop-types';
 
 import Card from './common/Card.jsx';
@@ -7,7 +7,6 @@ import Img from './common/Img.jsx';
 
 import StaticContentStore from '../stores/StaticContentStore';
 
-import { connectToStores } from 'fluxible-addons-react';
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
 class Contact extends PureComponent {

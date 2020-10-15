@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
-
+import { handleHistory } from 'fluxible-router';
+import { provideContext } from 'fluxible-addons-react';
+import { subscribe } from 'subscribe-ui-event';
 import PropTypes from 'prop-types';
 
 import Layout from './layouts/Main.jsx';
 
-import { handleHistory } from 'fluxible-router';
-import { provideContext } from 'fluxible-addons-react';
-import { subscribe } from 'subscribe-ui-event';
+
 
 class App extends React.Component {
   constructor(props, context) {

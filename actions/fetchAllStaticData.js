@@ -1,4 +1,5 @@
 import parallel from 'async/parallel';
+
 import fetchStaticDataAction from './fetchStaticData';
 
 module.exports = function(context, payload, done) {

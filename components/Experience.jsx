@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-
+import { connectToStores } from 'fluxible-addons-react';
+import classNames from 'clsx';
 import PropTypes from 'prop-types';
 
 import Card from './common/Card.jsx';
@@ -7,8 +8,7 @@ import Img from './common/Img.jsx';
 import Smartlink from './common/Smartlink.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
-import { connectToStores } from 'fluxible-addons-react';
-import classNames from 'clsx';
+
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
 class Experience extends PureComponent {

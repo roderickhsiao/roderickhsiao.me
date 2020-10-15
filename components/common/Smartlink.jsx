@@ -1,9 +1,8 @@
 import React, { memo, Fragment } from 'react';
 import { AspectRatio } from 'react-aspect-ratio';
+import classNames from 'clsx';
 
 import Img from './Img.jsx';
-
-import classNames from 'clsx';
 
 const Smartlink = memo(props => {
   const { smartlink } = props;

@@ -23,7 +23,7 @@ import serialize from 'serialize-javascript';
 import sitemap from 'sitemap';
 import spdy from 'spdy';
 
-import HtmlComponent from './components/Html';
+import HtmlComponent, { headerStringEnd, headerStringStart, htmlStringStart, htmlStringEnd } from './components/Html';
 import UAParser from 'ua-parser-js';
 
 import { HTTPS } from 'express-sslify';
@@ -123,7 +123,7 @@ function renderPage(req, res, context) {
   );
 
   debug('Sending markup');
-  res.send('<!DOCTYPE html>' + html);
+  res.send(`<!DOCTYPE html>${htmlStringStart}${headerStringStart}<style>${inlineStyle}</style>${headerStringEnd}${html}${htmlStringEnd}`);
 }
 
 server.use((req, res, next) => {
