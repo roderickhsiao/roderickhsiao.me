@@ -36,7 +36,7 @@ module.exports = {
               height: 200
             },
             title: 'Tinder | Dating, Make Friends & Meet New People',
-            description: 'Tinder Online, Swipe anywhere',
+            description: 'With 43 billion matches to date, Tinder® is the world\'s most popular dating app, making it the place to meet new people.',
             url: 'https://tinder.com'
           }
         },
