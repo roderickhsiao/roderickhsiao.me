@@ -30,7 +30,6 @@ import { HTTPS } from 'express-sslify';
 
 const debug = Debug('roderickhsiao.me');
 const server = express();
-const inlineScript = fs.readFileSync('./utils/asyncLoadCSS.js', 'utf-8');
 const inlineStyle = fs.readFileSync('./build/css/critial.css', 'utf-8');
 
 const ONE_YEAR = 31556952000;
@@ -119,7 +118,6 @@ function renderPage(req, res, context) {
       state: exposed,
       markup: ReactDOM.renderToString(createElement(context, customContext)),
       context: context.getComponentContext(),
-      inlineScript: inlineScript,
       inlineStyle: inlineStyle
     })
   );

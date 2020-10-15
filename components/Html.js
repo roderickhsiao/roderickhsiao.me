@@ -64,18 +64,27 @@ class HtmlComponent extends PureComponent {
             property="og:image"
             content="https://c2.staticflickr.com/2/1585/25832501265_89b28a6aa5_b.jpg"
           />
-
           <link
             rel="preload"
             href={this.getHashAssets('/css/normalize.css')}
             as="style"
-            onLoad="this.rel=&quot;stylesheet&quot;"
+          />
+          <link
+            rel="stylesheet"
+            href={this.getHashAssets('/css/normalize.css')}
+            media="print"
+            onload="this.media='all'"
           />
           <link
             rel="preload"
             href={this.getHashAssets('/css/atomic.css')}
             as="style"
-            onLoad="this.rel=&quot;stylesheet&quot;"
+          />
+          <link
+            rel="stylesheet"
+            href={this.getHashAssets('/css/atomic.css')}
+            media="print"
+            onload="this.media='all'"
           />
           <link
             rel="preload"
@@ -84,10 +93,22 @@ class HtmlComponent extends PureComponent {
             onLoad="this.rel=&quot;stylesheet&quot;"
           />
           <link
+            rel="stylesheet"
+            href={this.getHashAssets('/css/theme.css')}
+            media="print"
+            onload="this.media='all'"
+          />
+          <link
             rel="preload"
             href={this.getHashAssets('/css/transition.css')}
             as="style"
             onLoad="this.rel=&quot;stylesheet&quot;"
+          />
+          <link
+            rel="stylesheet"
+            href={this.getHashAssets('/css/transition.css')}
+            media="print"
+            onload="this.media='all'"
           />
           <link
             rel="preload"
@@ -101,7 +122,6 @@ class HtmlComponent extends PureComponent {
           />
 
           <style dangerouslySetInnerHTML={{ __html: inlineStyle }} />
-          <script dangerouslySetInnerHTML={{ __html: inlineScript }} />
           <script dangerouslySetInnerHTML={{ __html: inlineJSDetect }} />
 
           <noscript>

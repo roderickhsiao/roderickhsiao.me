@@ -52,7 +52,7 @@
     "helmet": "^3.5.0",
     "history": "^4.5.1",
     "idle-tracker": "^0.0.6",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.20",
     "optimize-js-plugin": "~0.0.4",
     "prop-types": "^15.5.8",
     "raf": "^3.3.0",
@@ -79,7 +79,7 @@
     "grunt-penthouse": "^1.0.0",
     "nodemon": "^1.7.3",
     "pre-commit": "^1.0.0",
-    "webpack-dev-server": "^3.0.0",
+    "webpack-dev-server": "^3.11.0",
     "workbox-webpack-plugin": "^3.2.0"
   },
   "engines": {
