@@ -16,7 +16,7 @@ function getWorkTime(duration) {
 module.exports = {
   companies: [
     {
-      name: 'Tinder',
+      name: 'Tinder Inc.',
       logo: '/tinderLogo.png',
       time: `Feb 2017 - present (${getWorkTime(
         new Duration(new Date(2017, 2, 9), new Date(Date.now()))
@@ -35,7 +35,7 @@ module.exports = {
               width: 200,
               height: 200
             },
-            title: 'Tinder | Match. Chat. Date.',
+            title: 'Tinder | Dating, Make Friends & Meet New People',
             description: 'Tinder Online, Swipe anywhere',
             url: 'https://tinder.com'
           }

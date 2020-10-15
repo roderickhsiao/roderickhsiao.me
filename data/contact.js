@@ -10,5 +10,9 @@ module.exports = [
   {
     name: 'GitHub',
     value: 'https://github.com/roderickhsiao'
+  },
+  {
+    name: 'Twitter',
+    value: 'https://twitter.com/roderickhsiao'
   }
 ];

@@ -2,7 +2,7 @@ module.exports = [
   {
     name: 'Website Board',
     org: 'Str8jacket Dance Company',
-    year: '2017',
+    year: '2017 - present',
     summary: 'Create and maintain website outside of dance practice.',
     smartlink: {
       thumbnail: {

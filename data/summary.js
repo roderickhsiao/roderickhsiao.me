@@ -34,6 +34,7 @@ module.exports = {
       }
     ],
     summary: [
+      'Progressive web app (PWA)',
       'HTML, CSS, Javascript (Client/Server)',
       'Web UI component and front-end infra and architecture',
       'High performance web development',
