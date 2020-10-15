@@ -34,7 +34,8 @@ module.exports = {
       }
     ],
     summary: [
-      'Your friendly web friend',
+      'Your friendly web friend 🕸',
+      'Dog Dad',
       'Web technology consultant',
       'Progressive web app (PWA)',
       'Web UI component and front-end infra and architecture',
