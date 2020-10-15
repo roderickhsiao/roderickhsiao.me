@@ -73,7 +73,7 @@ class HtmlComponent extends PureComponent {
             rel="stylesheet"
             href={this.getHashAssets('/css/normalize.css')}
             media="print"
-            onload="this.media='all'"
+            onLoad="this.media='all'"
           />
           <link
             rel="preload"
@@ -84,31 +84,29 @@ class HtmlComponent extends PureComponent {
             rel="stylesheet"
             href={this.getHashAssets('/css/atomic.css')}
             media="print"
-            onload="this.media='all'"
+            onLoad="this.media='all'"
           />
           <link
             rel="preload"
             href={this.getHashAssets('/css/theme.css')}
             as="style"
-            onLoad="this.rel=&quot;stylesheet&quot;"
           />
           <link
             rel="stylesheet"
             href={this.getHashAssets('/css/theme.css')}
             media="print"
-            onload="this.media='all'"
+            onLoad="this.media='all'"
           />
           <link
             rel="preload"
             href={this.getHashAssets('/css/transition.css')}
             as="style"
-            onLoad="this.rel=&quot;stylesheet&quot;"
           />
           <link
             rel="stylesheet"
             href={this.getHashAssets('/css/transition.css')}
             media="print"
-            onload="this.media='all'"
+            onLoad="this.media='all'"
           />
           <link
             rel="preload"
