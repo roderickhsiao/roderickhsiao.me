@@ -65,7 +65,9 @@ class Contact extends PureComponent {
       <Card>
         <h5 className="M(0)">Contact</h5>
         <div className="My(10px) Fs(i) C($c-black-3)">Mandarin/English</div>
-        <p>Hey, thanks for visiting! Drop me a message if you want to discuss interesting web ideas, or potentially interesting project to work together :)</p>
+        <p>Hey, thanks for visiting!
+        Drop me a message if you want to discuss interesting web ideas, questions, or potentially fun project to work together :)
+        </p>
         {this.renderContact(contact)}
       </Card>
     );

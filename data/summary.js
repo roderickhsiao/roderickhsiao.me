@@ -34,14 +34,12 @@ module.exports = {
       }
     ],
     summary: [
+      'Your friendly web friend',
+      'Web technology consultant',
       'Progressive web app (PWA)',
-      'HTML, CSS, Javascript (Client/Server)',
       'Web UI component and front-end infra and architecture',
       'High performance web development',
-      'Mobile web developer',
-      'Large scale website',
-      'International development',
-      'Agile development',
+      'Large scale and international web app',
       'SEO optimization'
     ]
   }
