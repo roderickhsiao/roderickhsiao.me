@@ -44,16 +44,18 @@ class Contact extends PureComponent {
       return (
         <li className="My(20px) W(1/5) D(ib) W(1/3)--xs" key={i}>
           <a
-            className="Fz(1.1em) Va(m)"
+            className="Fz(1.1em) Va(m) Op(.38) Op(1):h Trsdu($trsdu-fast)"
             href={value}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <img
+              alt={name}
+              className="W(32px) H(32px)"
               src={icon}
-              className="W(24px) H(24px)"
-              title={name}
+              loading="lazy"
             />
+            <span className="Hidden">{name}</span>
           </a>
         </li>
       );
