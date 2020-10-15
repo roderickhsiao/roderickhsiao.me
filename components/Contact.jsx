@@ -40,7 +40,7 @@ class Contact extends PureComponent {
     let nodes = contact.map((contact, i) => {
       let { icon } = contact;
       return (
-        <li className="My(20px) W(1/4) D(ib) W(1/3)--xs" key={i}>
+        <li className="My(20px) W(1/5) D(ib) W(1/3)--xs" key={i}>
           <a
             className="Fz(1.1em) Va(m)"
             href={contact.value}
