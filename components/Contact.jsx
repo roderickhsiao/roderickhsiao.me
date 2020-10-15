@@ -3,6 +3,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import Card from './common/Card.jsx';
+import Img from './common/Img.jsx';
+
 import StaticContentStore from '../stores/StaticContentStore';
 
 import { connectToStores } from 'fluxible-addons-react';
@@ -47,7 +49,11 @@ class Contact extends PureComponent {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {contact.name}
+            <Img
+              src={contact.icon}
+              className="W(24px) H(24px)" 
+              title={conact.name}
+            />
           </a>
         </li>
       );
