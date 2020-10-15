@@ -91,7 +91,7 @@ class MainBrief extends PureComponent {
     }
     return (
       <div
-        className="H(300px) Mb(20px) Pos(r) Bgc(#212121) Ov(h) mainBrief Bxsh($shadow-card) Bdrs(8px) Bxsh($shadow-2dp):h Trsdu($trsdu-fast)"
+        className="H(340px) Mb(20px) Pos(r) Bgc(#212121) Ov(h) mainBrief Bxsh($shadow-card) Bdrs(8px) Bxsh($shadow-2dp):h Trsdu($trsdu-fast)"
         itemScope=""
         itemType="http://schema.org/Person"
       >

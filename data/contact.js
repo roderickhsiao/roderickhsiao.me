@@ -14,5 +14,9 @@ module.exports = [
   {
     name: 'Twitter',
     value: 'https://twitter.com/roderickhsiao'
+  },
+  {
+    name: 'Medium',
+    value: 'https://medium.com/@roderickhsiao'
   }
 ];
