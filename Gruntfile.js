@@ -89,7 +89,6 @@ module.exports = function(grunt) {
     atomizer: {
       app: {
         options: {
-          ie: true,
           namespace: '#atomic',
           configFile: 'configs/atomizer.js',
           configOutput: '<%= project.build %>/atomizer.json'
@@ -141,7 +140,6 @@ module.exports = function(grunt) {
       app: {
         options: {
           report: 'gzip',
-          compatibility: 'ie8',
           sourceMap: false
         },
         files: [
@@ -169,7 +167,6 @@ module.exports = function(grunt) {
       critial: {
         options: {
           report: 'gzip',
-          compatibility: 'ie8',
           sourceMap: false
         },
         files: [

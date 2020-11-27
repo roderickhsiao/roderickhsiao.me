@@ -2,7 +2,7 @@
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "dependencies": {
     "async": "^3.0.0",
-    "autoprefixer": "^10.0.0",
+    "autoprefixer": "^8.0.0",
     "babel": "^6.0.0",
     "babel-core": "^6.6.4",
     "babel-eslint": "^8.0.0",
