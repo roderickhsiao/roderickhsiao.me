@@ -16,13 +16,13 @@ function getWorkTime(duration) {
 module.exports = {
   companies: [
     {
-      name: 'Self Employee',
+      name: 'Self Employed',
       time: `March 2021 - present (${getWorkTime(
-        new Duration(new Date(2021, 1, 29))
+        new Duration(new Date(2021, 0, 29))
       )})`,
       title: 'Product Engineering Consultant',
       location: 'San Francisco, CA',
-      products: [
+      projects: [
         {
           name: 'Alt',
           time: 'March 2021 - present',
