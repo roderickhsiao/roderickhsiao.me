@@ -2,7 +2,7 @@ module.exports = {
   profile: {
     name: 'Roderick Hsiao',
     email: 'roderickhsiao@gmail.com',
-    title: 'Software Engineer',
+    title: 'Product Engineering Consultant',
     sector: 'Internet',
     location: 'San Francisco Bay Area | Internet',
     thumbnail: {

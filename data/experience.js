@@ -16,6 +16,21 @@ function getWorkTime(duration) {
 module.exports = {
   companies: [
     {
+      name: 'Self Employee',
+      time: `March 2021 - present (${getWorkTime(
+        new Duration(new Date(2021, 3, 30), new Date(Date.now()))
+      )})`,
+      title: 'Product Engineering Consultant',
+      location: 'San Francisco, CA',
+      products: [
+        {
+          name: 'Alt',
+          time: 'March 2021 - present',
+          summary: 'Frontend Consultant for https://www.onlyalt.com/'
+        }
+      ]
+    },
+    {
       name: 'Tinder Inc.',
       logo: '/tinderLogo.png',
       time: `Feb 2017 - present (${getWorkTime(
