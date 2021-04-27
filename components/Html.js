@@ -37,7 +37,6 @@ class HtmlComponent extends PureComponent {
         <script dangerouslySetInnerHTML={{ __html: state }} />
         <script src="//cdn.polyfill.io/v3/polyfill.min.js" defer async />
         <script src={getHashAssets('/js/client.js')} defer async />
-        <script src={getHashAssets('/js/modernizr.js')} defer async />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=UA-76603120-1"
@@ -102,10 +101,6 @@ export const headerStringEnd = [
   )}" media="print" onload="this.media='all'" />`,
 
   `<link rel="preload" href="${getHashAssets('/js/client.js')}" as="script" />`,
-  `<link rel="preload" href="${getHashAssets(
-    '/js/modernizr.js'
-  )}" as="script" />`,
-
   `<script>${inlineJSDetect}</script>`,
 
   '<noscript>',
