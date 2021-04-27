@@ -26,7 +26,18 @@ module.exports = {
         {
           name: 'Alt',
           time: 'March 2021 - present',
-          summary: 'Frontend Consultant for https://www.onlyalt.com/'
+          summary: 'Frontend architecture improvements, performance enhancements, and search engine optimizations.',
+          techStack: 'React',
+          smartlink: {
+            thumbnail: {
+              url: 'https://assets.website-files.com/5f4e9209d414696d700cbb4c/601ba2f2dc3e05ed34cf0a97_Alt-logo.png',
+              width: 500,
+              height: 337
+            },
+            title: 'Invest in sports cards just like stocks | Alt',
+            description: 'Alt is increasing the transparency and liquidity of alternative assets',
+            url: 'https://www.onlyalt.com/'
+          }
         }
       ]
     },
