@@ -11,14 +11,14 @@ function getWorkTime(duration) {
     workDuration.push(`${month} months`);
   }
 
-  return workDuration.join(',');
+  return workDuration.join(', ');
 }
 module.exports = {
   companies: [
     {
       name: 'Self Employee',
       time: `March 2021 - present (${getWorkTime(
-        new Duration(new Date(2021, 2, 29), new Date(Date.now()))
+        new Duration(new Date(2021, 2, 29))
       )})`,
       title: 'Product Engineering Consultant',
       location: 'San Francisco, CA',
@@ -34,7 +34,7 @@ module.exports = {
       name: 'Tinder Inc.',
       logo: '/tinderLogo.png',
       time: `Feb 2017 - present (${getWorkTime(
-        new Duration(new Date(2017, 1, 8), new Date(Date.now()))
+        new Duration(new Date(2017, 1, 8))
       )})`,
       title: 'Staff Engineer',
       location: 'Palo Alto, CA',
