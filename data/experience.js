@@ -11,22 +11,33 @@ function getWorkTime(duration) {
     workDuration.push(`${month} months`);
   }
 
-  return workDuration.join(',');
+  return workDuration.join(', ');
 }
 module.exports = {
   companies: [
     {
-      name: 'Self Employee',
+      name: 'Self Employed',
       time: `March 2021 - present (${getWorkTime(
-        new Duration(new Date(2021, 3, 30), new Date(Date.now()))
+        new Duration(new Date(2021, 0, 29))
       )})`,
       title: 'Product Engineering Consultant',
       location: 'San Francisco, CA',
-      products: [
+      projects: [
         {
           name: 'Alt',
           time: 'March 2021 - present',
-          summary: 'Frontend Consultant for https://www.onlyalt.com/'
+          summary: 'Frontend architecture improvements, performance enhancements, and search engine optimizations.',
+          techStack: 'React',
+          smartlink: {
+            thumbnail: {
+              url: 'data:image/png;base64,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',
+              width: 60,
+              height: 60
+            },
+            title: 'Invest in sports cards just like stocks | Alt',
+            description: 'Alt is increasing the transparency and liquidity of alternative assets',
+            url: 'https://www.onlyalt.com/'
+          }
         }
       ]
     },
@@ -34,7 +45,7 @@ module.exports = {
       name: 'Tinder Inc.',
       logo: '/tinderLogo.png',
       time: `Feb 2017 - present (${getWorkTime(
-        new Duration(new Date(2017, 2, 9), new Date(Date.now()))
+        new Duration(new Date(2017, 1, 8))
       )})`,
       title: 'Staff Engineer',
       location: 'Palo Alto, CA',
