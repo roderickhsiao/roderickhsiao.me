@@ -56,7 +56,6 @@
     "prop-types": "^15.5.8",
     "raf": "^3.3.0",
     "react": "^17.0.0",
-    "react-addons-css-transition-group": "^15.0.0",
     "react-aspect-ratio": "^1.0.16",
     "react-dom": "^17.0.0",
     "react-in-viewport": "1.0.0-alpha.15",

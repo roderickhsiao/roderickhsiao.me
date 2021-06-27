@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Sticky from 'react-stickynode';
 
 import { get } from 'lodash';
@@ -41,31 +40,25 @@ const Main = memo(props => {
       <header className="layout-head Bgc($c-green-500) Mih($top-header-height)">
         {loadComponent(regions.header, components, context)}
       </header>
-      <ReactCSSTransitionGroup
-        transitionName="page"
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={300}
+      <section
+        className="main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(10px)--xs"
+        key={route.name}
       >
-        <section
-          className="main-canvas My(20px) Mx(a) Maw(1240px) Miw(320px) Mx(10px)--xs"
-          key={route.name}
-        >
-          <section className="layout-lead-section">
-            {loadComponent(regions.lead, components, context)}
-          </section>
-          <section
-            id="main"
-            className="layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs Pend(0)--xs D(ib)"
-          >
-            {loadComponent(regions.main, components, context)}
-          </section>
-          <section className="layout-right-rail W(40%) Bxz(bb) W(100%)--xs D(ib) Va(t)">
-            <Sticky top="#fix-header" bottomBoundary="#main">
-              {loadComponent(regions.right, components, context)}
-            </Sticky>
-          </section>
+        <section className="layout-lead-section">
+          {loadComponent(regions.lead, components, context)}
         </section>
-      </ReactCSSTransitionGroup>
+        <section
+          id="main"
+          className="layout-main-section W(60%) Bxz(bb) Pend(20px) W(100%)--xs Pend(0)--xs D(ib)"
+        >
+          {loadComponent(regions.main, components, context)}
+        </section>
+        <section className="layout-right-rail W(40%) Bxz(bb) W(100%)--xs D(ib) Va(t)">
+          <Sticky top="#fix-header" bottomBoundary="#main">
+            {loadComponent(regions.right, components, context)}
+          </Sticky>
+        </section>
+      </section>
       <footer>{footer}</footer>
     </section>
   );

@@ -18,6 +18,7 @@ const Smartlink = memo(props => {
       className="Bd My(10px) Bdc($c-black-4) Cf D(b) Cur(p) Td(n) Td(n):h Bxsh($shadow-2dp) Bxsh($shadow-4dp):h Trsdu($trsdu-fast)"
       href={smartlink.url}
       target="_black"
+      rel="noopener noreferrer"
     >
       <Fragment>
         {isLargeTemplate ? (

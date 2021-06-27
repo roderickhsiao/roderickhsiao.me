@@ -61,10 +61,37 @@ module.exports = {
               width: 200,
               height: 200
             },
-            title: 'Tinder | Dating, Make Friends & Meet New People',
-            description: 'With 43 billion matches to date, Tinder® is the world\'s most popular dating app, making it the place to meet new people.',
+            title: 'Dating, Make Friends & Meet New People',
+            description: 'With 55 billion matches to date, Tinder® is the world\'s most popular dating app, making it the place to meet new people.',
             url: 'https://tinder.com'
-          }
+          },
+          demos: [
+            {
+              type: 'iframe',
+              url: 'https://www.youtube.com/embed/aCMbSyngXB4?start=918',
+              title: 'Production Progressive Web Apps With JavaScript Frameworks (Google I/O 2017)'
+            },
+            {
+              type: 'iframe',
+              url: 'https://www.youtube.com/embed/_srJ7eHS3IM?t=1747',
+              title: 'Fast By Default: Modern Loading Best Practices (Chrome Dev Summit 2017)'
+            },
+            {
+              type: 'iframe',
+              url: 'https://www.youtube.com/embed/puUPpVrIRkc?t=1231',
+              title: 'Adaptive Loading - Improving web performance on slow devices (Chrome Dev Summit 2019)'
+            },
+            {
+              type: 'iframe',
+              url: 'https://www.youtube.com/embed/cmRqQJBIp_A?t=1090',
+              title: 'PWA patterns for window and service worker communication (Chrome Dev Summit 2020)'
+            },
+            {
+              type: 'iframe',
+              url: 'https://www.youtube.com/embed/sU4MpWYrGSI?t=429',
+              title: 'SMS OTP form best practices (Chrome Dev Summit 2020)'
+            }
+          ]
         },
         {
           name: 'Tinder Swipe Life',
@@ -77,7 +104,7 @@ module.exports = {
               width: 200,
               height: 200
             },
-            title: 'Swipe Life | Tinder Swipe Life',
+            title: 'Swipe Life',
             description:
               'Your source for Tinder online dating stories, dating tips, dating advice, and provocative think pieces. Your dating life is our news.',
             url: 'https://swipelife.tinder.com'

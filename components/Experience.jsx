@@ -8,6 +8,7 @@ import Img from './common/Img.jsx';
 import Smartlink from './common/Smartlink.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
+import Carousel from './common/Carousel';
 
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
@@ -41,7 +42,7 @@ class Experience extends PureComponent {
       return null;
     }
     let nodes = projects.map((project, i) => {
-      let { smartlink } = project;
+      let { smartlink, demos } = project;
       return (
         <li
           className="Pstart(20px) Pstart(0)--xs Py(10px) Mb(20px) Mb(10px)!--xs"
@@ -54,6 +55,15 @@ class Experience extends PureComponent {
           <div className="Mb(6px)">{project.summary}</div>
           <div className="C($c-black-3)">Tech stack: {project.techStack}</div>
           <Smartlink smartlink={smartlink} />
+          {demos && demos.length && (
+            <Carousel 
+              nodes={demos.map((node) => {
+                if (node.type === 'iframe') {
+                  return <iframe title={node.title} loading="lazy" src={node.url} frameBorder="0" />
+                } 
+              })}  
+            />
+          )}
         </li>
       );
     });

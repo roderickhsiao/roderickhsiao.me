@@ -1,4 +1,4 @@
-.page-enter {
+/* .page-enter {
   opacity: 0;
   transform: translate3d(0, 200px, 0) scale(0.9);
   transform-origin: top;
@@ -22,4 +22,4 @@
   transition-duration: 0.3s;
   transition-timing-function: ease-in;
   transform: translate3d(0, 200px, 0) scale(0.9);
-}
+} */
