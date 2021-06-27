@@ -1,9 +1,9 @@
 module.exports = [
   {
-    name: 'Website Board',
+    name: 'Website Board / Diversity, Equity and Inclusion Lead',
     org: 'Str8jacket Dance Company',
     year: '2017 - present',
-    summary: 'Create and maintain website outside of dance practice.',
+    summary: 'Create and maintain website outside of dance practice. DEI training and create process to create a safe place.',
     smartlink: {
       thumbnail: {
         url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrY6DEahBHdT4NU62C1rCx1LhS4iRHqpZnMt6Fb8QmGkmgdSKNbRZyy4c',
