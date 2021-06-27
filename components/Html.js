@@ -74,8 +74,9 @@ export const headerStringStart = [
 ].join('');
 
 export const headerStringEnd = [
-  `<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&font-display=swap" media="print" onload="this.media='all'" />
-  <link rel="preload" href="${getHashAssets(
+  `<link rel="stylesheet" 
+    href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&font-display=swap" media="print" onload="this.media='all'" />`,
+  `<link rel="preload" href="${getHashAssets(
     '/css/normalize.css'
   )}" as="style" />`,
   `<link rel="stylesheet" href="${getHashAssets(
