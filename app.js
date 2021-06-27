@@ -1,7 +1,7 @@
 import React from 'react';
 
 import App from './components/App';
-import batchedUpdatePlugin from 'fluxible-addons-react/batchedUpdatePlugin';
+import { batchedUpdatePlugin } from 'fluxible-addons-react';
 import fetchrPlugin from 'fluxible-plugin-fetchr';
 import Fluxible from 'fluxible';
 import RouteStore from './stores/RouteStore';
