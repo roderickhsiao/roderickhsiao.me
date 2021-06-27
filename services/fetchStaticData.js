@@ -12,7 +12,7 @@ var DATA_MAPPING = {
 };
 
 module.exports = {
-  name: 'staticData',
+  resource: 'staticData',
   read: function(req, resource, params, config, callback) {
     var data = DATA_MAPPING[params.resource];
     if (!data) {
