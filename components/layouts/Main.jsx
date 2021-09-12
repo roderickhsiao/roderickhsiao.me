@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-import Sticky from 'react-stickynode';
 
 import { get } from 'lodash';
 
@@ -53,10 +52,8 @@ const Main = memo(props => {
         >
           {loadComponent(regions.main, components, context)}
         </section>
-        <section className="layout-right-rail W(40%) Bxz(bb) W(100%)--xs D(ib) Va(t)">
-          <Sticky top="#fix-header" bottomBoundary="#main">
-            {loadComponent(regions.right, components, context)}
-          </Sticky>
+        <section className="layout-right-rail W(40%) Bxz(bb) W(100%)--xs D(ib) Va(t) Pos(st) T($top-header-height)">
+          {loadComponent(regions.right, components, context)}
         </section>
       </section>
       <footer>{footer}</footer>
