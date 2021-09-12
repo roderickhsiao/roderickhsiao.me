@@ -113,18 +113,7 @@ module.exports = {
           name: 'Tinder Swipe Life',
           time: 'Nov 2017 - present',
           summary: 'Tinder Magazine',
-          techStack: 'GatsbyJS, Wordpress',
-          smartlink: {
-            thumbnail: {
-              url: '/tinder.jpeg',
-              width: 200,
-              height: 200
-            },
-            title: 'Swipe Life',
-            description:
-              'Your source for Tinder online dating stories, dating tips, dating advice, and provocative think pieces. Your dating life is our news.',
-            url: 'https://swipelife.tinder.com'
-          }
+          techStack: 'GatsbyJS, Wordpress'
         }
       ]
     },

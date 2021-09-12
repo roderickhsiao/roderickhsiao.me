@@ -72,7 +72,7 @@
     core-js-pure "^3.15.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.1.2":
   version "7.14.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.6.tgz#535203bc0892efc7dec60bdc27b2ecf6e409062d"
   integrity sha512-/PCB2uJ7oM44tz8YhC4Z/6PeOKXp4K588f+5M3clr1M4zbqztlo0XEfJ2LEzj/FgwfgGcIdl8n7YYjTCI0BYwg==
@@ -2256,11 +2256,6 @@ css-tree@1.0.0-alpha.28:
     mdn-data "~1.1.0"
     source-map "^0.5.3"
 
-csstype@^3.0.2:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
-  integrity sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==
-
 csurf@^1.6.3:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/csurf/-/csurf-1.11.0.tgz#ab0c3c6634634192bd3d6f4b861be20800eeb61a"
@@ -2504,14 +2499,6 @@ doctrine@^2.1.0:
   integrity sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==
   dependencies:
     esutils "^2.0.2"
-
-dom-helpers@^5.0.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-5.2.1.tgz#d9400536b2bf8225ad98fe052e029451ac40e902"
-  integrity sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==
-  dependencies:
-    "@babel/runtime" "^7.8.7"
-    csstype "^3.0.2"
 
 dom-walk@^0.1.0:
   version "0.1.2"
@@ -3966,10 +3953,10 @@ iconv-lite@0.4.24, iconv-lite@^0.4.17, iconv-lite@~0.4.13:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-idle-tracker@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/idle-tracker/-/idle-tracker-0.0.7.tgz#231ab810a0598858a4541dec5eeabd166a88d8cc"
-  integrity sha512-IAe39Uz4l5w1npAzMMOkH38Hh5IkPWY0+Uln4T9diFyyMMDqmMNV8os1b9vKGEWucdos6QwKx9vBoIg9Pjw1Jw==
+idle-tracker@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/idle-tracker/-/idle-tracker-0.0.8.tgz#53bc28f12159fe2b214a0b17534933dbf1171feb"
+  integrity sha512-6qlbso4m3OWv9hqszcqZU3UukMq2FGLgWlfPteHT5sDJMxatQCP6D0/QSMxONUcN7d5bVr+2rqMjKwCg4rUmNA==
 
 ieee754@^1.1.4:
   version "1.2.1"
@@ -5732,7 +5719,7 @@ promise-inflight@^1.0.1:
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
 
-prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -5932,10 +5919,10 @@ react-dom@^17.0.0:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-in-viewport@1.0.0-alpha.15:
-  version "1.0.0-alpha.15"
-  resolved "https://registry.yarnpkg.com/react-in-viewport/-/react-in-viewport-1.0.0-alpha.15.tgz#15960a388492ed3cbab31ff138ec047b4f20326e"
-  integrity sha512-e5donFgw+ynzKqgPqqBSS56iXUUg0IwRV5Ru/G6qR06RKXd2xIZOvkRpPSOAL1z3/oMBDBYFwoEAdiS5qhA9XQ==
+react-in-viewport@1.0.0-alpha.19:
+  version "1.0.0-alpha.19"
+  resolved "https://registry.yarnpkg.com/react-in-viewport/-/react-in-viewport-1.0.0-alpha.19.tgz#ce24b658e004787e9611a2bf60e44265a8b1d71b"
+  integrity sha512-tPVvg9e2wnPOqoEIn+/5F5WIz10P9huiOqbA9oFDRTvCWX3DlWhq6KXaAycPIUOw7dbtotOvLP1YkVDnXuLQSQ==
   dependencies:
     hoist-non-react-statics "^3.0.0"
 
@@ -5944,26 +5931,16 @@ react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-stickynode@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/react-stickynode/-/react-stickynode-3.1.0.tgz#0fc8870e2a14cf7a069ad9cdc661b0faa1439b00"
-  integrity sha512-xNI/SRmJClgbRd88PlwuGrpUJDnJyC3xoMIBshkdtdPMyfSpPyCyd7uxG6W9cHqgo977ZYHKx6bH0FpRK7LbLw==
+react-stickynode@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-stickynode/-/react-stickynode-4.0.0.tgz#ca1deeda866aeace3d522d01eb868f286cdb49d1"
+  integrity sha512-H6Ae6l8soAc188eFAmE4CGJz3oidQa88jNO/fnJWjpFw4DwGRS6boL9gHNE4DCvbMPgek1AAP85pUPIEKUMgtw==
   dependencies:
     classnames "^2.0.0"
     core-js "^3.6.5"
     prop-types "^15.6.0"
     shallowequal "^1.0.0"
     subscribe-ui-event "^2.0.6"
-
-react-transition-group@^4.0.0:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.2.tgz#8b59a56f09ced7b55cbd53c36768b922890d5470"
-  integrity sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg==
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-    dom-helpers "^5.0.1"
-    loose-envify "^1.4.0"
-    prop-types "^15.6.2"
 
 react@^17.0.0:
   version "17.0.2"

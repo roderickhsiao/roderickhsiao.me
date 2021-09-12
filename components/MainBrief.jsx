@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { connectToStores } from 'fluxible-addons-react';
-import { map } from 'lodash';
 import PropTypes from 'prop-types';
 
 import Card from './common/Card.jsx';
@@ -57,7 +56,7 @@ class MainBrief extends PureComponent {
       return null;
     }
 
-    let node = map(list, (item, i) => {
+    let node = list.map((item, i) => {
       return (
         <li {...item.props} key={i}>
           {data[item.field]}
@@ -71,7 +70,7 @@ class MainBrief extends PureComponent {
     return (
       <div className="Px($card-padding)">
         <ol className="M(0)">
-          {map(data, (item, i) => {
+          {data.map((item, i) => {
             return (
               <li className="C(#fff)" key={i}>
                 {item}
@@ -85,7 +84,7 @@ class MainBrief extends PureComponent {
 
   render() {
     let { profile } = this.state.summary;
-    if (!profile) {
+    if (!profile || !Object.keys(profile)?.length) {
       return null;
     }
     return (

@@ -56,6 +56,7 @@ module.exports = {
     'Aqaba'
   ],
   Korea: ['Jeju'],
+  Maldive: ['Malé'],
   Mexico: ['Los Cabos', 'Tulum'],
   Myanmar: ['Yangon', 'Bago'],
   'New Zealand': [

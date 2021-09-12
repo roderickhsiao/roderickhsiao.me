@@ -52,10 +52,14 @@ class Country extends PureComponent {
   }
 
   render() {
+    const { country } = this.state;
+    if (!country || !Object.keys(country)?.length) {
+      return null;
+    }
     return (
       <Card>
         <h5 className="M(0)">Countries and Cities Visited</h5>
-        {this.renderCountries(this.state.country)}
+        {this.renderCountries(country)}
       </Card>
     );
   }
