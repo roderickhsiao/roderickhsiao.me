@@ -74,7 +74,7 @@ class Education extends PureComponent {
 
   render() {
     let { education } = this.state;
-    if (!education || !Object.keys(education)?.length) {
+    if (!education || !Object.keys(education).length) {
       return null;
     }
     return (

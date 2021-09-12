@@ -84,7 +84,7 @@ class MainBrief extends PureComponent {
 
   render() {
     let { profile } = this.state.summary;
-    if (!profile || !Object.keys(profile)?.length) {
+    if (!profile || !Object.keys(profile).length) {
       return null;
     }
     return (

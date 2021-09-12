@@ -53,7 +53,7 @@ class Country extends PureComponent {
 
   render() {
     const { country } = this.state;
-    if (!country || !Object.keys(country)?.length) {
+    if (!country || !Object.keys(country).length) {
       return null;
     }
     return (
