@@ -30,9 +30,9 @@ module.exports = {
           techStack: 'React',
           smartlink: {
             thumbnail: {
-              url: 'https://assets.website-files.com/5e78c024a853e17dfffdb941/5e78c491334fe17447803264_logo-forethought.svg',
-              width: 176,
-              height: 29
+              url: '/forethought.png',
+              width: 512,
+              height: 512
             },
             title: 'AI for Customer Support Teams | Forethought',
             description: 'Improve your customer experience by using AI.',
