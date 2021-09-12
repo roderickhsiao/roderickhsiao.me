@@ -29,7 +29,7 @@ const Smartlink = memo(props => {
           <Img
             nodeName="div"
             src={thumbnail.url}
-            className="M(-1px) Bgz(ct) W(150px) H(150px) H(100px)!--xs W(100px)!--xs D(ib) Bgr(nr) Fl(start) Bgc(#000.12)"
+            className="M(-1px) Bgz(ct) W(150px) H(150px) H(100px)!--xs W(100px)!--xs D(ib) Bgr(nr) Fl(start) Bgc(#fff)"
           />
         )}
         <div
