@@ -24,6 +24,22 @@ module.exports = {
       location: 'San Francisco, CA',
       projects: [
         {
+          name: 'Forethought',
+          time: 'August 2021 - present',
+          summary: 'PWA feature development',
+          techStack: 'React',
+          smartlink: {
+            thumbnail: {
+              url: 'https://assets.website-files.com/5e78c024a853e17dfffdb941/5e78c491334fe17447803264_logo-forethought.svg',
+              width: 176,
+              height: 29
+            },
+            title: 'AI for Customer Support Teams | Forethought',
+            description: 'Improve your customer experience by using AI.',
+            url: 'https://www.forethought.ai/'
+          }
+        },
+        {
           name: 'Alt',
           time: 'March 2021 - present',
           summary: 'Frontend architecture improvements, performance enhancements, and search engine optimizations.',
