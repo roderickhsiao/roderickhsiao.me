@@ -34,7 +34,7 @@ module.exports = {
               width: 400,
               height: 400
             },
-            title: 'Invest in sports cards just like stocks | Alt',
+            title: 'Alt',
             description: 'Alt is increasing the transparency and liquidity of alternative assets',
             url: 'https://www.onlyalt.com/'
           }
