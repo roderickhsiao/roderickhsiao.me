@@ -94,7 +94,7 @@ class MainBrief extends PureComponent {
         itemType="http://schema.org/Person"
       >
         <div className="Pos(a) End(-180px) D(n) D(b)--md">
-          <Img src={'/profile.jpg'} width={400} height={300} itemProp="image" loading="auto" />
+          <Img src={'/profile.jpg'} width={400} height={300} itemProp="image" loading="auto" alt="Taz" />
           <div
             className="Pos(a) T(0) Bds(s)"
             style={{
