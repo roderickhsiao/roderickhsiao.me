@@ -58,7 +58,7 @@
     "react": "^17.0.0",
     "react-aspect-ratio": "^1.0.16",
     "react-dom": "^17.0.0",
-    "react-in-viewport": "1.0.0-alpha.19",
+    "react-in-viewport": "1.0.0-alpha.20",
     "resolve": "^1.0.0",
     "robots.txt": "^1.0.0",
     "serialize-javascript": "^5.0.0",
