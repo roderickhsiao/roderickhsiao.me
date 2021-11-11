@@ -33,7 +33,7 @@ class MainBrief extends PureComponent {
     });
   }
 
-  renderThumbnail(data, name) {
+  renderThumbnail(data) {
     let { url, width, height } = data;
     if (!url) {
       return null;
@@ -44,7 +44,7 @@ class MainBrief extends PureComponent {
         width={width}
         height={height}
         className="Bdrs(100%) Mend(10px)"
-        alt={name}
+        alt=""
         itemProp="image"
       />
     );
@@ -105,7 +105,7 @@ class MainBrief extends PureComponent {
         </div>
         <div className="Bgc(#212121)">
           <div className="D(ib)--xs Va(t) D(n) Pt($card-padding) Pstart($card-padding)">
-            {this.renderThumbnail(profile.thumbnail, profile.name)}
+            {this.renderThumbnail(profile.thumbnail)}
           </div>
           <div className="D(ib) Va(t) P($card-padding)">
             <ul className="M(0) C(#fff)">{this.renderListItem(profile)}</ul>
