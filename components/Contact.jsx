@@ -49,7 +49,7 @@ class Contact extends PureComponent {
             rel="noopener noreferrer"
           >
             <img
-              alt={name}
+              alt=""
               className="W(32px) H(32px)"
               src={icon}
               loading="lazy"

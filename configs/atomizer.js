@@ -9,7 +9,7 @@ module.exports = {
     '$c-black-0': '#000',
     '$c-black-1': '#1f2937',
     '$c-black-2': '#6b7280',
-    '$c-black-3': '#9ca3af',
+    '$c-black-3': '#55595f',
     '$c-black-4': '#f3f4f6',
     '$c-grey-50': '#f9fafb',
     '$c-green-500': '#10b981',

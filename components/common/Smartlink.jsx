@@ -23,7 +23,7 @@ const Smartlink = memo(props => {
       <Fragment>
         {isLargeTemplate ? (
           <AspectRatio ratio={ratio}>
-            <Img src={thumbnail.url} />
+            <Img src={thumbnail.url} alt="" />
           </AspectRatio>
         ) : (
           <Img
