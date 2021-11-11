@@ -76,8 +76,8 @@ class Contact extends PureComponent {
         Drop me a message if you want to discuss interesting web ideas, questions, or potentially fun project to work together :)
         </p>
         <p>
-          Open for tech talks invites, project architecture consulting (web performance, large scale web app, team mentoring and more).
-          Book your free discussion session by sending me an email.  
+          Open for tech talks invitations, project architecture consulting (web performance, large scale web app, team mentoring and more).
+          Book your free discussion session by sending me an email.
         </p>
         {this.renderContact(contact)}
       </Card>
