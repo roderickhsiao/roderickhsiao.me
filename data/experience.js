@@ -24,25 +24,9 @@ module.exports = {
       location: 'San Francisco, CA',
       projects: [
         {
-          name: 'Forethought',
-          time: 'August 2021 - present',
-          summary: 'PWA feature development',
-          techStack: 'React',
-          smartlink: {
-            thumbnail: {
-              url: '/forethought.png',
-              width: 512,
-              height: 512
-            },
-            title: 'AI for Customer Support Teams | Forethought',
-            description: 'Improve your customer experience by using AI.',
-            url: 'https://www.forethought.ai/'
-          }
-        },
-        {
           name: 'Alt',
           time: 'March 2021 - present',
-          summary: 'Frontend architecture improvements, performance enhancements, and search engine optimizations.',
+          summary: 'Frontend architecture improvements, performance enhancements, instrumentations, and search engine optimizations.',
           techStack: 'React',
           smartlink: {
             thumbnail: {
@@ -54,7 +38,23 @@ module.exports = {
             description: 'Alt is increasing the transparency and liquidity of alternative assets',
             url: 'https://www.onlyalt.com/'
           }
-        }
+        },
+        {
+          name: 'Forethought',
+          time: 'August 2021 - Nov 2021',
+          summary: 'Focus on feature development and design system infrastructure. Provided technical guildline and directions. Deliever state persistant stragetgy and major rebranding.',
+          techStack: 'React',
+          smartlink: {
+            thumbnail: {
+              url: '/forethought.png',
+              width: 475,
+              height: 112
+            },
+            title: 'AI for Customer Support Teams | Forethought',
+            description: 'Improve your customer experience by using AI.',
+            url: 'https://www.forethought.ai/'
+          }
+        },
       ]
     },
     {
