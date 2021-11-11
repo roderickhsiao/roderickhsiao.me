@@ -40,7 +40,7 @@ module.exports = {
       'Web UI component and front-end infra and architecture',
       'High performance web development',
       'Large scale and international web app',
-      'SEO optimization'
+      'Search engine optimization (SEO)'
     ]
   }
 };
