@@ -70,7 +70,7 @@ class About extends PureComponent {
             <li className="My(6px)">
               PageSpeed Test Score:
               <a
-                className="Mstart(6px) P(6px) D(ib) Fw(b) C(#009a2d)"
+                className="Mstart(6px) P(6px) D(ib) Fw(b) C(#008828)"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://developers.google.com/speed/pagespeed/insights/?url=https://www.roderickhsiao.me"
