@@ -18,7 +18,7 @@ module.exports = {
     {
       name: 'Self Employed',
       time: `March 2021 - present (${getWorkTime(
-        new Duration(new Date(2021, 0, 29))
+        new Duration(new Date(2021, 2, 29))
       )})`,
       title: 'Product Engineering Consultant',
       location: 'San Francisco, CA',
