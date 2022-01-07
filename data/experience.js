@@ -41,7 +41,7 @@ module.exports = {
         },
         {
           name: 'Forethought',
-          time: 'August 2021 - Nov 2021',
+          time: 'August 2021 - Nov 2021, Jan 2022 - present',
           summary: 'Focus on feature development and design system infrastructure. Provided technical guildline and directions. Deliever state persistant stragetgy and major rebranding.',
           techStack: 'React',
           smartlink: {
