@@ -77,7 +77,7 @@ class Contact extends PureComponent {
         </p>
         <p>
           Open for tech talks invitations, project architecture consulting (web performance, large scale web app, team mentoring and more).
-          Book your free discussion session by sending me an email.
+          Book your free discussion session with me at <a href="https://calendly.com/roderickhsiao">Calendly</a>.
         </p>
         {this.renderContact(contact)}
       </Card>
