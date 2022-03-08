@@ -17,9 +17,7 @@ module.exports = {
   companies: [
     {
       name: 'Self Employed',
-      time: `March 2021 - present (${getWorkTime(
-        new Duration(new Date(2021, 2, 29))
-      )})`,
+      time: 'March 2021 - present',
       title: 'Product Engineering Consultant',
       location: 'San Francisco, CA',
       projects: [
