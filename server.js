@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom/server';
 import Debug from 'debug';
 
 import { createElementWithContext as createElement } from 'fluxible-addons-react';
-import { get, map } from 'lodash';
 import { navigateAction } from 'fluxible-router';
 import app from './app';
 import bodyParser from 'body-parser';
@@ -86,7 +85,7 @@ fetchrPlugin.registerService(require('./services/fetchStaticData'));
 server.use(fetchrPlugin.getXhrPath(), fetchrPlugin.getMiddleware());
 
 // sitemap
-let routeConfig = map(routes, route => {
+let routeConfig = Object.entries(routes).map(([,route]) => {
   return { url: route.path };
 });
 let sm = sitemap.createSitemap({
@@ -153,9 +152,9 @@ server.use((req, res, next) => {
 
       let routeStore = context.getStore('RouteStore');
       let { name } = routeStore.getCurrentRoute();
-      let prefetch = get(layout, [name, 'prefetch']);
+      let { prefetch } = layout?.[name];
 
-      if (!prefetch || !prefetch.length) {
+      if (!prefetch?.length) {
         renderPage(req, res, context);
       } else {
         setImmediate(() => {

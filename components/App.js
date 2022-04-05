@@ -1,8 +1,7 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { handleHistory } from 'fluxible-router';
 import { provideContext } from 'fluxible-addons-react';
 import { subscribe } from 'subscribe-ui-event';
-import PropTypes from 'prop-types';
 
 import Layout from './layouts/Main.jsx';
 
@@ -11,7 +10,6 @@ import Layout from './layouts/Main.jsx';
 class App extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.routeStore = this.context.getStore('RouteStore');
     this.subscription = [];
   }
 
@@ -52,7 +50,7 @@ class App extends React.Component {
 
   render() {
     //render content
-    let route = this.routeStore.getCurrentRoute() || { name: 'home' };
+    let route = this.props.currentRoute || { name: 'home' };
     let { ua } = this.props;
     return (
       <main className="main-app">
@@ -63,11 +61,6 @@ class App extends React.Component {
 }
 App.displayName = 'App';
 
-App.contextTypes = {
-  executeAction: PropTypes.func,
-  getStore: PropTypes.func,
-  ua: PropTypes.object
-};
 App = provideContext(App);
 App = handleHistory(App);
 

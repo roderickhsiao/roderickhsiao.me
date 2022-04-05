@@ -1,5 +1,4 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { memo } from 'react';
 
 import assetsMapping from '../build/assets.json';
 
@@ -16,36 +15,29 @@ const inlineGA = `
   gtag('config', 'UA-76603120-1');
 `;
 
-const getHashAssets = assetsPath => {
+const getHashAssets = (assetsPath) => {
   let key = assetsPath.replace(pathPrefix, '');
   let match = assetsMapping[key];
   return match ? pathPrefix + assetsMapping[key] : assetsPath;
 };
 
-class HtmlComponent extends PureComponent {
-  static propTypes = {
-    context: PropTypes.object.isRequired,
-    markup: PropTypes.string.isRequired,
-    state: PropTypes.string.isRequired
-  };
+const HtmlComponent = memo((props) => {
+  const { markup, state } = props;
 
-  render() {
-    let { markup, state } = this.props;
-    return (
-      <body className="Bgc($c-grey-50)">
-        <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
-        <script dangerouslySetInnerHTML={{ __html: state }} />
-        <script src="//cdn.polyfill.io/v3/polyfill.min.js" defer async />
-        <script src={getHashAssets('/js/client.js')} defer async />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-76603120-1"
-        />
-        <script dangerouslySetInnerHTML={{ __html: inlineGA }} />
-      </body>
-    );
-  }
-}
+  return (
+    <body className="Bgc($c-grey-50)">
+      <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
+      <script dangerouslySetInnerHTML={{ __html: state }} />
+      <script src="//cdn.polyfill.io/v3/polyfill.min.js" defer async />
+      <script src={getHashAssets('/js/client.js')} defer async />
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-76603120-1"
+      />
+      <script dangerouslySetInnerHTML={{ __html: inlineGA }} />
+    </body>
+  );
+});
 
 export const headerStringStart = [
   '<head>',
@@ -70,7 +62,7 @@ export const headerStringStart = [
   '<title>Roderick Hsiao</title>',
   '<meta name="description" content="Nothing important" />',
   '<meta property="og:type" content="website" />',
-  '<meta property="og:image" content="https://c2.staticflickr.com/2/1585/25832501265_89b28a6aa5_b.jpg" />'
+  '<meta property="og:image" content="https://c2.staticflickr.com/2/1585/25832501265_89b28a6aa5_b.jpg" />',
 ].join('');
 
 export const headerStringEnd = [
@@ -120,7 +112,7 @@ export const headerStringEnd = [
   '<noscript>',
   `<link rel="stylesheet" href="${getHashAssets('/css/transition.css')}" />`,
   '</noscript>',
-  '</head>'
+  '</head>',
 ].join('');
 
 export const htmlStringStart = '<html lang="en" id="atomic" class="NoJs">';

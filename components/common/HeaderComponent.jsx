@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-import { get } from 'lodash';
 import { NavLink } from 'fluxible-router';
 
 import menuConfig from '../../data/menu';
@@ -27,7 +26,7 @@ const Menu = memo(props => {
 
 const HeaderComponent = memo(props => {
   const { route } = props.context;
-  const menuItems = get(menuConfig, [route.name], {});
+  const menuItems = menuConfig?.[route.name] ?? {};
   return (
     <div className="Bxz(bb) W(100%) Bgc($c-green-500) C(#fff) Pb(30px) Px(20px) Bxsh($header-box-shadow) Mih($top-header-heigh) Bxsh(n)--xs">
       <div className="Fz(56px) Mx(20px) Lh(1.5) D(ib) Mt($top-header-height) Tt(c) Op(1) Trsdu($trsdu-fast) hasScrolled_Op(0)">

@@ -1,6 +1,5 @@
-import React, { PureComponent } from 'react';
-
-import PropTypes from 'prop-types';
+import React, { memo, useEffect, useMemo } from 'react';
+import { useFluxible } from 'fluxible-addons-react';
 
 import Card from './common/Card.jsx';
 import Smartlink from './common/Smartlink.jsx';
@@ -10,36 +9,21 @@ import { connectToStores } from 'fluxible-addons-react';
 
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
-class Activity extends PureComponent {
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.activity !== prevState.activity) {
-      return nextProps;
-    }
+const Activity = (props) => {
+  const { executeAction } = useFluxible();
+  const { activity } = props;
 
-    return null;
-  }
-
-  static contextTypes = {
-    executeAction: PropTypes.func,
-    getStore: PropTypes.func
-  };
-
-  store = this.context.getStore(StaticContentStore);
-  state = {
-    activity: this.props.activity
-  };
-
-  componentDidMount() {
-    this.context.executeAction(fetchStaticDataAction, {
-      resource: 'activity'
+  useEffect(() => {
+    executeAction(fetchStaticDataAction, {
+      resource: 'activity',
     });
-  }
+  }, []);
 
-  renderActivities(activities) {
-    if (!activities || !activities.length) {
+  const activities = useMemo(() => {
+    if (!activity?.length) {
       return null;
     }
-    let nodes = activities.map((activity, i) => {
+    let nodes = activity.map((activity, i) => {
       return (
         <li
           key={i}
@@ -59,24 +43,26 @@ class Activity extends PureComponent {
     });
 
     return <ul>{nodes}</ul>;
+  }, [activity]);
+
+  if (!activity) {
+    return null;
   }
-  render() {
-    let { activity } = this.state;
-    return (
-      <Card>
-        <h5 className="M(0)">Extracurricular Activities</h5>
-        {this.renderActivities(activity)}
-      </Card>
-    );
-  }
-}
+
+  return (
+    <Card>
+      <h5 className="M(0)">Extracurricular Activities</h5>
+      {activities}
+    </Card>
+  );
+};
 
 export default connectToStores(
-  Activity,
+  memo(Activity),
   [StaticContentStore],
   (context, props) => {
     return {
-      activity: context.getStore(StaticContentStore).getData('activity')
+      activity: context.getStore(StaticContentStore).getData('activity'),
     };
   }
 );

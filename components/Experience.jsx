@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { memo, useEffect, useMemo, useCallback } from 'react';
+import { useFluxible } from 'fluxible-addons-react';
 import { connectToStores } from 'fluxible-addons-react';
 import classNames from 'clsx';
-import PropTypes from 'prop-types';
 
 import Card from './common/Card.jsx';
 import Img from './common/Img.jsx';
@@ -12,33 +12,19 @@ import Carousel from './common/Carousel';
 
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
-class Experience extends PureComponent {
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.experience !== prevState.experience) {
-      return nextProps;
-    }
+const Experience = (props) => {
+  const { experience } = props;
+  const { executeAction } = useFluxible();
+  const { companies } = experience || {};
 
-    return null;
-  }
-
-  static contextTypes = {
-    executeAction: PropTypes.func,
-    getStore: PropTypes.func
-  };
-
-  store = this.context.getStore(StaticContentStore);
-  state = {
-    experience: this.props.experience
-  };
-
-  componentDidMount() {
-    this.context.executeAction(fetchStaticDataAction, {
-      resource: 'experience'
+  useEffect(() => {
+    executeAction(fetchStaticDataAction, {
+      resource: 'experience',
     });
-  }
+  }, []);
 
-  renderProject(projects) {
-    if (!projects || !projects.length) {
+  const renderProjects = useCallback((projects) => {
+    if (!projects?.length) {
       return null;
     }
     let nodes = projects.map((project, i) => {
@@ -56,21 +42,28 @@ class Experience extends PureComponent {
           <div className="C($c-black-3)">Tech stack: {project.techStack}</div>
           <Smartlink smartlink={smartlink} />
           {demos && demos.length && (
-            <Carousel 
+            <Carousel
               nodes={demos.map((node) => {
                 if (node.type === 'iframe') {
-                  return <iframe title={node.title} loading="lazy" src={node.url} frameBorder="0" />
-                } 
-              })}  
+                  return (
+                    <iframe
+                      title={node.title}
+                      loading="lazy"
+                      src={node.url}
+                      frameBorder="0"
+                    />
+                  );
+                }
+              })}
             />
           )}
         </li>
       );
     });
     return <ul>{nodes}</ul>;
-  }
+  }, []);
 
-  renderCompanies(companies) {
+  const companiesNode = useMemo(() => {
     if (!companies || !companies.length) {
       return null;
     }
@@ -80,7 +73,7 @@ class Experience extends PureComponent {
         <div
           key={i}
           className={classNames('Py(10px)', {
-            'Bdbw(2px) Bdbs(s) Bdbc($c-black-4)': i !== companies.length - 1
+            'Bdbw(2px) Bdbs(s) Bdbc($c-black-4)': i !== companies.length - 1,
           })}
         >
           <div className="Cf Mt(10px)">
@@ -99,35 +92,32 @@ class Experience extends PureComponent {
               {company.time} | {company.location}
             </div>
           </div>
-          <div>{this.renderProject(projects)}</div>
+          <div>{renderProjects(projects)}</div>
         </div>
       );
     });
 
     return nodes;
+  }, [companies, renderProjects]);
+
+  if (!experience || !Object.keys(experience).length) {
+    return null;
   }
 
-  render() {
-    let { experience } = this.state;
-    if (!experience || !Object.keys(experience).length) {
-      return null;
-    }
-    let { companies } = experience;
-    return (
-      <Card>
-        <h5 className="My(10px) Mx(0) C($c-black-2) Fw(400)">Experiences</h5>
-        {this.renderCompanies(companies)}
-      </Card>
-    );
-  }
-}
+  return (
+    <Card>
+      <h5 className="My(10px) Mx(0) C($c-black-2) Fw(400)">Experiences</h5>
+      {companiesNode}
+    </Card>
+  );
+};
 
 export default connectToStores(
-  Experience,
+  memo(Experience),
   [StaticContentStore],
   (context, props) => {
     return {
-      experience: context.getStore(StaticContentStore).getData('experience')
+      experience: context.getStore(StaticContentStore).getData('experience'),
     };
   }
 );

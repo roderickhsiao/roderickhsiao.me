@@ -7,7 +7,6 @@ const IMAGE_STATUS_INIT = 0;
 const IMAGE_STATUS_LOADING = 1;
 const IMAGE_STATUS_LOADED = 2;
 
-import { forEach } from 'lodash';
 import { handleViewport } from 'react-in-viewport';
 import classNames from 'clsx';
 import raf from 'raf';

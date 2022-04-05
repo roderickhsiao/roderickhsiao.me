@@ -24,10 +24,6 @@ module.exports = [
     url: 'https://www.google.com/design/spec/material-design/introduction.html'
   },
   {
-    name: 'Lodash',
-    url: 'https://lodash.com'
-  },
-  {
     name: 'GruntJS',
     url: 'https://gruntjs.com'
   },

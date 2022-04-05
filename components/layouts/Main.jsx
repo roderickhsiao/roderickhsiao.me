@@ -1,13 +1,11 @@
 import React, { memo } from 'react';
 
-import { get } from 'lodash';
-
 // TODO, this should come from PageStore
 import components from '../../configs/components';
 import layout from '../../configs/layout';
 
 function loadComponent(regions, components, context) {
-  if (!regions || !regions.length) {
+  if (!regions?.length) {
     return null;
   }
 

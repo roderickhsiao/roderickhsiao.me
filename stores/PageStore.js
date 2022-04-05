@@ -1,5 +1,4 @@
 var createStore = require('fluxible/addons/createStore');
-// var keyBy = require('lodash/keyBy');
 
 module.exports = createStore({
   storeName: 'PageStore',

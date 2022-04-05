@@ -1,52 +1,36 @@
-import React, { PureComponent } from 'react';
+import React, { memo, useEffect, useMemo } from 'react';
+import { useFluxible } from 'fluxible-addons-react';
 import { connectToStores } from 'fluxible-addons-react';
 import classNames from 'clsx';
-import PropTypes from 'prop-types';
 
 import Card from './common/Card.jsx';
 import Img from './common/Img.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
-
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
-class Education extends PureComponent {
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.education !== prevState.education) {
-      return nextProps;
-    }
+const Education = (props) => {
+  const { executeAction } = useFluxible();
+  const { education } = props;
 
-    return null;
-  }
-
-  static contextTypes = {
-    executeAction: PropTypes.func,
-    getStore: PropTypes.func
-  };
-
-  store = this.context.getStore(StaticContentStore);
-  state = {
-    education: this.props.education
-  };
-
-  componentDidMount() {
-    this.context.executeAction(fetchStaticDataAction, {
-      resource: 'education'
+  useEffect(() => {
+    executeAction(fetchStaticDataAction, {
+      resource: 'education',
     });
-  }
+  }, []);
 
-  renderEducation(data) {
-    if (!data || !data.length) {
+  const educationNodes = useMemo(() => {
+    if (!education?.length) {
       return null;
     }
-    let nodes = data.map((edu, i) => {
+    let nodes = education.map((edu, i) => {
       let { thumbnail } = edu || {};
-      let height = thumbnail.height / thumbnail.width * 100;
+      let height = (thumbnail.height / thumbnail.width) * 100;
       return (
         <li
           key={i}
           className={classNames('Py(10px) Cf', {
-            'Bdbw(1px) Bdbs(s) Bdbc($c-black-4)': i !== data.length - 1
+            'Bdbw(1px) Bdbs(s) Bdbc($c-black-4)': i !== education.length - 1,
           })}
         >
           <div className="D(ib) Va(m)">
@@ -70,28 +54,26 @@ class Education extends PureComponent {
       );
     });
     return <ul>{nodes}</ul>;
+  }, [education]);
+
+  if (!education || !Object.keys(education).length) {
+    return null;
   }
 
-  render() {
-    let { education } = this.state;
-    if (!education || !Object.keys(education).length) {
-      return null;
-    }
-    return (
-      <Card>
-        <h5 className="My(10px) Mx(0) C($c-black-2) Fw(400)">Education</h5>
-        {this.renderEducation(education)}
-      </Card>
-    );
-  }
-}
+  return (
+    <Card>
+      <h5 className="My(10px) Mx(0) C($c-black-2) Fw(400)">Education</h5>
+      {educationNodes}
+    </Card>
+  );
+};
 
 export default connectToStores(
-  Education,
+  memo(Education),
   [StaticContentStore],
   (context, props) => {
     return {
-      education: context.getStore(StaticContentStore).getData('education')
+      education: context.getStore(StaticContentStore).getData('education'),
     };
   }
 );
