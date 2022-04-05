@@ -1,9 +1,8 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 import assetsMapping from '../build/assets.json';
 
-const inlineJSDetect =
-  '(function(html){var c = html.className;c += " JsEnabled";c = c.replace("NoJs","");html.className = c;})(document.documentElement)';
+const inlineJSDetect = '(function(html){var c = html.className;c += " JsEnabled";c = c.replace("NoJs","");html.className = c;})(document.documentElement)';
 
 const pathPrefix = '/';
 
@@ -16,8 +15,8 @@ const inlineGA = `
 `;
 
 const getHashAssets = (assetsPath) => {
-  let key = assetsPath.replace(pathPrefix, '');
-  let match = assetsMapping[key];
+  const key = assetsPath.replace(pathPrefix, '');
+  const match = assetsMapping[key];
   return match ? pathPrefix + assetsMapping[key] : assetsPath;
 };
 

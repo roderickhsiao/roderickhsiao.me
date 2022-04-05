@@ -3,7 +3,7 @@ module.exports = {
     xs: '@media screen and (max-width:700px)',
     sm: '@media screen and (min-width:700px)',
     md: '@media screen and (min-width:999px)',
-    lg: '@media screen and (min-width:1200px)'
+    lg: '@media screen and (min-width:1200px)',
   },
   custom: {
     '$c-black-0': '#000',
@@ -44,6 +44,6 @@ module.exports = {
       '0 6px 10px 0 rgba(0,0,0,.14),' +
       '0 1px 18px 0 rgba(0,0,0,.12)',
     // transition
-    '$trsdu-fast': '.3s'
-  }
+    '$trsdu-fast': '.3s',
+  },
 };

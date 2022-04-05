@@ -13,7 +13,7 @@ function getWorkTime(duration) {
 
   return workDuration.join(', ');
 }
-module.exports = {
+export default {
   companies: [
     {
       name: 'Self Employed',
@@ -24,36 +24,39 @@ module.exports = {
         {
           name: 'Alt',
           time: 'March 2021 - present',
-          summary: 'Frontend architecture improvements, performance enhancements, instrumentations, and search engine optimizations.',
+          summary:
+            'Frontend architecture improvements, performance enhancements, instrumentations, and search engine optimizations.',
           techStack: 'React',
           smartlink: {
             thumbnail: {
               url: '/alt.jpg',
               width: 400,
-              height: 400
+              height: 400,
             },
             title: 'Alt',
-            description: 'Alt is increasing the transparency and liquidity of alternative assets',
-            url: 'https://www.onlyalt.com/'
-          }
+            description:
+              'Alt is increasing the transparency and liquidity of alternative assets',
+            url: 'https://www.onlyalt.com/',
+          },
         },
         {
           name: 'Forethought',
           time: 'August 2021 - Nov 2021, Jan 2022 - present',
-          summary: 'Focus on feature development and design system infrastructure. Provided technical guildline and directions. Deliever state persistant stragetgy and major rebranding.',
+          summary:
+            'Focus on feature development and design system infrastructure. Provided technical guildline and directions. Deliever state persistant stragetgy and major rebranding.',
           techStack: 'React',
           smartlink: {
             thumbnail: {
               url: '/forethought.jpg',
               width: 400,
-              height: 400
+              height: 400,
             },
             title: 'Forethought',
             description: 'Improve your customer experience by using AI.',
-            url: 'https://www.forethought.ai/'
-          }
+            url: 'https://www.forethought.ai/',
+          },
         },
-      ]
+      ],
     },
     {
       name: 'Tinder Inc.',
@@ -73,12 +76,13 @@ module.exports = {
             thumbnail: {
               url: '/tinder.jpeg',
               width: 200,
-              height: 200
+              height: 200,
             },
             title: 'Tinder',
-            description: 'With 55 billion matches to date, Tinder® is the world\'s most popular dating app, making it the place to meet new people.',
-            url: 'https://tinder.com'
-          }
+            description:
+              "With 55 billion matches to date, Tinder® is the world's most popular dating app, making it the place to meet new people.",
+            url: 'https://tinder.com',
+          },
           // demos: [
           //   {
           //     type: 'iframe',
@@ -111,9 +115,9 @@ module.exports = {
           name: 'Tinder Swipe Life',
           time: 'Nov 2017',
           summary: 'Tinder Magazine',
-          techStack: 'GatsbyJS, Wordpress'
-        }
-      ]
+          techStack: 'GatsbyJS, Wordpress',
+        },
+      ],
     },
     {
       name: 'Branch',
@@ -132,15 +136,15 @@ module.exports = {
             thumbnail: {
               url: '/branch.jpg',
               width: 400,
-              height: 400
+              height: 400,
             },
             description:
               'Number 1 in deep linking. Integrate robust, durable links into email, SEM, ads and other traditional marketing channels for improved app growth.',
             title: 'Branch',
-            url: 'https://branch.io'
-          }
-        }
-      ]
+            url: 'https://branch.io',
+          },
+        },
+      ],
     },
     {
       name: 'Yahoo',
@@ -159,13 +163,13 @@ module.exports = {
             thumbnail: {
               url: '/yahoo.jpg',
               width: 200,
-              height: 200
+              height: 200,
             },
             title: 'Yahoo',
             description:
-              'A new welcome to Yahoo. The new Yahoo experience makes it easier to discover the news and information that you care about most. It\'s the web ordered for you.',
-            url: 'https://www.yahoo.com/'
-          }
+              "A new welcome to Yahoo. The new Yahoo experience makes it easier to discover the news and information that you care about most. It's the web ordered for you.",
+            url: 'https://www.yahoo.com/',
+          },
         },
         {
           name: 'Yahoo Weather',
@@ -176,13 +180,13 @@ module.exports = {
             thumbnail: {
               url: '/yahooWeather.png',
               width: 200,
-              height: 200
+              height: 200,
             },
             title: 'Yahoo Weather',
             description:
               'Prepare for your day with the most accurate hourly, 5-day, and 10-day forecasts. Stunning Flickr photos match your location, time of day, and current conditions.',
-            url: 'https://www.yahoo.com/news/weather'
-          }
+            url: 'https://www.yahoo.com/news/weather',
+          },
         },
         {
           name: 'Yahoo News Digest',
@@ -195,22 +199,22 @@ module.exports = {
             thumbnail: {
               url: '/yahooNewsDigest.png',
               width: 200,
-              height: 200
+              height: 200,
             },
             title: 'Yahoo News Digest',
             description:
               'Yahoo News Digest provides a definitive summary of all the important, need-to-know news. Digests are delivered twice a day - once in the morning and once in the evening.',
-            url: 'https://www.yahoo.com/digest'
-          }
+            url: 'https://www.yahoo.com/digest',
+          },
         },
         {
           name: 'Yahoo Mobile Homepage',
           time: 'Oct 2013 - June 2014',
           summary:
             'Pilot single web application on Yahoo mobile homepage, targeted user perceive performance enhancement.',
-          techStack: 'ExpressJS, DustJS, and YUI'
-        }
-      ]
+          techStack: 'ExpressJS, DustJS, and YUI',
+        },
+      ],
     },
     {
       name: 'Yahoo',
@@ -229,15 +233,15 @@ module.exports = {
             thumbnail: {
               url: '/yahoo.jpg',
               width: 200,
-              height: 200
+              height: 200,
             },
             title: 'Yahoo行動版',
             description:
               '提供最方便的網站搜尋、即時新聞、生活資訊和Yahoo奇摩服務入口。',
-            url: 'https://tw.mobi.yahoo.com/'
-          }
-        }
-      ]
+            url: 'https://tw.mobi.yahoo.com/',
+          },
+        },
+      ],
     },
     {
       name: 'Yahoo',
@@ -257,14 +261,13 @@ module.exports = {
             thumbnail: {
               url: '/controlRoom.jpg',
               width: 640,
-              height: 511
+              height: 511,
             },
             title: 'Yahoo 2012 Presidential Election',
             description:
-              'Yahoo\'s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.',
-            url:
-              'https://books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false'
-          }
+              "Yahoo's Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.",
+            url: 'https://books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false',
+          },
         },
         {
           name: 'Yahoo 2012 Presidential Election - #Hashout',
@@ -277,14 +280,13 @@ module.exports = {
             thumbnail: {
               url: '/hashout.jpg',
               width: 630,
-              height: 355
+              height: 355,
             },
             title: 'Yahoo 2012 Presidential Election',
             description:
-              'Yahoo\'s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.',
-            url:
-              'https://books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false'
-          }
+              "Yahoo's Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.",
+            url: 'https://books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false',
+          },
         },
         {
           name: 'Yahoo Global News',
@@ -296,14 +298,14 @@ module.exports = {
             thumbnail: {
               url: '/yahoo.jpg',
               width: 200,
-              height: 200
+              height: 200,
             },
             title: 'Yahoo News',
             description: 'Browse latest news on Yahoo News.',
-            url: 'https://www.yahoo.com/news'
-          }
-        }
-      ]
+            url: 'https://www.yahoo.com/news',
+          },
+        },
+      ],
     },
     {
       name: 'Ministry of National Defense',
@@ -316,9 +318,9 @@ module.exports = {
           time: 'June 2014 - present',
           summary:
             'Developed two web-based applications for military training purpose.Managed/Trained 6 soldiers to develop educational simulator software.',
-          techStack: 'Adobe Flex, Adobe Flash, ASP.NET, and SQL Server'
-        }
-      ]
-    }
-  ]
+          techStack: 'Adobe Flex, Adobe Flash, ASP.NET, and SQL Server',
+        },
+      ],
+    },
+  ],
 };

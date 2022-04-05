@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     name: 'Email',
     value: 'mailto:roderickhsiao+website@gmail.com',

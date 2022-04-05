@@ -2,14 +2,14 @@ import parallel from 'async/parallel';
 
 import fetchStaticDataAction from './fetchStaticData';
 
-module.exports = function(context, payload, done) {
-  var resources = (payload.resources && payload.resources.split(',')) || [];
-  var functions = [];
+const fetchData = function (context, payload, done) {
+  const resources = (payload.resources && payload.resources.split(',')) || [];
+  let functions = [];
   functions = resources.map(resource => callback => {
     context.executeAction(
       fetchStaticDataAction,
       {
-        resource: resource
+        resource
       },
       callback
     );
@@ -19,3 +19,5 @@ module.exports = function(context, payload, done) {
   }
   parallel(functions, done);
 };
+
+export default fetchData;

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   HeaderComponent: {
     path: 'common/HeaderComponent'
   },

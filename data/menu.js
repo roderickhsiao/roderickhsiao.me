@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   order: ['home', 'education', 'activity'],
   home: {
     name: 'About',

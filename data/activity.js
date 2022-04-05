@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     name: 'Website Board / Diversity, Equity and Inclusion Lead',
     org: 'Str8jacket Dance Company',

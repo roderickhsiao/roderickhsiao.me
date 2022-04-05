@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     name: 'National ChengChi University (NCCU)',
     location: 'Taipei, Taiwan',

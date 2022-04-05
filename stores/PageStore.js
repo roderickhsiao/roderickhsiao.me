@@ -1,4 +1,4 @@
-var createStore = require('fluxible/addons/createStore');
+const createStore = require('fluxible/addons/createStore');
 
 module.exports = createStore({
   storeName: 'PageStore',
@@ -6,15 +6,15 @@ module.exports = createStore({
     RECEIVE_ASSETS_SUCCESS: '_receiveAssets'
   },
 
-  initialize: function() {
+  initialize() {
     this.state = {};
   },
 
-  _receiveAssets: function(payload) {},
+  _receiveAssets() {},
 
-  dehydrate: function() {
+  dehydrate() {
     return {};
   },
 
-  rehydrate: function(state) {}
+  rehydrate() {}
 });

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   profile: {
     name: 'Roderick Hsiao',
     email: 'roderickhsiao@gmail.com',

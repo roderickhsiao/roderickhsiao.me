@@ -1,23 +1,34 @@
-var DATA_MAPPING = {
-  about: require('../data/about'),
-  activity: require('../data/activity'),
-  component: require('../configs/components'),
-  contact: require('../data/contact'),
-  country: require('../data/country'),
-  education: require('../data/education'),
-  experience: require('../data/experience'),
-  layout: require('../configs/layout'),
-  menu: require('../data/menu'),
-  summary: require('../data/summary')
+import about from '../data/about';
+import activity from '../data/activity';
+import component from '../configs/components';
+import contact from '../data/contact';
+import country from '../data/country';
+import education from '../data/education';
+import experience from '../data/experience';
+import layout from '../configs/layout';
+import menu from '../data/menu';
+import summary from '../data/summary';
+
+const DATA_MAPPING = {
+  about,
+  activity,
+  component,
+  contact,
+  country,
+  education,
+  experience,
+  layout,
+  menu,
+  summary,
 };
 
-module.exports = {
+export default {
   resource: 'staticData',
-  read: function(req, resource, params, config, callback) {
-    var data = DATA_MAPPING[params.resource];
+  read(req, resource, params, config, callback) {
+    const data = DATA_MAPPING[params.resource];
     if (!data) {
-      callback(new Error('No data returns for resource: ' + resource));
+      callback(new Error(`No data returns for resource: ${resource}`));
     }
     callback(null, data);
-  }
+  },
 };

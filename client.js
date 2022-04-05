@@ -1,5 +1,13 @@
-/* global App, document, window, location */
-(function() {
+import { hydrate } from 'react-dom';
+
+import Debug from 'debug';
+
+import {
+  createElementWithContext as createElement
+} from 'fluxible-addons-react';
+import app from './app';
+
+(function () {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker
@@ -12,19 +20,7 @@
         });
     });
   }
-})();
-
-import React from 'react';
-import { hydrate } from 'react-dom';
-
-import Debug from 'debug';
-import RouteStore from './stores/RouteStore';
-
-import {
-  createElementWithContext as createElement
-} from 'fluxible-addons-react';
-import { navigateAction } from 'fluxible-router';
-import app from './app';
+}());
 
 const debug = Debug('roderickhsiao.me');
 const WIN = window;
@@ -40,7 +36,7 @@ app.rehydrate(dehydratedState, (err, context) => {
   WIN.context = context; // For accessing from browser console
 
   debug('React Rendering');
-  var mountNode = document.getElementById('app');
+  const mountNode = document.getElementById('app');
 
   hydrate(createElement(context), mountNode, () => {
     debug('React Rendered');

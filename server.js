@@ -21,6 +21,7 @@ import routes from './configs/routes';
 import serialize from 'serialize-javascript';
 import sitemap from 'sitemap';
 import spdy from 'spdy';
+import fetchAction from './services/fetchStaticData';
 
 import HtmlComponent, { headerStringEnd, headerStringStart, htmlStringStart, htmlStringEnd } from './components/Html';
 import UAParser from 'ua-parser-js';
@@ -79,7 +80,7 @@ server.use(robots(__dirname + '/robots.txt'));
 
 // Get access to the fetchr plugin instance
 let fetchrPlugin = app.getPlugin('FetchrPlugin');
-fetchrPlugin.registerService(require('./services/fetchStaticData'));
+fetchrPlugin.registerService(fetchAction);
 
 // Set up the fetchr middleware
 server.use(fetchrPlugin.getXhrPath(), fetchrPlugin.getMiddleware());
@@ -152,7 +153,7 @@ server.use((req, res, next) => {
 
       let routeStore = context.getStore('RouteStore');
       let { name } = routeStore.getCurrentRoute();
-      let { prefetch } = layout?.[name];
+      let { prefetch } = layout && layout[name];
 
       if (!prefetch?.length) {
         renderPage(req, res, context);

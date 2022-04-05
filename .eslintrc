@@ -1,9 +1,40 @@
----
-env:
-  browser: true,
-  node: true
-  es6: true
-parser: "@babel/eslint-parser"
-rules:
-  indent: [2, 2, {SwitchCase: 1}]
-  quotes: [2, 'single']
+{
+  "extends": [
+    "airbnb",
+  ],
+  "plugins": [
+  ],
+  "rules": {
+    "no-underscore-dangle": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/require-extension": 0,
+    "react/jsx-filename-extension": 0,
+    "react/destructuring-assignment": 0,
+    "react/default-props-match-prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/require-default-props": 0,
+    "react/static-property-placement": 0,
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "arrow-body-style": 0,
+    "prefer-arrow-callback": 0,
+    "react/no-find-dom-node": 0,
+    "func-names": 0,
+    "react/forbid-prop-types": 0,
+    "comma-dangle": 0,
+    "react/sort-comp": 0,
+    "react/prop-types": 0,
+    "arrow-parens": 0,
+    "import/extensions": [
+     "error", "always", {
+       "js": "never",
+       "jsx": "never",
+       "ts": "never",
+       "tsx": "never"
+     }
+    ],
+  },
+  "env": {
+    "jest": true
+  },
+}
