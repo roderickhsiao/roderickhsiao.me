@@ -3,7 +3,7 @@ env:
   browser: true,
   node: true
   es6: true
-parser: "babel-eslint"
+parser: "@babel/eslint-parser"
 rules:
   indent: [2, 2, {SwitchCase: 1}]
   quotes: [2, 'single']
