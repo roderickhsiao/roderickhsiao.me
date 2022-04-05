@@ -18,10 +18,6 @@ const MainBrief = (props) => {
     });
   }, []);
 
-  if (!profile || !Object.keys(profile).length) {
-    return null;
-  }
-
   const thumbnail = useMemo(() => {
     let { url, width, height } = profile.thumbnail || {};
     if (!url) {
@@ -71,6 +67,10 @@ const MainBrief = (props) => {
     );
   }, [[profile.summary]]);
 
+  if (!profile || !Object.keys(profile).length) {
+    return null;
+  }
+
   return (
     <div
       className="H(300px) Mb(20px) Pos(r) Bgc(#212121) Ov(h) mainBrief Bxsh($shadow-card) Bdrs(8px) Bxsh($shadow-2dp):h Trsdu($trsdu-fast)"
@@ -110,7 +110,7 @@ const MainBrief = (props) => {
 export default connectToStores(
   memo(MainBrief),
   [StaticContentStore],
-  (context, props) => {
+  (context) => {
     return {
       summary: context.getStore(StaticContentStore).getData('summary'),
     };

@@ -18,10 +18,6 @@ const About = (props) => {
     });
   }, []);
 
-  if (!about) {
-    return null;
-  }
-
   const links = useMemo(() => {
     let nodes = about.map((site, i) => {
       return (
@@ -39,6 +35,10 @@ const About = (props) => {
     });
     return <ul>{nodes}</ul>;
   }, [about]);
+
+  if (!about) {
+    return null;
+  }
 
   return (
     <Card>
