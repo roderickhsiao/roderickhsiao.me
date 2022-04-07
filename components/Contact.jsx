@@ -31,7 +31,7 @@ const Contact = (props) => {
           <a
             className="Fz(1.1em) Va(m) Op(.38) Op(1):h Trsdu($trsdu-fast)"
             href={value}
-            target="_blank"
+            target={!download ? "_blank" : undefined}
             download={download}
             rel="noopener noreferrer"
           >
