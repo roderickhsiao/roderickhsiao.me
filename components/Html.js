@@ -53,9 +53,10 @@ export const headerStringStart = [
   '<link rel="dns-prefetch" href="https://www.gstatic.com/" />',
   '<link rel="dns-prefetch" href="https://fonts.googleapis.com" />',
   '<link rel="dns-prefetch" href="https://www.googletagmanager.com" />',
-  '<link rel="preconnect" href="https://fonts.googleapis.com" />',
   '<link rel="dns-prefetch" href="https://cdn.polyfill.io" />',
+  '<link rel="preconnect" href="https://fonts.googleapis.com" />',
   '<link rel="preconnect" href="https://cdn.polyfill.io" />',
+  '<link rel="preconnect" href="https://roderickhsiao.imgix.net" />',
   '<link rel="manifest" href="/manifest.json" />',
 
   '<title>Roderick Hsiao</title>',
