@@ -79,7 +79,7 @@
   },
   "pre-commit": [],
   "scripts": {
-    "build": "grunt build",
+    "build": "grunt build && yarn partytown",
     "dev": "grunt",
     "lint": "eslint . --fix",
     "monitor": "nodemon server",
