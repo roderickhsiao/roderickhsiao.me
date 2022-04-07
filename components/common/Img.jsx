@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import ImgixClient from '@imgix/js-core';
 
 const imgixClient = new ImgixClient({
   domain: 'roderickhsiao.imgix.net',
