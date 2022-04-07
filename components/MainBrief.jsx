@@ -20,7 +20,7 @@ const MainBrief = (props) => {
   }, []);
 
   const thumbnail = useMemo(() => {
-    let { url, width, height } = profile.thumbnail || {};
+    let { url, width, height } = profile?.thumbnail || {};
     if (!url) {
       return null;
     }
@@ -36,7 +36,7 @@ const MainBrief = (props) => {
         />
       </AspectRatio>
     );
-  }, [profile.thumbnail]);
+  }, [profile?.thumbnail]);
 
   const listItem = useMemo(() => {
     let { list } = profile || {};
