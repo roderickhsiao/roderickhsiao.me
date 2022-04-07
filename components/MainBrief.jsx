@@ -82,7 +82,7 @@ const MainBrief = (props) => {
       itemType="http://schema.org/Person"
     >
       <div className="Pos(a) End(-180px) D(n) D(b)--md">
-        <AspectRatio style={{ width: '400px' }} ratio="300/400">
+        <AspectRatio style={{ width: '400px' }} ratio="4/3">
           <Img
             src="/profile.jpg"
             width={400}
