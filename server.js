@@ -94,7 +94,7 @@ let sm = sitemap.createSitemap({
   urls: routeConfig
 });
 
-let serverResponse;
+let serverCache = {};
 
 server.get('/sitemap.xml', (req, res) => {
   sm.toXML((err, xml) => {
@@ -106,13 +106,14 @@ server.get('/sitemap.xml', (req, res) => {
   });
 });
 
-function renderPage(req, res, context) {
+function renderPage(req, res, context, name) {
   debug('Exposing context state');
   const exposed = 'window.App=' + serialize(app.dehydrate(context)) + ';';
 
   debug('Rendering Application component into html');
-  if (serverResponse) {
-    res.send(serverResponse);
+  const cache = serverCache[name];
+  if (cache) {
+    res.send(cache);
     return;
   }
 
@@ -126,8 +127,9 @@ function renderPage(req, res, context) {
   );
 
   debug('Sending markup');
-  serverResponse = `<!DOCTYPE html>${htmlStringStart}${headerStringStart}<style>${inlineStyle}</style>${headerStringEnd}${html}${htmlStringEnd}`;
-  res.send(serverResponse);
+  const responseString = `<!DOCTYPE html>${htmlStringStart}${headerStringStart}<style>${inlineStyle}</style>${headerStringEnd}${html}${htmlStringEnd}`;
+  serverCache[name] = responseString;
+  res.send(responseString);
 }
 
 server.use((req, res, next) => {
@@ -160,7 +162,7 @@ server.use((req, res, next) => {
       let { prefetch } = layout && layout[name];
 
       if (!prefetch?.length) {
-        renderPage(req, res, context);
+        renderPage(req, res, context, name);
       } else {
         setImmediate(() => {
           context.executeAction(
