@@ -22,9 +22,6 @@ function getWebpackConfig(opts) {
         },
       ],
     },
-    node: {
-      setImmidate: false,
-    },
     mode: isDev ? 'development' : 'production',
     plugins: [
       new GenerateSW({
@@ -32,16 +29,14 @@ function getWebpackConfig(opts) {
         swDest: 'sw.js',
         include: [/\.js$/, /\.css$/, /\.jpg$/, /\.png$/],
         exclude: [/\.pdf$/],
-        globDirectory: 'build',
-        globPatterns: ['**/*.{js,css,png,jpg}'],
         runtimeCaching: [
           {
             urlPattern: '/api',
-            handler: 'networkFirst',
+            handler: 'NetworkFirst',
           },
           {
             urlPattern: new RegExp('https://www.googletagmanager.com/'),
-            handler: 'staleWhileRevalidate',
+            handler: 'StaleWhileRevalidate',
             options: {
               cacheableResponse: {
                 statuses: [0, 200],
@@ -50,7 +45,7 @@ function getWebpackConfig(opts) {
           },
           {
             urlPattern: new RegExp('https://fonts.googleapis.com'),
-            handler: 'staleWhileRevalidate',
+            handler: 'StaleWhileRevalidate',
             options: {
               cacheableResponse: {
                 statuses: [0, 200],

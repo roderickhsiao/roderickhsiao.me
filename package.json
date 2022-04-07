@@ -31,16 +31,16 @@
     "grunt": "^1.0.1",
     "grunt-atomizer": "^3.0.0",
     "grunt-cli": "^1.0.0",
-    "grunt-concurrent": "^2.3.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-concat": "^1.0.0",
+    "grunt-concurrent": "^3.0.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.0.0",
     "grunt-hash": "^0.5.0",
     "grunt-nodemon": "^0.4.0",
     "grunt-penthouse": "^1.0.0",
     "grunt-postcss": "^0.9.0",
-    "grunt-webpack": "^3.0.0",
+    "grunt-webpack": "^5.0.0",
     "helmet": "^3.5.0",
     "idle-tracker": "^0.1.1",
     "nodemon": "^1.7.3",
@@ -59,9 +59,9 @@
     "spdy": "^4.0.0",
     "subscribe-ui-event": "^2.0.0",
     "ua-parser-js": "^0.7.10",
-    "webpack": "^4.0.0",
-    "webpack-dev-server": "^3.11.0",
-    "workbox-webpack-plugin": "^3.2.0"
+    "webpack": "^5.0.0",
+    "webpack-dev-server": "^4.0.0",
+    "workbox-webpack-plugin": "^6.0.0"
   },
   "description": "Roderick Hsiao",
   "engines": {
@@ -76,8 +76,7 @@
     "url": "//github.com/roderickhsiao/roderickhsiao.me",
     "type": "git"
   },
-  "pre-commit": [
-  ],
+  "pre-commit": [],
   "scripts": {
     "build": "grunt build",
     "dev": "grunt",
@@ -87,5 +86,8 @@
     "start": "node start"
   },
   "heroku-run-build-script": true,
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.4.0"
+  }
 }
