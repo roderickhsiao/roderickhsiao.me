@@ -25,10 +25,9 @@ function getWebpackConfig(opts) {
     mode: isDev ? 'development' : 'production',
     plugins: [
       new GenerateSW({
-        cacheId: 'roderickhsiao',
+        cacheId: 'roderickhsiao.me',
+        cleanupOutdatedCaches: true,
         swDest: 'sw.js',
-        include: [/\.js$/, /\.css$/, /\.jpg$/, /\.png$/],
-        exclude: [/\.pdf$/],
         runtimeCaching: [
           {
             urlPattern: '/api',
@@ -38,6 +37,7 @@ function getWebpackConfig(opts) {
             urlPattern: new RegExp('https://www.googletagmanager.com/'),
             handler: 'StaleWhileRevalidate',
             options: {
+              cacheName: 'gtm',
               cacheableResponse: {
                 statuses: [0, 200],
               },
@@ -47,6 +47,7 @@ function getWebpackConfig(opts) {
             urlPattern: new RegExp('https://fonts.googleapis.com'),
             handler: 'StaleWhileRevalidate',
             options: {
+              cacheName: 'gfont',
               cacheableResponse: {
                 statuses: [0, 200],
               },
