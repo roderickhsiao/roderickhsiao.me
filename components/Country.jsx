@@ -33,7 +33,7 @@ const Country = (props) => {
     });
 
     return <ul>{nodes}</ul>;
-  }, []);
+  }, [country]);
 
   if (!country || !Object.keys(country).length) {
     return null;
