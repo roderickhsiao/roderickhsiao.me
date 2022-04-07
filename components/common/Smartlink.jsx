@@ -32,8 +32,7 @@ const Smartlink = memo((props) => {
           </AspectRatio>
         ) : (
           <AspectRatio
-            className="W(100px)--xs Fxs(0)"
-            style={{ width: '150px' }}
+            className="W(150px) W(100px)--xs Fxs(0)"
           >
             <Img
               src={thumbnail.url}
