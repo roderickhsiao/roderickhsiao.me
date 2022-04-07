@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { memo } from 'react';
 import Imgix from 'react-imgix';
 
 const Img = (props) => {
@@ -13,4 +13,4 @@ const Img = (props) => {
     />
   );
 };
-export default Img;
+export default memo(Img);
