@@ -1,6 +1,6 @@
 const { GenerateSW } = require('workbox-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const partytown = require('@builder.io/partytown/utils');
+// const CopyPlugin = require('copy-webpack-plugin');
+// const partytown = require('@builder.io/partytown/utils');
 const path = require('path');
 
 function getWebpackConfig(opts) {
@@ -26,14 +26,14 @@ function getWebpackConfig(opts) {
     },
     mode: isDev ? 'development' : 'production',
     plugins: [
-      new CopyPlugin({
-        patterns: [
-          {
-            from: partytown.libDirPath(),
-            to: path.join(__dirname, 'build', 'js', '~partytown'),
-          },
-        ],
-      }),
+      // new CopyPlugin({
+      //   patterns: [
+      //     {
+      //       from: partytown.libDirPath(),
+      //       to: path.join(__dirname, 'build', 'js', '~partytown'),
+      //     },
+      //   ],
+      // }),
       new GenerateSW({
         cacheId: 'roderickhsiao.me',
         cleanupOutdatedCaches: true,

@@ -1,20 +1,10 @@
 import React, { memo } from 'react';
-import { Partytown } from '@builder.io/partytown/react';
 
 import assetsMapping from '../build/assets.json';
 
 const inlineJSDetect = '(function(html){var c = html.className;c += " JsEnabled";c = c.replace("NoJs","");html.className = c;})(document.documentElement)';
 
 const pathPrefix = '/';
-
-const inlineGA = `
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','UA-76603120-1');
-  window.dataLayer = window.dataLayer || [];
-`;
 
 const getHashAssets = (assetsPath) => {
   const key = assetsPath.replace(pathPrefix, '');
@@ -27,12 +17,10 @@ const HtmlComponent = memo((props) => {
 
   return (
     <body className="Bgc($c-grey-50)">
-      <Partytown forward={['dataLayer.push']} />
       <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
       <script dangerouslySetInnerHTML={{ __html: state }} />
       <script src="//cdn.polyfill.io/v3/polyfill.min.js" defer async />
       <script src={getHashAssets('/js/client.js')} defer async />
-      <script type="text/partytown" dangerouslySetInnerHTML={{ __html: inlineGA }} />
     </body>
   );
 });
