@@ -59,21 +59,21 @@ server.use(helmet.dnsPrefetchControl({ allow: true }));
 server.set('state namespace', 'App');
 server.use(
   '/sw.js',
-  express['static'](__dirname + '/build/js/sw.js', { maxAge: 0 })
+  express.static(__dirname + '/build/js/sw.js', { maxAge: 0 })
 );
 
-server.use('/', express['static'](__dirname + '/build', { maxAge: ONE_YEAR }));
+server.use('/', express.static(__dirname + '/build', { maxAge: ONE_YEAR }));
 server.use(
   '/',
-  express['static'](__dirname + '/build/images', { maxAge: ONE_YEAR })
+  express.static(__dirname + '/build/images', { maxAge: ONE_YEAR })
 );
 server.use(
   '/',
-  express['static'](__dirname + '/build/js', { maxAge: ONE_YEAR })
+  express.static(__dirname + '/build/js', { maxAge: ONE_YEAR })
 );
 server.use(
   '/',
-  express['static'](__dirname + '/build/css', { maxAge: ONE_YEAR })
+  express.static(__dirname + '/build/css', { maxAge: ONE_YEAR })
 );
 
 server.use(robots(__dirname + '/robots.txt'));

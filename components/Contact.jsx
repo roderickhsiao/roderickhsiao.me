@@ -25,13 +25,14 @@ const Contact = (props) => {
       return null;
     }
     const nodes = contact.map((contact, i) => {
-      const { icon, name, value } = contact;
+      const { icon, name, value, download } = contact;
       return (
-        <li className="My(20px) W(1/5) D(ib) W(1/3)--xs" key={i}>
+        <li className="My(20px) W(1/6) D(ib) W(1/3)--xs" key={i}>
           <a
             className="Fz(1.1em) Va(m) Op(.38) Op(1):h Trsdu($trsdu-fast)"
             href={value}
             target="_blank"
+            download={download}
             rel="noopener noreferrer"
           >
             <img alt="" className="W(32px) H(32px)" src={icon} loading="lazy" />

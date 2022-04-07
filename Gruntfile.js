@@ -31,6 +31,7 @@ function getWebpackConfig(opts) {
         cacheId: 'roderickhsiao',
         swDest: 'sw.js',
         include: [/\.js$/, /\.css$/, /\.jpg$/, /\.png$/],
+        exclude: [/\.pdf$/],
         globDirectory: 'build',
         globPatterns: ['**/*.{js,css,png,jpg}'],
         runtimeCaching: [

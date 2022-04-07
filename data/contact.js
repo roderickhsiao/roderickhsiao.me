@@ -22,7 +22,8 @@ export default [
   {
     name: 'Resume',
     value: 'https://www.roderickhsiao.me/resume.pdf',
-    icon: '/github.svg'
+    icon: '/resume.svg',
+    download: true
   },
   {
     name: 'Medium',
