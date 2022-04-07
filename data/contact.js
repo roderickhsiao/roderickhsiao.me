@@ -20,6 +20,11 @@ export default [
     icon: '/twitter.svg'
   },
   {
+    name: 'Resume',
+    value: 'https://www.roderickhsiao.me/resume.pdf',
+    icon: '/github.svg'
+  },
+  {
     name: 'Medium',
     value: 'https://medium.com/@roderickhsiao',
     icon: '/blog.svg'

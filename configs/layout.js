@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   home: {
     prefetch: 'about,contact,summary,experience,menu',
     regions: {
