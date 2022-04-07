@@ -4,7 +4,7 @@ import classNames from 'clsx';
 
 import Img from './Img.jsx';
 
-const Smartlink = memo(props => {
+const Smartlink = memo((props) => {
   const { smartlink } = props;
 
   if (!smartlink) {
@@ -26,16 +26,18 @@ const Smartlink = memo(props => {
             <Img src={thumbnail.url} alt="" width={670} />
           </AspectRatio>
         ) : (
-          <Img
-            src={thumbnail.url}
-            width={150}
-            height={150}
-            className="M(-1px) H(100px)!--xs W(100px)!--xs D(ib) Fl(start) Bgc(#fff)"
-          />
+          <AspectRatio style={{ width: '150px' }}>
+            <Img
+              src={thumbnail.url}
+              width={150}
+              height={150}
+              className="M(-1px) H(100px)!--xs W(100px)!--xs D(ib) Fl(start) Bgc(#fff)"
+            />
+          </AspectRatio>
         )}
         <div
           className={classNames('P(10px) C($c-black-1) P(6px)!--xs', {
-            'Va(t) Mstart(160px) Mstart(100px)!--xs Bxz(bb)': !isLargeTemplate
+            'Va(t) Mstart(160px) Mstart(100px)!--xs Bxz(bb)': !isLargeTemplate,
           })}
         >
           <div className="Fz(1.4em) Fz(1.2em)!--xs My(10px) My(2px)!--xs">

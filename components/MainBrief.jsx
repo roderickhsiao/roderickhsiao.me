@@ -1,6 +1,7 @@
 import React, { memo, useEffect, useMemo } from 'react';
 import { useFluxible } from 'fluxible-addons-react';
 import { connectToStores } from 'fluxible-addons-react';
+import { AspectRatio } from 'react-aspect-ratio';
 
 import Img from './common/Img.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
@@ -24,14 +25,16 @@ const MainBrief = (props) => {
       return null;
     }
     return (
-      <Img
-        src={url}
-        width={width}
-        height={height}
-        className="Bdrs(100%) Mend(10px)"
-        alt=""
-        itemProp="image"
-      />
+      <AspectRatio style={{ width }}>
+        <Img
+          src={url}
+          width={width}
+          height={height}
+          className="Bdrs(100%) Mend(10px)"
+          alt=""
+          itemProp="image"
+        />
+      </AspectRatio>
     );
   }, [profile.thumbnail]);
 
@@ -55,13 +58,14 @@ const MainBrief = (props) => {
     return (
       <div className="Px($card-padding)">
         <ol className="M(0)">
-          {profile && profile.summary.map((item, i) => {
-            return (
-              <li className="C(#fff)" key={i}>
-                {item}
-              </li>
-            );
-          })}
+          {profile &&
+            profile.summary.map((item, i) => {
+              return (
+                <li className="C(#fff)" key={i}>
+                  {item}
+                </li>
+              );
+            })}
         </ol>
       </div>
     );
@@ -78,14 +82,17 @@ const MainBrief = (props) => {
       itemType="http://schema.org/Person"
     >
       <div className="Pos(a) End(-180px) D(n) D(b)--md">
-        <Img
-          src="/profile.jpg"
-          width={400}
-          height={300}
-          itemProp="image"
-          htmlAttributes={{ loading: 'eager' }}
-          alt="Taz"
-        />
+        <AspectRatio style={{ width: '400px' }} ratio="300/400">
+          <Img
+            src="/profile.jpg"
+            width={400}
+            height={300}
+            itemProp="image"
+            htmlAttributes={{ loading: 'eager' }}
+            alt="Taz"
+          />
+        </AspectRatio>
+
         <div
           className="Pos(a) T(0) Bds(s)"
           style={{
