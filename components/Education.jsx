@@ -2,6 +2,7 @@ import React, { memo, useEffect, useMemo } from 'react';
 import { useFluxible } from 'fluxible-addons-react';
 import { connectToStores } from 'fluxible-addons-react';
 import classNames from 'clsx';
+import { AspectRatio } from 'react-aspect-ratio';
 
 import Card from './common/Card.jsx';
 import Img from './common/Img.jsx';
@@ -43,12 +44,12 @@ const Education = (props) => {
             <div className="Fw(b)">{edu.degree}</div>
           </div>
           {thumbnail.url ? (
-            <Img
-              nodeName="div"
-              src={thumbnail.url}
-              className="Bgz(ct) Bgr(nr) Fl(end) W(100px) D(n)--xs"
-              style={{ height: height }}
-            />
+            <AspectRatio
+              className="D(n)--xs Fl(end)"
+              style={{ width: '100px' }}
+            >
+              <Img src={thumbnail.url} height={height} width={100} />
+            </AspectRatio>
           ) : null}
         </li>
       );

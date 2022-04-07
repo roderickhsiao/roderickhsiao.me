@@ -1,5 +1,6 @@
 import React, { memo, useEffect, useMemo } from 'react';
 import { useFluxible } from 'fluxible-addons-react';
+import { AspectRatio } from 'react-aspect-ratio';
 
 import { connectToStores } from 'fluxible-addons-react';
 
@@ -31,11 +32,14 @@ const Contact = (props) => {
           <a
             className="Fz(1.1em) Va(m) Op(.38) Op(1):h Trsdu($trsdu-fast)"
             href={value}
-            target={!download ? "_blank" : undefined}
+            target={!download ? '_blank' : undefined}
             download={download}
             rel="noopener noreferrer"
           >
-            <img alt="" className="W(32px) H(32px)" src={icon} loading="lazy" />
+            <AspectRatio ratio="1/1" style={{ width: '32px' }}>
+              <Img alt="" src={icon} width={32} height={32} />
+            </AspectRatio>
+
             <span className="Hidden">{name}</span>
           </a>
         </li>

@@ -50,6 +50,7 @@
     "react": "^17.0.0",
     "react-aspect-ratio": "^1.1.0",
     "react-dom": "^17.0.0",
+    "react-imgix": "^9.5.0",
     "react-in-viewport": "1.0.0-alpha.26",
     "resolve": "^1.0.0",
     "robots.txt": "^1.0.0",

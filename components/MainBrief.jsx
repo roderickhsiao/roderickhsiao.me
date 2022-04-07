@@ -79,11 +79,11 @@ const MainBrief = (props) => {
     >
       <div className="Pos(a) End(-180px) D(n) D(b)--md">
         <Img
-          src={'/profile.jpg'}
+          src="/profile.jpg"
           width={400}
           height={300}
           itemProp="image"
-          loading="auto"
+          htmlAttributes={{ loading: 'eager' }}
           alt="Taz"
         />
         <div

@@ -79,9 +79,9 @@ const Experience = (props) => {
           <div className="Cf Mt(10px)">
             {company.logo ? (
               <Img
-                nodeName="div"
                 src={company.logo}
-                className="Bgz(ct) W(100px) H(30px) Bgr(nr) Fl(end)"
+                width={100}
+                className="Fl(end)"
               />
             ) : null}
             <h4 className="M(0)">{company.name}</h4>

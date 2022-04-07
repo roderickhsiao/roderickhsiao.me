@@ -23,13 +23,14 @@ const Smartlink = memo(props => {
       <Fragment>
         {isLargeTemplate ? (
           <AspectRatio ratio={ratio}>
-            <Img src={thumbnail.url} alt="" />
+            <Img src={thumbnail.url} alt="" width={670} />
           </AspectRatio>
         ) : (
           <Img
-            nodeName="div"
             src={thumbnail.url}
-            className="M(-1px) Bgz(ct) W(150px) H(150px) H(100px)!--xs W(100px)!--xs D(ib) Bgr(nr) Fl(start) Bgc(#fff)"
+            width={150}
+            height={150}
+            className="M(-1px) H(100px)!--xs W(100px)!--xs D(ib) Fl(start) Bgc(#fff)"
           />
         )}
         <div
