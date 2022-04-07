@@ -315,7 +315,6 @@ export default {
       projects: [
         {
           name: 'Equipment Simulator ',
-          time: 'June 2014 - present',
           summary:
             'Developed two web-based applications for military training purpose.Managed/Trained 6 soldiers to develop educational simulator software.',
           techStack: 'Adobe Flex, Adobe Flash, ASP.NET, and SQL Server',
