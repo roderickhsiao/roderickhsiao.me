@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useCallback } from 'react';
 import { handleHistory } from 'fluxible-router';
 import { provideContext } from 'fluxible-addons-react';
 import { subscribe } from 'subscribe-ui-event';
-import { ImgixProvider } from 'react-imgix';
 
 import Layout from './layouts/Main.jsx';
 
@@ -10,7 +9,7 @@ let App = (props) => {
   const { ua, currentRoute } = props;
   const subscriptionRef = useRef();
   const route = currentRoute || { name: 'home' };
-  
+
   const scrollHandler = useCallback((e, payload) => {
     const doc = document.documentElement;
     const { top } = payload.scroll;
@@ -47,14 +46,9 @@ let App = (props) => {
     };
   }, []);
   return (
-    <ImgixProvider
-      domain="roderickhsiao.imgix.net"
-      htmlAttributes={{ loading: 'lazy' }}
-    >
-      <main className="main-app">
-        <Layout route={route} ua={ua} />
-      </main>
-    </ImgixProvider>
+    <main className="main-app">
+      <Layout route={route} ua={ua} />
+    </main>
   );
 };
 

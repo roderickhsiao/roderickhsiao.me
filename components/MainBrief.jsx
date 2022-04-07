@@ -87,7 +87,7 @@ const MainBrief = (props) => {
             width={400}
             height={300}
             itemProp="image"
-            htmlAttributes={{ loading: 'eager' }}
+            loading="eager"
             alt="Taz"
           />
         </AspectRatio>
