@@ -58,18 +58,17 @@ const MainBrief = (props) => {
     return (
       <div className="Px($card-padding)">
         <ol className="M(0)">
-          {profile &&
-            profile.summary.map((item, i) => {
-              return (
-                <li className="C(#fff)" key={i}>
-                  {item}
-                </li>
-              );
-            })}
+          {profile?.summary.map((item, i) => {
+            return (
+              <li className="C(#fff)" key={i}>
+                {item}
+              </li>
+            );
+          })}
         </ol>
       </div>
     );
-  }, [[profile.summary]]);
+  }, [[profile?.summary]]);
 
   if (!profile || !Object.keys(profile).length) {
     return null;
