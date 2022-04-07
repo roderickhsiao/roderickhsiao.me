@@ -77,7 +77,7 @@ class Img extends PureComponent {
     if (isImage) {
       props.src =
         status === IMAGE_STATUS_LOADED ? this.props.src : DUMMY_IMAGE_SRC;
-      props.loading = props.loading || 'lazy';
+      props.loading = this.props.loading || 'lazy';
     }
     if (!this.image && this.state.status === IMAGE_STATUS_LOADING) {
       this.loadImage();
