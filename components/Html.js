@@ -59,8 +59,8 @@ export const headerStringStart = [
   '<link rel="preconnect" href="https://roderickhsiao.imgix.net" />',
   '<link rel="manifest" href="/manifest.json" />',
 
-  '<title>Roderick Hsiao</title>',
-  '<meta name="description" content="Nothing important" />',
+  '<title>Roderick Hsiao | Dog Dad, Software Engineer and Front-End Consultant</title>',
+  '<meta name="description" content="Open for tech talks invitations, project architecture consulting (web performance, large scale web app, team mentoring and more)." />',
   '<meta property="og:type" content="website" />',
   '<meta property="og:image" content="https://c2.staticflickr.com/2/1585/25832501265_89b28a6aa5_b.jpg" />',
 ].join('');
