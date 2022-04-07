@@ -14,8 +14,8 @@ const inlineGA = `
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','UA-76603120-1');
 
-  gtag('js', new Date());
-  gtag('config', 'UA-76603120-1');
+  dataLayer.push('js', new Date());
+  dataLayer.push('config', 'UA-76603120-1');
 `;
 
 const getHashAssets = (assetsPath) => {
