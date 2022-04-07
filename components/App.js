@@ -45,6 +45,14 @@ let App = (props) => {
       });
     };
   }, []);
+
+  useEffect(() => {
+    if (route?.name) {
+      window.dataLayer?.push({
+        event: 'Pageview'
+      });
+    }
+  }, [route?.name])
   return (
     <main className="main-app">
       <Layout route={route} />

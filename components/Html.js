@@ -13,9 +13,7 @@ const inlineGA = `
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','UA-76603120-1');
-
-  dataLayer.push('js', new Date());
-  dataLayer.push('config', 'UA-76603120-1');
+  window.dataLayer = window.dataLayer || [];
 `;
 
 const getHashAssets = (assetsPath) => {
