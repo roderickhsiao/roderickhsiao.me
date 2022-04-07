@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { AspectRatio } from 'react-aspect-ratio';
-import { useInViewport } from 'react-in-viewport';
 
 const Carousel = ({ nodes, aspectRatio = '16/9'}) => {
   if (!nodes.length) {
