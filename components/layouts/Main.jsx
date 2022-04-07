@@ -24,7 +24,7 @@ function loadComponent(regions, components, context) {
 }
 
 const Main = memo(props => {
-  const { header, leftRail, main, rightRail, footer, route, ua } = props;
+  const { header, leftRail, main, rightRail, footer, route } = props;
 
   const config = layout[route.name];
   const regions = config.regions;

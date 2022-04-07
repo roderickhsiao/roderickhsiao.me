@@ -6,7 +6,7 @@ import { subscribe } from 'subscribe-ui-event';
 import Layout from './layouts/Main.jsx';
 
 let App = (props) => {
-  const { ua, currentRoute } = props;
+  const { currentRoute } = props;
   const subscriptionRef = useRef();
   const route = currentRoute || { name: 'home' };
 
@@ -47,7 +47,7 @@ let App = (props) => {
   }, []);
   return (
     <main className="main-app">
-      <Layout route={route} ua={ua} />
+      <Layout route={route} />
     </main>
   );
 };

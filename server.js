@@ -24,7 +24,6 @@ import spdy from 'spdy';
 import fetchAction from './services/fetchStaticData';
 
 import HtmlComponent, { headerStringEnd, headerStringStart, htmlStringStart, htmlStringEnd } from './components/Html';
-import UAParser from 'ua-parser-js';
 
 import { HTTPS } from 'express-sslify';
 
@@ -95,6 +94,8 @@ let sm = sitemap.createSitemap({
   urls: routeConfig
 });
 
+let serverResponse;
+
 server.get('/sitemap.xml', (req, res) => {
   sm.toXML((err, xml) => {
     if (err) {
@@ -107,23 +108,26 @@ server.get('/sitemap.xml', (req, res) => {
 
 function renderPage(req, res, context) {
   debug('Exposing context state');
-  let customContext = {
-    ua: new UAParser().setUA(req.headers['user-agent']).getResult()
-  };
   const exposed = 'window.App=' + serialize(app.dehydrate(context)) + ';';
 
   debug('Rendering Application component into html');
+  if (serverResponse) {
+    res.send(serverResponse);
+    return;
+  }
+
   const html = ReactDOM.renderToStaticMarkup(
     React.createElement(HtmlComponent, {
       state: exposed,
-      markup: ReactDOM.renderToString(createElement(context, customContext)),
+      markup: ReactDOM.renderToString(createElement(context)),
       context: context.getComponentContext(),
       inlineStyle: inlineStyle
     })
   );
 
   debug('Sending markup');
-  res.send(`<!DOCTYPE html>${htmlStringStart}${headerStringStart}<style>${inlineStyle}</style>${headerStringEnd}${html}${htmlStringEnd}`);
+  serverResponse = `<!DOCTYPE html>${htmlStringStart}${headerStringStart}<style>${inlineStyle}</style>${headerStringEnd}${html}${htmlStringEnd}`;
+  res.send(serverResponse);
 }
 
 server.use((req, res, next) => {
