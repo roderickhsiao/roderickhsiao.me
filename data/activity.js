@@ -6,7 +6,7 @@ export default [
     summary: 'Create and maintain website outside of dance practice. DEI training and create process to create a safe place.',
     smartlink: {
       thumbnail: {
-        url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrY6DEahBHdT4NU62C1rCx1LhS4iRHqpZnMt6Fb8QmGkmgdSKNbRZyy4c',
+        url: '/str8jacket.jpeg',
         width: 150,
         height: 150
       },

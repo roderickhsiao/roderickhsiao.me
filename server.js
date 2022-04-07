@@ -112,7 +112,7 @@ function renderPage(req, res, context, name) {
 
   debug('Rendering Application component into html');
   const cache = serverCache[name];
-  if (cache) {
+  if (name && cache) {
     res.send(cache);
     return;
   }
@@ -128,7 +128,9 @@ function renderPage(req, res, context, name) {
 
   debug('Sending markup');
   const responseString = `<!DOCTYPE html>${htmlStringStart}${headerStringStart}<style>${inlineStyle}</style>${headerStringEnd}${html}${htmlStringEnd}`;
-  serverCache[name] = responseString;
+  if (name) {
+    serverCache[name] = responseString;
+  }
   res.send(responseString);
 }
 
@@ -169,7 +171,7 @@ server.use((req, res, next) => {
             fetchAllStaticData,
             { resources: prefetch },
             () => {
-              renderPage(req, res, context);
+              renderPage(req, res, context, name);
             }
           );
         });
