@@ -7,6 +7,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/register": "^7.17.7",
+    "@builder.io/partytown": "^0.5.2",
     "@imgix/js-core": "^3.5.1",
     "async": "^3.0.0",
     "autoprefixer": "^8.0.0",
@@ -82,6 +83,7 @@
     "dev": "grunt",
     "lint": "eslint . --fix",
     "monitor": "nodemon server",
+    "partytown": "partytown copylib build/js/~partytown",
     "penthouse": "grunt penthouse-tasks",
     "start": "node start"
   },

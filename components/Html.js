@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { Partytown } from '@builder.io/partytown/react';
 
 import assetsMapping from '../build/assets.json';
 
@@ -25,15 +26,12 @@ const HtmlComponent = memo((props) => {
 
   return (
     <body className="Bgc($c-grey-50)">
+      <Partytown forward={['dataLayer.push']} />
       <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
       <script dangerouslySetInnerHTML={{ __html: state }} />
       <script src="//cdn.polyfill.io/v3/polyfill.min.js" defer async />
       <script src={getHashAssets('/js/client.js')} defer async />
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-76603120-1"
-      />
-      <script dangerouslySetInnerHTML={{ __html: inlineGA }} />
+      <script type="text/partytown" dangerouslySetInnerHTML={{ __html: inlineGA }} />
     </body>
   );
 });
