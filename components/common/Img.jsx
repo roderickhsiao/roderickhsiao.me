@@ -13,20 +13,25 @@ const Img = (props) => {
     height,
     className,
     loading = 'lazy',
+    imgxParams = {},
     ...rest
   } = props;
   const proxyImageSrc = imgixClient.buildURL(src, {
     w: width,
     h: height,
     auto: 'compress,enhance,format',
-    q: 80
+    fit: 'crop',
+    q: 80,
+    ...imgxParams,
   });
 
   const srcset = imgixClient.buildSrcSet(src, {
     w: width,
     h: height,
     auto: 'compress,enhance,format',
-    q: 80
+    fit: 'crop',
+    q: 80,
+    ...imgxParams,
   });
 
   return (

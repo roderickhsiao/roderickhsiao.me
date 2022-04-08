@@ -47,10 +47,11 @@ const Experience = (props) => {
               nodes={demos.map((node) => {
                 if (node.type === 'iframe') {
                   return (
-                    <a href={node.url} target="_blank" rel="noopener noreferrer">
-                       <AspectRatio ratio="640/480" style={{ width: '200px' }}>
-                        <Img src={node.thumbnail.url} width={200} height={135} className="Objf(ct)" />
+                    <a href={node.url} target="_blank" rel="noopener noreferrer" title={node.title}>
+                       <AspectRatio ratio="16/9" style={{ width: '100%' }}>
+                          <Img src={node.thumbnail.url} width={200} height={135} className="Objf(ct)" imgxParams={{ ar: '16:9'}}/>
                       </AspectRatio>
+                      <span className="Hidden">{node.title}</span>
                     </a>
                   );
                 }
