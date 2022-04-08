@@ -8,7 +8,7 @@ const Carousel = ({ nodes, aspectRatio = '16/9' }) => {
 
   return (
     <ul
-      className="M(0) P(0) D(f) List(n) W(100%) Ovx(s)"
+      className="My(12px) P(0) D(f) List(n) W(100%) Ovx(s)"
       style={{ scrollSnapType: 'mandatory' }}
     >
       {nodes.map((node, i) => {

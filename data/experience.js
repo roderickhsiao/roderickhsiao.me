@@ -56,6 +56,58 @@ export default {
             url: 'https://www.forethought.ai/',
           },
         },
+        {
+          name: 'Public Speaker',
+          time: 'July 2020 - - present',
+          techStack: 'React, Javascript',
+          summary: 'Give tach talks about PWA, web performance, large scale web app architecture',
+          demos: [
+            {
+              thumbnail: {
+                url: '/react-norway.jpeg',
+                width: 800,
+                height: 450,
+              },
+              type: 'iframe',
+              url: 'https://www.youtube.com/watch?v=tSMmsEh7eAk',
+              title:
+                'React Norway 2021 | Progressively Enhance Your Web Application',
+            },
+            {
+              thumbnail: {
+                url: '/js-camp-2021.jpeg',
+                width: 640,
+                height: 480,
+              },
+              type: 'iframe',
+              url: 'https://www.youtube.com/watch?v=TCYI3SuQmw0',
+              title:
+                'JSCAMP 2021 | Building Large-Scale Web Apps',
+            },
+            {
+              thumbnail: {
+                url: '/accento.jpeg',
+                width: 800,
+                height: 450,
+              },
+              type: 'iframe',
+              url: 'https://www.youtube.com/watch?v=H2KvgVSQ_pE',
+              title:
+                'Accento 2020 | Progressively Enhance Your Web Application',
+            },
+            {
+              thumbnail: {
+                url: '/geekle.jpeg',
+                width: 800,
+                height: 800,
+              },
+              type: 'iframe',
+              url: 'https://react.geekle.us/',
+              title:
+                'Geekle 2020 | Building Large Scale Web App',
+            },
+          ]
+        }
       ],
     },
     {
