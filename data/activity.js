@@ -56,12 +56,6 @@ export default [
     year: 'Aug, 2010'
   },
   {
-    name: 'Flood Relief Work',
-    org: 'R.O.C Army',
-    summary: 'Recovered living environment of victims after serious flood occurred at August 2010.',
-    year: 'Aug, 2010'
-  },
-  {
     name: 'Exchange Student',
     org: 'College of Commerce, Mannheim University, Germany',
     year: 'Jan 2008 – Jun 2008'

@@ -83,33 +83,62 @@ export default {
               "With 55 billion matches to date, Tinder® is the world's most popular dating app, making it the place to meet new people.",
             url: 'https://tinder.com',
           },
-          // demos: [
-          //   {
-          //     type: 'iframe',
-          //     url: 'https://www.youtube.com/embed/aCMbSyngXB4?start=918',
-          //     title: 'Production Progressive Web Apps With JavaScript Frameworks (Google I/O 2017)'
-          //   },
-          //   {
-          //     type: 'iframe',
-          //     url: 'https://www.youtube.com/embed/_srJ7eHS3IM?t=1747',
-          //     title: 'Fast By Default: Modern Loading Best Practices (Chrome Dev Summit 2017)'
-          //   },
-          //   {
-          //     type: 'iframe',
-          //     url: 'https://www.youtube.com/embed/puUPpVrIRkc?t=1231',
-          //     title: 'Adaptive Loading - Improving web performance on slow devices (Chrome Dev Summit 2019)'
-          //   },
-          //   {
-          //     type: 'iframe',
-          //     url: 'https://www.youtube.com/embed/cmRqQJBIp_A?t=1090',
-          //     title: 'PWA patterns for window and service worker communication (Chrome Dev Summit 2020)'
-          //   },
-          //   {
-          //     type: 'iframe',
-          //     url: 'https://www.youtube.com/embed/sU4MpWYrGSI?t=429',
-          //     title: 'SMS OTP form best practices (Chrome Dev Summit 2020)'
-          //   }
-          // ]
+          demos: [
+            {
+              thumbnail: {
+                url: '/google-io-2017.jpeg',
+                width: 640,
+                height: 480,
+              },
+              type: 'iframe',
+              url: 'https://youtu.be/aCMbSyngXB4?t=918',
+              title:
+                'Production Progressive Web Apps With JavaScript Frameworks (Google I/O 2017)',
+            },
+            {
+              thumbnail: {
+                url: '/cds-2017.jpeg',
+                width: 640,
+                height: 480,
+              },
+              type: 'iframe',
+              url: 'https://youtu.be/_srJ7eHS3IM?t=1732',
+              title:
+                'Fast By Default: Modern Loading Best Practices (Chrome Dev Summit 2017)',
+            },
+            {
+              thumbnail: {
+                url: '/cds-2019.jpeg',
+                width: 640,
+                height: 480,
+              },
+              type: 'iframe',
+              url: 'https://youtu.be/puUPpVrIRkc?t=1231',
+              title:
+                'Adaptive Loading - Improving web performance on slow devices (Chrome Dev Summit 2019)',
+            },
+            {
+              thumbnail: {
+                url: '/cds-2020.jpeg',
+                width: 640,
+                height: 480,
+              },
+              type: 'iframe',
+              url: 'https://youtu.be/cmRqQJBIp_A?t=1090',
+              title:
+                'PWA patterns for window and service worker communication (Chrome Dev Summit 2020)',
+            },
+            {
+              thumbnail: {
+                url: '/cds-2020-2.jpeg',
+                width: 640,
+                height: 480,
+              },
+              type: 'iframe',
+              url: 'https://youtu.be/sU4MpWYrGSI?t=429',
+              title: 'SMS OTP form best practices (Chrome Dev Summit 2020)',
+            },
+          ],
         },
         {
           name: 'Tinder Swipe Life',
