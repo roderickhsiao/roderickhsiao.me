@@ -1,10 +1,9 @@
 import { memo, useEffect, useMemo } from 'react';
-import { useFluxible } from 'fluxible-addons-react';
+import { useFluxible, connectToStores } from 'fluxible-addons-react';
 
 import Card from './common/Card.jsx';
 import StaticContentStore from '../stores/StaticContentStore';
 
-import { connectToStores } from 'fluxible-addons-react';
 
 import fetchStaticDataAction from '../actions/fetchStaticData';
 
@@ -97,12 +96,8 @@ const About = (props) => {
   );
 };
 
-export default connectToStores(
-  memo(About),
-  [StaticContentStore],
-  (context) => {
-    return {
-      about: context.getStore(StaticContentStore).getData('about'),
-    };
-  }
-);
+export default connectToStores(memo(About), [StaticContentStore], (context) => {
+  return {
+    about: context.getStore(StaticContentStore).getData('about'),
+  };
+});
