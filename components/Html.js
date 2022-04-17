@@ -2,8 +2,6 @@ import { memo } from 'react';
 
 import assetsMapping from '../build/assets.json';
 
-const inlineJSDetect = '(function(html){var c = html.className;c += " JsEnabled";c = c.replace("NoJs","");html.className = c;})(document.documentElement)';
-
 const pathPrefix = '/';
 
 const getHashAssets = (assetsPath) => {
@@ -80,7 +78,6 @@ export const headerStringEnd = [
   )}" media="print" onload="this.media='all'" />`,
 
   `<link rel="preload" href="${getHashAssets('/js/client.js')}" as="script" />`,
-  `<script>${inlineJSDetect}</script>`,
 
   '<noscript>',
   '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,400italic&font-display=swap" />',
@@ -100,7 +97,7 @@ export const headerStringEnd = [
   '</head>',
 ].join('');
 
-export const htmlStringStart = '<html lang="en" id="atomic" class="NoJs">';
+export const htmlStringStart = '<html lang="en" id="atomic">';
 export const htmlStringEnd = '</html>';
 
 export default HtmlComponent;
