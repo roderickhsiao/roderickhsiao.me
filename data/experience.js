@@ -22,7 +22,7 @@ export default {
       location: 'San Francisco, CA',
       projects: [
         {
-          name: 'Alt',
+          name: 'Alt Platform',
           time: 'March 2021 - present',
           summary:
             'Frontend architecture improvements, performance enhancements, instrumentations, and search engine optimizations.',
