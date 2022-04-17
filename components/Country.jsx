@@ -1,6 +1,5 @@
 import { memo, useEffect, useMemo } from 'react';
-import { useFluxible } from 'fluxible-addons-react';
-import { connectToStores } from 'fluxible-addons-react';
+import { useFluxible, connectToStores } from 'fluxible-addons-react';
 
 import Card from './common/Card.jsx';
 import StaticContentStore from '../stores/StaticContentStore';

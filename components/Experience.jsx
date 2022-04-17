@@ -1,6 +1,5 @@
 import React, { memo, useEffect, useMemo, useCallback } from 'react';
-import { useFluxible } from 'fluxible-addons-react';
-import { connectToStores } from 'fluxible-addons-react';
+import { useFluxible, connectToStores } from 'fluxible-addons-react';
 import classNames from 'clsx';
 
 import Card from './common/Card.jsx';

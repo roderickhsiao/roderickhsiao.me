@@ -1,6 +1,5 @@
 import React, { memo, useEffect, useMemo } from 'react';
-import { useFluxible } from 'fluxible-addons-react';
-import { connectToStores } from 'fluxible-addons-react';
+import { useFluxible, connectToStores } from 'fluxible-addons-react';
 import { AspectRatio } from 'react-aspect-ratio';
 
 import Img from './common/Img.jsx';
