@@ -1,4 +1,4 @@
-import React, { memo, Fragment } from 'react';
+import { memo, Fragment } from 'react';
 import { AspectRatio } from 'react-aspect-ratio';
 import classNames from 'clsx';
 

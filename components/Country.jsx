@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useMemo } from 'react';
+import { memo, useEffect, useMemo } from 'react';
 import { useFluxible } from 'fluxible-addons-react';
 import { connectToStores } from 'fluxible-addons-react';
 
@@ -49,7 +49,7 @@ const Country = (props) => {
 export default connectToStores(
   memo(Country),
   [StaticContentStore],
-  (context, props) => {
+  (context) => {
     return {
       country: context.getStore(StaticContentStore).getData('country'),
     };

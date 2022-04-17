@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { AspectRatio } from 'react-aspect-ratio';
 
 const Carousel = ({ nodes, aspectRatio = '16/9' }) => {

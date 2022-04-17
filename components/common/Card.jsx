@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 const Card = ({ title, children, footer, ...restProps }) => (
   <div

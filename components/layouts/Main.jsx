@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
 // TODO, this should come from PageStore
 import components from '../../configs/components';
@@ -9,11 +9,10 @@ function loadComponent(regions, components, context) {
     return null;
   }
 
-  let Components = [];
+  const Components = [];
 
   regions.forEach((path, idx) => {
-    var file = require(`../${components[path].path}`).default;
-    var Component = file.hasOwnProperty('default') ? file.default : file;
+    var Component = require(`../${components[path].path}`).default;
 
     if (Component) {
       var props = components[path].props || {};
@@ -23,14 +22,17 @@ function loadComponent(regions, components, context) {
   return Components;
 }
 
-const Main = memo(props => {
+const Main = memo((props) => {
   const { header, leftRail, main, rightRail, footer, route } = props;
 
   const config = layout[route.name];
   const regions = config.regions;
-  const context = {
-    route: route
-  };
+  const context = useMemo(
+    () => ({
+      route,
+    }),
+    [route]
+  );
 
   return (
     <section className="main-layout">

@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useMemo } from 'react';
+import { memo, useEffect, useMemo } from 'react';
 import { useFluxible } from 'fluxible-addons-react';
 
 import Card from './common/Card.jsx';
@@ -100,7 +100,7 @@ const About = (props) => {
 export default connectToStores(
   memo(About),
   [StaticContentStore],
-  (context, props) => {
+  (context) => {
     return {
       about: context.getStore(StaticContentStore).getData('about'),
     };
