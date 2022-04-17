@@ -41,7 +41,7 @@ function getWebpackConfig(opts) {
         runtimeCaching: [
           {
             urlPattern: '/api',
-            handler: 'NetworkFirst',
+            handler: 'StaleWhileRevalidate',
           },
           // {
           //   urlPattern: new RegExp('https://www.googletagmanager.com/'),
