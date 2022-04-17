@@ -43,16 +43,16 @@ function getWebpackConfig(opts) {
             urlPattern: '/api',
             handler: 'NetworkFirst',
           },
-          {
-            urlPattern: new RegExp('https://www.googletagmanager.com/'),
-            handler: 'StaleWhileRevalidate',
-            options: {
-              cacheName: 'gtm',
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
-            },
-          },
+          // {
+          //   urlPattern: new RegExp('https://www.googletagmanager.com/'),
+          //   handler: 'StaleWhileRevalidate',
+          //   options: {
+          //     cacheName: 'gtm',
+          //     cacheableResponse: {
+          //       statuses: [0, 200],
+          //     },
+          //   },
+          // },
           {
             urlPattern: new RegExp('https://fonts.googleapis.com'),
             handler: 'StaleWhileRevalidate',

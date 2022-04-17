@@ -3,7 +3,7 @@ import { handleHistory } from 'fluxible-router';
 import { provideContext } from 'fluxible-addons-react';
 import { subscribe } from 'subscribe-ui-event';
 
-import Layout from './layouts/Main.jsx';
+import Layout from './layouts/Main';
 
 let App = (props) => {
   const { currentRoute } = props;
