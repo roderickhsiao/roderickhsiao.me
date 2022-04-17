@@ -1,4 +1,4 @@
-import { hydrate } from 'react-dom';
+import { hydrateRoot } from 'react-dom/client';
 
 import Debug from 'debug';
 
@@ -38,7 +38,5 @@ app.rehydrate(dehydratedState, (err, context) => {
   debug('React Rendering');
   const mountNode = document.getElementById('app');
 
-  hydrate(createElement(context), mountNode, () => {
-    debug('React Rendered');
-  });
+  hydrateRoot(mountNode, createElement(context));
 });
