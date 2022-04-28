@@ -58,7 +58,7 @@ export default {
         },
         {
           name: 'Public Speaker',
-          time: 'July 2020 - - present',
+          time: 'July 2020 - present',
           techStack: 'React, Javascript',
           summary: 'Give tach talks about PWA, web performance, large scale web app architecture',
           demos: [
