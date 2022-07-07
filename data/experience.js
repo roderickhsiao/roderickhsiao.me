@@ -35,8 +35,8 @@ export default {
             },
             title: 'Alt',
             description:
-              'Alt is increasing the transparency and liquidity of alternative assets',
-            url: 'https://www.onlyalt.com/',
+              'It’s time to invest in what you love. ALT gives you access to utility and liquidity like never before.',
+            url: 'https://alt.xyz/',
           },
         },
         {
