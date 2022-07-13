@@ -41,7 +41,7 @@ export default {
         },
         {
           name: 'Forethought',
-          time: 'August 2021 - Nov 2021, Jan 2022 - present',
+          time: 'August 2021 - Nov 2021, Jan 2022 - July 2022',
           summary:
             'Focus on feature development and design system infrastructure. Provided technical guildline and directions. Deliever state persistant stragetgy and major rebranding.',
           techStack: 'React',
