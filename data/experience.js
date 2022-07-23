@@ -116,7 +116,7 @@ export default {
       time: `Feb 2017 - present (${getWorkTime(
         new Duration(new Date(2017, 1, 8))
       )})`,
-      title: 'Staff Engineer',
+      title: 'Principal Software Engineer',
       location: 'Palo Alto, CA',
       projects: [
         {
