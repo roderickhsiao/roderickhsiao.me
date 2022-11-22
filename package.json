@@ -67,8 +67,7 @@
   },
   "description": "Roderick Hsiao",
   "engines": {
-    "node": "^18.0.0 || ^16.0.0 || ^14.0.0",
-    "npm": "^6.0.0"
+    "node": "^18.0.0 || ^16.0.0 || ^14.0.0"
   },
   "license": "BSD-3-Clause",
   "main": "start.js",
