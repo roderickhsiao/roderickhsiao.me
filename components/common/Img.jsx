@@ -8,7 +8,7 @@ const imgixClient = new ImgixClient({
 const Img = (props) => {
   const {
     src,
-    alt,
+    alt = '',
     width,
     height,
     className,
@@ -36,6 +36,7 @@ const Img = (props) => {
 
   return (
     <img
+      alt={alt}
       src={proxyImageSrc}
       srcSet={srcset}
       className={className}
