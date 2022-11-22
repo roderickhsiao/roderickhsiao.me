@@ -30,7 +30,7 @@ const Education = (props) => {
         <li
           key={i}
           className={classNames('Py(10px) Cf', {
-            'Bdbw(1px) Bdbs(s) Bdbc($c-black-4)': i !== education.length - 1,
+            'BdB Bdbc($c-black-4)': i !== education.length - 1,
           })}
         >
           <div className="D(ib) Va(m)">
@@ -47,7 +47,7 @@ const Education = (props) => {
               className="D(n)--xs Fl(end)"
               style={{ width: '100px' }}
             >
-              <Img src={thumbnail.url} height={height} width={100} />
+              <Img src={thumbnail.url} height={height} width={100} alt="" />
             </AspectRatio>
           ) : null}
         </li>

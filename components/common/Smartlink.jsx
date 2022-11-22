@@ -39,6 +39,7 @@ const Smartlink = memo((props) => {
               width={150}
               height={150}
               className="D(ib) Bgc(#fff) Objf(ct)"
+              alt=""
             />
           </AspectRatio>
         )}

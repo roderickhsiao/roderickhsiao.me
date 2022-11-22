@@ -48,7 +48,7 @@ const Experience = (props) => {
                   return (
                     <a href={node.url} target="_blank" rel="noopener noreferrer" title={node.title}>
                        <AspectRatio ratio="16/9" style={{ width: '100%' }}>
-                          <Img src={node.thumbnail.url} width={200} height={135} className="Objf(ct)" imgxParams={{ ar: '16:9'}}/>
+                          <Img src={node.thumbnail.url} width={200} height={135} className="Objf(ct)" imgxParams={{ ar: '16:9'}} alt="" />
                       </AspectRatio>
                       <span className="Hidden">{node.title}</span>
                     </a>
@@ -78,7 +78,7 @@ const Experience = (props) => {
         >
           <div className="Cf Mt(10px)">
             {company.logo ? (
-              <Img src={company.logo} width={100} className="Fl(end)" />
+              <Img src={company.logo} width={100} className="Fl(end)" alt="" />
             ) : null}
             <h4 className="M(0)">{company.name}</h4>
           </div>
