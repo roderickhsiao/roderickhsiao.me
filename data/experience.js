@@ -16,101 +16,6 @@ function getWorkTime(duration) {
 export default {
   companies: [
     {
-      name: 'Self Employed',
-      time: 'March 2021 - present',
-      title: 'Product Engineering Consultant',
-      location: 'San Francisco, CA',
-      projects: [
-        {
-          name: 'Alt Platform',
-          time: 'March 2021 - present',
-          summary:
-            'Frontend architecture improvements, performance enhancements, instrumentations, and search engine optimizations.',
-          techStack: 'React',
-          smartlink: {
-            thumbnail: {
-              url: '/alt.jpg',
-              width: 400,
-              height: 400,
-            },
-            title: 'Alt',
-            description:
-              'It’s time to invest in what you love. ALT gives you access to utility and liquidity like never before.',
-            url: 'https://alt.xyz/',
-          },
-        },
-        {
-          name: 'Forethought',
-          time: 'August 2021 - Nov 2021, Jan 2022 - July 2022',
-          summary:
-            'Focus on feature development and design system infrastructure. Provided technical guildline and directions. Deliever state persistant stragetgy and major rebranding.',
-          techStack: 'React',
-          smartlink: {
-            thumbnail: {
-              url: '/forethought.jpg',
-              width: 400,
-              height: 400,
-            },
-            title: 'Forethought',
-            description: 'Improve your customer experience by using AI.',
-            url: 'https://www.forethought.ai/',
-          },
-        },
-        {
-          name: 'Public Speaker',
-          time: 'July 2020 - present',
-          techStack: 'React, Javascript',
-          summary: 'Give tach talks about PWA, web performance, large scale web app architecture',
-          demos: [
-            {
-              thumbnail: {
-                url: '/react-norway.jpeg',
-                width: 800,
-                height: 450,
-              },
-              type: 'iframe',
-              url: 'https://www.youtube.com/watch?v=tSMmsEh7eAk',
-              title:
-                'React Norway 2021 | Progressively Enhance Your Web Application',
-            },
-            {
-              thumbnail: {
-                url: '/js-camp-2021.jpeg',
-                width: 640,
-                height: 480,
-              },
-              type: 'iframe',
-              url: 'https://www.youtube.com/watch?v=TCYI3SuQmw0',
-              title:
-                'JSCAMP 2021 | Building Large-Scale Web Apps',
-            },
-            {
-              thumbnail: {
-                url: '/accento.jpeg',
-                width: 800,
-                height: 450,
-              },
-              type: 'iframe',
-              url: 'https://www.youtube.com/watch?v=H2KvgVSQ_pE',
-              title:
-                'Accento 2020 | Progressively Enhance Your Web Application',
-            },
-            {
-              thumbnail: {
-                url: '/geekle.jpeg',
-                width: 800,
-                height: 800,
-              },
-              type: 'iframe',
-              url: 'https://react.geekle.us/',
-              title:
-                'Geekle 2020 | Building Large Scale Web App',
-            },
-          ]
-        }
-      ],
-    },
-    {
       name: 'Tinder Inc.',
       logo: '/tinderLogo.png',
       time: `Feb 2017 - present (${getWorkTime(
@@ -198,6 +103,101 @@ export default {
           summary: 'Tinder Magazine',
           techStack: 'GatsbyJS, Wordpress',
         },
+      ],
+    },
+    {
+      name: 'Self Employed',
+      time: 'March 2021 - present',
+      title: 'Product Engineering Consultant',
+      location: 'San Francisco, CA',
+      projects: [
+        {
+          name: 'Alt Platform',
+          time: 'March 2021 - December 2022',
+          summary:
+            'Frontend architecture improvements, performance enhancements, instrumentations, and search engine optimizations.',
+          techStack: 'React',
+          smartlink: {
+            thumbnail: {
+              url: '/alt.jpg',
+              width: 400,
+              height: 400,
+            },
+            title: 'Alt',
+            description:
+              'It’s time to invest in what you love. ALT gives you access to utility and liquidity like never before.',
+            url: 'https://alt.xyz/',
+          },
+        },
+        {
+          name: 'Forethought',
+          time: 'August 2021 - Nov 2021, Jan 2022 - July 2022',
+          summary:
+            'Focus on feature development and design system infrastructure. Provided technical guildline and directions. Deliever state persistant stragetgy and major rebranding.',
+          techStack: 'React',
+          smartlink: {
+            thumbnail: {
+              url: '/forethought.jpg',
+              width: 400,
+              height: 400,
+            },
+            title: 'Forethought',
+            description: 'Improve your customer experience by using AI.',
+            url: 'https://www.forethought.ai/',
+          },
+        },
+        {
+          name: 'Public Speaker',
+          time: 'July 2020 - present',
+          techStack: 'React, Javascript',
+          summary: 'Give tach talks about PWA, web performance, large scale web app architecture',
+          demos: [
+            {
+              thumbnail: {
+                url: '/react-norway.jpeg',
+                width: 800,
+                height: 450,
+              },
+              type: 'iframe',
+              url: 'https://www.youtube.com/watch?v=tSMmsEh7eAk',
+              title:
+                'React Norway 2021 | Progressively Enhance Your Web Application',
+            },
+            {
+              thumbnail: {
+                url: '/js-camp-2021.jpeg',
+                width: 640,
+                height: 480,
+              },
+              type: 'iframe',
+              url: 'https://www.youtube.com/watch?v=TCYI3SuQmw0',
+              title:
+                'JSCAMP 2021 | Building Large-Scale Web Apps',
+            },
+            {
+              thumbnail: {
+                url: '/accento.jpeg',
+                width: 800,
+                height: 450,
+              },
+              type: 'iframe',
+              url: 'https://www.youtube.com/watch?v=H2KvgVSQ_pE',
+              title:
+                'Accento 2020 | Progressively Enhance Your Web Application',
+            },
+            {
+              thumbnail: {
+                url: '/geekle.jpeg',
+                width: 800,
+                height: 800,
+              },
+              type: 'iframe',
+              url: 'https://react.geekle.us/',
+              title:
+                'Geekle 2020 | Building Large Scale Web App',
+            },
+          ]
+        }
       ],
     },
     {
