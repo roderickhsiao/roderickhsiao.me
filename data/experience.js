@@ -18,9 +18,7 @@ export default {
     {
       name: 'Tinder Inc.',
       logo: '/tinderLogo.png',
-      time: `Feb 2017 - present (${getWorkTime(
-        new Duration(new Date(2017, 1, 8))
-      )})`,
+      time: 'Feb 2017 - Jan 2023',
       title: 'Principal Software Engineer',
       location: 'Palo Alto, CA',
       projects: [
