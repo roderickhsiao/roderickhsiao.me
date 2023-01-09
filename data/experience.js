@@ -19,11 +19,14 @@ export default {
     {
       name: 'Kindred',
       time: 'Jan 2023 - present',
+      logo: '/kindred.png',
+      location: 'Remote',
       title: 'Founding Engineer',
       projects: [
         {
           name: 'Kindred',
           time: 'Jan 2023 - present',
+          techStack: 'React, React Native',
           smartlink: {
             thumbnail: {
               url: '/kindred.jpg',
