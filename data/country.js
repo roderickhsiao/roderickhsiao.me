@@ -1,5 +1,5 @@
 export default {
-  Australia: [
+  AU: [
     'Brisbane',
     'Cairns',
     'Gold Coast',
@@ -7,16 +7,16 @@ export default {
     'Esperance',
     'Perth'
   ],
-  Austria: ['Garz', 'Vienna'],
-  Belgium: ['Bruxelles'],
-  Cambodia: ['Siem Reap'],
-  Canada: ['Vancouver', 'Niagara Falls'],
-  China: ['Beijing'],
-  Croatia: ['Zagreb', 'Plitvice Lakes National Park', 'Dubrovnik'],
-  'Czech Republic': ['Prague', 'Brno'],
-  England: ['London', 'Oxford', 'Cambridge'],
-  Finland: ['Helsinki'],
-  France: [
+  AT: ['Garz', 'Vienna'],
+  BE: ['Bruxelles', 'Ghent'],
+  KH: ['Siem Reap'],
+  CA: ['Vancouver', 'Niagara Falls'],
+  CN: ['Beijing'],
+  HR: ['Zagreb', 'Plitvice Lakes National Park', 'Dubrovnik'],
+  CZ: ['Prague', 'Brno'],
+  GB: ['Bath', 'London', 'Oxford', 'Cambridge'],
+  FI: ['Helsinki'],
+  FR: [
     'Paris',
     'Lyon',
     'Marseille',
@@ -27,7 +27,7 @@ export default {
     'Quiberon',
     'Strasbourg'
   ],
-  Germany: [
+  DE: [
     'Mannheim',
     'Frankfurt',
     'Cologne',
@@ -39,15 +39,15 @@ export default {
     'Dresden',
     'Konstanz'
   ],
-  'Grand Cayman': ['George Town'],
-  Greece: ['Athens', 'Mykonos', 'Santorini', 'Crete', 'Naxos'],
-  HongKong: ['HongKong'],
-  Hungary: ['Budapest'],
-  India: ['Bangalore'],
-  Israel: ['Jerusalem', 'Tel Aviv'],
-  Italy: ['Milan', 'Rome', 'Venice', 'Florance'],
-  Japan: ['Osaka', 'Tokyo', 'Kyoto', 'Hamamatsu', 'Okinawa'],
-  Jordan: [
+  KY: ['George Town'],
+  GR: ['Athens', 'Mykonos', 'Santorini', 'Crete', 'Naxos'],
+  HK: ['HongKong'],
+  HU: ['Budapest'],
+  IN: ['Bangalore'],
+  IL: ['Jerusalem', 'Tel Aviv'],
+  IT: ['Milan', 'Rome', 'Venice', 'Florance'],
+  JP: ['Osaka', 'Tokyo', 'Kyoto', 'Hamamatsu', 'Okinawa'],
+  JO: [
     'Jerash',
     'Amman',
     'Dead Sea',
@@ -55,11 +55,11 @@ export default {
     'Petra',
     'Aqaba'
   ],
-  Korea: ['Jeju'],
-  Maldive: ['Malé'],
-  Mexico: ['Los Cabos', 'Tulum'],
-  Myanmar: ['Yangon', 'Bago'],
-  'New Zealand': [
+  KR: ['Jeju'],
+  MV: ['Malé'],
+  MX: ['Los Cabos', 'Tulum'],
+  MM: ['Yangon', 'Bago'],
+  NZ: [
     'Christchurch',
     'Lake Tekapo',
     'Wanaka',
@@ -76,33 +76,21 @@ export default {
     'Kerikeri',
     'Paihia'
   ],
-  Palau: ['Palau'],
-  Philippines: ['Manila', 'Boracay'],
-  Poland: ['Wroclaw', 'Krakow'],
-  'Saudi Arabia': ['Jeddah'],
-  Singapore: ['Singapore'],
-  Slovenia: ['Lubiana', 'Bled Lake Area', 'Postojna Cave'],
-  Spain: ['Barcelona'],
-  Switzerland: ['Bern', 'Zurich', 'Interlaken'],
-  Thailand: ['Bankok', 'Phuket', 'Ko Samui'],
-  Turkey: ['Istanbul', 'Izmir', 'Efes', 'Selçuk', 'Cappadocia'],
-  'United States': [
-    'Los Angeles',
-    'San Francisco',
-    'San Diego',
-    'San Jose',
-    'Las Vegas',
-    'Seattle',
-    'New York',
-    'Bozeman',
-    'Chicago',
-    'Buffalo',
-    'Cleveland',
-    'Ann Arbor',
-    'Portland',
-    'Tampa',
-    'Orlando',
-    'Fairbanks'
+  NL: ['Amsterdam'],
+  PW: ['Palau'],
+  PH: ['Manila', 'Boracay'],
+  PL: ['Wroclaw', 'Krakow'],
+  PT: ['Lisbon'],
+  SA: ['Jeddah'],
+  SG: ['Singapore'],
+  SI: ['Lubiana', 'Bled Lake Area', 'Postojna Cave'],
+  ES: ['Madrid', 'Barcelona'],
+  CH: ['Bern', 'Zurich', 'Interlaken'],
+  TH: ['Bankok', 'Phuket', 'Ko Samui'],
+  TW: ['🏡 Taipei'],
+  TR: ['Istanbul', 'Izmir', 'Efes', 'Selçuk', 'Cappadocia'],
+  US: [
+    '🏡 San Francisco Bay Area'
   ],
-  Vatican: ['Vatican']
+  VA: ['Vatican']
 };

@@ -17,7 +17,7 @@ const HtmlComponent = memo((props) => {
     <body className="Bgc($c-grey-50)">
       <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
       <script dangerouslySetInnerHTML={{ __html: state }} />
-      <script src="//cdn.polyfill.io/v3/polyfill.min.js" defer async />
+      <script src="//cdn.polyfill.io/v3/polyfill.min.js?features=Intl.DisplayNames,Intl.DisplayNames.~locale.en,Intl.ListFormat,Intl.ListFormat.~locale.en" defer async />
       <script src={getHashAssets('/js/client.js')} defer async />
     </body>
   );

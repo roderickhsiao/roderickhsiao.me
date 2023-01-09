@@ -1,20 +1,42 @@
-const Duration = require('duration');
+// const Duration = require('duration');
 
-function getWorkTime(duration) {
-  const { years, month } = duration;
-  const workDuration = [];
-  if (years) {
-    workDuration.push(`${years} years`);
-  }
+// function getWorkTime(duration) {
+//   const { years, month } = duration;
+//   const workDuration = [];
+//   if (years) {
+//     workDuration.push(`${years} years`);
+//   }
 
-  if (month) {
-    workDuration.push(`${month} months`);
-  }
+//   if (month) {
+//     workDuration.push(`${month} months`);
+//   }
 
-  return workDuration.join(', ');
-}
+//   return workDuration.join(', ');
+// }
+
 export default {
   companies: [
+    {
+      name: 'Kindred',
+      time: 'Jan 2023 - present',
+      title: 'Founding Engineer',
+      projects: [
+        {
+          name: 'Kindred',
+          time: 'Jan 2023 - present',
+          smartlink: {
+            thumbnail: {
+              url: '/kindred.jpg',
+              width: 200,
+              height: 200
+            },
+            title: 'Kindred',
+            description: 'Join our members-only home exchange community and unlock travel for $0/night.',
+            url: 'https://livekindred.com/',
+          }
+        }
+      ]
+    },
     {
       name: 'Tinder Inc.',
       logo: '/tinderLogo.png',
@@ -24,7 +46,7 @@ export default {
       projects: [
         {
           name: 'Tinder Online',
-          time: 'Feb 2017 - present',
+          time: 'Feb 2017 - Jan 2023',
           summary: 'Tech lead for https://tinder.com',
           techStack: 'NodeJS, React and Redux',
           smartlink: {
