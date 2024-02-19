@@ -16,30 +16,30 @@
 
 export default {
   companies: [
-    {
-      name: 'Kindred',
-      time: 'Jan 2023 - present',
-      logo: '/kindred.png',
-      location: 'Remote',
-      title: 'Founding Engineer',
-      projects: [
-        {
-          name: 'Kindred',
-          time: 'Jan 2023 - present',
-          techStack: 'React, React Native',
-          smartlink: {
-            thumbnail: {
-              url: '/kindred.jpg',
-              width: 200,
-              height: 200
-            },
-            title: 'Kindred',
-            description: 'Join our members-only home exchange community and unlock travel for $0/night.',
-            url: 'https://livekindred.com/',
-          }
-        }
-      ]
-    },
+    // {
+    //   name: 'Kindred',
+    //   time: 'Jan 2023 - present',
+    //   logo: '/kindred.png',
+    //   location: 'Remote',
+    //   title: 'Founding Engineer',
+    //   projects: [
+    //     {
+    //       name: 'Kindred',
+    //       time: 'Jan 2023 - present',
+    //       techStack: 'React, React Native',
+    //       smartlink: {
+    //         thumbnail: {
+    //           url: '/kindred.jpg',
+    //           width: 200,
+    //           height: 200
+    //         },
+    //         title: 'Kindred',
+    //         description: 'Join our members-only home exchange community and unlock travel for $0/night.',
+    //         url: 'https://livekindred.com/',
+    //       }
+    //     }
+    //   ]
+    // },
     {
       name: 'Tinder Inc.',
       logo: '/tinderLogo.png',
