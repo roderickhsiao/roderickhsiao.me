@@ -33,7 +33,7 @@ const getGlassStyles = (isActive: boolean, isButton: boolean) => {
 
   return {
     backgroundColor: isActive
-      ? 'color-mix(in srgb, #bbbbbc 25%, transparent)'
+      ? 'color-mix(in srgb, #ffffff 40%, transparent)'
       : 'transparent',
   };
 };
@@ -53,6 +53,26 @@ const headerGlassStyles = {
     inset 2px -6.5px 1px -4px color-mix(in srgb, #000 10%, transparent),
     0px 1px 5px 0px color-mix(in srgb, #000 10%, transparent),
     0px 6px 16px 0px color-mix(in srgb, #000 8%, transparent)
+  `,
+  transition:
+    'background-color 400ms cubic-bezier(1, 0, 0.4, 1), box-shadow 400ms cubic-bezier(1, 0, 0.4, 1)',
+};
+
+const mobileMenuGlassStyles = {
+  backgroundColor: 'color-mix(in srgb, #ffffff 85%, transparent)',
+  backdropFilter: 'blur(20px) saturate(180%)',
+  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+  boxShadow: `
+    inset 0 0 0 1px color-mix(in srgb, #fff 30%, transparent),
+    inset 1.8px 3px 0px -2px color-mix(in srgb, #fff 90%, transparent),
+    inset -2px -2px 0px -2px color-mix(in srgb, #fff 80%, transparent),
+    inset -3px -8px 1px -6px color-mix(in srgb, #fff 60%, transparent),
+    inset -0.3px -1px 4px 0px color-mix(in srgb, #000 8%, transparent),
+    inset -1.5px 2.5px 0px -2px color-mix(in srgb, #000 15%, transparent),
+    inset 0px 3px 4px -2px color-mix(in srgb, #000 15%, transparent),
+    inset 2px -6.5px 1px -4px color-mix(in srgb, #000 8%, transparent),
+    0px 4px 12px 0px color-mix(in srgb, #000 15%, transparent),
+    0px 8px 24px 0px color-mix(in srgb, #000 12%, transparent)
   `,
   transition:
     'background-color 400ms cubic-bezier(1, 0, 0.4, 1), box-shadow 400ms cubic-bezier(1, 0, 0.4, 1)',
@@ -158,14 +178,14 @@ export default function Header({
         {isMobileMenuOpen && (
           <div
             className="md:hidden absolute top-full left-0 right-0 mt-1 rounded-b-lg shadow-lg z-50"
-            style={headerGlassStyles}
+            style={mobileMenuGlassStyles}
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {links.map((link) => (
                 <div key={link.href}>
                   <Link
                     href={link.href}
-                    className="block px-3 py-2 text-base font-medium rounded-md transition-all duration-200 text-gray-800 hover:text-blue-600 touch-manipulation"
+                    className="block px-3 py-2 text-base font-medium rounded-md transition-all duration-200 text-gray-900 hover:text-blue-600 hover:bg-white/20 touch-manipulation"
                     style={getGlassStyles(isActive(link.href), false)}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
