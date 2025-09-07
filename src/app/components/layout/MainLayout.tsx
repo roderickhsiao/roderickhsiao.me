@@ -48,7 +48,7 @@ export default function MainLayout({
 
             <div
               className={clsx(
-                'fixed start-0 end-0 transition-all duration-300 ease-out z-30 top-0 mt-4'
+                'fixed start-0 end-0 transition-all duration-300 ease-out z-50 top-0 mt-4'
               )}
             >
               <div className="px-4 sm:px-6">

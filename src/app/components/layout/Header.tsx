@@ -67,6 +67,7 @@ export default function Header({
   const pathname = usePathname();
 
   const toggleMobileMenu = () => {
+    console.log('Toggle mobile menu clicked', !isMobileMenuOpen);
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
@@ -77,7 +78,7 @@ export default function Header({
 
   return (
     <header
-      className="relative rounded-2xl md:rounded-full overflow-hidden"
+      className="relative rounded-2xl md:rounded-full overflow-visible z-50"
       style={headerGlassStyles}
     >
       {/* Content with proper text color */}
@@ -119,17 +120,20 @@ export default function Header({
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="md:hidden p-2 rounded-md transition-all duration-200 text-gray-800 hover:text-blue-600"
+            className="md:hidden p-2 rounded-md transition-all duration-200 text-gray-800 hover:text-blue-600 touch-manipulation"
             style={{
               backgroundColor: 'color-mix(in srgb, #bbbbbc 15%, transparent)',
             }}
             aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+            type="button"
           >
             <svg
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               {isMobileMenuOpen ? (
                 <path
@@ -153,7 +157,7 @@ export default function Header({
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div
-            className="md:hidden rounded-b-lg mt-1"
+            className="md:hidden absolute top-full left-0 right-0 mt-1 rounded-b-lg shadow-lg z-50"
             style={headerGlassStyles}
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
@@ -161,7 +165,7 @@ export default function Header({
                 <div key={link.href}>
                   <Link
                     href={link.href}
-                    className="block px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 text-gray-800 hover:text-blue-600"
+                    className="block px-3 py-2 text-base font-medium rounded-md transition-all duration-200 text-gray-800 hover:text-blue-600 touch-manipulation"
                     style={getGlassStyles(isActive(link.href), false)}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

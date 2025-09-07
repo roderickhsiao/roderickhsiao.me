@@ -158,3 +158,20 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Mobile Touch and Interaction Improvements */
+@media only screen and (max-width: 767px) {
+  /* Ensure touch targets are large enough */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  /* Improve button touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
