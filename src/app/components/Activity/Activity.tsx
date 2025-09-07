@@ -1,5 +1,3 @@
-'use client';
-
 import activities from '../../data/activity';
 import speaking from '../../data/speaking';
 import ActivityCard from './ActivityCard';

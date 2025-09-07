@@ -73,7 +73,7 @@ export default function MainLayout({
                 {main}
               </div>
             </main>
-            <div className="w-full order-2 lg:order-2 sticky top-24 bottom-0 self-start space-y-6 sm:space-y-8">
+            <div className="w-full order-2 lg:order-2 lg:sticky lg:top-24 lg:bottom-0 self-start space-y-6 sm:space-y-8">
               {/* Hero Section at top of right rail */}
               {hero}
 

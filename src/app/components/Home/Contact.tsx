@@ -1,5 +1,3 @@
-'use client';
-
 export default function Contact() {
   return (
     <div className="w-full mx-auto relative aspect-[1.587/1]">

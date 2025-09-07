@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import { flag } from 'country-emoji';
 import countryData from '../../data/country';
