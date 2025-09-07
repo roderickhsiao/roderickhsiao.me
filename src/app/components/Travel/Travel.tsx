@@ -1,4 +1,5 @@
-import { useState } from 'react';
+'use client';
+import { useState, Suspense } from 'react';
 import { flag } from 'country-emoji';
 import countryData from '../../data/country';
 import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill';

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import { Roboto } from 'next/font/google';
 import './globals.css';
@@ -21,7 +21,11 @@ export const metadata: Metadata = {
   description: 'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast. Explore my journey, projects, and thoughts on building great products.',
   keywords: ['Roderick Hsiao', 'Software Engineer', 'Product Leader', 'Frontend', 'React', 'Next.js', 'TypeScript'],
   authors: [{ name: 'Roderick Hsiao' }],
-  viewport: 'width=device-width, initial-scale=1',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
