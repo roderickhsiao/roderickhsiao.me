@@ -21,6 +21,28 @@ export const metadata: Metadata = {
   description: 'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast. Explore my journey, projects, and thoughts on building great products.',
   keywords: ['Roderick Hsiao', 'Software Engineer', 'Product Leader', 'Frontend', 'React', 'Next.js', 'TypeScript'],
   authors: [{ name: 'Roderick Hsiao' }],
+  openGraph: {
+    title: 'Roderick Hsiao - Software Engineer & Product Leader',
+    description: 'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast.',
+    url: 'https://roderickhsiao.me',
+    siteName: 'Roderick Hsiao',
+    images: [
+      {
+        url: '/api/og',
+        width: 1200,
+        height: 630,
+        alt: 'Roderick Hsiao - Software Engineer & Product Leader',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Roderick Hsiao - Software Engineer & Product Leader',
+    description: 'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast.',
+    images: ['/api/og'],
+  },
 };
 
 export const viewport: Viewport = {
