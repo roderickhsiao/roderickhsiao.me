@@ -38,7 +38,7 @@ function SmartLinkCard({ smartlink }: SmartLinkCardProps) {
               {smartlink.title}
             </h5>
             <svg
-              className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gray-400 group-hover:text-primary transition-colors"
+              className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gray-400 group-hover:text-primary transition-colors shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
