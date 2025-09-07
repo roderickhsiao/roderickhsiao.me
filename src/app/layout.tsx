@@ -17,6 +17,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://roderickhsiao.me'),
   title: 'Roderick Hsiao - Software Engineer & Product Leader',
   description: 'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast. Explore my journey, projects, and thoughts on building great products.',
   keywords: ['Roderick Hsiao', 'Software Engineer', 'Product Leader', 'Frontend', 'React', 'Next.js', 'TypeScript'],
