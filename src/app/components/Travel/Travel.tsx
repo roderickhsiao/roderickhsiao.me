@@ -1,25 +1,9 @@
 'use client';
 import { useState, Suspense } from 'react';
-import { flag } from 'country-emoji';
 import countryData from '../../data/country';
 import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill';
 import SummarySection from '../shared/SummarySection';
-
-// Function to get country display name using Intl.DisplayNames
-const getCountryDisplayName = (code: string): string => {
-  try {
-    const displayNames = new Intl.DisplayNames(['en'], { type: 'region' });
-    return displayNames.of(code) || code;
-  } catch {
-    // Fallback mapping for special cases
-    const fallbackNames: Record<string, string> = {
-      HK: 'Hong Kong',
-      TW: 'Taiwan',
-      VA: 'Vatican City',
-    };
-    return fallbackNames[code] || code;
-  }
-};
+import CountriesGrid from './CountriesGrid';
 
 polyfillCountryFlagEmojis();
 
@@ -454,80 +438,35 @@ export default function Travel() {
         </div>
       </div>
 
-      {/* Countries Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {filteredCountries.map((code) => {
-          const info = countryInfo[code];
-          const isBirth = isBirthCountry(code);
-          const hasLived = hasLivedInCountry(code);
-          return (
-            <div
-              key={code}
-              className={`group relative bg-white rounded-xl border p-4 hover:shadow-lg transition-all duration-300 hover:border-gray-300 overflow-hidden ${
-                isBirth
-                  ? 'border-pink-200 ring-1 ring-pink-100'
-                  : hasLived
-                  ? 'border-blue-200 ring-1 ring-blue-100'
-                  : 'border-gray-200'
-              }`}
-            >
-              {/* Blurred flag emoji as background */}
-              <div className="absolute top-0 start-0 text-7xl blur-3xl pointer-events-none select-none">
-                {flag(code)}
-              </div>
-
-              {/* Top-right badge */}
-              {(isBirth || hasLived) && (
-                <div className="absolute top-3 right-3 z-20">
-                  {isBirth && (
-                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-800 shadow-sm">
-                      🍼 Born Here
-                    </span>
-                  )}
-                  {hasLived && !isBirth && (
-                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 shadow-sm">
-                      🏡 Lived Here
-                    </span>
-                  )}
-                </div>
-              )}
-
-              <div className="flex items-start gap-3 relative z-10">
-                <div className="flex-shrink-0">
-                  <span className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300">
-                    {flag(code)}
-                  </span>
-                </div>
-                <div className="flex-1 min-w-0 pr-16">
-                  <h3 className="font-bold text-gray-900 text-base sm:text-xl group-hover:text-gray-700 transition-colors leading-tight mb-1">
-                    {getCountryDisplayName(code)}
-                  </h3>
-                  <p className="text-sm text-gray-500 mb-3 capitalize">
-                    {info.continent}
-                  </p>
-
-                  {/* Cities with simple styling */}
-                  <div className="space-y-1">
-                    {info.cities.map((city, index) => (
-                      <span
-                        key={index}
-                        className="inline-block px-2 py-1 rounded-md text-xs font-medium mr-1 mb-1 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
-                      >
-                        {city}
-                      </span>
-                    ))}
-                    {hasLived && (
-                      <span className="inline-block px-2 py-1 rounded-md text-xs font-medium mr-1 mb-1 bg-blue-50 text-blue-600 border border-blue-200">
-                        + many more cities
-                      </span>
-                    )}
+      {/* Countries Grid with Suspense for better performance */}
+      <Suspense 
+        fallback={
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="bg-gray-100 rounded-xl p-4 animate-pulse">
+                <div className="flex items-start gap-3">
+                  <div className="w-12 h-12 bg-gray-200 rounded"></div>
+                  <div className="flex-1">
+                    <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                    <div className="h-3 bg-gray-200 rounded mb-3 w-20"></div>
+                    <div className="space-y-1">
+                      <div className="h-6 bg-gray-200 rounded w-16 inline-block mr-1"></div>
+                      <div className="h-6 bg-gray-200 rounded w-20 inline-block mr-1"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            ))}
+          </div>
+        }
+      >
+        <CountriesGrid
+          filteredCountries={filteredCountries}
+          countryInfo={countryInfo}
+          isBirthCountry={isBirthCountry}
+          hasLivedInCountry={hasLivedInCountry}
+        />
+      </Suspense>
     </div>
   );
 }

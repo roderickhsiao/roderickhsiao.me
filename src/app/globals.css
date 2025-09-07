@@ -15,3 +15,146 @@
   --color-text: #2d3a2e;
   --color-muted: #6c757d;
 }
+
+/* Fog Animation Styles - Based on CodePen dBVKzO */
+.fogwrapper {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
+  filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
+}
+
+#foglayer_01, #foglayer_02, #foglayer_03 {
+  height: 100%;
+  position: absolute;
+  width: 200%;
+}
+
+#foglayer_01 .image01, #foglayer_01 .image02,
+#foglayer_02 .image01, #foglayer_02 .image02,
+#foglayer_03 .image01, #foglayer_03 .image02 {
+  float: left;
+  height: 100%;
+  width: 50%;
+}
+
+#foglayer_01 {
+  -webkit-animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 30s linear infinite;
+  -moz-animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 30s linear infinite;
+  animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 30s linear infinite;
+}
+
+#foglayer_02, #foglayer_03 {
+  -webkit-animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 26s linear infinite;
+  -moz-animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 26s linear infinite;
+  animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 26s linear infinite;
+}
+
+/* Moving Fog Background Images */
+#foglayer_01 .image01, #foglayer_01 .image02 {
+  background: url("/fog1.png") center center/cover no-repeat transparent;
+}
+
+#foglayer_02 .image01, #foglayer_02 .image02,
+#foglayer_03 .image01, #foglayer_03 .image02{
+  background: url("/fog2.png") center center/cover no-repeat transparent;
+}
+
+/* Keyframe Layer 1 */
+@-webkit-keyframes foglayer_01_opacity {
+  0% { opacity: .3; }
+  22% { opacity: .7; }
+  40% { opacity: .5; }
+  58% { opacity: .6; }
+  80% { opacity: .4; }
+  100% { opacity: .3; }
+}
+@-moz-keyframes foglayer_01_opacity {
+  0% { opacity: .3; }
+  22% { opacity: .7; }
+  40% { opacity: .5; }
+  58% { opacity: .6; }
+  80% { opacity: .4; }
+  100% { opacity: .3; }
+}
+@keyframes foglayer_01_opacity {
+  0% { opacity: .3; }
+  22% { opacity: .7; }
+  40% { opacity: .5; }
+  58% { opacity: .6; }
+  80% { opacity: .4; }
+  100% { opacity: .3; }
+}
+
+/* Keyframe Layer 2 */
+@-webkit-keyframes foglayer_02_opacity {
+  0% { opacity: .7; }
+  25% { opacity: .4; }
+  50% { opacity: .3; }
+  80% { opacity: .5; }
+  100% { opacity: .7; }
+}
+@-moz-keyframes foglayer_02_opacity {
+  0% { opacity: .7; }
+  25% { opacity: .4; }
+  50% { opacity: .3; }
+  80% { opacity: .5; }
+  100% { opacity: .7; }
+}
+@keyframes foglayer_02_opacity {
+  0% { opacity: .7; }
+  25% { opacity: .4; }
+  50% { opacity: .3; }
+  80% { opacity: .5; }
+  100% { opacity: .7; }
+}
+
+/* Keyframe Movement */
+@-webkit-keyframes foglayer_moveme {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+@-moz-keyframes foglayer_moveme {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+@keyframes foglayer_moveme {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+/* Mobile responsive fog */
+@media only screen and (max-width: 767px) {
+  #foglayer_01 .image01, #foglayer_01 .image02,
+  #foglayer_02 .image01, #foglayer_02 .image02,
+  #foglayer_03 .image01, #foglayer_03 .image02 {
+    width: 100%;
+  }
+  
+  /* Slower animations on mobile */
+  #foglayer_01 {
+    -webkit-animation: foglayer_01_opacity 25s linear infinite, foglayer_moveme 40s linear infinite;
+    -moz-animation: foglayer_01_opacity 25s linear infinite, foglayer_moveme 40s linear infinite;
+    animation: foglayer_01_opacity 25s linear infinite, foglayer_moveme 40s linear infinite;
+  }
+  
+  #foglayer_02, #foglayer_03 {
+    -webkit-animation: foglayer_02_opacity 50s linear infinite, foglayer_moveme 35s linear infinite;
+    -moz-animation: foglayer_02_opacity 50s linear infinite, foglayer_moveme 35s linear infinite;
+    animation: foglayer_02_opacity 50s linear infinite, foglayer_moveme 35s linear infinite;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fog-layer * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

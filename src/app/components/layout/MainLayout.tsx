@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import { unstable_ViewTransition as ViewTransition } from 'react';
 
-import AuroraHeaderClient from './AuroraHeaderClient';
 import Header from './Header';
 import LandscapeSVG from './LandscapeSVG';
 import SmokeCanvas from './SmokeCanvas';
@@ -34,7 +33,6 @@ export default function MainLayout({
               <div className="relative w-full h-80 overflow-hidden">
                 <LandscapeSVG />
                 <SmokeCanvas />
-                <AuroraHeaderClient />
 
                 {/* Watermark text crafted into the forest */}
                 <div className="absolute inset-0 pointer-events-none">
