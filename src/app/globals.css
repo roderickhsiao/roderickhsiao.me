@@ -44,15 +44,15 @@
 }
 
 #foglayer_01 {
-  -webkit-animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 30s linear infinite;
-  -moz-animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 30s linear infinite;
-  animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 30s linear infinite;
+  -webkit-animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 25s linear infinite;
+  -moz-animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 25s linear infinite;
+  animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 25s linear infinite;
 }
 
 #foglayer_02, #foglayer_03 {
-  -webkit-animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 26s linear infinite;
-  -moz-animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 26s linear infinite;
-  animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 26s linear infinite;
+  -webkit-animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 45s linear infinite;
+  -moz-animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 45s linear infinite;
+  animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 45s linear infinite;
 }
 
 /* Moving Fog Background Images */
@@ -67,51 +67,51 @@
 
 /* Keyframe Layer 1 */
 @-webkit-keyframes foglayer_01_opacity {
-  0% { opacity: .3; }
-  22% { opacity: .7; }
-  40% { opacity: .5; }
-  58% { opacity: .6; }
-  80% { opacity: .4; }
-  100% { opacity: .3; }
+  0% { opacity: .15; }
+  22% { opacity: .4; }
+  40% { opacity: .25; }
+  58% { opacity: .35; }
+  80% { opacity: .2; }
+  100% { opacity: .15; }
 }
 @-moz-keyframes foglayer_01_opacity {
-  0% { opacity: .3; }
-  22% { opacity: .7; }
-  40% { opacity: .5; }
-  58% { opacity: .6; }
-  80% { opacity: .4; }
-  100% { opacity: .3; }
+  0% { opacity: .15; }
+  22% { opacity: .4; }
+  40% { opacity: .25; }
+  58% { opacity: .35; }
+  80% { opacity: .2; }
+  100% { opacity: .15; }
 }
 @keyframes foglayer_01_opacity {
-  0% { opacity: .3; }
-  22% { opacity: .7; }
-  40% { opacity: .5; }
-  58% { opacity: .6; }
-  80% { opacity: .4; }
-  100% { opacity: .3; }
+  0% { opacity: .15; }
+  22% { opacity: .4; }
+  40% { opacity: .25; }
+  58% { opacity: .35; }
+  80% { opacity: .2; }
+  100% { opacity: .15; }
 }
 
 /* Keyframe Layer 2 */
 @-webkit-keyframes foglayer_02_opacity {
-  0% { opacity: .7; }
-  25% { opacity: .4; }
-  50% { opacity: .3; }
-  80% { opacity: .5; }
-  100% { opacity: .7; }
+  0% { opacity: .4; }
+  25% { opacity: .2; }
+  50% { opacity: .15; }
+  80% { opacity: .3; }
+  100% { opacity: .4; }
 }
 @-moz-keyframes foglayer_02_opacity {
-  0% { opacity: .7; }
-  25% { opacity: .4; }
-  50% { opacity: .3; }
-  80% { opacity: .5; }
-  100% { opacity: .7; }
+  0% { opacity: .4; }
+  25% { opacity: .2; }
+  50% { opacity: .15; }
+  80% { opacity: .3; }
+  100% { opacity: .4; }
 }
 @keyframes foglayer_02_opacity {
-  0% { opacity: .7; }
-  25% { opacity: .4; }
-  50% { opacity: .3; }
-  80% { opacity: .5; }
-  100% { opacity: .7; }
+  0% { opacity: .4; }
+  25% { opacity: .2; }
+  50% { opacity: .15; }
+  80% { opacity: .3; }
+  100% { opacity: .4; }
 }
 
 /* Keyframe Movement */
