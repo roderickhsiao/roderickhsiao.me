@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      add:
+        specifier: ^2.0.6
+        version: 2.0.6
       babel-plugin-react-compiler:
         specifier: experimental
         version: 0.0.0-experimental-fdb41ee-20250905
@@ -29,9 +32,15 @@ importers:
       react:
         specifier: experimental
         version: 0.0.0-experimental-de5a1b20-20250905
+      react-calendly:
+        specifier: ^4.4.0
+        version: 4.4.0(react-dom@0.0.0-experimental-de5a1b20-20250905(react@0.0.0-experimental-de5a1b20-20250905))(react@0.0.0-experimental-de5a1b20-20250905)
       react-dom:
         specifier: experimental
         version: 0.0.0-experimental-de5a1b20-20250905(react@0.0.0-experimental-de5a1b20-20250905)
+      resend:
+        specifier: ^6.0.2
+        version: 6.0.2
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
@@ -737,6 +746,9 @@ packages:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  add@2.0.6:
+    resolution: {integrity: sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==}
 
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -1706,6 +1718,13 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
+  react-calendly@4.4.0:
+    resolution: {integrity: sha512-kMd8fEby0plL5aCebhjq9aesOJ6YWcmR3Pjs3bufncykrp7b6TryaCnWGoq4xZc/oipyudAVCIRgPVUjUEr8nQ==}
+    engines: {node: '>=8', npm: '>=5'}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
   react-dom@0.0.0-experimental-de5a1b20-20250905:
     resolution: {integrity: sha512-3RU7f8OLBlNQos97SF0k+p5JMtCPK3thPLEcXKCrmlHTyDkrzY1kQvtcVvHEqoy5SFCudgeJBclvRoXKrXdXfA==}
     peerDependencies:
@@ -1725,6 +1744,15 @@ packages:
   regexp.prototype.flags@1.5.4:
     resolution: {integrity: sha512-dYqgNSZbDwkaJ2ceRd9ojCGjBq+mOm9LmtXnAnEGyHhN/5R7iDW2TRw3h+o/jCFxus3P2LfWIIiwowAjANm7IA==}
     engines: {node: '>= 0.4'}
+
+  resend@6.0.2:
+    resolution: {integrity: sha512-um08qWpSVvEVqAePEy/bsa7pqtnJK+qTCZ0Et7YE7xuqM46J0C9gnSbIJKR3LIcRVMgO9jUeot8rH0UI84eqMQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@react-email/render': ^1.1.0
+    peerDependenciesMeta:
+      '@react-email/render':
+        optional: true
 
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
@@ -2648,6 +2676,8 @@ snapshots:
       acorn: 8.15.0
 
   acorn@8.15.0: {}
+
+  add@2.0.6: {}
 
   ajv@6.12.6:
     dependencies:
@@ -3779,6 +3809,11 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
+  react-calendly@4.4.0(react-dom@0.0.0-experimental-de5a1b20-20250905(react@0.0.0-experimental-de5a1b20-20250905))(react@0.0.0-experimental-de5a1b20-20250905):
+    dependencies:
+      react: 0.0.0-experimental-de5a1b20-20250905
+      react-dom: 0.0.0-experimental-de5a1b20-20250905(react@0.0.0-experimental-de5a1b20-20250905)
+
   react-dom@0.0.0-experimental-de5a1b20-20250905(react@0.0.0-experimental-de5a1b20-20250905):
     dependencies:
       react: 0.0.0-experimental-de5a1b20-20250905
@@ -3807,6 +3842,8 @@ snapshots:
       get-proto: 1.0.1
       gopd: 1.2.0
       set-function-name: 2.0.2
+
+  resend@6.0.2: {}
 
   resolve-from@4.0.0: {}
 

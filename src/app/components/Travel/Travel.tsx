@@ -371,7 +371,7 @@ export default function Travel() {
           Travel Journey
         </h1>
         <p className="text-base text-gray-600 mb-8">
-          Places I&apos;ve been fortunate to visit and explore around the world
+          Places I’ve been fortunate to visit and explore around the world
         </p>
 
         {/* Enhanced Stats Dashboard */}

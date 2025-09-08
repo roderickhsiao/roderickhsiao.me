@@ -42,6 +42,15 @@ const getIconConfig = (name: string) => {
     };
   }
 
+  if (lowerName.includes('medium')) {
+    return {
+      viewBox: '0 0 24 24',
+      fill: 'currentColor',
+      stroke: 'none',
+      path: 'M24 16.5v2.18c-.14.01-.28.02-.43.02-2.58 0-4.47-2.16-4.64-4.85 0-.1 0-.21.01-.31 0-.06.01-.13.01-.19 0-.03 0-.07.01-.1 0-.04 0-.07.01-.11.09-1.19.51-2.29 1.11-3.16.39-.48.85-.86 1.41-1.11.48-.24.1-.35 1.66-.35h.02c.1 0 .2 0 .3.01v.6c-.11-.03-.22-.05-.34-.06-1.09.02-1.85 1.32-1.93 3.11H24v.51h-2.21s0 0 0 0c-.1 1.76.87 3.15 2.21 3.65zM19.6 5.74l.02 0v-.15H15.73L12.15 14.03 8.57 5.59H4.41v.15l.02 0c.71.16 1.09.5 1.09 1.4v10.02c0 .9-.37 1.24-1.08 1.4l-.02 0v.15h2.83v-.15l-.02 0c-.71-.16-1.09-.5-1.09-1.4V7.56L11.04 18.4h.26l4.74-11.15v10.01c-.06.68-.37.91-.96 1.04l-.02 0v.15h4.92v-.15l-.02 0c-.64-.13-.98-.36-1.04-1.04l-.03-10.26h.03c0-.9.36-1.24 1.06-1.4z',
+    };
+  }
+
   // Default link icon
   return {
     viewBox: '0 0 24 24',
@@ -61,35 +70,10 @@ export default function MainBrief() {
       {/* Simplified moving spotlights for smaller container */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {/* Spotlight 1 - smaller and optimized for narrow width */}
-        <div 
-          className="absolute w-32 h-32 sm:w-40 sm:h-40 bg-emerald-600/8 rounded-full blur-2xl"
-          style={{
-            animation: 'moveHorizontalSmall 12s linear infinite',
-            top: '10%'
-          }}
-        ></div>
+        <div className="absolute w-32 h-32 sm:w-40 sm:h-40 bg-emerald-600/8 rounded-full blur-2xl animate-move-horizontal-small top-[10%]"></div>
         {/* Spotlight 2 - reduced size */}
-        <div 
-          className="absolute w-24 h-24 sm:w-32 sm:h-32 bg-green-600/6 rounded-full blur-2xl"
-          style={{
-            animation: 'moveVerticalSmall 10s linear infinite',
-            right: '10%'
-          }}
-        ></div>
+        <div className="absolute w-24 h-24 sm:w-32 sm:h-32 bg-green-600/6 rounded-full blur-2xl animate-move-vertical-small right-[10%]"></div>
       </div>
-      
-      <style>{`
-        @keyframes moveHorizontalSmall {
-          0% { transform: translateX(-50px); }
-          50% { transform: translateX(100px); }
-          100% { transform: translateX(-50px); }
-        }
-        @keyframes moveVerticalSmall {
-          0% { transform: translateY(-50px); }
-          50% { transform: translateY(80px); }
-          100% { transform: translateY(-50px); }
-        }
-      `}</style>
       
       <div className="relative z-10">
         {/* Magazine Style Header - optimized for right rail */}
@@ -137,6 +121,7 @@ export default function MainBrief() {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center size-8 bg-slate-100/80 border border-slate-200/40 rounded-full hover:bg-slate-200/80 hover:border-slate-300/50 transition-all duration-200 group"
                       aria-label={`Visit ${item.name} profile`}
+                      title={`Visit my ${item.name} profile`}
                     >
                       <svg
                         className="w-4 h-4 text-slate-600 group-hover:text-slate-700 transition-colors duration-200"
