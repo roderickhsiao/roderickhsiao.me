@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -121,10 +119,10 @@ export default function Footer() {
                   href="https://www.buymeacoffee.com/roderickhsiao"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/80 hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-colors duration-200 shadow-md text-emerald-100 font-semibold text-sm"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/80 hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-colors duration-200 shadow-md text-emerald-100 font-semibold text-sm group"
                   aria-label="Buy me a coffee"
                 >
-                  <span className="w-5 h-5 flex items-center justify-center">
+                  <span className="w-5 h-5 flex items-center justify-center group-hover:-rotate-12 group-hover:scale-105 duration-150">
                     <svg
                       viewBox="0 0 884 1279"
                       fill="none"

@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.css';
 
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import MainLayout from '@/app/components/layout/MainLayout';
 import Footer from '@/app/components/layout/Footer';
 import Contact from '@/app/components/Home/Contact';
@@ -18,13 +18,13 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://roderickhsiao.me'),
-  title: 'Roderick Hsiao - Software Engineer & Product Leader',
+  title: 'Roderick Hsiao - Software Architect & Community Leader',
   description:
-    'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast. Explore my journey, projects, and thoughts on building great products.',
+    'Personal website of Roderick Hsiao - Software Architect, Community Leader, and technology enthusiast. Explore my journey, projects, and thoughts on building great products.',
   keywords: [
     'Roderick Hsiao',
-    'Software Engineer',
-    'Product Leader',
+    'Software Architect',
+    'Community Leader',
     'Frontend',
     'React',
     'Next.js',
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Roderick Hsiao' }],
   openGraph: {
-    title: 'Roderick Hsiao - Software Engineer & Product Leader',
+    title: 'Roderick Hsiao - Software Architect & Community Leader',
     description:
-      'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast.',
+      'Personal website of Roderick Hsiao - Software Architect, Community Leader, and technology enthusiast.',
     url: 'https://roderickhsiao.me',
     siteName: 'Roderick Hsiao',
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: '/api/og',
         width: 1200,
         height: 630,
-        alt: 'Roderick Hsiao - Software Engineer & Product Leader',
+        alt: 'Roderick Hsiao - Software Architect & Community Leader',
       },
     ],
     locale: 'en_US',
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Roderick Hsiao - Software Engineer & Product Leader',
+    title: 'Roderick Hsiao - Software Architect & Community Leader',
     description:
-      'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast.',
+      'Personal website of Roderick Hsiao - Software Architect, Community Leader, and technology enthusiast.',
     images: ['/api/og'],
   },
 };
@@ -62,6 +62,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+import DevToolsMessage from '@/app/components/shared/DevToolsMessage';
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
@@ -69,6 +71,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={`${roboto.variable} font-sans antialiased`}>
+        <DevToolsMessage />
         <MainLayout
           hero={<MainBrief />}
           main={children}

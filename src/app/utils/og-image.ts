@@ -39,7 +39,7 @@ export function generateOGImageUrl(params: OGImageParams = {}): string {
 export const ogImagePresets = {
   home: () => generateOGImageUrl({
     title: 'Roderick Hsiao',
-    subtitle: 'Software Engineer & Product Leader',
+    subtitle: 'Software Architect & Community Leader',
     description: 'Building great products with modern technology',
     theme: 'default'
   }),

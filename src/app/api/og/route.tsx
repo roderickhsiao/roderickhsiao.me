@@ -333,7 +333,7 @@ export async function GET(request: NextRequest) {
         >
           <div>Roderick Hsiao</div>
           <div style={{ fontSize: '24px', marginTop: '20px' }}>
-            Software Engineer & Product Leader
+            Software Architect & Community Leader
           </div>
         </div>
       ),

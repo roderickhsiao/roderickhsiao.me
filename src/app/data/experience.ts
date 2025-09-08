@@ -70,7 +70,7 @@ const experience: { companies: Company[] } = {
           smartlink: {
             thumbnail: { url: '/tinder.jpeg', width: 200, height: 200 },
             title: 'Tinder',
-            description: "With 55 billion matches to date, Tinder® is the world's most popular dating app, making it the place to meet new people.",
+            description: "With 55 billion matches to date, Tinder® is the world’s most popular dating app, making it the place to meet new people.",
             url: 'https://tinder.com',
           },
           demos: [
@@ -209,12 +209,12 @@ const experience: { companies: Company[] } = {
         {
           name: 'Yahoo Homepage',
           time: 'June 2014 - July 2016',
-          summary: 'Engineered one of the world\'s most visited single-page applications, serving millions of users across desktop, tablet, and mobile platforms. Developed reusable UI components, utilities, and Node.js libraries.',
+          summary: 'Engineered one of the world’s most visited single-page applications, serving millions of users across desktop, tablet, and mobile platforms. Developed reusable UI components, utilities, and Node.js libraries.',
           techStack: ['Atomic CSS', 'ExpressJS', 'ReactJS (Fluxible)'],
           smartlink: {
             thumbnail: { url: '/yahoo.jpg', width: 200, height: 200 },
             title: 'Yahoo',
-            description: "A new welcome to Yahoo. The new Yahoo experience makes it easier to discover the news and information that you care about most. It's the web ordered for you.",
+            description: "A new welcome to Yahoo. The new Yahoo experience makes it easier to discover the news and information that you care about most. It’s the web ordered for you.",
             url: 'https://www.yahoo.com/',
           },
         },
@@ -288,7 +288,7 @@ const experience: { companies: Company[] } = {
             type: 'large',
             thumbnail: { url: '/controlRoom.jpg', width: 640, height: 511 },
             title: 'Yahoo 2012 Presidential Election',
-            description: "Yahoo's Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.",
+            description: "Yahoo’s Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis.",
             url: 'https://books.google.com/books?id=JW6rBQAAQBAJ&lpg=PA54&ots=tD7mwr3vEp&dq=yahoo%20election%20control%20room&pg=PA54#v=onepage&q&f=false',
           },
         },
