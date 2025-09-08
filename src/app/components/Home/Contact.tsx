@@ -7,22 +7,33 @@ import {
 } from 'react';
 import clsx from 'clsx';
 import ContactForm from './ContactForm';
+import BookingForm from './BookingForm';
 import './contact-view-transitions.css';
 
 export default function Contact() {
-  const [showContactForm, setShowContactForm] = useState(false);
+  const [activeForm, setActiveForm] = useState<'contact' | 'booking' | null>(
+    null
+  );
 
   const handleShowContactForm = () => {
     startTransition(() => {
-      setShowContactForm(true);
+      setActiveForm('contact');
     });
   };
 
-  const handleCloseContactForm = () => {
+  const handleShowBookingForm = () => {
     startTransition(() => {
-      setShowContactForm(false);
+      setActiveForm('booking');
     });
   };
+
+  const handleClose = () => {
+    startTransition(() => {
+      setActiveForm(null);
+    });
+  };
+
+  const showForm = activeForm !== null;
 
   return (
     <div className="w-full mx-auto relative">
@@ -34,14 +45,15 @@ export default function Contact() {
           className={clsx(
             'contact-card relative w-full rounded-xl overflow-hidden border border-white/30 flex flex-col transition-all duration-300',
             {
-              'min-h-[400px]': showContactForm,
-              'aspect-[1.587/1]': !showContactForm,
+              'min-h-[700px]': activeForm === 'booking',
+              'min-h-[400px]': activeForm === 'contact',
+              'aspect-[1.587/1]': !showForm,
             }
           )}
           style={{
             background: 'rgba(255, 255, 255, 0.25)',
-            backdropFilter: 'blur(30px)',
-            WebkitBackdropFilter: 'blur(30px)',
+            backdropFilter: 'url(#glass-filter) saturate(150%)',
+            WebkitBackdropFilter: 'blur(8px) saturate(150%)',
             boxShadow:
               '0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
           }}
@@ -54,7 +66,7 @@ export default function Contact() {
 
           {/* Header Section */}
           <div className="contact-header flex justify-end gap-1 sm:gap-1.5 md:gap-2 p-2 sm:p-3 md:p-4 relative z-10">
-            {!showContactForm ? (
+            {!showForm ? (
               <>
                 <ViewTransition name="message-trigger">
                   <button
@@ -80,34 +92,34 @@ export default function Contact() {
                     MESSAGE
                   </button>
                 </ViewTransition>
-                <a
-                  href="https://calendly.com/roderickhsiao/30-mins"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="book-button flex items-center gap-1 sm:gap-1.5 text-gray-700 text-xs sm:text-xs md:text-xs font-medium px-2 sm:px-2.5 md:px-2.5 py-1.5 sm:py-1.5 rounded-full hover:scale-105 hover:text-gray-800 hover:shadow-md backdrop-blur-sm border border-white/30 cursor-pointer"
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.3)',
-                  }}
-                >
-                  <svg
-                    className="w-3 h-3 sm:w-3.5 sm:h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                <ViewTransition name="booking-trigger">
+                  <button
+                    onClick={handleShowBookingForm}
+                    className="book-button flex items-center gap-1 sm:gap-1.5 text-gray-700 text-xs sm:text-xs md:text-xs font-medium px-2 sm:px-2.5 md:px-2.5 py-1.5 sm:py-1.5 rounded-full hover:scale-105 hover:text-gray-800 hover:shadow-md backdrop-blur-sm border border-white/30 cursor-pointer"
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.3)',
+                    }}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  BOOK
-                </a>
+                    <svg
+                      className="w-3 h-3 sm:w-3.5 sm:h-3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    BOOK
+                  </button>
+                </ViewTransition>
               </>
             ) : (
               <button
-                onClick={handleCloseContactForm}
+                onClick={handleClose}
                 className="close-button flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 text-gray-600 hover:text-gray-800 rounded-full hover:bg-white/30 bg-white/20 backdrop-blur-sm cursor-pointer border border-white/30 transition-all duration-200 hover:scale-105 shrink-0"
                 aria-label="Close"
               >
@@ -131,8 +143,8 @@ export default function Contact() {
           {/* Dynamic Content Area */}
           <ViewTransition name="main-content">
             <div className="flex-1 flex flex-col">
-              {/* Contact Form - appears at top and pushes content down */}
-              {showContactForm && (
+              {/* Contact Form */}
+              {activeForm === 'contact' && (
                 <ViewTransition name="message-trigger">
                   <div className="contact-form flex-1 flex flex-col justify-start p-3 lg:p-4">
                     <ContactForm />
@@ -140,8 +152,17 @@ export default function Contact() {
                 </ViewTransition>
               )}
 
-              {/* Contact Content - gets pushed down when form appears */}
-              {!showContactForm && (
+              {/* Booking Form */}
+              {activeForm === 'booking' && (
+                <ViewTransition name="booking-trigger">
+                  <div className="booking-form flex-1 flex flex-col justify-start p-3 lg:p-4">
+                    <BookingForm />
+                  </div>
+                </ViewTransition>
+              )}
+
+              {/* Initial Content */}
+              {!showForm && (
                 <div className="contact-content flex-1 flex flex-col">
                   {/* Welcome Message - centered */}
                   <div className="flex-1 flex items-center px-3 lg:px-4">

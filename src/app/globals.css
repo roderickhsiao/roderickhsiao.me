@@ -2,100 +2,13 @@
 
 /* Custom Tailwind utilities using @layer */
 @layer utilities {
-  .backdrop-blur-30 {
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-  }
-  
-  .contact-container {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.1), 
-      0 2px 8px rgba(0, 0, 0, 0.05), 
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  }
-  
-  .button-bg {
-    background: rgba(255, 255, 255, 0.3);
-  }
-  
-  .transition-smooth {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .transition-smooth-in {
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-  
+  /* Keep only small movement utilities used in the UI */
   .animate-move-horizontal-small {
     animation: moveHorizontalSmall 12s linear infinite;
   }
-  
+
   .animate-move-vertical-small {
     animation: moveVerticalSmall 10s linear infinite;
-  }
-  
-  .animate-celebrate {
-    animation: celebrate 0.6s ease-out;
-  }
-  
-  .animate-confetti {
-    animation: confetti 2s ease-out infinite;
-  }
-  
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
-  }
-  
-  .glassmorphism {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  
-  .glassmorphism-strong {
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-  }
-  
-  .text-shadow-sm {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .box-shadow-glow {
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
-  }
-}
-
-/* Animation keyframes */
-@keyframes contactFormIn {
-  0% { 
-    opacity: 0;
-    transform: translateY(-30px) scale(0.9);
-  }
-  100% { 
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes contactCardOut {
-  0% { 
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% { 
-    opacity: 0;
-    transform: translateY(-20px);
   }
 }
 
@@ -111,42 +24,16 @@
   100% { transform: translateY(-50px); }
 }
 
-/* Celebration animations */
-@keyframes celebrate {
-  0% { 
-    transform: scale(0) rotate(0deg); 
-    opacity: 0; 
-  }
-  50% { 
-    transform: scale(1.2) rotate(180deg); 
-    opacity: 1; 
-  }
-  100% { 
-    transform: scale(1) rotate(360deg); 
-    opacity: 1; 
-  }
+@keyframes moveHorizontalSmall {
+  0% { transform: translateX(-50px); }
+  50% { transform: translateX(100px); }
+  100% { transform: translateX(-50px); }
 }
 
-@keyframes confetti {
-  0% { 
-    transform: translateY(0) rotate(0deg); 
-    opacity: 1; 
-  }
-  100% { 
-    transform: translateY(-100px) rotate(720deg); 
-    opacity: 0; 
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { 
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
-    transform: scale(1);
-  }
-  50% { 
-    box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
-    transform: scale(1.05);
-  }
+@keyframes moveVerticalSmall {
+  0% { transform: translateY(-50px); }
+  50% { transform: translateY(80px); }
+  100% { transform: translateY(-50px); }
 }
 
 :root {
@@ -165,148 +52,7 @@
   --color-muted: #6c757d;
 }
 
-/* Fog Animation Styles - Based on CodePen dBVKzO */
-.fogwrapper {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  -webkit-filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
-  filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
-}
 
-#foglayer_01, #foglayer_02, #foglayer_03 {
-  height: 100%;
-  position: absolute;
-  width: 200%;
-}
-
-#foglayer_01 .image01, #foglayer_01 .image02,
-#foglayer_02 .image01, #foglayer_02 .image02,
-#foglayer_03 .image01, #foglayer_03 .image02 {
-  float: left;
-  height: 100%;
-  width: 50%;
-}
-
-#foglayer_01 {
-  -webkit-animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 25s linear infinite;
-  -moz-animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 25s linear infinite;
-  animation: foglayer_01_opacity 20s linear infinite, foglayer_moveme 25s linear infinite;
-}
-
-#foglayer_02, #foglayer_03 {
-  -webkit-animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 45s linear infinite;
-  -moz-animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 45s linear infinite;
-  animation: foglayer_02_opacity 42s linear infinite, foglayer_moveme 45s linear infinite;
-}
-
-/* Moving Fog Background Images */
-#foglayer_01 .image01, #foglayer_01 .image02 {
-  background: url("/fog1.png") center center/cover no-repeat transparent;
-}
-
-#foglayer_02 .image01, #foglayer_02 .image02,
-#foglayer_03 .image01, #foglayer_03 .image02{
-  background: url("/fog2.png") center center/cover no-repeat transparent;
-}
-
-/* Keyframe Layer 1 */
-@-webkit-keyframes foglayer_01_opacity {
-  0% { opacity: .15; }
-  22% { opacity: .4; }
-  40% { opacity: .25; }
-  58% { opacity: .35; }
-  80% { opacity: .2; }
-  100% { opacity: .15; }
-}
-@-moz-keyframes foglayer_01_opacity {
-  0% { opacity: .15; }
-  22% { opacity: .4; }
-  40% { opacity: .25; }
-  58% { opacity: .35; }
-  80% { opacity: .2; }
-  100% { opacity: .15; }
-}
-@keyframes foglayer_01_opacity {
-  0% { opacity: .15; }
-  22% { opacity: .4; }
-  40% { opacity: .25; }
-  58% { opacity: .35; }
-  80% { opacity: .2; }
-  100% { opacity: .15; }
-}
-
-/* Keyframe Layer 2 */
-@-webkit-keyframes foglayer_02_opacity {
-  0% { opacity: .4; }
-  25% { opacity: .2; }
-  50% { opacity: .15; }
-  80% { opacity: .3; }
-  100% { opacity: .4; }
-}
-@-moz-keyframes foglayer_02_opacity {
-  0% { opacity: .4; }
-  25% { opacity: .2; }
-  50% { opacity: .15; }
-  80% { opacity: .3; }
-  100% { opacity: .4; }
-}
-@keyframes foglayer_02_opacity {
-  0% { opacity: .4; }
-  25% { opacity: .2; }
-  50% { opacity: .15; }
-  80% { opacity: .3; }
-  100% { opacity: .4; }
-}
-
-/* Keyframe Movement */
-@-webkit-keyframes foglayer_moveme {
-  0% { left: 0; }
-  100% { left: -100%; }
-}
-@-moz-keyframes foglayer_moveme {
-  0% { left: 0; }
-  100% { left: -100%; }
-}
-@keyframes foglayer_moveme {
-  0% { left: 0; }
-  100% { left: -100%; }
-}
-
-/* Mobile responsive fog */
-@media only screen and (max-width: 767px) {
-  #foglayer_01 .image01, #foglayer_01 .image02,
-  #foglayer_02 .image01, #foglayer_02 .image02,
-  #foglayer_03 .image01, #foglayer_03 .image02 {
-    width: 100%;
-  }
-  
-  /* Slower animations on mobile */
-  #foglayer_01 {
-    -webkit-animation: foglayer_01_opacity 25s linear infinite, foglayer_moveme 40s linear infinite;
-    -moz-animation: foglayer_01_opacity 25s linear infinite, foglayer_moveme 40s linear infinite;
-    animation: foglayer_01_opacity 25s linear infinite, foglayer_moveme 40s linear infinite;
-  }
-  
-  #foglayer_02, #foglayer_03 {
-    -webkit-animation: foglayer_02_opacity 50s linear infinite, foglayer_moveme 35s linear infinite;
-    -moz-animation: foglayer_02_opacity 50s linear infinite, foglayer_moveme 35s linear infinite;
-    animation: foglayer_02_opacity 50s linear infinite, foglayer_moveme 35s linear infinite;
-  }
-}
-
-/* Respect reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .fog-layer * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
 
 /* Mobile Touch and Interaction Improvements */
 @media only screen and (max-width: 767px) {

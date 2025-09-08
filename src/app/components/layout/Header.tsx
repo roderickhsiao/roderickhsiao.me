@@ -40,7 +40,7 @@ const getGlassStyles = (isActive: boolean, isButton: boolean) => {
 
 const headerGlassStyles = {
   backgroundColor: 'color-mix(in srgb, #bbbbbc 12%, transparent)',
-  backdropFilter: 'blur(8px) saturate(150%)',
+  backdropFilter: 'url(#glass-filter) saturate(150%)',
   WebkitBackdropFilter: 'blur(8px) saturate(150%)',
   boxShadow: `
     inset 0 0 0 1px color-mix(in srgb, #fff 10%, transparent),
@@ -60,7 +60,7 @@ const headerGlassStyles = {
 
 const mobileDropdownGlassStyles = {
   backgroundColor: 'color-mix(in srgb, #bbbbbc 12%, transparent)',
-  backdropFilter: 'blur(20px) saturate(150%)',
+  backdropFilter: 'url(#glass-filter) saturate(150%)',
   WebkitBackdropFilter: 'blur(20px) saturate(150%)',
   boxShadow: `
     inset 0 0 0 1px color-mix(in srgb, #fff 10%, transparent),

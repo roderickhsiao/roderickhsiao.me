@@ -19,12 +19,22 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL('https://roderickhsiao.me'),
   title: 'Roderick Hsiao - Software Engineer & Product Leader',
-  description: 'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast. Explore my journey, projects, and thoughts on building great products.',
-  keywords: ['Roderick Hsiao', 'Software Engineer', 'Product Leader', 'Frontend', 'React', 'Next.js', 'TypeScript'],
+  description:
+    'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast. Explore my journey, projects, and thoughts on building great products.',
+  keywords: [
+    'Roderick Hsiao',
+    'Software Engineer',
+    'Product Leader',
+    'Frontend',
+    'React',
+    'Next.js',
+    'TypeScript',
+  ],
   authors: [{ name: 'Roderick Hsiao' }],
   openGraph: {
     title: 'Roderick Hsiao - Software Engineer & Product Leader',
-    description: 'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast.',
+    description:
+      'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast.',
     url: 'https://roderickhsiao.me',
     siteName: 'Roderick Hsiao',
     images: [
@@ -41,7 +51,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Roderick Hsiao - Software Engineer & Product Leader',
-    description: 'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast.',
+    description:
+      'Personal website of Roderick Hsiao - Software Engineer, Product Leader, and technology enthusiast.',
     images: ['/api/og'],
   },
 };
@@ -69,6 +80,37 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }
           footer={<Footer />}
         />
+        <svg style={{ display: 'none' }} aria-hidden="true" focusable="false">
+          <filter
+            id="glass-filter"
+            colorInterpolationFilters="linearRGB"
+            filterUnits="objectBoundingBox"
+            primitiveUnits="userSpaceOnUse"
+          >
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="SourceGraphic"
+              scale="20"
+              xChannelSelector="R"
+              yChannelSelector="B"
+              x="0%"
+              y="0%"
+              width="100%"
+              height="100%"
+              result="displacementMap"
+            />
+            <feGaussianBlur
+              stdDeviation="3 3"
+              x="0%"
+              y="0%"
+              width="100%"
+              height="100%"
+              in="displacementMap"
+              edgeMode="none"
+              result="blur"
+            />
+          </filter>
+        </svg>
       </body>
     </html>
   );
