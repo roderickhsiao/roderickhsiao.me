@@ -114,6 +114,7 @@ export default function Header({
               <Link
                 href="/"
                 className="font-bold text-sm text-gray-800 transition-colors duration-200 hover:text-gray-600"
+                aria-current={isActive('/') ? 'page' : undefined}
               >
                 {brandName}
               </Link>
@@ -130,6 +131,7 @@ export default function Header({
                   <Link
                     href={link.href}
                     className="px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 text-gray-800 hover:text-gray-600"
+                    aria-current={isActive(link.href) ? 'page' : undefined}
                     style={getGlassStyles(isActive(link.href), false)}
                   >
                     {link.label}
@@ -190,6 +192,7 @@ export default function Header({
                   href={link.href}
                   className="block px-3 py-2 text-base font-medium rounded-md transition-all duration-200 text-gray-900 hover:text-gray-700 hover:bg-white/10 touch-manipulation"
                   style={getGlassStyles(isActive(link.href), false)}
+                  aria-current={isActive(link.href) ? 'page' : undefined}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
