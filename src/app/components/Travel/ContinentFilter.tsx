@@ -17,11 +17,23 @@ export default function ContinentFilter({
     nav.style.setProperty('--indicator-width', `${element.offsetWidth}px`);
   };
 
+  const handleContinentClick = (continent: string, event: React.MouseEvent<HTMLButtonElement>) => {
+    onContinentChange(continent);
+    
+    // Scroll the clicked button into view
+    const button = event.currentTarget;
+    button.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center'
+    });
+  };
+
   return (
     <div className={clsx('mb-8')}>
       <nav 
         className={clsx(
-          "relative flex gap-8 border-b border-gray-200 overflow-x-auto scrollbar-hide pb-0",
+          "relative flex gap-8 border-b border-gray-200 overflow-x-auto scrollbar-hide",
           "after:content-[''] after:absolute after:bottom-0 after:h-0.5 after:bg-gray-900",
           "after:transition-all after:duration-300 after:ease-out",
           "after:left-[var(--indicator-left)] after:w-[var(--indicator-width)]"
@@ -46,7 +58,7 @@ export default function ContinentFilter({
               'text-gray-500 hover:text-gray-700': selectedContinent !== '',
             }
           )}
-          onClick={() => onContinentChange('')}
+          onClick={(e) => handleContinentClick('', e)}
           type="button"
         >
           All Continents
@@ -68,7 +80,7 @@ export default function ContinentFilter({
                 'text-gray-500 hover:text-gray-700': selectedContinent !== continent,
               }
             )}
-            onClick={() => onContinentChange(continent)}
+            onClick={(e) => handleContinentClick(continent, e)}
             type="button"
           >
             {continent}

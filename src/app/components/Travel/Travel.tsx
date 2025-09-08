@@ -1,5 +1,5 @@
 'use client';
-import { useState, unstable_ViewTransition as ViewTransition } from 'react';
+import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import clsx from 'clsx';
 import countryData from '../../data/country';
