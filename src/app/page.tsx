@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import MainBrief from '@/app/components/Home/MainBrief';
 import Experience from '@/app/components/Home/Experience';
 
 export const metadata: Metadata = {
@@ -11,5 +10,3 @@ export const metadata: Metadata = {
 export default function Home() {
   return <Experience />;
 }
-
-export { MainBrief };
