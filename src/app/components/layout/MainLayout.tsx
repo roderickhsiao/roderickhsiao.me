@@ -23,9 +23,7 @@ export default function MainLayout({
   return (
     <div className="main-layout min-h-screen bg-neutral text-primary">
       <>
-        <div
-          className={clsx('w-full transition-all duration-300 ease-out z-20')}
-        >
+        <div className="w-full">
           <div className="relative w-full h-80 overflow-hidden">
             <LandscapeSVG />
             <SmokeCanvas />
@@ -42,11 +40,7 @@ export default function MainLayout({
           </div>
         </div>
 
-        <div
-          className={clsx(
-            'fixed start-0 end-0 transition-all duration-300 ease-out z-50 top-0 mt-4'
-          )}
-        >
+        <div className={clsx('fixed start-0 end-0 z-50 top-0 mt-4')}>
           <div className="px-4 sm:px-6">
             <Header
               brandName={navigationConfig.brand.name}
@@ -62,7 +56,7 @@ export default function MainLayout({
           <main className="w-full bg-gradient-to-br from-slate-600/5 via-stone-100/60 to-emerald-800/8 p-4 sm:p-6 lg:p-8 order-1 lg:order-1 min-h-fit relative overflow-hidden rounded-lg shadow-sm border border-slate-200/50">
             {/* Subtle layered background */}
             <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/3 to-transparent rounded-lg"></div>
-            <div className="relative z-10 text-slate-800 leading-relaxed space-y-4 sm:space-y-6">
+            <div className="text-slate-800 leading-relaxed space-y-4 sm:space-y-6">
               <ViewTransition>{main}</ViewTransition>
             </div>
           </main>

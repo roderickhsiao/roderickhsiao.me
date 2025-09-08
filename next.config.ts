@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     reactCompiler: true,
     viewTransition: true,
+    inlineCss: true,
   },
   poweredByHeader: false,
   images: {

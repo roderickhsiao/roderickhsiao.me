@@ -66,16 +66,16 @@ export default function MainBrief() {
     <section className="relative w-full bg-gradient-to-br from-slate-50 via-stone-50/60 to-slate-100/80 text-slate-800 p-4 sm:p-6 lg:p-8 overflow-hidden rounded-lg border border-slate-200/50 shadow-sm order-1 lg:order-2">
       {/* Background gradients - optimized for smaller width */}
       <div className="absolute inset-0 bg-gradient-to-br from-stone-50/30 via-slate-50/20 to-stone-100/40 rounded-lg"></div>
-      
+
       {/* Simplified moving spotlights for smaller container */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Spotlight 1 - smaller and optimized for narrow width */}
         <div className="absolute w-32 h-32 sm:w-40 sm:h-40 bg-emerald-600/8 rounded-full blur-2xl animate-move-horizontal-small top-[10%]"></div>
         {/* Spotlight 2 - reduced size */}
         <div className="absolute w-24 h-24 sm:w-32 sm:h-32 bg-green-600/6 rounded-full blur-2xl animate-move-vertical-small right-[10%]"></div>
       </div>
-      
-      <div className="relative z-10">
+
+      <div className="relative">
         {/* Magazine Style Header - optimized for right rail */}
         <div className="flex items-start gap-3">
           {/* Clean Profile Image - smaller for right rail */}
@@ -90,7 +90,7 @@ export default function MainBrief() {
             {/* Simple accent */}
             <div className="absolute -bottom-0.5 -end-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-primary rounded-full"></div>
           </div>
-          
+
           {/* Content - more compact */}
           <div className="flex-1 space-y-1 min-w-0">
             <div className="space-y-0.5">
@@ -101,44 +101,59 @@ export default function MainBrief() {
                 {profile.title}
               </p>
               <div className="flex items-center gap-1 text-slate-600">
-                <svg className="w-2.5 h-2.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                <svg
+                  className="w-2.5 h-2.5 shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
-                <p className="text-xs truncate">
-                  {profile.location}
-                </p>
+                <p className="text-xs truncate">{profile.location}</p>
               </div>
 
               {/* Social Media Links - accessible touch targets */}
               <div className="flex gap-1.5 mt-1">
-                {contact.filter(item => !item.name.toLowerCase().includes('calendly')).slice(0, 4).map((item, idx) => {
-                  const iconConfig = getIconConfig(item.name);
-                  return (
-                    <a
-                      key={idx}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center size-8 bg-slate-100/80 border border-slate-200/40 rounded-full hover:bg-slate-200/80 hover:border-slate-300/50 transition-all duration-200 group"
-                      aria-label={`Visit ${item.name} profile`}
-                      title={`Visit my ${item.name} profile`}
-                    >
-                      <svg
-                        className="w-4 h-4 text-slate-600 group-hover:text-slate-700 transition-colors duration-200"
-                        fill={iconConfig.fill}
-                        stroke={iconConfig.stroke}
-                        viewBox={iconConfig.viewBox}
+                {contact
+                  .filter(
+                    (item) => !item.name.toLowerCase().includes('calendly')
+                  )
+                  .slice(0, 4)
+                  .map((item, idx) => {
+                    const iconConfig = getIconConfig(item.name);
+                    return (
+                      <a
+                        key={idx}
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center size-8 bg-slate-100/80 border border-slate-200/40 rounded-full hover:bg-slate-200/80 hover:border-slate-300/50 transition-all duration-200 group"
+                        aria-label={`Visit ${item.name} profile`}
+                        title={`Visit my ${item.name} profile`}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={iconConfig.stroke === 'currentColor' ? 1.5 : undefined}
-                          d={iconConfig.path}
-                        />
-                      </svg>
-                    </a>
-                  );
-                })}
+                        <svg
+                          className="w-4 h-4 text-slate-600 group-hover:text-slate-700 transition-colors duration-200"
+                          fill={iconConfig.fill}
+                          stroke={iconConfig.stroke}
+                          viewBox={iconConfig.viewBox}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={
+                              iconConfig.stroke === 'currentColor'
+                                ? 1.5
+                                : undefined
+                            }
+                            d={iconConfig.path}
+                          />
+                        </svg>
+                      </a>
+                    );
+                  })}
               </div>
             </div>
           </div>
@@ -156,12 +171,12 @@ export default function MainBrief() {
           <h2 className="text-sm sm:text-base font-bold text-slate-900">
             Expertise
           </h2>
-          
+
           {/* Compact highlighted tags - optimized for right rail */}
           <div className="flex flex-wrap gap-1 sm:gap-1.5">
             {profile.summary.map((item, i) => (
-              <span 
-                key={i} 
+              <span
+                key={i}
                 className="inline-block px-1.5 py-0.5 sm:px-2 sm:py-1 bg-slate-100/80 border border-slate-200/40 text-slate-800 text-xs font-medium rounded-full hover:bg-slate-200/80 hover:border-slate-300/50 transition-all duration-200"
               >
                 {item}

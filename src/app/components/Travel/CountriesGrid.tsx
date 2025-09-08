@@ -9,7 +9,7 @@ const getCountryDisplayName = (code: string): string => {
   } catch {
     // Fallback mapping for special cases
     const fallbackNames: Record<string, string> = {
-      HK: 'Hong Kong',
+      HK: 'Hong Kong SAR China',
       TW: 'Taiwan',
       VA: 'Vatican City',
     };
@@ -59,23 +59,9 @@ export default function CountriesGrid({
               {flag(code)}
             </div>
 
-            {/* Top-right badge */}
-            {(isBirth || hasLived) && (
-              <div className="absolute top-3 right-3 z-20">
-                {isBirth && (
-                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-800 shadow-sm">
-                    🍼 Born Here
-                  </span>
-                )}
-                {hasLived && !isBirth && (
-                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 shadow-sm">
-                    🏡 Lived Here
-                  </span>
-                )}
-              </div>
-            )}
+            {/* Content */}
 
-            <div className="flex items-start gap-3 relative z-10">
+            <div className="flex items-start gap-3 relative">
               <div className="flex-shrink-0">
                 <span className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300">
                   {flag(code)}
@@ -107,6 +93,21 @@ export default function CountriesGrid({
                 </div>
               </div>
             </div>
+            {/* Top-right badge (placed after content to avoid explicit z-index) */}
+            {(isBirth || hasLived) && (
+              <div className="absolute top-3 right-3">
+                {isBirth && (
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-800 shadow-sm">
+                    🍼 Born Here
+                  </span>
+                )}
+                {hasLived && !isBirth && (
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 shadow-sm">
+                    🏡 Lived Here
+                  </span>
+                )}
+              </div>
+            )}
           </div>
         );
       })}
