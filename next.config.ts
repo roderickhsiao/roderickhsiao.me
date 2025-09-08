@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   },
   poweredByHeader: false,
   images: {
-    formats: ['image/webp', 'image/avif'],
+  formats: ['image/webp', 'image/avif'],
   },
 };
 

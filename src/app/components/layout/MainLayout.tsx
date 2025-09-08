@@ -55,7 +55,7 @@ export default function MainLayout({
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 sm:gap-8 lg:gap-12 w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-6 pb-6 sm:pb-8">
           <main className="w-full bg-gradient-to-br from-slate-600/5 via-stone-100/60 to-emerald-800/8 p-4 sm:p-6 lg:p-8 order-1 lg:order-1 min-h-fit relative overflow-hidden rounded-lg shadow-sm border border-slate-200/50">
             {/* Subtle layered background */}
-            <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/3 to-transparent rounded-lg"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/3 to-transparent rounded-lg pointer-events-none"/>
             <div className="text-slate-800 leading-relaxed space-y-4 sm:space-y-6">
               <ViewTransition>{main}</ViewTransition>
             </div>

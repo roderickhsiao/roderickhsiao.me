@@ -71,7 +71,7 @@ export default function Contact() {
                 <ViewTransition name="message-trigger">
                   <button
                     onClick={handleShowContactForm}
-                    className="message-button flex items-center gap-1 sm:gap-1.5 text-gray-700 text-xs sm:text-xs md:text-xs font-medium px-2 sm:px-2.5 md:px-2.5 py-1.5 sm:py-1.5 rounded-full hover:scale-105 hover:text-gray-800 hover:shadow-md backdrop-blur-sm border border-white/30 cursor-pointer max-h-fit"
+                    className="message-button flex items-center gap-1 sm:gap-1.5 text-gray-700 text-xs sm:text-xs md:text-xs font-medium px-2 sm:px-2.5 md:px-2.5 py-1.5 sm:py-1.5 rounded-full hover:scale-105 hover:text-gray-800 hover:shadow-md backdrop-blur-sm border border-white/30 cursor-pointer max-h-fit cursor-pointer"
                     style={{
                       background: 'rgba(255, 255, 255, 0.3)',
                     }}
@@ -120,7 +120,7 @@ export default function Contact() {
             ) : (
               <button
                 onClick={handleClose}
-                className="close-button flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 text-gray-600 hover:text-gray-800 rounded-full hover:bg-white/30 bg-white/20 backdrop-blur-sm cursor-pointer border border-white/30 transition-all duration-200 hover:scale-105 shrink-0"
+                className="close-button flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 text-gray-600 hover:text-gray-800 rounded-full hover:bg-white/30 bg-white/20 backdrop-blur-sm cursor-pointer border border-white/30 transition-all duration-200 hover:scale-105 shrink-0 cursor-pointer"
                 aria-label="Close"
               >
                 <svg

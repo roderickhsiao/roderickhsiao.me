@@ -15,15 +15,16 @@ export interface NavigationConfig {
 
 export const navigationConfig: NavigationConfig = {
   brand: {
-    name: "Roderick Hsiao",
-    subtitle: "Frontend Engineer & Architect"
+    name: 'Roderick Hsiao',
+    subtitle: 'Frontend Engineer & Architect',
   },
   links: [
-    { href: "/", label: "About" },
-    { href: "/education", label: "Education" },
-    { href: "/activity", label: "Activity" },
-    { href: "/travel", label: "Travel" }
-  ]
+    { href: '/', label: 'About' },
+    { href: '/activity', label: 'Activity' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/travel', label: 'Travel' },
+    { href: '/education', label: 'Education' },
+  ],
 };
 
 export default navigationConfig;
