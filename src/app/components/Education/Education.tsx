@@ -92,6 +92,9 @@ export default function Education() {
                       height={64}
                       alt={`${edu.name} logo`}
                       className="rounded-lg object-cover border border-gray-200/50"
+                      loading="lazy"
+                      quality={85}
+                      sizes="64px"
                     />
                   </div>
                 )}

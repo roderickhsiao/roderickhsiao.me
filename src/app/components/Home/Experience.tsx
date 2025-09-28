@@ -29,6 +29,9 @@ function SmartLinkCard({ smartlink }: SmartLinkCardProps) {
               width={40}
               height={40}
               className="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-lg"
+              loading="lazy"
+              quality={85}
+              sizes="(max-width: 640px) 40px, 48px"
             />
           </div>
         )}

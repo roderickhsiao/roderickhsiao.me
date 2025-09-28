@@ -3,6 +3,9 @@ import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
+// Cache for 1 week, serve stale content while revalidating for up to 1 month
+export const revalidate = 604800; // 7 days in seconds
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -52,7 +55,7 @@ export async function GET(request: NextRequest) {
     const safeSubtitle = subtitle.length > 80 ? subtitle.substring(0, 80) + '...' : subtitle;
     const safeDescription = description.length > 150 ? description.substring(0, 150) + '...' : description;
 
-    return new ImageResponse(
+    const response = new ImageResponse(
       (
         <div
           style={{
@@ -311,11 +314,16 @@ export async function GET(request: NextRequest) {
       height: 630,
     }
   );
+
+  // Add cache headers to reduce regeneration costs
+  response.headers.set('Cache-Control', 'public, s-maxage=604800, stale-while-revalidate=2592000');
+
+  return response;
   } catch (error) {
     console.error('Error generating OG image:', error);
     
     // Return a simple fallback image
-    return new ImageResponse(
+    const fallbackResponse = new ImageResponse(
       (
         <div
           style={{
@@ -342,5 +350,8 @@ export async function GET(request: NextRequest) {
         height: 630,
       }
     );
+
+    fallbackResponse.headers.set('Cache-Control', 'public, s-maxage=604800, stale-while-revalidate=2592000');
+    return fallbackResponse;
   }
 }

@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import Travel from '../components/Travel/Travel';
 
+// Force static generation for travel page
+export const dynamic = 'force-static';
+export const revalidate = 86400; // Revalidate every 24 hours
+
 export const metadata: Metadata = {
   title: 'Travel Adventures - Roderick Hsiao',
   description: 'Follow my travel adventures around the world. Discover the places I\'ve visited, experiences I\'ve had, and the inspiration I draw from exploring different cultures.',

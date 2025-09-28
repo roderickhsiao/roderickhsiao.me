@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import Education from '@/app/components/Education/Education';
 
+// Force static generation for education page
+export const dynamic = 'force-static';
+export const revalidate = 86400; // Revalidate every 24 hours
+
 export const metadata: Metadata = {
   title: 'Education & Background - Roderick Hsiao',
   description: 'Learn about my educational background, academic achievements, and the foundation that shaped my career in technology and product development.',

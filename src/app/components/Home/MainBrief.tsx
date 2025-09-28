@@ -86,6 +86,9 @@ export default function MainBrief() {
               height={120}
               alt="Profile"
               className="w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-lg shadow-lg"
+              priority={true}
+              quality={85}
+              sizes="(max-width: 640px) 48px, 56px"
             />
             {/* Simple accent */}
             <div className="absolute -bottom-0.5 -end-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-primary rounded-full"></div>

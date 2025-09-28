@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import Activity from '@/app/components/Activity/Activity';
 
+// Force static generation for activity page
+export const dynamic = 'force-static';
+export const revalidate = 86400; // Revalidate every 24 hours
+
 export const metadata: Metadata = {
   title: 'Activities & Speaking - Roderick Hsiao',
   description: 'Explore my speaking engagements, conference talks, workshops, and community activities. Learn about my contributions to the tech community.',

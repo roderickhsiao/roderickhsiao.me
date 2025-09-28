@@ -49,6 +49,9 @@ export default function ActivityCard({ title, subtitle, summary, thumbnail, url,
             height={colorTheme === 'blue' ? 36 : 36}
             alt={title}
             className={`${colorTheme === 'blue' ? 'w-14 h-10 sm:w-12 sm:h-9' : 'w-10 h-10 sm:w-9 sm:h-9'} object-cover rounded border border-gray-200/50 flex-shrink-0`}
+            loading="lazy"
+            quality={85}
+            sizes="(max-width: 640px) 36px, 48px"
           />
         )}
         <div className="min-w-0 flex-1">
