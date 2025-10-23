@@ -1,13 +1,10 @@
 'use client';
 
-import {
-  useState,
-  startTransition,
-  unstable_ViewTransition as ViewTransition,
-} from 'react';
+import { useState, startTransition, ViewTransition } from 'react';
 import clsx from 'clsx';
 import ContactForm from './ContactForm';
 import BookingForm from './BookingForm';
+
 import './contact-view-transitions.css';
 
 export default function Contact() {

@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
+  // cacheComponents: true,
   experimental: {
-    reactCompiler: true,
     viewTransition: true,
     inlineCss: true,
   },
@@ -14,6 +15,7 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000, // 1 year in seconds
     dangerouslyAllowSVG: true,
+    qualities: [75, 85],
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Optimize ISR performance

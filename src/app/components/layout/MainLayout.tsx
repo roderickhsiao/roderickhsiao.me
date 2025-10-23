@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { unstable_ViewTransition as ViewTransition } from 'react';
+import { ViewTransition } from 'react';
 
 import Header from './Header';
 import LandscapeSVG from './LandscapeSVG';

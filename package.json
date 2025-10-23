@@ -16,23 +16,29 @@
     "country-emoji": "^1.5.6",
     "country-flag-emoji": "^1.0.3",
     "country-flag-emoji-polyfill": "^0.1.8",
-    "next": "canary",
-    "react": "experimental",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
     "react-calendly": "^4.4.0",
-    "react-dom": "experimental",
-    "resend": "^6.0.2"
+    "react-dom": "^19.2.0",
+    "resend": "^6.2.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@next/bundle-analyzer": "^15.5.4",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.5.2",
+    "@eslint/eslintrc": "^3.3.1",
+    "@next/bundle-analyzer": "16.0.0",
+    "@tailwindcss/postcss": "^4.1.15",
+    "@types/node": "^20.19.23",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "eslint": "^9.38.0",
+    "eslint-config-next": "16.0.0",
     "eslint-plugin-react-hooks": "0.0.0-experimental-de5a1b20-20250905",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "tailwindcss": "^4.1.15",
+    "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.2",
+      "@types/react-dom": "19.2.2"
+    }
   }
 }
