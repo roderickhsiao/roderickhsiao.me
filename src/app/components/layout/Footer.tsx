@@ -91,7 +91,7 @@ export default function Footer() {
         {/* Forest floor watermark */}
         <div className="absolute inset-0 opacity-8">
           <div className="absolute bottom-4 right-8 text-emerald-200/40 text-xs font-mono tracking-widest transform rotate-3 select-none">
-            GROWN WITH ❤️ & �
+            GROWN WITH ❤️ & ☕️
           </div>
         </div>
       </div>
