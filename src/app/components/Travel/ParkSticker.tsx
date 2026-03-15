@@ -22,14 +22,14 @@ export default function ParkSticker({ park, index }: ParkStickerProps) {
     >
       {/* Sticker image — drop-shadow follows PNG contour */}
       <div
-        className="transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+        className="transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2 mx-auto"
       >
         <Image
           src={park.image}
           alt={label}
           width={160}
           height={160}
-          className="block w-30 h-40 sm:w-40 sm:h-40 object-contain select-none scale-125"
+          className="block w-30 h-40 sm:w-40 sm:h-40 object-contain select-none scale-125 mx-auto"
         />
       </div>
 
