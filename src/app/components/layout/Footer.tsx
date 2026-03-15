@@ -424,7 +424,7 @@ export default function Footer() {
 
         {/* ── Floating chat widget — outer div always in DOM for view transitions ── */}
         <div
-          className="fixed inset-x-3 bottom-3 z-50 sm:inset-x-auto sm:inset-e-6 sm:bottom-6 sm:w-96 pointer-events-none"
+          className="fixed inset-x-3 top-16 bottom-3 z-50 flex flex-col justify-end sm:top-auto sm:inset-x-auto sm:inset-e-6 sm:bottom-6 sm:w-96 pointer-events-none"
           style={{ viewTransitionName: 'footer-widget' } as React.CSSProperties}
           aria-live="polite"
         >

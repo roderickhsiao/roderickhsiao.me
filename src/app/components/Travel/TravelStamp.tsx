@@ -85,10 +85,9 @@ export default function TravelStamp({
         </div>
       </div>
 
-      {/* Paper grain overlay */}
+      {/* Subtle texture wash — simple gray tint, no filter or backdrop */}
       <div
-        className="absolute inset-0 opacity-[0.12] mix-blend-multiply z-45 pointer-events-none will-change-auto"
-        style={{ filter: 'url(#stamp-ink-noise)', background: 'white' }}
+        className="absolute inset-0 opacity-[0.06] bg-neutral-500 z-45 pointer-events-none"
         aria-hidden
       />
 
@@ -188,7 +187,7 @@ export default function TravelStamp({
           <span className="type-label text-ink/40 block leading-none mb-0.5">
             {t('metroUnits')}
           </span>
-          <div className="inline-block px-1.5 py-0.5 rounded backdrop-blur-sm">
+          <div className="inline-block px-1.5 py-0.5 rounded" style={{ backgroundColor: '#FAF8F2CC' }}>
             <span
               className="type-caption font-black! leading-none"
               style={{ color: stampColor }}

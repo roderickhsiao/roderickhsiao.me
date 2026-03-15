@@ -103,34 +103,6 @@ const continents = Array.from(
   ),
 ) as string[];
 
-/**
- * Hidden SVG filter for the paper-grain texture on stamp cards.
- * Must live in the same document as the stamps that reference it.
- */
-function InkTextureFilter() {
-  return (
-    <svg style={{ position: 'absolute', width: 0, height: 0 }}>
-      <filter id="stamp-ink-noise" x="0" y="0" width="100%" height="100%">
-        {/* Reduced octaves from 4 to 2 for 2x speedup */}
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.6"
-          numOctaves="2"
-          stitchTiles="stitch"
-          result="noise"
-        />
-        <feColorMatrix in="noise" type="saturate" values="0" result="destat" />
-        <feComponentTransfer in="destat" result="highContrast">
-          <feFuncR type="discrete" tableValues="0 1" />
-          <feFuncG type="discrete" tableValues="0 1" />
-          <feFuncB type="discrete" tableValues="0 1" />
-        </feComponentTransfer>
-        <feComposite operator="in" in="highContrast" in2="SourceAlpha" />
-      </filter>
-    </svg>
-  );
-}
-
 export default function Travel() {
   const t = useTranslations('travel');
   const locale = useLocale();
@@ -163,8 +135,6 @@ export default function Travel() {
 
   return (
     <div className="relative overflow-x-hidden">
-      <InkTextureFilter />
-
       <div className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto">
         {/* ── Hero ─────────────────────────────────────── */}
         <PageHero
