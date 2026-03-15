@@ -48,8 +48,9 @@ export default function TravelStamp({
 
   const stampStyle: CSSProperties = {
     transform: `rotate(${rotation}deg)`,
-    filter:
-      'drop-shadow(0 4px 12px rgba(0,0,0,0.08)) drop-shadow(0 20px 40px rgba(0,0,0,0.12))',
+    filter: isActive
+      ? 'drop-shadow(0 6px 18px rgba(0,0,0,0.13)) drop-shadow(0 24px 48px rgba(0,0,0,0.15))'
+      : undefined,
     /* Gradient split: top band = stampColor, body = paper white */
     background: `linear-gradient(to bottom, ${stampColor} 0%, ${stampColor} 24%, #FAF8F2 24.1%, #FAF8F2 100%) no-repeat`,
     backgroundSize: '100% 100%',
@@ -66,7 +67,6 @@ export default function TravelStamp({
       'calc(100% - 16px) calc(100% - 16px), var(--stamp-dot, 16px) var(--stamp-dot, 16px)',
     maskPosition: 'center, -8px -8px',
     maskRepeat: 'no-repeat, repeat',
-    contentVisibility: 'auto',
   };
 
   return (

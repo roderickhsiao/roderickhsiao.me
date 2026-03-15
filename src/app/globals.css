@@ -670,3 +670,48 @@ button, [role="button"] {
     user-select: none;
   }
 }
+
+/* ── Aura background orbs (time-of-day atmosphere) ───────────── */
+.aura-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+  filter: blur(90px);
+}
+.aura-orb-a {
+  width: 42vw; height: 38vh;
+  left: -4%; top: -6%;
+  animation: auraOrbitA 44s ease-in-out infinite;
+}
+.aura-orb-b {
+  width: 36vw; height: 34vh;
+  left: 38%; top: 28%;
+  animation: auraOrbitB 58s ease-in-out infinite;
+}
+.aura-orb-c {
+  width: 32vw; height: 40vh;
+  right: -6%; bottom: -4%;
+  animation: auraOrbitC 36s ease-in-out infinite;
+}
+
+@keyframes auraOrbitA {
+  0%   { transform: translate(0,     0)     scale(1);    }
+  25%  { transform: translate(9vw,  -5vh)   scale(1.04); }
+  55%  { transform: translate(3vw,   8vh)   scale(0.97); }
+  80%  { transform: translate(-6vw,  2vh)   scale(1.02); }
+  100% { transform: translate(0,     0)     scale(1);    }
+}
+@keyframes auraOrbitB {
+  0%   { transform: translate(0,      0)    scale(1);    }
+  30%  { transform: translate(-10vw,  5vh)  scale(1.05); }
+  60%  { transform: translate(7vw,   -7vh)  scale(0.96); }
+  85%  { transform: translate(2vw,    4vh)  scale(1.02); }
+  100% { transform: translate(0,      0)    scale(1);    }
+}
+@keyframes auraOrbitC {
+  0%   { transform: translate(0,    0)     scale(1);    }
+  35%  { transform: translate(5vw,  7vh)   scale(1.04); }
+  70%  { transform: translate(-4vw, -3vh)  scale(0.98); }
+  100% { transform: translate(0,    0)     scale(1);    }
+}

@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef, useLayoutEffect, useEffect, Fragment } from 'react';
+import { useState, useRef, useLayoutEffect, useEffect, useMemo, Fragment } from 'react';
 import { flag } from 'country-emoji';
 import { X } from 'lucide-react';
 import TravelStamp from './TravelStamp';
@@ -8,20 +8,7 @@ import CityStamp from './CityStamp';
 import ParkSticker from './ParkSticker';
 import { NATIONAL_PARKS } from '@/app/data/nationalParks';
 import { useTranslations, useLocale } from 'next-intl';
-
-const getCountryDisplayName = (code: string, locale: string): string => {
-  try {
-    const displayNames = new Intl.DisplayNames([locale], { type: 'region' });
-    return displayNames.of(code) || code;
-  } catch {
-    const fallbackNames: Record<string, string> = {
-      HK: 'Hong Kong',
-      TW: 'Taiwan',
-      VA: 'Vatican City',
-    };
-    return fallbackNames[code] || code;
-  }
-};
+import { getRegionDisplayName } from '@/app/utils/getDisplayNames';
 
 /** Strip emoji prefix + parenthetical suffix: '🏡 Taipei (台北)' → 'Taipei' */
 function cleanLabel(raw: string): string {
@@ -108,29 +95,32 @@ export default function CountriesGrid({
   const displayedInfo = displayedCode ? countryInfo[displayedCode] : null;
   const displayedFlagEmoji = displayedCode ? flag(displayedCode) || '🌐' : null;
   const displayedName = displayedCode
-    ? getCountryDisplayName(displayedCode, locale)
+    ? getRegionDisplayName(displayedCode, locale)
     : null;
+
+  // Memoize per-country derived data so toggling a stamp doesn't re-derive everything
+  const countryItems = useMemo(() => filteredCountries.map((code, index) => {
+    const info = countryInfo[code];
+    const flagEmoji = flag(code) || '🌐';
+    const displayName = getRegionDisplayName(code, locale);
+    const isBirth = isBirthCountry(code);
+    const hasLived = hasLivedInCountry(code);
+    const isStudy = hasStudiedInCountry(code);
+    const status: TravelStatus = isBirth ? 'BORN' : hasLived ? 'HOME' : isStudy ? 'STUDY' : 'TRAVEL';
+    const canExpand = info.cities.length > 0;
+    const rawCityLabel = (status === 'HOME' || status === 'BORN')
+      ? cleanLabel(info.cities.find((c) => c.includes('🏡') || c.includes('🍼')) ?? info.cities[0] ?? '')
+      : undefined;
+    const cityLabel = rawCityLabel != null ? (cityNames[rawCityLabel] ?? rawCityLabel) : undefined;
+    return { code, index, info, flagEmoji, displayName, status, canExpand, cityLabel };
+  }), [filteredCountries, countryInfo, locale, cityNames, isBirthCountry, hasLivedInCountry, hasStudiedInCountry]);
 
   return (
     <div
       ref={gridRef}
       className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-6 lg:gap-x-8 mb-32"
     >
-      {filteredCountries.map((code, index) => {
-        const info = countryInfo[code];
-        const flagEmoji = flag(code) || '🌐';
-        const displayName = getCountryDisplayName(code, locale);
-        const isBirth = isBirthCountry(code);
-        const hasLived = hasLivedInCountry(code);
-        const isStudy = hasStudiedInCountry(code);
-        const status: TravelStatus = isBirth ? 'BORN' : hasLived ? 'HOME' : isStudy ? 'STUDY' : 'TRAVEL';
-        const canExpand = info.cities.length > 0;
-        // For HOME/BORN: show the marked home/birth city as the label even when there are multiple cities
-        const rawCityLabel = (status === 'HOME' || status === 'BORN')
-          ? cleanLabel(info.cities.find((c) => c.includes('🏡') || c.includes('🍼')) ?? info.cities[0] ?? '')
-          : undefined;
-        const cityLabel = rawCityLabel != null ? (cityNames[rawCityLabel] ?? rawCityLabel) : undefined;
-
+      {countryItems.map(({ code, index, info, flagEmoji, displayName, status, canExpand, cityLabel }) => {
         return (
           <Fragment key={code}>
             <div className="flex justify-center pb-10 sm:pb-16">

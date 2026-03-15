@@ -101,7 +101,7 @@ function DemoCard({ demo, title, getImageThemeGradient }: DemoCardProps) {
         {/* YouTube icon */}
         <div className="absolute top-2 inset-e-2">
           <svg
-            className="w-5 h-5 text-red-500 drop-shadow-sm"
+            className="w-5 h-5 text-red-500 shadow-sm"
             fill="currentColor"
             viewBox="0 0 24 24"
           >

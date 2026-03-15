@@ -10,6 +10,7 @@ import ContinentFilter from './ContinentFilter';
 import { COUNTRY_META } from '../../data/travelMeta';
 import FieldNotes from '@/app/components/shared/FieldNotes';
 import { useTranslations, useLocale } from 'next-intl';
+import { getRegionDisplayName } from '@/app/utils/getDisplayNames';
 import type { FieldNotesItem } from '@/app/components/shared/FieldNotes';
 
 polyfillCountryFlagEmojis();
@@ -115,15 +116,7 @@ export default function Travel() {
       const matchesContinent =
         !selectedContinent || countryInfo[code].continent === selectedContinent;
       const q = search.toLowerCase();
-      const localizedName = (() => {
-        try {
-          return (
-            new Intl.DisplayNames([locale], { type: 'region' }).of(code) ?? ''
-          );
-        } catch {
-          return '';
-        }
-      })();
+      const localizedName = getRegionDisplayName(code, locale);
       const matchesSearch =
         !q ||
         code.toLowerCase().includes(q) ||

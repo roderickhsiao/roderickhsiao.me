@@ -65,20 +65,15 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-footer-bg text-footer-text overflow-hidden mt-32">
-      {/* ── Wave top edge — canvas fill carves curved page→footer boundary ── */}
-      <div
-        className="absolute top-0 inset-s-0 w-full overflow-hidden pointer-events-none"
-        aria-hidden
-      >
-        <svg
-          viewBox="0 0 1200 80"
-          preserveAspectRatio="none"
-          className="block w-full h-[60px] md:h-12.5 fill-canvas"
-        >
-          <path d="M0,0 H1200 V45 C800,5 400,85 0,45 Z" />
+    <div className="relative mt-32">
+      {/* ── Wave top edge — footer-bg fills below the curve; the page/aura shows through above ── */}
+      <div className="absolute top-0 inset-x-0 w-full h-16 -translate-y-full pointer-events-none" aria-hidden>
+        <svg viewBox="0 0 1200 64" preserveAspectRatio="none" className="block w-full h-full fill-footer-bg">
+          <path d="M0,64 L0,46 C300,88 900,8 1200,46 L1200,64 Z" />
         </svg>
       </div>
+
+    <footer className="relative bg-footer-bg text-footer-text overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-24 pb-12">
         {/* ── Atmosphere glow ──────────────────────────── */}
@@ -552,5 +547,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import { ViewTransition } from 'react';
 import Header from './Header';
+import AuraBackground from './AuraBackground';
 import { navigationConfig } from '@/app/data/navigation';
 import type { ReactNode } from 'react';
 import { getTranslations } from 'next-intl/server';
@@ -31,6 +32,9 @@ export default async function MainLayout({
 
   return (
     <div className="relative min-h-screen flex flex-col text-ink">
+      {/* ── Atmospheric aura (time-of-day gradient) ─────── */}
+      <AuraBackground />
+
       {/* ── Fixed decorative background lines ────────────── */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-0 overflow-hidden" aria-hidden>
         <svg width="100%" height="100%" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
@@ -50,14 +54,14 @@ export default async function MainLayout({
       </div>
 
       {/* ── Page content ─────────────────────────────────── */}
-      <main className="flex-1 w-full">
+      <main className="relative z-10 flex-1 w-full">
         <ViewTransition>
           {main}
         </ViewTransition>
       </main>
 
       {/* ── Footer ───────────────────────────────────────── */}
-      {footer && <div className="w-full">{footer}</div>}
+      {footer && <div className="relative z-10 w-full">{footer}</div>}
     </div>
   );
 }
