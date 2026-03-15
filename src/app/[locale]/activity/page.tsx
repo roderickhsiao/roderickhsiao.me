@@ -32,6 +32,14 @@ export async function generateMetadata(): Promise<Metadata> {
       description: t('activity.ogDescription'),
       images: [ogImageUrl],
     },
+    alternates: {
+      canonical: 'https://roderickhsiao.me/activity',
+      languages: {
+        en: 'https://roderickhsiao.me/activity',
+        'zh-Hant': 'https://roderickhsiao.me/zh-Hant/activity',
+        'x-default': 'https://roderickhsiao.me/activity',
+      },
+    },
   };
 }
 

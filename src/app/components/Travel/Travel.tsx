@@ -34,15 +34,27 @@ const CountriesGrid = dynamic(() => import('./CountriesGrid'), {
 type CountryCode = keyof typeof countryData;
 
 function isBirthCountry(code: string) {
-  return (countryData as Record<string, string[]>)[code]?.some((c) => c.includes('🍼')) ?? false;
+  return (
+    (countryData as Record<string, string[]>)[code]?.some((c) =>
+      c.includes('🍼'),
+    ) ?? false
+  );
 }
 
 function hasLivedInCountry(code: string) {
-  return (countryData as Record<string, string[]>)[code]?.some((c) => c.includes('🏡')) ?? false;
+  return (
+    (countryData as Record<string, string[]>)[code]?.some((c) =>
+      c.includes('🏡'),
+    ) ?? false
+  );
 }
 
 function hasStudiedInCountry(code: string) {
-  return (countryData as Record<string, string[]>)[code]?.some((c) => c.includes('🎓')) ?? false;
+  return (
+    (countryData as Record<string, string[]>)[code]?.some((c) =>
+      c.includes('🎓'),
+    ) ?? false
+  );
 }
 
 function sortBySignificance(countries: string[]) {
@@ -66,23 +78,29 @@ interface CountryInfo {
 }
 
 const validCountries = (Object.keys(countryData) as CountryCode[]).filter(
-  (code) => countryData[code]?.length > 0
+  (code) => countryData[code]?.length > 0,
 ) as string[];
 
 const countryInfo: Record<string, CountryInfo> = Object.fromEntries(
   validCountries.map((code) => [
     code,
-    { ...COUNTRY_META[code], cities: (countryData as Record<string, string[]>)[code] ?? [] },
-  ])
+    {
+      ...COUNTRY_META[code],
+      cities: (countryData as Record<string, string[]>)[code] ?? [],
+    },
+  ]),
 );
 
 const totalCountries = validCountries.length;
 const totalCities = validCountries.reduce(
-  (sum, code) => sum + ((countryData as Record<string, string[]>)[code]?.length ?? 0),
-  0
+  (sum, code) =>
+    sum + ((countryData as Record<string, string[]>)[code]?.length ?? 0),
+  0,
 );
 const continents = Array.from(
-  new Set(validCountries.map((code) => countryInfo[code]?.continent).filter(Boolean))
+  new Set(
+    validCountries.map((code) => countryInfo[code]?.continent).filter(Boolean),
+  ),
 ) as string[];
 
 /**
@@ -91,20 +109,23 @@ const continents = Array.from(
  */
 function InkTextureFilter() {
   return (
-    <svg
-      style={{ position: 'absolute', width: 0, height: 0 }}
-      aria-hidden
-      focusable="false"
-    >
-      <filter id="stamp-ink-noise">
-        <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
-        <feColorMatrix type="saturate" values="0" />
-        <feComponentTransfer>
+    <svg style={{ position: 'absolute', width: 0, height: 0 }}>
+      <filter id="stamp-ink-noise" x="0" y="0" width="100%" height="100%">
+        {/* Reduced octaves from 4 to 2 for 2x speedup */}
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.6"
+          numOctaves="2"
+          stitchTiles="stitch"
+          result="noise"
+        />
+        <feColorMatrix in="noise" type="saturate" values="0" result="destat" />
+        <feComponentTransfer in="destat" result="highContrast">
           <feFuncR type="discrete" tableValues="0 1" />
           <feFuncG type="discrete" tableValues="0 1" />
           <feFuncB type="discrete" tableValues="0 1" />
         </feComponentTransfer>
-        <feComposite operator="in" in2="SourceAlpha" />
+        <feComposite operator="in" in="highContrast" in2="SourceAlpha" />
       </filter>
     </svg>
   );
@@ -124,7 +145,9 @@ export default function Travel() {
       const q = search.toLowerCase();
       const localizedName = (() => {
         try {
-          return new Intl.DisplayNames([locale], { type: 'region' }).of(code) ?? '';
+          return (
+            new Intl.DisplayNames([locale], { type: 'region' }).of(code) ?? ''
+          );
         } catch {
           return '';
         }
@@ -135,7 +158,7 @@ export default function Travel() {
         countryInfo[code].continent.toLowerCase().includes(q) ||
         localizedName.toLowerCase().includes(q);
       return matchesContinent && matchesSearch;
-    })
+    }),
   );
 
   return (
@@ -143,7 +166,6 @@ export default function Travel() {
       <InkTextureFilter />
 
       <div className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto">
-
         {/* ── Hero ─────────────────────────────────────── */}
         <PageHero
           eyebrow={t('hero.eyebrow')}
@@ -167,7 +189,10 @@ export default function Travel() {
           totalContinents={continents.length}
           totalHomePlaces={
             validCountries.filter(
-              (code) => isBirthCountry(code) || hasLivedInCountry(code) || hasStudiedInCountry(code)
+              (code) =>
+                isBirthCountry(code) ||
+                hasLivedInCountry(code) ||
+                hasStudiedInCountry(code),
             ).length
           }
         />
@@ -205,7 +230,6 @@ export default function Travel() {
           hasLivedInCountry={hasLivedInCountry}
           hasStudiedInCountry={hasStudiedInCountry}
         />
-
       </div>
     </div>
   );

@@ -32,6 +32,14 @@ export async function generateMetadata(): Promise<Metadata> {
       description: t('education.ogDescription'),
       images: [ogImageUrl],
     },
+    alternates: {
+      canonical: 'https://roderickhsiao.me/education',
+      languages: {
+        en: 'https://roderickhsiao.me/education',
+        'zh-Hant': 'https://roderickhsiao.me/zh-Hant/education',
+        'x-default': 'https://roderickhsiao.me/education',
+      },
+    },
   };
 }
 
@@ -48,7 +56,6 @@ export default async function EducationPage() {
 
       <FieldNotes
         label={t('fieldNotes.label')}
-        heading={t('hero.title')}
         items={t.raw('fieldNotes.items') as FieldNotesItem[]}
       />
 

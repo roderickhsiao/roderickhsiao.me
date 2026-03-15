@@ -12,6 +12,14 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t('home.title'),
     description: t('home.description'),
     keywords: t.raw('home.keywords') as string[],
+    alternates: {
+      canonical: 'https://roderickhsiao.me',
+      languages: {
+        en: 'https://roderickhsiao.me',
+        'zh-Hant': 'https://roderickhsiao.me/zh-Hant',
+        'x-default': 'https://roderickhsiao.me',
+      },
+    },
   };
 }
 

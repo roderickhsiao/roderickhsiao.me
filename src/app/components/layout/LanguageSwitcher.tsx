@@ -1,9 +1,8 @@
 'use client';
 
 import { useTransition } from 'react';
-import { useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { setLocale } from '@/app/actions/set-locale';
+import { usePathname, useRouter } from '@/i18n/routing';
 
 const LOCALES = [
   { code: 'en', label: 'EN' },
@@ -12,14 +11,14 @@ const LOCALES = [
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
+  const pathname = usePathname();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
   const handleSwitch = (next: 'en' | 'zh-Hant') => {
     if (next === locale || isPending) return;
-    startTransition(async () => {
-      await setLocale(next);
-      router.refresh();
+    startTransition(() => {
+      router.replace(pathname, { locale: next });
     });
   };
 

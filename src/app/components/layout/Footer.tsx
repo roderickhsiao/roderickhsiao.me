@@ -173,63 +173,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Interest tags */}
-            <div className="flex flex-wrap gap-2">
-              {(tProfile.raw('interests') as string[]).map((interest) => (
-                <span
-                  key={interest}
-                  className="type-label inline-block px-3 py-1 rounded-full border border-footer-text/10 bg-footer-text/5 text-footer-text/50"
-                >
-                  {interest}
-                </span>
-              ))}
-            </div>
-
-            {/* Language tags + social links */}
-            <div className="flex flex-wrap items-center gap-x-12 gap-y-6 pt-2">
-              <div className="flex items-center gap-6 type-label text-footer-text/30">
-                {(tProfile.raw('languages') as { flag: string; label: string }[]).map(({ flag, label }, i, arr) => (
-                  <span key={label} className="flex items-center gap-6">
-                    <span className="text-footer-text/60">
-                      {flag} {label}
-                    </span>
-                    {i < arr.length - 1 && (
-                      <span
-                        className="w-1 h-1 bg-footer-text/10 rounded-full"
-                        aria-hidden
-                      />
-                    )}
-                  </span>
-                ))}
-              </div>
-              <div className="flex items-center gap-8">
-                {socialLinks.slice(0, 3).map((item) => {
-                  const icon = SOCIAL_ICONS[item.icon!];
-                  if (!icon) return null;
-                  return (
-                    <a
-                      key={item.name}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Visit ${item.name}`}
-                      className="text-footer-text/40 hover:text-footer-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 rounded"
-                    >
-                      <svg
-                        viewBox={icon.viewBox}
-                        fill={icon.fill}
-                        stroke={icon.stroke}
-                        className="w-[18px] h-[18px]"
-                        aria-hidden
-                      >
-                        <path d={icon.d} />
-                      </svg>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-
             {/* Organic blob action buttons */}
             <div className="flex flex-wrap gap-5 justify-start">
               {/* Message */}
@@ -379,6 +322,63 @@ export default function Footer() {
               />
             </svg>
 
+            {/* Language tags + social links */}
+            <div className="flex flex-wrap items-center gap-x-12 gap-y-6">
+              <div className="flex items-center gap-6 type-label text-footer-text/30">
+                {(tProfile.raw('languages') as { flag: string; label: string }[]).map(({ flag, label }, i, arr) => (
+                  <span key={label} className="flex items-center gap-6">
+                    <span className="text-footer-text/60">
+                      {flag} {label}
+                    </span>
+                    {i < arr.length - 1 && (
+                      <span
+                        className="w-1 h-1 bg-footer-text/10 rounded-full"
+                        aria-hidden
+                      />
+                    )}
+                  </span>
+                ))}
+              </div>
+              <div className="flex items-center gap-8">
+                {socialLinks.slice(0, 3).map((item) => {
+                  const icon = SOCIAL_ICONS[item.icon!];
+                  if (!icon) return null;
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${item.name}`}
+                      className="text-footer-text/40 hover:text-footer-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 rounded"
+                    >
+                      <svg
+                        viewBox={icon.viewBox}
+                        fill={icon.fill}
+                        stroke={icon.stroke}
+                        className="w-[18px] h-[18px]"
+                        aria-hidden
+                      >
+                        <path d={icon.d} />
+                      </svg>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Interest tags */}
+            <div className="flex flex-wrap gap-2">
+              {(tProfile.raw('interests') as string[]).map((interest) => (
+                <span
+                  key={interest}
+                  className="type-label inline-block px-3 py-1 rounded-full border border-footer-text/10 bg-footer-text/5 text-footer-text/50"
+                >
+                  {interest}
+                </span>
+              ))}
+            </div>
+
             <div className="space-y-10 w-full">
               {/* Source link */}
               <div className="flex items-center gap-5 group cursor-pointer w-fit opacity-40 hover:opacity-100 transition-all duration-500">
@@ -522,7 +522,7 @@ export default function Footer() {
                     className="text-sky/50 fill-sky/30"
                     aria-hidden
                   />
-                  <span className="opacity-60">{t('heritage')}</span>
+                  <span>{t('heritage')}</span>
                 </div>
                 <span
                   className="w-1 h-1 bg-footer-text/10 rounded-full"

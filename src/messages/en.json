@@ -90,7 +90,7 @@
     "contactDialogLabel": "Contact form",
     "calendlyDialogLabel": "Book a call",
     "quote": "Drop me a message to chat about <highlight1>AI/web ideas</highlight1>, cool projects, or even <highlight2>house music</highlight2>.",
-    "heritage": "Bay Area Heritage",
+    "heritage": "Bay Area",
     "crafted": "Crafted with AI Collaboration",
     "copyrightName": "R. Hsiao",
     "residencyLocations": ["SF Bay Area", "Taipei"]
@@ -467,6 +467,7 @@
     "statusHOME": "HOME",
     "statusSTUDY": "STUDY",
     "statusTRAVEL": "TRAVEL",
+    "cityNames": {},
     "searchPlaceholder": "Search countries…",
     "searchAriaLabel": "Search countries"
   },

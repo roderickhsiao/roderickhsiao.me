@@ -7,36 +7,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://roderickhsiao.me'
   const currentDate = new Date().toISOString()
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/activity`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/education`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/travel`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
+  const pages = [
+    { path: '',        changeFrequency: 'daily'  as const, priority: 1.0 },
+    { path: '/activity',  changeFrequency: 'weekly' as const, priority: 0.8 },
+    { path: '/education', changeFrequency: 'weekly' as const, priority: 0.7 },
+    { path: '/projects',  changeFrequency: 'weekly' as const, priority: 0.8 },
+    { path: '/travel',    changeFrequency: 'weekly' as const, priority: 0.8 },
   ]
+
+  return pages.map(({ path, changeFrequency, priority }) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: currentDate,
+    changeFrequency,
+    priority,
+    alternates: {
+      languages: {
+        en: `${baseUrl}${path}`,
+        'zh-Hant': `${baseUrl}/zh-Hant${path}`,
+        'x-default': `${baseUrl}${path}`,
+      },
+    },
+  }))
 }

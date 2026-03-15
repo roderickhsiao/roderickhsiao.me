@@ -44,7 +44,7 @@ export default function TravelStamp({
   cityLabel,
 }: TravelStampProps) {
   const t = useTranslations('travel');
-  const rotation = isActive ? 0 : (index % 3 - 1) * 1.5;
+  const rotation = isActive ? 0 : ((index % 3) - 1) * 1.5;
 
   const stampStyle: CSSProperties = {
     transform: `rotate(${rotation}deg)`,
@@ -56,16 +56,17 @@ export default function TravelStamp({
     /* Perforated edge mask */
     WebkitMaskImage:
       'linear-gradient(black, black), radial-gradient(circle at 8px 8px, transparent 5.5px, black 6px)',
-    WebkitMaskSize: 'calc(100% - 16px) calc(100% - 16px), var(--stamp-dot, 16px) var(--stamp-dot, 16px)',
+    WebkitMaskSize:
+      'calc(100% - 16px) calc(100% - 16px), var(--stamp-dot, 16px) var(--stamp-dot, 16px)',
     WebkitMaskPosition: 'center, -8px -8px',
     WebkitMaskRepeat: 'no-repeat, repeat',
     maskImage:
       'linear-gradient(black, black), radial-gradient(circle at 8px 8px, transparent 5.5px, black 6px)',
-    maskSize: 'calc(100% - 16px) calc(100% - 16px), var(--stamp-dot, 16px) var(--stamp-dot, 16px)',
+    maskSize:
+      'calc(100% - 16px) calc(100% - 16px), var(--stamp-dot, 16px) var(--stamp-dot, 16px)',
     maskPosition: 'center, -8px -8px',
     maskRepeat: 'no-repeat, repeat',
     contentVisibility: 'auto',
-    
   };
 
   return (
@@ -78,22 +79,22 @@ export default function TravelStamp({
       {/* Hover: flag emoji glow bloom */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
         <div className="opacity-0 blur-2xl scale-125 transition-all duration-1000 group-hover:opacity-25 group-hover:scale-[2.2] group-hover:blur-2xl">
-          <span className="text-[14rem] select-none leading-none">{flagEmoji}</span>
+          <span className="text-[14rem] select-none leading-none">
+            {flagEmoji}
+          </span>
         </div>
       </div>
 
       {/* Paper grain overlay */}
       <div
-        className="absolute inset-0 opacity-[0.12] mix-blend-multiply z-45 pointer-events-none"
+        className="absolute inset-0 opacity-[0.12] mix-blend-multiply z-45 pointer-events-none will-change-auto"
         style={{ filter: 'url(#stamp-ink-noise)', background: 'white' }}
         aria-hidden
       />
 
       {/* ── Top band ───────────────────────────────────── */}
       <div className="relative h-1/4 shrink-0 z-10 flex items-center justify-between px-4 pt-1">
-        <span className="type-label text-white leading-none">
-          {code}
-        </span>
+        <span className="type-label text-white leading-none">{code}</span>
         <span className="type-label italic text-white/60">
           {t(`status${status}`)}
         </span>
@@ -101,17 +102,47 @@ export default function TravelStamp({
 
       {/* ── Body ───────────────────────────────────────── */}
       <div className="flex-1 flex flex-col items-center justify-center px-4 relative bg-transparent pb-6 z-20">
-
         {/* Postmark watermark */}
         <div
-          className="absolute -bottom-8 -inset-s-10 w-52 h-52 pointer-events-none opacity-40 mix-blend-multiply z-40 group-hover:rotate-6 transition-transform duration-1000"
+          className="absolute -bottom-8 -inset-s-10 w-52 h-52 pointer-events-none opacity-20 mix-blend-multiply z-40 group-hover:rotate-6 transition-transform duration-1000"
           aria-hidden
         >
-          <svg viewBox="0 0 100 100" className="w-full h-full" style={{ color: stampColor }}>
-            <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-            <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M -10,35 Q 25,28 50,35 T 110,35" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.3" />
-            <path d="M -10,45 Q 25,38 50,45 T 110,45" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.3" />
+          <svg
+            viewBox="0 0 100 100"
+            className="w-full h-full"
+            style={{ color: stampColor }}
+          >
+            <circle
+              cx="50"
+              cy="50"
+              r="42"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              strokeDasharray="2 2"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="38"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <path
+              d="M -10,35 Q 25,28 50,35 T 110,35"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.6"
+              opacity="0.3"
+            />
+            <path
+              d="M -10,45 Q 25,38 50,45 T 110,45"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.6"
+              opacity="0.3"
+            />
           </svg>
         </div>
 
@@ -132,13 +163,15 @@ export default function TravelStamp({
 
         {/* Country name */}
         <div className="text-center relative z-30 pointer-events-none mt-0 max-w-full px-2">
-          <h2 className={`type-label text-ink leading-none ${
-            name.length > 12 ? 'text-xs' : ''
-          }`}>
+          <h2
+            className={`type-label text-ink leading-none ${
+              name.length > 12 ? 'text-xs' : ''
+            }`}
+          >
             {name}
           </h2>
           <div
-            className="w-8 h-0.75 mx-auto mt-1 rounded-full opacity-10"
+            className="w-8 h-0.75 mx-auto mt-1 rounded-full opacity-10 backdrop-blur-sm"
             style={{ backgroundColor: stampColor }}
           />
           {cityLabel && (
@@ -147,7 +180,6 @@ export default function TravelStamp({
             </p>
           )}
         </div>
-
       </div>
 
       {/* Cities count badge — hidden for HOME/BORN (incomplete lists) */}
@@ -156,7 +188,7 @@ export default function TravelStamp({
           <span className="type-label text-ink/40 block leading-none mb-0.5">
             {t('metroUnits')}
           </span>
-          <div className="inline-block px-1.5 py-0.5 rounded bg-[#FAF8F2]/60 backdrop-blur-sm">
+          <div className="inline-block px-1.5 py-0.5 rounded backdrop-blur-sm">
             <span
               className="type-caption font-black! leading-none"
               style={{ color: stampColor }}

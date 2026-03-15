@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import Travel from '../components/Travel/Travel';
+import Travel from '@/app/components/Travel/Travel';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('pageMeta');
@@ -29,6 +29,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title: t('travel.ogTitle'),
       description: t('travel.ogDescription'),
       images: [ogImageUrl],
+    },
+    alternates: {
+      canonical: 'https://roderickhsiao.me/travel',
+      languages: {
+        en: 'https://roderickhsiao.me/travel',
+        'zh-Hant': 'https://roderickhsiao.me/zh-Hant/travel',
+        'x-default': 'https://roderickhsiao.me/travel',
+      },
     },
   };
 }

@@ -179,7 +179,6 @@ function JobCard({
       {/* ── MAIN ROW: blob visual | text column ─────────── */}
       <div className={clsx(
         'flex flex-col md:flex-row gap-10 sm:gap-20 items-start',
-        isExpanded ? 'md:items-start' : 'md:items-center',
         !isEven && 'md:flex-row-reverse',
       )}>
         {/* Organic blob visual */}
@@ -222,7 +221,11 @@ function JobCard({
         </div>
 
         {/* Text column — title lives here, on the side */}
-        <div className="w-full md:w-1/2 space-y-8 px-2 sm:px-4">
+        <div className={clsx(
+          'w-full md:w-1/2 space-y-8 px-2 sm:px-4',
+          'transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]',
+          !isExpanded && 'md:translate-y-[15%]',
+        )}>
           <div className="space-y-4">
             <h3
               className="text-ink"

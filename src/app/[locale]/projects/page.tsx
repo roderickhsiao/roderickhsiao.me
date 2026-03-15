@@ -10,6 +10,14 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t('projects.title'),
     description: t('projects.description'),
     keywords: t.raw('projects.keywords') as string[],
+    alternates: {
+      canonical: 'https://roderickhsiao.me/projects',
+      languages: {
+        en: 'https://roderickhsiao.me/projects',
+        'zh-Hant': 'https://roderickhsiao.me/zh-Hant/projects',
+        'x-default': 'https://roderickhsiao.me/projects',
+      },
+    },
   };
 }
 
