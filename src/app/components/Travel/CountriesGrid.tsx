@@ -98,6 +98,18 @@ export default function CountriesGrid({
     ? getRegionDisplayName(displayedCode, locale)
     : null;
 
+  /** Special-emoji cities (🏡 🍼 🎓) pin to top; remainder sorted A→Z */
+  const sortedCities = useMemo(() => {
+    if (!displayedInfo) return [];
+    return [...displayedInfo.cities].sort((a, b) => {
+      const aPin = /^[^\w(]/.test(a);
+      const bPin = /^[^\w(]/.test(b);
+      if (aPin !== bPin) return aPin ? -1 : 1;
+      const clean = (s: string) => s.replace(/^[^\w(]+/, '').replace(/\s*\([^)]*\)/, '').trim();
+      return clean(a).localeCompare(clean(b));
+    });
+  }, [displayedInfo]);
+
   // Memoize per-country derived data so toggling a stamp doesn't re-derive everything
   const countryItems = useMemo(() => filteredCountries.map((code, index) => {
     const info = countryInfo[code];
@@ -189,7 +201,7 @@ export default function CountriesGrid({
 
                       {/* City stamps grid */}
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6 lg:gap-8">
-                        {displayedInfo.cities.map((city, idx) => (
+                        {sortedCities.map((city, idx) => (
                           <CityStamp
                             key={city}
                             city={city}
