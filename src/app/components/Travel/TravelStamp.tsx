@@ -150,7 +150,7 @@ export default function TravelStamp({
 
       {/* Cities count badge — hidden for HOME/BORN (incomplete lists) */}
       {(status === 'TRAVEL' || status === 'STUDY') && (
-        <div className="absolute bottom-0 start-0 end-0 mb-2 flex flex-col items-center transition-all duration-700 z-5">
+        <div className="absolute bottom-0 inset-s-0 inset-e-0 mb-2 flex flex-col items-center transition-all duration-700 z-5">
           <span className="type-label text-ink/40 block leading-none mb-0.5">
             METRO • UNITS
           </span>

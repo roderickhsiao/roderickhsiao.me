@@ -37,6 +37,7 @@ export default function Home() {
 
       <FieldNotes
         label="CAREER LOG // STILL SHIPPING"
+        heading={<>Career &amp;<br />Highlights</>}
         items={[
           { num: '01', icon: '💼', title: 'Experience', items: ['16+ years in product engineering.', 'Startup to Fortune 500 range.'] },
           { num: '02', icon: '🚀', title: 'Leadership', items: ['Frontend infra & design systems.', 'Team technical mentorship.'] },

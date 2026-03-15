@@ -124,7 +124,7 @@ function DeeplinkAnimation() {
       {/* Bridge with traveling dot */}
       <div className="relative flex items-center mx-3 sm:mx-4 w-12 sm:w-14">
         <div className="w-full h-px bg-white/25" />
-        <div className="absolute start-0 w-2 h-2 rounded-full bg-white/80 blur-[1px] animate-deeplink-travel" />
+        <div className="absolute inset-s-0 w-2 h-2 rounded-full bg-white/80 blur-[1px] animate-deeplink-travel" />
       </div>
       {/* App box */}
       <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center animate-deeplink-app">

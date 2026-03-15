@@ -48,7 +48,7 @@ export default function Footer() {
     <footer className="relative bg-footer-bg text-footer-text overflow-hidden mt-32">
 
       {/* ── Wave top edge — canvas fill carves curved page→footer boundary ── */}
-      <div className="absolute top-0 start-0 w-full overflow-hidden pointer-events-none" aria-hidden>
+      <div className="absolute top-0 inset-s-0 w-full overflow-hidden pointer-events-none" aria-hidden>
         <svg viewBox="0 0 1200 80" preserveAspectRatio="none" className="block w-full h-[60px] md:h-12.5 fill-canvas">
           <path d="M0,0 H1200 V45 C800,5 400,85 0,45 Z" />
         </svg>
@@ -92,19 +92,19 @@ export default function Footer() {
 
               {/* Contact quote */}
               <div className="relative pl-8 max-w-xl">
-                <svg viewBox="0 0 10 40" className="absolute start-0 top-0 w-2 h-full fill-none stroke-footer-text/10" preserveAspectRatio="none" aria-hidden>
+                <svg viewBox="0 0 10 40" className="absolute inset-s-0 top-0 w-2 h-full fill-none stroke-footer-text/10" preserveAspectRatio="none" aria-hidden>
                   <path d="M5,0 Q10,20 5,40" strokeWidth="1.5" />
                 </svg>
                 <p className="type-body text-footer-text/90 leading-relaxed font-medium italic">
                   &ldquo;Drop me a message to chat about{' '}
                   <span className="relative inline-block mx-1 not-italic">
                     web ideas
-                    <svg className="absolute -bottom-2 start-0 w-full h-2 text-accent/40" preserveAspectRatio="none" aria-hidden><path d="M0,5 Q20,0 40,5 T80,5" stroke="currentColor" fill="none" strokeWidth="2" /></svg>
+                    <svg className="absolute -bottom-2 inset-s-0 w-full h-2 text-accent/40" preserveAspectRatio="none" aria-hidden><path d="M0,5 Q20,0 40,5 T80,5" stroke="currentColor" fill="none" strokeWidth="2" /></svg>
                   </span>
                   , cool projects, or even{' '}
                   <span className="relative inline-block mx-1 not-italic">
                     house music
-                    <svg className="absolute -bottom-2 start-0 w-full h-2 text-sky/40" preserveAspectRatio="none" aria-hidden><path d="M0,5 Q15,10 30,5 T60,5" stroke="currentColor" fill="none" strokeWidth="2" /></svg>
+                    <svg className="absolute -bottom-2 inset-s-0 w-full h-2 text-sky/40" preserveAspectRatio="none" aria-hidden><path d="M0,5 Q15,10 30,5 T60,5" stroke="currentColor" fill="none" strokeWidth="2" /></svg>
                   </span>.&rdquo;
                 </p>
               </div>
@@ -230,7 +230,7 @@ export default function Footer() {
           <div className="relative flex flex-col space-y-10 items-start lg:pl-20">
 
             {/* Decorative parabolic line (desktop only) */}
-            <svg viewBox="0 0 40 400" className="absolute start-0 top-0 h-full w-10 hidden lg:block opacity-[0.05] pointer-events-none" preserveAspectRatio="none" aria-hidden>
+            <svg viewBox="0 0 40 400" className="absolute inset-s-0 top-0 h-full w-10 hidden lg:block opacity-[0.05] pointer-events-none" preserveAspectRatio="none" aria-hidden>
               <path d="M30,0 Q0,200 30,400" fill="none" stroke="white" strokeWidth="2" />
             </svg>
 
@@ -324,7 +324,7 @@ export default function Footer() {
 
         {/* ── Bottom ledger bar ─────────────────────── */}
         <div className="relative pt-12 type-label text-footer-text/30">
-          <svg viewBox="0 0 1200 20" className="absolute top-0 start-0 w-full h-4 fill-none stroke-footer-text/5 pointer-events-none" preserveAspectRatio="none" aria-hidden>
+          <svg viewBox="0 0 1200 20" className="absolute top-0 inset-s-0 w-full h-4 fill-none stroke-footer-text/5 pointer-events-none" preserveAspectRatio="none" aria-hidden>
             <path d="M0,15 C300,5 600,25 900,5 C1050,15 1200,5 1200,15" strokeWidth="1" />
           </svg>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">

@@ -208,7 +208,7 @@ export default function Travel() {
           {/* Search */}
           <div className="relative w-full max-w-xs group shrink-0 mb-8">
             <Search
-              className="absolute start-0 top-1/2 -translate-y-1/2 w-4 h-4 text-ink/30 group-focus-within:text-accent transition-colors"
+              className="absolute inset-s-0 top-1/2 -translate-y-1/2 w-4 h-4 text-ink/30 group-focus-within:text-accent transition-colors"
               aria-hidden
             />
             <input
