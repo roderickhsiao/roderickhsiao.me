@@ -1,193 +1,356 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import { Heart, Sparkles, X } from 'lucide-react';
+import summary from '@/app/data/summary';
+import contact from '@/app/data/contact';
+import ContactForm from '@/app/components/Home/ContactForm';
+
+const SOURCE_REPO = 'https://github.com/roderickhsiao/roderickhsiao.me';
+const BUY_COFFEE_URL = 'https://www.buymeacoffee.com/roderickhsiao';
+
+/* Social icon SVG paths — keyed by contact.ts icon field */
+const SOCIAL_ICONS: Record<string, { viewBox: string; fill: string; stroke: string; d: string }> = {
+  linkedin: {
+    viewBox: '0 0 24 24', fill: 'currentColor', stroke: 'none',
+    d: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z',
+  },
+  github: {
+    viewBox: '0 0 24 24', fill: 'currentColor', stroke: 'none',
+    d: 'M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z',
+  },
+  twitter: {
+    viewBox: '0 0 24 24', fill: 'currentColor', stroke: 'none',
+    d: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
+  },
+};
+
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
+  const { profile } = summary;
+  const [showForm, setShowForm] = useState(false);
+  const [showCalendly, setShowCalendly] = useState(false);
+
+  const socialLinks = contact.filter((c) => c.icon && SOCIAL_ICONS[c.icon]);
+  const calendly = contact.find((c) => c.name.toLowerCase().includes('calendly'));
+
+  function startTransition(cb: () => void) {
+    if (typeof document !== 'undefined' && 'startViewTransition' in document) {
+      (document as Document & { startViewTransition: (cb: () => void) => unknown }).startViewTransition(cb);
+    } else {
+      cb();
+    }
+  }
+
 
   return (
-    <footer className="relative mt-16 overflow-hidden">
-      {/* Forest floor/grass inspired background */}
-      <div className="absolute inset-0">
-        {/* Main forest floor gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/60 via-green-800 to-slate-800"></div>
+    <footer className="relative bg-footer-bg text-footer-text overflow-hidden mt-32">
 
-        {/* Rich forest floor layers for depth */}
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/40 via-green-900/50 to-slate-700"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/30 via-transparent to-green-800/60"></div>
-
-        {/* Grass and nature elements */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-20">
-          {/* Grass blades */}
-          <div className="absolute top-0 left-1/6 w-0.5 h-8 bg-emerald-400 blur-sm transform rotate-12"></div>
-          <div className="absolute top-2 left-1/5 w-0.5 h-6 bg-green-400 blur-sm transform -rotate-6"></div>
-          <div className="absolute top-0 left-1/4 w-0.5 h-10 bg-teal-400 blur-sm transform rotate-3"></div>
-          <div className="absolute top-1 right-1/4 w-0.5 h-7 bg-emerald-500 blur-sm transform rotate-15"></div>
-          <div className="absolute top-3 right-1/3 w-0.5 h-5 bg-green-500 blur-sm transform -rotate-10"></div>
-          <div className="absolute top-0 right-1/5 w-0.5 h-9 bg-teal-500 blur-sm transform rotate-8"></div>
-
-          {/* Small decorative flowers/moss */}
-          <div className="absolute bottom-8 left-1/6 w-2 h-2 bg-emerald-300 rounded-full blur-sm opacity-60"></div>
-          <div className="absolute bottom-12 right-1/5 w-1.5 h-1.5 bg-green-300 rounded-full blur-sm opacity-50"></div>
-          <div className="absolute bottom-6 left-2/3 w-1 h-1 bg-teal-300 rounded-full blur-sm opacity-70"></div>
-        </div>
-
-        {/* Elegant animal silhouettes */}
-        <div className="absolute inset-0 opacity-15">
-          {/* Small rabbit silhouette */}
-          <div className="absolute bottom-16 left-1/4">
-            <svg
-              width="16"
-              height="12"
-              viewBox="0 0 16 12"
-              fill="none"
-              className="text-emerald-300"
-            >
-              <path
-                d="M2 10c0-1 1-2 2-2s2 1 2 2M8 10c0-1 1-2 2-2s2 1 2 2M6 8c0-2 1-4 3-4s3 2 3 4M4 6c-1 0-2-1-2-2s1-2 2-2M12 6c1 0 2-1 2-2s-1-2-2-2"
-                stroke="currentColor"
-                strokeWidth="0.5"
-                fill="currentColor"
-                fillOpacity="0.3"
-              />
-            </svg>
-          </div>
-
-          {/* Small butterfly */}
-          <div className="absolute bottom-20 right-1/3">
-            <svg
-              width="12"
-              height="8"
-              viewBox="0 0 12 8"
-              fill="none"
-              className="text-teal-300"
-            >
-              <path
-                d="M6 4c-2-2-4-1-4 1s2 3 4 1M6 4c2-2 4-1 4 1s-2 3-4 1M6 2v4"
-                stroke="currentColor"
-                strokeWidth="0.3"
-                fill="currentColor"
-                fillOpacity="0.2"
-              />
-            </svg>
-          </div>
-
-          {/* Tiny mushroom */}
-          <div className="absolute bottom-14 right-1/6">
-            <svg
-              width="8"
-              height="10"
-              viewBox="0 0 8 10"
-              fill="none"
-              className="text-green-400"
-            >
-              <path
-                d="M4 6c-2 0-3-1-3-3s1-3 3-3 3 1 3 3-1 3-3 3M4 6v4"
-                stroke="currentColor"
-                strokeWidth="0.4"
-                fill="currentColor"
-                fillOpacity="0.2"
-              />
-            </svg>
-          </div>
-        </div>
-
-        {/* Forest floor watermark */}
-        <div className="absolute inset-0 opacity-8">
-          <div className="absolute bottom-4 right-8 text-emerald-200/40 text-xs font-mono tracking-widest transform rotate-3 select-none">
-            GROWN WITH ❤️ & ☕️
-          </div>
-        </div>
+      {/* ── Wave top edge — canvas fill carves curved page→footer boundary ── */}
+      <div className="absolute top-0 start-0 w-full overflow-hidden pointer-events-none" aria-hidden>
+        <svg viewBox="0 0 1200 80" preserveAspectRatio="none" className="block w-full h-[60px] md:h-12.5 fill-canvas">
+          <path d="M0,0 H1200 V45 C800,5 400,85 0,45 Z" />
+        </svg>
       </div>
 
-      {/* Footer content */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-12 pb-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-emerald-100/90">
-            {/* Left section - Quick Links */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-emerald-100">
-                Quick Links
-              </h3>
-              <div className="space-y-2 text-sm">
-                <a
-                  href="https://github.com/roderickhsiao/roderickhsiao.me"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-emerald-200/80 hover:text-green-200 transition-colors duration-200"
-                >
-                  View Source Code
-                </a>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-24 pb-12">
 
-                <a
-                  href="https://www.buymeacoffee.com/roderickhsiao"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/80 hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-colors duration-200 shadow-md text-emerald-100 font-semibold text-sm group"
-                  aria-label="Buy me a coffee"
-                >
-                  <span className="w-5 h-5 flex items-center justify-center group-hover:-rotate-12 group-hover:scale-105 duration-150">
-                    <svg
-                      viewBox="0 0 884 1279"
-                      fill="none"
-                      preserveAspectRatio="xMidYMid meet"
-                      className="w-full h-auto object-cover"
-                    >
-                      <path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518V297.518Z" fill="#0D0C22" />
-                      <path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="#0D0C22" />
-                      <path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377V297.377Z" fill="#0D0C22" />
-                      <path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="#0D0C22" />
-                      <path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726V388.726Z" fill="#0D0C22" />
-                      <path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515V299.515Z" fill="#0D0C22" />
-                      <path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z" fill="#0D0C22" />
-                      <path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z" fill="#0D0C22" />
-                      <path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z" fill="#0D0C22" />
-                      <path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z" fill="#0D0C22" />
-                      <path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z" fill="#0D0C22" />
-                      <path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z" fill="#FFDD00" />
-                      <path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132V386.132Z" fill="#0D0C22" />
-                      <path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2302 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.731 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.905 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z" fill="#0D0C22" />
-                    </svg>
+        {/* ── Atmosphere glow ──────────────────────────── */}
+        <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl aspect-square bg-sky/5 blur-5xl rounded-full pointer-events-none" aria-hidden />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 mb-20 relative">
+
+          {/* ── Column 1: Identity + contact ─────────── */}
+          <div className="space-y-12">
+
+            {/* Avatar + name + title badge */}
+            <div className="space-y-8 text-left">
+              <div className="flex items-center gap-6">
+                <div className="relative group w-20 h-20 shrink-0">
+                  <div
+                    className="absolute inset-0 bg-footer-text/10 group-hover:bg-accent/20 transition-all duration-1000"
+                    style={{ borderRadius: '55% 45% 70% 30% / 30% 60% 40% 70%' }}
+                    aria-hidden
+                  />
+                  <Image
+                    src={profile.thumbnail.url}
+                    width={80}
+                    height={80}
+                    alt={`${profile.name} profile photo`}
+                    className="relative w-full h-full object-cover border border-footer-text/10 grayscale group-hover:grayscale-0 transition-all duration-700 shadow-xl"
+                    style={{ borderRadius: '55% 45% 70% 30% / 30% 60% 40% 70%' }}
+                  />
+                </div>
+                <div className="space-y-3">
+                  <h2 className="type-heading-md text-footer-text">{profile.name}</h2>
+                  <span className="type-label inline-block px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 text-accent">
+                    {profile.title}
                   </span>
-                  <span>Buy me a coffee</span>
-                </a>
+                </div>
+              </div>
 
-                <div className="text-emerald-200/70 text-xs mt-4">
-                  Built with Next.js, TypeScript & Tailwind CSS
+              {/* Contact quote */}
+              <div className="relative pl-8 max-w-xl">
+                <svg viewBox="0 0 10 40" className="absolute start-0 top-0 w-2 h-full fill-none stroke-footer-text/10" preserveAspectRatio="none" aria-hidden>
+                  <path d="M5,0 Q10,20 5,40" strokeWidth="1.5" />
+                </svg>
+                <p className="type-body text-footer-text/90 leading-relaxed font-medium italic">
+                  &ldquo;Drop me a message to chat about{' '}
+                  <span className="relative inline-block mx-1 not-italic">
+                    web ideas
+                    <svg className="absolute -bottom-2 start-0 w-full h-2 text-accent/40" preserveAspectRatio="none" aria-hidden><path d="M0,5 Q20,0 40,5 T80,5" stroke="currentColor" fill="none" strokeWidth="2" /></svg>
+                  </span>
+                  , cool projects, or even{' '}
+                  <span className="relative inline-block mx-1 not-italic">
+                    house music
+                    <svg className="absolute -bottom-2 start-0 w-full h-2 text-sky/40" preserveAspectRatio="none" aria-hidden><path d="M0,5 Q15,10 30,5 T60,5" stroke="currentColor" fill="none" strokeWidth="2" /></svg>
+                  </span>.&rdquo;
+                </p>
+              </div>
+            </div>
+
+            {/* Language tags + social links */}
+            <div className="flex flex-wrap items-center gap-x-12 gap-y-6 pt-2">
+              <div className="flex items-center gap-6 type-label text-footer-text/30">
+                {profile.languages.map(({ flag, label }, i) => (
+                  <span key={label} className="flex items-center gap-6">
+                    <span className="text-footer-text/60">{flag} {label}</span>
+                    {i < profile.languages.length - 1 && (
+                      <span className="w-1 h-1 bg-footer-text/10 rounded-full" aria-hidden />
+                    )}
+                  </span>
+                ))}
+              </div>
+              <div className="flex items-center gap-8">
+                {socialLinks.slice(0, 3).map((item) => {
+                  const icon = SOCIAL_ICONS[item.icon!];
+                  if (!icon) return null;
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${item.name}`}
+                      className="text-footer-text/40 hover:text-footer-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 rounded"
+                    >
+                      <svg viewBox={icon.viewBox} fill={icon.fill} stroke={icon.stroke} className="w-[18px] h-[18px]" aria-hidden>
+                        <path d={icon.d} />
+                      </svg>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Organic blob action buttons */}
+            <div className="flex flex-wrap gap-5 justify-start">
+
+              {/* Message */}
+              <button
+                onClick={() => startTransition(() => { setShowForm((v) => !v); setShowCalendly(false); })}
+                aria-expanded={showForm}
+                aria-controls="footer-contact-form"
+                className="group relative py-4 px-10 outline-none cursor-pointer"
+              >
+                <div
+                  className={`absolute inset-0 border transition-all duration-700 shadow-xl ${
+                    showForm
+                      ? 'bg-accent/20 border-accent/30 scale-105'
+                      : 'bg-footer-text/10 border-footer-text/5 group-hover:scale-105 group-hover:bg-accent/20'
+                  }`}
+                  style={{ borderRadius: '48% 52% 55% 45% / 42% 58% 40% 60%' }}
+                  aria-hidden
+                />
+                <div className="relative flex items-center gap-3 type-label text-footer-text whitespace-nowrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`w-4 h-4 shrink-0 transition-colors ${showForm ? 'text-accent' : 'text-accent'}`} aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                  <span>Message</span>
+                  {showForm && <span className="w-1.5 h-1.5 rounded-full bg-accent ml-1" aria-hidden />}
+                </div>
+              </button>
+
+              {/* Book a Call */}
+              {calendly && (
+                <button
+                  onClick={() => startTransition(() => { setShowCalendly((v) => !v); setShowForm(false); })}
+                  aria-expanded={showCalendly}
+                  aria-controls="footer-calendly"
+                  className="group relative py-4 px-10 outline-none cursor-pointer"
+                >
+                  <div
+                    className={`absolute inset-0 border transition-all duration-700 ${
+                      showCalendly
+                        ? 'bg-sky/20 border-sky/30 scale-105'
+                        : 'bg-footer-text/5 border-footer-text/10 group-hover:scale-105 group-hover:bg-sky/20'
+                    }`}
+                    style={{ borderRadius: '55% 45% 42% 58% / 58% 42% 60% 40%' }}
+                    aria-hidden
+                  />
+                  <div className="relative flex items-center gap-3 type-label text-footer-text whitespace-nowrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-sky shrink-0" aria-hidden>
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    <span>Book a Call</span>
+                    {showCalendly && <span className="w-1.5 h-1.5 rounded-full bg-sky ml-1" aria-hidden />}
+                  </div>
+                </button>
+              )}
+
+              {/* Support */}
+              <a
+                href={BUY_COFFEE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Support — Buy me a coffee"
+                className="group relative py-4 px-10 outline-none opacity-70 hover:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+                style={{ borderRadius: '40% 60% 50% 50% / 50% 50% 60% 40%' }}
+              >
+                <div
+                  className="absolute inset-0 bg-footer-text/5 border border-footer-text/10 group-hover:scale-105 transition-all duration-700"
+                  style={{ borderRadius: '40% 60% 50% 50% / 50% 50% 60% 40%' }}
+                  aria-hidden
+                />
+                <div className="relative flex items-center gap-3 type-label text-footer-text whitespace-nowrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-footer-text/40 shrink-0" aria-hidden>
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1" /><path d="m2 8 20 0" /><path d="M5 8v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /><rect x="7" y="2" width="2" height="4" /><rect x="11" y="2" width="2" height="4" />
+                  </svg>
+                  <span>Support</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {/* ── Column 2: Actions + notes ─────────────── */}
+          <div className="relative flex flex-col space-y-10 items-start lg:pl-20">
+
+            {/* Decorative parabolic line (desktop only) */}
+            <svg viewBox="0 0 40 400" className="absolute start-0 top-0 h-full w-10 hidden lg:block opacity-[0.05] pointer-events-none" preserveAspectRatio="none" aria-hidden>
+              <path d="M30,0 Q0,200 30,400" fill="none" stroke="white" strokeWidth="2" />
+            </svg>
+
+            <div className="space-y-10 w-full">
+
+              {/* Source link */}
+              <div className="flex items-center gap-5 group cursor-pointer w-fit opacity-40 hover:opacity-100 transition-all duration-500">
+                <svg width="30" height="2" className="stroke-footer-text/50 group-hover:stroke-accent transition-colors duration-500" aria-hidden>
+                  <path d="M0,1 Q15,0 30,1" fill="none" strokeWidth="2" />
+                </svg>
+                <a
+                  href={SOURCE_REPO}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="type-label text-footer-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 rounded"
+                >
+                  Archive Source Geometry
+                </a>
+              </div>
+            </div>
+
+            {/* Site notes */}
+            <div className="type-body-sm text-footer-text/50 space-y-4 not-italic">
+              <p className="text-footer-text/80 leading-relaxed">
+                Archived with a focus on visual performance and natural geometry. Zero tracking scripts deployed for maximum archive privacy.
+              </p>
+              <p className="type-label text-footer-text/40 cursor-help" title="Built with an unhealthy amount of coffee, countless AI conversations, and the occasional existential crisis about whether this div should be flex or grid.">
+                * No developers were harmed in the making of this site.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Floating chat widget — outer div always in DOM for view transitions ── */}
+        <div
+          className="fixed inset-x-3 bottom-3 z-50 sm:inset-x-auto sm:end-6 sm:bottom-6 sm:w-96 pointer-events-none"
+          style={{ viewTransitionName: 'footer-widget' } as React.CSSProperties}
+          aria-live="polite"
+        >
+          {(showForm || (showCalendly && calendly)) && (
+            <div
+              className="pointer-events-auto flex flex-col rounded-2xl shadow-2xl overflow-hidden border border-footer-text/20 bg-footer-bg"
+              style={{ maxHeight: 'min(88vh, 680px)', animation: 'footer-widget-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both' } as React.CSSProperties}
+              role="dialog"
+              aria-modal="true"
+              aria-label={showForm ? 'Contact form' : 'Book a call'}
+            >
+            {/* Widget header */}
+            <div className="flex items-center justify-between px-5 py-4 border-b border-footer-text/10 shrink-0 bg-footer-bg">
+              <span className="type-label text-footer-text/80">
+                {showForm ? 'Send a Message' : 'Book a Call'}
+              </span>
+              <button
+                onClick={() => startTransition(() => { setShowForm(false); setShowCalendly(false); })}
+                aria-label="Close"
+                className="text-footer-text/40 hover:text-footer-text transition-colors rounded p-1 -mr-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 cursor-pointer"
+              >
+                <X size={16} />
+              </button>
+            </div>
+
+            {/* Widget content */}
+            <div className="overflow-y-auto flex-1">
+              {showForm && (
+                <div
+                  className="p-6"
+                  style={{
+                    '--color-ink': 'var(--color-footer-text)',
+                    '--color-ink-inverted': 'var(--color-footer-bg)',
+                    '--color-surface': 'color-mix(in srgb, var(--color-footer-text) 12%, transparent)',
+                    '--color-surface-muted': 'color-mix(in srgb, var(--color-footer-text) 8%, transparent)',
+                  } as React.CSSProperties}
+                >
+                  <ContactForm />
+                </div>
+              )}
+              {showCalendly && calendly && (
+                <iframe
+                  src={`${calendly.url}?hide_event_type_details=1&hide_gdpr_banner=1`}
+                  width="100%"
+                  height="580"
+                  title="Book a call with Roderick Hsiao"
+                  loading="lazy"
+                  className="block"
+                />
+              )}
+            </div>
+            </div>
+          )}
+        </div>
+
+        {/* ── Bottom ledger bar ─────────────────────── */}
+        <div className="relative pt-12 type-label text-footer-text/30">
+          <svg viewBox="0 0 1200 20" className="absolute top-0 start-0 w-full h-4 fill-none stroke-footer-text/5 pointer-events-none" preserveAspectRatio="none" aria-hidden>
+            <path d="M0,15 C300,5 600,25 900,5 C1050,15 1200,5 1200,15" strokeWidth="1" />
+          </svg>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
+            <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
+              <span className="text-footer-text/60 whitespace-nowrap">&copy; {year} R. Hsiao</span>
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <Heart size={14} className="text-sky/50 fill-sky/30" aria-hidden />
+                  <span className="opacity-60">Bay Area Heritage</span>
+                </div>
+                <span className="w-1 h-1 bg-footer-text/10 rounded-full" aria-hidden />
+                <div className="flex items-center gap-2 text-footer-text/40 normal-case tracking-normal">
+                  <Sparkles size={12} className="text-accent/60" aria-hidden />
+                  <span>Crafted with AI Collaboration</span>
                 </div>
               </div>
             </div>
-
-            {/* Right section - Site Info & Hidden Gem */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-emerald-100">
-                Site Notes
-              </h3>
-              <ul className="space-y-2 text-sm">
-                <li className="text-emerald-200/70">
-                  Optimized for performance & accessibility.
-                </li>
-                <li className="text-emerald-200/70">
-                  Zero tracking, maximum privacy.
-                </li>
-                {/* Hidden humorous gem */}
-                <li
-                  className="text-emerald-200/50 hover:text-green-200 cursor-help"
-                  title="🎉 You found the hidden gem! This site was built with an unhealthy amount of coffee, countless AI conversations, dog walks for debugging inspiration, and the occasional existential crisis about whether this div should be flexbox or grid. But hey, it works! 🤓"
-                >
-                  • No developers were harmed in the making of this site*.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom bar */}
-          <div className="mt-12 pt-8 border-t border-emerald-200/30">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-emerald-200/70">
-              <div>
-                © {currentYear} Roderick Hsiao • Made with 💙 in the Bay Area •
-                Crafted in collaboration with AI ✨
-              </div>
-              <div className="mt-2 sm:mt-0">
-                Open Web Advocate • House dancer • Animal lovers • Coffee
-                Enthusiast
-              </div>
+            <div className="flex items-center gap-4 text-footer-text/20">
+              {profile.residency.map((loc, i) => (
+                <span key={loc} className="flex items-center gap-4">
+                  <span>* {loc}</span>
+                  {i < profile.residency.length - 1 && (
+                    <span className="w-1 h-1 bg-footer-text/10 rounded-full" aria-hidden />
+                  )}
+                </span>
+              ))}
             </div>
           </div>
         </div>

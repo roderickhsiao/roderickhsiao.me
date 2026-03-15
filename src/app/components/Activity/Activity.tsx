@@ -1,7 +1,14 @@
+import Image from 'next/image';
 import activities from '../../data/activity';
 import speaking from '../../data/speaking';
-import ActivityCard from './ActivityCard';
-import SummarySection from '../shared/SummarySection';
+
+interface SpeakingItem {
+  title: string;
+  event: string;
+  year: string;
+  url: string;
+  thumbnail: { url: string; width: number; height: number };
+}
 
 interface ActivityItem {
   name: string;
@@ -10,157 +17,124 @@ interface ActivityItem {
   summary: string;
   smartlink?: {
     url: string;
-    thumbnail: {
-      url: string;
-      width: number;
-      height: number;
-    };
-  };
-}
-
-interface SpeakingItem {
-  title: string;
-  event: string;
-  year: string;
-  url: string;
-  thumbnail: {
-    url: string;
-    width: number;
-    height: number;
+    thumbnail?: { url: string; width: number; height: number };
+    title?: string;
+    description?: string;
   };
 }
 
 export default function Activity() {
-  const summaryData = {
-    title: "Community Impact & Social Responsibility",
-    description: "Technology has the power to transform society, but with that power comes responsibility. I believe in using my platform and expertise to promote equity, inclusivity, and create positive change in our communities and society at large.",
-    summaryItems: [
-      {
-        title: "Breaking Barriers",
-        icon: (
-          <svg
-            className="w-4 h-4 mr-2 text-purple-600"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-          >
-            <path
-              fillRule="evenodd"
-              d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z"
-              clipRule="evenodd"
-            />
-          </svg>
-        ),
-        items: [
-          "Promoting equity and inclusion in all aspects of life.",
-          "Advocating for underrepresented voices across communities.",
-          "Supporting accessibility and universal design principles.",
-          "Building bridges between different social groups."
-        ]
-      },
-      {
-        title: "Social Impact",
-        icon: (
-          <svg
-            className="w-4 h-4 mr-2 text-green-600"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            aria-hidden="true"
-          >
-            <path
-              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-        ),
-        items: [
-          "Supporting open source initiatives for social good.",
-          "Mentoring emerging talent from diverse backgrounds.",
-          "Speaking out on ethics and social responsibility.",
-          "Contributing to community-driven projects and causes."
-        ]
-      }
-    ]
-  };
-
   return (
-    <main className="max-w-4xl mx-auto space-y-8">
-      {/* Summary Section */}
-      <SummarySection 
-        title={summaryData.title}
-        description={summaryData.description}
-        summaryItems={summaryData.summaryItems}
-      />
+    <section className="space-y-20">
 
-      {/* Activities Header */}
-      <section className="space-y-6">
-        <header>
-          <h1 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">Activities</h1>
-          <p className="text-sm text-gray-600">Speaking engagements and community work</p>
-        </header>
+      {/* ── Speaking ────────────────────────────────── */}
+      <div>
+        <div className="flex items-center gap-6 mb-10">
+          <p className="type-label-wide text-ink/40 shrink-0">SPEAKING</p>
+          <div className="h-px flex-1 bg-ink/8" aria-hidden />
+        </div>
 
-        {/* Speaking Section */}
-        <section className="space-y-4">
-          <header>
-            <h2 className="text-lg font-medium text-gray-900 mb-3 flex items-center">
-              <svg 
-                className="w-4 h-4 mr-2 text-blue-600" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {(speaking as SpeakingItem[]).map((talk, i) => {
+            const label = talk.title.split(' | ')[1] || talk.title;
+            const context = talk.title.split(' | ')[0] || '';
+            return (
+              <a
+                key={i}
+                href={talk.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-4 p-5 rounded-xl bg-white/40 dark:bg-white/5 backdrop-blur-sm border border-white/60 dark:border-white/10 shadow-sm hover:shadow-md hover:bg-white/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-              </svg>
-              Speaking
-            </h2>
-          </header>
-          
-          <div className="grid md:grid-cols-2 gap-4 sm:gap-3">
-            {speaking.map((talk: SpeakingItem, index: number) => (
-              <ActivityCard
-                key={index}
-                title={talk.title.split(' | ')[1] || talk.title}
-                subtitle={`${talk.event} ${talk.year}`}
-                thumbnail={talk.thumbnail}
-                url={talk.url}
-                colorTheme="blue"
-              />
-            ))}
-          </div>
-        </section>
+                {/* Thumbnail */}
+                <div className="relative shrink-0 w-20 h-12 rounded-lg overflow-hidden bg-ink/5 border border-ink/8">
+                  <Image
+                    src={talk.thumbnail.url}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="80px"
+                    aria-hidden
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-ink/0 group-hover:bg-ink/20 transition-colors">
+                    <div className="w-5 h-5 rounded-full bg-white/0 group-hover:bg-white/90 flex items-center justify-center transition-all">
+                      <svg className="w-2.5 h-2.5 text-transparent group-hover:text-ink/60 transition-colors translate-x-px" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
 
-        {/* Community Section */}
-        <section className="space-y-4">
-          <header>
-            <h2 className="text-lg font-medium text-gray-900 mb-3 flex items-center">
-              <svg 
-                className="w-4 h-4 mr-2 text-green-600" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+                {/* Text */}
+                <div className="flex-1 min-w-0">
+                  {context && (
+                    <p className="type-label text-ink/40 mb-0.5">{context} · {talk.year}</p>
+                  )}
+                  <p className="type-caption text-ink/80 group-hover:text-ink transition-colors leading-snug line-clamp-2">{label}</p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ── Community ───────────────────────────────── */}
+      <div>
+        <div className="flex items-center gap-6 mb-10">
+          <p className="type-label-wide text-ink/40 shrink-0">COMMUNITY</p>
+          <div className="h-px flex-1 bg-ink/8" aria-hidden />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {(activities as ActivityItem[]).map((item, i) => {
+            const hasLink = !!item.smartlink?.url;
+            const Wrapper = hasLink ? 'a' : 'div';
+            const wrapperProps = hasLink
+              ? ({ href: item.smartlink!.url, target: '_blank', rel: 'noopener noreferrer' } as React.AnchorHTMLAttributes<HTMLAnchorElement>)
+              : {};
+
+            return (
+              <Wrapper
+                key={i}
+                {...(wrapperProps as Record<string, unknown>)}
+                className={`group flex items-start gap-4 p-5 rounded-xl bg-white/40 dark:bg-white/5 backdrop-blur-sm border border-white/60 dark:border-white/10 shadow-sm transition-all duration-200 ${hasLink ? 'hover:shadow-md hover:bg-white/60 cursor-pointer' : ''}`}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              Community
-            </h2>
-          </header>
-          
-          <div className="grid md:grid-cols-2 gap-4 sm:gap-3">
-            {activities.map((item: ActivityItem, index: number) => (
-              <ActivityCard
-                key={index}
-                title={item.name}
-                subtitle={`${item.org} • ${item.year}`}
-                summary={item.summary}
-                thumbnail={item.smartlink?.thumbnail}
-                url={item.smartlink?.url}
-                colorTheme="green"
-              />
-            ))}
-          </div>
-        </section>
-      </section>
-    </main>
+                {/* Thumbnail */}
+                {item.smartlink?.thumbnail && (
+                  <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden border border-ink/8 bg-ink/5 relative z-10">
+                    <Image
+                      src={item.smartlink.thumbnail.url}
+                      alt=""
+                      width={56}
+                      height={56}
+                      className="w-full h-full object-cover"
+                      aria-hidden
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+
+                {/* Text */}
+                <div className="flex-1 min-w-0 relative z-10">
+                  <div className="flex items-start justify-between gap-3 mb-1">
+                    <h4 className={`type-caption text-ink leading-tight ${hasLink ? 'group-hover:text-(--gaudi-terracotta) transition-colors' : ''}`}>{item.name}</h4>
+                    <span className="type-label text-ink/30 shrink-0 mt-0.5">{item.year}</span>
+                  </div>
+                  <p className="type-label text-ink/50 mb-2">{item.org}</p>
+                  <p className="type-body-sm text-ink/50 leading-relaxed">{item.summary}</p>
+                </div>
+
+                {/* Arrow */}
+                {hasLink && (
+                  <svg className="w-3.5 h-3.5 text-ink/20 group-hover:text-ink/50 shrink-0 mt-1 transition-colors relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                )}
+              </Wrapper>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }

@@ -1,58 +1,664 @@
 @import "tailwindcss";
 
-/* Custom Tailwind utilities using @layer */
-@layer utilities {
-  /* Keep only small movement utilities used in the UI */
-  .animate-move-horizontal-small {
-    animation: moveHorizontalSmall 12s linear infinite;
-  }
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   DESIGN SYSTEM  ·  Mosaic Edition
+   ──────────────────────────────────────────────────────
+   Architecture:
+     Primitive tokens  → raw values, never used directly in UI
+     Semantic tokens   → intent-named aliases consumed by components
+     @theme            → registers everything as Tailwind utilities
 
-  .animate-move-vertical-small {
-    animation: moveVerticalSmall 10s linear infinite;
-  }
-}
+   Color naming convention (semantic):
+     canvas          page background
+     surface         raised card / panel
+     surface-muted   subtle inset / secondary surface
+     ink             primary text
+     ink-inverted    text on dark background
+     accent          primary brand accent (orange)
+     sky             secondary brand accent (blue)
+     footer-bg/text  footer-specific surface
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/*
+  TOKEN ARCHITECTURE
+  ─────────────────────────────────────────────────────────
+  Layer 1 — PRIMITIVE  (:root)
+    Raw hex values. Only referenced by Layer 2. Never used
+    directly in components or Tailwind utilities.
 
-@keyframes moveHorizontalSmall {
-  0% { transform: translateX(-50px); }
-  50% { transform: translateX(100px); }
-  100% { transform: translateX(-50px); }
-}
+  Layer 2 — SEMANTIC  (@theme)
+    Intent-named aliases. Always reference a primitive via
+    var(). These become Tailwind utilities (bg-canvas,
+    text-ink, text-accent …). Components only touch this layer.
+*/
 
-@keyframes moveVerticalSmall {
-  0% { transform: translateY(-50px); }
-  50% { transform: translateY(80px); }
-  100% { transform: translateY(-50px); }
-}
-
-@keyframes moveHorizontalSmall {
-  0% { transform: translateX(-50px); }
-  50% { transform: translateX(100px); }
-  100% { transform: translateX(-50px); }
-}
-
-@keyframes moveVerticalSmall {
-  0% { transform: translateY(-50px); }
-  50% { transform: translateY(80px); }
-  100% { transform: translateY(-50px); }
-}
-
+/* ── Layer 1: Primitives ─────────────────────────────── */
 :root {
-  --color-primary: #254d32;
-  --color-primary-dark: #183026;
-  --color-primary-light: #4f6d4a;
-  --color-secondary: #a3b18a;
-  --color-accent: #6b9080;
-  --color-neutral: #dde5b6;
-  --color-background: #e3f6e5;
-  --color-surface: #e9f5db;
-  --color-border: #b7b7a4;
-  --color-error: #e57373;
-  --color-success: #81c784;
-  --color-text: #2d3a2e;
-  --color-muted: #6c757d;
+  /* Color */
+  --color-prim-cream:     #FAF9F6;
+  --color-prim-cream-2:   #F5F4F1;
+  --color-prim-white:     #ffffff;
+  --color-prim-off-white: #e6f0e9;
+  --color-prim-ink:       #2D2A26;
+  --color-prim-orange:    #E67E22;
+  --color-prim-orange-d:  #d4711e;
+  --color-prim-blue:      #3498DB;
+  --color-prim-forest:    #051a0f;
+
+  /* company brand Colors — Chronicle cards only */
+  --color-prim-kindred:  #4A90E2;
+  --color-prim-tinder:   #FF4458;
+  --color-prim-self:     #27AE60;
+  --color-prim-branch:   #29ABE2;
+  --color-prim-yahoo:    #6001D2;
+  --color-prim-defense:  #4A6741;
+
+  /* semantic status + decorative */
+  --color-prim-success:  #3f8c5c;
+  --color-prim-error:    #c43e3e;
+  --color-prim-sun:      #FCD34D;   /* warm sun / decorative yellow */
+  --color-prim-positive: #22C55E;   /* bright affirmative green (LIKE, checkmarks) */
+
+  /* font-size scale — 10px rem base, so N×rem = N×10px at default browser size */
+  --text-size-xs:   1.2rem;   /* 12px — labels / badges        */
+  --text-size-sm:   1.4rem;   /* 14px — captions / nav-brand   */
+  --text-size-base: 1.6rem;   /* 16px — body-sm (a11y minimum) */
+  --text-size-md:   1.8rem;   /* 18px — body                   */
+  --text-size-lg:   2.0rem;   /* 20px — heading-sm / large UI  */
+  --text-size-xl:   2.4rem;   /* 24px — small headings         */
+
+  /* font-weight scale */
+  --font-weight-light:     300;
+  --font-weight-regular:   400;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+  --font-weight-extrabold: 800;
+  --font-weight-black:     900;
+
+  /* line-height scale */
+  --leading-display:  0.85;
+  --leading-heading:  0.92;
+  --leading-body:     1.65;
+  --leading-relaxed:  1.75;
+
+  /* letter-spacing scale */
+  --tracking-display: -0.04em;
+  --tracking-heading: -0.03em;
+  --tracking-heading-md: -0.025em;
+  --tracking-label:   0.18em;
+  --tracking-label-wide: 0.35em;
 }
 
+/* ── Layer 2: Semantics → Tailwind utilities ─────────── */
+@theme {
+  /* canvas / surface */
+  --color-canvas:        var(--color-prim-cream);
+  --color-surface:       var(--color-prim-white);
+  --color-surface-muted: var(--color-prim-cream-2);
 
+  /* text
+     Primary:      text-ink       ~18:1  primary content
+     Secondary:    text-ink/75    ~5.8:1 body copy, descriptions  (AA ✓)
+     Muted:        text-ink/70    ~4.9:1 labels, metadata         (AA ✓)
+     Inactive UI:  text-ink/65    ~4.3:1 inactive tabs/icons only (AA ✗ — use for icons/decoration)
+     Decorative:   text-ink/40    decorative borders/fills only
+     Inverted:     text-ink-inverted                                       */
+  --color-ink:           var(--color-prim-ink);
+  --color-ink-inverted:  var(--color-prim-off-white);
+
+  /* brand accents */
+  --color-accent:        var(--color-prim-orange);
+  --color-accent-hover:  var(--color-prim-orange-d);
+  --color-sky:           var(--color-prim-blue);
+
+  /* footer surface */
+  --color-footer-bg:     var(--color-prim-forest);
+  --color-footer-text:   var(--color-prim-off-white);
+
+  /* company brand Colors */
+  --color-kindred:       var(--color-prim-kindred);
+  --color-tinder-brand:  var(--color-prim-tinder);
+  --color-self:          var(--color-prim-self);
+  --color-branch-brand:  var(--color-prim-branch);
+  --color-yahoo-brand:   var(--color-prim-yahoo);
+  --color-defense:       var(--color-prim-defense);
+
+  /* status */
+  --color-success:       var(--color-prim-success);
+  --color-error:         var(--color-prim-error);
+
+  /* decorative / ui accents */
+  --color-sun:           var(--color-prim-sun);
+  --color-positive:      var(--color-prim-positive);
+
+  /* blur scale extension */
+  --blur-4xl:  80px;
+  --blur-5xl:  120px;
+
+  /* ── Spacing base — maintains pixel parity with Tailwind defaults
+     after 62.5% html font-size. Default is 0.25rem; 0.4rem × 4 = 1.6rem = 16px ✓ */
+  --spacing: 0.4rem;
+
+  /* ── Border-radius — full scale corrected for 10px rem base ── */
+  --radius-sm:  0.2rem;    /*  2px */
+  --radius:     0.4rem;    /*  4px */
+  --radius-md:  0.6rem;    /*  6px */
+  --radius-lg:  0.8rem;    /*  8px */
+  --radius-xl:  1.2rem;    /* 12px */
+  --radius-2xl: 1.6rem;    /* 16px */
+  --radius-3xl: 2.4rem;    /* 24px */
+  --radius-4xl: 4.0rem;    /* 40px */
+  --radius-5xl: 5.6rem;    /* 56px */
+
+  /* ── Named widths — corrected for 10px rem base ── */
+  --width-xl:  57.6rem;    /*  576px */
+  --width-2xl: 67.2rem;    /*  672px */
+  --width-3xl: 76.8rem;    /*  768px */
+  --width-4xl: 89.6rem;    /*  896px */
+  --width-5xl: 102.4rem;   /* 1024px */
+  --width-6xl: 115.2rem;   /* 1152px */
+  --width-7xl: 160rem;     /* 1600px */
+
+  /* font stacks — next/font injects --font-jakarta / --font-crimson */
+  --font-sans:  var(--font-jakarta, "Plus Jakarta Sans", system-ui, sans-serif);
+  --font-serif: var(--font-crimson, "Crimson Pro", Georgia, serif);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TYPOGRAPHY DESIGN SYSTEM  — semantic scale
+   ──────────────────────────────────────────────────────
+   Rule: components consume ONLY these type-* utilities.
+   No raw font-size numbers, font-weight names, or
+   letter-spacing values in component classNames.
+
+   Scale:
+     type-display     hero name  (fluid 40–112px, sans black italic)
+     type-heading-xl  section    (fluid 36–72px,  sans black italic)
+     type-heading-lg  job title  (fluid 28–56px,  sans black italic)
+     type-heading-md  sub-section(fluid 24–36px,  sans black italic)
+     type-heading-sm  card title (20px, sans bold)
+     type-nav-brand   brand mark (14px, sans black)
+     type-body-lg     large editorial (fluid 18–24px, serif italic) · default color 75%
+     type-body        editorial body  (18px, serif italic)          · default color 75%
+     type-body-sm     small body      (16px, serif italic)          · default color 75%
+     type-caption     metadata        (14px, sans regular)          · default color 70%
+     type-label       badge/chip      (12px, sans black, uppercase) · no default color
+     type-label-wide  section header  (12px, sans black, wide)      · default color 70%
+
+   Font family is bound into every class — no need to add font-sans / font-serif.
+   Default color is in @layer components (lower priority than utilities), so
+   text-ink / text-accent / text-footer-text/70 etc. always override correctly.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@layer utilities {
+  /* ── Layout constraint — 1600px page cap ─────────── */
+  /* Tailwind v4 generates max-w-7xl as a static 80rem value,
+     so we override here rather than via @theme --width-7xl.  */
+  .max-w-7xl { max-width: 144rem; } /* 1440px at 10px rem base */
+
+  /* ── Display ────────────────────────────────────────── */
+  .type-display {
+    font-family: var(--font-sans);
+    font-size: clamp(4rem, 9vw, 11.2rem);
+    font-weight: var(--font-weight-black);
+    font-style: italic;
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+  }
+
+  /* ── Headings ───────────────────────────────────────── */
+  .type-heading-xl {
+    font-family: var(--font-sans);
+    font-size: clamp(3.6rem, 5.5vw, 7.2rem);
+    font-weight: var(--font-weight-black);
+    font-style: italic;
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-heading);
+  }
+
+  .type-heading-lg {
+    font-family: var(--font-sans);
+    font-size: clamp(2.8rem, 4vw, 5.6rem);
+    font-weight: var(--font-weight-black);
+    font-style: italic;
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-heading);
+  }
+
+  .type-heading-md {
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 2.5vw, 3.6rem);
+    font-weight: var(--font-weight-black);
+    font-style: italic;
+    line-height: 1.05;
+    letter-spacing: var(--tracking-heading-md);
+  }
+
+  .type-heading-sm {
+    font-family: var(--font-sans);
+    font-size: var(--text-size-lg);   /* 20px */
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── Nav brand ──────────────────────────────────────── */
+  .type-nav-brand {
+    font-family: var(--font-sans);
+    font-size: var(--text-size-sm);   /* 14px */
+    font-weight: var(--font-weight-black);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── Body (Crimson Pro italic) ───────────────────────── */
+  .type-body-lg {
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-size-md), 1.8vw, var(--text-size-xl));
+    font-weight: var(--font-weight-regular);
+    font-style: italic;
+    line-height: var(--leading-relaxed);
+  }
+
+  .type-body {
+    font-family: var(--font-serif);
+    font-size: var(--text-size-md);   /* 18px */
+    font-weight: var(--font-weight-regular);
+    font-style: italic;
+    line-height: var(--leading-body);
+  }
+
+  .type-body-sm {
+    font-family: var(--font-serif);
+    font-size: var(--text-size-base); /* 16px — a11y minimum for body */
+    font-weight: var(--font-weight-regular);
+    font-style: italic;
+    line-height: var(--leading-body);
+  }
+
+  /* ── Caption / metadata ─────────────────────────────── */
+  .type-caption {
+    font-family: var(--font-sans);
+    font-size: var(--text-size-sm);   /* 14px */
+    font-weight: var(--font-weight-regular);
+    line-height: var(--leading-body);
+  }
+
+  /* ── Labels ─────────────────────────────────────────── */
+  .type-label {
+    font-family: var(--font-sans);
+    font-size: var(--text-size-xs);   /* 12px */
+    font-weight: var(--font-weight-black);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label);
+    line-height: 1.2;
+  }
+
+  .type-label-wide {
+    font-family: var(--font-sans);
+    font-size: var(--text-size-xs);   /* 12px */
+    font-weight: var(--font-weight-black);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label-wide);
+    line-height: 1.2;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   COMPONENT PATTERNS
+   Encapsulate complex multi-property styles so components
+   never reference CSS variables in className strings.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@layer components {
+  /* ── Default text colors for type classes ─────────────
+     Placed in @layer components so any Tailwind text-*
+     utility (text-ink, text-accent, text-footer-text/70…)
+     automatically overrides the default from the component
+     layer. No need to add opacity to every className.     */
+
+  /* Body text — 75% ink ≈ 5.8:1 on canvas (WCAG AA ✓) */
+  .type-body-lg  { color: color-mix(in srgb, var(--color-ink) 75%, transparent); }
+  .type-body     { color: color-mix(in srgb, var(--color-ink) 75%, transparent); }
+  .type-body-sm  { color: color-mix(in srgb, var(--color-ink) 75%, transparent); }
+
+  /* Metadata — 70% ink ≈ 4.9:1 on canvas (WCAG AA ✓) */
+  .type-caption    { color: color-mix(in srgb, var(--color-ink) 70%, transparent); }
+  .type-label-wide { color: color-mix(in srgb, var(--color-ink) 70%, transparent); }
+
+  /* type-label has NO default — color is always context-specific (status, brand, muted) */
+
+  /* ── Frosted-glass navigation pill ─────────────────── */
+  .glass-nav {
+    background-color: color-mix(in srgb, var(--color-prim-cream) 60%, transparent);
+    backdrop-filter: blur(16px) saturate(130%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--color-prim-white) 18%, transparent),
+      inset 1.5px 2px 0 -1.5px color-mix(in srgb, var(--color-prim-white) 80%, transparent),
+      inset -1px -1px 0 -1px color-mix(in srgb, var(--color-prim-white) 60%, transparent),
+      0 2px 12px color-mix(in srgb, var(--color-prim-ink) 6%, transparent),
+      0 6px 20px color-mix(in srgb, var(--color-prim-ink) 4%, transparent);
+    transition: background-color 350ms cubic-bezier(1, 0, 0.4, 1);
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ANIMATION UTILITIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@layer utilities {
+  .animate-fade-in               { animation: fadeIn 0.9s ease-out both; }
+  .animate-fade-in-up            { animation: fadeInUp 0.7s ease-out both; }
+  .animate-slow-spin             { animation: rotateFull 20s linear infinite; }
+  .animate-soft-float            { animation: softFloat 5s ease-in-out infinite; }
+  .animate-tinder-exit           { animation: tinderExit 4.5s linear infinite; }
+  .animate-like-stamp            { animation: likeStamp 4.5s linear infinite; }
+  .animate-expand                { animation: expandReveal 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+  .animate-detail-enter          { animation: detailEnter 0.55s cubic-bezier(0.23,1,0.32,1) both; animation-delay: 0.18s; }
+  .animate-unfold-from-title     { transform-origin: top; animation: unfoldFromTitle 0.55s cubic-bezier(0.23,1,0.32,1) both; }
+  .animate-fold-to-title         { transform-origin: top; animation: foldToTitle 0.32s cubic-bezier(0.5,0,0.75,0) both; }
+  .animate-move-horizontal-small { animation: moveHorizontalSmall 12s linear infinite; }
+  .animate-move-vertical-small   { animation: moveVerticalSmall   10s linear infinite; }
+  .animate-kindred-highlight-move { animation: kindred-highlight-move 4s infinite cubic-bezier(0.45,0,0.55,1); }
+  .animate-kindred-box-1          { animation: kindred-box-1 4s infinite cubic-bezier(0.45,0,0.55,1); }
+  .animate-kindred-box-2          { animation: kindred-box-2 4s infinite cubic-bezier(0.45,0,0.55,1); }
+  .animate-deeplink-web           { animation: deeplink-web   3.5s ease-in-out infinite; }
+  .animate-deeplink-app           { animation: deeplink-app   3.5s ease-in-out infinite; }
+  .animate-deeplink-travel        { animation: deeplink-travel 3.5s ease-in-out infinite; }
+  .animate-army-radar             { animation: army-radar      4s linear infinite; }
+  .animate-army-pip               { animation: army-pip        2.4s ease-in-out infinite; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes rotateFull {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes softFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(15px, -15px); }
+}
+@keyframes tinderExit {
+  /* natural rest — card sits slightly tilted */
+  0%   { transform: translateX(0)     rotate(-3deg);  opacity: 1; animation-timing-function: ease-in-out; }
+  /* hold, then micro pull-back as if being dragged */
+  42%  { transform: translateX(0)     rotate(-3deg);  opacity: 1; animation-timing-function: ease-in; }
+  48%  { transform: translateX(-8px)  rotate(-5deg);  opacity: 1; animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94); }
+  /* swipe right with natural arc */
+  66%  { transform: translateX(120px) rotate(24deg);  opacity: 0; animation-timing-function: steps(1); }
+  /* instantly reset from the left — card is invisible */
+  67%  { transform: translateX(-32px) rotate(-7deg);  opacity: 0; animation-timing-function: cubic-bezier(0.34,1.56,0.64,1); }
+  /* settle back into resting position */
+  93%  { transform: translateX(0)     rotate(-3deg);  opacity: 1; animation-timing-function: ease-out; }
+  100% { transform: translateX(0)     rotate(-3deg);  opacity: 1; }
+}
+@keyframes army-radar {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes army-pip {
+  0%, 100% { opacity: 0.25; transform: scale(0.8); }
+  50%       { opacity: 1;    transform: scale(1.15); }
+}
+@keyframes deeplink-web {
+  0%, 15%  { background: rgba(255,255,255,0.35); box-shadow: 0 0 28px 10px rgba(255,255,255,0.25); transform: scale(1.06); }
+  45%      { background: rgba(255,255,255,0.1);  box-shadow: none; transform: scale(1); }
+  100%     { background: rgba(255,255,255,0.1);  box-shadow: none; transform: scale(1); }
+}
+@keyframes deeplink-app {
+  0%, 50%  { background: rgba(255,255,255,0.1);  box-shadow: none; transform: scale(1); }
+  62%, 80% { background: rgba(255,255,255,0.35); box-shadow: 0 0 28px 10px rgba(255,255,255,0.25); transform: scale(1.06); }
+  100%     { background: rgba(255,255,255,0.1);  box-shadow: none; transform: scale(1); }
+}
+@keyframes deeplink-travel {
+  0%, 15%  { transform: translateX(0);    opacity: 1; }
+  55%      { transform: translateX(44px); opacity: 1; }
+  60%      { transform: translateX(44px); opacity: 0; }
+  61%      { transform: translateX(0);    opacity: 0; }
+  65%      { transform: translateX(0);    opacity: 1; }
+  100%     { transform: translateX(0);    opacity: 1; }
+}
+@keyframes kindred-highlight-move {
+  0%, 100% { transform: translateX(-64px); opacity: 0.5; }
+  50%       { transform: translateX(64px);  opacity: 0.5; }
+}
+@keyframes kindred-box-1 {
+  0%, 100% { background: rgba(255,255,255,0.4); transform: scale(1.05); box-shadow: 0 0 40px 16px rgba(255,255,255,0.35); }
+  50%       { background: rgba(255,255,255,0.1); transform: scale(1);    box-shadow: none; }
+}
+@keyframes kindred-box-2 {
+  0%, 100% { background: rgba(255,255,255,0.1); transform: scale(1);    box-shadow: none; }
+  50%       { background: rgba(255,255,255,0.4); transform: scale(1.05); box-shadow: 0 0 40px 16px rgba(255,255,255,0.35); }
+}
+@keyframes likeStamp {
+  /* synced to the 4.5s tinderExit: appear at ~48% (pull-back) and fade by 66% (swipe) */
+  0%, 44%  { opacity: 0; transform: rotate(12deg) scale(2.5); }
+  50%, 64% { opacity: 1; transform: rotate(12deg) scale(1); }
+  69%      { opacity: 0; transform: rotate(12deg) scale(1); }
+  100%     { opacity: 0; transform: rotate(12deg) scale(2.5); }
+}
+@keyframes expandReveal {
+  from { opacity: 0; transform: translateY(-16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)     scale(1); }
+}
+@keyframes detailEnter {
+  from { opacity: 0; transform: translateY(2.4rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes unfoldFromTitle {
+  from { opacity: 0; transform: scaleY(0.88) translateY(-2rem); }
+  to   { opacity: 1; transform: scaleY(1)    translateY(0); }
+}
+@keyframes foldToTitle {
+  from { opacity: 1; transform: scaleY(1)    translateY(0); }
+  to   { opacity: 0; transform: scaleY(0.88) translateY(-2rem); }
+}
+@keyframes moveHorizontalSmall {
+  0%   { transform: translateX(-50px); }
+  50%  { transform: translateX(100px); }
+  100% { transform: translateX(-50px); }
+}
+@keyframes moveVerticalSmall {
+  0%   { transform: translateY(-50px); }
+  50%  { transform: translateY(80px); }
+  100% { transform: translateY(-50px); }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LEGACY / SHARED COMPONENT TOKENS
+   (kept for compatibility with components not yet migrated)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root {
+  /* Legacy Color aliases — migrate components to use semantic tokens above */
+  --color-primary:       #1f3a2f;
+  --color-primary-dark:  #10211a;
+  --color-primary-light: #3f6c54;
+  --color-secondary:     #d9b86c;
+  --color-neutral:       #efe3cb;
+  --color-background:    #f2ead8;
+  --color-text:          #2a271f;
+  --color-muted:         #6f6552;
+  --color-error:         #c43e3e;
+  --color-success:       #3f8c5c;
+  --color-border:        #d1b488;
+
+  /* Design-system shell tokens (used in MainBrief, Header etc.) */
+  --gaudi-terracotta: #c5572d;
+  --gaudi-moss:       #355d47;
+  --gaudi-sand:       #f0d8a8;
+  --gaudi-ochre:      #d2922e;
+  --gaudi-sea:        #2f6f7e;
+  --gaudi-ink:        #1f1a14;
+
+  --ds-border-soft:   1px solid rgb(148 105 42 / 0.25);
+  --ds-border-card:   1px solid rgb(95 66 29 / 0.2);
+  --ds-border-pill:   1px solid rgb(95 66 29 / 0.22);
+  --ds-radius-shell:  28px 44px 32px 48px / 38px 32px 46px 36px;
+  --ds-shadow-shell:  0 14px 36px rgb(86 55 20 / 0.11), inset 0 1px 0 rgb(255 255 255 / 0.68);
+  --ds-shadow-card:   0 12px 30px rgb(57 38 17 / 0.09);
+
+  --gaudi-shell-bg:  linear-gradient(140deg, rgb(255 255 255 / 0.62) 0%, rgb(248 236 212 / 0.72) 48%, rgb(236 218 182 / 0.66) 100%);
+  --gaudi-card-bg:   linear-gradient(155deg, rgb(255 255 255 / 0.78) 0%, rgb(246 228 191 / 0.64) 56%, rgb(232 212 175 / 0.72) 100%);
+  --gaudi-pill-bg:   linear-gradient(160deg, rgb(255 249 236 / 0.9), rgb(240 216 168 / 0.6));
+
+  --gaudi-blob-a-bg: rgb(197 87 45 / 0.2);
+  --gaudi-blob-b-bg: rgb(53 93 71 / 0.16);
+  --gaudi-blob-c-bg: rgb(47 111 126 / 0.16);
+
+  --gaudi-arch-primary:   rgb(95 66 29 / 0.14);
+  --gaudi-arch-secondary: rgb(53 93 71 / 0.12);
+}
+
+/* Blob & arches components (used in MainBrief) */
+@layer components {
+  .gaudi-blob-a,
+  .gaudi-blob-b,
+  .gaudi-blob-c {
+    position: absolute;
+    filter: blur(34px);
+    pointer-events: none;
+  }
+  .gaudi-blob-a {
+    width: 240px; height: 210px;
+    background: var(--gaudi-blob-a-bg);
+    border-radius: 52% 48% 44% 56% / 42% 58% 40% 60%;
+    animation: gaudiDriftA 16s ease-in-out infinite;
+  }
+  .gaudi-blob-b {
+    width: 220px; height: 240px;
+    background: var(--gaudi-blob-b-bg);
+    border-radius: 44% 56% 58% 42% / 62% 40% 60% 38%;
+    animation: gaudiDriftB 18s ease-in-out infinite;
+  }
+  .gaudi-blob-c {
+    width: 190px; height: 180px;
+    background: var(--gaudi-blob-c-bg);
+    border-radius: 64% 36% 52% 48% / 38% 58% 42% 62%;
+    animation: gaudiDriftC 20s ease-in-out infinite;
+  }
+  .gaudi-arches {
+    position: absolute;
+    inset: 0;
+    opacity: 0.23;
+    background-image:
+      radial-gradient(circle at 50% 140%, transparent 50%, var(--gaudi-arch-primary) 50.6%, transparent 51.2%),
+      radial-gradient(circle at 80% 135%, transparent 52%, var(--gaudi-arch-secondary) 52.6%, transparent 53.2%);
+    background-size: 420px 270px, 520px 320px;
+    background-position: -40px 100%, 60% 110%;
+    background-repeat: repeat-x;
+    pointer-events: none;
+  }
+}
+
+@keyframes gaudiDriftA {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(16px, -10px); }
+}
+@keyframes gaudiDriftB {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(-18px, 8px); }
+}
+@keyframes gaudiDriftC {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(12px, 12px); }
+}
+
+/* ── Mobile touch targets ─────────────────────────────── */
+@media only screen and (max-width: 767px) {
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   GLOBAL BASE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+html {
+  /* 10px base rem — 1.6rem = 16px, 1.8rem = 18px, etc. No conversion needed.
+     Percentage respects the user's browser font-size preference (a11y ✓)   */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  /* Allow height: 0 → height: auto CSS transitions (Chrome 129+, FF 135+) */
+  interpolate-size: allow-keywords;
+  /* Fixed ambient gradient — visible on every page regardless of scroll */
+  background-color: var(--color-canvas);
+  background-image:
+    radial-gradient(ellipse 60% 50% at 80% 0%,   color-mix(in srgb, var(--color-accent) 5%, transparent), transparent 70%),
+    radial-gradient(ellipse 55% 55% at -10% 40%,  color-mix(in srgb, var(--color-sky) 4%, transparent),    transparent 70%),
+    radial-gradient(ellipse 40% 45% at 90% 85%,   color-mix(in srgb, var(--color-accent) 3%, transparent), transparent 70%);
+  background-attachment: fixed;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; }
+  * { box-sizing: border-box; }
+}
+
+body {
+  /* Transparent so html's fixed gradient shows through */
+  background-color: transparent;
+  color: var(--color-ink);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+button, [role="button"] {
+  cursor: pointer;
+}
+
+/* ── Page navigation view transitions ───────────────────
+   Only the hero element fades between pages.
+   Root transition is suppressed so no zoom/morph occurs.
+──────────────────────────────────────────────────────── */
+
+/* Kill the root snapshot transition entirely */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+/* Crossfade only the named hero element */
+::view-transition-old(page-hero) {
+  animation: hero-fade-out 0.25s ease-out both;
+}
+::view-transition-new(page-hero) {
+  animation: hero-fade-in 0.3s ease-in both;
+}
+
+@keyframes hero-fade-out {
+  to { opacity: 0; }
+}
+@keyframes hero-fade-in {
+  from { opacity: 0; }
+}
+
+/* ── Footer chat widget view transition ────────────────────
+   Widget slides up from bottom on open, fades down on close.
+──────────────────────────────────────────────────────── */
+::view-transition-new(footer-widget) {
+  animation: footer-widget-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+::view-transition-old(footer-widget) {
+  animation: footer-widget-out 0.2s ease-in both;
+}
+@keyframes footer-widget-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes footer-widget-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(14px) scale(0.97); }
+}
 
 /* Mobile Touch and Interaction Improvements */
 @media only screen and (max-width: 767px) {

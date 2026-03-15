@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 
 interface NavigationLink {
   href: string;
@@ -15,191 +16,116 @@ interface HeaderProps {
   links: NavigationLink[];
 }
 
-const getGlassStyles = (isActive: boolean, isButton: boolean) => {
-  if (isButton) {
-    return {
-      backgroundColor: 'color-mix(in srgb, #bbbbbc 20%, transparent)',
-      boxShadow: `
-        inset 0 0 0 1px color-mix(in srgb, #fff 10%, transparent),
-        inset 2px 1px 0px -1px color-mix(in srgb, #fff 90%, transparent),
-        inset -1.5px -1px 0px -1px color-mix(in srgb, #fff 80%, transparent),
-        inset -2px -6px 1px -5px color-mix(in srgb, #fff 60%, transparent),
-        inset -1px 2px 3px -1px color-mix(in srgb, #000 20%, transparent),
-        inset 0px -4px 1px -2px color-mix(in srgb, #000 10%, transparent),
-        0px 3px 6px 0px color-mix(in srgb, #000 8%, transparent)
-      `,
-    };
-  }
-
-  return {
-    backgroundColor: isActive
-      ? 'color-mix(in srgb, #ffffff 15%, transparent)'
-      : 'transparent',
-  };
-};
-
-const headerGlassStyles = {
-  backgroundColor: 'color-mix(in srgb, #bbbbbc 12%, transparent)',
-  backdropFilter: 'url(#glass-filter) saturate(150%)',
-  WebkitBackdropFilter: 'blur(8px) saturate(150%)',
-  boxShadow: `
-    inset 0 0 0 1px color-mix(in srgb, #fff 10%, transparent),
-    inset 1.8px 3px 0px -2px color-mix(in srgb, #fff 90%, transparent),
-    inset -2px -2px 0px -2px color-mix(in srgb, #fff 80%, transparent),
-    inset -3px -8px 1px -6px color-mix(in srgb, #fff 60%, transparent),
-    inset -0.3px -1px 4px 0px color-mix(in srgb, #000 12%, transparent),
-    inset -1.5px 2.5px 0px -2px color-mix(in srgb, #000 20%, transparent),
-    inset 0px 3px 4px -2px color-mix(in srgb, #000 20%, transparent),
-    inset 2px -6.5px 1px -4px color-mix(in srgb, #000 10%, transparent),
-    0px 1px 5px 0px color-mix(in srgb, #000 10%, transparent),
-    0px 6px 16px 0px color-mix(in srgb, #000 8%, transparent)
-  `,
-  transition:
-    'background-color 400ms cubic-bezier(1, 0, 0.4, 1), box-shadow 400ms cubic-bezier(1, 0, 0.4, 1)',
-};
-
-const mobileDropdownGlassStyles = {
-  backgroundColor: 'color-mix(in srgb, #bbbbbc 12%, transparent)',
-  backdropFilter: 'url(#glass-filter) saturate(150%)',
-  WebkitBackdropFilter: 'blur(20px) saturate(150%)',
-  boxShadow: `
-    inset 0 0 0 1px color-mix(in srgb, #fff 10%, transparent),
-    inset 1.8px 3px 0px -2px color-mix(in srgb, #fff 90%, transparent),
-    inset -2px -2px 0px -2px color-mix(in srgb, #fff 80%, transparent),
-    inset -3px -8px 1px -6px color-mix(in srgb, #fff 60%, transparent),
-    inset -0.3px -1px 4px 0px color-mix(in srgb, #000 12%, transparent),
-    inset -1.5px 2.5px 0px -2px color-mix(in srgb, #000 20%, transparent),
-    inset 0px 3px 4px -2px color-mix(in srgb, #000 20%, transparent),
-    inset 2px -6.5px 1px -4px color-mix(in srgb, #000 10%, transparent),
-    0px 1px 5px 0px color-mix(in srgb, #000 10%, transparent),
-    0px 6px 16px 0px color-mix(in srgb, #000 8%, transparent)
-  `,
-  transition:
-    'background-color 400ms cubic-bezier(1, 0, 0.4, 1), box-shadow 400ms cubic-bezier(1, 0, 0.4, 1)',
-};
-
-export default function Header({
-  brandName,
-  brandSubtitle,
-  links,
-}: HeaderProps) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+export default function Header({ brandName, brandSubtitle, links }: HeaderProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  const toggleMobileMenu = () => {
-    console.log('Toggle mobile menu clicked', !isMobileMenuOpen);
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const isActive = (path: string) => {
-    if (path === '/') return pathname === '/';
-    return pathname.startsWith(path);
-  };
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname.startsWith(href);
 
   return (
     <div className="relative">
-      <header
-        className="relative rounded-full overflow-visible z-50"
-        style={headerGlassStyles}
-      >
-        {/* Content with proper text color */}
-        <div className="relative">
-          <nav
-            className="flex items-center justify-between px-4 py-1 md:py-3"
-            role="navigation"
-            aria-label="Main Navigation"
-          >
-            {/* Logo and Title Section */}
-            <div className="flex items-center gap-3">
-              <Link
-                href="/"
-                className="font-bold text-sm text-gray-800 transition-colors duration-200 hover:text-gray-600"
-                aria-current={isActive('/') ? 'page' : undefined}
-              >
-                {brandName}
-              </Link>
-              <div className="hidden sm:block w-px h-4 bg-gray-600/50"></div>
-              <span className="hidden sm:block text-xs font-medium text-gray-700">
-                {brandSubtitle}
-              </span>
-            </div>
+      {/* ── Main bar ──────────────────────────────────────── */}
+      <header className="glass-nav relative rounded-full z-50 overflow-visible">
+        <nav
+          className="flex items-center justify-between px-4 sm:px-6 py-2 sm:py-3"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          {/* Brand */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/"
+              className="type-nav-brand text-ink hover:text-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 rounded"
+              aria-current={isActive('/') ? 'page' : undefined}
+            >
+              {brandName}
+            </Link>
+            <span className="hidden sm:block w-px h-4 bg-ink/15" aria-hidden />
+            <span className="hidden sm:block type-label text-ink/70">
+              {brandSubtitle}
+            </span>
+          </div>
 
-            {/* Desktop Navigation */}
-            <ul className="hidden md:flex items-center gap-1">
-              {links.map((link) => (
+          {/* Desktop links */}
+          <ul className="hidden md:flex items-center gap-1" role="list">
+            {links.map((link) => {
+              const active = isActive(link.href);
+              return (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 text-gray-800 hover:text-gray-600"
-                    aria-current={isActive(link.href) ? 'page' : undefined}
-                    style={getGlassStyles(isActive(link.href), false)}
+                    aria-current={active ? 'page' : undefined}
+                    className={clsx(
+                      'relative inline-flex items-center type-label px-4 py-2 rounded-full transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40',
+                      active ? 'text-ink-inverted' : 'text-ink/70 hover:text-ink hover:bg-ink/5',
+                    )}
+                  >
+                    {active && (
+                      <span
+                        aria-hidden
+                        // shared view-transition-name so the browser slides the pill between routes
+                        style={{ viewTransitionName: 'nav-pill' }}
+                        className="absolute inset-0 rounded-full bg-ink shadow-sm"
+                      />
+                    )}
+                    <span
+                      className="relative z-10"
+                      // unique name per link — browser captures old/new color state and cross-fades
+                      style={{ viewTransitionName: `nav-label-${link.href.replace(/\//g, '') || 'home'}` }}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setMobileOpen((v) => !v)}
+            className="md:hidden p-2 rounded-full text-ink/70 hover:text-ink hover:bg-ink/5 touch-manipulation transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 cursor-pointer"
+            aria-label="Toggle mobile menu"
+            aria-expanded={mobileOpen}
+            type="button"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+              {mobileOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </nav>
+      </header>
+
+      {/* ── Mobile dropdown ───────────────────────────────── */}
+      {mobileOpen && (
+        <div className="glass-nav md:hidden absolute top-full inset-s-0 inset-e-0 mt-2 rounded-2xl z-50 overflow-hidden">
+          <ul className="px-3 py-3 space-y-1" role="list">
+            {links.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    aria-current={active ? 'page' : undefined}
+                    onClick={() => setMobileOpen(false)}
+                    className={clsx(
+                      'type-label block px-4 py-3 rounded-xl touch-manipulation transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40',
+                      active
+                        ? 'bg-ink text-ink-inverted'
+                        : 'text-ink/70 hover:text-ink hover:bg-ink/5',
+                    )}
                   >
                     {link.label}
                   </Link>
                 </li>
-              ))}
-            </ul>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleMobileMenu}
-              className="md:hidden p-2 rounded-md transition-all duration-200 text-gray-800 hover:text-gray-600 touch-manipulation flex items-center justify-center"
-              style={{
-                backgroundColor: 'color-mix(in srgb, #bbbbbc 15%, transparent)',
-              }}
-              aria-label="Toggle mobile menu"
-              aria-expanded={isMobileMenuOpen}
-              type="button"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                {isMobileMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
-          </nav>
-        </div>
-      </header>
-
-      {/* Mobile Menu - Now as sibling for proper backdrop-filter */}
-      {isMobileMenuOpen && (
-        <div
-          className="md:hidden absolute top-full left-0 right-0 mt-1 rounded-lg shadow-lg z-50"
-          style={mobileDropdownGlassStyles}
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {links.map((link) => (
-              <div key={link.href}>
-                <Link
-                  href={link.href}
-                  className="block px-3 py-2 text-base font-medium rounded-md transition-all duration-200 text-gray-900 hover:text-gray-700 hover:bg-white/10 touch-manipulation"
-                  style={getGlassStyles(isActive(link.href), false)}
-                  aria-current={isActive(link.href) ? 'page' : undefined}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              </div>
-            ))}
-          </div>
+              );
+            })}
+          </ul>
         </div>
       )}
     </div>

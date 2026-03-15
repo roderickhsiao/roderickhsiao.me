@@ -63,16 +63,17 @@ const getIconConfig = (name: string) => {
 export default function MainBrief() {
   const { profile } = summary;
   return (
-    <section className="relative w-full bg-gradient-to-br from-slate-50 via-stone-50/60 to-slate-100/80 text-slate-800 p-4 sm:p-6 lg:p-8 overflow-hidden rounded-lg border border-slate-200/50 shadow-sm order-1 lg:order-2">
+    <section className="relative w-full text-(--color-text) p-4 sm:p-6 lg:p-8 overflow-hidden order-1 lg:order-2 border-(--ds-border-soft) [background:var(--gaudi-shell-bg)] [box-shadow:var(--ds-shadow-shell)] rounded-(--ds-radius-shell)">
       {/* Background gradients - optimized for smaller width */}
-      <div className="absolute inset-0 bg-gradient-to-br from-stone-50/30 via-slate-50/20 to-stone-100/40 rounded-lg"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-[#fff9ee]/45 via-[#f5e7c8]/25 to-[#f2dcc0]/35"></div>
+      <div className="gaudi-arches opacity-35"></div>
 
       {/* Simplified moving spotlights for smaller container */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Spotlight 1 - smaller and optimized for narrow width */}
-        <div className="absolute w-32 h-32 sm:w-40 sm:h-40 bg-emerald-600/8 rounded-full blur-2xl animate-move-horizontal-small top-[10%]"></div>
+        <div className="absolute w-32 h-32 sm:w-40 sm:h-40 bg-(--gaudi-terracotta)/15 rounded-full blur-2xl animate-move-horizontal-small top-[10%]"></div>
         {/* Spotlight 2 - reduced size */}
-        <div className="absolute w-24 h-24 sm:w-32 sm:h-32 bg-green-600/6 rounded-full blur-2xl animate-move-vertical-small right-[10%]"></div>
+        <div className="absolute w-24 h-24 sm:w-32 sm:h-32 bg-(--gaudi-sea)/12 rounded-full blur-2xl animate-move-vertical-small end-[10%]"></div>
       </div>
 
       <div className="relative">
@@ -85,25 +86,25 @@ export default function MainBrief() {
               width={100}
               height={120}
               alt="Profile"
-              className="w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-lg shadow-lg"
+              className="w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-[14px] shadow-lg"
               priority={true}
               quality={85}
               sizes="(max-width: 640px) 48px, 56px"
             />
             {/* Simple accent */}
-            <div className="absolute -bottom-0.5 -end-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-primary rounded-full"></div>
+            <div className="absolute -bottom-0.5 -inset-e-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-(--gaudi-terracotta) rounded-full"></div>
           </div>
 
           {/* Content - more compact */}
           <div className="flex-1 space-y-1 min-w-0">
             <div className="space-y-0.5">
-              <h1 className="text-sm sm:text-base font-bold text-slate-900 leading-tight">
+              <h1 className="text-sm sm:text-base font-bold text-(--gaudi-ink) leading-tight tracking-[-0.02em] text-balance">
                 {profile.name}
               </h1>
-              <p className="text-xs sm:text-sm text-slate-700 font-medium">
+              <p className="text-xs sm:text-sm text-(--gaudi-moss) font-semibold">
                 {profile.title}
               </p>
-              <div className="flex items-center gap-1 text-slate-600">
+              <div className="flex items-center gap-1 text-(--color-muted)">
                 <svg
                   className="w-2.5 h-2.5 shrink-0"
                   fill="currentColor"
@@ -133,12 +134,12 @@ export default function MainBrief() {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center size-8 bg-slate-100/80 border border-slate-200/40 rounded-full hover:bg-slate-200/80 hover:border-slate-300/50 transition-all duration-200 group"
+                        className="flex items-center justify-center size-8 transition-all duration-200 group border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] rounded-full hover:scale-105"
                         aria-label={`Visit ${item.name} profile`}
                         title={`Visit my ${item.name} profile`}
                       >
                         <svg
-                          className="w-4 h-4 text-slate-600 group-hover:text-slate-700 transition-colors duration-200"
+                          className="w-4 h-4 text-(--color-muted) group-hover:text-(--gaudi-terracotta) transition-colors duration-200"
                           fill={iconConfig.fill}
                           stroke={iconConfig.stroke}
                           viewBox={iconConfig.viewBox}
@@ -164,14 +165,14 @@ export default function MainBrief() {
 
         {/* Professional Summary - more compact */}
         <div className="mt-2 sm:mt-3">
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p className="text-xs sm:text-sm text-(--color-muted) leading-relaxed">
             {profile.brief}
           </p>
         </div>
 
         {/* Expertise with magazine styling - optimized for narrow width */}
         <div className="mt-2 sm:mt-3 space-y-1.5 sm:space-y-2">
-          <h2 className="text-sm sm:text-base font-bold text-slate-900">
+          <h2 className="text-sm sm:text-base font-bold text-(--gaudi-ink) tracking-[-0.02em] text-balance">
             Expertise
           </h2>
 
@@ -180,7 +181,7 @@ export default function MainBrief() {
             {profile.summary.map((item, i) => (
               <span
                 key={i}
-                className="inline-block px-1.5 py-0.5 sm:px-2 sm:py-1 bg-slate-100/80 border border-slate-200/40 text-slate-800 text-xs font-medium rounded-full hover:bg-slate-200/80 hover:border-slate-300/50 transition-all duration-200"
+                className="inline-block px-1.5 py-0.5 sm:px-2 sm:py-1 text-xs font-medium transition-all duration-200 hover:-translate-y-0.5 border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] rounded-full text-[rgb(45_37_26/0.92)]"
               >
                 {item}
               </span>

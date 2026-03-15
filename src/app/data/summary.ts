@@ -9,6 +9,12 @@ const summary = {
       width: 200,
       height: 200,
     },
+    residency: ['SF Bay Area', 'Taipei'],
+    interests: ['Open Web Advocate', 'House Dancer', 'Animal Lover', 'Coffee Enthusiast'],
+    languages: [
+      { flag: '🇺🇸', label: 'English' },
+      { flag: '🇹🇼', label: 'Mandarin' },
+    ],
     list: [
       { field: 'name' },
       { field: 'title' },

@@ -1,11 +1,33 @@
-import clsx from 'clsx';
-
 interface TravelStatsProps {
   totalCountries: number;
   totalCities: number;
   totalContinents: number;
   totalHomePlaces: number;
   isLoading?: boolean;
+}
+
+interface LedgerEntryProps {
+  label: string;
+  value: number;
+  unit: string;
+}
+
+function LedgerEntry({ label, value, unit }: LedgerEntryProps) {
+  return (
+    <div className="flex flex-col py-2 group min-w-25">
+      <span className="text-[9px] font-black font-sans uppercase tracking-[0.3em] text-ink/40 mb-3">
+        {label}
+      </span>
+      <div className="flex items-baseline gap-3 border-s-2 border-ink/10 ps-6 transition-all duration-700 group-hover:border-ink">
+        <span className="text-5xl sm:text-6xl font-black italic tracking-tighter text-ink leading-none group-hover:translate-x-1 transition-transform duration-500 origin-left">
+          {value}
+        </span>
+        <span className="text-[9px] font-black text-ink/40 uppercase tracking-widest">
+          {unit}
+        </span>
+      </div>
+    </div>
+  );
 }
 
 export default function TravelStats({
@@ -15,51 +37,24 @@ export default function TravelStats({
   totalHomePlaces,
   isLoading = false,
 }: TravelStatsProps) {
+  if (isLoading) {
+    return <div className="h-40 rounded-2xl animate-pulse bg-ink/5" />;
+  }
+
   return (
-    <div className={clsx('grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 mt-8')}>
-      <div className={clsx('bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 text-center border border-blue-200')}>
-        <div className={clsx('text-2xl sm:text-3xl font-bold text-blue-700 mb-1')}>
-          {isLoading ? (
-            <div className={clsx('h-8 bg-blue-200 rounded mx-auto w-12 animate-pulse')} />
-          ) : (
-            totalCountries
-          )}
-        </div>
-        <div className={clsx('text-sm text-blue-600 font-medium')}>Countries</div>
+    <section className="pt-16 border-t-2 border-ink/10 mt-8 mb-16">
+      <div className="flex flex-col md:flex-row items-start md:items-baseline justify-between gap-6 mb-12">
+        <h2 className="type-heading-lg text-ink">
+          Archival <br />Summary
+        </h2>
+        <span className="type-label-wide text-ink/30">Consolidated_Metrics_{new Date().getFullYear()}</span>
       </div>
-
-      <div className={clsx('bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 text-center border border-green-200')}>
-        <div className={clsx('text-2xl sm:text-3xl font-bold text-green-700 mb-1')}>
-          {isLoading ? (
-            <div className={clsx('h-8 bg-green-200 rounded mx-auto w-12 animate-pulse')} />
-          ) : (
-            totalCities
-          )}
-        </div>
-        <div className={clsx('text-sm text-green-600 font-medium')}>Cities</div>
+      <div className="flex flex-wrap gap-12 sm:gap-20">
+        <LedgerEntry label="Territories" value={totalCountries} unit="Logged" />
+        <LedgerEntry label="Metro Centers" value={totalCities} unit="Units" />
+        <LedgerEntry label="Spheres" value={totalContinents} unit="Continents" />
+        <LedgerEntry label="Residency" value={totalHomePlaces} unit="Base" />
       </div>
-
-      <div className={clsx('bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 text-center border border-purple-200')}>
-        <div className={clsx('text-2xl sm:text-3xl font-bold text-purple-700 mb-1')}>
-          {isLoading ? (
-            <div className={clsx('h-8 bg-purple-200 rounded mx-auto w-8 animate-pulse')} />
-          ) : (
-            totalContinents
-          )}
-        </div>
-        <div className={clsx('text-sm text-purple-600 font-medium')}>Continents</div>
-      </div>
-
-      <div className={clsx('bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-4 text-center border border-orange-200')}>
-        <div className={clsx('text-2xl sm:text-3xl font-bold text-orange-700 mb-1')}>
-          {isLoading ? (
-            <div className={clsx('h-8 bg-orange-200 rounded mx-auto w-8 animate-pulse')} />
-          ) : (
-            totalHomePlaces
-          )}
-        </div>
-        <div className={clsx('text-sm text-orange-600 font-medium')}>Called Home</div>
-      </div>
-    </div>
+    </section>
   );
 }

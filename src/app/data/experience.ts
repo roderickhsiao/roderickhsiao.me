@@ -37,7 +37,7 @@ const experience: { companies: Company[] } = {
   companies: [
     {
       name: 'Kindred',
-      logo: '/kindred.png',
+      logo: '/kindredLogo.svg',
       time: 'Jan 2023 - present',
       title: 'Founding Engineer',
       location: 'Remote',
@@ -45,6 +45,7 @@ const experience: { companies: Company[] } = {
         {
           name: 'Kindred',
           time: 'Jan 2023 - present',
+          summary: 'Established frontend architecture, implemented core features, and led AI adoption and optimizations.',
           techStack: ['NextJS', 'React', 'React Native', 'Tailwind CSS', 'TypeScript'],
           smartlink: {
             url: 'https://livekindred.com/',
@@ -56,8 +57,8 @@ const experience: { companies: Company[] } = {
       ],
     },
     {
-      name: 'Tinder Inc.',
-      logo: '/tinderLogo.png',
+      name: 'Tinder',
+      logo: '/tinderLogo.svg',
       time: 'Feb 2017 - Jan 2023',
       title: 'Principal Software Engineer',
       location: 'Palo Alto, CA',
@@ -133,7 +134,7 @@ const experience: { companies: Company[] } = {
           },
         },
         {
-          name: 'Forethought',
+          name: 'Forethought (acquired by Zendesk in 2026)',
           time: 'August 2021 - Nov 2021, Jan 2022 - July 2022',
           summary: 'Spearheaded feature development and design system infrastructure. Provided strategic technical guidance and architectural direction. Delivered state management solutions and executed comprehensive rebranding initiatives.',
           techStack: ['React'],
@@ -180,7 +181,7 @@ const experience: { companies: Company[] } = {
     },
     {
       name: 'Branch',
-      logo: '/branch.png',
+      logo: '/branchLogo.svg',
       time: 'July 2016 - Jan 2017',
       title: 'Software Engineer',
       location: 'Palo Alto, CA',
@@ -201,13 +202,13 @@ const experience: { companies: Company[] } = {
     },
     {
       name: 'Yahoo',
-      logo: '/yahooLogo.png',
+      logo: '/yahooLogo.svg',
       time: 'Nov 2009 - July 2016',
       title: 'Senior Software Engineer',
       location: 'Sunnyvale, CA',
       projects: [
         {
-          name: 'Yahoo Homepage',
+          name: 'Homepage',
           time: 'June 2014 - July 2016',
           summary: 'Engineered one of the world’s most visited single-page applications, serving millions of users across desktop, tablet, and mobile platforms. Developed reusable UI components, utilities, and Node.js libraries.',
           techStack: ['Atomic CSS', 'ExpressJS', 'ReactJS (Fluxible)'],
@@ -219,7 +220,7 @@ const experience: { companies: Company[] } = {
           },
         },
         {
-          name: 'Yahoo Weather',
+          name: 'Weather',
           time: 'June 2014 - July 2016',
           summary: 'Enhanced Yahoo Weather platform using isomorphic React architecture, delivering seamless user experiences across all devices.',
           techStack: ['Atomic CSS', 'ExpressJS', 'ReactJS (Fluxible)'],
@@ -231,7 +232,7 @@ const experience: { companies: Company[] } = {
           },
         },
         {
-          name: 'Yahoo News Digest',
+          name: 'News Digest',
           time: 'June 2014 - July 2016',
           summary: 'Developed web platform for Yahoo News Digest, enabling improved SEO performance and deep linking capabilities for the popular mobile application content.',
           techStack: ['Atomic CSS', 'ExpressJS', 'ReactJS (Fluxible)'],
@@ -244,7 +245,7 @@ const experience: { companies: Company[] } = {
           },
         },
         {
-          name: 'Yahoo Mobile Homepage',
+          name: 'Mobile Homepage',
           time: 'Oct 2013 - June 2014',
           summary: 'Piloted innovative single-page application architecture for Yahoo mobile homepage, focusing on user-perceived performance enhancements and mobile optimization.',
           techStack: ['DustJS', 'ExpressJS', 'YUI'],
@@ -253,13 +254,13 @@ const experience: { companies: Company[] } = {
     },
     {
       name: 'Yahoo',
-      logo: '/yahooLogo.png',
+      logo: '/yahooLogo.svg',
       time: 'April 2013 - Oct 2013',
       title: 'Engineering Team Lead',
       location: 'Taipei, Taiwan',
       projects: [
         {
-          name: 'Yahoo APAC Mobile Homepage (Taiwan and Hongkong)',
+          name: 'APAC Mobile Homepage (Taiwan and Hongkong)',
           time: 'April 2013 - Oct 2013',
           summary: 'Led a cross-functional team of 5 developers to architect and deliver comprehensive content consumption experiences for Asian Pacific markets.',
           techStack: ['CSS', 'DustJS', 'ExpressJS', 'YUI'],
@@ -274,13 +275,13 @@ const experience: { companies: Company[] } = {
     },
     {
       name: 'Yahoo',
-      logo: '/yahooLogo.png',
+      logo: '/yahooLogo.svg',
       time: 'Nov 2009 - April 2013',
       title: 'Quality Engineering Lead / Software Engineer',
       location: 'Taipei, Taiwan',
       projects: [
         {
-          name: 'Yahoo 2012 Presidential Election - Control Room',
+          name: '2012 Presidential Election - Control Room',
           time: 'Sep 2012 - Dec 2012',
           summary: 'Architected and developed Control Room, a comprehensive tablet application providing real-time election coverage with curated content and original reporting from leading news sources.',
           techStack: ['CSS', 'PHP', 'YUI'],
@@ -293,7 +294,7 @@ const experience: { companies: Company[] } = {
           },
         },
         {
-          name: 'Yahoo 2012 Presidential Election - #Hashout',
+          name: '2012 Presidential Election - #Hashout',
           time: 'June 2012 - Sep 2012',
           summary: 'Developed #Hashout, an innovative online talk show platform designed to engage diverse perspectives and facilitate meaningful political conversations during the election cycle.',
           techStack: ['CSS', 'PHP', 'YUI'],
@@ -306,7 +307,7 @@ const experience: { companies: Company[] } = {
           },
         },
         {
-          name: 'Yahoo Global News',
+          name: 'Global News',
           time: 'Nov 2009 - June 2012',
           summary: 'Architected unified platform serving all Yahoo properties globally. Led frontend testing strategy, framework development, and test automation infrastructure.',
           techStack: ['Java', 'Selenium', 'WebDriverJS', 'YUI'],
@@ -320,10 +321,10 @@ const experience: { companies: Company[] } = {
       ],
     },
     {
-      name: 'Ministry of National Defense',
+      name: 'Taiwan Army',
       time: 'Oct 2008 - Nov 2009',
       title: 'Project Manager/Engineer Lead',
-      location: 'Taiwan, R.O.C',
+      location: 'Taiwan',
       projects: [
         {
           name: 'Equipment Simulator ',

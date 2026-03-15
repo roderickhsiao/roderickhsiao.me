@@ -1,5 +1,6 @@
 import experience from '@/app/data/experience';
 import Image from 'next/image';
+import { MapPin } from 'lucide-react';
 import SummarySection from '../shared/SummarySection';
 import type { Demo, Smartlink } from '@/app/data/experience';
 
@@ -14,7 +15,7 @@ function SmartLinkCard({ smartlink }: SmartLinkCardProps) {
       href={smartlink.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block bg-gray-50 rounded-lg border border-gray-200 p-3 sm:p-4 hover:border-primary/30 hover:shadow-sm transition-all duration-200 group relative z-10"
+      className="block p-3 sm:p-4 transition-all duration-300 group relative z-10 border-(--ds-border-card) [background:var(--gaudi-card-bg)] [box-shadow:var(--ds-shadow-card)] rounded-(--ds-radius-card) hover:-translate-y-0.75 hover:-rotate-[0.15deg] hover:[box-shadow:var(--ds-shadow-card-hover)] hover:border-[rgb(197_87_45/0.45)]"
     >
       <div className="flex items-start gap-3 sm:gap-4">
         {smartlink.thumbnail && (
@@ -37,11 +38,11 @@ function SmartLinkCard({ smartlink }: SmartLinkCardProps) {
         )}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5 mb-1 sm:mb-1.5">
-            <h5 className="font-medium text-gray-900 group-hover:text-primary transition-colors text-sm sm:text-base">
+            <h5 className="font-medium text-(--gaudi-ink) group-hover:text-(--gaudi-terracotta) transition-colors text-sm sm:text-base">
               {smartlink.title}
             </h5>
             <svg
-              className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gray-400 group-hover:text-primary transition-colors shrink-0"
+              className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-(--color-muted) group-hover:text-(--gaudi-terracotta) transition-colors shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -55,7 +56,7 @@ function SmartLinkCard({ smartlink }: SmartLinkCardProps) {
             </svg>
           </div>
           {smartlink.description && (
-            <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 leading-relaxed">
+            <p className="text-xs sm:text-sm text-(--color-muted) line-clamp-2 leading-relaxed">
               {smartlink.description}
             </p>
           )}
@@ -79,12 +80,12 @@ function DemoCard({ demo, getImageThemeGradient }: DemoCardProps) {
       href={demo.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group shrink-0 w-48 sm:w-56 bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-primary/30 hover:shadow-md transition-all duration-200 block"
+      className="group shrink-0 w-48 sm:w-56 overflow-hidden block transition-all duration-300 border-(--ds-border-card) [background:var(--gaudi-card-bg)] [box-shadow:var(--ds-shadow-card)] rounded-(--ds-radius-card) hover:-translate-y-0.75 hover:-rotate-[0.15deg] hover:[box-shadow:var(--ds-shadow-card-hover)] hover:border-[rgb(197_87_45/0.45)]"
     >
       <div className="relative">
         {/* Gradient overlay */}
         <div
-          className={`absolute inset-0 bg-gradient-to-t ${demoGradient} opacity-20`}
+          className={`absolute inset-0 bg-linear-to-t ${demoGradient} opacity-20`}
         ></div>
         <Image
           src={demo.thumbnail.url}
@@ -94,7 +95,7 @@ function DemoCard({ demo, getImageThemeGradient }: DemoCardProps) {
           className="w-full h-24 sm:h-28 object-cover"
         />
         {/* YouTube icon */}
-        <div className="absolute top-2 right-2">
+        <div className="absolute top-2 end-2">
           <svg
             className="w-5 h-5 text-red-500 drop-shadow-sm"
             fill="currentColor"
@@ -105,7 +106,7 @@ function DemoCard({ demo, getImageThemeGradient }: DemoCardProps) {
         </div>
       </div>
       <div className="p-2 sm:p-3">
-        <h6 className="text-xs sm:text-sm font-medium text-gray-900 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
+        <h6 className="text-xs sm:text-sm font-medium text-(--gaudi-ink) group-hover:text-(--gaudi-terracotta) transition-colors line-clamp-2 leading-tight">
           {demo.title}
         </h6>
       </div>
@@ -165,14 +166,16 @@ function getImageThemeGradient(imageSrc: string): string {
 
 export default function Experience() {
   return (
-    <section>
+    <section className="relative">
+      <div className="gaudi-blob-a top-10 -inset-s-20"></div>
+      <div className="gaudi-blob-c top-52 -inset-e-14"></div>
       <SummarySection
         title="Professional Experience & Industry Impact"
         description="Over 16 years in product engineering with extensive experience across startups to Fortune 500 companies. Specialized in frontend architecture, team leadership, and large-scale application development."
         summaryItems={[
           {
             title: 'Industry Experience',
-            icon: <span className="text-blue-600">💼</span>,
+            icon: <span className="text-(--gaudi-sea)">💼</span>,
             items: [
               '16+ years in product engineering.',
               'Startup to Fortune 500 company experience.',
@@ -180,7 +183,7 @@ export default function Experience() {
           },
           {
             title: 'Technical Leadership',
-            icon: <span className="text-green-600">🚀</span>,
+            icon: <span className="text-(--gaudi-moss)">🚀</span>,
             items: [
               'Frontend architecture and infrastructure.',
               'Team mentorship and technical guidance.',
@@ -188,7 +191,7 @@ export default function Experience() {
           },
           {
             title: 'Impact & Scale',
-            icon: <span className="text-purple-600">📈</span>,
+            icon: <span className="text-(--gaudi-ochre)">📈</span>,
             items: [
               'Large-scale applications serving millions.',
               'Design systems and developer tooling.',
@@ -196,7 +199,7 @@ export default function Experience() {
           },
           {
             title: 'Community & Speaking',
-            icon: <span className="text-orange-600">🎤</span>,
+            icon: <span className="text-(--gaudi-terracotta)">🎤</span>,
             items: [
               'International conference speaker.',
               'Open source contributor and advocate.',
@@ -205,15 +208,16 @@ export default function Experience() {
         ]}
       />
 
-      <div className="mb-4 mt-8">
-        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
+      <div className="mb-4 mt-8 relative z-10">
+        <h3 className="text-xl sm:text-2xl font-bold text-(--gaudi-ink) tracking-[-0.02em] text-balance mb-1">
           Experiences
         </h3>
       </div>
-      {experience.companies.map((company, idx) => (
+      {experience.companies.map((company, idx) => {
+        return (
         <div
           key={idx}
-          className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-gray-200 last:border-b-0"
+          className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-(--color-border)/45 last:border-b-0 relative z-10"
         >
           {/* Company Header */}
           <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-4">
@@ -230,15 +234,22 @@ export default function Experience() {
             )}
             <div className="flex-1 space-y-0.5 sm:space-y-1">
               <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-                <span className="font-bold text-gray-900 text-sm sm:text-base">
+                <span className="font-bold text-(--gaudi-ink) text-sm sm:text-base">
                   {company.name}
                 </span>
-                <span className="text-xs text-gray-500 bg-gray-100 px-1.5 py-0.5 sm:px-2 rounded-full">
+                <span className="text-xs px-1.5 py-0.5 sm:px-2 rounded-full border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] text-[rgb(45_37_26/0.92)]">
                   {company.time}
                 </span>
               </div>
-              <div className="text-xs sm:text-sm text-gray-600">
-                {company.title} • {company.location}
+              <div className="flex items-center gap-1 text-xs sm:text-sm text-(--color-muted)">
+                <span>{company.title}</span>
+                {company.location && (
+                  <>
+                    <span className="opacity-40 mx-0.5">•</span>
+                    <MapPin size={11} className="shrink-0 opacity-50" />
+                    <span>{company.location}</span>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -259,15 +270,15 @@ export default function Experience() {
               return (
                 <div
                   key={pidx}
-                  className="bg-white rounded-lg p-2 sm:p-3 border border-gray-100 shadow-sm relative overflow-hidden"
+                  className="p-2 sm:p-3 relative overflow-hidden transition-all duration-300 border-(--ds-border-card) [background:var(--gaudi-card-bg)] [box-shadow:var(--ds-shadow-card)] rounded-(--ds-radius-card) hover:-translate-y-0.75 hover:-rotate-[0.15deg] hover:[box-shadow:var(--ds-shadow-card-hover)] hover:border-[rgb(197_87_45/0.45)]"
                 >
                   {/* Visible corner gradient accent */}
                   <div
-                    className={`absolute top-0 end-0 w-48 h-48 bg-gradient-to-bl ${gradientClass} opacity-40 blur-3xl rounded-full -translate-y-16 translate-x-16`}
+                    className={`absolute top-0 inset-e-0 w-48 h-48 bg-linear-to-bl ${gradientClass} opacity-40 blur-3xl rounded-full -translate-y-16 translate-x-16`}
                   ></div>
 
                   <div className="mb-2 relative z-10">
-                    <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
+                    <h4 className="font-semibold text-(--gaudi-ink) mb-1 text-sm sm:text-base">
                       {project.name}
                     </h4>
                     {project.techStack && (
@@ -275,7 +286,7 @@ export default function Experience() {
                         {project.techStack.map((tech, tidx) => (
                           <span
                             key={tidx}
-                            className="inline-block px-1.5 py-0.5 sm:px-2 bg-slate-100/80 border border-slate-200/40 text-slate-800 text-xs font-medium rounded-full"
+                            className="inline-block px-1.5 py-0.5 sm:px-2 text-xs font-medium rounded-full border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] text-[rgb(45_37_26/0.92)]"
                           >
                             {tech}
                           </span>
@@ -283,7 +294,7 @@ export default function Experience() {
                       </div>
                     )}
                     {project.summary && (
-                      <p className="text-xs sm:text-sm text-gray-700 mb-2">
+                      <p className="text-xs sm:text-sm text-(--color-muted) mb-2">
                         {project.summary}
                       </p>
                     )}
@@ -297,7 +308,7 @@ export default function Experience() {
                   {/* Demo Carousel for YouTube videos */}
                   {project.demos && project.demos.length > 0 && (
                     <div className="mt-3 relative z-10">
-                      <h5 className="text-sm font-medium text-gray-700 mb-2">
+                      <h5 className="text-sm font-medium text-(--color-muted) mb-2">
                         Featured Talks & Demos
                       </h5>
                       <div className="relative">
@@ -321,7 +332,8 @@ export default function Experience() {
             })}
           </div>
         </div>
-      ))}
+        );
+      })}
     </section>
   );
 }

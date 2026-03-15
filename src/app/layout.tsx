@@ -1,19 +1,34 @@
 import type { Metadata, Viewport } from 'next';
 
-import { Roboto } from 'next/font/google';
+import { Plus_Jakarta_Sans, Crimson_Pro } from 'next/font/google';
 import './globals.css';
 
 import type { ReactNode } from 'react';
 import MainLayout from '@/app/components/layout/MainLayout';
 import Footer from '@/app/components/layout/Footer';
-import Contact from '@/app/components/Home/Contact';
-import About from '@/app/components/Home/About';
-import MainBrief from '@/app/components/Home/MainBrief';
+import DevToolsMessage from '@/app/components/shared/DevToolsMessage';
 
-const roboto = Roboto({
-  weight: ['400', '700'],
+/**
+ * Plus Jakarta Sans — primary display & body sans-serif
+ * Registered as --font-jakarta, consumed by --font-sans in globals.css
+ */
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-roboto',
+  variable: '--font-jakarta',
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
+  display: 'swap',
+});
+
+/**
+ * Crimson Pro — editorial italic serif
+ * Registered as --font-crimson, consumed by --font-serif in globals.css
+ */
+const crimson = Crimson_Pro({
+  subsets: ['latin'],
+  variable: '--font-crimson',
+  style: ['normal', 'italic'],
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -62,27 +77,18 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-import DevToolsMessage from '@/app/components/shared/DevToolsMessage';
-
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`${roboto.variable} font-sans antialiased`}>
+      <body
+        className={`${jakarta.variable} ${crimson.variable} font-sans antialiased bg-canvas text-ink`}
+      >
         <DevToolsMessage />
-        <MainLayout
-          hero={<MainBrief />}
-          main={children}
-          rightRail={
-            <>
-              <Contact />
-              <About />
-            </>
-          }
-          footer={<Footer />}
-        />
+        <MainLayout main={children} footer={<Footer />} />
+        {/* SVG filter for glass-morphism effects */}
         <svg style={{ display: 'none' }} aria-hidden="true" focusable="false">
           <filter
             id="glass-filter"
@@ -96,18 +102,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               scale="20"
               xChannelSelector="R"
               yChannelSelector="B"
-              x="0%"
-              y="0%"
-              width="100%"
-              height="100%"
+              x="0%" y="0%" width="100%" height="100%"
               result="displacementMap"
             />
             <feGaussianBlur
               stdDeviation="3 3"
-              x="0%"
-              y="0%"
-              width="100%"
-              height="100%"
+              x="0%" y="0%" width="100%" height="100%"
               in="displacementMap"
               edgeMode="none"
               result="blur"

@@ -40,7 +40,7 @@ const activity = [
   },
   {
     name: 'Flood Relief Work',
-    org: 'R.O.C Army',
+    org: 'Taiwan Army',
     year: 'Aug, 2010',
     summary: 'Coordinated disaster recovery efforts, helping restore communities affected by severe flooding.'
   },

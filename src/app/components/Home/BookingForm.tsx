@@ -26,7 +26,7 @@ export default function BookingForm() {
   }, []);
 
   return (
-    <div className="w-full h-full relative rounded-xl overflow-hidden bg-white">
+    <div className="w-full h-full relative overflow-hidden bg-[#fff8eb] border-[var(--ds-border-soft)] rounded-[18px]">
       {isLoading && <LoadingIndicator text="Fetching appointment times..." />}
       <div
         className={clsx('w-full h-full transition-opacity duration-500', {

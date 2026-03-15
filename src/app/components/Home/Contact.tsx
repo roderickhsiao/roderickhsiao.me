@@ -35,28 +35,30 @@ export default function Contact() {
   return (
     <div className="w-full mx-auto relative">
       {/* Background layers - outside of view transition to prevent flashing */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 via-slate-800/8 to-slate-900/10 rounded-xl blur-2xl scale-110"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/15 via-green-50/10 to-teal-100/15 rounded-xl blur-xl scale-105"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-(--gaudi-terracotta)/12 via-(--gaudi-ochre)/10 to-(--gaudi-sea)/14 rounded-[34px] blur-2xl scale-110"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-[#fff4df]/45 via-[#f5deb8]/20 to-[#f0d2ae]/35 rounded-[34px] blur-xl scale-105"></div>
       <ViewTransition>
         <div
           className={clsx(
-            'contact-card relative w-full rounded-xl overflow-hidden border border-white/30 flex flex-col transition-all duration-300',
+            'contact-card relative w-full overflow-hidden flex flex-col transition-all duration-300 border-(--ds-border-soft) rounded-(--ds-radius-shell)',
             {
-              'min-h-[700px]': activeForm === 'booking',
-              'min-h-[400px]': activeForm === 'contact',
+              'min-h-175': activeForm === 'booking',
+              'min-h-100': activeForm === 'contact',
               'aspect-[1.587/1]': !showForm,
             }
           )}
           style={{
-            background: 'rgba(255, 255, 255, 0.25)',
+            background:
+              'linear-gradient(150deg, rgba(255, 249, 236, 0.9) 0%, rgba(248, 230, 198, 0.7) 50%, rgba(241, 214, 169, 0.65) 100%)',
             backdropFilter: 'url(#glass-filter) saturate(150%)',
             WebkitBackdropFilter: 'blur(8px) saturate(150%)',
             boxShadow:
-              '0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+              '0 10px 34px rgba(66, 39, 12, 0.14), 0 2px 8px rgba(66, 39, 12, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5)',
           }}
         >
-          <div className="rh-logo absolute top-2 sm:top-3 md:top-4 start-4 z-10">
-            <div className="text-white/70 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider">
+          <div className="gaudi-arches opacity-30"></div>
+          <div className="rh-logo absolute top-2 sm:top-3 md:top-4 inset-s-4 z-10">
+            <div className="text-(--gaudi-terracotta)/70 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider">
               RH
             </div>
           </div>
@@ -68,9 +70,9 @@ export default function Contact() {
                 <ViewTransition name="message-trigger">
                   <button
                     onClick={handleShowContactForm}
-                    className="message-button flex items-center gap-1 sm:gap-1.5 text-gray-700 text-xs sm:text-xs md:text-xs font-medium px-2 sm:px-2.5 md:px-2.5 py-1.5 sm:py-1.5 rounded-full hover:scale-105 hover:text-gray-800 hover:shadow-md backdrop-blur-sm border border-white/30 cursor-pointer max-h-fit cursor-pointer"
+                    className="message-button flex items-center gap-1 sm:gap-1.5 text-(--color-muted) text-xs sm:text-xs md:text-xs font-medium px-2 sm:px-2.5 md:px-2.5 py-1.5 sm:py-1.5 rounded-full hover:scale-105 hover:text-(--gaudi-terracotta) hover:shadow-md backdrop-blur-sm border-(--ds-border-pill) cursor-pointer max-h-fit"
                     style={{
-                      background: 'rgba(255, 255, 255, 0.3)',
+                      background: 'var(--gaudi-pill-bg)',
                     }}
                   >
                     <svg
@@ -92,9 +94,9 @@ export default function Contact() {
                 <ViewTransition name="booking-trigger">
                   <button
                     onClick={handleShowBookingForm}
-                    className="book-button flex items-center gap-1 sm:gap-1.5 text-gray-700 text-xs sm:text-xs md:text-xs font-medium px-2 sm:px-2.5 md:px-2.5 py-1.5 sm:py-1.5 rounded-full hover:scale-105 hover:text-gray-800 hover:shadow-md backdrop-blur-sm border border-white/30 cursor-pointer"
+                    className="book-button flex items-center gap-1 sm:gap-1.5 text-(--color-muted) text-xs sm:text-xs md:text-xs font-medium px-2 sm:px-2.5 md:px-2.5 py-1.5 sm:py-1.5 rounded-full hover:scale-105 hover:text-(--gaudi-terracotta) hover:shadow-md backdrop-blur-sm border-(--ds-border-pill) cursor-pointer"
                     style={{
-                      background: 'rgba(255, 255, 255, 0.3)',
+                      background: 'var(--gaudi-pill-bg)',
                     }}
                   >
                     <svg
@@ -117,7 +119,7 @@ export default function Contact() {
             ) : (
               <button
                 onClick={handleClose}
-                className="close-button flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 text-gray-600 hover:text-gray-800 rounded-full hover:bg-white/30 bg-white/20 backdrop-blur-sm cursor-pointer border border-white/30 transition-all duration-200 hover:scale-105 shrink-0 cursor-pointer"
+                className="close-button flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 text-(--color-muted) hover:text-(--gaudi-terracotta) rounded-full hover:bg-white/50 bg-white/35 backdrop-blur-sm cursor-pointer border-(--ds-border-pill) transition-all duration-200 hover:scale-105 shrink-0"
                 aria-label="Close"
               >
                 <svg
@@ -164,7 +166,7 @@ export default function Contact() {
                   {/* Welcome Message - centered */}
                   <div className="flex-1 flex items-center px-3 lg:px-4">
                     <div>
-                      <p className="text-gray-600 text-xs sm:text-sm md:text-sm leading-relaxed font-normal">
+                      <p className="text-(--color-muted) text-xs sm:text-sm md:text-sm leading-relaxed font-normal">
                         Hey there! 👋 Thanks for stopping by! Drop me a message
                         to chat about web ideas, cool projects, or even house
                         music.
@@ -175,10 +177,10 @@ export default function Contact() {
                   {/* Languages - at bottom */}
                   <div className="px-3 lg:px-4 pb-3 lg:pb-4">
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                      <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs sm:text-xs font-medium text-gray-600 bg-white/40 rounded-full border border-white/30 shrink-0">
+                      <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs sm:text-xs font-medium rounded-full border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] text-[rgb(45_37_26/0.92)] shrink-0">
                         🇺🇸 English
                       </span>
-                      <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs sm:text-xs font-medium text-gray-600 bg-white/40 rounded-full border border-white/30 shrink-0">
+                      <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs sm:text-xs font-medium rounded-full border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] text-[rgb(45_37_26/0.92)] shrink-0">
                         🇹🇼 Mandarin
                       </span>
                     </div>
@@ -189,7 +191,7 @@ export default function Contact() {
           </ViewTransition>
 
           {/* Glass reflection overlay */}
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/8 via-transparent to-transparent pointer-events-none"></div>
+          <div className="absolute inset-0 bg-linear-to-br from-white/8 via-transparent to-transparent pointer-events-none"></div>
         </div>
       </ViewTransition>
     </div>

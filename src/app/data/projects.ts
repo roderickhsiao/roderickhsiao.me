@@ -17,6 +17,7 @@ export interface Project {
   category: 'Open Source' | 'Personal' | 'Tool' | 'Library';
   status: 'Active' | 'Maintained' | 'Archived';
   year: string;
+  location?: string;
   github?: ProjectLink;
   demo?: ProjectLink;
   npm?: ProjectLink;
@@ -33,6 +34,7 @@ const projects: Project[] = [
     category: 'Open Source',
     status: 'Active',
     year: '2017 - Present',
+    location: 'Palo Alto, CA',
     github: {
       url: 'https://github.com/roderickhsiao/react-in-viewport',
       title: 'View on GitHub',
@@ -65,6 +67,7 @@ const projects: Project[] = [
     category: 'Open Source',
     status: 'Active',
     year: '2017 - Present',
+    location: 'Palo Alto, CA',
     github: {
       url: 'https://github.com/roderickhsiao/react-aspect-ratio',
       title: 'View on GitHub',
@@ -92,6 +95,7 @@ const projects: Project[] = [
     category: 'Open Source',
     status: 'Maintained',
     year: '2019 - Present',
+    location: 'Palo Alto, CA',
     github: {
       url: 'https://github.com/roderickhsiao/idle-tracker',
       title: 'View on GitHub',
@@ -119,6 +123,7 @@ const projects: Project[] = [
     category: 'Open Source',
     status: 'Active',
     year: '2015 - Present',
+    location: 'Sunnyvale, CA',
     github: {
       url: 'https://github.com/yahoo/react-i13n',
       title: 'View on GitHub',
@@ -145,6 +150,7 @@ const projects: Project[] = [
     category: 'Open Source',
     status: 'Maintained',
     year: '2015 - Present',
+    location: 'Sunnyvale, CA',
     github: {
       url: 'https://github.com/yahoo/subscribe-ui-event',
       title: 'View on GitHub',

@@ -19,67 +19,46 @@ export default function ContinentFilter({
 
   const handleContinentClick = (continent: string, event: React.MouseEvent<HTMLButtonElement>) => {
     onContinentChange(continent);
-    
-    // Scroll the clicked button into view
-    const button = event.currentTarget;
-    button.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest',
-      inline: 'center'
-    });
+    event.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   };
 
+  const btnClass = (active: boolean) =>
+    clsx(
+      'relative px-3 sm:px-2 py-4 sm:py-3 type-label transition-colors duration-200 cursor-pointer',
+      'text-start border-0 bg-transparent whitespace-nowrap',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40',
+      active ? 'text-ink' : 'text-ink/65 hover:text-ink',
+    );
+
   return (
-    <div className={clsx('mb-8')}>
-      <nav 
+    <div className="mb-8 -mx-6 sm:mx-0">
+      <nav
         className={clsx(
-          "relative flex gap-8 border-b border-gray-200 overflow-x-auto scrollbar-hide",
-          "after:content-[''] after:absolute after:bottom-0 after:h-0.5 after:bg-gray-900",
+          "relative flex gap-0 border-b border-ink/8 overflow-x-auto scroll-smooth",
+          "[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+          "px-6 sm:px-0",
+          "after:content-[''] after:absolute after:bottom-0 after:h-0.5 after:bg-accent",
           "after:transition-all after:duration-300 after:ease-out",
-          "after:left-[var(--indicator-left)] after:w-[var(--indicator-width)]"
+          "after:start-(--indicator-left) after:w-(--indicator-width)",
         )}
         aria-label="Continent filter"
-        style={{
-          '--indicator-left': '0px',
-          '--indicator-width': '0px',
-        } as React.CSSProperties & { [key: string]: string }}
+        style={{ '--indicator-left': '0px', '--indicator-width': '0px' } as React.CSSProperties & Record<string, string>}
       >
         <button
-          ref={(el) => {
-            if (el && selectedContinent === '') {
-              updateIndicatorPosition(el);
-            }
-          }}
-          className={clsx(
-            'relative px-1 py-3 text-sm font-medium transition-colors duration-200 cursor-pointer',
-            'text-left border-0 bg-transparent hover:text-gray-900 focus:outline-none whitespace-nowrap',
-            {
-              'text-gray-900': selectedContinent === '',
-              'text-gray-500 hover:text-gray-700': selectedContinent !== '',
-            }
-          )}
+          ref={(el) => { if (el && selectedContinent === '') updateIndicatorPosition(el); }}
+          className={btnClass(selectedContinent === '')}
           onClick={(e) => handleContinentClick('', e)}
           type="button"
         >
-          All Continents
+          <span className="hidden sm:inline">All Continents</span>
+          <span className="sm:hidden">All</span>
         </button>
 
         {continents.map((continent) => (
           <button
             key={continent}
-            ref={(el) => {
-              if (el && selectedContinent === continent) {
-                updateIndicatorPosition(el);
-              }
-            }}
-            className={clsx(
-              'relative px-1 py-3 text-sm font-medium transition-colors duration-200 cursor-pointer',
-              'text-left border-0 bg-transparent hover:text-gray-900 focus:outline-none whitespace-nowrap',
-              {
-                'text-gray-900': selectedContinent === continent,
-                'text-gray-500 hover:text-gray-700': selectedContinent !== continent,
-              }
-            )}
+            ref={(el) => { if (el && selectedContinent === continent) updateIndicatorPosition(el); }}
+            className={btnClass(selectedContinent === continent)}
             onClick={(e) => handleContinentClick(continent, e)}
             type="button"
           >

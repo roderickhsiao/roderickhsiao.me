@@ -29,7 +29,7 @@ const country = {
     'Strasbourg'
   ],
   DE: [
-    'Mannheim',
+    '🎓 Mannheim',
     'Frankfurt',
     'Cologne (Köln)',
     'Berlin',
@@ -77,7 +77,7 @@ const country = {
     'Kerikeri',
     'Paihia'
   ],
-  NL: ['Amsterdam'],
+  NL: ['Amsterdam', 'Rotterdam'],
   PW: ['Palau'],
   PH: ['Manila (Maynilà)', 'Boracay'],
   PL: ['Wrocław', 'Kraków'],
@@ -86,7 +86,7 @@ const country = {
   SG: ['Singapore'],
   SI: ['Ljubljana', 'Bled Lake Area', 'Postojna Cave'],
   ES: ['Madrid', 'Barcelona', 'Segovia'],
-  CH: ['Bern', 'Zürich', 'Interlaken'],
+  CH: ['Bern', 'Zürich', 'Interlaken', 'Grindelwald'],
   TH: ['Bangkok (กรุงเทพฯ)', 'Phuket (ภูเก็ต)', 'Ko Samui (เกาะสมุย)'],
   TW: ['🏡 Taipei (台北)'],
   TR: ['Istanbul (İstanbul)', 'İzmir', 'Ephesus (Efes)', 'Selçuk', 'Cappadocia (Kapadokya)'],
