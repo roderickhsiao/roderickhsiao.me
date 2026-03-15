@@ -1,52 +1,46 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import PageHero from '@/app/components/shared/PageHero';
 import ChronicleSection from '@/app/components/Home/ChronicleSection';
-import FieldNotes from '@/app/components/shared/FieldNotes';
+import FieldNotes, {
+  type FieldNotesItem,
+} from '@/app/components/shared/FieldNotes';
 
-export const metadata: Metadata = {
-  title: 'Roderick Hsiao - Software Architect & Community Leader',
-  description:
-    'Personal website of Roderick Hsiao — frontend architect, community leader, and open web advocate with 16+ years of industry impact.',
-  keywords: [
-    'Roderick Hsiao',
-    'Software Architect',
-    'Community Leader',
-    'Frontend',
-    'React',
-    'Next.js',
-    'TypeScript',
-    'Experience',
-  ],
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('pageMeta');
+  return {
+    title: t('home.title'),
+    description: t('home.description'),
+    keywords: t.raw('home.keywords') as string[],
+  };
+}
 
-export default function Home() {
+export default async function Home() {
+  const t = await getTranslations('home');
   return (
     <div className="pt-28 sm:pt-32 pb-24 px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto">
       <PageHero
-        eyebrow="Product Engineering // Frontend Architecture"
+        eyebrow={t('hero.eyebrow')}
         title={
           <>
-            Roderick
+            {t('hero.titleLine1')}
             <br />
-            <span className="text-accent ms-[6vw] sm:ms-[9vw]">Hsiao</span>
+            <span className="text-accent ms-[6vw] sm:ms-[9vw]">
+              {t('hero.titleLine2')}
+            </span>
           </>
         }
-        description="Product engineering consultant specializing in frontend infrastructure, design systems, and large-scale application development for global startups and Fortune 500 companies."
-        className="pb-20"
+        description={t('hero.description')}
+        className="pb-12 sm:pb-20"
       />
 
       <FieldNotes
-        label="CAREER LOG // STILL SHIPPING"
-        heading={<>Career &amp;<br />Highlights</>}
-        items={[
-          { num: '01', icon: '💼', title: 'Experience', items: ['16+ years in product engineering.', 'Startup to Fortune 500 range.'] },
-          { num: '02', icon: '🚀', title: 'Leadership', items: ['Frontend infra & design systems.', 'Team technical mentorship.'] },
-          { num: '03', icon: '📈', title: 'Impact',     items: ['Serving millions of users.', 'Architecting for extreme scale.'] },
-          { num: '04', icon: '📣', title: 'Community',  items: ['International tech speaker.', 'Open web & OSS advocate.'] },
-        ]}
+        label={t('fieldNotes.label')}
+        heading={t('fieldNotes.heading')}
+        items={t.raw('fieldNotes.items') as FieldNotesItem[]}
       />
 
-      <div className="mt-16" />
+      <div className="mt-10 sm:mt-16" />
       <ChronicleSection />
     </div>
   );

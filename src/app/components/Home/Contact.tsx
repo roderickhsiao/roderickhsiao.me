@@ -2,12 +2,15 @@
 
 import { useState, startTransition, ViewTransition } from 'react';
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 import ContactForm from './ContactForm';
 import BookingForm from './BookingForm';
 
 import './contact-view-transitions.css';
 
 export default function Contact() {
+  const tContact = useTranslations('contact');
+  const tProfile = useTranslations('profile');
   const [activeForm, setActiveForm] = useState<'contact' | 'booking' | null>(
     null
   );
@@ -88,7 +91,7 @@ export default function Contact() {
                         d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                       />
                     </svg>
-                    MESSAGE
+                    {tContact('messageButton').toUpperCase()}
                   </button>
                 </ViewTransition>
                 <ViewTransition name="booking-trigger">
@@ -112,7 +115,7 @@ export default function Contact() {
                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    BOOK
+                    {tContact('bookButton').toUpperCase()}
                   </button>
                 </ViewTransition>
               </>
@@ -120,7 +123,7 @@ export default function Contact() {
               <button
                 onClick={handleClose}
                 className="close-button flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 text-(--color-muted) hover:text-(--gaudi-terracotta) rounded-full hover:bg-white/50 bg-white/35 backdrop-blur-sm cursor-pointer border-(--ds-border-pill) transition-all duration-200 hover:scale-105 shrink-0"
-                aria-label="Close"
+                aria-label={tContact('closeAriaLabel')}
               >
                 <svg
                   className="w-4 h-4 sm:w-5 sm:h-5"
@@ -167,9 +170,14 @@ export default function Contact() {
                   <div className="flex-1 flex items-center px-3 lg:px-4">
                     <div>
                       <p className="text-(--color-muted) text-xs sm:text-sm md:text-sm leading-relaxed font-normal">
-                        Hey there! 👋 Thanks for stopping by! Drop me a message
-                        to chat about web ideas, cool projects, or even house
-                        music.
+                        {tContact.rich('cardWelcome', {
+                          highlight1: (chunks) => (
+                            <span className="font-medium text-(--gaudi-terracotta)">{chunks}</span>
+                          ),
+                          highlight2: (chunks) => (
+                            <span className="font-medium text-(--gaudi-sea)">{chunks}</span>
+                          ),
+                        })}
                       </p>
                     </div>
                   </div>
@@ -177,12 +185,16 @@ export default function Contact() {
                   {/* Languages - at bottom */}
                   <div className="px-3 lg:px-4 pb-3 lg:pb-4">
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                      <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs sm:text-xs font-medium rounded-full border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] text-[rgb(45_37_26/0.92)] shrink-0">
-                        🇺🇸 English
-                      </span>
-                      <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs sm:text-xs font-medium rounded-full border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] text-[rgb(45_37_26/0.92)] shrink-0">
-                        🇹🇼 Mandarin
-                      </span>
+                      {(tProfile.raw('languages') as { flag: string; label: string }[]).map(
+                        ({ flag, label }) => (
+                          <span
+                            key={label}
+                            className="inline-flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs sm:text-xs font-medium rounded-full border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] text-[rgb(45_37_26/0.92)] shrink-0"
+                          >
+                            {flag} {label}
+                          </span>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>

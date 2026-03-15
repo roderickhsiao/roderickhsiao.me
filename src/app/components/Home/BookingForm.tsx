@@ -3,10 +3,14 @@
 import { useState, useEffect } from 'react';
 import { InlineWidget } from 'react-calendly';
 import clsx from 'clsx';
+import { useLocale } from 'next-intl';
 import LoadingIndicator from '../shared/LoadingIndicator';
 
 export default function BookingForm() {
   const [isLoading, setIsLoading] = useState(true);
+  const locale = useLocale();
+  const calendlyLocale = locale === 'zh-Hant' ? 'zh-TW' : locale;
+  const calendlyUrl = `https://calendly.com/roderickhsiao/30-mins?locale=${calendlyLocale}`;
 
   useEffect(() => {
     const animationPromise = new Promise((resolve) => setTimeout(resolve, 2200));
@@ -26,7 +30,7 @@ export default function BookingForm() {
   }, []);
 
   return (
-    <div className="w-full h-full relative overflow-hidden bg-[#fff8eb] border-[var(--ds-border-soft)] rounded-[18px]">
+    <div className="w-full h-full relative overflow-hidden bg-[#fff8eb] border-(--ds-border-soft) rounded-[18px]">
       {isLoading && <LoadingIndicator text="Fetching appointment times..." />}
       <div
         className={clsx('w-full h-full transition-opacity duration-500', {
@@ -35,7 +39,7 @@ export default function BookingForm() {
         })}
       >
         <InlineWidget
-          url="https://calendly.com/roderickhsiao/30-mins"
+          url={calendlyUrl}
           pageSettings={{
             backgroundColor: 'ffffff',
             hideEventTypeDetails: true,

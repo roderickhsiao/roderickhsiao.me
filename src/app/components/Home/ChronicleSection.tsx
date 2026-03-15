@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { ChevronDown, ArrowLeftRight, Home, Sun, CloudSun, Zap, Globe, Smartphone, Shield, ExternalLink, MapPin } from 'lucide-react';
 import clsx from 'clsx';
 import experience from '@/app/data/experience';
+import { useTranslations, useFormatter } from 'next-intl';
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    Card visual config — design intent, not content
@@ -92,7 +93,7 @@ function ArmyAnimation() {
       {/* Radar sweep */}
       <div className="absolute w-20 h-20 sm:w-24 sm:h-24 animate-army-radar origin-center" aria-hidden>
         <div
-          className="absolute top-1/2 start-1/2 w-10 sm:w-12 h-px origin-left"
+          className="absolute top-1/2 inset-s-1/2 w-10 sm:w-12 h-px origin-left"
           style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.6), transparent)' }}
         />
       </div>
@@ -142,6 +143,7 @@ const Animations = { swap: SwapAnimation, swipe: TinderAnimation, weather: Weath
 interface CardData {
   id: string;
   company: string;
+  companyDisplayName: string;
   role: string;
   period: string;
   locations: string[];
@@ -168,6 +170,7 @@ function JobCard({
   onToggle: () => void;
 }) {
   const Animation = Animations[card.animation];
+  const t = useTranslations('chronicle');
   const isEven = index % 2 === 0;
 
   return (
@@ -176,6 +179,7 @@ function JobCard({
       {/* ── MAIN ROW: blob visual | text column ─────────── */}
       <div className={clsx(
         'flex flex-col md:flex-row gap-10 sm:gap-20 items-start',
+        isExpanded ? 'md:items-start' : 'md:items-center',
         !isEven && 'md:flex-row-reverse',
       )}>
         {/* Organic blob visual */}
@@ -203,12 +207,12 @@ function JobCard({
                 />
               ) : (
                 <span className="type-heading-lg text-ink-inverted uppercase text-center opacity-85 group-hover:scale-105 transition-transform duration-500">
-                  {card.company}
+                  {card.companyDisplayName}
                 </span>
               )}
               <span className="type-label-wide text-ink-inverted/70">{card.period}</span>
               {card.locations.length > 0 && (
-                <span className="type-label text-ink-inverted/60 flex items-center gap-1">
+                <span className="type-label text-ink-inverted/60 flex items-center gap-1 text-center">
                   <MapPin size={10} aria-hidden />
                   {card.locations.join(' · ')}
                 </span>
@@ -241,13 +245,13 @@ function JobCard({
           <button
             onClick={onToggle}
             aria-expanded={isExpanded}
-            aria-label={isExpanded ? 'Close project details' : 'Open project details'}
+            aria-label={isExpanded ? t('collapseAriaLabel') : t('expandAriaLabel')}
             className="group/toggle flex items-center gap-2 type-label text-ink/40 hover:text-ink/70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 rounded cursor-pointer"
           >
             <span className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
               <ChevronDown size={13} aria-hidden />
             </span>
-            {isExpanded ? 'collapse' : 'details'}
+            {isExpanded ? t('collapse') : t('details')}
           </button>
 
           {/* ── INLINE BLOOM REVEAL ── */}
@@ -259,11 +263,11 @@ function JobCard({
                   {card.projects.map((item, i) => (
                     <div key={item.name}>
                       <div className="flex items-center gap-4 mb-4">
-                        <span className="type-label text-ink/40">SECTION {String(i + 1).padStart(2, '0')}</span>
+                            <span className="type-label text-ink/40">{t('section', { index: String(i + 1).padStart(2, '0') })}</span>
                         <div className="h-px flex-1 bg-ink/8" aria-hidden />
                       </div>
                       <h4 className="type-heading-sm text-ink mb-3">{item.name}</h4>
-                      <p className="type-body-sm mb-5">{item.desc}</p>
+                      {item.desc !== card.desc && <p className="type-body-sm mb-5">{item.desc}</p>}
                       {item.tags.length > 0 && (
                         <div className="flex flex-wrap gap-2">
                           {item.tags.map((tag) => (
@@ -308,7 +312,7 @@ function JobCard({
                 {/* Talks & Demos — subtle list */}
                 {card.talks.length > 0 && (
                   <section className="space-y-5">
-                    <h4 className="type-label-wide text-ink/40">Talks & Demos</h4>
+                    <h4 className="type-label-wide text-ink/40">{t('talksHeading')}</h4>
                     <ul className="space-y-0 divide-y divide-ink/6">
                       {card.talks.map((talk, i) => (
                         <li key={i}>
@@ -352,45 +356,93 @@ function JobCard({
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    Build card data from experience.ts
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-function buildCards(): CardData[] {
+function parseDate(iso: string) {
+  const [y, m] = iso.split('-').map(Number);
+  return new Date(y, (m ?? 1) - 1, 1);
+}
+
+function formatPeriod(
+  startDate: string,
+  endDate: string | null | undefined,
+  format: ReturnType<typeof useFormatter>,
+  present: string,
+): string {
+  const opts = { month: 'short', year: 'numeric' } as const;
+  const start = format.dateTime(parseDate(startDate), opts);
+  if (endDate === null) return `${start} – ${present}`;
+  if (!endDate) return start;
+  return `${start} – ${format.dateTime(parseDate(endDate), opts)}`;
+}
+
+function buildCards(
+  tExp: ReturnType<typeof useTranslations<'experience'>>,
+  format: ReturnType<typeof useFormatter>,
+): CardData[] {
   const indexMap = new Map<string, number>();
   const result: CardData[] = [];
 
   experience.companies.forEach((company, rawIndex) => {
+    type ProjectText = { name: string; summary?: string; smartlinkTitle?: string; smartlinkDescription?: string; demoTitles?: string[] };
+    const getProjectText = (p: typeof company.projects[0]): ProjectText =>
+      tExp.raw(`companies.${company.key}.projects.${p.key}`) as ProjectText;
+
     const toProjects = (entries: typeof company.projects) =>
-      entries.filter((p) => p.summary).map((p) => ({
-        name: p.name,
-        desc: p.summary ?? '',
-        tags: p.techStack ?? [],
-        smartlink: p.smartlink,
-      }));
+      entries
+        .map((p) => {
+          const text = getProjectText(p);
+          if (!text.summary) return null;
+          return {
+            name: text.name,
+            desc: text.summary,
+            tags: p.techStack ?? [],
+            smartlink: p.smartlink
+              ? {
+                  url: p.smartlink.url,
+                  thumbnail: p.smartlink.thumbnail,
+                  title: text.smartlinkTitle ?? '',
+                  description: text.smartlinkDescription,
+                }
+              : undefined,
+          };
+        })
+        .filter((p): p is NonNullable<typeof p> => p !== null);
 
     const toTalks = (entries: typeof company.projects) =>
-      entries.flatMap((p) => (p.demos ?? []).map((d) => ({ title: d.title, url: d.url, thumbnail: d.thumbnail?.url })));
+      entries.flatMap((p) => {
+        const text = getProjectText(p);
+        return (p.demos ?? []).map((d, i) => ({
+          title: text.demoTitles?.[i] ?? '',
+          url: d.url,
+          thumbnail: d.thumbnail?.url,
+        }));
+      });
 
     const toStack = (entries: typeof company.projects): string[] => {
       const seen = new Set<string>();
       const out: string[] = [];
       for (const p of entries) {
-        for (const t of p.techStack ?? []) {
-          if (!seen.has(t)) { seen.add(t); out.push(t); }
+        for (const tech of p.techStack ?? []) {
+          if (!seen.has(tech)) { seen.add(tech); out.push(tech); }
         }
       }
       return out;
     };
 
+    const companyTitle = tExp(`companies.${company.key}.title`);
+
     if (indexMap.has(company.name)) {
       // Merge into existing card
       const card = result[indexMap.get(company.name)!];
-      card.highlights.push(...company.projects.map((p) => p.name));
+      card.highlights.push(...company.projects.map((p) => getProjectText(p).name));
       card.projects.push(...toProjects(company.projects));
       card.talks.push(...toTalks(company.projects));
       const existingStack = new Set(card.stack);
-      for (const t of toStack(company.projects)) {
-        if (!existingStack.has(t)) { card.stack.push(t); existingStack.add(t); }
+      for (const tech of toStack(company.projects)) {
+        if (!existingStack.has(tech)) { card.stack.push(tech); existingStack.add(tech); }
       }
-      if (company.location && !card.locations.includes(company.location)) {
-        card.locations.unshift(company.location);
+      const loc = tExp(`companies.${company.key}.location`);
+      if (loc && !card.locations.includes(loc)) {
+        card.locations.unshift(loc);
       }
     } else {
       indexMap.set(company.name, result.length);
@@ -398,12 +450,13 @@ function buildCards(): CardData[] {
       result.push({
         id: `${company.name}-${rawIndex}`,
         company: company.name,
-        role: company.title ?? company.name,
-        period: company.time,
-        locations: company.location ? [company.location] : [],
+        companyDisplayName: tExp(`companies.${company.key}.displayName`),
+        role: companyTitle,
+        period: formatPeriod(company.startDate, company.endDate, format, tExp('present')),
+        locations: (() => { const loc = tExp(`companies.${company.key}.location`); return loc ? [loc] : []; })(),
         logo: company.logo,
-        desc: company.projects[0]?.summary ?? '',
-        highlights: company.projects.map((p) => p.name),
+        desc: tExp(`companies.${company.key}.summary`),
+        highlights: company.projects.map((p) => getProjectText(p).name),
         projects: toProjects(company.projects),
         stack: toStack(company.projects),
         talks: toTalks(company.projects),
@@ -419,8 +472,11 @@ function buildCards(): CardData[] {
    ChronicleSection
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 export default function ChronicleSection() {
+  const t = useTranslations('chronicle');
+  const tExp = useTranslations('experience');
+  const format = useFormatter();
   const [expandedId, setExpandedId] = useState<string | null>(null);
-  const cards = buildCards();
+  const cards = buildCards(tExp, format);
 
   return (
     <section
@@ -433,7 +489,7 @@ export default function ChronicleSection() {
           id="chronicle-heading"
           className="type-heading-xl text-accent uppercase"
         >
-          The Chronicle
+          {t('heading')}
         </h2>
       </div>
 

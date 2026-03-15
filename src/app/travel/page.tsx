@@ -1,33 +1,37 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import Travel from '../components/Travel/Travel';
 
-export const metadata: Metadata = {
-  title: 'Travel Adventures - Roderick Hsiao',
-  description: 'Follow my travel adventures around the world. Discover the places I\'ve visited, experiences I\'ve had, and the inspiration I draw from exploring different cultures.',
-  keywords: ['Roderick Hsiao', 'Travel', 'Adventures', 'World Travel', 'Culture', 'Exploration', 'Photography'],
-  openGraph: {
-    title: 'Travel Adventures - Roderick Hsiao',
-    description: 'Follow my travel adventures around the world and discover different cultures.',
-    url: 'https://roderickhsiao.me/travel',
-    siteName: 'Roderick Hsiao',
-    images: [
-      {
-        url: '/api/og?title=Travel%20Adventures&subtitle=Exploring%20the%20World&description=Discovering%20cultures%20and%20drawing%20inspiration%20from%20global%20experiences&theme=travel',
-        width: 1200,
-        height: 630,
-        alt: 'Travel Adventures - Roderick Hsiao',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Travel Adventures - Roderick Hsiao',
-    description: 'Follow my travel adventures around the world and discover different cultures.',
-    images: ['/api/og?title=Travel%20Adventures&subtitle=Exploring%20the%20World&description=Discovering%20cultures%20and%20drawing%20inspiration%20from%20global%20experiences&theme=travel'],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('pageMeta');
+  const ogParams = new URLSearchParams({
+    title: t('travel.ogImageTitle'),
+    subtitle: t('travel.ogImageSubtitle'),
+    description: t('travel.ogImageDescription'),
+    theme: 'travel',
+  });
+  const ogImageUrl = `/api/og?${ogParams.toString()}`;
+  return {
+    title: t('travel.title'),
+    description: t('travel.description'),
+    keywords: t.raw('travel.keywords') as string[],
+    openGraph: {
+      title: t('travel.ogTitle'),
+      description: t('travel.ogDescription'),
+      url: 'https://roderickhsiao.me/travel',
+      siteName: t('siteName'),
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: t('travel.ogAlt') }],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('travel.ogTitle'),
+      description: t('travel.ogDescription'),
+      images: [ogImageUrl],
+    },
+  };
+}
 
 export default function TravelPage() {
   return (

@@ -1,36 +1,36 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import Projects from '@/app/components/Projects/Projects';
 import PageHero from '@/app/components/shared/PageHero';
-import FieldNotes from '@/app/components/shared/FieldNotes';
+import FieldNotes, { type FieldNotesItem } from '@/app/components/shared/FieldNotes';
 
-export const metadata: Metadata = {
-  title: 'Projects - Roderick Hsiao',
-  description: 'Explore my open source projects, personal tools, and contributions to the developer community. From React libraries to developer tools, discover projects built with passion for solving real-world problems.',
-  keywords: ['Roderick Hsiao', 'Projects', 'Open Source', 'GitHub', 'React', 'TypeScript', 'Developer Tools', 'Libraries'],
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('pageMeta');
+  return {
+    title: t('projects.title'),
+    description: t('projects.description'),
+    keywords: t.raw('projects.keywords') as string[],
+  };
+}
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const t = await getTranslations('projects');
   return (
     <div className="pt-28 sm:pt-32 pb-24 px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto">
       <PageHero
-        eyebrow="Open Source // Developer Tools"
-        title={<>Open<br />Source</>}
-        description="From React libraries to developer tools — a collection of projects built to solve real-world problems, shared openly with the community."
-        className="pb-20"
+        eyebrow={t('hero.eyebrow')}
+        title={t('hero.title')}
+        description={t('hero.description')}
+        className="pb-12 sm:pb-20"
       />
 
       <FieldNotes
-        label="BUILD LOG // PUBLIC REPO"
-        heading={<>Open Source &amp;<br />Developer<br />Tools</>}
-        items={[
-          { num: '01', icon: '🔧', title: 'Open Source',   items: ['Active contributor to open source.', 'Building tools that developers love.'] },
-          { num: '02', icon: '⚡', title: 'Performance',   items: ['Accessibility and performance focused.', 'Community-driven development.'] },
-          { num: '03', icon: '📦', title: 'Libraries',     items: ['Published npm packages for the ecosystem.', 'TypeScript-first, type-safe APIs.'] },
-          { num: '04', icon: '🤝', title: 'Collaboration', items: ['Open to contributions and feedback.', 'Building solutions with the community.'] },
-        ]}
+        label={t('fieldNotes.label')}
+        heading={t('fieldNotes.heading')}
+        items={t.raw('fieldNotes.items') as FieldNotesItem[]}
       />
 
-      <div className="mt-16" />
+      <div className="mt-10 sm:mt-16" />
       <Projects />
     </div>
   );

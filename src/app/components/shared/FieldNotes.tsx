@@ -36,7 +36,7 @@ export default function FieldNotes({
       <div className={`flex flex-col md:flex-row gap-16 md:gap-32 py-20 ${className}`}>
         <div className="md:w-80 shrink-0">
           <p className="type-label text-ink/40 mb-8">{label}</p>
-          <h2 className="type-heading-lg text-ink leading-none">{heading}</h2>
+          <h2 className="type-heading-lg text-ink leading-none whitespace-pre-line">{heading}</h2>
         </div>
         <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-14">
           {items.map(({ num, title, items: bullets }) => (

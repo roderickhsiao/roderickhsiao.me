@@ -11,6 +11,7 @@ interface LedgerEntryProps {
   value: number;
   unit: string;
 }
+import { useTranslations, useFormatter } from 'next-intl';
 
 function LedgerEntry({ label, value, unit }: LedgerEntryProps) {
   return (
@@ -37,6 +38,8 @@ export default function TravelStats({
   totalHomePlaces,
   isLoading = false,
 }: TravelStatsProps) {
+  const t = useTranslations('travel');
+  const format = useFormatter();
   if (isLoading) {
     return <div className="h-40 rounded-2xl animate-pulse bg-ink/5" />;
   }
@@ -44,16 +47,16 @@ export default function TravelStats({
   return (
     <section className="pt-16 border-t-2 border-ink/10 mt-8 mb-16">
       <div className="flex flex-col md:flex-row items-start md:items-baseline justify-between gap-6 mb-12">
-        <h2 className="type-heading-lg text-ink">
-          Archival <br />Summary
+        <h2 className="type-heading-lg text-ink whitespace-pre-line">
+          {t('statsHeading')}
         </h2>
-        <span className="type-label-wide text-ink/30">Consolidated_Metrics_{new Date().getFullYear()}</span>
+        <span className="type-label-wide text-ink/30">{t('metricsLabel', { year: format.dateTime(new Date(), { year: 'numeric' }) })}</span>
       </div>
       <div className="flex flex-wrap gap-12 sm:gap-20">
-        <LedgerEntry label="Territories" value={totalCountries} unit="Logged" />
-        <LedgerEntry label="Metro Centers" value={totalCities} unit="Units" />
-        <LedgerEntry label="Spheres" value={totalContinents} unit="Continents" />
-        <LedgerEntry label="Residency" value={totalHomePlaces} unit="Base" />
+        <LedgerEntry label={t('territories')} value={totalCountries} unit={t('logged')} />
+        <LedgerEntry label={t('metroCenters')} value={totalCities} unit={t('units')} />
+        <LedgerEntry label={t('spheres')} value={totalContinents} unit={t('continents')} />
+        <LedgerEntry label={t('residency')} value={totalHomePlaces} unit={t('base')} />
       </div>
     </section>
   );

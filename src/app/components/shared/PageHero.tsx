@@ -47,9 +47,9 @@ export default function PageHero({
       {/* ── Two-column row: h1 | description ────────────────────── */}
       {/* Both columns start at the same y so the quote border always  */}
       {/* aligns with the top of the h1 regardless of eyebrow length. */}
-      <div className="flex flex-col md:flex-row items-start gap-12 sm:gap-20">
+      <div className="flex flex-col md:flex-row items-start gap-6 sm:gap-12 md:gap-20">
         <div className="relative z-10 flex-1">
-          <h1 className="type-display text-ink">{title}</h1>
+          <h1 className="type-display text-ink whitespace-pre-line">{title}</h1>
         </div>
 
         {description && (

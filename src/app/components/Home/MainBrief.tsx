@@ -1,6 +1,7 @@
 import summary from '@/app/data/summary';
 import contact from '@/app/data/contact';
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
 
 // DRY function to get icon configuration (same as Contact component)
 const getIconConfig = (name: string) => {
@@ -60,7 +61,8 @@ const getIconConfig = (name: string) => {
   };
 };
 
-export default function MainBrief() {
+export default async function MainBrief() {
+  const t = await getTranslations('profile');
   const { profile } = summary;
   return (
     <section className="relative w-full text-(--color-text) p-4 sm:p-6 lg:p-8 overflow-hidden order-1 lg:order-2 border-(--ds-border-soft) [background:var(--gaudi-shell-bg)] [box-shadow:var(--ds-shadow-shell)] rounded-(--ds-radius-shell)">
@@ -99,10 +101,10 @@ export default function MainBrief() {
           <div className="flex-1 space-y-1 min-w-0">
             <div className="space-y-0.5">
               <h1 className="text-sm sm:text-base font-bold text-(--gaudi-ink) leading-tight tracking-[-0.02em] text-balance">
-                {profile.name}
+                {t('name')}
               </h1>
               <p className="text-xs sm:text-sm text-(--gaudi-moss) font-semibold">
-                {profile.title}
+                {t('title')}
               </p>
               <div className="flex items-center gap-1 text-(--color-muted)">
                 <svg
@@ -116,7 +118,7 @@ export default function MainBrief() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <p className="text-xs truncate">{profile.location}</p>
+                <p className="text-xs truncate">{t('location')}</p>
               </div>
 
               {/* Social Media Links - accessible touch targets */}
@@ -166,19 +168,19 @@ export default function MainBrief() {
         {/* Professional Summary - more compact */}
         <div className="mt-2 sm:mt-3">
           <p className="text-xs sm:text-sm text-(--color-muted) leading-relaxed">
-            {profile.brief}
+            {t('brief')}
           </p>
         </div>
 
         {/* Expertise with magazine styling - optimized for narrow width */}
         <div className="mt-2 sm:mt-3 space-y-1.5 sm:space-y-2">
           <h2 className="text-sm sm:text-base font-bold text-(--gaudi-ink) tracking-[-0.02em] text-balance">
-            Expertise
+            {t('expertiseHeading')}
           </h2>
 
           {/* Compact highlighted tags - optimized for right rail */}
           <div className="flex flex-wrap gap-1 sm:gap-1.5">
-            {profile.summary.map((item, i) => (
+            {(t.raw('skills') as string[]).map((item, i) => (
               <span
                 key={i}
                 className="inline-block px-1.5 py-0.5 sm:px-2 sm:py-1 text-xs font-medium transition-all duration-200 hover:-translate-y-0.5 border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] rounded-full text-[rgb(45_37_26/0.92)]"

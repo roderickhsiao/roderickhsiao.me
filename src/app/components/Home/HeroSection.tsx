@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import summary from '@/app/data/summary';
 import contact from '@/app/data/contact';
 import ContactForm from './ContactForm';
+import { useTranslations, useLocale } from 'next-intl';
 
 /* ── Sub-components ───────────────────────────────────── */
 
@@ -38,6 +39,9 @@ const SOCIAL_ICONS: Record<string, { viewBox: string; fill: string; stroke: stri
 export default function HeroSection() {
   const [showForm, setShowForm] = useState(false);
   const [showCalendly, setShowCalendly] = useState(false);
+  const tProfile = useTranslations('profile');
+  const locale = useLocale();
+  const calendlyLocaleParam = locale === 'zh-Hant' ? '&locale=zh-TW' : '';
   const { profile } = summary;
 
   const socialLinks = contact.filter((c) => !c.name.toLowerCase().includes('calendly'));
@@ -53,7 +57,7 @@ export default function HeroSection() {
             src={profile.thumbnail.url}
             width={80}
             height={80}
-            alt={`${profile.name} profile photo`}
+            alt={`${tProfile('name')} profile photo`}
             className="w-full h-full object-cover"
             priority
             quality={90}
@@ -61,7 +65,7 @@ export default function HeroSection() {
           />
         </div>
         <Tag className="bg-accent/8 text-accent border border-accent/15">
-          {profile.title}
+          {tProfile('title')}
         </Tag>
       </div>
 
@@ -72,7 +76,7 @@ export default function HeroSection() {
           <p className="type-body-lg max-w-2xl text-ink">
             "Drop me a message to chat about{' '}
             <span className="text-accent underline decoration-wavy decoration-accent/25 underline-offset-8">
-              web ideas
+              AI/web ideas
             </span>
             , cool projects, or even{' '}
             <span className="text-sky underline decoration-wavy decoration-sky/25 underline-offset-8">
@@ -157,7 +161,7 @@ export default function HeroSection() {
               className="animate-expand bg-surface/70 backdrop-blur-2xl border border-ink/6 rounded-3xl overflow-hidden shadow-xl max-w-xl"
             >
               <iframe
-                src={`${calendly.url}?hide_event_type_details=1&hide_gdpr_banner=1`}
+                src={`${calendly.url}?hide_event_type_details=1&hide_gdpr_banner=1${calendlyLocaleParam}`}
                 width="100%"
                 height="600"
                 title="Book a call with Roderick Hsiao"

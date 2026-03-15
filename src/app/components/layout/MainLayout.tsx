@@ -2,6 +2,7 @@ import { ViewTransition } from 'react';
 import Header from './Header';
 import { navigationConfig } from '@/app/data/navigation';
 import type { ReactNode } from 'react';
+import { getTranslations } from 'next-intl/server';
 
 /**
  * MainLayout — full-width single-column shell.
@@ -14,13 +15,20 @@ import type { ReactNode } from 'react';
  * The header is fixed at the top; pages should pad their
  * own content with pt-20 sm:pt-24 to clear the nav bar.
  */
-export default function MainLayout({
+export default async function MainLayout({
   main,
   footer,
 }: {
   main: ReactNode;
   footer?: ReactNode;
 }) {
+  const tNav = await getTranslations('nav');
+  const tProfile = await getTranslations('profile');
+  const links = navigationConfig.links.map((link) => ({
+    href: link.href,
+    label: tNav(link.key),
+  }));
+
   return (
     <div className="relative min-h-screen flex flex-col text-ink">
       {/* ── Fixed decorative background lines ────────────── */}
@@ -35,9 +43,9 @@ export default function MainLayout({
       {/* ── Fixed navigation bar ─────────────────────────── */}
       <div className="fixed inset-s-0 inset-e-0 z-50 top-0 mt-4 px-4 sm:px-6">
         <Header
-          brandName={navigationConfig.brand.name}
-          brandSubtitle={navigationConfig.brand.subtitle}
-          links={navigationConfig.links}
+          brandName={tProfile('name')}
+          brandSubtitle={tNav('brandSubtitle')}
+          links={links}
         />
       </div>
 

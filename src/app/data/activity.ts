@@ -1,55 +1,37 @@
-// Extracurricular activities
-const activity = [
+// Extracurricular activities — structural/non-translatable fields only.
+// All display text (name, org, summary, smartlink title/description)
+// lives in en.json under 'activity.items'.
+export interface ActivitySmartlink {
+  url: string;
+  thumbnail?: { url: string; width: number; height: number };
+}
+
+export interface ActivityItem {
+  key: string;
+  year: string;
+  smartlink?: ActivitySmartlink;
+}
+
+const activity: ActivityItem[] = [
   {
-    name: 'Website Board / Diversity, Equity and Inclusion Lead',
-    org: 'Str8jacket Dance Company',
+    key: 'str8jacket',
     year: '2017 - 2024',
-    summary: 'Led website development and DEI initiatives, creating inclusive processes and safe spaces for diverse dance community.',
     smartlink: {
-      thumbnail: {
-        url: '/str8jacket.jpeg',
-        width: 150,
-        height: 150
-      },
-      title: 'Str8jacket Dance Company',
-      description: 'Competition Hip Hop Team',
+      thumbnail: { url: '/str8jacket.jpeg', width: 150, height: 150 },
       url: 'https://www.str8jacketdance.com/'
     }
   },
   {
-    name: 'Technical Consultant',
-    org: 'HSNU Alumni Windband',
-    year: 'Present',
-    summary: 'Architected modern website with SEO optimization, significantly increasing online visibility and engagement.',
+    key: 'hsnuAwb',
+    year: '- 2012',
     smartlink: {
-      thumbnail: {
-        url: '/hsnu.png',
-        width: 234,
-        height: 234
-      },
-      title: 'HSNU Alumni Windband',
-      description: '師大附中校友管樂團 HSNU Alumni Windband 官方網站',
+      thumbnail: { url: '/hsnu.png', width: 234, height: 234 },
       url: 'http://www.hsnuawb.tw/'
     }
   },
-  {
-    name: 'Voluntary Interpreter',
-    org: 'ORBIS Flying Hospital',
-    year: 'Oct, 2010',
-    summary: 'Facilitated communication between international medical teams and local donors during fundraising initiatives.'
-  },
-  {
-    name: 'Flood Relief Work',
-    org: 'Taiwan Army',
-    year: 'Aug, 2010',
-    summary: 'Coordinated disaster recovery efforts, helping restore communities affected by severe flooding.'
-  },
-  {
-    name: 'Exchange Student',
-    org: 'College of Commerce, Mannheim University, Germany',
-    year: 'Jan 2008 – Jun 2008',
-    summary: 'Completed international business program, gaining cross-cultural experience and global perspective.'
-  }
+  { key: 'orbis', year: 'Oct, 2010' },
+  { key: 'armyFlood', year: 'Aug, 2010' },
+  { key: 'mannheimExchange', year: 'Jan 2008 – Jun 2008' }
 ];
 
 export default activity;

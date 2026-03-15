@@ -1,28 +1,27 @@
-const education = [
+// Education entries — structural/non-translatable fields only.
+// All display text (name, location, college, degree, department)
+// lives in en.json under 'education.items'.
+export interface EducationItem {
+  key: string;
+  /** ISO year-month, e.g. '2004-09' */
+  startDate: string;
+  /** ISO year-month, e.g. '2008-06' */
+  endDate?: string;
+  thumbnail: { url: string; width: number; height: number };
+}
+
+const education: EducationItem[] = [
   {
-    name: 'National ChengChi University (NCCU)',
-    location: 'Taipei, Taiwan',
-    college: 'College of Commerce',
-    degree: 'Bachelor of Business Administration',
-    department: 'Department of Management Information Systems (MIS)',
-    time: 'Sep 2004 - Jun 2008',
-    thumbnail: {
-      url: '/nccuLogo.jpg',
-      width: 200,
-      height: 200
-    }
+    key: 'nccu',
+    startDate: '2004-09',
+    endDate: '2008-06',
+    thumbnail: { url: '/nccuLogo.jpg', width: 200, height: 200 }
   },
   {
-    name: 'Universität Mannheim',
-    location: 'Mannheim, Germany',
-    college: 'Business School',
-    degree: 'Exchange program',
-    time: 'Jan 2008 - Jun 2008',
-    thumbnail: {
-      url: '/mannheim.png',
-      width: 200,
-      height: 200
-    }
+    key: 'mannheim',
+    startDate: '2008-01',
+    endDate: '2008-06',
+    thumbnail: { url: '/mannheim.png', width: 200, height: 200 }
   }
 ];
 

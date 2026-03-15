@@ -3,13 +3,16 @@ import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 import SummarySection from '../shared/SummarySection';
 import type { Demo, Smartlink } from '@/app/data/experience';
+import { getTranslations, getFormatter } from 'next-intl/server';
 
 // SmartLink Card Component
 interface SmartLinkCardProps {
   smartlink: Smartlink;
+  title: string;
+  description?: string;
 }
 
-function SmartLinkCard({ smartlink }: SmartLinkCardProps) {
+function SmartLinkCard({ smartlink, title, description }: SmartLinkCardProps) {
   return (
     <a
       href={smartlink.url}
@@ -26,7 +29,7 @@ function SmartLinkCard({ smartlink }: SmartLinkCardProps) {
                   ? smartlink.thumbnail
                   : smartlink.thumbnail.url
               }
-              alt={smartlink.title}
+              alt={title}
               width={40}
               height={40}
               className="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-lg"
@@ -39,7 +42,7 @@ function SmartLinkCard({ smartlink }: SmartLinkCardProps) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5 mb-1 sm:mb-1.5">
             <h5 className="font-medium text-(--gaudi-ink) group-hover:text-(--gaudi-terracotta) transition-colors text-sm sm:text-base">
-              {smartlink.title}
+              {title}
             </h5>
             <svg
               className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-(--color-muted) group-hover:text-(--gaudi-terracotta) transition-colors shrink-0"
@@ -55,9 +58,9 @@ function SmartLinkCard({ smartlink }: SmartLinkCardProps) {
               />
             </svg>
           </div>
-          {smartlink.description && (
+          {description && (
             <p className="text-xs sm:text-sm text-(--color-muted) line-clamp-2 leading-relaxed">
-              {smartlink.description}
+              {description}
             </p>
           )}
         </div>
@@ -69,10 +72,11 @@ function SmartLinkCard({ smartlink }: SmartLinkCardProps) {
 // Demo Card Component
 interface DemoCardProps {
   demo: Demo;
+  title: string;
   getImageThemeGradient: (imageSrc: string) => string;
 }
 
-function DemoCard({ demo, getImageThemeGradient }: DemoCardProps) {
+function DemoCard({ demo, title, getImageThemeGradient }: DemoCardProps) {
   const demoGradient = getImageThemeGradient(demo.thumbnail.url);
 
   return (
@@ -89,13 +93,13 @@ function DemoCard({ demo, getImageThemeGradient }: DemoCardProps) {
         ></div>
         <Image
           src={demo.thumbnail.url}
-          alt={demo.title}
+          alt={title}
           width={demo.thumbnail.width || 320}
           height={demo.thumbnail.height || 180}
           className="w-full h-24 sm:h-28 object-cover"
         />
         {/* YouTube icon */}
-        <div className="absolute top-2 end-2">
+        <div className="absolute top-2 inset-e-2">
           <svg
             className="w-5 h-5 text-red-500 drop-shadow-sm"
             fill="currentColor"
@@ -107,7 +111,7 @@ function DemoCard({ demo, getImageThemeGradient }: DemoCardProps) {
       </div>
       <div className="p-2 sm:p-3">
         <h6 className="text-xs sm:text-sm font-medium text-(--gaudi-ink) group-hover:text-(--gaudi-terracotta) transition-colors line-clamp-2 leading-tight">
-          {demo.title}
+          {title}
         </h6>
       </div>
     </a>
@@ -164,65 +168,69 @@ function getImageThemeGradient(imageSrc: string): string {
   return imageThemes[imageSrc] || imageThemes.default;
 }
 
-export default function Experience() {
+function formatPeriod(
+  startDate: string,
+  endDate: string | null | undefined,
+  format: Awaited<ReturnType<typeof getFormatter>>,
+  present: string,
+): string {
+  const parseDate = (iso: string) => {
+    const [y, m] = iso.split('-').map(Number);
+    return new Date(y, (m ?? 1) - 1, 1);
+  };
+  const opts = { month: 'short', year: 'numeric' } as const;
+  const start = format.dateTime(parseDate(startDate), opts);
+  if (endDate === null) return `${start} – ${present}`;
+  if (!endDate) return start;
+  return `${start} – ${format.dateTime(parseDate(endDate), opts)}`;
+}
+
+export default async function Experience() {
+  const t = await getTranslations('experience');
+  const format = await getFormatter();
   return (
     <section className="relative">
       <div className="gaudi-blob-a top-10 -inset-s-20"></div>
       <div className="gaudi-blob-c top-52 -inset-e-14"></div>
       <SummarySection
-        title="Professional Experience & Industry Impact"
-        description="Over 16 years in product engineering with extensive experience across startups to Fortune 500 companies. Specialized in frontend architecture, team leadership, and large-scale application development."
-        summaryItems={[
-          {
-            title: 'Industry Experience',
-            icon: <span className="text-(--gaudi-sea)">💼</span>,
-            items: [
-              '16+ years in product engineering.',
-              'Startup to Fortune 500 company experience.',
-            ],
-          },
-          {
-            title: 'Technical Leadership',
-            icon: <span className="text-(--gaudi-moss)">🚀</span>,
-            items: [
-              'Frontend architecture and infrastructure.',
-              'Team mentorship and technical guidance.',
-            ],
-          },
-          {
-            title: 'Impact & Scale',
-            icon: <span className="text-(--gaudi-ochre)">📈</span>,
-            items: [
-              'Large-scale applications serving millions.',
-              'Design systems and developer tooling.',
-            ],
-          },
-          {
-            title: 'Community & Speaking',
-            icon: <span className="text-(--gaudi-terracotta)">🎤</span>,
-            items: [
-              'International conference speaker.',
-              'Open source contributor and advocate.',
-            ],
-          },
-        ]}
+        title={t('sectionTitle')}
+        description={t('sectionDescription')}
+        summaryItems={(
+          t.raw('summaryItems') as Array<{ title: string; items: string[] }>
+        ).map((item, i) => ({
+          title: item.title,
+          icon: (
+            <span
+              className={[
+                'text-(--gaudi-sea)',
+                'text-(--gaudi-moss)',
+                'text-(--gaudi-ochre)',
+                'text-(--gaudi-terracotta)',
+              ][i]}
+            >
+              {['💼', '🚀', '📈', '🎤'][i]}
+            </span>
+          ),
+          items: item.items,
+        }))}
       />
 
       <div className="mb-4 mt-8 relative z-10">
         <h3 className="text-xl sm:text-2xl font-bold text-(--gaudi-ink) tracking-[-0.02em] text-balance mb-1">
-          Experiences
+          {t('experiencesHeading')}
         </h3>
       </div>
       {experience.companies.map((company, idx) => {
+        const companyTitle = t(`companies.${company.key}.title`);
         return (
         <div
           key={idx}
           className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-(--color-border)/45 last:border-b-0 relative z-10"
         >
           {/* Company Header */}
-          <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-4">
+          <div className="flex items-start gap-2 sm:gap-3 mb-2 sm:mb-4">
             {company.logo && (
-              <div className="shrink-0">
+              <div className="shrink-0 mt-0.5">
                 <Image
                   src={company.logo}
                   alt={company.name}
@@ -232,23 +240,23 @@ export default function Experience() {
                 />
               </div>
             )}
-            <div className="flex-1 space-y-0.5 sm:space-y-1">
+            <div className="flex-1 min-w-0 space-y-0.5 sm:space-y-1">
               <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
                 <span className="font-bold text-(--gaudi-ink) text-sm sm:text-base">
                   {company.name}
                 </span>
-                <span className="text-xs px-1.5 py-0.5 sm:px-2 rounded-full border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] text-[rgb(45_37_26/0.92)]">
-                  {company.time}
+                <span className="text-xs px-1.5 py-0.5 sm:px-2 rounded-full border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] text-[rgb(45_37_26/0.92)] shrink-0">
+                  {formatPeriod(company.startDate, company.endDate, format, t('present'))}
                 </span>
               </div>
-              <div className="flex items-center gap-1 text-xs sm:text-sm text-(--color-muted)">
-                <span>{company.title}</span>
-                {company.location && (
-                  <>
-                    <span className="opacity-40 mx-0.5">•</span>
+              <div className="flex items-start flex-wrap gap-x-1 gap-y-0.5 text-xs sm:text-sm text-(--color-muted)">
+                <span className="shrink-0">{companyTitle}</span>
+                {t(`companies.${company.key}.location`) && (
+                  <span className="flex items-center gap-0.5 shrink-0">
+                    <span className="opacity-40">•</span>
                     <MapPin size={11} className="shrink-0 opacity-50" />
-                    <span>{company.location}</span>
-                  </>
+                    <span>{t(`companies.${company.key}.location`)}</span>
+                  </span>
                 )}
               </div>
             </div>
@@ -257,6 +265,13 @@ export default function Experience() {
           {/* Projects */}
           <div className="space-y-2 sm:space-y-4">
             {company.projects.map((project, pidx) => {
+              const projectText = t.raw(`companies.${company.key}.projects.${project.key}`) as {
+                name: string;
+                summary?: string;
+                smartlinkTitle?: string;
+                smartlinkDescription?: string;
+                demoTitles?: string[];
+              };
               // Get gradient based on project thumbnail
               const thumbnailSrc = project.smartlink?.thumbnail
                 ? typeof project.smartlink.thumbnail === 'string'
@@ -279,7 +294,7 @@ export default function Experience() {
 
                   <div className="mb-2 relative z-10">
                     <h4 className="font-semibold text-(--gaudi-ink) mb-1 text-sm sm:text-base">
-                      {project.name}
+                      {projectText.name}
                     </h4>
                     {project.techStack && (
                       <div className="flex flex-wrap gap-1 mb-1 sm:mb-2">
@@ -293,23 +308,27 @@ export default function Experience() {
                         ))}
                       </div>
                     )}
-                    {project.summary && (
+                    {projectText.summary && (
                       <p className="text-xs sm:text-sm text-(--color-muted) mb-2">
-                        {project.summary}
+                        {projectText.summary}
                       </p>
                     )}
                   </div>
 
                   {/* Enhanced Smartlink */}
                   {project.smartlink && (
-                    <SmartLinkCard smartlink={project.smartlink} />
+                    <SmartLinkCard
+                      smartlink={project.smartlink}
+                      title={projectText.smartlinkTitle ?? ''}
+                      description={projectText.smartlinkDescription}
+                    />
                   )}
 
                   {/* Demo Carousel for YouTube videos */}
                   {project.demos && project.demos.length > 0 && (
                     <div className="mt-3 relative z-10">
                       <h5 className="text-sm font-medium text-(--color-muted) mb-2">
-                        Featured Talks & Demos
+                        {t('featuredTalksDemos')}
                       </h5>
                       <div className="relative">
                         <div className="overflow-x-auto scrollbar-hide scroll-smooth">
@@ -318,6 +337,7 @@ export default function Experience() {
                               <li key={didx} className="snap-start">
                                 <DemoCard
                                   demo={demo}
+                                  title={projectText.demoTitles?.[didx] ?? ''}
                                   getImageThemeGradient={getImageThemeGradient}
                                 />
                               </li>

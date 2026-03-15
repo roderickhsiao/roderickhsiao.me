@@ -4,6 +4,8 @@ import { Plus_Jakarta_Sans, Crimson_Pro } from 'next/font/google';
 import './globals.css';
 
 import type { ReactNode } from 'react';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import MainLayout from '@/app/components/layout/MainLayout';
 import Footer from '@/app/components/layout/Footer';
 import DevToolsMessage from '@/app/components/shared/DevToolsMessage';
@@ -31,61 +33,55 @@ const crimson = Crimson_Pro({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://roderickhsiao.me'),
-  title: 'Roderick Hsiao - Software Architect & Community Leader',
-  description:
-    'Personal website of Roderick Hsiao - Software Architect, Community Leader, and technology enthusiast. Explore my journey, projects, and thoughts on building great products.',
-  keywords: [
-    'Roderick Hsiao',
-    'Software Architect',
-    'Community Leader',
-    'Frontend',
-    'React',
-    'Next.js',
-    'TypeScript',
-  ],
-  authors: [{ name: 'Roderick Hsiao' }],
-  openGraph: {
-    title: 'Roderick Hsiao - Software Architect & Community Leader',
-    description:
-      'Personal website of Roderick Hsiao - Software Architect, Community Leader, and technology enthusiast.',
-    url: 'https://roderickhsiao.me',
-    siteName: 'Roderick Hsiao',
-    images: [
-      {
-        url: '/api/og',
-        width: 1200,
-        height: 630,
-        alt: 'Roderick Hsiao - Software Architect & Community Leader',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Roderick Hsiao - Software Architect & Community Leader',
-    description:
-      'Personal website of Roderick Hsiao - Software Architect, Community Leader, and technology enthusiast.',
-    images: ['/api/og'],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('pageMeta');
+  return {
+    metadataBase: new URL('https://roderickhsiao.me'),
+    title: t('home.title'),
+    description: t('home.description'),
+    keywords: t.raw('home.keywords') as string[],
+    authors: [{ name: t('authorName') }],
+    openGraph: {
+      title: t('home.ogTitle'),
+      description: t('home.ogDescription'),
+      url: 'https://roderickhsiao.me',
+      siteName: t('siteName'),
+      images: [
+        {
+          url: '/api/og',
+          width: 1200,
+          height: 630,
+          alt: t('home.ogAlt'),
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('home.ogTitle'),
+      description: t('home.ogDescription'),
+      images: ['/api/og'],
+    },
+  };
+}
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const [locale, messages] = await Promise.all([getLocale(), getMessages()]);
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
         className={`${jakarta.variable} ${crimson.variable} font-sans antialiased bg-canvas text-ink`}
       >
+        <NextIntlClientProvider messages={messages}>
         <DevToolsMessage />
         <MainLayout main={children} footer={<Footer />} />
         {/* SVG filter for glass-morphism effects */}
@@ -114,6 +110,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             />
           </filter>
         </svg>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

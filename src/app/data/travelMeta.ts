@@ -35,7 +35,7 @@ export const COUNTRY_META: Record<string, CountryMeta> = {
   KR: { continent: 'Asia',          color: 'from-blue-600 to-red-600',     highlight: 'text-sky',     stampHex: '#C60C30' },
   MV: { continent: 'Asia',          color: 'from-red-600 to-green-600',    highlight: 'text-error',   stampHex: '#D21034' },
   MX: { continent: 'North America', color: 'from-green-600 to-red-600',    highlight: 'text-success', stampHex: '#006847' },
-  MM: { continent: 'Asia',          color: 'from-yellow-400 to-red-600',   highlight: 'text-sun',     stampHex: '#FECB00' },
+  MM: { continent: 'Asia',          color: 'from-yellow-400 to-red-600',   highlight: 'text-sun',     stampHex: '#2D8A27' },
   NZ: { continent: 'Oceania',       color: 'from-blue-600 to-red-600',     highlight: 'text-sky',     stampHex: '#00247D' },
   NL: { continent: 'Europe',        color: 'from-red-600 to-blue-600',     highlight: 'text-error',   stampHex: '#AE1C28' },
   PW: { continent: 'Oceania',       color: 'from-blue-600 to-yellow-400',  highlight: 'text-sky',     stampHex: '#4AADD6' },
@@ -51,5 +51,5 @@ export const COUNTRY_META: Record<string, CountryMeta> = {
   TW: { continent: 'Asia',          color: 'from-blue-600 to-red-600',     highlight: 'text-sky',     stampHex: '#CF0000' },
   TR: { continent: 'Europe',        color: 'from-red-600 to-white',        highlight: 'text-error',   stampHex: '#E30A17' },
   US: { continent: 'North America', color: 'from-blue-500 to-red-500',     highlight: 'text-sky',     stampHex: '#3C3B6E' },
-  VA: { continent: 'Europe',        color: 'from-yellow-400 to-white',     highlight: 'text-sun',     stampHex: '#FFD700' },
+  VA: { continent: 'Europe',        color: 'from-yellow-400 to-white',     highlight: 'text-sun',     stampHex: '#8B6914' },
 };

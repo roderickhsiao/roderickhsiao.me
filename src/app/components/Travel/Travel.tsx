@@ -9,6 +9,8 @@ import TravelStats from './TravelStats';
 import ContinentFilter from './ContinentFilter';
 import { COUNTRY_META } from '../../data/travelMeta';
 import FieldNotes from '@/app/components/shared/FieldNotes';
+import { useTranslations, useLocale } from 'next-intl';
+import type { FieldNotesItem } from '@/app/components/shared/FieldNotes';
 
 polyfillCountryFlagEmojis();
 
@@ -20,7 +22,7 @@ const CountriesGrid = dynamic(() => import('./CountriesGrid'), {
       {Array.from({ length: 12 }).map((_, i) => (
         <div
           key={i}
-          className="w-full max-w-31.25 h-[210px] sm:h-[230px] rounded-lg animate-pulse bg-ink/8 mx-auto"
+          className="w-full max-w-[200px] aspect-[200/240] rounded-lg animate-pulse bg-ink/8 mx-auto"
         />
       ))}
     </div>
@@ -47,8 +49,10 @@ function sortBySignificance(countries: string[]) {
   return [...countries].sort((a, b) => {
     const [aB, bB] = [isBirthCountry(a), isBirthCountry(b)];
     const [aH, bH] = [hasLivedInCountry(a), hasLivedInCountry(b)];
+    const [aS, bS] = [hasStudiedInCountry(a), hasStudiedInCountry(b)];
     if (aB !== bB) return aB ? -1 : 1;
     if (aH !== bH) return aH ? -1 : 1;
+    if (aS !== bS) return aS ? -1 : 1;
     return 0;
   });
 }
@@ -81,45 +85,6 @@ const continents = Array.from(
   new Set(validCountries.map((code) => countryInfo[code]?.continent).filter(Boolean))
 ) as string[];
 
-const EDITORIAL_ITEMS: readonly { num: string; icon: string; title: string; items: readonly string[] }[] = [
-  {
-    num: '01',
-    icon: '🌍',
-    title: 'Cultural Diversity',
-    items: [
-      'Experience different traditions and customs.',
-      'Discover diverse cuisines and architectural styles.',
-    ],
-  },
-  {
-    num: '02',
-    icon: '🤝',
-    title: 'Global Understanding',
-    items: [
-      'Build bridges across different communities.',
-      'Learn about historical contexts and modern perspectives.',
-    ],
-  },
-  {
-    num: '03',
-    icon: '✨',
-    title: 'Personal Growth',
-    items: [
-      'Develop adaptability and problem-solving skills.',
-      'Gain confidence through new experiences.',
-    ],
-  },
-  {
-    num: '04',
-    icon: '🗺️',
-    title: 'Memorable Adventures',
-    items: [
-      'Create lasting memories across continents.',
-      'Discover hidden gems and iconic landmarks.',
-    ],
-  },
-] as const;
-
 /**
  * Hidden SVG filter for the paper-grain texture on stamp cards.
  * Must live in the same document as the stamps that reference it.
@@ -146,6 +111,8 @@ function InkTextureFilter() {
 }
 
 export default function Travel() {
+  const t = useTranslations('travel');
+  const locale = useLocale();
   const [selectedContinent, setSelectedContinent] = useState<string>('');
   const [search, setSearch] = useState('');
 
@@ -155,10 +122,18 @@ export default function Travel() {
       const matchesContinent =
         !selectedContinent || countryInfo[code].continent === selectedContinent;
       const q = search.toLowerCase();
+      const localizedName = (() => {
+        try {
+          return new Intl.DisplayNames([locale], { type: 'region' }).of(code) ?? '';
+        } catch {
+          return '';
+        }
+      })();
       const matchesSearch =
         !q ||
         code.toLowerCase().includes(q) ||
-        countryInfo[code].continent.toLowerCase().includes(q);
+        countryInfo[code].continent.toLowerCase().includes(q) ||
+        localizedName.toLowerCase().includes(q);
       return matchesContinent && matchesSearch;
     })
   );
@@ -171,16 +146,16 @@ export default function Travel() {
 
         {/* ── Hero ─────────────────────────────────────── */}
         <PageHero
-          eyebrow="Spatial Log // Field Archive"
-          title={<>Travel<br />Journey</>}
-          description="Travel opens our minds to the incredible diversity of human culture, history, and traditions. Each journey offers unique perspectives and helps us appreciate the rich tapestry of our interconnected world."
+          eyebrow={t('hero.eyebrow')}
+          title={t('hero.title')}
+          description={t('hero.description')}
           className="pb-20"
         />
 
         <FieldNotes
-          label="FLIGHT LOG // WINDOW SEAT"
-          heading={<>World Travel &amp;<br />Cultural Exploration</>}
-          items={EDITORIAL_ITEMS}
+          label={t('fieldNotes.label')}
+          heading={t('fieldNotes.heading')}
+          items={t.raw('fieldNotes.items') as FieldNotesItem[]}
         />
 
         {/* ── Stats ledger ─────────────────────────────── */}
@@ -213,8 +188,8 @@ export default function Travel() {
             />
             <input
               type="text"
-              placeholder="Search countries…"
-              aria-label="Search countries"
+              placeholder={t('searchPlaceholder')}
+              aria-label={t('searchAriaLabel')}
               className="w-full pl-7 py-3 bg-transparent border-b-2 border-ink/10 focus:border-ink transition-all text-[11px] font-black tracking-[0.3em] uppercase placeholder:text-ink/20 focus:outline-none text-ink"
               value={search}
               onChange={(e) => setSearch(e.target.value)}

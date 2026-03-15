@@ -1,6 +1,8 @@
+'use client';
 import Image from 'next/image';
 import activities from '../../data/activity';
 import speaking from '../../data/speaking';
+import { useTranslations } from 'next-intl';
 
 interface SpeakingItem {
   title: string;
@@ -10,27 +12,15 @@ interface SpeakingItem {
   thumbnail: { url: string; width: number; height: number };
 }
 
-interface ActivityItem {
-  name: string;
-  org: string;
-  year: string;
-  summary: string;
-  smartlink?: {
-    url: string;
-    thumbnail?: { url: string; width: number; height: number };
-    title?: string;
-    description?: string;
-  };
-}
-
 export default function Activity() {
+  const t = useTranslations('activity');
   return (
     <section className="space-y-20">
 
       {/* ── Speaking ────────────────────────────────── */}
       <div>
         <div className="flex items-center gap-6 mb-10">
-          <p className="type-label-wide text-ink/40 shrink-0">SPEAKING</p>
+          <p className="type-label-wide text-ink/40 shrink-0">{t('speaking')}</p>
           <div className="h-px flex-1 bg-ink/8" aria-hidden />
         </div>
 
@@ -81,12 +71,13 @@ export default function Activity() {
       {/* ── Community ───────────────────────────────── */}
       <div>
         <div className="flex items-center gap-6 mb-10">
-          <p className="type-label-wide text-ink/40 shrink-0">COMMUNITY</p>
+          <p className="type-label-wide text-ink/40 shrink-0">{t('community')}</p>
           <div className="h-px flex-1 bg-ink/8" aria-hidden />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {(activities as ActivityItem[]).map((item, i) => {
+          {activities.map((item, i) => {
+            const text = t.raw(`items.${item.key}`) as { name: string; org: string; summary: string };
             const hasLink = !!item.smartlink?.url;
             const Wrapper = hasLink ? 'a' : 'div';
             const wrapperProps = hasLink
@@ -117,11 +108,11 @@ export default function Activity() {
                 {/* Text */}
                 <div className="flex-1 min-w-0 relative z-10">
                   <div className="flex items-start justify-between gap-3 mb-1">
-                    <h4 className={`type-caption text-ink leading-tight ${hasLink ? 'group-hover:text-(--gaudi-terracotta) transition-colors' : ''}`}>{item.name}</h4>
+                    <h4 className={`type-caption text-ink leading-tight ${hasLink ? 'group-hover:text-(--gaudi-terracotta) transition-colors' : ''}`}>{text.name}</h4>
                     <span className="type-label text-ink/30 shrink-0 mt-0.5">{item.year}</span>
                   </div>
-                  <p className="type-label text-ink/50 mb-2">{item.org}</p>
-                  <p className="type-body-sm text-ink/50 leading-relaxed">{item.summary}</p>
+                  <p className="type-label text-ink/50 mb-2">{text.org}</p>
+                  <p className="type-body-sm text-ink/50 leading-relaxed">{text.summary}</p>
                 </div>
 
                 {/* Arrow */}

@@ -5,10 +5,13 @@ import { X } from 'lucide-react';
 import TravelStamp from './TravelStamp';
 import type { TravelStatus } from './TravelStamp';
 import CityStamp from './CityStamp';
+import ParkSticker from './ParkSticker';
+import { NATIONAL_PARKS } from '@/app/data/nationalParks';
+import { useTranslations, useLocale } from 'next-intl';
 
-const getCountryDisplayName = (code: string): string => {
+const getCountryDisplayName = (code: string, locale: string): string => {
   try {
-    const displayNames = new Intl.DisplayNames(['en'], { type: 'region' });
+    const displayNames = new Intl.DisplayNames([locale], { type: 'region' });
     return displayNames.of(code) || code;
   } catch {
     const fallbackNames: Record<string, string> = {
@@ -53,6 +56,9 @@ export default function CountriesGrid({
   //   — stays set past selectedCode=null so the close animation can play
   const [selectedCode, setSelectedCode] = useState<string | null>(null);
   const [displayedCode, setDisplayedCode] = useState<string | null>(null);
+  const t = useTranslations('travel');
+  const locale = useLocale();
+  const cityNames = t.raw('cityNames') as Record<string, string>;
 
   const gridRef = useRef<HTMLDivElement>(null);
   const [colCount, setColCount] = useState(2);
@@ -102,32 +108,32 @@ export default function CountriesGrid({
   const displayedInfo = displayedCode ? countryInfo[displayedCode] : null;
   const displayedFlagEmoji = displayedCode ? flag(displayedCode) || '🌐' : null;
   const displayedName = displayedCode
-    ? getCountryDisplayName(displayedCode)
+    ? getCountryDisplayName(displayedCode, locale)
     : null;
 
   return (
     <div
       ref={gridRef}
-      className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 sm:gap-x-8 mb-32"
+      className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-6 lg:gap-x-8 mb-32"
     >
       {filteredCountries.map((code, index) => {
         const info = countryInfo[code];
         const flagEmoji = flag(code) || '🌐';
-        const displayName = getCountryDisplayName(code);
+        const displayName = getCountryDisplayName(code, locale);
         const isBirth = isBirthCountry(code);
         const hasLived = hasLivedInCountry(code);
         const isStudy = hasStudiedInCountry(code);
         const status: TravelStatus = isBirth ? 'BORN' : hasLived ? 'HOME' : isStudy ? 'STUDY' : 'TRAVEL';
-        // HOME/BORN stamps show a city label on the stamp itself; no expand panel
-        const canExpand = status === 'TRAVEL' || status === 'STUDY';
-        const cityLabel =
-          (status === 'HOME' || status === 'BORN') && info.cities.length === 1
-            ? cleanLabel(info.cities[0])
-            : undefined;
+        const canExpand = info.cities.length > 0;
+        // For HOME/BORN: show the marked home/birth city as the label even when there are multiple cities
+        const rawCityLabel = (status === 'HOME' || status === 'BORN')
+          ? cleanLabel(info.cities.find((c) => c.includes('🏡') || c.includes('🍼')) ?? info.cities[0] ?? '')
+          : undefined;
+        const cityLabel = rawCityLabel != null ? (cityNames[rawCityLabel] ?? rawCityLabel) : undefined;
 
         return (
           <Fragment key={code}>
-            <div className="flex justify-center pb-16">
+            <div className="flex justify-center pb-10 sm:pb-16">
               <TravelStamp
                 name={displayName}
                 code={code}
@@ -157,13 +163,13 @@ export default function CountriesGrid({
                   }
                 }}
               >
-                <div ref={panelRef} className="pt-12 pb-20 sm:px-4">
+                <div ref={panelRef} className="pt-8 sm:pt-12 pb-16 sm:pb-20 px-3 sm:px-4">
                   {displayedInfo && (
                     <div>
                       {/* Panel header */}
-                      <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12 border-b border-ink/8 pb-8 relative">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12 border-b border-ink/8 pb-6 sm:pb-8 relative">
                         <div
-                          className="absolute -top-6 start-1/2 -translate-x-1/2 w-px h-6 bg-linear-to-b from-transparent to-ink/15"
+                          className="absolute -top-6 inset-s-1/2 -translate-x-1/2 w-px h-6 bg-linear-to-b from-transparent to-ink/15"
                           aria-hidden
                         />
                         <div className="flex items-center gap-5">
@@ -175,7 +181,7 @@ export default function CountriesGrid({
                               {displayedName}
                             </h3>
                             <span className="type-label text-ink/30 mt-2 block">
-                              ARCHIVE EXTRACT // SPATIAL LOGS
+                              {t('archiveExtract')}
                             </span>
                           </div>
                         </div>
@@ -187,12 +193,12 @@ export default function CountriesGrid({
                             size={14}
                             className="group-hover:rotate-90 transition-transform duration-300"
                           />
-                          DISMISS RECORD
+                          {t('dismissRecord')}
                         </button>
                       </div>
 
                       {/* City stamps grid */}
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6 lg:gap-8">
                         {displayedInfo.cities.map((city, idx) => (
                           <CityStamp
                             key={city}
@@ -203,6 +209,20 @@ export default function CountriesGrid({
                           />
                         ))}
                       </div>
+
+                      {/* National park stickers */}
+                      {displayedCode && NATIONAL_PARKS[displayedCode] && (
+                        <div className="mt-16 sm:mt-20">
+                          <p className="type-label text-ink/25 uppercase tracking-widest mb-10 sm:mb-14">
+                            {t('nationalParks')}
+                          </p>
+                          <div className="flex flex-wrap items-end gap-10 sm:gap-14 lg:gap-16">
+                            {NATIONAL_PARKS[displayedCode].map((park, idx) => (
+                              <ParkSticker key={park.name} park={park} index={idx} />
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>

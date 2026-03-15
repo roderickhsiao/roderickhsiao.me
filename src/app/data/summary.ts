@@ -1,36 +1,26 @@
-// Main profile summary
-const summary = {
+// Main profile summary — structural/non-translatable fields only.
+// All display text lives in en.json under the 'profile' namespace.
+export interface ProfileThumbnail {
+  url: string;
+  width: number;
+  height: number;
+}
+
+export interface ProfileStructure {
+  thumbnail: ProfileThumbnail;
+  /** Residency locations used in the travel/footer UI */
+  residency: string[];
+}
+
+const summary: { profile: ProfileStructure } = {
   profile: {
-    name: 'Roderick Hsiao',
-    title: 'Product Engineering Consultant',
-    location: 'San Francisco Bay Area | Internet',
     thumbnail: {
       url: '/profile.jpg',
       width: 200,
       height: 200,
     },
     residency: ['SF Bay Area', 'Taipei'],
-    interests: ['Open Web Advocate', 'House Dancer', 'Animal Lover', 'Coffee Enthusiast'],
-    languages: [
-      { flag: '🇺🇸', label: 'English' },
-      { flag: '🇹🇼', label: 'Mandarin' },
-    ],
-    list: [
-      { field: 'name' },
-      { field: 'title' },
-      { field: 'location' },
-    ],
-    summary: [
-      'Design Systems',
-      'Progressive Web Apps',
-      'Frontend Infrastructure',
-      'Web Accessibility',
-      'Internationalization',
-      'Team Mentorship',
-      'Tech Speaker'
-    ],
-    brief: "Product engineering consultant specializing in frontend infrastructure and design systems. Open source advocate with extensive experience in large-scale applications and team mentorship across startup and enterprise environments."
-  }
+  },
 };
 
 export default summary;

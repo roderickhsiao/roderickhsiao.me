@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import { useTranslations } from 'next-intl';
 
 export type TravelStatus = 'BORN' | 'HOME' | 'STUDY' | 'TRAVEL';
 
@@ -42,6 +43,7 @@ export default function TravelStamp({
   onClick,
   cityLabel,
 }: TravelStampProps) {
+  const t = useTranslations('travel');
   const rotation = isActive ? 0 : (index % 3 - 1) * 1.5;
 
   const stampStyle: CSSProperties = {
@@ -68,10 +70,10 @@ export default function TravelStamp({
 
   return (
     <div
-      className={`relative group flex flex-col w-50 h-60 transition-all duration-700 ease-out [--stamp-dot:16px] sm:[--stamp-dot:20px] ${onClick ? 'cursor-pointer' : 'cursor-default'} ${isActive ? 'scale-[1.04] z-40' : 'hover:z-30 hover:-translate-y-2'}`}
+      className={`relative group flex flex-col w-full max-w-[200px] aspect-[200/240] transition-all duration-700 ease-out [--stamp-dot:15px] sm:[--stamp-dot:20px] ${onClick ? 'cursor-pointer' : 'cursor-default'} ${isActive ? 'scale-[1.04] z-40' : 'hover:z-30 hover:-translate-y-2'}`}
       onClick={onClick}
       style={stampStyle}
-      aria-label={`${name} — ${citiesCount} cities`}
+      aria-label={t('stampAriaLabel', { name, count: citiesCount })}
     >
       {/* Hover: flag emoji glow bloom */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
@@ -93,7 +95,7 @@ export default function TravelStamp({
           {code}
         </span>
         <span className="type-label italic text-white/60">
-          {status}
+          {t(`status${status}`)}
         </span>
       </div>
 
@@ -102,7 +104,7 @@ export default function TravelStamp({
 
         {/* Postmark watermark */}
         <div
-          className="absolute -bottom-8 -start-10 w-52 h-52 pointer-events-none opacity-40 mix-blend-multiply z-40 group-hover:rotate-6 transition-transform duration-1000"
+          className="absolute -bottom-8 -inset-s-10 w-52 h-52 pointer-events-none opacity-40 mix-blend-multiply z-40 group-hover:rotate-6 transition-transform duration-1000"
           aria-hidden
         >
           <svg viewBox="0 0 100 100" className="w-full h-full" style={{ color: stampColor }}>
@@ -152,7 +154,7 @@ export default function TravelStamp({
       {(status === 'TRAVEL' || status === 'STUDY') && (
         <div className="absolute bottom-0 inset-s-0 inset-e-0 mb-2 flex flex-col items-center transition-all duration-700 z-5">
           <span className="type-label text-ink/40 block leading-none mb-0.5">
-            METRO • UNITS
+            {t('metroUnits')}
           </span>
           <div className="inline-block px-1.5 py-0.5 rounded bg-[#FAF8F2]/60 backdrop-blur-sm">
             <span

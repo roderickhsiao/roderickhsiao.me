@@ -1,0 +1,915 @@
+{
+  "home": {
+    "hero": {
+      "eyebrow": "產品工程 // 前端架構",
+      "titleLine1": "Roderick",
+      "titleLine2": "Hsiao",
+      "description": "前端工程師兼顧問，在新創和大型企業之間都打過滾。主要做前端基礎設施和設計系統，偶爾幫人做架構決策，或是在研討會上跟大家聊這些事。"
+    },
+    "fieldNotes": {
+      "label": "職涯記錄 // 持續出貨中",
+      "heading": "職涯與亮點",
+      "items": [
+        {
+          "num": "01",
+          "icon": "💼",
+          "title": "經驗",
+          "items": [
+            "從第一行程式碼到現在，幾乎沒怎麼停過。",
+            "新創的混亂和大企業的流程都待過，各有各的折磨。"
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🚀",
+          "title": "領導力",
+          "items": [
+            "花最多時間在前端基礎設施跟設計系統上。",
+            "帶過人，也被人帶過，兩種都學到東西。"
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📈",
+          "title": "影響力",
+          "items": [
+            "做過用戶數以百萬計的產品，不止一個。",
+            "那個量級讓你很快知道哪些東西規模一大就會壞。"
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "📣",
+          "title": "社群",
+          "items": [
+            "跑過幾個國際研討會，時差比語言難克服。",
+            "開源不只是說說而已，有實際在維護和貢獻。"
+          ]
+        }
+      ]
+    }
+  },
+  "chronicle": {
+    "heading": "職涯年表",
+    "section": "第 {index} 章節",
+    "talksHeading": "演講與展示",
+    "collapse": "收合",
+    "details": "詳情",
+    "collapseAriaLabel": "關閉專案詳情",
+    "expandAriaLabel": "展開專案詳情"
+  },
+  "contact": {
+    "heading": "聯繫我",
+    "subheading": "有想法、有案子、或只是想聊技術都可以。不太接陌生邀約，但有趣的人歡迎敲門。",
+    "namePlaceholder": "您的姓名",
+    "emailPlaceholder": "電子郵件地址",
+    "subjectPlaceholder": "主題",
+    "messagePlaceholder": "告訴我您的專案或想討論的話題...",
+    "submit": "傳送訊息",
+    "submitting": "傳送中…",
+    "success": "訊息已傳送 — 我會盡快回覆您。",
+    "error": "發生錯誤。{error}",
+    "cardWelcome": "嗨！👋 感謝造訪！歡迎傳訊給我，聊聊 <highlight1>AI/網頁想法</highlight1>、很酷的專案，甚至 <highlight2>浩室音樂</highlight2>。",
+    "messageButton": "傳訊",
+    "bookButton": "預約",
+    "closeAriaLabel": "關閉"
+  },
+  "footer": {
+    "messageButton": "傳訊",
+    "bookCallButton": "預約諮詢",
+    "supportButton": "請我喝咖啡",
+    "supportAriaLabel": "支持 — 請我喝杯咖啡",
+    "sourceLink": "看檔案原始碼",
+    "siteNote": "沒有廣告，沒有追蹤。像巷口那家早餐店——每天都開著，安靜等你。",
+    "devNote": "* 製作本站過程中沒有工程師在加班。（有但不說。）",
+    "devNoteTitle": "靠咖啡因、AI 聊天與「這個 div 到底要不要再包一層」的靈魂拷問所打造。",
+    "easterEgg": "你找到這行了。恭喜，你就是那種我想一起工作的人。",
+    "widgetMessageTitle": "傳送訊息",
+    "widgetCallTitle": "預約諮詢",
+    "widgetClose": "關閉",
+    "contactDialogLabel": "聯絡表單",
+    "calendlyDialogLabel": "預約諮詢",
+    "quote": "歡迎傳訊給我，一起聊聊 <highlight1>AI/網頁想法</highlight1>、很酷的專案，甚至 <highlight2>浩室音樂</highlight2>。",
+    "heritage": "灣區製作",
+    "crafted": "與 AI 協力打造，分不清誰比較努力",
+    "copyrightName": "R. Hsiao",
+    "residencyLocations": ["舊金山灣區", "台北"]
+  },
+  "activity": {
+    "hero": {
+      "eyebrow": "演講 // 社群",
+      "title": "活動與演講",
+      "description": "研討會演講、工作坊和社群參與——在科技生態系中分享知識、建立連結。"
+    },
+    "fieldNotes": {
+      "label": "演講追蹤 // 簡報就緒",
+      "heading": "社群記錄",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎤",
+          "title": "演講",
+          "items": [
+            "研討會演講與工作坊。",
+            "JSConf 與社群科技活動。"
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "社群",
+          "items": [
+            "開源領導與管理。",
+            "指導新興開發者。"
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🌱",
+          "title": "多元化",
+          "items": [
+            "科技圈不應該只有一種人。",
+            "說出來是第一步，更重要的是做出來。"
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "✨",
+          "title": "影響力",
+          "items": [
+            "技術是工具，能為誰服務才是重點。",
+            "有些東西值得花多一點時間做好。"
+          ]
+        }
+      ]
+    },
+    "speaking": "演講",
+    "community": "社群",
+    "items": {
+      "str8jacket": {
+        "name": "網站委員 / DEI 負責人",
+        "org": "Str8jacket Dance Company",
+        "summary": "主導網站開發以及為多元舞蹈社群建立包容流程與安全空間。",
+        "smartlinkTitle": "Str8jacket Dance Company",
+        "smartlinkDescription": "競技嘻哈表演團隊"
+      },
+      "hsnuAwb": {
+        "name": "技術顧問",
+        "org": "師大附中校友管樂團",
+        "summary": "幫母校的校友管樂團翻新了整個網站，讓大家搜尋得到，進來之後也不會馬上想離開。",
+        "smartlinkTitle": "HSNU Alumni Windband",
+        "smartlinkDescription": "師大附中校友管樂團 HSNU Alumni Windband 官方網站"
+      },
+      "orbis": {
+        "name": "口譯志工",
+        "org": "奧比斯眼科飛行醫院",
+        "summary": "在募款活動中，為國際醫療團隊與在地捐款人擔任口譯志工，搭起溝通的橋梁。"
+      },
+      "armyFlood": {
+        "name": "水災救援工作",
+        "org": "中華民國陸軍",
+        "summary": "協調災後重建工作，協助受嚴重水災波及的社區恢復生活。"
+      },
+      "mannheimExchange": {
+        "name": "交換學生",
+        "org": "德國曼海姆大學商學院",
+        "summary": "在德國完成一學年的交換學程。學了商業，也學會了在冬天靠自己想辦法取暖。"
+      }
+    }
+  },
+  "education": {
+    "hero": {
+      "eyebrow": "學術基礎 // 持續學習",
+      "title": "學歷與\n背景",
+      "description": "這些學習歷程形塑了我對工程與產品的思考方式。教授說的大半忘了，但解決問題的方法留下來了。"
+    },
+    "fieldNotes": {
+      "label": "學習記錄 // 大多倖存了",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎓",
+          "title": "學術",
+          "items": [
+            "扎實的電腦科學基礎。",
+            "研究與理論支撐的方法論。"
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🔬",
+          "title": "好奇心",
+          "items": [
+            "持續自主學習。",
+            "不斷探索新興技術。"
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🏫",
+          "title": "教學",
+          "items": [
+            "透過導師制分享知識。",
+            "在技術研討會與工作坊演講。"
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "💡",
+          "title": "應用",
+          "items": [
+            "將理論付諸實踐。",
+            "解決真實世界的工程問題。"
+          ]
+        }
+      ]
+    },
+    "items": {
+      "nccu": {
+        "name": "國立政治大學 (NCCU)",
+        "location": "台灣 台北",
+        "college": "商學院",
+        "degree": "企業管理學士",
+        "department": "管理資訊系統學系 (MIS)"
+      },
+      "mannheim": {
+        "name": "曼海姆大學",
+        "location": "德國 曼海姆",
+        "college": "商學院",
+        "degree": "交換生學程"
+      }
+    }
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "開源 // 開發者工具",
+      "title": "開源\n專案",
+      "description": "閒不下來就寫成套件。有些還在用，有些被我自己棄坑，有些每週還有幾萬次下載——連我自己都有點驚訝。"
+    },
+    "fieldNotes": {
+      "label": "建構記錄 // 公開儲存庫",
+      "heading": "開源與\n開發者工具",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🔧",
+          "title": "開源",
+          "items": [
+            "積極參與開源貢獻。",
+            "打造開發者喜愛的工具。"
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "⚡",
+          "title": "效能",
+          "items": [
+            "以無障礙與效能為核心。",
+            "社群驅動開發。"
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📦",
+          "title": "套件",
+          "items": [
+            "發布 npm 套件回饋生態系。",
+            "TypeScript 優先，型別安全 API。"
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🤝",
+          "title": "協作",
+          "items": [
+            "歡迎貢獻與回饋。",
+            "與社群共同打造解決方案。"
+          ]
+        }
+      ]
+    },
+    "sectionHeading": "專案與套件",
+    "github": "GitHub",
+    "npm": "npm",
+    "demo": "線上展示",
+    "stars": "顆星",
+    "statusActive": "進行中",
+    "statusMaintained": "維護中",
+    "statusArchived": "封存中",
+    "yearPresent": "至今",
+    "items": {
+      "reactInViewport": {
+        "name": "react-in-viewport",
+        "location": "加州 帕羅奧圖",
+        "description": "使用 Intersection Observer API 偵測 React 元件是否在視窗內的套件。提供 Hook 介面，以出色效能偵測視窗可見性。",
+        "highlights": [
+          "350+ GitHub 顆星",
+          "每週 46k+ 次下載",
+          "Tinder 及其他主要公司使用中",
+          "內建 TypeScript 定義支援"
+        ],
+        "githubTitle": "在 GitHub 查看",
+        "githubDescription": "原始碼、文件與範例",
+        "demoTitle": "線上展示",
+        "demoDescription": "試試互動範例",
+        "npmTitle": "NPM 套件",
+        "npmDescription": "透過 npm 或 yarn 安裝"
+      },
+      "reactAspectRatio": {
+        "name": "react-aspect-ratio",
+        "location": "加州 帕羅奧圖",
+        "description": "為 React 元素保留空間、防止瀏覽器回流（版面位移）的元件。有助於維持響應式版面並改善 Cumulative Layout Shift 核心網站體驗指標。",
+        "highlights": [
+          "104+ GitHub 顆星",
+          "防止瀏覽器回流與版面位移",
+          "改善核心網站體驗指標分數",
+          "TypeScript 支援"
+        ],
+        "githubTitle": "在 GitHub 查看",
+        "githubDescription": "原始碼與文件",
+        "npmTitle": "NPM 套件",
+        "npmDescription": "透過 npm 或 yarn 安裝"
+      },
+      "idleTracker": {
+        "name": "idle-tracker",
+        "location": "加州 帕羅奧圖",
+        "description": "追蹤瀏覽器閒置與使用者怠速狀態的輕量 JavaScript 套件。適用於實作自動登出功能、閒置時暫停動畫，或追蹤使用者參與度。",
+        "highlights": [
+          "21+ GitHub 顆星",
+          "零依賴套件",
+          "跨瀏覽器相容",
+          "輕量且高效能"
+        ],
+        "githubTitle": "在 GitHub 查看",
+        "githubDescription": "原始碼與範例",
+        "npmTitle": "NPM 套件",
+        "npmDescription": "透過 npm 或 yarn 安裝"
+      },
+      "reactI13n": {
+        "name": "react-i13n",
+        "location": "加州 桑尼維爾",
+        "description": "為 React 應用程式提供高效能、可擴展且可插拔的埋點方案。提供完整的追蹤框架，用於記錄 React 應用中的使用者互動與分析數據。",
+        "highlights": [
+          "384+ GitHub 顆星",
+          "Yahoo 開源專案",
+          "核心貢獻者與維護者",
+          "大規模生產環境驗證"
+        ],
+        "githubTitle": "在 GitHub 查看",
+        "githubDescription": "Yahoo 開源專案 — 核心貢獻者",
+        "npmTitle": "NPM 套件",
+        "npmDescription": "透過 npm 或 yarn 安裝"
+      },
+      "subscribeUiEvent": {
+        "name": "subscribe-ui-event",
+        "location": "加州 桑尼維爾",
+        "description": "提供跨瀏覽器、高效能的瀏覽器 UI 事件訂閱方案。以節流與防抖技術優化事件處理效能。",
+        "highlights": [
+          "110+ GitHub 顆星",
+          "Yahoo 開源專案",
+          "核心貢獻者與維護者",
+          "跨瀏覽器相容性"
+        ],
+        "githubTitle": "在 GitHub 查看",
+        "githubDescription": "Yahoo 開源專案 — 核心貢獻者",
+        "npmTitle": "NPM 套件",
+        "npmDescription": "透過 npm 或 yarn 安裝"
+      }
+    }
+  },
+  "travel": {
+    "hero": {
+      "eyebrow": "空間記錄 // 實地檔案",
+      "title": "旅行\n足跡",
+      "description": "去過那麼多地方，最大的收穫是終於搞清楚自己有多渺小。每趟旅程都偷偷改變了一點什麼，帶回來的不只是照片，還有說不清楚的眼界。"
+    },
+    "fieldNotes": {
+      "label": "飛行記錄 // 靠窗座位",
+      "heading": "環球旅行與\n文化探索",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🌍",
+          "title": "文化多樣性",
+          "items": [
+            "學當地人的方式吃早餐，是每趟旅行的第一課。",
+            "食物和建築是最誠實的文化索引。"
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "全球視野",
+          "items": [
+            "每次移動，都讓自己難以被框住。",
+            "歷史在當地永遠比課本裡立體。"
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "✨",
+          "title": "個人成長",
+          "items": [
+            "在陌生城市找到回飯店的路，其實很訓練人。",
+            "迷路幾次之後就不太會慌了。"
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🗺️",
+          "title": "難忘的冒險",
+          "items": [
+            "比景點更值得記住的，通常是那些計畫外的小事。",
+            "隱藏版景點靠在地人指路，Google 不太找得到。"
+          ]
+        }
+      ]
+    },
+    "archiveExtract": "檔案提取 // 空間記錄",
+    "dismissRecord": "關閉記錄",
+    "nationalParks": "國家公園",
+    "continentAsia": "亞洲",
+    "continentEurope": "歐洲",
+    "continentNorthAmerica": "北美洲",
+    "continentSouthAmerica": "南美洲",
+    "continentOceania": "大洋洲",
+    "continentAfrica": "非洲",
+    "filterAll": "全部",
+    "parkLabels": {
+      "yosemite": "優勝美地",
+      "yellowstone": "黃石公園",
+      "grandCanyon": "大峽谷",
+      "joshuaTree": "約書亞樹",
+      "redwood": "紅木林",
+      "olympic": "奧林匹克",
+      "deathValley": "死亡谷",
+      "taroko": "太魯閣",
+      "yangmingshan": "陽明山",
+      "kenting": "墾丁"
+    },
+    "metroUnits": "都市 • 單位",
+    "departure": "出境",
+    "arrival": "入境",
+    "explored": "已探索",
+    "exploring": "探索中",
+    "stampAriaLabel": "{name} — {count} 座城市",
+    "statsHeading": "檔案摘要",
+    "metricsLabel": "彙整_指標_{year}",
+    "territories": "地區",
+    "logged": "記錄",
+    "metroCenters": "都會中心",
+    "units": "單位",
+    "spheres": "球體",
+    "continents": "大洲",
+    "residency": "居住地",
+    "base": "基地",
+    "statusBORN": "出生地",
+    "statusHOME": "居住地",
+    "statusSTUDY": "留學地",
+    "statusTRAVEL": "到此一遊",
+    "searchPlaceholder": "搜尋國家…",
+    "searchAriaLabel": "搜尋國家",
+    "cityNames": {
+      "Bay Area": "舊金山灣區",
+      "Los Angeles": "洛杉磯",
+      "San Diego": "聖地牙哥",
+      "Seattle": "西雅圖",
+      "Portland": "波特蘭",
+      "Las Vegas": "拉斯維加斯",
+      "New York": "紐約",
+      "Chicago": "芝加哥",
+      "Austin": "奧斯汀",
+      "Miami": "邁阿密",
+      "Bozeman": "博茲曼",
+      "Vancouver": "溫哥華",
+      "Niagara Falls": "尼加拉瀑布",
+      "Los Cabos": "洛斯卡波斯",
+      "Tulum": "圖盧姆",
+      "George Town": "喬治敦",
+      "Paris": "巴黎",
+      "Lyon": "里昂",
+      "Marseille": "馬賽",
+      "Nice": "尼斯",
+      "Chamonix": "霞慕尼",
+      "Nantes": "南特",
+      "Rennes": "雷恩",
+      "Quiberon": "基伯隆",
+      "Strasbourg": "史特拉斯堡",
+      "Bath": "巴斯",
+      "London": "倫敦",
+      "Oxford": "牛津",
+      "Cambridge": "劍橋",
+      "Mannheim": "曼海姆",
+      "Frankfurt": "法蘭克福",
+      "Cologne": "科隆",
+      "Berlin": "柏林",
+      "Hamburg": "漢堡",
+      "Heidelberg": "海德堡",
+      "Munich": "慕尼黑",
+      "Leipzig": "萊比錫",
+      "Dresden": "德勒斯登",
+      "Konstanz": "康士坦茲",
+      "Stuttgart": "斯圖加特",
+      "Vienna": "維也納",
+      "Garz": "加爾茨",
+      "Brussels": "布魯塞爾",
+      "Ghent": "根特",
+      "Prague": "布拉格",
+      "Brno": "布爾諾",
+      "Amsterdam": "阿姆斯特丹",
+      "Rotterdam": "鹿特丹",
+      "Athens": "雅典",
+      "Mykonos": "米科諾斯",
+      "Santorini": "聖托里尼",
+      "Crete": "克里特",
+      "Naxos": "納克索斯",
+      "Budapest": "布達佩斯",
+      "Milan": "米蘭",
+      "Rome": "羅馬",
+      "Venice": "威尼斯",
+      "Florence": "佛羅倫斯",
+      "Madrid": "馬德里",
+      "Barcelona": "巴塞隆納",
+      "Segovia": "塞哥維亞",
+      "Seville": "塞維利亞",
+      "Lisboa": "里斯本",
+      "Porto": "波多",
+      "Wrocław": "弗次瓦夫",
+      "Kraków": "克拉科夫",
+      "Bern": "伯恩",
+      "Zürich": "蘇黎世",
+      "Interlaken": "因特拉肯",
+      "Grindelwald": "格林德瓦",
+      "Ljubljana": "盧布爾雅那",
+      "Bled Lake Area": "布萊德湖區",
+      "Postojna Cave": "波斯托伊納洞穴",
+      "Zagreb": "薩格勒布",
+      "Plitvice Lakes National Park": "十六湖國家公園",
+      "Dubrovnik": "杜布羅夫尼克",
+      "Helsinki": "赫爾辛基",
+      "Rovaniemi": "羅瓦涅米",
+      "Istanbul": "伊斯坦堡",
+      "İzmir": "伊茲米爾",
+      "Ephesus": "以弗所",
+      "Selçuk": "塞爾丘克",
+      "Cappadocia": "卡帕多奇亞",
+      "Vatican": "梵蒂岡",
+      "Tokyo": "東京",
+      "Osaka": "大阪",
+      "Kyoto": "京都",
+      "Hamamatsu": "濱松",
+      "Okinawa": "沖繩",
+      "Beijing": "北京",
+      "Hong Kong": "香港",
+      "Singapore": "新加坡",
+      "Taipei": "台北",
+      "New Taipei": "新北市",
+      "Taoyuan": "桃園",
+      "Hsinchu": "新竹",
+      "Miaoli": "苗栗",
+      "Taichung": "台中",
+      "Nantou": "南投",
+      "Changhua": "彰化",
+      "Yunlin": "雲林",
+      "Chiayi": "嘉義",
+      "Tainan": "台南",
+      "Kaohsiung": "高雄",
+      "Pingtung": "屏東",
+      "Keelung": "基隆",
+      "Yilan": "宜蘭",
+      "Hualien": "花蓮",
+      "Taitung": "台東",
+      "Bangkok": "曼谷",
+      "Phuket": "普吉島",
+      "Ko Samui": "蘇梅島",
+      "Manila": "馬尼拉",
+      "Boracay": "長灘島",
+      "Siem Reap": "暹粒",
+      "Yangon": "仰光",
+      "Bago": "勃固",
+      "Bengaluru": "班加羅爾",
+      "Jerusalem": "耶路撒冷",
+      "Tel Aviv": "特拉維夫",
+      "Jerash": "傑拉什",
+      "Amman": "安曼",
+      "Dead Sea": "死海",
+      "Dana Biosphere Reserve": "達納生物保護區",
+      "Petra": "佩特拉",
+      "Aqaba": "亞喀巴",
+      "Jeju": "濟州",
+      "Malé": "馬萊",
+      "Jeddah": "吉達",
+      "Brisbane": "布里斯班",
+      "Cairns": "凱恩斯",
+      "Gold Coast": "黃金海岸",
+      "Adelaide": "阿德萊德",
+      "Esperance": "艾斯佩蘭斯",
+      "Perth": "珀斯",
+      "Christchurch": "基督城",
+      "Lake Tekapo": "特卡波湖",
+      "Wanaka": "瓦納卡",
+      "Queenstown": "皇后鎮",
+      "Invercargill": "因弗卡吉爾",
+      "Dunedin": "但尼丁",
+      "Oamaru": "奧馬魯",
+      "Timaru": "提馬魯",
+      "Picton": "皮克頓",
+      "Wellington": "威靈頓",
+      "Taopo": "陶波",
+      "Waitomo": "懷托摩",
+      "Auckland": "奧克蘭",
+      "Kerikeri": "凱里凱里",
+      "Paihia": "派希亞",
+      "Palau": "帛琉"
+    }
+  },
+  "nav": {
+    "brandSubtitle": "前端架構師與平台負責人",
+    "about": "關於",
+    "activity": "活動",
+    "projects": "專案",
+    "travel": "旅行",
+    "education": "學歷"
+  },
+  "profile": {
+    "name": "Roderick Hsiao",
+    "title": "產品工程顧問",
+    "location": "舊金山灣區 × 台北",
+    "brief": "在新創與大型企業之間來回跑過幾輪，最在行的是把前端基礎設施和設計系統做好做扎實。做開源、帶過人、偶爾在台上講幾句。",
+    "expertiseHeading": "專業技能",
+    "skills": [
+      "設計系統",
+      "漸進式網路應用程式",
+      "前端基礎設施",
+      "網頁無障礙",
+      "國際化",
+      "團隊導師",
+      "技術演講者"
+    ],
+    "languages": [
+      {
+        "flag": "🇺🇸",
+        "label": "英文"
+      },
+      {
+        "flag": "🇹🇼",
+        "label": "中文"
+      }
+    ],
+    "interests": ["開放網路倡導者", "浩室舞者", "音樂愛好者", "動物愛好者", "咖啡愛好者"]
+  },
+  "experience": {
+    "sectionTitle": "這些年做過的事",
+    "sectionDescription": "從新創到財富 500 大企業都待過，這些年累積下來的都在這裡——前端架構、技術領導、大型應用開發。",
+    "experiencesHeading": "工作經歷",
+    "present": "至今",
+    "featuredTalksDemos": "精選演講與展示",
+    "summaryItems": [
+      {
+        "title": "產業經驗",
+        "items": [
+          "數十年產品工程經驗。",
+          "橫跨新創至財富 500 大企業。"
+        ]
+      },
+      {
+        "title": "技術領導",
+        "items": [
+          "前端架構與基礎設施。",
+          "團隊導師與技術指導。"
+        ]
+      },
+      {
+        "title": "影響力與規模",
+        "items": [
+          "服務數百萬用戶的大型應用。",
+          "設計系統與開發者工具。"
+        ]
+      },
+      {
+        "title": "社群與演講",
+        "items": [
+          "國際研討會演講者。",
+          "開源貢獻者與倡導者。"
+        ]
+      }
+    ],
+    "companies": {
+      "kindred": {
+        "title": "創始工程師",
+        "location": "遠端",
+        "displayName": "Kindred",
+        "summary": "最早加入的工程師成員之一，在公司初期主導前端架構與核心產品開發。",
+        "projects": {
+          "main": {
+            "name": "Kindred",
+            "summary": "從零建立完整的前端架構，交付核心產品功能，建立工程規範，並將 AI 工具整合進開發流程。",
+            "smartlinkTitle": "Kindred",
+            "smartlinkDescription": "加入我們的會員專屬換屋社群，以傳統度假租賃的一小部分費用解鎖旅行。"
+          }
+        }
+      },
+      "tinder": {
+        "title": "首席軟體工程師",
+        "location": "加州 帕羅奧圖",
+        "displayName": "Tinder",
+        "summary": "tinder.com 首席工程師——主導旗艦網頁平台的技術架構，每日服務全球數以千萬計的活躍用戶。",
+        "projects": {
+          "tinderOnline": {
+            "name": "Tinder Online",
+            "summary": "主導 Tinder 旗艦網頁平台 tinder.com 的技術架構與開發。架構可擴展的前端解決方案，每日服務全球數百萬活躍用戶。",
+            "smartlinkTitle": "Tinder",
+            "smartlinkDescription": "迄今已達 550 億次配對，Tinder® 是全球最受歡迎的交友應用程式。",
+            "demoTitles": [
+              "Production Progressive Web Apps With JavaScript Frameworks (Google I/O 2017)",
+              "Fast By Default: Modern Loading Best Practices (Chrome Dev Summit 2017)",
+              "Adaptive Loading - Improving web performance on slow devices (Chrome Dev Summit 2019)",
+              "PWA patterns for window and service worker communication (Chrome Dev Summit 2020)",
+              "SMS OTP form best practices (Chrome Dev Summit 2020)"
+            ]
+          },
+          "swipeLife": {
+            "name": "Tinder Swipe Life",
+            "summary": "開發並上線 Tinder 生活風格雜誌平台，為交友社群打造引人入勝的內容體驗。"
+          }
+        }
+      },
+      "selfEmployed": {
+        "title": "產品工程顧問",
+        "location": "加州 舊金山",
+        "displayName": "自由接案",
+        "summary": "產品工程顧問，專注於 AI 導入、前端架構設計、團隊與個人技術指導、PWA 與效能最佳化，以及職涯輔導。",
+        "projects": {
+          "alt": {
+            "name": "Alt Platform",
+            "summary": "擔任前端與網頁工程導師，提供最佳實踐、技術選型與職涯方向建議。制定效能改善路線圖與 SEO 提升策略，設計埋點架構，並推動平台整體程式碼模組化。",
+            "smartlinkTitle": "Alt",
+            "smartlinkDescription": "是時候投資你所熱愛的事物了。ALT 讓您擁有前所未有的使用性與流動性。"
+          },
+          "forethought": {
+            "name": "Forethought（2026 年被 Zendesk 收購）",
+            "summary": "主導公司整體品牌改版專案，包含完整的 CSS 系統重構。設計 Web Widget 的狀態持久化架構，推動平台效能改善，並持續為工程團隊提供技術指導。",
+            "smartlinkTitle": "Forethought",
+            "smartlinkDescription": "運用 AI 改善您的客戶體驗。"
+          },
+          "publicSpeaker": {
+            "name": "公開演講者",
+            "summary": "在國際研討會與產業活動上發表漸進式網路應用程式、網頁效能最佳化及大型網頁應用架構的技術演講。",
+            "demoTitles": [
+              "React Norway 2021 | Progressively Enhance Your Web Application",
+              "JSCAMP 2021 | Building Large-Scale Web Apps",
+              "Accento 2020 | Progressively Enhance Your Web Application",
+              "Geekle 2020 | Building Large Scale Web App"
+            ]
+          }
+        }
+      },
+      "branch": {
+        "title": "軟體工程師",
+        "location": "加州 帕羅奧圖",
+        "displayName": "Branch",
+        "summary": "為 Branch 深度連結平台搭建前端基礎設施與工程規範。",
+        "projects": {
+          "dashboard": {
+            "name": "Branch Dashboard and Solutions",
+            "summary": "為深度連結平台架構前端基礎設施、建立工程最佳實踐，並實作網站效能最佳化。",
+            "smartlinkTitle": "Branch",
+            "smartlinkDescription": "深度連結第一品牌。將強健、持久的連結整合至電子郵件、SEM、廣告及其他傳統行銷管道，促進應用程式成長。"
+          }
+        }
+      },
+      "yahooSenior": {
+        "title": "資深軟體工程師",
+        "location": "加州 桑尼維爾",
+        "displayName": "Yahoo",
+        "summary": "在雅虎任職逾六年，跨越多條產品線——行動版首頁、天氣、新聞摘要、品質工程，以及全球流量最大的單頁應用程式之一。",
+        "projects": {
+          "homepage": {
+            "name": "首頁",
+            "summary": "打造全球最多人瀏覽的單頁應用程式之一，跨桌機、平板與手機服務數百萬用戶。開發可重複使用的 UI 元件、工具套件與 Node.js 套件。",
+            "smartlinkTitle": "Yahoo",
+            "smartlinkDescription": "全新 Yahoo 歡迎您。全新 Yahoo 體驗讓您更輕鬆發現最在乎的新聞與資訊——為您量身打造的網路。"
+          },
+          "weather": {
+            "name": "氣象",
+            "summary": "使用同構 React 架構強化 Yahoo Weather 平台，在所有裝置上提供無縫用戶體驗。",
+            "smartlinkTitle": "Yahoo Weather",
+            "smartlinkDescription": "以最準確的每小時、5 天及 10 天預報為您的一天做好準備。精美的 Flickr 照片配合您的位置、時間與當前天氣狀況。"
+          },
+          "newsDigest": {
+            "name": "新聞摘要",
+            "summary": "開發 Yahoo News Digest 網頁平台，為熱門行動應用程式的內容實現更佳的 SEO 效能與深度連結能力。",
+            "smartlinkTitle": "Yahoo News Digest",
+            "smartlinkDescription": "Yahoo News Digest 提供所有重要且必知新聞的確定性摘要，每天早晚各推送一次。"
+          },
+          "mobileHomepage": {
+            "name": "行動版首頁",
+            "summary": "為 Yahoo 行動版首頁試行創新的單頁應用程式架構，聚焦於提升用戶感知效能與行動裝置最佳化。"
+          }
+        }
+      },
+      "yahooLead": {
+        "title": "工程團隊主管",
+        "location": "台灣 台北",
+        "displayName": "Yahoo",
+        "summary": "帶領台北 APAC 行動產品團隊。",
+        "projects": {
+          "apacMobile": {
+            "name": "亞太行動版首頁（台灣與香港）",
+            "summary": "帶領 5 人跨職能團隊，為亞太市場架構並交付完整的內容消費體驗。",
+            "smartlinkTitle": "Yahoo行動版",
+            "smartlinkDescription": "提供最方便的網站搜尋、即時新聞、生活資訊和Yahoo奇摩服務入口。"
+          }
+        }
+      },
+      "yahooQe": {
+        "title": "品質工程主管 / 軟體工程師",
+        "location": "台灣 台北",
+        "displayName": "Yahoo",
+        "summary": "品質工程主管，從選舉戰情室到全球新聞基礎設施。",
+        "projects": {
+          "controlRoom": {
+            "name": "2012 總統大選 - 選舉戰情室",
+            "summary": "架構並開發 選舉戰情室——一款提供即時選情報導的全方位平板應用程式，整合主要新聞來源的精選內容與原創報導。",
+            "smartlinkTitle": "Yahoo 2012 Presidential Election",
+            "smartlinkDescription": "Yahoo 的 選舉戰情室 提供直播視訊、報導，以及眾議院、參議院、州長及總統選情地圖，縣級即時開票、即時部落格、即時民調與社群情緒分析。"
+          },
+          "hashout": {
+            "name": "2012 總統大選 - #Hashout",
+            "summary": "開發 #Hashout——一個旨在匯聚多元觀點、促進選舉期間有意義政治對話的創新線上談話秀平台。",
+            "smartlinkTitle": "Yahoo 2012 Presidential Election - #Hashout",
+            "smartlinkDescription": "Yahoo 2012 總統大選線上談話秀。"
+          },
+          "globalNews": {
+            "name": "全球新聞",
+            "summary": "架構服務全球所有雅虎服務的統一平台。主導前端測試策略、框架開發與測試自動化基礎設施。",
+            "smartlinkTitle": "雅虎新聞",
+            "smartlinkDescription": "在雅虎新聞瀏覽最新新聞。"
+          }
+        }
+      },
+      "army": {
+        "title": "專案經理 / 工程主管",
+        "location": "台灣",
+        "displayName": "中華民國陸軍",
+        "summary": "義務役期間設計並開發軍事教育用的網頁模擬訓練系統，並管理與指導一支六人工程團隊。",
+        "projects": {
+          "equipmentSimulator": {
+            "name": "裝備模擬器",
+            "summary": "設計並開發軍事教育用的網頁訓練系統，管理並指導 6 名人員。最大的挑戰不是技術，是讓弟兄們願意打開瀏覽器。"
+          }
+        }
+      }
+    }
+  },
+  "pageMeta": {
+    "siteName": "Roderick Hsiao",
+    "authorName": "Roderick Hsiao",
+    "home": {
+      "title": "Roderick Hsiao - 軟體架構師與社群領導者",
+      "description": "Roderick Hsiao 的個人網站——前端架構師、社群領導者，以及擁有數十年產業影響力的開放網路倡導者。",
+      "ogTitle": "Roderick Hsiao - 軟體架構師與社群領導者",
+      "ogDescription": "Roderick Hsiao 的個人網站——軟體架構師、社群領導者與科技愛好者。",
+      "ogAlt": "Roderick Hsiao - 軟體架構師與社群領導者",
+      "keywords": ["Roderick Hsiao", "蕭任德", "軟體架構師", "社群領導者", "前端", "React", "Next.js", "TypeScript"]
+    },
+    "activity": {
+      "title": "活動與演講 - Roderick Hsiao",
+      "description": "探索我的演講紀錄、研討會演講、工作坊及社群活動，了解我對科技社群的貢獻。",
+      "ogTitle": "活動與演講 - Roderick Hsiao",
+      "ogDescription": "探索我的演講紀錄、研討會演講、工作坊及社群活動。",
+      "ogAlt": "活動與演講 - Roderick Hsiao",
+      "ogImageTitle": "活動與演講",
+      "ogImageSubtitle": "研討會演講與社群",
+      "ogImageDescription": "分享知識，建立科技社群",
+      "keywords": ["Roderick Hsiao", "演講", "研討會", "技術演講", "工作坊", "社群", "活動"]
+    },
+    "projects": {
+      "title": "專案 - Roderick Hsiao",
+      "description": "探索我的開源專案、個人工具及對開發者社群的貢獻。從 React 套件到開發者工具，發現為解決真實世界問題而熱情打造的専案。",
+      "keywords": ["Roderick Hsiao", "專案", "開源", "GitHub", "React", "TypeScript", "開發者工具", "套件"]
+    },
+    "education": {
+      "title": "學歷與背景 - Roderick Hsiao",
+      "description": "了解我的學術背景、學業成就，以及塑造我在科技與產品開發職涯的基礎。",
+      "ogTitle": "學歷與背景 - Roderick Hsiao",
+      "ogDescription": "了解我的學術背景及塑造我職涯的基礎。",
+      "ogAlt": "學歷與背景 - Roderick Hsiao",
+      "ogImageTitle": "學歷與背景",
+      "ogImageSubtitle": "學術基礎",
+      "ogImageDescription": "建立科技職涯的基礎",
+      "keywords": ["Roderick Hsiao", "學歷", "背景", "學術", "大學", "學習", "職涯基礎"]
+    },
+    "travel": {
+      "title": "旅行冒險 - Roderick Hsiao",
+      "description": "跟隨我的環球旅行冒險。發現我造訪過的地方、旅途中的體驗，以及探索不同文化所帶來的靈感。",
+      "ogTitle": "旅行冒險 - Roderick Hsiao",
+      "ogDescription": "跟隨我的環球旅行冒險，發現不同文化。",
+      "ogAlt": "旅行冒險 - Roderick Hsiao",
+      "ogImageTitle": "旅行冒險",
+      "ogImageSubtitle": "探索世界",
+      "ogImageDescription": "探索文化，從全球體驗汲取靈感",
+      "keywords": ["Roderick Hsiao", "旅行", "冒險", "環球旅行", "文化", "探索", "攝影"]
+    }
+  }
+}

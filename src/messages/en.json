@@ -1,0 +1,762 @@
+{
+  "home": {
+    "hero": {
+      "eyebrow": "Product Engineering // Frontend Architecture",
+      "titleLine1": "Roderick",
+      "titleLine2": "Hsiao",
+      "description": "Product engineering consultant specializing in frontend infrastructure, design systems, and large-scale application development for global startups and Fortune 500 companies."
+    },
+    "fieldNotes": {
+      "label": "CAREER LOG // STILL SHIPPING",
+      "heading": "Career &\nHighlights",
+      "items": [
+        {
+          "num": "01",
+          "icon": "💼",
+          "title": "Experience",
+          "items": [
+            "Decades in product engineering.",
+            "Startup to Fortune 500 range."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🚀",
+          "title": "Leadership",
+          "items": [
+            "Frontend infra & design systems.",
+            "Team technical mentorship."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📈",
+          "title": "Impact",
+          "items": [
+            "Serving millions of users.",
+            "Architecting for extreme scale."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "📣",
+          "title": "Community",
+          "items": [
+            "International tech speaker.",
+            "Open web & OSS advocate."
+          ]
+        }
+      ]
+    }
+  },
+  "chronicle": {
+    "heading": "The Chronicle",
+    "section": "SECTION {index}",
+    "talksHeading": "Talks & Demos",
+    "collapse": "collapse",
+    "details": "details",
+    "collapseAriaLabel": "Close project details",
+    "expandAriaLabel": "Open project details"
+  },
+  "contact": {
+    "heading": "Get in Touch",
+    "subheading": "Happy to chat about AI/web ideas, projects, or collaboration opportunities.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Email address",
+    "subjectPlaceholder": "Subject",
+    "messagePlaceholder": "Tell me about your project or what you'd like to discuss...",
+    "submit": "Send Message",
+    "submitting": "Sending…",
+    "success": "Message sent — I’ll get back to you soon.",
+    "error": "Something went wrong. {error}",
+    "cardWelcome": "Hey there! 👋 Thanks for stopping by! Drop me a message to chat about <highlight1>AI/web ideas</highlight1>, cool projects, or even <highlight2>house music</highlight2>.",
+    "messageButton": "Message",
+    "bookButton": "Book",
+    "closeAriaLabel": "Close"
+  },
+  "footer": {
+    "messageButton": "Message",
+    "bookCallButton": "Book a Call",
+    "supportButton": "Buy me a coffee",
+    "supportAriaLabel": "Support — Buy me a coffee",
+    "sourceLink": "Archive Source Geometry",
+    "siteNote": "Archived with a focus on visual performance and natural geometry. Zero tracking scripts deployed for maximum archive privacy.",
+    "devNote": "* No developers were harmed in the making of this site.",
+    "devNoteTitle": "Built with an unhealthy amount of coffee, countless AI conversations, and the occasional existential crisis about whether this div should be flex or grid.",
+    "easterEgg": "You found this. Congrats — you're exactly the kind of person I'd want to work with.",
+    "widgetMessageTitle": "Send a Message",
+    "widgetCallTitle": "Book a Call",
+    "widgetClose": "Close",
+    "contactDialogLabel": "Contact form",
+    "calendlyDialogLabel": "Book a call",
+    "quote": "Drop me a message to chat about <highlight1>AI/web ideas</highlight1>, cool projects, or even <highlight2>house music</highlight2>.",
+    "heritage": "Bay Area Heritage",
+    "crafted": "Crafted with AI Collaboration",
+    "copyrightName": "R. Hsiao",
+    "residencyLocations": ["SF Bay Area", "Taipei"]
+  },
+  "activity": {
+    "hero": {
+      "eyebrow": "Speaking // Community",
+      "title": "Activities &\nSpeaking",
+      "description": "Conference talks, workshops, and community involvement — sharing knowledge and building connections across the tech ecosystem."
+    },
+    "fieldNotes": {
+      "label": "TALK TRACK // SLIDES READY",
+      "heading": "Community\nLog",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎤",
+          "title": "Speaking",
+          "items": [
+            "Conference talks and workshops.",
+            "JSConf and community tech events."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "Community",
+          "items": [
+            "Open source leadership and stewardship.",
+            "Mentoring emerging developers."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🌱",
+          "title": "Equity",
+          "items": [
+            "Promoting inclusion and diversity in tech.",
+            "Advocating for underrepresented voices."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "✨",
+          "title": "Impact",
+          "items": [
+            "Technology for positive social change.",
+            "Building for communities that matter."
+          ]
+        }
+      ]
+    },
+    "speaking": "SPEAKING",
+    "community": "COMMUNITY",
+    "items": {
+      "str8jacket": {
+        "name": "Website Board / Diversity, Equity and Inclusion Lead",
+        "org": "Str8jacket Dance Company",
+        "summary": "Led website development and DEI initiatives, creating inclusive processes and safe spaces for diverse dance community.",
+        "smartlinkTitle": "Str8jacket Dance Company",
+        "smartlinkDescription": "Competition Hip Hop Team"
+      },
+      "hsnuAwb": {
+        "name": "Technical Consultant",
+        "org": "HSNU Alumni Windband",
+        "summary": "Architected modern website with SEO optimization, significantly increasing online visibility and engagement.",
+        "smartlinkTitle": "HSNU Alumni Windband",
+        "smartlinkDescription": "師大附中校友管樂團 HSNU Alumni Windband 官方網站"
+      },
+      "orbis": {
+        "name": "Voluntary Interpreter",
+        "org": "ORBIS Flying Hospital",
+        "summary": "Facilitated communication between international medical teams and local donors during fundraising initiatives."
+      },
+      "armyFlood": {
+        "name": "Flood Relief Work",
+        "org": "Taiwan Army",
+        "summary": "Coordinated disaster recovery efforts, helping restore communities affected by severe flooding."
+      },
+      "mannheimExchange": {
+        "name": "Exchange Student",
+        "org": "College of Commerce, Mannheim University, Germany",
+        "summary": "Completed international business program, gaining cross-cultural experience and global perspective."
+      }
+    }
+  },
+  "education": {
+    "hero": {
+      "eyebrow": "Academic Foundation // Continuous Learning",
+      "title": "Education &\nBackground",
+      "description": "The academic and learning foundation that shaped my approach to engineering, product thinking, and building things that matter."
+    },
+    "fieldNotes": {
+      "label": "STUDY LOG // MOSTLY SURVIVED",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎓",
+          "title": "Academic",
+          "items": [
+            "Strong computer science foundations.",
+            "Research and theory-backed approaches."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🔬",
+          "title": "Curiosity",
+          "items": [
+            "Continuous self-directed learning.",
+            "Always exploring emerging technologies."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🏫",
+          "title": "Teaching",
+          "items": [
+            "Knowledge sharing through mentorship.",
+            "Speaking at tech conferences and workshops."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "💡",
+          "title": "Application",
+          "items": [
+            "Bridging theory into practice.",
+            "Solving real-world engineering problems."
+          ]
+        }
+      ]
+    },
+    "items": {
+      "nccu": {
+        "name": "National ChengChi University (NCCU)",
+        "location": "Taipei, Taiwan",
+        "college": "College of Commerce",
+        "degree": "Bachelor of Business Administration",
+        "department": "Department of Management Information Systems (MIS)"
+      },
+      "mannheim": {
+        "name": "Universität Mannheim",
+        "location": "Mannheim, Germany",
+        "college": "Business School",
+        "degree": "Exchange program"
+      }
+    }
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Open Source // Developer Tools",
+      "title": "Open\nSource",
+      "description": "From React libraries to developer tools — a collection of projects built to solve real-world problems, shared openly with the community."
+    },
+    "fieldNotes": {
+      "label": "BUILD LOG // PUBLIC REPO",
+      "heading": "Open Source &\nDeveloper\nTools",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🔧",
+          "title": "Open Source",
+          "items": [
+            "Active contributor to open source.",
+            "Building tools that developers love."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "⚡",
+          "title": "Performance",
+          "items": [
+            "Accessibility and performance focused.",
+            "Community-driven development."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📦",
+          "title": "Libraries",
+          "items": [
+            "Published npm packages for the ecosystem.",
+            "TypeScript-first, type-safe APIs."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🤝",
+          "title": "Collaboration",
+          "items": [
+            "Open to contributions and feedback.",
+            "Building solutions with the community."
+          ]
+        }
+      ]
+    },
+    "sectionHeading": "Projects & Libraries",
+    "github": "GitHub",
+    "npm": "npm",
+    "demo": "Live demo",
+    "stars": "stars",
+    "statusActive": "Active",
+    "statusMaintained": "Maintained",
+    "statusArchived": "Archived",
+    "yearPresent": "Present",
+    "items": {
+      "reactInViewport": {
+        "name": "react-in-viewport",
+        "location": "Palo Alto, CA",
+        "description": "A React library to detect whether or not a component is in the viewport using the Intersection Observer API. Provides a hooks interface for detecting viewport visibility with excellent performance.",
+        "highlights": [
+          "350+ GitHub stars",
+          "46k+ weekly downloads",
+          "Used by Tinder and other major companies",
+          "TypeScript support with built-in declarations"
+        ],
+        "githubTitle": "View on GitHub",
+        "githubDescription": "Source code, documentation, and examples",
+        "demoTitle": "Live Demo",
+        "demoDescription": "Try the interactive examples",
+        "npmTitle": "NPM Package",
+        "npmDescription": "Install via npm or yarn"
+      },
+      "reactAspectRatio": {
+        "name": "react-aspect-ratio",
+        "location": "Palo Alto, CA",
+        "description": "A React component to preserve space for your element and prevent browser reflow (layout shift). Helps maintain responsive layouts and improves Core Web Vitals by preventing Cumulative Layout Shift.",
+        "highlights": [
+          "104+ GitHub stars",
+          "Prevents browser reflow and layout shift",
+          "Improves Core Web Vitals scores",
+          "TypeScript support"
+        ],
+        "githubTitle": "View on GitHub",
+        "githubDescription": "Source code and documentation",
+        "npmTitle": "NPM Package",
+        "npmDescription": "Install via npm or yarn"
+      },
+      "idleTracker": {
+        "name": "idle-tracker",
+        "location": "Palo Alto, CA",
+        "description": "A lightweight JavaScript library to track browser inactivity and user idle state. Useful for implementing auto-logout features, pausing animations during inactivity, or tracking user engagement.",
+        "highlights": [
+          "21+ GitHub stars",
+          "Zero dependencies",
+          "Cross-browser compatible",
+          "Lightweight and performant"
+        ],
+        "githubTitle": "View on GitHub",
+        "githubDescription": "Source code and examples",
+        "npmTitle": "NPM Package",
+        "npmDescription": "Install via npm or yarn"
+      },
+      "reactI13n": {
+        "name": "react-i13n",
+        "location": "Sunnyvale, CA",
+        "description": "A performant, scalable and pluggable approach to instrumenting your React application. Provides a comprehensive instrumentation framework for tracking user interactions and analytics in React apps.",
+        "highlights": [
+          "384+ GitHub stars",
+          "Yahoo open source project",
+          "Core contributor and maintainer",
+          "Production-ready at scale"
+        ],
+        "githubTitle": "View on GitHub",
+        "githubDescription": "Yahoo open source project - Core contributor",
+        "npmTitle": "NPM Package",
+        "npmDescription": "Install via npm or yarn"
+      },
+      "subscribeUiEvent": {
+        "name": "subscribe-ui-event",
+        "location": "Sunnyvale, CA",
+        "description": "Subscribe-ui-event provides a cross-browser and performant way to subscribe to browser UI Events. Optimizes event handling performance by using throttling and debouncing techniques.",
+        "highlights": [
+          "110+ GitHub stars",
+          "Yahoo open source project",
+          "Core contributor and maintainer",
+          "Cross-browser compatibility"
+        ],
+        "githubTitle": "View on GitHub",
+        "githubDescription": "Yahoo open source project - Core contributor",
+        "npmTitle": "NPM Package",
+        "npmDescription": "Install via npm or yarn"
+      }
+    }
+  },
+  "travel": {
+    "hero": {
+      "eyebrow": "Spatial Log // Field Archive",
+      "title": "Travel\nJourney",
+      "description": "Travel opens our minds to the incredible diversity of human culture, history, and traditions. Each journey offers unique perspectives and helps us appreciate the rich tapestry of our interconnected world."
+    },
+    "fieldNotes": {
+      "label": "FLIGHT LOG // WINDOW SEAT",
+      "heading": "World Travel &\nCultural Exploration",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🌍",
+          "title": "Cultural Diversity",
+          "items": [
+            "Experience different traditions and customs.",
+            "Discover diverse cuisines and architectural styles."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "Global Understanding",
+          "items": [
+            "Build bridges across different communities.",
+            "Learn about historical contexts and modern perspectives."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "✨",
+          "title": "Personal Growth",
+          "items": [
+            "Develop adaptability and problem-solving skills.",
+            "Gain confidence through new experiences."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🗺️",
+          "title": "Memorable Adventures",
+          "items": [
+            "Create lasting memories across continents.",
+            "Discover hidden gems and iconic landmarks."
+          ]
+        }
+      ]
+    },
+    "archiveExtract": "ARCHIVE EXTRACT // SPATIAL LOGS",
+    "dismissRecord": "DISMISS RECORD",
+    "nationalParks": "National Parks",
+    "continentAsia": "Asia",
+    "continentEurope": "Europe",
+    "continentNorthAmerica": "North America",
+    "continentSouthAmerica": "South America",
+    "continentOceania": "Oceania",
+    "continentAfrica": "Africa",
+    "filterAll": "All",
+    "parkLabels": {
+      "yosemite": "Yosemite",
+      "yellowstone": "Yellowstone",
+      "grandCanyon": "Grand Canyon",
+      "joshuaTree": "Joshua Tree",
+      "redwood": "Redwood",
+      "olympic": "Olympic",
+      "deathValley": "Death Valley",
+      "taroko": "Taroko",
+      "yangmingshan": "Yangmingshan",
+      "kenting": "Kenting"
+    },
+    "metroUnits": "METRO • UNITS",
+    "departure": "DEPARTURE",
+    "arrival": "ARRIVAL",
+    "explored": "EXPLORED",
+    "exploring": "EXPLORING",
+    "stampAriaLabel": "{name} — {count} cities",
+    "statsHeading": "Archival\nSummary",
+    "metricsLabel": "Consolidated_Metrics_{year}",
+    "territories": "Territories",
+    "logged": "Logged",
+    "metroCenters": "Metro Centers",
+    "units": "Units",
+    "spheres": "Spheres",
+    "continents": "Continents",
+    "residency": "Residency",
+    "base": "Base",
+    "statusBORN": "BORN",
+    "statusHOME": "HOME",
+    "statusSTUDY": "STUDY",
+    "statusTRAVEL": "TRAVEL",
+    "searchPlaceholder": "Search countries…",
+    "searchAriaLabel": "Search countries"
+  },
+  "nav": {
+    "brandSubtitle": "Frontend Architect & Platform Lead",
+    "about": "About",
+    "activity": "Activity",
+    "projects": "Projects",
+    "travel": "Travel",
+    "education": "Education"
+  },
+  "profile": {
+    "name": "Roderick Hsiao",
+    "title": "Product Engineering Consultant",
+    "location": "San Francisco Bay Area | Internet",
+    "brief": "Product engineering consultant specializing in frontend infrastructure and design systems. Open source advocate with extensive experience in large-scale applications and team mentorship across startup and enterprise environments.",
+    "expertiseHeading": "Expertise",
+    "skills": [
+      "Design Systems",
+      "Progressive Web Apps",
+      "Frontend Infrastructure",
+      "Web Accessibility",
+      "Internationalization",
+      "Team Mentorship",
+      "Tech Speaker"
+    ],
+    "languages": [
+      {
+        "flag": "🇺🇸",
+        "label": "English"
+      },
+      {
+        "flag": "🇹🇼",
+        "label": "Mandarin"
+      }
+    ],
+    "interests": ["Open Web Advocate", "House Dancer", "Music Lover", "Animal Lover", "Coffee Enthusiast"]
+  },
+  "experience": {
+    "sectionTitle": "Professional Experience & Industry Impact",
+    "sectionDescription": "Decades in product engineering with extensive experience across startups to Fortune 500 companies. Specialized in frontend architecture, team leadership, and large-scale application development.",
+    "experiencesHeading": "Experiences",
+    "present": "Present",
+    "featuredTalksDemos": "Featured Talks & Demos",
+    "summaryItems": [
+      {
+        "title": "Industry Experience",
+        "items": [
+          "Decades in product engineering.",
+          "Startup to Fortune 500 company experience."
+        ]
+      },
+      {
+        "title": "Technical Leadership",
+        "items": [
+          "Frontend architecture and infrastructure.",
+          "Team mentorship and technical guidance."
+        ]
+      },
+      {
+        "title": "Impact & Scale",
+        "items": [
+          "Large-scale applications serving millions.",
+          "Design systems and developer tooling."
+        ]
+      },
+      {
+        "title": "Community & Speaking",
+        "items": [
+          "International conference speaker.",
+          "Open source contributor and advocate."
+        ]
+      }
+    ],
+    "companies": {
+      "kindred": {
+        "title": "Founding Engineer",
+        "location": "Remote",
+        "displayName": "Kindred",
+        "summary": "One of the first engineers — owned frontend architecture and core product development at the early stage of the company.",
+        "projects": {
+          "main": {
+            "name": "Kindred",
+            "summary": "Built the full frontend architecture from scratch, shipped core product features, established engineering standards, and integrated AI tooling into the development workflow.",
+            "smartlinkTitle": "Kindred",
+            "smartlinkDescription": "Join our members-only home exchange community and unlock travel for a fraction of the cost of traditional vacation rentals."
+          }
+        }
+      },
+      "tinder": {
+        "title": "Principal Software Engineer",
+        "location": "Palo Alto, CA",
+        "displayName": "Tinder",
+        "summary": "Principal engineer for tinder.com — led the web platform's technical architecture serving tens of millions of daily active users worldwide.",
+        "projects": {
+          "tinderOnline": {
+            "name": "Tinder Online",
+            "summary": "Led technical architecture and development of Tinder's flagship web platform at tinder.com. Architected scalable frontend solutions serving millions of daily active users worldwide.",
+            "smartlinkTitle": "Tinder",
+            "smartlinkDescription": "With 55 billion matches to date, Tinder® is the world's most popular dating app, making it the place to meet new people.",
+            "demoTitles": [
+              "Production Progressive Web Apps With JavaScript Frameworks (Google I/O 2017)",
+              "Fast By Default: Modern Loading Best Practices (Chrome Dev Summit 2017)",
+              "Adaptive Loading - Improving web performance on slow devices (Chrome Dev Summit 2019)",
+              "PWA patterns for window and service worker communication (Chrome Dev Summit 2020)",
+              "SMS OTP form best practices (Chrome Dev Summit 2020)"
+            ]
+          },
+          "swipeLife": {
+            "name": "Tinder Swipe Life",
+            "summary": "Developed and launched Tinder's lifestyle magazine platform, creating engaging content experiences for the dating community."
+          }
+        }
+      },
+      "selfEmployed": {
+        "title": "Product Engineering Consultant",
+        "location": "San Francisco, CA",
+        "displayName": "Self Employed",
+        "summary": "Product engineering consultant specializing in AI adoption, frontend architecture design, team and individual mentorship, PWA and performance optimization, and career coaching.",
+        "projects": {
+          "alt": {
+            "name": "Alt Platform",
+            "summary": "Frontend and web engineering mentor — best practices, tooling, and career direction. Built a performance enhancement roadmap and an SEO improvement strategy. Architected the instrumentation layer and drove code modularization across the platform.",
+            "smartlinkTitle": "Alt",
+            "smartlinkDescription": "It's time to invest in what you love. ALT gives you access to utility and liquidity like never before."
+          },
+          "forethought": {
+            "name": "Forethought (acquired by Zendesk in 2026)",
+            "summary": "Led the company-wide rebrand project including a full CSS system overhaul. Architected persistent state management for the web widget. Shipped performance improvements across the platform. Provided ongoing tech mentorship to the engineering team.",
+            "smartlinkTitle": "Forethought",
+            "smartlinkDescription": "Improve your customer experience by using AI."
+          },
+          "publicSpeaker": {
+            "name": "Public Speaker",
+            "summary": "Delivered technical presentations on Progressive Web Applications, web performance optimization, and large-scale web application architecture at international conferences and industry events.",
+            "demoTitles": [
+              "React Norway 2021 | Progressively Enhance Your Web Application",
+              "JSCAMP 2021 | Building Large-Scale Web Apps",
+              "Accento 2020 | Progressively Enhance Your Web Application",
+              "Geekle 2020 | Building Large Scale Web App"
+            ]
+          }
+        }
+      },
+      "branch": {
+        "title": "Software Engineer",
+        "location": "Palo Alto, CA",
+        "displayName": "Branch",
+        "summary": "Built frontend infrastructure and engineering practices for Branch's deep-linking platform.",
+        "projects": {
+          "dashboard": {
+            "name": "Branch Dashboard and Solutions",
+            "summary": "Architected frontend infrastructure, established engineering best practices, and implemented website performance optimizations for deep linking platform.",
+            "smartlinkTitle": "Branch",
+            "smartlinkDescription": "Number 1 in deep linking. Integrate robust, durable links into email, SEM, ads and other traditional marketing channels for improved app growth."
+          }
+        }
+      },
+      "yahooSenior": {
+        "title": "Senior Software Engineer",
+        "location": "Sunnyvale, CA",
+        "displayName": "Yahoo",
+        "summary": "Over six years at Yahoo across multiple product lines — mobile homepage, weather, news digest, quality engineering, and one of the world's most-visited single-page applications.",
+        "projects": {
+          "homepage": {
+            "name": "Homepage",
+            "summary": "Engineered one of the world's most visited single-page applications, serving millions of users across desktop, tablet, and mobile platforms. Developed reusable UI components, utilities, and Node.js libraries.",
+            "smartlinkTitle": "Yahoo",
+            "smartlinkDescription": "A new welcome to Yahoo. The new Yahoo experience makes it easier to discover the news and information that you care about most. It's the web ordered for you."
+          },
+          "weather": {
+            "name": "Weather",
+            "summary": "Enhanced Yahoo Weather platform using isomorphic React architecture, delivering seamless user experiences across all devices.",
+            "smartlinkTitle": "Yahoo Weather",
+            "smartlinkDescription": "Prepare for your day with the most accurate hourly, 5-day, and 10-day forecasts. Stunning Flickr photos match your location, time of day, and current conditions."
+          },
+          "newsDigest": {
+            "name": "News Digest",
+            "summary": "Developed web platform for Yahoo News Digest, enabling improved SEO performance and deep linking capabilities for the popular mobile application content.",
+            "smartlinkTitle": "Yahoo News Digest",
+            "smartlinkDescription": "Yahoo News Digest provides a definitive summary of all the important, need-to-know news. Digests are delivered twice a day - once in the morning and once in the evening."
+          },
+          "mobileHomepage": {
+            "name": "Mobile Homepage",
+            "summary": "Piloted innovative single-page application architecture for Yahoo mobile homepage, focusing on user-perceived performance enhancements and mobile optimization."
+          }
+        }
+      },
+      "yahooLead": {
+        "title": "Engineering Team Lead",
+        "location": "Taipei, Taiwan",
+        "displayName": "Yahoo",
+        "summary": "Led the APAC mobile product team in Taipei.",
+        "projects": {
+          "apacMobile": {
+            "name": "APAC Mobile Homepage (Taiwan and Hongkong)",
+            "summary": "Led a cross-functional team of 5 developers to architect and deliver comprehensive content consumption experiences for Asian Pacific markets.",
+            "smartlinkTitle": "Yahoo行動版",
+            "smartlinkDescription": "提供最方便的網站搜尋、即時新聞、生活資訊和Yahoo奇摩服務入口。"
+          }
+        }
+      },
+      "yahooQe": {
+        "title": "Quality Engineering Lead / Software Engineer",
+        "location": "Taipei, Taiwan",
+        "displayName": "Yahoo",
+        "summary": "Quality engineering lead across the election platform and global news infrastructure.",
+        "projects": {
+          "controlRoom": {
+            "name": "2012 Presidential Election - Control Room",
+            "summary": "Architected and developed Control Room, a comprehensive tablet application providing real-time election coverage with curated content and original reporting from leading news sources.",
+            "smartlinkTitle": "Yahoo 2012 Presidential Election",
+            "smartlinkDescription": "Yahoo's Control Room has live streaming video, coverage and maps of all House, Senate and Gubernatorial races, as well as the Presidential race results down to the county level, live blogging and live polling and social sentiment analysis."
+          },
+          "hashout": {
+            "name": "2012 Presidential Election - #Hashout",
+            "summary": "Developed #Hashout, an innovative online talk show platform designed to engage diverse perspectives and facilitate meaningful political conversations during the election cycle.",
+            "smartlinkTitle": "Yahoo 2012 Presidential Election - #Hashout",
+            "smartlinkDescription": "Online talk show for Yahoo 2012 Presidential Election."
+          },
+          "globalNews": {
+            "name": "Global News",
+            "summary": "Architected unified platform serving all Yahoo properties globally. Led frontend testing strategy, framework development, and test automation infrastructure.",
+            "smartlinkTitle": "Yahoo News",
+            "smartlinkDescription": "Browse latest news on Yahoo News."
+          }
+        }
+      },
+      "army": {
+        "title": "Project Manager/Engineer Lead",
+        "location": "Taiwan",
+        "displayName": "Taiwan Army",
+        "summary": "Mandatory military service — designed and developed web-based training simulators for military education, and managed a team of 6 engineers.",
+        "projects": {
+          "equipmentSimulator": {
+            "name": "Equipment Simulator",
+            "summary": "Designed and developed two web-based training applications for military education purposes. Managed and mentored a team of 6 personnel in building educational simulator software solutions."
+          }
+        }
+      }
+    }
+  },
+  "pageMeta": {
+    "siteName": "Roderick Hsiao",
+    "authorName": "Roderick Hsiao",
+    "home": {
+      "title": "Roderick Hsiao - Software Architect & Community Leader",
+      "description": "Personal website of Roderick Hsiao — frontend architect, community leader, and open web advocate with decades of industry impact.",
+      "ogTitle": "Roderick Hsiao - Software Architect & Community Leader",
+      "ogDescription": "Personal website of Roderick Hsiao - Software Architect, Community Leader, and technology enthusiast.",
+      "ogAlt": "Roderick Hsiao - Software Architect & Community Leader",
+      "keywords": ["Roderick Hsiao", "Software Architect", "Community Leader", "Frontend", "React", "Next.js", "TypeScript", "Experience"]
+    },
+    "activity": {
+      "title": "Activities & Speaking - Roderick Hsiao",
+      "description": "Explore my speaking engagements, conference talks, workshops, and community activities. Learn about my contributions to the tech community.",
+      "ogTitle": "Activities & Speaking - Roderick Hsiao",
+      "ogDescription": "Explore my speaking engagements, conference talks, workshops, and community activities.",
+      "ogAlt": "Activities & Speaking - Roderick Hsiao",
+      "ogImageTitle": "Activities & Speaking",
+      "ogImageSubtitle": "Conference Talks & Community",
+      "ogImageDescription": "Sharing knowledge and building tech communities",
+      "keywords": ["Roderick Hsiao", "Speaking", "Conferences", "Tech Talks", "Workshops", "Community", "Activities"]
+    },
+    "projects": {
+      "title": "Projects - Roderick Hsiao",
+      "description": "Explore my open source projects, personal tools, and contributions to the developer community. From React libraries to developer tools, discover projects built with passion for solving real-world problems.",
+      "keywords": ["Roderick Hsiao", "Projects", "Open Source", "GitHub", "React", "TypeScript", "Developer Tools", "Libraries"]
+    },
+    "education": {
+      "title": "Education & Background - Roderick Hsiao",
+      "description": "Learn about my educational background, academic achievements, and the foundation that shaped my career in technology and product development.",
+      "ogTitle": "Education & Background - Roderick Hsiao",
+      "ogDescription": "Learn about my educational background and the foundation that shaped my career.",
+      "ogAlt": "Education & Background - Roderick Hsiao",
+      "ogImageTitle": "Education & Background",
+      "ogImageSubtitle": "Academic Foundation",
+      "ogImageDescription": "Building the foundation for a career in technology",
+      "keywords": ["Roderick Hsiao", "Education", "Background", "Academic", "University", "Learning", "Career Foundation"]
+    },
+    "travel": {
+      "title": "Travel Adventures - Roderick Hsiao",
+      "description": "Follow my travel adventures around the world. Discover the places I've visited, experiences I've had, and the inspiration I draw from exploring different cultures.",
+      "ogTitle": "Travel Adventures - Roderick Hsiao",
+      "ogDescription": "Follow my travel adventures around the world and discover different cultures.",
+      "ogAlt": "Travel Adventures - Roderick Hsiao",
+      "ogImageTitle": "Travel Adventures",
+      "ogImageSubtitle": "Exploring the World",
+      "ogImageDescription": "Discovering cultures and drawing inspiration from global experiences",
+      "keywords": ["Roderick Hsiao", "Travel", "Adventures", "World Travel", "Culture", "Exploration", "Photography"]
+    }
+  }
+}

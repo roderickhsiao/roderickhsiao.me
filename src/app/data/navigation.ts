@@ -1,29 +1,22 @@
 // Navigation configuration for the header component
+// Text labels live in en.json under the 'nav' namespace
 export interface NavigationLink {
   href: string;
-  label: string;
-  isButton?: boolean;
+  /** Translation key within the 'nav' namespace (e.g. 'about', 'travel') */
+  key: string;
 }
 
 export interface NavigationConfig {
-  brand: {
-    name: string;
-    subtitle: string;
-  };
   links: NavigationLink[];
 }
 
 export const navigationConfig: NavigationConfig = {
-  brand: {
-    name: 'Roderick Hsiao',
-    subtitle: 'Frontend Engineer & Architect',
-  },
   links: [
-    { href: '/', label: 'About' },
-    { href: '/activity', label: 'Activity' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/travel', label: 'Travel' },
-    { href: '/education', label: 'Education' },
+    { href: '/', key: 'about' },
+    { href: '/activity', key: 'activity' },
+    { href: '/projects', key: 'projects' },
+    { href: '/travel', key: 'travel' },
+    { href: '/education', key: 'education' },
   ],
 };
 
