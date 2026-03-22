@@ -11,6 +11,7 @@
     "knip": "knip"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "add": "^2.0.6",
     "babel-plugin-react-compiler": "^1.0.0",
     "clsx": "^2.1.1",
