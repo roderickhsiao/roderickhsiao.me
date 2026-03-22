@@ -27,7 +27,8 @@ export default function Activity() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {(speaking as SpeakingItem[]).map((talk, i) => {
             const label = talk.title.split(' | ')[1] || talk.title;
-            const context = talk.title.split(' | ')[0] || '';
+            const titlePrefix = talk.title.split(' | ')[0] || '';
+            const context = talk.event || titlePrefix.replace(new RegExp(`\\s*${talk.year}$`), '').trim();
             return (
               <a
                 key={i}
