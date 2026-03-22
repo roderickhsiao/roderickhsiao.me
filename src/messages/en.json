@@ -80,7 +80,15 @@
     "supportButton": "Buy me a coffee",
     "supportAriaLabel": "Support — Buy me a coffee",
     "sourceLink": "Archive Source Geometry",
-    "siteNote": "Archived with a focus on visual performance and natural geometry. Privacy-first analytics are enabled to understand visits and improve the archive.",
+    "siteNote": "Part portfolio, part playground, part late-night idea lab. Thanks for exploring.",
+    "siteNoteByTime": {
+      "dawn": "🌅 Dawn mode is on. Soft colors, first-light energy, and yes, this is your sign to brew coffee ☕.",
+      "morning": "🌞 Morning glow is active. Fresh aura, sharper focus, and a good time to explore ideas ✨.",
+      "midday": "☀️ Midday light is in full swing. Clear mood, warm tones, and plenty of momentum ⚡.",
+      "afternoon": "🍯 Afternoon warmth just kicked in. A little golden, a little grounded, still playful 🎈.",
+      "dusk": "🌇 Dusk colors are taking over. The site gets moodier as the day winds down 🎞️.",
+      "night": "🌙 Night palette unlocked. Cozy tones, calmer vibes, and late-night experiment energy 🧪."
+    },
     "devNote": "* No developers were harmed in the making of this site.",
     "devNoteTitle": "Built with an unhealthy amount of coffee, countless AI conversations, and the occasional existential crisis about whether this div should be flex or grid.",
     "easterEgg": "You found this. Congrats — you're exactly the kind of person I'd want to work with.",
@@ -90,10 +98,17 @@
     "contactDialogLabel": "Contact form",
     "calendlyDialogLabel": "Book a call",
     "quote": "Drop me a message to chat about <highlight1>AI/web ideas</highlight1>, cool projects, or even <highlight2>house music</highlight2>.",
-    "heritage": "Bay Area",
     "crafted": "Crafted with AI Collaboration",
     "copyrightName": "R. Hsiao",
-    "residencyLocations": ["SF Bay Area", "Taipei"]
+    "residencyLocations": ["SF Bay Area", "Taipei"],
+    "languageSwitcher": {
+      "ariaLabel": "Language selector",
+      "menuLabel": "Languages ({count})",
+      "localeNames": {
+        "en": "English",
+        "zh-Hant": "Traditional Chinese"
+      }
+    }
   },
   "activity": {
     "hero": {
@@ -185,6 +200,7 @@
     },
     "fieldNotes": {
       "label": "STUDY LOG // MOSTLY SURVIVED",
+      "heading": "Learning Arc &\nAcademic Foundations",
       "items": [
         {
           "num": "01",
@@ -248,7 +264,7 @@
     },
     "fieldNotes": {
       "label": "BUILD LOG // PUBLIC REPO",
-      "heading": "Open Source &\nDeveloper\nTools",
+      "heading": "Build Ledger &\nDeveloper\nTooling",
       "items": [
         {
           "num": "01",
@@ -385,7 +401,7 @@
     },
     "fieldNotes": {
       "label": "FLIGHT LOG // WINDOW SEAT",
-      "heading": "World Travel &\nCultural Exploration",
+      "heading": "Routes, People &\nCultural Notes",
       "items": [
         {
           "num": "01",
@@ -472,7 +488,7 @@
     "searchAriaLabel": "Search countries"
   },
   "nav": {
-    "brandSubtitle": "Frontend Architect & Platform Lead",
+    "brandSubtitle": "Frontend Architect",
     "about": "About",
     "activity": "Activity",
     "projects": "Projects",
@@ -497,10 +513,12 @@
     "languages": [
       {
         "flag": "🇺🇸",
+        "countryCode": "us",
         "label": "English"
       },
       {
         "flag": "🇹🇼",
+        "countryCode": "tw",
         "label": "Mandarin"
       }
     ],

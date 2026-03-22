@@ -16,14 +16,14 @@ import { useTranslations, useFormatter } from 'next-intl';
 function LedgerEntry({ label, value, unit }: LedgerEntryProps) {
   return (
     <div className="flex flex-col py-2 group min-w-25">
-      <span className="text-[9px] font-black font-sans uppercase tracking-[0.3em] text-ink/40 mb-3">
+      <span className="type-label-wide mb-3 text-ink/60">
         {label}
       </span>
       <div className="flex items-baseline gap-3 border-s-2 border-ink/10 ps-6 transition-all duration-700 group-hover:border-ink">
         <span className="text-5xl sm:text-6xl font-black italic tracking-tighter text-ink leading-none group-hover:translate-x-1 transition-transform duration-500 origin-left">
           {value}
         </span>
-        <span className="text-[9px] font-black text-ink/40 uppercase tracking-widest">
+        <span className="type-label text-ink/60">
           {unit}
         </span>
       </div>
@@ -50,7 +50,7 @@ export default function TravelStats({
         <h2 className="type-heading-lg text-ink whitespace-pre-line">
           {t('statsHeading')}
         </h2>
-        <span className="type-label-wide text-ink/30">{t('metricsLabel', { year: format.dateTime(new Date(), { year: 'numeric' }) })}</span>
+        <span className="type-label-wide text-ink/60">{t('metricsLabel', { year: format.dateTime(new Date(), { year: 'numeric' }) })}</span>
       </div>
       <div className="flex flex-wrap gap-12 sm:gap-20">
         <LedgerEntry label={t('territories')} value={totalCountries} unit={t('logged')} />

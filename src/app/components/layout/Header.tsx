@@ -1,7 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, usePathname } from '@/i18n/routing';
 import clsx from 'clsx';
+import type { ComponentProps, ReactElement } from 'react';
 
 interface NavigationLink {
   href: string;
@@ -15,12 +16,47 @@ interface HeaderProps {
   links: NavigationLink[];
 }
 
+const NAV_TRANSITION_TYPES = ['site-nav'];
+
+type LinkPropsWithTransitionTypes = ComponentProps<typeof Link> & {
+  transitionTypes?: string[];
+};
+
+const RoutedLink = Link as unknown as (props: LinkPropsWithTransitionTypes) => ReactElement;
+
 export default function Header({ brandName, brandSubtitle, links }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const mobileNavPendingRef = useRef(false);
+  const prevPathnameRef = useRef(pathname);
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
+
+  useEffect(() => {
+    const isNewPath = prevPathnameRef.current !== pathname;
+    if (isNewPath && mobileNavPendingRef.current) {
+      const prefersReducedMotion =
+        typeof window !== 'undefined' &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        });
+      });
+
+      mobileNavPendingRef.current = false;
+    }
+
+    prevPathnameRef.current = pathname;
+  }, [pathname]);
+
+  const handleMobileNavClick = () => {
+    mobileNavPendingRef.current = true;
+    setMobileOpen(false);
+  };
 
   return (
     <div className="relative">
@@ -33,13 +69,14 @@ export default function Header({ brandName, brandSubtitle, links }: HeaderProps)
         >
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <Link
+            <RoutedLink
               href="/"
+              transitionTypes={NAV_TRANSITION_TYPES}
               className="type-nav-brand text-ink hover:text-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 rounded"
               aria-current={isActive('/') ? 'page' : undefined}
             >
               {brandName}
-            </Link>
+            </RoutedLink>
             <span className="hidden sm:block w-px h-4 bg-ink/15" aria-hidden />
             <span className="hidden sm:block type-label text-ink/70">
               {brandSubtitle}
@@ -52,8 +89,9 @@ export default function Header({ brandName, brandSubtitle, links }: HeaderProps)
               const active = isActive(link.href);
               return (
                 <li key={link.href}>
-                  <Link
+                  <RoutedLink
                     href={link.href}
+                    transitionTypes={NAV_TRANSITION_TYPES}
                     aria-current={active ? 'page' : undefined}
                     className={clsx(
                       'relative inline-flex items-center type-label px-4 py-2 rounded-full transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40',
@@ -75,7 +113,7 @@ export default function Header({ brandName, brandSubtitle, links }: HeaderProps)
                     >
                       {link.label}
                     </span>
-                  </Link>
+                  </RoutedLink>
                 </li>
               );
             })}
@@ -108,10 +146,12 @@ export default function Header({ brandName, brandSubtitle, links }: HeaderProps)
               const active = isActive(link.href);
               return (
                 <li key={link.href}>
-                  <Link
+                  <RoutedLink
                     href={link.href}
+                    transitionTypes={NAV_TRANSITION_TYPES}
+                    scroll={false}
                     aria-current={active ? 'page' : undefined}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={handleMobileNavClick}
                     className={clsx(
                       'type-label block px-4 py-3 rounded-xl touch-manipulation transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40',
                       active
@@ -120,7 +160,7 @@ export default function Header({ brandName, brandSubtitle, links }: HeaderProps)
                     )}
                   >
                     {link.label}
-                  </Link>
+                  </RoutedLink>
                 </li>
               );
             })}

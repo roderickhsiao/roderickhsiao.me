@@ -19,24 +19,24 @@
     "country-flag-emoji": "^1.0.3",
     "country-flag-emoji-polyfill": "^0.1.8",
     "lucide-react": "^0.577.0",
-    "next": "^16.1.6",
+    "next": "^16.2.1",
     "next-intl": "^4.8.3",
     "react": "^19.2.4",
     "react-calendly": "^4.4.0",
     "react-dom": "^19.2.4",
-    "resend": "^6.9.3"
+    "resend": "^6.9.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
     "@next/bundle-analyzer": "16.0.0",
-    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^20.19.37",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.0.0",
     "eslint-plugin-react-hooks": "0.0.0-experimental-de5a1b20-20250905",
-    "tailwindcss": "^4.2.1",
+    "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3"
   },
   "pnpm": {

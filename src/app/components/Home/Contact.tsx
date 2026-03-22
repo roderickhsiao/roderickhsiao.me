@@ -2,11 +2,22 @@
 
 import { useState, startTransition, ViewTransition } from 'react';
 import clsx from 'clsx';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import ContactForm from './ContactForm';
 import BookingForm from './BookingForm';
 
 import './contact-view-transitions.css';
+
+type SpokenLanguage = {
+  flag: string;
+  label: string;
+  countryCode?: string;
+};
+
+function getFlagSrc(countryCode: string, width: 40 | 80 = 40): string {
+  return `https://flagcdn.com/w${width}/${countryCode}.png`;
+}
 
 export default function Contact() {
   const tContact = useTranslations('contact');
@@ -185,13 +196,24 @@ export default function Contact() {
                   {/* Languages - at bottom */}
                   <div className="px-3 lg:px-4 pb-3 lg:pb-4">
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                      {(tProfile.raw('languages') as { flag: string; label: string }[]).map(
-                        ({ flag, label }) => (
+                      {(tProfile.raw('languages') as SpokenLanguage[]).map(
+                        ({ flag, label, countryCode }) => (
                           <span
                             key={label}
                             className="inline-flex items-center px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs sm:text-xs font-medium rounded-full border-(--ds-border-pill) [background:var(--gaudi-pill-bg)] text-[rgb(45_37_26/0.92)] shrink-0"
                           >
-                            {flag} {label}
+                            {countryCode ? (
+                              <Image
+                                src={getFlagSrc(countryCode)}
+                                alt={`${label} flag`}
+                                width={16}
+                                height={12}
+                                className="me-1 h-3 w-4 rounded-xs object-cover"
+                              />
+                            ) : (
+                              <span className="me-1">{flag}</span>
+                            )}
+                            {label}
                           </span>
                         )
                       )}

@@ -1,6 +1,8 @@
 // Work experience — structural/non-translatable fields only.
 // All display text (company title, project names, summaries, smartlink
 // titles/descriptions, demo titles) lives in en.json under 'experience.companies'.
+import speaking from './speaking';
+
 export interface Smartlink {
   url: string;
   thumbnail?: string | { url: string; width?: number; height?: number };
@@ -13,7 +15,7 @@ export interface Demo {
   url: string;
 }
 
-export interface Project {
+interface Project {
   key: string;
   /** ISO year-month, e.g. '2023-01' */
   startDate?: string;
@@ -24,7 +26,7 @@ export interface Project {
   demos?: Demo[];
 }
 
-export interface Company {
+interface Company {
   key: string;
   name: string;
   logo?: string;
@@ -34,6 +36,12 @@ export interface Company {
   endDate?: string | null;
   projects: Project[];
 }
+
+const speakingDemos: Demo[] = speaking.map((talk) => ({
+  thumbnail: talk.thumbnail,
+  type: 'iframe',
+  url: talk.sourceUrl,
+}));
 
 const experience: { companies: Company[] } = {
   companies: [
@@ -87,28 +95,7 @@ const experience: { companies: Company[] } = {
           startDate: '2020-07',
           endDate: null,
           techStack: ['JavaScript', 'React'],
-          demos: [
-            {
-              thumbnail: { url: '/react-norway.jpeg', width: 800, height: 450 },
-              type: 'iframe',
-              url: 'https://www.youtube.com/watch?v=tSMmsEh7eAk',
-            },
-            {
-              thumbnail: { url: '/js-camp-2021.jpeg', width: 640, height: 480 },
-              type: 'iframe',
-              url: 'https://www.youtube.com/watch?v=TCYI3SuQmw0',
-            },
-            {
-              thumbnail: { url: '/accento.jpeg', width: 800, height: 450 },
-              type: 'iframe',
-              url: 'https://www.youtube.com/watch?v=H2KvgVSQ_pE',
-            },
-            {
-              thumbnail: { url: '/geekle.jpeg', width: 800, height: 800 },
-              type: 'iframe',
-              url: 'https://react.geekle.us/',
-            },
-          ],
+          demos: speakingDemos,
         },
       ],
     },

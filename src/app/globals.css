@@ -37,12 +37,12 @@
   --color-prim-cream:     #FAF9F6;
   --color-prim-cream-2:   #F5F4F1;
   --color-prim-white:     #ffffff;
-  --color-prim-off-white: #e6f0e9;
+  --color-prim-off-white: #f3e9dc;
   --color-prim-ink:       #2D2A26;
   --color-prim-orange:    #E67E22;
   --color-prim-orange-d:  #d4711e;
   --color-prim-blue:      #3498DB;
-  --color-prim-forest:    #051a0f;
+  --color-prim-forest:    #2f2118;
 
   /* company brand Colors — Chronicle cards only */
   --color-prim-kindred:  #4A90E2;
@@ -55,15 +55,17 @@
   /* semantic status + decorative */
   --color-prim-success:  #3f8c5c;
   --color-prim-error:    #c43e3e;
+  --color-prim-status-active: #65D63A;
+  --color-prim-status-maintained: #12CFE2;
   --color-prim-sun:      #FCD34D;   /* warm sun / decorative yellow */
   --color-prim-positive: #22C55E;   /* bright affirmative green (LIKE, checkmarks) */
 
   /* font-size scale — 10px rem base, so N×rem = N×10px at default browser size */
-  --text-size-xs:   1.2rem;   /* 12px — labels / badges        */
-  --text-size-sm:   1.4rem;   /* 14px — captions / nav-brand   */
-  --text-size-base: 1.6rem;   /* 16px — body-sm (a11y minimum) */
-  --text-size-md:   1.8rem;   /* 18px — body                   */
-  --text-size-lg:   2.0rem;   /* 20px — heading-sm / large UI  */
+  --text-size-xs:   1.3rem;   /* 13px — labels / badges        */
+  --text-size-sm:   1.5rem;   /* 15px — captions / nav-brand   */
+  --text-size-base: 1.7rem;   /* 17px — body-sm                */
+  --text-size-md:   1.9rem;   /* 19px — body                   */
+  --text-size-lg:   2.1rem;   /* 21px — heading-sm / large UI  */
   --text-size-xl:   2.4rem;   /* 24px — small headings         */
 
   /* font-weight scale */
@@ -84,7 +86,7 @@
   --tracking-display: -0.04em;
   --tracking-heading: -0.03em;
   --tracking-heading-md: -0.025em;
-  --tracking-label:   0.18em;
+  --tracking-label:   0.04em;
   --tracking-label-wide: 0.35em;
 }
 
@@ -125,6 +127,8 @@
   /* status */
   --color-success:       var(--color-prim-success);
   --color-error:         var(--color-prim-error);
+  --color-status-active: var(--color-prim-status-active);
+  --color-status-maintained: var(--color-prim-status-maintained);
 
   /* decorative / ui accents */
   --color-sun:           var(--color-prim-sun);
@@ -262,7 +266,7 @@
     font-family: var(--font-serif);
     font-size: var(--text-size-md);   /* 18px */
     font-weight: var(--font-weight-regular);
-    font-style: italic;
+    font-style: normal;
     line-height: var(--leading-body);
   }
 
@@ -270,7 +274,7 @@
     font-family: var(--font-serif);
     font-size: var(--text-size-base); /* 16px — a11y minimum for body */
     font-weight: var(--font-weight-regular);
-    font-style: italic;
+    font-style: normal;
     line-height: var(--leading-body);
   }
 
@@ -286,8 +290,8 @@
   .type-label {
     font-family: var(--font-sans);
     font-size: var(--text-size-xs);   /* 12px */
-    font-weight: var(--font-weight-black);
-    text-transform: uppercase;
+    font-weight: var(--font-weight-semibold);
+    text-transform: none;
     letter-spacing: var(--tracking-label);
     line-height: 1.2;
   }
@@ -315,13 +319,13 @@
      layer. No need to add opacity to every className.     */
 
   /* Body text — 75% ink ≈ 5.8:1 on canvas (WCAG AA ✓) */
-  .type-body-lg  { color: color-mix(in srgb, var(--color-ink) 75%, transparent); }
-  .type-body     { color: color-mix(in srgb, var(--color-ink) 75%, transparent); }
-  .type-body-sm  { color: color-mix(in srgb, var(--color-ink) 75%, transparent); }
+  .type-body-lg  { color: color-mix(in srgb, var(--color-ink) 84%, transparent); }
+  .type-body     { color: color-mix(in srgb, var(--color-ink) 84%, transparent); }
+  .type-body-sm  { color: color-mix(in srgb, var(--color-ink) 84%, transparent); }
 
   /* Metadata — 70% ink ≈ 4.9:1 on canvas (WCAG AA ✓) */
-  .type-caption    { color: color-mix(in srgb, var(--color-ink) 70%, transparent); }
-  .type-label-wide { color: color-mix(in srgb, var(--color-ink) 70%, transparent); }
+  .type-caption    { color: color-mix(in srgb, var(--color-ink) 78%, transparent); }
+  .type-label-wide { color: color-mix(in srgb, var(--color-ink) 78%, transparent); }
 
   /* type-label has NO default — color is always context-specific (status, brand, muted) */
 
@@ -502,6 +506,7 @@
   --ds-border-soft:   1px solid rgb(148 105 42 / 0.25);
   --ds-border-card:   1px solid rgb(95 66 29 / 0.2);
   --ds-border-pill:   1px solid rgb(95 66 29 / 0.22);
+  --ds-border-card-hover: rgb(197 87 45 / 0.45);
   --ds-radius-shell:  28px 44px 32px 48px / 38px 32px 46px 36px;
   --ds-shadow-shell:  0 14px 36px rgb(86 55 20 / 0.11), inset 0 1px 0 rgb(255 255 255 / 0.68);
   --ds-shadow-card:   0 12px 30px rgb(57 38 17 / 0.09);
@@ -509,6 +514,10 @@
   --gaudi-shell-bg:  linear-gradient(140deg, rgb(255 255 255 / 0.62) 0%, rgb(248 236 212 / 0.72) 48%, rgb(236 218 182 / 0.66) 100%);
   --gaudi-card-bg:   linear-gradient(155deg, rgb(255 255 255 / 0.78) 0%, rgb(246 228 191 / 0.64) 56%, rgb(232 212 175 / 0.72) 100%);
   --gaudi-pill-bg:   linear-gradient(160deg, rgb(255 249 236 / 0.9), rgb(240 216 168 / 0.6));
+  --gaudi-warm-surface-bg: rgb(255 248 235 / 1);
+  --gaudi-chip-ink: rgb(45 37 26 / 0.92);
+  --gaudi-overlay-brief: linear-gradient(135deg, rgb(255 249 238 / 0.45) 0%, rgb(245 231 200 / 0.25) 50%, rgb(242 220 192 / 0.35) 100%);
+  --gaudi-overlay-contact: linear-gradient(135deg, rgb(255 244 223 / 0.45) 0%, rgb(245 222 184 / 0.2) 50%, rgb(240 210 174 / 0.35) 100%);
 
   --gaudi-blob-a-bg: rgb(197 87 45 / 0.2);
   --gaudi-blob-b-bg: rgb(53 93 71 / 0.16);
@@ -763,41 +772,53 @@ button, [role="button"] {
   border-radius: 50%;
   pointer-events: none;
   will-change: transform;
-  filter: blur(90px);
+  filter: blur(72px) saturate(1.2);
 }
 .aura-orb-a {
-  width: 42vw; height: 38vh;
+  width: 48vw; height: 44vh;
   left: -4%; top: -6%;
-  animation: auraOrbitA 44s ease-in-out infinite;
+  animation: auraOrbitA 26s ease-in-out infinite;
 }
 .aura-orb-b {
-  width: 36vw; height: 34vh;
-  left: 38%; top: 28%;
-  animation: auraOrbitB 58s ease-in-out infinite;
+  width: 40vw; height: 38vh;
+  left: 34%; top: 24%;
+  animation: auraOrbitB 32s ease-in-out infinite;
 }
 .aura-orb-c {
-  width: 32vw; height: 40vh;
+  width: 38vw; height: 44vh;
   right: -6%; bottom: -4%;
-  animation: auraOrbitC 36s ease-in-out infinite;
+  animation: auraOrbitC 22s ease-in-out infinite;
 }
 
 @keyframes auraOrbitA {
-  0%   { transform: translate(0,     0)     scale(1);    }
-  25%  { transform: translate(9vw,  -5vh)   scale(1.04); }
-  55%  { transform: translate(3vw,   8vh)   scale(0.97); }
-  80%  { transform: translate(-6vw,  2vh)   scale(1.02); }
-  100% { transform: translate(0,     0)     scale(1);    }
+  0%   { transform: translate(0,      0)      scale(1);    }
+  22%  { transform: translate(12vw,  -8vh)    scale(1.08); }
+  52%  { transform: translate(4vw,   10vh)    scale(0.94); }
+  78%  { transform: translate(-9vw,  4vh)     scale(1.04); }
+  100% { transform: translate(0,      0)      scale(1);    }
 }
 @keyframes auraOrbitB {
-  0%   { transform: translate(0,      0)    scale(1);    }
-  30%  { transform: translate(-10vw,  5vh)  scale(1.05); }
-  60%  { transform: translate(7vw,   -7vh)  scale(0.96); }
-  85%  { transform: translate(2vw,    4vh)  scale(1.02); }
-  100% { transform: translate(0,      0)    scale(1);    }
+  0%   { transform: translate(0,       0)     scale(1);    }
+  30%  { transform: translate(-13vw,   7vh)   scale(1.09); }
+  62%  { transform: translate(10vw,   -9vh)   scale(0.93); }
+  86%  { transform: translate(3vw,     6vh)   scale(1.04); }
+  100% { transform: translate(0,       0)     scale(1);    }
 }
 @keyframes auraOrbitC {
-  0%   { transform: translate(0,    0)     scale(1);    }
-  35%  { transform: translate(5vw,  7vh)   scale(1.04); }
-  70%  { transform: translate(-4vw, -3vh)  scale(0.98); }
-  100% { transform: translate(0,    0)     scale(1);    }
+  0%   { transform: translate(0,      0)      scale(1);    }
+  28%  { transform: translate(8vw,    10vh)   scale(1.1);  }
+  66%  { transform: translate(-7vw,   -5vh)   scale(0.94); }
+  100% { transform: translate(0,      0)      scale(1);    }
+}
+
+@media (max-width: 768px) {
+  .aura-orb {
+    filter: blur(56px) saturate(1.15);
+  }
+
+  .aura-orb-a,
+  .aura-orb-b,
+  .aura-orb-c {
+    animation-duration: 20s;
+  }
 }

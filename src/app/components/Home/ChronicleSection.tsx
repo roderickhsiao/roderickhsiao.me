@@ -251,14 +251,14 @@ function JobCard({
             aria-label={isExpanded ? t('collapseAriaLabel') : t('expandAriaLabel')}
             className="group/toggle flex items-center gap-2 type-label text-ink/40 hover:text-ink/70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 rounded cursor-pointer"
           >
-            <span className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+            <span className={clsx('transition-transform duration-300', isExpanded && 'rotate-180')}>
               <ChevronDown size={13} aria-hidden />
             </span>
             {isExpanded ? t('collapse') : t('details')}
           </button>
 
           {/* ── INLINE BLOOM REVEAL ── */}
-          <div className={`grid transition-all duration-1000 ease-in-out ${isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'}`}>
+          <div className={clsx('grid transition-all duration-1000 ease-in-out', isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none')}>
             <div className="overflow-hidden">
               <div className="space-y-14 border-t border-ink/8 pt-12 mt-4">
                 {/* Projects — full width */}
@@ -283,7 +283,7 @@ function JobCard({
                           href={item.smartlink.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group/sm mt-5 flex items-center gap-3 p-3 rounded-xl bg-ink/3 border border-ink/8 hover:border-ink/20 hover:bg-ink/5 transition-all"
+                          className="group/sm mt-5 flex items-center gap-3 p-3 rounded-xl bg-ink/3 border border-ink/8 hover:border-ink/20 hover:bg-ink/5 transition-all backdrop-blur-xs"
                         >
                           {item.smartlink.thumbnail && (
                             <div className="shrink-0 w-8 h-8 rounded-lg overflow-hidden bg-ink/5">
@@ -488,24 +488,27 @@ export default function ChronicleSection() {
     >
       {/* Heading */}
       <div className="mb-14 sm:mb-24">
-        <h2
-          id="chronicle-heading"
-          className="type-heading-xl text-accent uppercase"
-        >
-          {t('heading')}
-        </h2>
+        <div>
+          <h2
+            id="chronicle-heading"
+            className="type-heading-xl text-accent uppercase"
+          >
+            {t('heading')}
+          </h2>
+        </div>
       </div>
 
       {/* Cards */}
       <div className="space-y-24 sm:space-y-48">
         {cards.map((card, idx) => (
-          <JobCard
-            key={card.id}
-            card={card}
-            index={idx}
-            isExpanded={expandedId === card.id}
-            onToggle={() => setExpandedId((prev) => (prev === card.id ? null : card.id))}
-          />
+          <div key={card.id}>
+            <JobCard
+              card={card}
+              index={idx}
+              isExpanded={expandedId === card.id}
+              onToggle={() => setExpandedId((prev) => (prev === card.id ? null : card.id))}
+            />
+          </div>
         ))}
       </div>
     </section>

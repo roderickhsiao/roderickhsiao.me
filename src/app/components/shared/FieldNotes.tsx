@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import clsx from 'clsx';
 
 export interface FieldNotesItem {
   num: string;
@@ -33,9 +34,9 @@ export default function FieldNotes({
       </div>
 
       {/* ── Editorial block ──────────────────────────── */}
-      <div className={`flex flex-col md:flex-row gap-16 md:gap-32 py-20 ${className}`}>
+      <div className={clsx('flex flex-col md:flex-row gap-16 md:gap-32 py-20', className)}>
         <div className="md:w-80 shrink-0">
-          <p className="type-label text-ink/40 mb-8">{label}</p>
+          <p className="type-label-wide text-ink/60 mb-8">{label}</p>
           {heading && (
             <h2 className="type-heading-lg text-ink leading-none whitespace-pre-line">{heading}</h2>
           )}
@@ -44,14 +45,14 @@ export default function FieldNotes({
           {items.map(({ num, title, items: bullets }) => (
             <div key={num}>
               <div className="flex items-center gap-2 mb-2">
-                <span className="type-label text-ink/30">{num}</span>
+                <span className="type-label text-ink/55">{num}</span>
                 <h3 className="type-label text-ink">{title}</h3>
               </div>
               <ul className="space-y-1.5 pl-1">
                 {bullets.map((point) => (
                   <li key={point} className="flex items-start gap-2">
                     <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" aria-hidden />
-                    <span className="type-body-sm text-ink/50 leading-relaxed">{point}</span>
+                    <span className="type-body-sm text-ink/72 leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>

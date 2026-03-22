@@ -13,6 +13,8 @@ import MainLayout from '@/app/components/layout/MainLayout';
 import Footer from '@/app/components/layout/Footer';
 import DevToolsMessage from '@/app/components/shared/DevToolsMessage';
 import { routing } from '@/i18n/routing';
+import clsx from 'clsx';
+import { buildPageMetadata } from '@/app/utils/metadata';
 
 /**
  * Plus Jakarta Sans — primary display & body sans-serif
@@ -39,42 +41,17 @@ const crimson = Crimson_Pro({
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('pageMeta');
+  const pageMetadata = buildPageMetadata({
+    t,
+    pageKey: 'home',
+    path: '',
+    includeSocial: true,
+  });
+
   return {
     metadataBase: new URL('https://roderickhsiao.me'),
-    title: t('home.title'),
-    description: t('home.description'),
-    keywords: t.raw('home.keywords') as string[],
     authors: [{ name: t('authorName') }],
-    openGraph: {
-      title: t('home.ogTitle'),
-      description: t('home.ogDescription'),
-      url: 'https://roderickhsiao.me',
-      siteName: t('siteName'),
-      images: [
-        {
-          url: '/api/og',
-          width: 1200,
-          height: 630,
-          alt: t('home.ogAlt'),
-        },
-      ],
-      locale: 'en_US',
-      type: 'website',
-    },
-    alternates: {
-      canonical: 'https://roderickhsiao.me',
-      languages: {
-        en: 'https://roderickhsiao.me',
-        'zh-Hant': 'https://roderickhsiao.me/zh-Hant',
-        'x-default': 'https://roderickhsiao.me',
-      },
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: t('home.ogTitle'),
-      description: t('home.ogDescription'),
-      images: ['/api/og'],
-    },
+    ...pageMetadata,
   };
 }
 
@@ -108,7 +85,7 @@ export default async function LocaleLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${jakarta.variable} ${crimson.variable} font-sans antialiased bg-canvas text-ink`}
+        className={clsx(jakarta.variable, crimson.variable, 'font-sans antialiased bg-canvas text-ink')}
       >
         <NextIntlClientProvider messages={messages}>
           <DevToolsMessage />

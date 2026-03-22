@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 import activities, { type ActivityItem } from '../../data/activity';
 import speaking, { type SpeakingItem } from '../../data/speaking';
+import TimelineRow from '../shared/TimelineRow';
 import { useTranslations } from 'next-intl';
 
 type ViewTransitionCapableDocument = Document & {
@@ -37,60 +38,89 @@ function TalkCard({
   onOpen: (talkId: string) => void;
   showSourceSnapshot: (talkId: string) => boolean;
 }) {
+  const hasVideo = !!talk.embedUrl;
+  const isYouTubeSource = /youtube\.com|youtu\.be/i.test(talk.sourceUrl)
+    || /watch on youtube/i.test(talk.sourceLabel);
+
   return (
     <article
       className={clsx(
-        'rounded-2xl border bg-surface/74 p-5 shadow-sm backdrop-blur-sm transition-colors duration-300',
+        'rounded-[26px] transition-colors duration-200',
         isActive
-          ? 'border-accent/25 bg-surface/88'
-          : 'border-ink/8 hover:border-ink/12 hover:bg-surface'
+          ? 'bg-white/94 shadow-[0_10px_30px_-20px_rgba(3,10,22,0.5)]'
+          : 'bg-white/74 hover:bg-white/88'
       )}
-      style={{ viewTransitionName: showSourceSnapshot(talk.id) ? 'talk-card' : undefined }}
+      style={{ viewTransitionName: hasVideo && showSourceSnapshot(talk.id) ? 'talk-card' : undefined }}
     >
-      <button
-        type="button"
-        onClick={() => onOpen(talk.id)}
-        className="group flex w-full flex-col gap-4 rounded-xl text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
-        aria-expanded={isActive}
-        aria-label={`Play video: ${talk.title}`}
-      >
-        <div
-          className="relative aspect-video overflow-hidden rounded-xl border border-ink/8 bg-surface-muted"
-          style={{ viewTransitionName: showSourceSnapshot(talk.id) ? 'talk-media' : undefined }}
+      {hasVideo ? (
+        <button
+          type="button"
+          onClick={() => onOpen(talk.id)}
+          className="group flex h-full w-full flex-col gap-3 rounded-[26px] p-2.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+          aria-expanded={isActive}
+          aria-label={`Play video: ${talk.title}`}
         >
-          <Image
-            src={talk.thumbnail.url}
-            alt=""
-            fill
-            className="object-cover"
-            sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
-            aria-hidden
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-footer-bg/0 transition-colors group-hover:bg-footer-bg/18">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-ink-inverted/18 bg-footer-bg/58 text-ink-inverted transition-transform duration-300 group-hover:scale-105">
-              <svg className="h-4 w-4 translate-x-px" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+          <div
+            className="relative aspect-video overflow-hidden rounded-[18px] bg-surface-muted/70"
+            style={{ viewTransitionName: showSourceSnapshot(talk.id) ? 'talk-media' : undefined }}
+          >
+            <Image
+              src={talk.thumbnail.url}
+              alt=""
+              fill
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+              sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
+              aria-hidden
+            />
+            <span className="pointer-events-none absolute right-2.5 top-2.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-footer-bg/48 text-ink-inverted/86 backdrop-blur-sm">
+              <svg className="h-2.5 w-2.5 translate-x-px" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
                 <path d="M8 5v14l11-7z" />
               </svg>
-            </div>
+            </span>
           </div>
-        </div>
 
-        <div className="min-w-0 space-y-2">
-          <p
-            className="type-label text-accent/80"
-            style={{ viewTransitionName: showSourceSnapshot(talk.id) ? 'talk-meta' : undefined }}
-          >
-            {talk.event} · {talk.year}
-          </p>
-          <h3
-            className="type-heading-sm text-ink transition-colors group-hover:text-accent-hover"
-            style={{ viewTransitionName: showSourceSnapshot(talk.id) ? 'talk-title' : undefined }}
-          >
-            {talk.title}
-          </h3>
-          <p className="type-caption text-ink/60">{talk.sourceLabel}</p>
-        </div>
-      </button>
+          <div className="min-w-0 space-y-2 px-1 pb-1">
+            <p
+              className="type-label text-accent/80"
+              style={{ viewTransitionName: showSourceSnapshot(talk.id) ? 'talk-meta' : undefined }}
+            >
+              {talk.event} · {talk.year}
+            </p>
+            <h3
+              className="type-heading-sm text-ink transition-colors group-hover:text-accent-hover"
+              style={{ viewTransitionName: showSourceSnapshot(talk.id) ? 'talk-title' : undefined }}
+            >
+              {talk.title}
+            </h3>
+            {!isYouTubeSource && <p className="type-caption text-ink/60">{talk.sourceLabel}</p>}
+          </div>
+        </button>
+      ) : (
+        <a
+          href={talk.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex h-full w-full flex-col gap-3 rounded-[26px] p-2.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+          aria-label={`Open source: ${talk.title}`}
+        >
+          <div className="relative aspect-video overflow-hidden rounded-[18px] bg-surface-muted/70">
+            <Image
+              src={talk.thumbnail.url}
+              alt=""
+              fill
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+              sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
+              aria-hidden
+            />
+          </div>
+
+          <div className="min-w-0 space-y-2 px-1 pb-1">
+            <p className="type-label text-accent/80">{talk.event} · {talk.year}</p>
+            <h3 className="type-heading-sm text-ink transition-colors group-hover:text-accent-hover">{talk.title}</h3>
+            {!isYouTubeSource && <p className="type-caption text-ink/60">{talk.sourceLabel}</p>}
+          </div>
+        </a>
+      )}
     </article>
   );
 }
@@ -111,13 +141,37 @@ function PlaylistItem({
       type="button"
       onClick={() => onSelect(talk.id)}
       className={clsx(
-        'group flex w-full items-start gap-3 rounded-xl border px-3 py-3 text-left transition-colors',
+        'group flex w-full items-start gap-3 rounded-2xl border px-2.5 py-2.5 text-left transition-colors',
         isActive
-          ? 'border-accent/40 bg-accent/12'
+          ? 'border-accent/40 bg-accent/14 shadow-[0_8px_22px_-16px_rgba(230,126,34,0.85)]'
           : 'border-ink-inverted/10 bg-transparent hover:border-ink-inverted/18 hover:bg-ink-inverted/7'
       )}
       aria-current={isActive ? 'true' : undefined}
     >
+      <div
+        className={clsx(
+          'relative h-14 w-24 shrink-0 overflow-hidden rounded-xl border',
+          isActive ? 'border-accent/36' : 'border-ink-inverted/12'
+        )}
+      >
+        <Image
+          src={talk.thumbnail.url}
+          alt=""
+          fill
+          className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+          sizes="96px"
+          aria-hidden
+        />
+        <span className="pointer-events-none absolute inset-0 bg-linear-to-t from-footer-bg/44 via-transparent to-transparent" />
+        {isActive && (
+          <span className="pointer-events-none absolute bottom-1.5 left-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full border border-accent/40 bg-footer-bg/74 text-accent">
+            <svg className="h-2.5 w-2.5 translate-x-px" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        )}
+      </div>
+
       <span className={clsx('type-label mt-0.5 shrink-0', isActive ? 'text-accent' : 'text-ink-inverted/40')}>
         {String(index + 1).padStart(2, '0')}
       </span>
@@ -129,13 +183,19 @@ function PlaylistItem({
           {talk.title}
         </span>
       </span>
+
+      <span className="ml-auto mt-1.5 text-ink-inverted/30 transition-colors group-hover:text-ink-inverted/58" aria-hidden>
+        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </span>
     </button>
   );
 }
 
 function TalkStage({
   talk,
-  speakingItems,
+  videoItems,
   videoReady,
   showTargetSnapshot,
   onClose,
@@ -143,27 +203,46 @@ function TalkStage({
   onVideoReady,
 }: {
   talk: SpeakingItem;
-  speakingItems: SpeakingItem[];
+  videoItems: SpeakingItem[];
   videoReady: boolean;
   showTargetSnapshot: (talkId: string) => boolean;
   onClose: () => void;
   onSelect: (talkId: string) => void;
   onVideoReady: () => void;
 }) {
+  const isYouTubeSource = /youtube\.com|youtu\.be/i.test(talk.sourceUrl)
+    || /watch on youtube/i.test(talk.sourceLabel);
+
   return (
     <>
+      <div className="fixed inset-0 z-30 pointer-events-none overflow-hidden" aria-hidden>
+        <div className="absolute -left-24 top-[6%] h-72 w-72 rounded-full bg-accent/14 blur-3xl motion-safe:animate-soft-float" />
+        <div className="absolute -right-20 bottom-[8%] h-72 w-72 rounded-full bg-sky/16 blur-3xl motion-safe:animate-soft-float [animation-delay:1.3s]" />
+      </div>
+
       <button
         type="button"
         aria-label="Close active talk"
         onClick={onClose}
-        className="fixed inset-0 z-30 bg-footer-bg/76 backdrop-blur-md transition-opacity duration-300"
+        className="fixed inset-0 z-30 bg-footer-bg/72 backdrop-blur-md transition-opacity duration-300"
       />
 
       <div className="fixed inset-0 z-40 px-4 pb-4 pt-24 sm:px-6 sm:pb-6 sm:pt-28 lg:px-10 lg:pb-10 pointer-events-none">
         <div
-          className="pointer-events-auto mx-auto flex max-h-full w-full max-w-7xl flex-col overflow-y-auto rounded-2xl border border-ink-inverted/10 bg-footer-bg/94 shadow-2xl lg:h-full lg:overflow-hidden"
+          className="pointer-events-auto relative isolate mx-auto flex max-h-full w-full max-w-7xl flex-col overflow-y-auto rounded-2xl border border-ink-inverted/10 bg-footer-bg/94 shadow-2xl lg:h-full lg:overflow-hidden"
           style={{ viewTransitionName: showTargetSnapshot(talk.id) ? 'talk-card' : undefined }}
         >
+          <div className="pointer-events-none absolute inset-0" aria-hidden>
+            <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08),transparent_32%,transparent_68%,rgba(255,255,255,0.06))]" />
+            <div
+              className="absolute inset-0 opacity-[0.14]"
+              style={{
+                backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 0.6px, transparent 0.6px)',
+                backgroundSize: '3px 3px',
+              }}
+            />
+          </div>
+
           <div className="flex items-start justify-between gap-6 border-b border-ink-inverted/10 px-4 py-4 sm:px-6 sm:py-5">
             <div key={`stage-heading-${talk.id}`} className="min-w-0 motion-safe:animate-talk-stage-fade">
               <p className="type-label-wide text-ink-inverted/45">{talk.event} · {talk.year}</p>
@@ -173,6 +252,10 @@ function TalkStage({
               >
                 {talk.title}
               </h3>
+              <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-ink-inverted/15 bg-ink-inverted/7 px-3 py-1 type-label text-ink-inverted/72">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+                Now screening
+              </p>
             </div>
 
             <button
@@ -193,15 +276,16 @@ function TalkStage({
                 {talk.embedUrl ? (
                   <div
                     className={clsx(
-                      'h-[min(56.25vw,42dvh)] w-full overflow-hidden rounded-2xl border border-ink-inverted/10 bg-footer-bg transition-opacity duration-300 sm:h-[min(56.25vw,48dvh)] lg:h-auto lg:aspect-video',
+                      'relative h-[min(56.25vw,42dvh)] w-full overflow-hidden rounded-[22px] border border-ink-inverted/14 bg-black/30 shadow-[0_22px_44px_-26px_rgba(0,0,0,0.9)] transition-opacity duration-300 sm:h-[min(56.25vw,48dvh)] lg:h-auto lg:aspect-video',
                       videoReady ? 'opacity-100' : 'opacity-0'
                     )}
                     style={{ viewTransitionName: showTargetSnapshot(talk.id) ? 'talk-media' : undefined }}
                   >
+                    <span className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-linear-to-b from-ink-inverted/12 to-transparent" aria-hidden />
                     <iframe
                       src={talk.embedUrl}
                       title={talk.title}
-                      className="h-full w-full"
+                      className="h-full w-full bg-black"
                       loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
@@ -211,7 +295,7 @@ function TalkStage({
                   </div>
                 ) : (
                   <div
-                    className="relative h-[min(56.25vw,42dvh)] w-full overflow-hidden rounded-2xl border border-ink-inverted/10 bg-footer-bg sm:h-[min(56.25vw,48dvh)] lg:h-auto lg:aspect-video"
+                    className="relative h-[min(56.25vw,42dvh)] w-full overflow-hidden rounded-[22px] border border-ink-inverted/14 bg-black/30 shadow-[0_22px_44px_-26px_rgba(0,0,0,0.9)] sm:h-[min(56.25vw,48dvh)] lg:h-auto lg:aspect-video"
                     style={{ viewTransitionName: showTargetSnapshot(talk.id) ? 'talk-media' : undefined }}
                   >
                     <Image
@@ -226,18 +310,20 @@ function TalkStage({
                 )}
               </div>
 
-              <div className="px-4 pb-4 pt-4 sm:px-6 sm:pb-6">
-                <div key={`stage-action-${talk.id}`} className="motion-safe:animate-talk-stage-fade">
-                  <a
-                    href={talk.sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-2 type-label text-accent transition-colors hover:bg-accent/16"
-                  >
-                    {talk.sourceLabel}
-                  </a>
+              {!isYouTubeSource && (
+                <div className="px-4 pb-4 pt-4 sm:px-6 sm:pb-6">
+                  <div key={`stage-action-${talk.id}`} className="motion-safe:animate-talk-stage-fade">
+                    <a
+                      href={talk.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-2 type-label text-accent transition-colors hover:bg-accent/16"
+                    >
+                      {talk.sourceLabel}
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             <aside className="flex min-h-0 flex-col bg-ink-inverted/4">
@@ -250,7 +336,7 @@ function TalkStage({
 
               <div className="min-h-0 overflow-y-auto p-3 sm:p-4">
                 <div className="space-y-2">
-                  {speakingItems.map((entry, index) => (
+                  {videoItems.map((entry, index) => (
                     <PlaylistItem
                       key={entry.id}
                       talk={entry}
@@ -269,53 +355,6 @@ function TalkStage({
   );
 }
 
-function CommunityCard({ item, text }: { item: ActivityItem; text: CommunityText }) {
-  const hasLink = !!item.smartlink?.url;
-  const Wrapper = hasLink ? 'a' : 'div';
-  const wrapperProps = hasLink
-    ? ({ href: item.smartlink!.url, target: '_blank', rel: 'noopener noreferrer' } as React.AnchorHTMLAttributes<HTMLAnchorElement>)
-    : {};
-
-  return (
-    <Wrapper
-      {...(wrapperProps as Record<string, unknown>)}
-      className={clsx(
-        'group flex items-start gap-4 rounded-xl border border-ink/8 bg-surface/72 p-5 shadow-sm backdrop-blur-sm transition-colors duration-200',
-        hasLink && 'cursor-pointer hover:border-ink/12 hover:bg-surface'
-      )}
-    >
-      {item.smartlink?.thumbnail && (
-        <div className="relative z-10 h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-ink/8 bg-surface-muted sm:h-14 sm:w-14">
-          <Image
-            src={item.smartlink.thumbnail.url}
-            alt=""
-            width={56}
-            height={56}
-            className="h-full w-full object-cover"
-            aria-hidden
-            loading="lazy"
-          />
-        </div>
-      )}
-
-      <div className="relative z-10 min-w-0 flex-1">
-        <div className="mb-1 flex items-start justify-between gap-3">
-          <h4 className={clsx('type-caption leading-tight text-ink', hasLink && 'transition-colors group-hover:text-accent-hover')}>{text.name}</h4>
-          <span className="type-label mt-0.5 shrink-0 text-ink/30">{item.year}</span>
-        </div>
-        <p className="type-label mb-2 text-ink/50">{text.org}</p>
-        <p className="type-body-sm text-ink/60 leading-relaxed">{text.summary}</p>
-      </div>
-
-      {hasLink && (
-        <svg className="relative z-10 mt-1 h-3.5 w-3.5 shrink-0 text-ink/20 transition-colors group-hover:text-accent-hover" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
-      )}
-    </Wrapper>
-  );
-}
-
 export default function Activity() {
   const t = useTranslations('activity');
   const [activeTalkId, setActiveTalkId] = useState<string | null>(null);
@@ -323,7 +362,8 @@ export default function Activity() {
   const [videoReady, setVideoReady] = useState(false);
 
   const speakingItems = speaking as SpeakingItem[];
-  const activeTalk = activeTalkId ? speakingItems.find((talk) => talk.id === activeTalkId) ?? null : null;
+  const videoSpeakingItems = speakingItems.filter((talk) => !!talk.embedUrl);
+  const activeTalk = activeTalkId ? videoSpeakingItems.find((talk) => talk.id === activeTalkId) ?? null : null;
 
   const setActiveTalkWithTransition = useCallback((nextId: string | null) => {
     const transitionId = nextId ?? activeTalkId;
@@ -400,7 +440,7 @@ export default function Activity() {
       {activeTalk && (
         <TalkStage
           talk={activeTalk}
-          speakingItems={speakingItems}
+          videoItems={videoSpeakingItems}
           videoReady={videoReady}
           showTargetSnapshot={showTargetSnapshot}
           onClose={() => setActiveTalkWithTransition(null)}
@@ -429,14 +469,23 @@ export default function Activity() {
         <div>
           <SectionHeader label={t('community')} />
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {activities.map((item, index) => (
-              <CommunityCard
-                key={`${item.key}-${index}`}
-                item={item}
-                text={t.raw(`items.${item.key}`) as CommunityText}
-              />
-            ))}
+          <div>
+            {activities.map((item, index) => {
+              const text = t.raw(`items.${item.key}`) as CommunityText;
+
+              return (
+                <TimelineRow
+                  key={`${item.key}-${index}`}
+                  period={item.year.replace(/^\s*-\s*/, '').trim()}
+                  meta={text.org}
+                  title={text.name}
+                  description={text.summary}
+                  href={item.smartlink?.url}
+                  thumbnail={item.smartlink?.thumbnail ?? item.thumbnail}
+                  isLast={index === activities.length - 1}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

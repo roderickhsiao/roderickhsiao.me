@@ -179,17 +179,17 @@ export default function CountriesGrid({
                             {displayedFlagEmoji}
                           </span>
                           <div>
-                            <h3 className="type-heading-lg text-ink leading-none uppercase">
+                            <h3 className="type-heading-lg text-ink leading-none">
                               {displayedName}
                             </h3>
-                            <span className="type-label text-ink/30 mt-2 block">
+                            <span className="type-label text-ink/60 mt-2 block">
                               {t('archiveExtract')}
                             </span>
                           </div>
                         </div>
                         <button
                           onClick={() => toggleCode(displayedCode!)}
-                          className="group flex items-center gap-2 type-label text-ink/40 hover:text-ink transition-colors"
+                          className="group flex items-center gap-2 type-label text-ink/60 hover:text-ink transition-colors"
                         >
                           <X
                             size={14}
@@ -215,7 +215,7 @@ export default function CountriesGrid({
                       {/* National park stickers */}
                       {displayedCode && NATIONAL_PARKS[displayedCode] && (
                         <div className="mt-16 sm:mt-20">
-                          <p className="type-label text-ink/25 uppercase tracking-widest mb-10 sm:mb-14">
+                          <p className="type-label-wide text-ink/60 mb-10 sm:mb-14">
                             {t('nationalParks')}
                           </p>
                           <div className="flex flex-wrap items-end gap-10 sm:gap-14 lg:gap-16">

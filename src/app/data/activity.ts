@@ -9,6 +9,7 @@ export interface ActivitySmartlink {
 export interface ActivityItem {
   key: string;
   year: string;
+  thumbnail?: { url: string; width: number; height: number };
   smartlink?: ActivitySmartlink;
 }
 
@@ -29,9 +30,24 @@ const activity: ActivityItem[] = [
       url: 'http://www.hsnuawb.tw/'
     }
   },
-  { key: 'orbis', year: 'Oct, 2010' },
-  { key: 'armyFlood', year: 'Aug, 2010' },
-  { key: 'mannheimExchange', year: 'Jan 2008 – Jun 2008' }
+  {
+    key: 'orbis',
+    year: 'Oct, 2010',
+    thumbnail: { url: '/orbis.jpg', width: 150, height: 150 },
+    smartlink: {
+      url: 'https://www.instagram.com/orbisintl/'
+    }
+  },
+  {
+    key: 'armyFlood',
+    year: 'Aug, 2010',
+    thumbnail: { url: '/army-seal.svg', width: 200, height: 200 }
+  },
+  {
+    key: 'mannheimExchange',
+    year: 'Jan 2008 – Jun 2008',
+    thumbnail: { url: '/mannheim.png', width: 200, height: 200 }
+  }
 ];
 
 export default activity;

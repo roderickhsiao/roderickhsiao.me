@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import experience from '@/app/data/experience';
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
@@ -89,7 +90,7 @@ function DemoCard({ demo, title, getImageThemeGradient }: DemoCardProps) {
       <div className="relative">
         {/* Gradient overlay */}
         <div
-          className={`absolute inset-0 bg-linear-to-t ${demoGradient} opacity-20`}
+          className={clsx('absolute inset-0 bg-linear-to-t opacity-20', demoGradient)}
         ></div>
         <Image
           src={demo.thumbnail.url}
@@ -289,7 +290,7 @@ export default async function Experience() {
                 >
                   {/* Visible corner gradient accent */}
                   <div
-                    className={`absolute top-0 inset-e-0 w-48 h-48 bg-linear-to-bl ${gradientClass} opacity-40 blur-3xl rounded-full -translate-y-16 translate-x-16`}
+                    className={clsx('absolute top-0 inset-e-0 w-48 h-48 bg-linear-to-bl opacity-40 blur-3xl rounded-full -translate-y-16 translate-x-16', gradientClass)}
                   ></div>
 
                   <div className="mb-2 relative z-10">

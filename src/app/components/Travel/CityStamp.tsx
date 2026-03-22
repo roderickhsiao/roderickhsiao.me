@@ -62,10 +62,10 @@ export default function CityStamp({ city, countryCode, stampColor, index }: City
               ))}
             </g>
           </svg>
-          <span className="font-sans font-black text-[10px] sm:text-xs uppercase leading-none">{countryCode}</span>
+          <span className="font-sans font-bold text-xs sm:text-sm leading-none">{countryCode}</span>
         </div>
 
-        <span className="flex-1 font-sans font-extrabold text-[9px] sm:text-[11px] uppercase tracking-wider truncate">
+        <span className="flex-1 font-sans font-bold text-xs sm:text-sm tracking-wide truncate">
           {isHome ? t('arrival') : t('departure')}
         </span>
 
@@ -85,7 +85,7 @@ export default function CityStamp({ city, countryCode, stampColor, index }: City
 
       {/* ── Divider ── */}
       <div className="border-y border-dashed border-current my-1 py-1 flex items-center justify-center">
-        <span className="font-sans font-bold text-[10px] tracking-[0.4em] uppercase opacity-80">
+        <span className="font-sans font-semibold text-xs tracking-[0.18em] opacity-85">
           {isHome ? t('exploring') : t('explored')}
         </span>
       </div>
@@ -103,7 +103,7 @@ export default function CityStamp({ city, countryCode, stampColor, index }: City
             <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
           </svg>
         </div>
-        <span className="flex-1 text-right font-mono font-black text-base sm:text-xl uppercase tracking-tighter leading-none truncate">
+        <span className="flex-1 text-right font-mono font-black text-base sm:text-xl tracking-tight leading-none truncate">
           {displayCity}
         </span>
       </div>

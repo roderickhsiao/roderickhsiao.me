@@ -48,7 +48,7 @@ export default async function MainLayout({
       <div className="fixed inset-s-0 inset-e-0 z-50 top-0 mt-4 px-4 sm:px-6">
         <Header
           brandName={tProfile('name')}
-          brandSubtitle={tNav('brandSubtitle')}
+          brandSubtitle={tProfile('title')}
           links={links}
         />
       </div>

@@ -63,8 +63,8 @@ const speaking: SpeakingItem[] = [
     event: 'Geekle',
     year: '2020',
     title: 'Building Large Scale Web App',
-    sourceUrl: 'https://react.geekle.us/',
-    sourceLabel: 'Watch on source site',
+    sourceUrl: 'https://app.geekle.us/',
+    sourceLabel: 'Visit website',
     thumbnail: {
       url: '/geekle.jpeg',
       width: 800,

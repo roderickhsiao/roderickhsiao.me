@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import clsx from 'clsx';
 
 export interface PageHeroProps {
   /** Small uppercase label rendered above the title */
@@ -32,7 +33,7 @@ export default function PageHero({
   className = '',
 }: PageHeroProps) {
   return (
-    <header className={`relative ${className}`} style={{ viewTransitionName: 'page-hero' }}>
+    <header className={clsx('relative', className)} style={{ viewTransitionName: 'page-hero' }}>
       {/* ── Accent bar + eyebrow — full width, above both columns ── */}
       <div
         className="w-16 h-[3px] mb-8 sm:mb-10 rounded-full"

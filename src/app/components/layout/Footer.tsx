@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import clsx from 'clsx';
 import Image from 'next/image';
 import { Heart, Sparkles, X } from 'lucide-react';
 import summary from '@/app/data/summary';
@@ -11,6 +12,27 @@ import LanguageSwitcher from '@/app/components/layout/LanguageSwitcher';
 
 const SOURCE_REPO = 'https://github.com/roderickhsiao/roderickhsiao.me';
 const BUY_COFFEE_URL = 'https://www.buymeacoffee.com/roderickhsiao';
+
+type AuraPeriod = 'dawn' | 'morning' | 'midday' | 'afternoon' | 'dusk' | 'night';
+
+type SpokenLanguage = {
+  flag: string;
+  label: string;
+  countryCode?: string;
+};
+
+function getFlagSrc(countryCode: string, width: 40 | 80 = 40): string {
+  return `https://flagcdn.com/w${width}/${countryCode}.png`;
+}
+
+function getAuraPeriod(hour: number): AuraPeriod {
+  if (hour >= 5 && hour < 7) return 'dawn';
+  if (hour >= 7 && hour < 11) return 'morning';
+  if (hour >= 11 && hour < 14) return 'midday';
+  if (hour >= 14 && hour < 17) return 'afternoon';
+  if (hour >= 17 && hour < 20) return 'dusk';
+  return 'night';
+}
 
 /* Social icon SVG paths — keyed by contact.ts icon field */
 const SOCIAL_ICONS: Record<
@@ -41,6 +63,7 @@ export default function Footer() {
   const t = useTranslations('footer');
   const tProfile = useTranslations('profile');
   const locale = useLocale();
+  const auraPeriod = getAuraPeriod(new Date().getHours());
   const calendlyLocaleParam = locale === 'zh-Hant' ? '&locale=zh-TW' : '';
   const year = new Date().getFullYear();
   const { profile } = summary;
@@ -183,11 +206,12 @@ export default function Footer() {
                 className="group relative py-4 px-10 outline-none cursor-pointer"
               >
                 <div
-                  className={`absolute inset-0 border transition-all duration-700 shadow-xl ${
+                  className={clsx(
+                    'absolute inset-0 border transition-all duration-700 shadow-xl',
                     showForm
                       ? 'bg-accent/20 border-accent/30 scale-105'
                       : 'bg-footer-text/10 border-footer-text/5 group-hover:scale-105 group-hover:bg-accent/20'
-                  }`}
+                  )}
                   style={{ borderRadius: '48% 52% 55% 45% / 42% 58% 40% 60%' }}
                   aria-hidden
                 />
@@ -197,7 +221,7 @@ export default function Footer() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className={`w-4 h-4 shrink-0 transition-colors ${showForm ? 'text-accent' : 'text-accent'}`}
+                    className={clsx('w-4 h-4 shrink-0 transition-colors', showForm ? 'text-accent' : 'text-accent')}
                     aria-hidden
                   >
                     <path
@@ -230,11 +254,12 @@ export default function Footer() {
                   className="group relative py-4 px-10 outline-none cursor-pointer"
                 >
                   <div
-                    className={`absolute inset-0 border transition-all duration-700 ${
+                    className={clsx(
+                      'absolute inset-0 border transition-all duration-700',
                       showCalendly
                         ? 'bg-sky/20 border-sky/30 scale-105'
                         : 'bg-footer-text/5 border-footer-text/10 group-hover:scale-105 group-hover:bg-sky/20'
-                    }`}
+                    )}
                     style={{
                       borderRadius: '55% 45% 42% 58% / 58% 42% 60% 40%',
                     }}
@@ -320,10 +345,21 @@ export default function Footer() {
             {/* Language tags + social links */}
             <div className="flex flex-wrap items-center gap-x-12 gap-y-6">
               <div className="flex items-center gap-6 type-label text-footer-text/30">
-                {(tProfile.raw('languages') as { flag: string; label: string }[]).map(({ flag, label }, i, arr) => (
+                {(tProfile.raw('languages') as SpokenLanguage[]).map(({ flag, label, countryCode }, i, arr) => (
                   <span key={label} className="flex items-center gap-6">
-                    <span className="text-footer-text/60">
-                      {flag} {label}
+                    <span className="flex items-center gap-2 text-footer-text/60">
+                      {countryCode ? (
+                        <Image
+                          src={getFlagSrc(countryCode)}
+                          alt={`${label} flag`}
+                          width={20}
+                          height={15}
+                          className="h-[15px] w-5 rounded-[3px] object-cover"
+                        />
+                      ) : (
+                        <span>{flag}</span>
+                      )}
+                      <span>{label}</span>
                     </span>
                     {i < arr.length - 1 && (
                       <span
@@ -399,16 +435,16 @@ export default function Footer() {
             {/* Site notes */}
             <div className="type-body-sm text-footer-text/50 space-y-4 not-italic">
               <p className="text-footer-text/80 leading-relaxed">
-                {t('siteNote')}
+                {t(`siteNoteByTime.${auraPeriod}`)}
               </p>
               <p
-                className="type-label text-footer-text/40 cursor-help"
+                className="type-label text-footer-text/62 cursor-help"
                 title={t('devNoteTitle')}
               >
                 {t('devNote')}
               </p>
               <p
-                className="text-[9px] text-footer-text/[0.04] hover:text-footer-text/30 transition-opacity duration-700 select-none cursor-default leading-relaxed"
+                className="text-[11px] text-footer-text/18 hover:text-footer-text/45 transition-opacity duration-700 select-none cursor-default leading-relaxed"
                 aria-hidden
               >
                 {t('easterEgg')}
@@ -505,20 +541,12 @@ export default function Footer() {
               strokeWidth="1"
             />
           </svg>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
+          <div className="relative z-10 flex flex-col items-center justify-between gap-5 sm:gap-6 lg:flex-row lg:items-center">
             <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
               <span className="text-footer-text/60 whitespace-nowrap">
                 &copy; {year} {t('copyrightName')}
               </span>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <Heart
-                    size={14}
-                    className="text-sky/50 fill-sky/30"
-                    aria-hidden
-                  />
-                  <span>{t('heritage')}</span>
-                </div>
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
                 <span
                   className="w-1 h-1 bg-footer-text/10 rounded-full"
                   aria-hidden
@@ -529,19 +557,22 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <LanguageSwitcher />
-            <div className="flex items-center gap-4 text-footer-text/20">
-              {(t.raw('residencyLocations') as string[]).map((loc, i, arr) => (
-                <span key={loc} className="flex items-center gap-4">
-                  <span>* {loc}</span>
-                  {i < arr.length - 1 && (
-                    <span
-                      className="w-1 h-1 bg-footer-text/10 rounded-full"
-                      aria-hidden
-                    />
-                  )}
-                </span>
-              ))}
+
+            <div className="flex flex-col items-center gap-3 sm:gap-4 lg:flex-row lg:items-center lg:justify-center">
+              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center text-footer-text/20">
+                {(t.raw('residencyLocations') as string[]).map((loc, i, arr) => (
+                  <span key={loc} className="flex items-center gap-3 whitespace-nowrap">
+                    <span>* {loc}</span>
+                    {i < arr.length - 1 && (
+                      <span
+                        className="w-1 h-1 bg-footer-text/10 rounded-full"
+                        aria-hidden
+                      />
+                    )}
+                  </span>
+                ))}
+              </div>
+              <LanguageSwitcher />
             </div>
           </div>
         </div>

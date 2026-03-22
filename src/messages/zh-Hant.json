@@ -80,7 +80,15 @@
     "supportButton": "請我喝咖啡",
     "supportAriaLabel": "支持 — 請我喝杯咖啡",
     "sourceLink": "看檔案原始碼",
-    "siteNote": "本站持續重視隱私，並啟用隱私友善的流量分析，用來了解造訪情況與優化體驗。",
+    "siteNote": "這裡有作品集、有遊樂場，也有深夜靈感實驗室。謝謝你來逛逛。",
+    "siteNoteByTime": {
+      "dawn": "🌅 清晨模式啟動：光線更柔、節奏更慢。也是提醒你先泡杯咖啡的時候 ☕。",
+      "morning": "🌞 早晨光感上線：色調更清新、腦袋更清楚，最適合逛點新想法 ✨。",
+      "midday": "☀️ 正午氛圍全開：畫面更明亮、色彩更暖，節奏也更有衝勁 ⚡。",
+      "afternoon": "🍯 午後暖調登場：一點金色、一點沉穩，還保留剛剛好的玩心 🎈。",
+      "dusk": "🌇 黃昏色彩慢慢接管：整體氛圍變得更有層次、更有情緒 🎞️。",
+      "night": "🌙 夜間色盤已解鎖：更柔和、更沈靜，帶著一點深夜實驗室的感覺 🧪。"
+    },
     "devNote": "* 製作本站過程中沒有工程師在加班。（有但不說。）",
     "devNoteTitle": "靠咖啡因、AI 聊天與「這個 div 到底要不要再包一層」的靈魂拷問所打造。",
     "easterEgg": "你找到這行了。恭喜，你就是那種我想一起工作的人。",
@@ -90,10 +98,17 @@
     "contactDialogLabel": "聯絡表單",
     "calendlyDialogLabel": "預約諮詢",
     "quote": "歡迎傳訊給我，一起聊聊 <highlight1>AI/網頁想法</highlight1>、很酷的專案，甚至 <highlight2>浩室音樂</highlight2>。",
-    "heritage": "灣區製作",
     "crafted": "與 AI 協力打造，分不清誰比較努力",
     "copyrightName": "R. Hsiao",
-    "residencyLocations": ["舊金山灣區", "台北"]
+    "residencyLocations": ["舊金山灣區", "台北"],
+    "languageSwitcher": {
+      "ariaLabel": "語言選擇器",
+      "menuLabel": "語言（{count}）",
+      "localeNames": {
+        "en": "英文",
+        "zh-Hant": "繁體中文"
+      }
+    }
   },
   "activity": {
     "hero": {
@@ -185,6 +200,7 @@
     },
     "fieldNotes": {
       "label": "學習記錄 // 大多倖存了",
+      "heading": "學習軌跡與\n學術基礎",
       "items": [
         {
           "num": "01",
@@ -248,7 +264,7 @@
     },
     "fieldNotes": {
       "label": "建構記錄 // 公開儲存庫",
-      "heading": "開源與\n開發者工具",
+      "heading": "建構紀錄與\n開發者工具箱",
       "items": [
         {
           "num": "01",
@@ -385,7 +401,7 @@
     },
     "fieldNotes": {
       "label": "飛行記錄 // 靠窗座位",
-      "heading": "環球旅行與\n文化探索",
+      "heading": "路線、人物與\n文化筆記",
       "items": [
         {
           "num": "01",
@@ -624,7 +640,7 @@
     }
   },
   "nav": {
-    "brandSubtitle": "前端架構師與平台負責人",
+    "brandSubtitle": "前端架構師",
     "about": "關於",
     "activity": "活動",
     "projects": "專案",
@@ -649,10 +665,12 @@
     "languages": [
       {
         "flag": "🇺🇸",
+        "countryCode": "us",
         "label": "英文"
       },
       {
         "flag": "🇹🇼",
+        "countryCode": "tw",
         "label": "中文"
       }
     ],

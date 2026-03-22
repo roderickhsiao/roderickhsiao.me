@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 
 export type TravelStatus = 'BORN' | 'HOME' | 'STUDY' | 'TRAVEL';
@@ -71,7 +72,11 @@ export default function TravelStamp({
 
   return (
     <div
-      className={`relative group flex flex-col w-full max-w-[200px] aspect-[200/240] transition-all duration-700 ease-out [--stamp-dot:15px] sm:[--stamp-dot:20px] ${onClick ? 'cursor-pointer' : 'cursor-default'} ${isActive ? 'scale-[1.04] z-40' : 'hover:z-30 hover:-translate-y-2'}`}
+      className={clsx(
+        'relative group flex flex-col w-full max-w-[200px] aspect-[200/240] transition-all duration-700 ease-out [--stamp-dot:15px] sm:[--stamp-dot:20px]',
+        onClick ? 'cursor-pointer' : 'cursor-default',
+        isActive ? 'scale-[1.04] z-40' : 'hover:z-30 hover:-translate-y-2'
+      )}
       onClick={onClick}
       style={stampStyle}
       aria-label={t('stampAriaLabel', { name, count: citiesCount })}
@@ -163,9 +168,7 @@ export default function TravelStamp({
         {/* Country name */}
         <div className="text-center relative z-30 pointer-events-none mt-0 max-w-full px-2">
           <h2
-            className={`type-label text-ink leading-none ${
-              name.length > 12 ? 'text-xs' : ''
-            }`}
+            className={clsx('type-label text-ink leading-none', name.length > 12 && 'text-xs')}
           >
             {name}
           </h2>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useActionState } from 'react';
+import clsx from 'clsx';
 import { submitContactForm } from '../../actions/contact';
 import { useTranslations } from 'next-intl';
 
@@ -29,7 +30,7 @@ export default function ContactForm() {
           placeholder={t('messagePlaceholder')}
           required
           rows={4}
-          className={`${inputClass} resize-none`}
+          className={clsx(inputClass, 'resize-none')}
         />
 
         <button
