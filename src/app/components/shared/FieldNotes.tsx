@@ -48,7 +48,7 @@ export default function FieldNotes({
                 <span className="type-label text-ink/55">{num}</span>
                 <h3 className="type-label text-ink">{title}</h3>
               </div>
-              <ul className="space-y-1.5 pl-1">
+              <ul className="space-y-1.5 ps-1">
                 {bullets.map((point) => (
                   <li key={point} className="flex items-start gap-2">
                     <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" aria-hidden />

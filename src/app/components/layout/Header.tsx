@@ -78,7 +78,7 @@ export default function Header({ brandName, brandSubtitle, links }: HeaderProps)
               {brandName}
             </RoutedLink>
             <span className="hidden sm:block w-px h-4 bg-ink/15" aria-hidden />
-            <span className="hidden sm:block type-label text-ink/70">
+            <span className="hidden sm:block type-label text-ink/70 max-w-[14rem] wrap-anywhere hyphens-auto">
               {brandSubtitle}
             </span>
           </div>

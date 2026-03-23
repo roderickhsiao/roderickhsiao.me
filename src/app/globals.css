@@ -418,6 +418,118 @@
   45%      { background: rgba(255,255,255,0.1);  box-shadow: none; transform: scale(1); }
   100%     { background: rgba(255,255,255,0.1);  box-shadow: none; transform: scale(1); }
 }
+
+@keyframes breathing {
+  0%, 100% {
+    --aura-scale: 1;
+    --aura-opacity-shift: 0;
+  }
+  50% {
+    --aura-scale: 1.04;
+    --aura-opacity-shift: 0.08;
+  }
+}
+
+.aura-breathing {
+  animation: breathing 6s ease-in-out infinite;
+}
+
+@property --sky-pos-x {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 30%;
+}
+
+@property --sky-pos-y {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 20%;
+}
+
+@property --air-pos-x {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 50%;
+}
+
+@property --air-pos-y {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 50%;
+}
+
+@property --ground-pos-x {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 70%;
+}
+
+@property --ground-pos-y {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 80%;
+}
+
+.aura-pulse {
+  transform-origin: 50% 50%;
+  will-change: transform, filter;
+  animation: auraPulse 9s ease-in-out infinite;
+}
+
+.aura-scroll-responsive {
+  --sky-pos-x: 30%;
+  --sky-pos-y: 20%;
+  --air-pos-x: 50%;
+  --air-pos-y: 50%;
+  --ground-pos-x: 70%;
+  --ground-pos-y: 80%;
+}
+
+@keyframes auraPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: blur(12px) saturate(92%);
+  }
+  50% {
+    transform: scale(1.03);
+    filter: blur(12px) saturate(96%);
+  }
+}
+
+@supports (animation-timeline: scroll(root block)) {
+  .aura-scroll-responsive {
+    animation: auraScrollXY 1s linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0% 100%;
+  }
+
+  @keyframes auraScrollXY {
+    from {
+      --sky-pos-x: 30%;
+      --sky-pos-y: 20%;
+      --air-pos-x: 50%;
+      --air-pos-y: 50%;
+      --ground-pos-x: 70%;
+      --ground-pos-y: 80%;
+    }
+    to {
+      --sky-pos-x: 58%;
+      --sky-pos-y: 36%;
+      --air-pos-x: 36%;
+      --air-pos-y: 64%;
+      --ground-pos-x: 52%;
+      --ground-pos-y: 66%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aura-pulse,
+  .aura-scroll-responsive {
+    animation: none !important;
+  }
+}
+
 @keyframes deeplink-app {
   0%, 50%  { background: rgba(255,255,255,0.1);  box-shadow: none; transform: scale(1); }
   62%, 80% { background: rgba(255,255,255,0.35); box-shadow: 0 0 28px 10px rgba(255,255,255,0.25); transform: scale(1.06); }
@@ -755,38 +867,83 @@ button, [role="button"] {
   }
 }
 
-/* Mobile Touch and Interaction Improvements */
-@media only screen and (max-width: 767px) {
-  /* Ensure touch targets are large enough */
-  .touch-manipulation {
-    touch-action: manipulation;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
+/* ── Scroll-driven wrapper motion for aura orbs ─────────────
+   Wrapper handles scroll transform; inner orb keeps ambient loop.
+   This prevents transform conflicts between two animation systems.
+   Z-index ensures: A (sky) on top, B (mid-air) in middle, C (ground) at back.
+────────────────────────────────────────────────────────────── */
+.aura-scroll-layer {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.aura-scroll-a {
+  left: -8%; top: -12%;
+  z-index: 50;
+}
+.aura-scroll-b {
+  left: 30%; top: 35%;
+  z-index: 30;
+}
+.aura-scroll-c {
+  right: -8%; bottom: -8%;
+  z-index: 10;
+}
+
+@supports (animation-timeline: scroll()) {
+  .aura-scroll-a {
+    animation: auraScrollA 1s linear both;
+    animation-timeline: scroll(root block);
+  }
+
+  .aura-scroll-b {
+    animation: auraScrollB 1s linear both;
+    animation-timeline: scroll(root block);
+  }
+
+  .aura-scroll-c {
+    animation: auraScrollC 1s linear both;
+    animation-timeline: scroll(root block);
+  }
+
+  @keyframes auraScrollA {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(18vw, 22vh) scale(1.12); }
+  }
+
+  @keyframes auraScrollB {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(-16vw, 16vh) scale(1.08); }
+  }
+
+  @keyframes auraScrollC {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(14vw, -12vh) scale(1.06); }
   }
 }
 
 /* ── Aura background orbs (time-of-day atmosphere) ───────────── */
 .aura-orb {
-  position: absolute;
+  position: relative;
   border-radius: 50%;
   pointer-events: none;
   will-change: transform;
-  filter: blur(72px) saturate(1.2);
+  filter: blur(60px) saturate(95%);
 }
 .aura-orb-a {
-  width: 48vw; height: 44vh;
-  left: -4%; top: -6%;
+  width: 52vw; height: 46vh;
+  mix-blend-mode: screen;
   animation: auraOrbitA 26s ease-in-out infinite;
 }
 .aura-orb-b {
-  width: 40vw; height: 38vh;
-  left: 34%; top: 24%;
+  width: 46vw; height: 42vh;
+  mix-blend-mode: soft-light;
   animation: auraOrbitB 32s ease-in-out infinite;
 }
 .aura-orb-c {
-  width: 38vw; height: 44vh;
-  right: -6%; bottom: -4%;
+  width: 48vw; height: 52vh;
+  mix-blend-mode: multiply;
   animation: auraOrbitC 22s ease-in-out infinite;
 }
 
@@ -813,7 +970,7 @@ button, [role="button"] {
 
 @media (max-width: 768px) {
   .aura-orb {
-    filter: blur(56px) saturate(1.15);
+    filter: blur(60px) saturate(95%);
   }
 
   .aura-orb-a,

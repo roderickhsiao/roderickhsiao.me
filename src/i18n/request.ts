@@ -8,10 +8,22 @@ export default getRequestConfig(async ({ requestLocale }) => {
     ? requested
     : routing.defaultLocale;
 
-  const messages =
-    locale === 'zh-Hant'
-      ? (await import('../messages/zh-Hant.json')).default
-      : (await import('../messages/en.json')).default;
+  const messages = (
+    await {
+      en: import('../messages/en.json'),
+      'zh-Hant': import('../messages/zh-Hant.json'),
+      'en-GB': import('../messages/en-GB.json'),
+      de: import('../messages/de.json'),
+      es: import('../messages/es.json'),
+      fr: import('../messages/fr.json'),
+      it: import('../messages/it.json'),
+      ja: import('../messages/ja.json'),
+      nb: import('../messages/nb.json'),
+      nl: import('../messages/nl.json'),
+      pt: import('../messages/pt.json'),
+      sv: import('../messages/sv.json'),
+    }[locale]
+  ).default;
 
   return { locale, messages };
 });

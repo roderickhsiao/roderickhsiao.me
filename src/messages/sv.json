@@ -1,0 +1,989 @@
+{
+  "home": {
+    "hero": {
+      "eyebrow": "Produktutveckling // Frontend-arkitektur",
+      "titleLine1": "Roderick",
+      "titleLine2": "Hsiao",
+      "description": "Konsult inom produktutveckling med specialisering på frontend-infrastruktur, designsystem och utveckling av storskaliga applikationer för globala startups och Fortune 500-företag."
+    },
+    "fieldNotes": {
+      "label": "KARRIÄRLOGG // LEVERERAR FORTFARANDE",
+      "heading": "Karriär &\nHöjdpunkter",
+      "items": [
+        {
+          "num": "01",
+          "icon": "💼",
+          "title": "Erfarenhet",
+          "items": [
+            "Decennier inom produktutveckling.",
+            "Från startups till Fortune 500-nivå."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🚀",
+          "title": "Ledarskap",
+          "items": [
+            "Frontend-infra & designsystem.",
+            "Teknisk mentorskap för team."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📈",
+          "title": "Inverkan",
+          "items": [
+            "Betjänar miljontals användare.",
+            "Arkitektur för extrem skalbarhet."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "📣",
+          "title": "Community",
+          "items": [
+            "Internationell tech-talare.",
+            "Förespråkare för den öppna webben & OSS."
+          ]
+        }
+      ]
+    }
+  },
+  "chronicle": {
+    "heading": "Krönikan",
+    "section": "SEKTION {index}",
+    "talksHeading": "Föreläsningar & Demon",
+    "collapse": "minimera",
+    "details": "detaljer",
+    "collapseAriaLabel": "Stäng projektdetaljer",
+    "expandAriaLabel": "Öppna projektdetaljer"
+  },
+  "contact": {
+    "heading": "Hör av dig",
+    "subheading": "Pratar gärna om AI/webb-idéer, projekt eller samarbetsmöjligheter.",
+    "namePlaceholder": "Ditt namn",
+    "emailPlaceholder": "E-postadress",
+    "subjectPlaceholder": "Ämne",
+    "messagePlaceholder": "Berätta om ditt projekt eller vad du vill diskutera...",
+    "submit": "Skicka meddelande",
+    "submitting": "Skickar…",
+    "success": "Meddelande skickat — jag återkommer snart.",
+    "error": "Något gick fel. {error}",
+    "cardWelcome": "Hallå där! 👋 Tack för att du tittade förbi! Skicka ett meddelande om du vill snacka om <highlight1>AI/webb-idéer</highlight1>, coola projekt eller till och med <highlight2>housemusik</highlight2>.",
+    "messageButton": "Meddelande",
+    "bookButton": "Boka",
+    "closeAriaLabel": "Stäng"
+  },
+  "footer": {
+    "messageButton": "Meddelande",
+    "bookCallButton": "Boka ett samtal",
+    "supportButton": "Bjud mig på en kaffe",
+    "supportAriaLabel": "Support — Bjud mig på en kaffe",
+    "sourceLink": "Arkiv Källkod-geometri",
+    "siteNote": "Dels portfolio, dels lekplats, dels nattligt idélabb. Tack för att du utforskar.",
+    "siteNoteByTime": {
+      "dawn": "🌅 Gryningsläge är på. mjuka färger, morgonenergi, och ja, detta är ditt tecken på att brygga kaffe ☕.",
+      "morning": "🌞 Förmiddagsglöd är aktiv. Frisk aura, skarpare fokus och en bra tid att utforska idéer ✨.",
+      "midday": "☀️ Mitt-på-dagen-ljus i full gång. Klart humör, varma toner och massor av fart ⚡.",
+      "afternoon": "🍯 Eftermiddagsvärmen kickade precis in. Lite gyllene, lite jordnära, fortfarande lekfull 🎈.",
+      "dusk": "🌇 Skymningsfärgerna tar över. Sidan blir mer stämningsfull när dagen går mot sitt slut 🎞️.",
+      "night": "🌙 Nattpalett upplåst. Mysiga toner, lugnare vibbar och energi för nattliga experiment 🧪."
+    },
+    "devNote": "* Inga utvecklare kom till skada vid skapandet av denna webbplats.",
+    "devNoteTitle": "Byggd med en ohälsosam mängd kaffe, otaliga AI-konversationer och en och annan existentiell kris om huruvida denna div borde vara flex eller grid.",
+    "easterEgg": "Du hittade detta. Grattis — du är precis den typ av person jag skulle vilja jobba med.",
+    "widgetMessageTitle": "Skicka ett meddelande",
+    "widgetCallTitle": "Boka ett samtal",
+    "widgetClose": "Stäng",
+    "contactDialogLabel": "Kontaktformulär",
+    "calendlyDialogLabel": "Boka ett samtal",
+    "quote": "Skicka ett meddelande för att snacka om <highlight1>AI/webb-idéer</highlight1>, coola projekt eller till och med <highlight2>housemusik</highlight2>.",
+    "crafted": "Skapad med AI-samarbete",
+    "copyrightName": "R. Hsiao",
+    "residencyLocations": ["SF Bay Area", "Taipei"],
+    "languageSwitcher": {
+      "ariaLabel": "Språkväljare",
+      "menuLabel": "Språk ({count})",
+      "localeNames": {
+        "en": "Engelska",
+        "zh-Hant": "Traditionell kinesiska"
+      }
+    }
+  },
+  "activity": {
+    "hero": {
+      "eyebrow": "Talande // Community",
+      "title": "Aktiviteter &\nFöreläsningar",
+      "description": "Konferensföredrag, workshops och community-engagemang — delar kunskap och bygger kontakter över hela det tekniska ekosystemet."
+    },
+    "fieldNotes": {
+      "label": "FÖREDRAGSLOGG // SLIDES REDO",
+      "heading": "Community-\nlogg",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎤",
+          "title": "Talande",
+          "items": [
+            "Konferensföredrag och workshops.",
+            "JSConf och community-tech-event."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "Community",
+          "items": [
+            "Ledarskap och förvaltning inom open source.",
+            "Mentorskap för nya utvecklare."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🌱",
+          "title": "Rättvisa",
+          "items": [
+            "Främjar inkludering och mångfald inom tech.",
+            "Förespråkar underrepresenterade röster."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "✨",
+          "title": "Inverkan",
+          "items": [
+            "Teknik för positiv social förändring.",
+            "Bygger för communities som betyder något."
+          ]
+        }
+      ]
+    },
+    "speaking": "TALANDE",
+    "community": "COMMUNITY",
+    "ui": {
+      "playVideo": "Spela upp video: {title}",
+      "openSource": "Öppen källkod: {title}",
+      "closeActiveTalk": "Stäng aktivt föredrag",
+      "closeVideo": "Stäng video",
+      "playlist": "Spellista",
+      "playlistHint": "Välj ett annat föredrag utan att spela upp hela scenanimationen."
+    },
+    "items": {
+      "str8jacket": {
+        "name": "Webbplatsstyrelse / Ledare för mångfald, rättvisa och inkludering",
+        "org": "Str8jacket Dance Company",
+        "summary": "Ledde webbplatsutveckling och DEI-initiativ, skapade inkluderande processer och trygga miljöer för ett mångsidigt danscommunity.",
+        "smartlinkTitle": "Str8jacket Dance Company",
+        "smartlinkDescription": "Tävlingsteam i hiphop"
+      },
+      "hsnuAwb": {
+        "name": "Teknisk konsult",
+        "org": "HSNU Alumni Windband",
+        "summary": "Arkitekterade en modern webbplats med SEO-optimering, vilket avsevärt ökade synligheten och engagemanget online.",
+        "smartlinkTitle": "HSNU Alumni Windband",
+        "smartlinkDescription": "Officiell webbplats för 師大附中校友管樂團 HSNU Alumni Windband"
+      },
+      "orbis": {
+        "name": "Frivillig tolk",
+        "org": "ORBIS Flying Hospital",
+        "summary": "Underlättade kommunikation mellan internationella medicinska team och lokala donatorer under insamlingsinitiativ."
+      },
+      "armyFlood": {
+        "name": "Hjälparbete vid översvämning",
+        "org": "Taiwans armé",
+        "summary": "Koordinerade återställningsarbete efter katastrofer och hjälpte till att återställa samhällen som drabbats av svåra översvämningar."
+      },
+      "mannheimExchange": {
+        "name": "Utbytesstudent",
+        "org": "College of Commerce, Mannheim University, Tyskland",
+        "summary": "Slutförde internationellt affärsprogram, fick tvärkulturell erfarenhet och ett globalt perspektiv."
+      }
+    }
+  },
+  "education": {
+    "hero": {
+      "eyebrow": "Akademisk grund // Kontinuerligt lärande",
+      "title": "Utbildning &\nBakgrund",
+      "description": "Den akademiska grunden och lärandet som formade min syn på teknik, produkttänkande och att bygga saker som gör skillnad."
+    },
+    "fieldNotes": {
+      "label": "STUDIELOGG // ÖVERLEVDE MESTADELS",
+      "heading": "Lärandekurva &\nAkademiska grunder",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎓",
+          "title": "Akademiskt",
+          "items": [
+            "Starka grunder inom datavetenskap.",
+            "Forsknings- och teoribaserade metoder."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🔬",
+          "title": "Nyfikenhet",
+          "items": [
+            "Kontinuerligt självstyrt lärande.",
+            "Utforskar alltid nya teknologier."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🏫",
+          "title": "Undervisning",
+          "items": [
+            "Kunskapsdelning genom mentorskap.",
+            "Talar på tech-konferenser och workshops."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "💡",
+          "title": "Tillämpning",
+          "items": [
+            "Bryggar teori till praktik.",
+            "Löser verkliga tekniska problem."
+          ]
+        }
+      ]
+    },
+    "items": {
+      "nccu": {
+        "name": "National ChengChi University (NCCU)",
+        "location": "Taipei, Taiwan",
+        "college": "College of Commerce",
+        "degree": "Kandidatexamen i företagsekonomi",
+        "department": "Institutionen för Management Information Systems (MIS)"
+      },
+      "mannheim": {
+        "name": "Universität Mannheim",
+        "location": "Mannheim, Tyskland",
+        "college": "Business School",
+        "degree": "Utbytesprogram"
+      }
+    }
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Open Source // Utvecklarverktyg",
+      "title": "Open\nSource",
+      "description": "Från React-bibliotek till utvecklarverktyg — en samling projekt byggda för att lösa verkliga problem, delade öppet med communityt."
+    },
+    "fieldNotes": {
+      "label": "BYGGLOGG // OFFENTLIG REPO",
+      "heading": "Byggjournal &\nUtvecklar-\nverktyg",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🔧",
+          "title": "Open Source",
+          "items": [
+            "Aktiv bidragsgivare till open source.",
+            "Bygger verktyg som utvecklare älskar."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "⚡",
+          "title": "Prestanda",
+          "items": [
+            "Fokus på tillgänglighet och prestanda.",
+            "Community-driven utveckling."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📦",
+          "title": "Bibliotek",
+          "items": [
+            "Publicerade npm-paket för ekosystemet.",
+            "TypeScript-fokuserade, typsäkra API:er."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🤝",
+          "title": "Samarbete",
+          "items": [
+            "Öppen för bidrag och feedback.",
+            "Bygger lösningar tillsammans med communityt."
+          ]
+        }
+      ]
+    },
+    "sectionHeading": "Projekt & Bibliotek",
+    "github": "GitHub",
+    "npm": "npm",
+    "demo": "Livedemo",
+    "stars": "stjärnor",
+    "statusActive": "Aktiv",
+    "statusMaintained": "Underhålls",
+    "statusArchived": "Arkiverad",
+    "yearPresent": "Nuvarande",
+    "items": {
+      "reactInViewport": {
+        "name": "react-in-viewport",
+        "location": "Palo Alto, CA",
+        "description": "Ett React-bibliotek för att upptäcka om en komponent befinner sig i viewporten med hjälp av Intersection Observer API. Tillhandahåller ett hooks-gränssnitt för att detektera synlighet med utmärkt prestanda.",
+        "highlights": [
+          "350+ GitHub-stjärnor",
+          "46k+ nedladdningar i veckan",
+          "Används av Tinder och andra stora företag",
+          "TypeScript-stöd med inbyggda deklarationer"
+        ],
+        "githubTitle": "Visa på GitHub",
+        "githubDescription": "Källkod, dokumentation och exempel",
+        "demoTitle": "Livedemo",
+        "demoDescription": "Prova de interaktiva exemplen",
+        "npmTitle": "NPM-paket",
+        "npmDescription": "Installera via npm eller yarn"
+      },
+      "reactAspectRatio": {
+        "name": "react-aspect-ratio",
+        "location": "Palo Alto, CA",
+        "description": "En React-komponent för att reservera utrymme för ditt element och förhindra browser reflow (layoutskift). Hjälper till att bibehålla responsiva layouter och förbättrar Core Web Vitals genom att förhindra Cumulative Layout Shift.",
+        "highlights": [
+          "104+ GitHub-stjärnor",
+          "Förhindrar browser reflow och layoutskift",
+          "Förbättrar Core Web Vitals-poäng",
+          "TypeScript-stöd"
+        ],
+        "githubTitle": "Visa på GitHub",
+        "githubDescription": "Källkod och dokumentation",
+        "npmTitle": "NPM-paket",
+        "npmDescription": "Installera via npm or yarn"
+      },
+      "idleTracker": {
+        "name": "idle-tracker",
+        "location": "Palo Alto, CA",
+        "description": "Ett lättviktigt JavaScript-bibliotek för att spåra webbläsar-inaktivitet och användarens idle-tillstånd. Användbart för att implementera auto-utloggning, pausa animationer under inaktivitet eller spåra användarengagemang.",
+        "highlights": [
+          "21+ GitHub-stjärnor",
+          "Noll beroenden",
+          "Kompatibel med alla webbläsare",
+          "Lättviktig och effektiv"
+        ],
+        "githubTitle": "Visa på GitHub",
+        "githubDescription": "Källkod och exempel",
+        "npmTitle": "NPM-paket",
+        "npmDescription": "Installera via npm eller yarn"
+      },
+      "reactI13n": {
+        "name": "react-i13n",
+        "location": "Sunnyvale, CA",
+        "description": "Ett effektivt, skalbart och pluggbart tillvägagångssätt för att instrumentera din React-applikation. Tillhandahåller ett omfattande ramverk för att spåra användarinteraktioner och analys i React-appar.",
+        "highlights": [
+          "384+ GitHub-stjärnor",
+          "Yahoo open source-projekt",
+          "Huvudbidragsgivare och underhållare",
+          "Produktionsredo i stor skala"
+        ],
+        "githubTitle": "Visa på GitHub",
+        "githubDescription": "Yahoo open source-projekt - Huvudbidragsgivare",
+        "npmTitle": "NPM-paket",
+        "npmDescription": "Installera via npm eller yarn"
+      },
+      "subscribeUiEvent": {
+        "name": "subscribe-ui-event",
+        "location": "Sunnyvale, CA",
+        "description": "Tillhandahåller ett prestandaeffektivt sätt att prenumerera på UI-händelser i webbläsaren med brett stöd. Optimerar händelsehantering genom throttling och debouncing-tekniker.",
+        "highlights": [
+          "110+ GitHub-stjärnor",
+          "Yahoo open source-projekt",
+          "Huvudbidragsgivare och underhållare",
+          "Webbläsarkompatibilitet"
+        ],
+        "githubTitle": "Visa på GitHub",
+        "githubDescription": "Yahoo open source-projekt - Huvudbidragsgivare",
+        "npmTitle": "NPM-paket",
+        "npmDescription": "Installera via npm eller yarn"
+      }
+    }
+  },
+  "travel": {
+    "hero": {
+      "eyebrow": "Rumslig logg // Fältarkiv",
+      "title": "Rese-\nresa",
+      "description": "Resor öppnar våra sinnen för den otroliga mångfalden i mänsklig kultur, historia och traditioner. Varje resa erbjuder unika perspektiv och hjälper oss att uppskatta den rika vävnaden i vår sammanlänkade värld."
+    },
+    "fieldNotes": {
+      "label": "FLYG LOGG // FÖNSTERPLATS",
+      "heading": "Rutter, människor &\nKulturella anteckningar",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🌍",
+          "title": "Kulturell mångfald",
+          "items": [
+            "Upplev olika traditioner och seder.",
+            "Upptäck varierande kök och arkitektoniska stilar."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "Global förståelse",
+          "items": [
+            "Bygg broar mellan olika samhällen.",
+            "Lär dig om historiska sammanhang och moderna perspektiv."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "✨",
+          "title": "Personlig utveckling",
+          "items": [
+            "Utveckla anpassningsförmåga och problemlösningsförmåga.",
+            "Få självförtroende genom nya erfarenheter."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🗺️",
+          "title": "Minnesvärda äventyr",
+          "items": [
+            "Skapa bestående minnen över kontinenter.",
+            "Upptäck dolda pärlor och ikoniska landmärken."
+          ]
+        }
+      ]
+    },
+    "archiveExtract": "ARKIVUTDRAG // RUMSLIGA LOGGAR",
+    "dismissRecord": "AVFÄRDA POST",
+    "nationalParks": "Nationalparker",
+    "continentAsia": "Asien",
+    "continentEurope": "Europa",
+    "continentNorthAmerica": "Nordamerika",
+    "continentSouthAmerica": "Sydamerika",
+    "continentOceania": "Oceanien",
+    "continentAfrica": "Afrika",
+    "filterAll": "Alla",
+    "parkLabels": {
+      "yosemite": "Yosemite",
+      "yellowstone": "Yellowstone",
+      "grandCanyon": "Grand Canyon",
+      "joshuaTree": "Joshua Tree",
+      "redwood": "Redwood",
+      "olympic": "Olympic",
+      "deathValley": "Death Valley",
+      "taroko": "Taroko",
+      "yangmingshan": "Yangmingshan",
+      "kenting": "Kenting"
+    },
+    "metroUnits": "METRO • ENHETER",
+    "departure": "AVRESA",
+    "arrival": "ANKOMST",
+    "explored": "UTFORSKAT",
+    "exploring": "UTFORSKAR",
+    "stampAriaLabel": "{name} — {count} städer",
+    "statsHeading": "Arkiv-\nsammanfattning",
+    "metricsLabel": "Konsoliderad_statistik_{year}",
+    "territories": "Territorier",
+    "logged": "Loggat",
+    "metroCenters": "Metropoler",
+    "units": "Enheter",
+    "spheres": "Sfärer",
+    "continents": "Kontinenter",
+    "residency": "Bosättning",
+    "base": "Bas",
+    "statusBORN": "FÖDD",
+    "statusHOME": "HEM",
+    "statusSTUDY": "STUDIER",
+    "statusTRAVEL": "RESA",
+    "cityNames": {
+      "Bay Area": "Bay Area",
+      "Los Angeles": "Los Angeles",
+      "San Diego": "San Diego",
+      "Seattle": "Seattle",
+      "Portland": "Portland",
+      "Las Vegas": "Las Vegas",
+      "New York": "New York",
+      "Chicago": "Chicago",
+      "Austin": "Austin",
+      "Miami": "Miami",
+      "Bozeman": "Bozeman",
+      "Vancouver": "Vancouver",
+      "Niagara Falls": "Niagarafallen",
+      "Los Cabos": "Los Cabos",
+      "Tulum": "Tulum",
+      "George Town": "George Town",
+      "Paris": "Paris",
+      "Lyon": "Lyon",
+      "Marseille": "Marseille",
+      "Nice": "Nice",
+      "Chamonix": "Chamonix",
+      "Nantes": "Nantes",
+      "Rennes": "Rennes",
+      "Quiberon": "Quiberon",
+      "Strasbourg": "Strasbourg",
+      "Bath": "Bath",
+      "London": "London",
+      "Oxford": "Oxford",
+      "Cambridge": "Cambridge",
+      "Mannheim": "Mannheim",
+      "Frankfurt": "Frankfurt",
+      "Cologne": "Köln",
+      "Berlin": "Berlin",
+      "Hamburg": "Hamburg",
+      "Heidelberg": "Heidelberg",
+      "Munich": "München",
+      "Leipzig": "Leipzig",
+      "Dresden": "Dresden",
+      "Konstanz": "Konstanz",
+      "Stuttgart": "Stuttgart",
+      "Vienna": "Wien",
+      "Garz": "Garz",
+      "Brussels": "Bryssel",
+      "Ghent": "Gent",
+      "Prague": "Prag",
+      "Brno": "Brno",
+      "Amsterdam": "Amsterdam",
+      "Rotterdam": "Rotterdam",
+      "Athens": "Aten",
+      "Mykonos": "Mykonos",
+      "Santorini": "Santorini",
+      "Crete": "Kreta",
+      "Naxos": "Naxos",
+      "Budapest": "Budapest",
+      "Milan": "Milano",
+      "Rome": "Rom",
+      "Venice": "Venedig",
+      "Florence": "Florens",
+      "Madrid": "Madrid",
+      "Barcelona": "Barcelona",
+      "Segovia": "Segovia",
+      "Seville": "Sevilla",
+      "Lisboa": "Lissabon",
+      "Porto": "Porto",
+      "Wrocław": "Wrocław",
+      "Kraków": "Kraków",
+      "Bern": "Bern",
+      "Zürich": "Zürich",
+      "Interlaken": "Interlaken",
+      "Grindelwald": "Grindelwald",
+      "Ljubljana": "Ljubljana",
+      "Bled Lake Area": "Bledsjö-området",
+      "Postojna Cave": "Postojnagrottan",
+      "Zagreb": "Zagreb",
+      "Plitvice Lakes National Park": "Plitvice sjöars nationalpark",
+      "Dubrovnik": "Dubrovnik",
+      "Helsinki": "Helsingfors",
+      "Rovaniemi": "Rovaniemi",
+      "Istanbul": "Istanbul",
+      "İzmir": "İzmir",
+      "Ephesus": "Efesos",
+      "Selçuk": "Selçuk",
+      "Cappadocia": "Kappadokien",
+      "Vatican": "Vatikanstaten",
+      "Tokyo": "Tokyo",
+      "Osaka": "Osaka",
+      "Kyoto": "Kyoto",
+      "Hamamatsu": "Hamamatsu",
+      "Okinawa": "Okinawa",
+      "Beijing": "Peking",
+      "Hong Kong": "Hongkong",
+      "Singapore": "Singapore",
+      "Taipei": "Taipei",
+      "New Taipei": "Nya Taipei",
+      "Taoyuan": "Taoyuan",
+      "Hsinchu": "Hsinchu",
+      "Miaoli": "Miaoli",
+      "Taichung": "Taichung",
+      "Nantou": "Nantou",
+      "Changhua": "Changhua",
+      "Yunlin": "Yunlin",
+      "Chiayi": "Chiayi",
+      "Tainan": "Tainan",
+      "Kaohsiung": "Kaohsiung",
+      "Pingtung": "Pingtung",
+      "Keelung": "Keelung",
+      "Yilan": "Yilan",
+      "Hualien": "Hualien",
+      "Taitung": "Taitung",
+      "Bangkok": "Bangkok",
+      "Phuket": "Phuket",
+      "Ko Samui": "Ko Samui",
+      "Manila": "Manila",
+      "Boracay": "Boracay",
+      "Siem Reap": "Siem Reap",
+      "Yangon": "Yangon",
+      "Bago": "Bago",
+      "Bengaluru": "Bengaluru",
+      "Jerusalem": "Jerusalem",
+      "Tel Aviv": "Tel Aviv",
+      "Jerash": "Jerash",
+      "Amman": "Amman",
+      "Dead Sea": "Döda havet",
+      "Dana Biosphere Reserve": "Dana biosfärområde",
+      "Petra": "Petra",
+      "Aqaba": "Aqaba",
+      "Jeju": "Jeju",
+      "Malé": "Malé",
+      "Jeddah": "Jeddah",
+      "Brisbane": "Brisbane",
+      "Cairns": "Cairns",
+      "Gold Coast": "Gold Coast",
+      "Adelaide": "Adelaide",
+      "Esperance": "Esperance",
+      "Perth": "Perth",
+      "Christchurch": "Christchurch",
+      "Lake Tekapo": "Tekaposjön",
+      "Wanaka": "Wanaka",
+      "Queenstown": "Queenstown",
+      "Invercargill": "Invercargill",
+      "Dunedin": "Dunedin",
+      "Oamaru": "Oamaru",
+      "Timaru": "Timaru",
+      "Picton": "Picton",
+      "Wellington": "Wellington",
+      "Taopo": "Taopo",
+      "Waitomo": "Waitomo",
+      "Auckland": "Auckland",
+      "Kerikeri": "Kerikeri",
+      "Paihia": "Paihia",
+      "Palau": "Palau"
+    },
+    "searchPlaceholder": "Sök länder…",
+    "searchAriaLabel": "Sök länder"
+  },
+  "nav": {
+    "brandSubtitle": "Frontend-arkitekt",
+    "about": "Om",
+    "activity": "Aktivitet",
+    "projects": "Projekt",
+    "travel": "Resor",
+    "education": "Utbildning"
+  },
+  "profile": {
+    "name": "Roderick Hsiao",
+    "title": "Produktutvecklingskonsult",
+    "location": "San Francisco Bay Area | Internet",
+    "brief": "Produktutvecklingskonsult specialiserad på frontend-infrastruktur och designsystem. Open source-förespråkare med omfattande erfarenhet av storskaliga applikationer och teammentorskap i både startup- och enterprisemiljöer.",
+    "expertiseHeading": "Expertis",
+    "skills": [
+      "Designsystem",
+      "Progressive Web Apps",
+      "Frontend-infrastruktur",
+      "Webbtillgänglighet",
+      "Internationalisering",
+      "Teammentorskap",
+      "Föreläsare"
+    ],
+    "languages": [
+      {
+        "flag": "🇺🇸",
+        "countryCode": "us",
+        "label": "Engelska"
+      },
+      {
+        "flag": "🇹🇼",
+        "countryCode": "tw",
+        "label": "Mandarin"
+      }
+    ],
+    "interests": [
+      "Open Web-förespråkare",
+      "Housedansare",
+      "Musikälskare",
+      "Djurvän",
+      "Kaffeentusiast"
+    ]
+  },
+  "experience": {
+    "sectionTitle": "Professionell erfarenhet & Branschpåverkan",
+    "sectionDescription": "Decennier inom produktutveckling med omfattande erfarenhet från startups till Fortune 500-företag. Specialiserad på frontend-arkitektur, teamledarskap och utveckling av storskaliga applikationer.",
+    "experiencesHeading": "Erfarenheter",
+    "present": "Nuvarande",
+    "featuredTalksDemos": "Utvalda föreläsningar & demon",
+    "summaryItems": [
+      {
+        "title": "Branscherfarenhet",
+        "items": [
+          "Decennier inom produktutveckling.",
+          "Erfarenhet från startups till Fortune 500-företag."
+        ]
+      },
+      {
+        "title": "Tekniskt ledarskap",
+        "items": [
+          "Frontend-arkitektur och infrastruktur.",
+          "Teammentorskap och teknisk vägledning."
+        ]
+      },
+      {
+        "title": "Inverkan & Skala",
+        "items": [
+          "Storskaliga applikationer som betjänar miljontals användare.",
+          "Designsystem och utvecklarverktyg."
+        ]
+      },
+      {
+        "title": "Community & Föreläsningar",
+        "items": [
+          "Internationell konferenstalare.",
+          "Open source-bidragsgivare och förespråkare."
+        ]
+      }
+    ],
+    "companies": {
+      "kindred": {
+        "title": "Grundande ingenjör",
+        "location": "Remote",
+        "displayName": "Kindred",
+        "summary": "En av de första ingenjörerna — ansvarade för frontend-arkitektur och kärnproduktutveckling i företagets tidiga skede.",
+        "projects": {
+          "main": {
+            "name": "Kindred",
+            "summary": "Byggde hela frontend-arkitekturen från grunden, levererade kärnproduktfunktioner, etablerade ingenjörsstandarder och integrerade AI-verktyg i utvecklingsflödet.",
+            "smartlinkTitle": "Kindred",
+            "smartlinkDescription": "Gå med i vårt community för hembyte endast för medlemmar och lås upp resor för en bråkdel av kostnaden för traditionella semesterboenden."
+          }
+        }
+      },
+      "tinder": {
+        "title": "Principal Software Engineer",
+        "location": "Palo Alto, CA",
+        "displayName": "Tinder",
+        "summary": "Huvudingenjör för tinder.com — ledde webbplattformens tekniska arkitektur som betjänar tiotals miljoner dagliga aktiva användare världen över.",
+        "projects": {
+          "tinderOnline": {
+            "name": "Tinder Online",
+            "summary": "Ledde teknisk arkitektur och utveckling av Tinders flaggskepps-webbplattform på tinder.com. Arkitekterade skalbara frontend-lösningar som betjänar miljontals dagliga aktiva användare världen över.",
+            "smartlinkTitle": "Tinder",
+            "smartlinkDescription": "Med 55 miljarder matchningar hittills är Tinder® världens mest populära dejtingapp, vilket gör den till platsen för att träffa nya människor.",
+            "demoTitles": [
+              "Production Progressive Web Apps With JavaScript Frameworks (Google I/O 2017)",
+              "Fast By Default: Modern Loading Best Practices (Chrome Dev Summit 2017)",
+              "Adaptive Loading - Improving web performance on slow devices (Chrome Dev Summit 2019)",
+              "PWA patterns for window and service worker communication (Chrome Dev Summit 2020)",
+              "SMS OTP form best practices (Chrome Dev Summit 2020)"
+            ]
+          },
+          "swipeLife": {
+            "name": "Tinder Swipe Life",
+            "summary": "Utvecklade och lanserade Tinders livsstilsmagasins-plattform, vilket skapade engagerande innehållsupplevelser för dejtingcommunityt."
+          }
+        }
+      },
+      "selfEmployed": {
+        "title": "Produktutvecklingskonsult",
+        "location": "San Francisco, CA",
+        "displayName": "Egenanställd",
+        "summary": "Konsult inom produktutveckling specialiserad på AI-adoption, design av frontend-arkitektur, team- och individuellt mentorskap, PWA- och prestandaoptimering samt karriärcoaching.",
+        "projects": {
+          "alt": {
+            "name": "Alt Platform",
+            "summary": "Mentor inom frontend och webbutveckling — best practices, verktyg och karriärriktning. Byggde en roadmap för prestandaförbättring och en strategi för SEO-förbättring. Arkitekterade instrumenteringslagret och drev kodmodularisering över hela plattformen.",
+            "smartlinkTitle": "Alt",
+            "smartlinkDescription": "Det är dags att investera i det du älskar. ALT ger dig tillgång till nytta och likviditet som aldrig förr."
+          },
+          "forethought": {
+            "name": "Forethought (förvärvat av Zendesk 2026)",
+            "summary": "Ledde företagets rebrand-projekt inklusive en fullständig översyn av CSS-systemet. Arkitekterade persistent tillståndshantering för webb-widgeten. Levererade prestandaförbättringar över hela plattformen. Tillhandahöll löpande tekniskt mentorskap till ingenjörsteamet.",
+            "smartlinkTitle": "Forethought",
+            "smartlinkDescription": "Förbättra din kundupplevelse genom att använda AI."
+          },
+          "publicSpeaker": {
+            "name": "Föreläsare",
+            "summary": "Höll tekniska presentationer om Progressive Web Applications, webbprestandaoptimering och storskalig webbapplikationsarkitektur vid internationella konferenser och branschevenemang.",
+            "demoTitles": [
+              "React Norway 2021 | Progressively Enhance Your Web Application",
+              "JSCAMP 2021 | Building Large-Scale Web Apps",
+              "Accento 2020 | Progressively Enhance Your Web Application",
+              "Geekle 2020 | Building Large Scale Web App"
+            ]
+          }
+        }
+      },
+      "branch": {
+        "title": "Software Engineer",
+        "location": "Palo Alto, CA",
+        "displayName": "Branch",
+        "summary": "Byggde frontend-infrastruktur och ingenjörspraxis för Branchs plattform för djuplänkning.",
+        "projects": {
+          "dashboard": {
+            "name": "Branch Dashboard och lösningar",
+            "summary": "Arkitekterade frontend-infrastruktur, etablerade ingenjörs-best-practices och implementerade webbprestandaoptimeringar för djuplänkningsplattformen.",
+            "smartlinkTitle": "Branch",
+            "smartlinkDescription": "Nummer 1 inom djuplänkning. Integrera robusta, hållbara länkar i e-post, SEM, annonser och andra traditionella marknadsföringskanaler för förbättrad apptillväxt."
+          }
+        }
+      },
+      "yahooSenior": {
+        "title": "Senior Software Engineer",
+        "location": "Sunnyvale, CA",
+        "displayName": "Yahoo",
+        "summary": "Över sex år på Yahoo inom flera produktlinjer — mobil startsida, väder, news digest, kvalitetssäkring och en av världens mest besökta single-page-applikationer.",
+        "projects": {
+          "homepage": {
+            "name": "Startsida",
+            "summary": "Utvecklade en av världens mest besökta single-page-applikationer, som betjänar miljontals användare på stationära datorer, surfplattor och mobila plattformar. Utvecklade återanvändbara UI-komponenter, verktyg och Node.js-bibliotek.",
+            "smartlinkTitle": "Yahoo",
+            "smartlinkDescription": "Ett nytt välkomnande till Yahoo. Den nya Yahoo-upplevelsen gör det enklare att upptäcka nyheterna och informationen du bryr dig mest om."
+          },
+          "weather": {
+            "name": "Väder",
+            "summary": "Förbättrade Yahoo Weather-plattformen med isomorf React-arkitektur, vilket gav sömlösa användarupplevelser på alla enheter.",
+            "smartlinkTitle": "Yahoo Väder",
+            "smartlinkDescription": "Förbered dig för dagen med de mest exakta timvis, 5-dagars och 10-dagars prognoserna. Fantastiska Flickr-foton matchar din plats, tid på dygnet och aktuella förhållanden."
+          },
+          "newsDigest": {
+            "name": "News Digest",
+            "summary": "Utvecklade webbplattformen för Yahoo News Digest, vilket möjliggjorde förbättrad SEO-prestanda och djuplänkningsfunktioner för den populära mobilappens innehåll.",
+            "smartlinkTitle": "Yahoo News Digest",
+            "smartlinkDescription": "Yahoo News Digest ger en definitiv sammanfattning av alla viktiga nyheter du behöver känna till. Sammanfattningar levereras två gånger om dagen."
+          },
+          "mobileHomepage": {
+            "name": "Mobil startsida",
+            "summary": "Ledde innovativ arkitektur för single-page-applikationer för Yahoos mobila startsida, med fokus på användarupplevda prestandaförbättringar och mobiloptimering."
+          }
+        }
+      },
+      "yahooLead": {
+        "title": "Engineering Team Lead",
+        "location": "Taipei, Taiwan",
+        "displayName": "Yahoo",
+        "summary": "Ledde APAC-teamet för mobila produkter i Taipei.",
+        "projects": {
+          "apacMobile": {
+            "name": "APAC Mobil startsida (Taiwan och Hongkong)",
+            "summary": "Ledde ett tvärfunktionellt team med 5 utvecklare för att arkitektera och leverera omfattande innehållsupplevelser för marknader i Asien och Stillahavsområdet.",
+            "smartlinkTitle": "Yahoo行動版",
+            "smartlinkDescription": "Tillhandahåller den bekvämaste webbplatssökningen, realtidsnyheter, livsstilsinformation och ingång till Yahoo-tjänster."
+          }
+        }
+      },
+      "yahooQe": {
+        "title": "Quality Engineering Lead / Software Engineer",
+        "location": "Taipei, Taiwan",
+        "displayName": "Yahoo",
+        "summary": "Ledare för kvalitetssäkring över valplattformen och den globala nyhetsinfrastrukturen.",
+        "projects": {
+          "controlRoom": {
+            "name": "Presidentvalet 2012 - Control Room",
+            "summary": "Arkitekterade och utvecklade Control Room, en omfattande surfplatte-applikation som gav valbevakning i realtid med kurerat innehåll och originalrapportering från ledande nyhetskällor.",
+            "smartlinkTitle": "Yahoos presidentvalsbevakning 2012",
+            "smartlinkDescription": "Yahoos Control Room har livestreamad video, bevakning och kartor över alla val, samt resultat för presidentvalet ner till grevskapsnivå."
+          },
+          "hashout": {
+            "name": "Presidentvalet 2012 - #Hashout",
+            "summary": "Utvecklade #Hashout, en innovativ plattform för online-talkshows designad för att engagera olika perspektiv och underlätta meningsfulla politiska samtal under valcykeln.",
+            "smartlinkTitle": "Yahoos presidentvalsbevakning 2012 - #Hashout",
+            "smartlinkDescription": "Online-talkshow för Yahoos presidentvalsbevakning 2012."
+          },
+          "globalNews": {
+            "name": "Globala nyheter",
+            "summary": "Arkitekterade en enhetlig plattform som betjänar alla Yahoo-tjänster globalt. Ledde teststrategi för frontend, ramverksutveckling och infrastruktur för testautomatisering.",
+            "smartlinkTitle": "Yahoo Nyheter",
+            "smartlinkDescription": "Bläddra bland de senaste nyheterna på Yahoo Nyheter."
+          }
+        }
+      },
+      "army": {
+        "title": "Projektledare\n/Ingenjörsledare",
+        "location": "Taiwan",
+        "displayName": "Taiwans armé",
+        "summary": "Obligatorisk militärtjänst — designade och utvecklade webbaserade träningssimulatorer för militär utbildning och ledde ett team med 6 ingenjörer.",
+        "projects": {
+          "equipmentSimulator": {
+            "name": "Utrustningssimulator",
+            "summary": "Designade och utvecklade två webbaserade träningsapplikationer för militära utbildningsändamål. Ledde och coachade ett team på 6 personer i att bygga pedagogiska simuleringslösningar."
+          }
+        }
+      }
+    }
+  },
+  "pageMeta": {
+    "siteName": "Roderick Hsiao",
+    "authorName": "Roderick Hsiao",
+    "home": {
+      "title": "Roderick Hsiao - Mjukvaruarkitekt & Communityledare",
+      "description": "Personlig webbplats för Roderick Hsiao — frontend-arkitekt, communityledare och förespråkare för den öppna webben med decennier av branschpåverkan.",
+      "ogTitle": "Roderick Hsiao - Mjukvaruarkitekt & Communityledare",
+      "ogDescription": "Personlig webbplats för Roderick Hsiao - Mjukvaruarkitekt, communityledare och teknikentusiast.",
+      "ogAlt": "Roderick Hsiao - Mjukvaruarkitekt & Communityledare",
+      "keywords": [
+        "Roderick Hsiao",
+        "Mjukvaruarkitekt",
+        "Communityledare",
+        "Frontend",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Erfarenhet"
+      ]
+    },
+    "activity": {
+      "title": "Aktiviteter & Föreläsningar - Roderick Hsiao",
+      "description": "Utforska mina föreläsningsuppdrag, konferenstal, workshops och communityaktiviteter. Lär dig om mina bidrag till tech-communityt.",
+      "ogTitle": "Aktiviteter & Föreläsningar - Roderick Hsiao",
+      "ogDescription": "Utforska mina föreläsningsuppdrag, konferenstal, workshops och communityaktiviteter.",
+      "ogAlt": "Aktiviteter & Föreläsningar - Roderick Hsiao",
+      "ogImageTitle": "Aktiviteter & Föreläsningar",
+      "ogImageSubtitle": "Konferenstal & Community",
+      "ogImageDescription": "Delar kunskap och bygger tech-communities",
+      "keywords": [
+        "Roderick Hsiao",
+        "Föreläsningar",
+        "Konferenser",
+        "Tech Talks",
+        "Workshops",
+        "Community",
+        "Aktiviteter"
+      ]
+    },
+    "projects": {
+      "title": "Projekt - Roderick Hsiao",
+      "description": "Utforska mina open source-projekt, personliga verktyg och bidrag till utvecklarcommunityt. Från React-bibliotek till utvecklarverktyg.",
+      "keywords": [
+        "Roderick Hsiao",
+        "Projekt",
+        "Open Source",
+        "GitHub",
+        "React",
+        "TypeScript",
+        "Utvecklarverktyg",
+        "Bibliotek"
+      ]
+    },
+    "education": {
+      "title": "Utbildning & Bakgrund - Roderick Hsiao",
+      "description": "Lär dig om min utbildningsbakgrund, akademiska meriter och grunden som formade min karriär inom teknik och produktutveckling.",
+      "ogTitle": "Utbildning & Bakgrund - Roderick Hsiao",
+      "ogDescription": "Lär dig om min utbildningsbakgrund och grunden som formade min karriär.",
+      "ogAlt": "Utbildning & Bakgrund - Roderick Hsiao",
+      "ogImageTitle": "Utbildning & Bakgrund",
+      "ogImageSubtitle": "Akademisk grund",
+      "ogImageDescription": "Bygger grunden för en karriär inom teknik",
+      "keywords": [
+        "Roderick Hsiao",
+        "Utbildning",
+        "Bakgrund",
+        "Akademiskt",
+        "Universitet",
+        "Lärande",
+        "Karriärgrund"
+      ]
+    },
+    "travel": {
+      "title": "Reseäventyr - Roderick Hsiao",
+      "description": "Följ mina reseäventyr runt om i världen. Upptäck platserna jag besökt, upplevelser jag haft och inspirationen jag hämtar från olika kulturer.",
+      "ogTitle": "Reseäventyr - Roderick Hsiao",
+      "ogDescription": "Följ mina reseäventyr runt om i världen och upptäck olika kulturer.",
+      "ogAlt": "Reseäventyr - Roderick Hsiao",
+      "ogImageTitle": "Reseäventyr",
+      "ogImageSubtitle": "Utforskar världen",
+      "ogImageDescription": "Upptäcker kulturer och hämtar inspiration från globala upplevelser",
+      "keywords": [
+        "Roderick Hsiao",
+        "Resor",
+        "Äventyr",
+        "Världsresor",
+        "Kultur",
+        "Utforskning",
+        "Fotografi"
+      ]
+    }
+  }
+}

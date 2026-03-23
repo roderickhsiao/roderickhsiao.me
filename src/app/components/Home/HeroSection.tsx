@@ -64,7 +64,7 @@ export default function HeroSection() {
             sizes="(max-width: 640px) 64px, 80px"
           />
         </div>
-        <Tag className="bg-accent/8 text-accent border border-accent/15">
+        <Tag className="bg-accent/8 text-accent border border-accent/15 wrap-anywhere hyphens-auto max-w-[min(100%,20rem)]">
           {tProfile('title')}
         </Tag>
       </div>

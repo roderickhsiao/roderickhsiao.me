@@ -38,6 +38,7 @@ function TalkCard({
   onOpen: (talkId: string) => void;
   showSourceSnapshot: (talkId: string) => boolean;
 }) {
+  const t = useTranslations('activity.ui');
   const hasVideo = !!talk.embedUrl;
   const isYouTubeSource = /youtube\.com|youtu\.be/i.test(talk.sourceUrl)
     || /watch on youtube/i.test(talk.sourceLabel);
@@ -56,9 +57,9 @@ function TalkCard({
         <button
           type="button"
           onClick={() => onOpen(talk.id)}
-          className="group flex h-full w-full flex-col gap-3 rounded-[26px] p-2.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+          className="group flex h-full w-full flex-col gap-3 rounded-[26px] p-2.5 text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
           aria-expanded={isActive}
-          aria-label={`Play video: ${talk.title}`}
+          aria-label={t('playVideo', { title: talk.title })}
         >
           <div
             className="relative aspect-video overflow-hidden rounded-[18px] bg-surface-muted/70"
@@ -72,7 +73,7 @@ function TalkCard({
               sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
               aria-hidden
             />
-            <span className="pointer-events-none absolute right-2.5 top-2.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-footer-bg/48 text-ink-inverted/86 backdrop-blur-sm">
+            <span className="pointer-events-none absolute inline-end-2.5 top-2.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-footer-bg/48 text-ink-inverted/86 backdrop-blur-sm">
               <svg className="h-2.5 w-2.5 translate-x-px" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
                 <path d="M8 5v14l11-7z" />
               </svg>
@@ -100,8 +101,8 @@ function TalkCard({
           href={talk.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex h-full w-full flex-col gap-3 rounded-[26px] p-2.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
-          aria-label={`Open source: ${talk.title}`}
+          className="group flex h-full w-full flex-col gap-3 rounded-[26px] p-2.5 text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+          aria-label={t('openSource', { title: talk.title })}
         >
           <div className="relative aspect-video overflow-hidden rounded-[18px] bg-surface-muted/70">
             <Image
@@ -141,7 +142,7 @@ function PlaylistItem({
       type="button"
       onClick={() => onSelect(talk.id)}
       className={clsx(
-        'group flex w-full items-start gap-3 rounded-2xl border px-2.5 py-2.5 text-left transition-colors',
+        'group flex w-full items-start gap-3 rounded-2xl border px-2.5 py-2.5 text-start transition-colors',
         isActive
           ? 'border-accent/40 bg-accent/14 shadow-[0_8px_22px_-16px_rgba(230,126,34,0.85)]'
           : 'border-ink-inverted/10 bg-transparent hover:border-ink-inverted/18 hover:bg-ink-inverted/7'
@@ -164,7 +165,7 @@ function PlaylistItem({
         />
         <span className="pointer-events-none absolute inset-0 bg-linear-to-t from-footer-bg/44 via-transparent to-transparent" />
         {isActive && (
-          <span className="pointer-events-none absolute bottom-1.5 left-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full border border-accent/40 bg-footer-bg/74 text-accent">
+          <span className="pointer-events-none absolute bottom-1.5 inset-s-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full border border-accent/40 bg-footer-bg/74 text-accent">
             <svg className="h-2.5 w-2.5 translate-x-px" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
               <path d="M8 5v14l11-7z" />
             </svg>
@@ -184,7 +185,7 @@ function PlaylistItem({
         </span>
       </span>
 
-      <span className="ml-auto mt-1.5 text-ink-inverted/30 transition-colors group-hover:text-ink-inverted/58" aria-hidden>
+      <span className="ms-auto mt-1.5 text-ink-inverted/30 transition-colors group-hover:text-ink-inverted/58" aria-hidden>
         <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8">
           <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
@@ -210,19 +211,19 @@ function TalkStage({
   onSelect: (talkId: string) => void;
   onVideoReady: () => void;
 }) {
-  const isYouTubeSource = /youtube\.com|youtu\.be/i.test(talk.sourceUrl)
-    || /watch on youtube/i.test(talk.sourceLabel);
+  const t = useTranslations('activity.ui');
+  const isYouTubeSource = /youtube\.com|youtu\.be/i.test(talk.sourceUrl);
 
   return (
     <>
       <div className="fixed inset-0 z-30 pointer-events-none overflow-hidden" aria-hidden>
-        <div className="absolute -left-24 top-[6%] h-72 w-72 rounded-full bg-accent/14 blur-3xl motion-safe:animate-soft-float" />
-        <div className="absolute -right-20 bottom-[8%] h-72 w-72 rounded-full bg-sky/16 blur-3xl motion-safe:animate-soft-float [animation-delay:1.3s]" />
+        <div className="absolute start-0 top-0 h-72 w-72 -translate-x-1/3 translate-y-8 rounded-full bg-accent/14 blur-3xl motion-safe:animate-soft-float" />
+        <div className="absolute end-0 bottom-0 h-72 w-72 translate-x-1/4 -translate-y-8 rounded-full bg-sky/16 blur-3xl motion-safe:animate-soft-float [animation-delay:1.3s]" />
       </div>
 
       <button
         type="button"
-        aria-label="Close active talk"
+        aria-label={t('closeActiveTalk')}
         onClick={onClose}
         className="fixed inset-0 z-30 bg-footer-bg/72 backdrop-blur-md transition-opacity duration-300"
       />
@@ -252,17 +253,13 @@ function TalkStage({
               >
                 {talk.title}
               </h3>
-              <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-ink-inverted/15 bg-ink-inverted/7 px-3 py-1 type-label text-ink-inverted/72">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
-                Now screening
-              </p>
             </div>
 
             <button
               type="button"
               onClick={onClose}
               className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-ink-inverted/16 bg-ink-inverted/8 text-ink-inverted transition-colors hover:bg-ink-inverted/16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-inverted/35"
-              aria-label="Close video"
+              aria-label={t('closeVideo')}
             >
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                 <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
@@ -271,7 +268,7 @@ function TalkStage({
           </div>
 
           <div className="grid grid-cols-1 lg:min-h-0 lg:flex-1 lg:grid-cols-[minmax(0,1fr)_34rem] xl:grid-cols-[minmax(0,1fr)_38rem]">
-            <div className="flex flex-col border-b border-ink-inverted/10 lg:min-h-0 lg:border-b-0 lg:border-r lg:border-ink-inverted/10">
+            <div className="flex flex-col border-b border-ink-inverted/10 lg:min-h-0 lg:border-b-0 lg:border-e lg:border-ink-inverted/10">
               <div key={`stage-media-${talk.id}`} className="motion-safe:animate-talk-stage-fade px-4 pt-4 sm:px-6 sm:pt-6">
                 {talk.embedUrl ? (
                   <div
@@ -328,9 +325,9 @@ function TalkStage({
 
             <aside className="flex min-h-0 flex-col bg-ink-inverted/4">
               <div className="border-b border-ink-inverted/10 px-4 py-4 sm:px-5 sm:py-5">
-                <p className="type-label-wide text-ink-inverted/45">Playlist</p>
+                <p className="type-label-wide text-ink-inverted/45">{t('playlist')}</p>
                 <p className="type-caption mt-2 text-ink-inverted/70">
-                  Select another talk without replaying the full stage morph.
+                  {t('playlistHint')}
                 </p>
               </div>
 

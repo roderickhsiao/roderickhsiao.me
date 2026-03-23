@@ -160,6 +160,14 @@
     },
     "speaking": "演講",
     "community": "社群",
+    "ui": {
+      "playVideo": "播放影片：{title}",
+      "openSource": "開源：{title}",
+      "closeActiveTalk": "關閉進行中的演講",
+      "closeVideo": "關閉影片",
+      "playlist": "播放清單",
+      "playlistHint": "選擇另一場演講，無需重播完整的舞台動畫。"
+    },
     "items": {
       "str8jacket": {
         "name": "網站委員 / DEI 負責人",

@@ -228,7 +228,7 @@ function JobCard({
         )}>
           <div className="space-y-4">
             <h3
-              className="text-ink"
+              className="text-ink hyphens-auto wrap-anywhere"
               style={{
                 fontFamily: 'var(--font-sans)',
                 fontWeight: 900,

@@ -178,7 +178,7 @@ export default function Travel() {
               type="text"
               placeholder={t('searchPlaceholder')}
               aria-label={t('searchAriaLabel')}
-              className="w-full pl-7 py-3 bg-transparent border-b-2 border-ink/10 focus:border-ink transition-all type-label placeholder:text-ink/40 focus:outline-none text-ink"
+              className="w-full ps-7 py-3 bg-transparent border-b-2 border-ink/10 focus:border-ink transition-all type-label placeholder:text-ink/40 focus:outline-none text-ink"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />

@@ -1,0 +1,837 @@
+{
+  "home": {
+    "hero": {
+      "eyebrow": "Product Engineering // Frontend Architectuur",
+      "titleLine1": "Roderick",
+      "titleLine2": "Hsiao",
+      "description": "Product engineering consultant gespecialiseerd in frontend-infrastructuur, design systems en de ontwikkeling van grootschalige applicaties voor wereldwijde startups en Fortune 500-bedrijven."
+    },
+    "fieldNotes": {
+      "label": "CARRIÈRELOGBOEK // NOG STEEDS AAN HET SHIPPING",
+      "heading": "Carrière &\nHoogtepunten",
+      "items": [
+        {
+          "num": "01",
+          "icon": "💼",
+          "title": "Ervaring",
+          "items": [
+            "Decennia in product engineering.",
+            "Van startups tot de Fortune 500."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🚀",
+          "title": "Leiderschap",
+          "items": [
+            "Frontend infra & design systems.",
+            "Technische mentoring van teams."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📈",
+          "title": "Impact",
+          "items": [
+            "Bedient miljoenen gebruikers.",
+            "Architectuur voor extreme schaalbaarheid."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "📣",
+          "title": "Community",
+          "items": [
+            "Internationaal tech-spreker.",
+            "Open web & OSS pleitbezorger."
+          ]
+        }
+      ]
+    }
+  },
+  "chronicle": {
+    "heading": "De Kroniek",
+    "section": "SECTIE {index}",
+    "talksHeading": "Talks & Demo's",
+    "collapse": "inklappen",
+    "details": "details",
+    "collapseAriaLabel": "Projectdetails sluiten",
+    "expandAriaLabel": "Projectdetails openen"
+  },
+  "contact": {
+    "heading": "Contact opnemen",
+    "subheading": "Ik praat graag over AI/web-ideeën, projecten of samenwerkingsmogelijkheden.",
+    "namePlaceholder": "Je naam",
+    "emailPlaceholder": "E-mailadres",
+    "subjectPlaceholder": "Onderwerp",
+    "messagePlaceholder": "Vertel me over je project of wat je zou willen bespreken...",
+    "submit": "Bericht verzenden",
+    "submitting": "Verzenden…",
+    "success": "Bericht verzonden — ik neem snel contact met je op.",
+    "error": "Er is iets misgegaan. {error}",
+    "cardWelcome": "Hoi! 👋 Bedankt voor je bezoek! Stuur me een bericht om te kletsen over <highlight1>AI/web-ideeën</highlight1>, toffe projecten of zelfs <highlight2>house music</highlight2>.",
+    "messageButton": "Bericht",
+    "bookButton": "Boeken",
+    "closeAriaLabel": "Sluiten"
+  },
+  "footer": {
+    "messageButton": "Bericht",
+    "bookCallButton": "Gesprek inplannen",
+    "supportButton": "Koop een koffie",
+    "supportAriaLabel": "Support — Koop een koffie voor me",
+    "sourceLink": "Archief Brongeometrie",
+    "siteNote": "Deels portfolio, deels speeltuin, deels nachtelijk ideeënlab. Bedankt voor het verkennen.",
+    "siteNoteByTime": {
+      "dawn": "🌅 Dageraad-modus is aan. Zachte kleuren, de energie van het eerste licht, en ja, dit is je teken om koffie te zetten ☕.",
+      "morning": "🌞 Ochtendglans is actief. Frisse uitstraling, scherpere focus en een goed moment om ideeën te verkennen ✨.",
+      "midday": "☀️ Middaglicht is in volle gang. Heldere sfeer, warme tinten en volop momentum ⚡.",
+      "afternoon": "🍯 Middagwarmte is net gearriveerd. Een beetje goud, een beetje geaard, nog steeds speels 🎈.",
+      "dusk": "🌇 Schemerkleuren nemen het over. De site krijgt meer sfeer naarmate de dag ten einde loopt 🎞️.",
+      "night": "🌙 Nachtpalet ontgrendeld. Gezellige tinten, kalmere vibes en de energie voor nachtelijke experimenten 🧪."
+    },
+    "devNote": "* Er zijn geen ontwikkelaars gewond geraakt bij het maken van deze site.",
+    "devNoteTitle": "Gebouwd met een ongezonde hoeveelheid koffie, talloze AI-gesprekken en de incidentele existentiële crisis over of deze div nou flex of grid moet zijn.",
+    "easterEgg": "Je hebt dit gevonden. Gefeliciteerd — jij bent precies het soort persoon met wie ik graag zou willen werken.",
+    "widgetMessageTitle": "Stuur een bericht",
+    "widgetCallTitle": "Gesprek inplannen",
+    "widgetClose": "Sluiten",
+    "contactDialogLabel": "Contactformulier",
+    "calendlyDialogLabel": "Gesprek inplannen",
+    "quote": "Stuur me een bericht om te kletsen over <highlight1>AI/web-ideeën</highlight1>, toffe projecten of zelfs <highlight2>house music</highlight2>.",
+    "crafted": "Gemaakt in AI-samenwerking",
+    "copyrightName": "R. Hsiao",
+    "residencyLocations": ["SF Bay Area", "Taipei"],
+    "languageSwitcher": {
+      "ariaLabel": "Taalkeuze",
+      "menuLabel": "Talen ({count})",
+      "localeNames": {
+        "en": "Engels",
+        "zh-Hant": "Traditioneel Chinees"
+      }
+    }
+  },
+  "activity": {
+    "hero": {
+      "eyebrow": "Spreken // Community",
+      "title": "Activiteiten &\nPresentaties",
+      "description": "Conferentie-talks, workshops en betrokkenheid bij de community — kennis delen en verbindingen leggen binnen het tech-ecosysteem."
+    },
+    "fieldNotes": {
+      "label": "TALK TRACK // SLIDES GEREED",
+      "heading": "Community\nLogboek",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎤",
+          "title": "Spreken",
+          "items": [
+            "Conferentie-talks en workshops.",
+            "JSConf en tech-evenementen voor de community."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "Community",
+          "items": [
+            "Open source leiderschap en beheer.",
+            "Mentoring van opkomende ontwikkelaars."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🌱",
+          "title": "Gelijkheid",
+          "items": [
+            "Bevorderen van inclusie en diversiteit in tech.",
+            "Pleitbezorger voor ondervertegenwoordigde stemmen."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "✨",
+          "title": "Impact",
+          "items": [
+            "Technologie voor positieve sociale verandering.",
+            "Bouwen voor communities die er toe doen."
+          ]
+        }
+      ]
+    },
+    "speaking": "SPREKEN",
+    "community": "COMMUNITY",
+    "ui": {
+      "playVideo": "Video afspelen: {title}",
+      "openSource": "Open source: {title}",
+      "closeActiveTalk": "Actieve lezing sluiten",
+      "closeVideo": "Video sluiten",
+      "playlist": "Afspeellijst",
+      "playlistHint": "Selecteer een andere lezing zonder de volledige scène-animatie opnieuw af te spelen."
+    },
+    "items": {
+      "str8jacket": {
+        "name": "Website Board / Diversiteit, Gelijkheid en Inclusie Lead",
+        "org": "Str8jacket Dance Company",
+        "summary": "Leiding gegeven aan website-ontwikkeling en DEI-initiatieven, met het creëren van inclusieve processen en veilige ruimtes voor een diverse danscommunity.",
+        "smartlinkTitle": "Str8jacket Dance Company",
+        "smartlinkDescription": "Competitie Hip Hop Team"
+      },
+      "hsnuAwb": {
+        "name": "Technisch Consultant",
+        "org": "HSNU Alumni Windband",
+        "summary": "Architectuur van een moderne website met SEO-optimalisatie, wat de online zichtbaarheid en betrokkenheid aanzienlijk heeft vergroot.",
+        "smartlinkTitle": "HSNU Alumni Windband",
+        "smartlinkDescription": "師大附中校友管樂團 HSNU Alumni Windband Officiële Website"
+      },
+      "orbis": {
+        "name": "Vrijwillig Tolk",
+        "org": "ORBIS Flying Hospital",
+        "summary": "Communicatie gefaciliteerd tussen internationale medische teams en lokale donateurs tijdens fondsenwervingsinitiatieven."
+      },
+      "armyFlood": {
+        "name": "Overstromingshulp",
+        "org": "Taiwanese Leger",
+        "summary": "Herstelwerkzaamheden na rampen gecoördineerd, om gemeenschappen te helpen herstellen die getroffen waren door zware overstromingen."
+      },
+      "mannheimExchange": {
+        "name": "Uitwisselingsstudent",
+        "org": "College of Commerce, Universiteit van Mannheim, Duitsland",
+        "summary": "Internationaal businessprogramma voltooid, met het opdoen van cross-culturele ervaring en een wereldwijd perspectief."
+      }
+    }
+  },
+  "education": {
+    "hero": {
+      "eyebrow": "Academische Basis // Continu Leren",
+      "title": "Opleiding &\nAchtergrond",
+      "description": "De academische basis en de leerervaringen die mijn benadering van engineering, productdenken en het bouwen van betekenisvolle zaken hebben gevormd."
+    },
+    "fieldNotes": {
+      "label": "STUDIELOGBOEK // GROTENDEELS OVERLEEFD",
+      "heading": "Leercurve &\nAcademische Basis",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎓",
+          "title": "Academisch",
+          "items": [
+            "Sterke basis in computerwetenschappen.",
+            "Benaderingen gesteund door onderzoek en theorie."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🔬",
+          "title": "Nieuwsgierigheid",
+          "items": [
+            "Continu zelfgestuurd leren.",
+            "Altijd op zoek naar opkomende technologieën."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🏫",
+          "title": "Lesgeven",
+          "items": [
+            "Kennisdeling via mentoring.",
+            "Spreken op tech-conferenties en workshops."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "💡",
+          "title": "Toepassing",
+          "items": [
+            "Theorie vertalen naar praktijk.",
+            "Het oplossen van engineering-problemen in de echte wereld."
+          ]
+        }
+      ]
+    },
+    "items": {
+      "nccu": {
+        "name": "National ChengChi University (NCCU)",
+        "location": "Taipei, Taiwan",
+        "college": "College of Commerce",
+        "degree": "Bachelor of Business Administration",
+        "department": "Department of Management Information Systems (MIS)"
+      },
+      "mannheim": {
+        "name": "Universität Mannheim",
+        "location": "Mannheim, Duitsland",
+        "college": "Business School",
+        "degree": "Uitwisselingsprogramma"
+      }
+    }
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Open Source // Developer Tools",
+      "title": "Open\nSource",
+      "description": "Van React-bibliotheken tot developer tools — een verzameling projecten gebouwd om echte problemen op te lossen, openlijk gedeeld met de community."
+    },
+    "fieldNotes": {
+      "label": "BUILD LOG // PUBLIEKE REPO",
+      "heading": "Bouwjournaal &\nDeveloper\nTooling",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🔧",
+          "title": "Open Source",
+          "items": [
+            "Actieve bijdrager aan open source.",
+            "Tools bouwen waar developers dol op zijn."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "⚡",
+          "title": "Performance",
+          "items": [
+            "Gefocust op toegankelijkheid en performance.",
+            "Community-gedreven ontwikkeling."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📦",
+          "title": "Bibliotheken",
+          "items": [
+            "Gepubliceerde npm-packages voor het ecosysteem.",
+            "TypeScript-first, type-safe API's."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🤝",
+          "title": "Samenwerking",
+          "items": [
+            "Open voor bijdragen en feedback.",
+            "Oplossingen bouwen samen met de community."
+          ]
+        }
+      ]
+    },
+    "sectionHeading": "Projecten & Bibliotheken",
+    "github": "GitHub",
+    "npm": "npm",
+    "demo": "Live demo",
+    "stars": "sterren",
+    "statusActive": "Actief",
+    "statusMaintained": "Onderhouden",
+    "statusArchived": "Gearchiveerd",
+    "yearPresent": "Heden",
+    "items": {
+      "reactInViewport": {
+        "name": "react-in-viewport",
+        "location": "Palo Alto, CA",
+        "description": "Een React-bibliotheek om te detecteren of een component in de viewport staat met behulp van de Intersection Observer API. Biedt een hooks-interface voor het detecteren van zichtbaarheid met uitstekende prestaties.",
+        "highlights": [
+          "350+ GitHub sterren",
+          "46k+ wekelijkse downloads",
+          "Gebruikt door Tinder en andere grote bedrijven",
+          "TypeScript-ondersteuning met ingebouwde declaraties"
+        ],
+        "githubTitle": "Bekijken op GitHub",
+        "githubDescription": "Broncode, documentatie en voorbeelden",
+        "demoTitle": "Live Demo",
+        "demoDescription": "Probeer de interactieve voorbeelden",
+        "npmTitle": "NPM Package",
+        "npmDescription": "Installeren via npm of yarn"
+      },
+      "reactAspectRatio": {
+        "name": "react-aspect-ratio",
+        "location": "Palo Alto, CA",
+        "description": "Een React-component om ruimte voor je element te reserveren en browser reflow (layout shift) te voorkomen. Helpt bij het behouden van responsieve lay-outs en verbetert Core Web Vitals door Cumulative Layout Shift te voorkomen.",
+        "highlights": [
+          "104+ GitHub sterren",
+          "Voorkomt browser reflow en layout shift",
+          "Verbetert Core Web Vitals scores",
+          "TypeScript-ondersteuning"
+        ],
+        "githubTitle": "Bekijken op GitHub",
+        "githubDescription": "Broncode en documentatie",
+        "npmTitle": "NPM Package",
+        "npmDescription": "Installeren via npm of yarn"
+      },
+      "idleTracker": {
+        "name": "idle-tracker",
+        "location": "Palo Alto, CA",
+        "description": "Een lichtgewicht JavaScript-bibliotheek om browser-inactiviteit en user-idle state te volgen. Handig voor het implementeren van auto-logout functies, het pauzeren van animaties bij inactiviteit of het volgen van gebruikersbetrokkenheid.",
+        "highlights": [
+          "21+ GitHub sterren",
+          "Geen afhankelijkheden",
+          "Cross-browser compatibel",
+          "Lichtgewicht en performant"
+        ],
+        "githubTitle": "Bekijken op GitHub",
+        "githubDescription": "Broncode en voorbeelden",
+        "npmTitle": "NPM Package",
+        "npmDescription": "Installeren via npm of yarn"
+      },
+      "reactI13n": {
+        "name": "react-i13n",
+        "location": "Sunnyvale, CA",
+        "description": "Een performante, schaalbare en plugbare aanpak voor het instrumenteren van je React-applicatie. Biedt een uitgebreid instrumentatie-framework voor het volgen van gebruikersinteracties en analytics in React-apps.",
+        "highlights": [
+          "384+ GitHub sterren",
+          "Yahoo open source project",
+          "Kernbijdrager en onderhouder",
+          "Productie-klaar op grote schaal"
+        ],
+        "githubTitle": "Bekijken op GitHub",
+        "githubDescription": "Yahoo open source project - Kernbijdrager",
+        "npmTitle": "NPM Package",
+        "npmDescription": "Installeren via npm of yarn"
+      },
+      "subscribeUiEvent": {
+        "name": "subscribe-ui-event",
+        "location": "Sunnyvale, CA",
+        "description": "Subscribe-ui-event biedt een cross-browser en performante manier om je te abonneren op browser UI Events. Optimaliseert de prestaties van event handling door gebruik te maken van throttling en debouncing technieken.",
+        "highlights": [
+          "110+ GitHub sterren",
+          "Yahoo open source project",
+          "Kernbijdrager en onderhouder",
+          "Cross-browser compatibiliteit"
+        ],
+        "githubTitle": "Bekijken op GitHub",
+        "githubDescription": "Yahoo open source project - Kernbijdrager",
+        "npmTitle": "NPM Package",
+        "npmDescription": "Installeren via npm of yarn"
+      }
+    }
+  },
+  "travel": {
+    "hero": {
+      "eyebrow": "Ruimtelijk Logboek // Veldarchief",
+      "title": "Reis\nErvaringen",
+      "description": "Reizen stelt onze geest open voor de ongelooflijke diversiteit van de menselijke cultuur, geschiedenis en tradities. Elke reis biedt unieke perspectieven en helpt ons de rijke schakering van onze onderling verbonden wereld te waarderen."
+    },
+    "fieldNotes": {
+      "label": "VLUCHTLOGBOEK // RAAMKANT",
+      "heading": "Routes, Mensen &\nCulturele Notities",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🌍",
+          "title": "Culturele Diversiteit",
+          "items": [
+            "Ervaar verschillende tradities en gewoonten.",
+            "Ontdek diverse keukens en architecturale stijlen."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "Wereldwijd Begrip",
+          "items": [
+            "Bruggen slaan tussen verschillende gemeenschappen.",
+            "Leren over historische contexten en moderne perspectieven."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "✨",
+          "title": "Persoonlijke Groei",
+          "items": [
+            "Aanpassingsvermogen en probleemoplossende vaardigheden ontwikkelen.",
+            "Zelfvertrouwen winnen door nieuwe ervaringen."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🗺️",
+          "title": "Memorabele Avonturen",
+          "items": [
+            "Blijvende herinneringen creëren over continenten heen.",
+            "Verborgen juweeltjes en iconische bezienswaardigheden ontdekken."
+          ]
+        }
+      ]
+    },
+    "archiveExtract": "ARCHIEFEXTRACT // RUIMTELIJKE LOGBOEKEN",
+    "dismissRecord": "RECORD SLUITEN",
+    "nationalParks": "Nationale Parken",
+    "continentAsia": "Azië",
+    "continentEurope": "Europa",
+    "continentNorthAmerica": "Noord-Amerika",
+    "continentSouthAmerica": "Zuid-Amerika",
+    "continentOceania": "Oceanië",
+    "continentAfrica": "Afrika",
+    "filterAll": "Alles",
+    "parkLabels": {
+      "yosemite": "Yosemite",
+      "yellowstone": "Yellowstone",
+      "grandCanyon": "Grand Canyon",
+      "joshuaTree": "Joshua Tree",
+      "redwood": "Redwood",
+      "olympic": "Olympic",
+      "deathValley": "Death Valley",
+      "taroko": "Taroko",
+      "yangmingshan": "Yangmingshan",
+      "kenting": "Kenting"
+    },
+    "metroUnits": "METRO • EENHEDEN",
+    "departure": "VERTREK",
+    "arrival": "AANKOMST",
+    "explored": "VERKEND",
+    "exploring": "AAN HET VERKENNEN",
+    "stampAriaLabel": "{name} — {count} steden",
+    "statsHeading": "Archief\nOverzicht",
+    "metricsLabel": "Geconsolideerde_Metrieken_{year}",
+    "territories": "Territoria",
+    "logged": "Geregistreerd",
+    "metroCenters": "Metrocentra",
+    "units": "Eenheden",
+    "spheres": "Sferen",
+    "continents": "Continenten",
+    "residency": "Residentie",
+    "base": "Basis",
+    "statusBORN": "GEBOREN",
+    "statusHOME": "THUIS",
+    "statusSTUDY": "STUDIE",
+    "statusTRAVEL": "REIS",
+    "cityNames": {},
+    "searchPlaceholder": "Landen zoeken…",
+    "searchAriaLabel": "Landen zoeken"
+  },
+  "nav": {
+    "brandSubtitle": "Frontend Architect",
+    "about": "Over mij",
+    "activity": "Activiteit",
+    "projects": "Projecten",
+    "travel": "Reizen",
+    "education": "Opleiding"
+  },
+  "profile": {
+    "name": "Roderick Hsiao",
+    "title": "Product Engineering Consultant",
+    "location": "San Francisco Bay Area | Internet",
+    "brief": "Product engineering consultant gespecialiseerd in frontend-infrastructuur en design systems. Open source pleitbezorger met uitgebreide ervaring in grootschalige applicaties en team-mentoring bij zowel startups als grote ondernemingen.",
+    "expertiseHeading": "Expertise",
+    "skills": [
+      "Design Systems",
+      "Progressive Web Apps",
+      "Frontend Infrastructuur",
+      "Web Toegankelijkheid",
+      "Internationalisering",
+      "Team Mentoring",
+      "Tech Spreker"
+    ],
+    "languages": [
+      {
+        "flag": "🇺🇸",
+        "countryCode": "us",
+        "label": "Engels"
+      },
+      {
+        "flag": "🇹🇼",
+        "countryCode": "tw",
+        "label": "Mandarijn"
+      }
+    ],
+    "interests": [
+      "Open Web Pleitbezorger",
+      "House Danser",
+      "Muziekliefhebber",
+      "Dierenvriend",
+      "Koffie-fanaat"
+    ]
+  },
+  "experience": {
+    "sectionTitle": "Professionele Ervaring & Industrie Impact",
+    "sectionDescription": "Decennia in product engineering met uitgebreide ervaring bij startups tot Fortune 500-bedrijven. Gespecialiseerd in frontend-architectuur, teamleiderschap en de ontwikkeling van grootschalige applicaties.",
+    "experiencesHeading": "Ervaringen",
+    "present": "Heden",
+    "featuredTalksDemos": "Uitgelichte Talks & Demo's",
+    "summaryItems": [
+      {
+        "title": "Industrie Ervaring",
+        "items": [
+          "Decennia in product engineering.",
+          "Ervaring bij zowel startups als Fortune 500-bedrijven."
+        ]
+      },
+      {
+        "title": "Technisch Leiderschap",
+        "items": [
+          "Frontend architectuur en infrastructuur.",
+          "Team mentoring en technische begeleiding."
+        ]
+      },
+      {
+        "title": "Impact & Schaal",
+        "items": [
+          "Grootschalige applicaties voor miljoenen gebruikers.",
+          "Design systems en developer tooling."
+        ]
+      },
+      {
+        "title": "Community & Spreken",
+        "items": [
+          "Internationaal conferentiespreker.",
+          "Open source bijdrager en pleitbezorger."
+        ]
+      }
+    ],
+    "companies": {
+      "kindred": {
+        "title": "Founding Engineer",
+        "location": "Remote",
+        "displayName": "Kindred",
+        "summary": "Een van de eerste engineers — verantwoordelijk voor de frontend-architectuur en kern-productontwikkeling in de beginfase van het bedrijf.",
+        "projects": {
+          "main": {
+            "name": "Kindred",
+            "summary": "De volledige frontend-architectuur vanaf nul opgebouwd, kernproductfuncties gelanceerd, engineering-standaarden vastgesteld en AI-tooling geïntegreerd in de ontwikkelingsworkflow.",
+            "smartlinkTitle": "Kindred",
+            "smartlinkDescription": "Sluit je aan bij onze exclusieve community voor huizenruil en reis voor een fractie van de kosten van traditionele vakantiewoningen."
+          }
+        }
+      },
+      "tinder": {
+        "title": "Principal Software Engineer",
+        "location": "Palo Alto, CA",
+        "displayName": "Tinder",
+        "summary": "Principal engineer voor tinder.com — gaf leiding aan de technische architectuur van het webplatform dat dagelijks door tientallen miljoenen actieve gebruikers wereldwijd wordt gebruikt.",
+        "projects": {
+          "tinderOnline": {
+            "name": "Tinder Online",
+            "summary": "Leiding gegeven aan de technische architectuur en ontwikkeling van Tinder's vlaggenschip webplatform op tinder.com. Schaalbare frontend-oplossingen ontworpen voor miljoenen actieve gebruikers wereldwijd.",
+            "smartlinkTitle": "Tinder",
+            "smartlinkDescription": "Met tot nu toe 55 miljard matches is Tinder® 's werelds populairste dating-app, de plek om nieuwe mensen te ontmoeten.",
+            "demoTitles": [
+              "Production Progressive Web Apps With JavaScript Frameworks (Google I/O 2017)",
+              "Fast By Default: Modern Loading Best Practices (Chrome Dev Summit 2017)",
+              "Adaptive Loading - Improving web performance on slow devices (Chrome Dev Summit 2019)",
+              "PWA patterns for window and service worker communication (Chrome Dev Summit 2020)",
+              "SMS OTP form best practices (Chrome Dev Summit 2020)"
+            ]
+          },
+          "swipeLife": {
+            "name": "Tinder Swipe Life",
+            "summary": "Tinder's lifestyle magazine platform ontwikkeld en gelanceerd, met het creëren van boeiende content-ervaringen voor de datingcommunity."
+          }
+        }
+      },
+      "selfEmployed": {
+        "title": "Product Engineering Consultant",
+        "location": "San Francisco, CA",
+        "displayName": "Zelfstandig",
+        "summary": "Product engineering consultant gespecialiseerd in AI-adoptie, frontend architectuurontwerp, team- en individuele mentoring, PWA en performance-optimalisatie, en carrièrecoaching.",
+        "projects": {
+          "alt": {
+            "name": "Alt Platform",
+            "summary": "Frontend en web engineering mentor — best practices, tooling en carrièrebegeleiding. Een roadmap voor prestatieverbetering en een SEO-verbeterstrategie opgesteld. De instrumentatielaag ontworpen en code-modularisatie over het platform gestuurd.",
+            "smartlinkTitle": "Alt",
+            "smartlinkDescription": "Het is tijd om te investeren in waar je van houdt. ALT geeft je toegang tot nut en liquiditeit als nooit tevoren."
+          },
+          "forethought": {
+            "name": "Forethought (overgenomen door Zendesk in 2026)",
+            "summary": "Leiding gegeven aan het bedrijfsbrede rebrandingproject, inclusief een volledige revisie van het CSS-systeem. Persistente state management ontworpen voor de webwidget. Prestatieverbeteringen doorgevoerd over het platform. Voortdurende technische mentoring geboden aan het engineeringteam.",
+            "smartlinkTitle": "Forethought",
+            "smartlinkDescription": "Verbeter de klantervaring door gebruik te maken van AI."
+          },
+          "publicSpeaker": {
+            "name": "Publiek Spreker",
+            "summary": "Technische presentaties gegeven over Progressive Web Applications, web performance optimalisatie en grootschalige webapplicatie-architectuur op internationale conferenties en industrie-evenementen.",
+            "demoTitles": [
+              "React Norway 2021 | Progressively Enhance Your Web Application",
+              "JSCAMP 2021 | Building Large-Scale Web Apps",
+              "Accento 2020 | Progressively Enhance Your Web Application",
+              "Geekle 2020 | Building Large Scale Web App"
+            ]
+          }
+        }
+      },
+      "branch": {
+        "title": "Software Engineer",
+        "location": "Palo Alto, CA",
+        "displayName": "Branch",
+        "summary": "Frontend-infrastructuur en engineering-praktijken gebouwd voor het deep-linking platform van Branch.",
+        "projects": {
+          "dashboard": {
+            "name": "Branch Dashboard en Oplossingen",
+            "summary": "Frontend-infrastructuur ontworpen, engineering best practices vastgesteld en website performance optimalisaties doorgevoerd voor het deep linking platform.",
+            "smartlinkTitle": "Branch",
+            "smartlinkDescription": "Nummer 1 in deep linking. Integreer robuuste, duurzame links in e-mail, SEM, advertenties en andere traditionele marketingkanalen voor een betere app-groei."
+          }
+        }
+      },
+      "yahooSenior": {
+        "title": "Senior Software Engineer",
+        "location": "Sunnyvale, CA",
+        "displayName": "Yahoo",
+        "summary": "Meer dan zes jaar bij Yahoo gewerkt aan meerdere productlijnen — mobiele homepage, weer, news digest, quality engineering, en een van 's werelds meest bezochte single-page applicaties.",
+        "projects": {
+          "homepage": {
+            "name": "Homepage",
+            "summary": "Engineering van een van 's werelds meest bezochte single-page applicaties, voor miljoenen gebruikers op desktop, tablet en mobiele platforms. Herbruikbare UI-componenten, utilities en Node.js bibliotheken ontwikkeld.",
+            "smartlinkTitle": "Yahoo",
+            "smartlinkDescription": "Een nieuw welkom bij Yahoo. De nieuwe Yahoo-ervaring maakt het gemakkelijker om het nieuws en de informatie te ontdekken die voor jou het belangrijkst zijn."
+          },
+          "weather": {
+            "name": "Weer",
+            "summary": "Het Yahoo Weather platform verbeterd met behulp van isomorfe React-architectuur, voor naadloze gebruikerservaringen op alle apparaten.",
+            "smartlinkTitle": "Yahoo Weer",
+            "smartlinkDescription": "Bereid je voor op je dag met de meest nauwkeurige voorspellingen per uur, 5 dagen en 10 dagen. Prachtige Flickr-foto's passen bij je locatie, tijdstip en huidige omstandigheden."
+          },
+          "newsDigest": {
+            "name": "News Digest",
+            "summary": "Webplatform ontwikkeld voor Yahoo News Digest, wat zorgde voor verbeterde SEO-prestaties en deep linking-mogelijkheden voor de populaire mobiele applicatiecontent.",
+            "smartlinkTitle": "Yahoo News Digest",
+            "smartlinkDescription": "Yahoo News Digest biedt een definitieve samenvatting van al het belangrijke nieuws dat je moet weten. Digests worden twee keer per dag bezorgd."
+          },
+          "mobileHomepage": {
+            "name": "Mobiele Homepage",
+            "summary": "Pilootproject voor innovatieve single-page applicatie-architectuur voor de Yahoo mobiele homepage, met focus op verbeteringen in de door de gebruiker ervaren performance en mobiele optimalisatie."
+          }
+        }
+      },
+      "yahooLead": {
+        "title": "Engineering Team Lead",
+        "location": "Taipei, Taiwan",
+        "displayName": "Yahoo",
+        "summary": "Leiding gegeven aan het APAC mobiele productteam in Taipei.",
+        "projects": {
+          "apacMobile": {
+            "name": "APAC Mobiele Homepage (Taiwan en Hongkong)",
+            "summary": "Leiding gegeven aan een cross-functioneel team van 5 developers om uitgebreide content-ervaringen te ontwerpen en te leveren voor de Aziatisch-Pacifische markten.",
+            "smartlinkTitle": "Yahoo行動版",
+            "smartlinkDescription": "Biedt de handigste manier om te zoeken, actueel nieuws, lifestyle-informatie en toegang tot Yahoo-services."
+          }
+        }
+      },
+      "yahooQe": {
+        "title": "Quality Engineering Lead / Software Engineer",
+        "location": "Taipei, Taiwan",
+        "displayName": "Yahoo",
+        "summary": "Quality engineering lead voor het verkiezingsplatform en de wereldwijde nieuwsinfrastructuur.",
+        "projects": {
+          "controlRoom": {
+            "name": "Presidentsverkiezingen 2012 - Control Room",
+            "summary": "Architectuur en ontwikkeling van Control Room, een uitgebreide tabletapplicatie die real-time verkiezingsverslaggeving bood met gecureerde content en originele berichtgeving van toonaangevende nieuwsbronnen.",
+            "smartlinkTitle": "Yahoo Presidentsverkiezingen 2012",
+            "smartlinkDescription": "Yahoo's Control Room biedt live streaming video, verslaggeving en kaarten van alle races, evenals de resultaten van de presidentsverkiezingen tot op districtsniveau."
+          },
+          "hashout": {
+            "name": "Presidentsverkiezingen 2012 - #Hashout",
+            "summary": "#Hashout ontwikkeld, een innovatief online talkshowplatform ontworpen om diverse perspectieven te betrekken en betekenisvolle politieke gesprekken te faciliteren tijdens de verkiezingscyclus.",
+            "smartlinkTitle": "Yahoo Presidentsverkiezingen 2012 - #Hashout",
+            "smartlinkDescription": "Online talkshow voor de Yahoo Presidentsverkiezingen 2012."
+          },
+          "globalNews": {
+            "name": "Global News",
+            "summary": "Een uniform platform ontworpen voor alle Yahoo-domeinen wereldwijd. Leiding gegeven aan de frontend testing-strategie, framework-ontwikkeling en testautomatiserings-infrastructuur.",
+            "smartlinkTitle": "Yahoo News",
+            "smartlinkDescription": "Blader door het laatste nieuws op Yahoo News."
+          }
+        }
+      },
+      "army": {
+        "title": "Project Manager / Engineer Lead",
+        "location": "Taiwan",
+        "displayName": "Taiwanese Leger",
+        "summary": "Verplichte militaire dienst — webgebaseerde trainingssimulatoren ontworpen en ontwikkeld voor militair onderwijs, en leiding gegeven aan een team van 6 engineers.",
+        "projects": {
+          "equipmentSimulator": {
+            "name": "Materieel Simulator",
+            "summary": "Twee webgebaseerde trainingsapplicaties ontworpen en ontwikkeld voor militair onderwijs. Een team van 6 personen begeleid en gemanaged bij het bouwen van educatieve simulator-softwareoplossingen."
+          }
+        }
+      }
+    }
+  },
+  "pageMeta": {
+    "siteName": "Roderick Hsiao",
+    "authorName": "Roderick Hsiao",
+    "home": {
+      "title": "Roderick Hsiao - Software Architect & Community Leider",
+      "description": "Persoonlijke website van Roderick Hsiao — frontend architect, community leider en open web pleitbezorger met decennia aan industrie impact.",
+      "ogTitle": "Roderick Hsiao - Software Architect & Community Leider",
+      "ogDescription": "Persoonlijke website van Roderick Hsiao - Software Architect, Community Leider en tech-enthousiast.",
+      "ogAlt": "Roderick Hsiao - Software Architect & Community Leider",
+      "keywords": [
+        "Roderick Hsiao",
+        "Software Architect",
+        "Community Leider",
+        "Frontend",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Ervaring"
+      ]
+    },
+    "activity": {
+      "title": "Activiteiten & Spreken - Roderick Hsiao",
+      "description": "Verken mijn spreekbeurten, conferentie-talks, workshops en community-activiteiten. Leer meer over mijn bijdragen aan de tech-community.",
+      "ogTitle": "Activiteiten & Spreken - Roderick Hsiao",
+      "ogDescription": "Verken mijn spreekbeurten, conferentie-talks, workshops en community-activiteiten.",
+      "ogAlt": "Activiteiten & Spreken - Roderick Hsiao",
+      "ogImageTitle": "Activiteiten & Spreken",
+      "ogImageSubtitle": "Conferentie-talks & Community",
+      "ogImageDescription": "Kennis delen en bouwen aan tech-communities",
+      "keywords": [
+        "Roderick Hsiao",
+        "Spreken",
+        "Conferenties",
+        "Tech Talks",
+        "Workshops",
+        "Community",
+        "Activiteiten"
+      ]
+    },
+    "projects": {
+      "title": "Projecten - Roderick Hsiao",
+      "description": "Verken mijn open source projecten, persoonlijke tools en bijdragen aan de developer community. Van React-bibliotheken tot developer tools.",
+      "keywords": [
+        "Roderick Hsiao",
+        "Projecten",
+        "Open Source",
+        "GitHub",
+        "React",
+        "TypeScript",
+        "Developer Tools",
+        "Bibliotheken"
+      ]
+    },
+    "education": {
+      "title": "Opleiding & Achtergrond - Roderick Hsiao",
+      "description": "Leer meer over mijn educatieve achtergrond, academische prestaties en de basis die mijn carrière in technologie en productontwikkeling heeft gevormd.",
+      "ogTitle": "Opleiding & Achtergrond - Roderick Hsiao",
+      "ogDescription": "Leer meer over mijn educatieve achtergrond en de basis van mijn carrière.",
+      "ogAlt": "Opleiding & Achtergrond - Roderick Hsiao",
+      "ogImageTitle": "Opleiding & Achtergrond",
+      "ogImageSubtitle": "Academische Basis",
+      "ogImageDescription": "De basis leggen voor een carrière in de technologie",
+      "keywords": [
+        "Roderick Hsiao",
+        "Opleiding",
+        "Achtergrond",
+        "Academisch",
+        "Universiteit",
+        "Leren",
+        "Carrièrebasis"
+      ]
+    },
+    "travel": {
+      "title": "Reisavonturen - Roderick Hsiao",
+      "description": "Volg mijn reisavonturen over de hele wereld. Ontdek de plaatsen die ik heb bezocht, de ervaringen die ik heb opgedaan en de inspiratie die ik haal uit verschillende culturen.",
+      "ogTitle": "Reisavonturen - Roderick Hsiao",
+      "ogDescription": "Volg mijn reisavonturen over de hele wereld en ontdek verschillende culturen.",
+      "ogAlt": "Reisavonturen - Roderick Hsiao",
+      "ogImageTitle": "Reisavonturen",
+      "ogImageSubtitle": "De Wereld Verkennen",
+      "ogImageDescription": "Culturen ontdekken en inspiratie halen uit wereldwijde ervaringen",
+      "keywords": [
+        "Roderick Hsiao",
+        "Reizen",
+        "Avonturen",
+        "Wereldreis",
+        "Cultuur",
+        "Exploratie",
+        "Fotografie"
+      ]
+    }
+  }
+}

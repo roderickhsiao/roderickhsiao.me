@@ -106,7 +106,7 @@ export default function LanguageSwitcher() {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="menu"
         aria-expanded={open}
-        className="group inline-flex items-center justify-between gap-2 rounded-md px-1.5 py-1 text-left transition-colors hover:bg-footer-text/8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+        className="group inline-flex items-center justify-between gap-2 rounded-md px-1.5 py-1 text-start transition-colors hover:bg-footer-text/8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
       >
         <span className="flex min-w-0 items-center gap-2">
           <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center text-footer-text/75">
@@ -122,12 +122,12 @@ export default function LanguageSwitcher() {
       {open && (
         <div
           role="menu"
-          className="absolute bottom-[calc(100%+0.7rem)] left-1/2 z-40 w-[min(22rem,calc(100vw-3rem))] -translate-x-1/2 overflow-hidden rounded-xl border border-footer-text/14 bg-footer-bg/95 p-1.5 shadow-[0_16px_40px_-20px_rgba(0,0,0,0.75)] backdrop-blur-sm"
+          className="absolute bottom-[calc(100%+0.7rem)] inset-s-1/2 z-40 w-[min(22rem,calc(100vw-3rem))] -translate-x-1/2 overflow-hidden rounded-xl border border-footer-text/14 bg-footer-bg/95 p-1.5 shadow-[0_16px_40px_-20px_rgba(0,0,0,0.75)] backdrop-blur-sm"
         >
           <p className="px-2 pb-1 pt-1 text-[10px] uppercase tracking-[0.16em] text-footer-text/36">
             {t('menuLabel', { count: localeItems.length })}
           </p>
-          <div className="max-h-64 overflow-y-auto pr-1">
+          <div className="max-h-64 overflow-y-auto pe-1">
             <div>
               {localeItems.map((entry) => {
                 const isActive = entry.code === locale;

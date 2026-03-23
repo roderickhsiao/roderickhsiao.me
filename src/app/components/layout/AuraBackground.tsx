@@ -7,23 +7,23 @@ import clsx from 'clsx';
 type Period = 'dawn' | 'morning' | 'midday' | 'afternoon' | 'dusk' | 'night';
 
 /**
- * Colour palettes [orb-A, orb-B, orb-C] — each loosely picking the dominant
- * light character of the Sagrada Família nave at that hour:
+ * Colour palettes [orb-A sky, orb-B air, orb-C earth] — clear semantic distinction.
+ * A = bright sky, B = warm transitional air, C = dark earthy ground
  *
- *  dawn      05–07  East rose windows: pink / gold / lavender
- *  morning   07–11  Nave floods with amber-gold stained glass
- *  midday    11–14  Softer daylight: sage / linen / sandstone
- *  afternoon 14–17  Ochre warmth + terracotta as western windows warm up
- *  dusk      17–20  Dramatic violet-orange transition through rose windows
- *  night     20–05  Muted plum / cocoa tones for a warmer night mood
+ *  dawn      05–07  pink sky / amber air / deep purple earth
+ *  morning   07–11  bright blue sky / golden air / warm brown earth
+ *  midday    11–14  bright cyan sky / gold air / tan earth
+ *  afternoon 14–17  warm orange sky / deep copper air / rust earth
+ *  dusk      17–20  magenta sky / deep orange air / dark brown earth
+ *  night     20–05  dark blue sky / dark purple air / black earth
  */
 const PALETTES: Record<Period, [string, string, string]> = {
-  dawn:      ['#c4a0b0', '#d8c090', '#aca8c8'],
-  morning:   ['#c0a038', '#d8c888', '#b07828'],
-  midday:    ['#8ea890', '#d5c28a', '#a48766'],
-  afternoon: ['#b07028', '#984038', '#b8a050'],
-  dusk:      ['#a35d3f', '#7a4f74', '#95505a'],
-  night:     ['#5c4d5e', '#433b45', '#6b554b'],
+  dawn:      ['#d6b3c6', '#d78f70', '#3d3348'],
+  morning:   ['#4db8ff', '#ffd700', '#8b5a2b'],
+  midday:    ['#5ad9ff', '#ffc93c', '#c9a35f'],
+  afternoon: ['#ff8844', '#cc6633', '#663300'],
+  dusk:      ['#9f6c9f', '#d36f43', '#2c1f16'],
+  night:     ['#1a3a5c', '#2f3444', '#0f0a14'],
 };
 
 function getPeriod(hour: number): Period {
@@ -45,16 +45,24 @@ export default function AuraBackground() {
     return () => cancelAnimationFrame(raf);
   }, []);
 
-  const [colorA, colorB, colorC] = colors;
+  const [skyColor, midAirColor, groundColor] = colors;
 
   return (
     <div
-      className={clsx('fixed inset-0 z-1 pointer-events-none overflow-hidden transition-opacity duration-2500', visible ? 'opacity-100' : 'opacity-0')}
+      className={clsx(
+        'fixed inset-0 z-1 pointer-events-none overflow-hidden transition-opacity duration-2500 aura-scroll-responsive',
+        visible ? 'opacity-100' : 'opacity-0'
+      )}
       aria-hidden
     >
-      <div className="aura-orb aura-orb-a" style={{ background: colorA, opacity: 0.16 }} />
-      <div className="aura-orb aura-orb-b" style={{ background: colorB, opacity: 0.13 }} />
-      <div className="aura-orb aura-orb-c" style={{ background: colorC, opacity: 0.15 }} />
+      <div
+        className="absolute inset-0 aura-pulse"
+        style={{
+          background: `radial-gradient(ellipse var(--sky-ellipse, 120%) var(--sky-ellipse-y, 80%) at var(--sky-pos-x, 30%) var(--sky-pos-y, 20%), ${skyColor}2a, transparent 58%),
+                       radial-gradient(ellipse var(--air-ellipse, 140%) var(--air-ellipse-y, 100%) at var(--air-pos-x, 50%) var(--air-pos-y, 50%), ${midAirColor}1a, transparent 66%),
+                       radial-gradient(ellipse var(--ground-ellipse, 130%) var(--ground-ellipse-y, 90%) at var(--ground-pos-x, 70%) var(--ground-pos-y, 80%), ${groundColor}22, transparent 62%)`
+        }}
+      />
     </div>
   );
 }

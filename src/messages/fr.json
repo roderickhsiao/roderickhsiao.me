@@ -1,0 +1,975 @@
+{
+  "home": {
+    "hero": {
+      "eyebrow": "Ingénierie de Produit // Architecture Frontend",
+      "titleLine1": "Roderick",
+      "titleLine2": "Hsiao",
+      "description": "Consultant en ingénierie de produit spécialisé dans l'infrastructure frontend, les systèmes de conception et le développement d'applications à grande échelle pour des startups mondiales et des entreprises du Fortune 500."
+    },
+    "fieldNotes": {
+      "label": "CARNET DE ROUTE // TOUJOURS EN PRODUCTION",
+      "heading": "Parcours &\nPoints Forts",
+      "items": [
+        {
+          "num": "01",
+          "icon": "💼",
+          "title": "Expérience",
+          "items": [
+            "Des décennies en ingénierie de produit.",
+            "De la startup au Fortune 500."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🚀",
+          "title": "Leadership",
+          "items": [
+            "Infra frontend & systèmes de conception.",
+            "Mentorat technique d'équipes."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📈",
+          "title": "Impact",
+          "items": [
+            "Au service de millions d'utilisateurs.",
+            "Architecture pour une échelle extrême."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "📣",
+          "title": "Communauté",
+          "items": [
+            "Conférencier tech international.",
+            "Défenseur du Web ouvert & de l'OSS."
+          ]
+        }
+      ]
+    }
+  },
+  "chronicle": {
+    "heading": "La Chronique",
+    "section": "SECTION {index}",
+    "talksHeading": "Conférences & Demos",
+    "collapse": "réduire",
+    "details": "détails",
+    "collapseAriaLabel": "Fermer les détails du projet",
+    "expandAriaLabel": "Ouvrir les détails du projet"
+  },
+  "contact": {
+    "heading": "Contactez-moi",
+    "subheading": "Ravi de discuter d'idées IA/web, de projets ou d'opportunités de collaboration.",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Adresse e-mail",
+    "subjectPlaceholder": "Sujet",
+    "messagePlaceholder": "Parlez-moi de votre projet ou de ce que vous aimeriez discuter...",
+    "submit": "Envoyer le message",
+    "submitting": "Envoi en cours...",
+    "success": "Message envoyé — je vous répondrai bientôt.",
+    "error": "Une erreur est survenue. {error}",
+    "cardWelcome": "Salut ! 👋 Merci de votre visite ! Envoyez-moi un message pour discuter d'<highlight1>idées IA/web</highlight1>, de projets sympas, ou même de <highlight2>house music</highlight2>.",
+    "messageButton": "Message",
+    "bookButton": "Réserver",
+    "closeAriaLabel": "Fermer"
+  },
+  "footer": {
+    "messageButton": "Message",
+    "bookCallButton": "Réserver un appel",
+    "supportButton": "Payez-moi un café",
+    "supportAriaLabel": "Soutien — Payez-moi un café",
+    "sourceLink": "Archive Source Geometry",
+    "siteNote": "Mi-portfolio, mi-terrain de jeu, mi-laboratoire d'idées nocturnes. Merci de votre exploration.",
+    "siteNoteByTime": {
+      "dawn": "🌅 Le mode aube est activé. Couleurs douces, énergie des premières lueurs, et oui, c'est le signal pour préparer le café ☕.",
+      "morning": "🌞 L'éclat du matin est actif. Aura fraîche, concentration accrue, et moment idéal pour explorer des idées ✨.",
+      "midday": "☀️ La lumière de midi bat son plein. Esprit clair, tons chauds et plein d'élan ⚡.",
+      "afternoon": "🍯 La chaleur de l'après-midi vient de s'installer. Un peu doré, un peu ancré, toujours ludique 🎈.",
+      "dusk": "🌇 Les couleurs du crépuscule prennent le dessus. Le site devient plus feutré alors que la journée s'achève 🎞️.",
+      "night": "🌙 Palette nocturne débloquée. Tons cosy, ondes calmes et énergie d'expérimentation nocturne 🧪."
+    },
+    "devNote": "* Aucun développeur n'a été maltraité lors de la conception de ce site.",
+    "devNoteTitle": "Construit avec une quantité malsaine de café, d'innombrables conversations avec l'IA, et l'occasionnelle crise existentielle pour savoir si ce div doit être flex ou grid.",
+    "easterEgg": "Vous avez trouvé ceci. Félicitations — vous êtes exactement le genre de personne avec qui j'aimerais travailler.",
+    "widgetMessageTitle": "Envoyer un message",
+    "widgetCallTitle": "Réserver un appel",
+    "widgetClose": "Fermer",
+    "contactDialogLabel": "Formulaire de contact",
+    "calendlyDialogLabel": "Réserver un appel",
+    "quote": "Envoyez-moi un message pour discuter d'<highlight1>idées IA/web</highlight1>, de projets sympas, ou même de <highlight2>house music</highlight2>.",
+    "crafted": "Conçu avec une collaboration IA",
+    "copyrightName": "R. Hsiao",
+    "residencyLocations": ["Région de SF", "Taipei"],
+    "languageSwitcher": {
+      "ariaLabel": "Sélecteur de langue",
+      "menuLabel": "Langues ({count})",
+      "localeNames": {
+        "en": "Anglais",
+        "zh-Hant": "Chinois traditionnel"
+      }
+    }
+  },
+  "activity": {
+    "hero": {
+      "eyebrow": "Conférences // Communauté",
+      "title": "Activités &\nConférences",
+      "description": "Conférences, ateliers et implication communautaire — partage de connaissances et création de liens à travers l'écosystème tech."
+    },
+    "fieldNotes": {
+      "label": "SUIVI DES TALKS // SLIDES PRÊTES",
+      "heading": "Journal\nCommunautaire",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎤",
+          "title": "Conférences",
+          "items": [
+            "Conférences et ateliers.",
+            "JSConf et événements tech communautaires."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "Communauté",
+          "items": [
+            "Leadership et intendance open source.",
+            "Mentorat de développeurs émergents."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🌱",
+          "title": "Équité",
+          "items": [
+            "Promotion de l'inclusion et de la diversité tech.",
+            "Défense des voix sous-représentées."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "✨",
+          "title": "Impact",
+          "items": [
+            "Technologie pour un changement social positif.",
+            "Bâtir pour les communautés qui comptent."
+          ]
+        }
+      ]
+    },
+    "speaking": "CONFÉRENCES",
+    "community": "COMMUNAUTÉ",
+    "ui": {
+      "playVideo": "Lire la vidéo : {title}",
+      "openSource": "Open source : {title}",
+      "closeActiveTalk": "Fermer la conférence active",
+      "closeVideo": "Fermer la vidéo",
+      "playlist": "Playlist",
+      "playlistHint": "Sélectionnez une autre conférence sans rejouer la transformation complète de scène."
+    },
+    "items": {
+      "str8jacket": {
+        "name": "Conseil du site web / Responsable Diversité, Équité et Inclusion",
+        "org": "Str8jacket Dance Company",
+        "summary": "Direction du développement du site web et des initiatives DEI, création de processus inclusifs et d'espaces sûrs pour une communauté de danse diverse.",
+        "smartlinkTitle": "Str8jacket Dance Company",
+        "smartlinkDescription": "Équipe de compétition Hip Hop"
+      },
+      "hsnuAwb": {
+        "name": "Consultant Technique",
+        "org": "HSNU Alumni Windband",
+        "summary": "Architecture d'un site web moderne avec optimisation SEO, augmentant considérablement la visibilité et l'engagement en ligne.",
+        "smartlinkTitle": "HSNU Alumni Windband",
+        "smartlinkDescription": "Site officiel du HSNU Alumni Windband (師大附中校友管樂團)"
+      },
+      "orbis": {
+        "name": "Interprète Volontaire",
+        "org": "ORBIS Flying Hospital",
+        "summary": "Facilitation de la communication entre les équipes médicales internationales et les donateurs locaux lors d'initiatives de collecte de fonds."
+      },
+      "armyFlood": {
+        "name": "Secours suite aux inondations",
+        "org": "Armée de Taïwan",
+        "summary": "Coordination des efforts de rétablissement après sinistre, aidant à restaurer les communautés touchées par de graves inondations."
+      },
+      "mannheimExchange": {
+        "name": "Étudiant en échange",
+        "org": "Faculté de Commerce, Université de Mannheim, Allemagne",
+        "summary": "Programme de commerce international complété, acquisition d'une expérience interculturelle et d'une perspective mondiale."
+      }
+    }
+  },
+  "education": {
+    "hero": {
+      "eyebrow": "Fondation Académique // Apprentissage Continu",
+      "title": "Éducation &\nParcours",
+      "description": "La fondation académique qui a façonné mon approche de l'ingénierie, de la réflexion produit et de la création de choses qui comptent."
+    },
+    "fieldNotes": {
+      "label": "JOURNAL D'ÉTUDES // SURVIVANT",
+      "heading": "Arc d'Apprentissage &\nFondations Académiques",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎓",
+          "title": "Académique",
+          "items": [
+            "Solides bases en informatique.",
+            "Approches basées sur la recherche et la théorie."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🔬",
+          "title": "Curiosité",
+          "items": [
+            "Apprentissage autodidacte continu.",
+            "Exploration constante des technologies émergentes."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🏫",
+          "title": "Enseignement",
+          "items": [
+            "Partage de connaissances via le mentorat.",
+            "Interventions dans des conférences et ateliers tech."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "💡",
+          "title": "Application",
+          "items": [
+            "Passer de la théorie à la pratique.",
+            "Résolution de problèmes d'ingénierie réels."
+          ]
+        }
+      ]
+    },
+    "items": {
+      "nccu": {
+        "name": "Université Nationale ChengChi (NCCU)",
+        "location": "Taipei, Taïwan",
+        "college": "Faculté de Commerce",
+        "degree": "Baccalauréat en Administration des Affaires",
+        "department": "Département des Systèmes d'Information de Gestion (MIS)"
+      },
+      "mannheim": {
+        "name": "Université de Mannheim",
+        "location": "Mannheim, Allemagne",
+        "college": "École de Commerce",
+        "degree": "Programme d'échange"
+      }
+    }
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Open Source // Outils Développeurs",
+      "title": "Open\nSource",
+      "description": "Des bibliothèques React aux outils pour développeurs — une collection de projets bâtis pour résoudre des problèmes réels, partagés ouvertement avec la communauté."
+    },
+    "fieldNotes": {
+      "label": "JOURNAL DE BUILD // REPO PUBLIC",
+      "heading": "Registre de Build &\nOutillage\nDéveloppeur",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🔧",
+          "title": "Open Source",
+          "items": [
+            "Contributeur actif à l'open source.",
+            "Création d'outils que les développeurs adorent."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "⚡",
+          "title": "Performance",
+          "items": [
+            "Axé sur l'accessibilité et la performance.",
+            "Développement axé sur la communauté."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📦",
+          "title": "Bibliothèques",
+          "items": [
+            "Paquets npm publiés pour l'écosystème.",
+            "APIs TypeScript-first et typées."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🤝",
+          "title": "Collaboration",
+          "items": [
+            "Ouvert aux contributions et aux retours.",
+            "Bâtir des solutions avec la communauté."
+          ]
+        }
+      ]
+    },
+    "sectionHeading": "Projets & Bibliothèques",
+    "github": "GitHub",
+    "npm": "npm",
+    "demo": "Démo live",
+    "stars": "étoiles",
+    "statusActive": "Actif",
+    "statusMaintained": "Maintenu",
+    "statusArchived": "Archivé",
+    "yearPresent": "Présent",
+    "items": {
+      "reactInViewport": {
+        "name": "react-in-viewport",
+        "location": "Palo Alto, CA",
+        "description": "Une bibliothèque React pour détecter si un composant est dans le viewport via l'API Intersection Observer. Offre une interface hooks performante.",
+        "highlights": [
+          "350+ étoiles GitHub",
+          "46k+ téléchargements hebdomadaires",
+          "Utilisé par Tinder et d'autres grandes entreprises",
+          "Support TypeScript avec déclarations intégrées"
+        ],
+        "githubTitle": "Voir sur GitHub",
+        "githubDescription": "Code source, documentation et exemples",
+        "demoTitle": "Démo Live",
+        "demoDescription": "Essayer les exemples interactifs",
+        "npmTitle": "Paquet NPM",
+        "npmDescription": "Installer via npm ou yarn"
+      },
+      "reactAspectRatio": {
+        "name": "react-aspect-ratio",
+        "location": "Palo Alto, CA",
+        "description": "Composant React pour préserver l'espace de votre élément et éviter le décalage de mise en page (layout shift). Améliore les Core Web Vitals.",
+        "highlights": [
+          "104+ étoiles GitHub",
+          "Empêche le décalage de mise en page du navigateur",
+          "Améliore les scores Core Web Vitals",
+          "Support TypeScript"
+        ],
+        "githubTitle": "Voir sur GitHub",
+        "githubDescription": "Code source et documentation",
+        "npmTitle": "Paquet NPM",
+        "npmDescription": "Installer via npm ou yarn"
+      },
+      "idleTracker": {
+        "name": "idle-tracker",
+        "location": "Palo Alto, CA",
+        "description": "Bibliothèque JavaScript légère pour suivre l'inactivité du navigateur. Utile pour la déconnexion automatique ou la mise en pause d'animations.",
+        "highlights": [
+          "21+ étoiles GitHub",
+          "Zéro dépendance",
+          "Compatible tous navigateurs",
+          "Léger et performant"
+        ],
+        "githubTitle": "Voir sur GitHub",
+        "githubDescription": "Code source et exemples",
+        "npmTitle": "Paquet NPM",
+        "npmDescription": "Installer via npm ou yarn"
+      },
+      "reactI13n": {
+        "name": "react-i13n",
+        "location": "Sunnyvale, CA",
+        "description": "Approche performante et évolutive pour instrumenter votre application React. Framework complet pour le suivi des interactions et l'analyse.",
+        "highlights": [
+          "384+ étoiles GitHub",
+          "Projet open source Yahoo",
+          "Contributeur principal et mainteneur",
+          "Prêt pour la production à grande échelle"
+        ],
+        "githubTitle": "Voir sur GitHub",
+        "githubDescription": "Projet Yahoo open source - Contributeur principal",
+        "npmTitle": "Paquet NPM",
+        "npmDescription": "Installer via npm ou yarn"
+      },
+      "subscribeUiEvent": {
+        "name": "subscribe-ui-event",
+        "location": "Sunnyvale, CA",
+        "description": "Fournit un moyen performant de s'abonner aux événements UI du navigateur. Optimise les performances via le throttling et le debouncing.",
+        "highlights": [
+          "110+ étoiles GitHub",
+          "Projet open source Yahoo",
+          "Contributeur principal et mainteneur",
+          "Compatibilité multi-navigateurs"
+        ],
+        "githubTitle": "Voir sur GitHub",
+        "githubDescription": "Projet Yahoo open source - Contributeur principal",
+        "npmTitle": "Paquet NPM",
+        "npmDescription": "Installer via npm ou yarn"
+      }
+    }
+  },
+  "travel": {
+    "hero": {
+      "eyebrow": "Journal Spatial // Archive de Terrain",
+      "title": "Carnet de\nVoyage",
+      "description": "Le voyage ouvre l'esprit à l'incroyable diversité de la culture humaine. Chaque périple offre des perspectives uniques sur notre monde interconnecté."
+    },
+    "fieldNotes": {
+      "label": "JOURNAL DE VOL // CÔTÉ HUBLOT",
+      "heading": "Routes, Personnes &\nNotes Culturelles",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🌍",
+          "title": "Diversité Culturelle",
+          "items": [
+            "Découvrir des traditions et coutumes variées.",
+            "Explorer diverses cuisines et styles architecturaux."
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "Compréhension Globale",
+          "items": [
+            "Bâtir des ponts entre différentes communautés.",
+            "Apprendre les contextes historiques et perspectives modernes."
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "✨",
+          "title": "Croissance Personnelle",
+          "items": [
+            "Développer l'adaptabilité et la résolution de problèmes.",
+            "Gagner en confiance via de nouvelles expériences."
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🗺️",
+          "title": "Aventures Mémorables",
+          "items": [
+            "Créer des souvenirs durables à travers les continents.",
+            "Découvrir des joyaux cachés et des sites emblématiques."
+          ]
+        }
+      ]
+    },
+    "archiveExtract": "EXTRAIT D'ARCHIVE // JOURNAUX SPATIAUX",
+    "dismissRecord": "FERMER LE DOSSIER",
+    "nationalParks": "Parcs Nationaux",
+    "continentAsia": "Asie",
+    "continentEurope": "Europe",
+    "continentNorthAmerica": "Amérique du Nord",
+    "continentSouthAmerica": "Amérique du Sud",
+    "continentOceania": "Océanie",
+    "continentAfrica": "Afrique",
+    "filterAll": "Tous",
+    "parkLabels": {
+      "yosemite": "Yosemite",
+      "yellowstone": "Yellowstone",
+      "grandCanyon": "Grand Canyon",
+      "joshuaTree": "Joshua Tree",
+      "redwood": "Redwood",
+      "olympic": "Olympic",
+      "deathValley": "Vallée de la Mort",
+      "taroko": "Taroko",
+      "yangmingshan": "Yangmingshan",
+      "kenting": "Kenting"
+    },
+    "metroUnits": "MÉTRO • UNITÉS",
+    "departure": "DÉPART",
+    "arrival": "ARRIVÉE",
+    "explored": "EXPLORÉ",
+    "exploring": "EN EXPLORATION",
+    "stampAriaLabel": "{name} — {count} villes",
+    "statsHeading": "Résumé des\nArchives",
+    "metricsLabel": "Mesures_Consolidées_{year}",
+    "territories": "Territoires",
+    "logged": "Enregistrés",
+    "metroCenters": "Centres Urbains",
+    "units": "Unités",
+    "spheres": "Sphères",
+    "continents": "Continents",
+    "residency": "Résidence",
+    "base": "Base",
+    "statusBORN": "NAISSANCE",
+    "statusHOME": "DOMICILE",
+    "statusSTUDY": "ÉTUDES",
+    "statusTRAVEL": "VOYAGE",
+    "cityNames": {
+      "Bay Area": "Bay Area",
+      "Los Angeles": "Los Angeles",
+      "San Diego": "San Diego",
+      "Seattle": "Seattle",
+      "Portland": "Portland",
+      "Las Vegas": "Las Vegas",
+      "New York": "New York",
+      "Chicago": "Chicago",
+      "Austin": "Austin",
+      "Miami": "Miami",
+      "Bozeman": "Bozeman",
+      "Vancouver": "Vancouver",
+      "Niagara Falls": "Chutes du Niagara",
+      "Los Cabos": "Los Cabos",
+      "Tulum": "Tulum",
+      "George Town": "George Town",
+      "Paris": "Paris",
+      "Lyon": "Lyon",
+      "Marseille": "Marseille",
+      "Nice": "Nice",
+      "Chamonix": "Chamonix",
+      "Nantes": "Nantes",
+      "Rennes": "Rennes",
+      "Quiberon": "Quiberon",
+      "Strasbourg": "Strasbourg",
+      "Bath": "Bath",
+      "London": "Londres",
+      "Oxford": "Oxford",
+      "Cambridge": "Cambridge",
+      "Mannheim": "Mannheim",
+      "Frankfurt": "Francfort",
+      "Cologne": "Cologne",
+      "Berlin": "Berlin",
+      "Hamburg": "Hambourg",
+      "Heidelberg": "Heidelberg",
+      "Munich": "Munich",
+      "Leipzig": "Leipzig",
+      "Dresden": "Dresde",
+      "Konstanz": "Constance",
+      "Stuttgart": "Stuttgart",
+      "Vienna": "Vienne",
+      "Garz": "Garz",
+      "Brussels": "Bruxelles",
+      "Ghent": "Gand",
+      "Prague": "Prague",
+      "Brno": "Brno",
+      "Amsterdam": "Amsterdam",
+      "Rotterdam": "Rotterdam",
+      "Athens": "Athènes",
+      "Mykonos": "Mykonos",
+      "Santorini": "Santorin",
+      "Crete": "Crète",
+      "Naxos": "Naxos",
+      "Budapest": "Budapest",
+      "Milan": "Milan",
+      "Rome": "Rome",
+      "Venice": "Venise",
+      "Florence": "Florence",
+      "Madrid": "Madrid",
+      "Barcelona": "Barcelone",
+      "Segovia": "Ségovie",
+      "Seville": "Séville",
+      "Lisboa": "Lisbonne",
+      "Porto": "Porto",
+      "Wrocław": "Wrocław",
+      "Kraków": "Cracovie",
+      "Bern": "Berne",
+      "Zürich": "Zurich",
+      "Interlaken": "Interlaken",
+      "Grindelwald": "Grindelwald",
+      "Ljubljana": "Ljubljana",
+      "Bled Lake Area": "Lac de Bled",
+      "Postojna Cave": "Grotte de Postojna",
+      "Zagreb": "Zagreb",
+      "Plitvice Lakes National Park": "Lacs de Plitvice",
+      "Dubrovnik": "Dubrovnik",
+      "Helsinki": "Helsinki",
+      "Rovaniemi": "Rovaniemi",
+      "Istanbul": "Istanbul",
+      "İzmir": "Izmir",
+      "Ephesus": "Éphèse",
+      "Selçuk": "Selçuk",
+      "Cappadocia": "Cappadoce",
+      "Vatican": "Vatican",
+      "Tokyo": "Tokyo",
+      "Osaka": "Osaka",
+      "Kyoto": "Kyoto",
+      "Hamamatsu": "Hamamatsu",
+      "Okinawa": "Okinawa",
+      "Beijing": "Pékin",
+      "Hong Kong": "Hong Kong",
+      "Singapore": "Singapour",
+      "Taipei": "Taipei",
+      "New Taipei": "Nouveau Taipei",
+      "Taoyuan": "Taoyuan",
+      "Hsinchu": "Hsinchu",
+      "Miaoli": "Miaoli",
+      "Taichung": "Taichung",
+      "Nantou": "Nantou",
+      "Changhua": "Changhua",
+      "Yunlin": "Yunlin",
+      "Chiayi": "Chiayi",
+      "Tainan": "Tainan",
+      "Kaohsiung": "Kaohsiung",
+      "Pingtung": "Pingtung",
+      "Keelung": "Keelung",
+      "Yilan": "Yilan",
+      "Hualien": "Hualien",
+      "Taitung": "Taitung",
+      "Bangkok": "Bangkok",
+      "Phuket": "Phuket",
+      "Ko Samui": "Ko Samui",
+      "Manila": "Manille",
+      "Boracay": "Boracay",
+      "Siem Reap": "Siem Reap",
+      "Yangon": "Rangoun",
+      "Bago": "Bago",
+      "Bengaluru": "Bengaluru",
+      "Jerusalem": "Jérusalem",
+      "Tel Aviv": "Tel Aviv",
+      "Jerash": "Jerash",
+      "Amman": "Amman",
+      "Dead Sea": "Mer Morte",
+      "Dana Biosphere Reserve": "Réserve de biosphère de Dana",
+      "Petra": "Pétra",
+      "Aqaba": "Aqaba",
+      "Jeju": "Jeju",
+      "Malé": "Malé",
+      "Jeddah": "Djeddah",
+      "Brisbane": "Brisbane",
+      "Cairns": "Cairns",
+      "Gold Coast": "Gold Coast",
+      "Adelaide": "Adélaïde",
+      "Esperance": "Esperance",
+      "Perth": "Perth",
+      "Christchurch": "Christchurch",
+      "Lake Tekapo": "Lac Tekapo",
+      "Wanaka": "Wanaka",
+      "Queenstown": "Queenstown",
+      "Invercargill": "Invercargill",
+      "Dunedin": "Dunedin",
+      "Oamaru": "Oamaru",
+      "Timaru": "Timaru",
+      "Picton": "Picton",
+      "Wellington": "Wellington",
+      "Taopo": "Taopo",
+      "Waitomo": "Waitomo",
+      "Auckland": "Auckland",
+      "Kerikeri": "Kerikeri",
+      "Paihia": "Paihia",
+      "Palau": "Palaos"
+    },
+    "searchPlaceholder": "Rechercher pays…",
+    "searchAriaLabel": "Rechercher pays"
+  },
+  "nav": {
+    "brandSubtitle": "Architecte Frontend",
+    "about": "À propos",
+    "activity": "Activités",
+    "projects": "Projets",
+    "travel": "Voyages",
+    "education": "Éducation"
+  },
+  "profile": {
+    "name": "Roderick Hsiao",
+    "title": "Consultant en Ingénierie Produit",
+    "location": "Région de San Francisco | Internet",
+    "brief": "Consultant en ingénierie produit spécialisé en infrastructure frontend et design systems. Défenseur de l'open source avec une vaste expérience des applications à grande échelle.",
+    "expertiseHeading": "Expertise",
+    "skills": [
+      "Design Systems",
+      "Progressive Web Apps",
+      "Infrastructure Frontend",
+      "Accessibilité Web",
+      "Internationalisation",
+      "Mentorat d'équipe",
+      "Conférencier Tech"
+    ],
+    "languages": [
+      {
+        "flag": "🇺🇸",
+        "countryCode": "us",
+        "label": "Anglais"
+      },
+      {
+        "flag": "🇹🇼",
+        "countryCode": "tw",
+        "label": "Mandarin"
+      }
+    ],
+    "interests": [
+      "Défenseur du Web ouvert",
+      "Danseur de House",
+      "Mélomane",
+      "Ami des animaux",
+      "Passionné de café"
+    ]
+  },
+  "experience": {
+    "sectionTitle": "Expérience Professionnelle & Impact Industriel",
+    "sectionDescription": "Des décennies en ingénierie produit, de la startup au Fortune 500. Spécialisé en architecture frontend et leadership technique.",
+    "experiencesHeading": "Expériences",
+    "present": "Présent",
+    "featuredTalksDemos": "Conférences & Démos Clés",
+    "summaryItems": [
+      {
+        "title": "Expérience du Secteur",
+        "items": [
+          "Des décennies en ingénierie de produit.",
+          "Expérience de la startup aux groupes Fortune 500."
+        ]
+      },
+      {
+        "title": "Leadership Technique",
+        "items": [
+          "Architecture et infrastructure frontend.",
+          "Mentorat technique et direction d'équipe."
+        ]
+      },
+      {
+        "title": "Impact & Échelle",
+        "items": [
+          "Applications à grande échelle pour des millions d'utilisateurs.",
+          "Design systems et outillage développeur."
+        ]
+      },
+      {
+        "title": "Communauté & Conférences",
+        "items": [
+          "Conférencier international.",
+          "Contributeur et défenseur de l'open source."
+        ]
+      }
+    ],
+    "companies": {
+      "kindred": {
+        "title": "Ingénieur Fondateur",
+        "location": "À distance",
+        "displayName": "Kindred",
+        "summary": "L'un des premiers ingénieurs — responsable de l'architecture frontend et du développement produit initial.",
+        "projects": {
+          "main": {
+            "name": "Kindred",
+            "summary": "Construction de l'architecture frontend complète, lancement des fonctionnalités clés et intégration de l'IA dans le flux de travail.",
+            "smartlinkTitle": "Kindred",
+            "smartlinkDescription": "Rejoignez notre communauté d'échange de maisons et voyagez pour une fraction du prix d'une location classique."
+          }
+        }
+      },
+      "tinder": {
+        "title": "Ingénieur Logiciel Principal",
+        "location": "Palo Alto, CA",
+        "displayName": "Tinder",
+        "summary": "Ingénieur principal pour tinder.com — direction de l'architecture technique web pour des millions d'utilisateurs quotidiens.",
+        "projects": {
+          "tinderOnline": {
+            "name": "Tinder Online",
+            "summary": "Direction de l'architecture technique et du développement de la plateforme web phare tinder.com.",
+            "smartlinkTitle": "Tinder",
+            "smartlinkDescription": "Avec 55 milliards de matchs à ce jour, Tinder® est l'application de rencontre la plus populaire au monde.",
+            "demoTitles": [
+              "Production Progressive Web Apps With JavaScript Frameworks (Google I/O 2017)",
+              "Fast By Default: Modern Loading Best Practices (Chrome Dev Summit 2017)",
+              "Adaptive Loading - Improving web performance on slow devices (Chrome Dev Summit 2019)",
+              "PWA patterns for window and service worker communication (Chrome Dev Summit 2020)",
+              "SMS OTP form best practices (Chrome Dev Summit 2020)"
+            ]
+          },
+          "swipeLife": {
+            "name": "Tinder Swipe Life",
+            "summary": "Développement et lancement du magazine lifestyle de Tinder."
+          }
+        }
+      },
+      "selfEmployed": {
+        "title": "Consultant en Ingénierie Produit",
+        "location": "San Francisco, CA",
+        "displayName": "Indépendant",
+        "summary": "Consultant spécialisé en adoption de l'IA, architecture frontend, mentorat et optimisation de performance/PWA.",
+        "projects": {
+          "alt": {
+            "name": "Alt Platform",
+            "summary": "Mentor frontend et web engineering. Mise en place d'une roadmap de performance et stratégie SEO.",
+            "smartlinkTitle": "Alt",
+            "smartlinkDescription": "Il est temps d'investir dans ce que vous aimez. ALT vous donne accès à la liquidité comme jamais auparavant."
+          },
+          "forethought": {
+            "name": "Forethought (acquis par Zendesk en 2026)",
+            "summary": "Direction du rebranding complet et refonte du système CSS. Architecture du state management pour le widget web.",
+            "smartlinkTitle": "Forethought",
+            "smartlinkDescription": "Améliorez votre expérience client grâce à l'IA."
+          },
+          "publicSpeaker": {
+            "name": "Conférencier",
+            "summary": "Présentations techniques sur les PWA, la performance web et les architectures à grande échelle lors de conférences internationales.",
+            "demoTitles": [
+              "React Norway 2021 | Progressively Enhance Your Web Application",
+              "JSCAMP 2021 | Building Large-Scale Web Apps",
+              "Accento 2020 | Progressively Enhance Your Web Application",
+              "Geekle 2020 | Building Large Scale Web App"
+            ]
+          }
+        }
+      },
+      "branch": {
+        "title": "Ingénieur Logiciel",
+        "location": "Palo Alto, CA",
+        "displayName": "Branch",
+        "summary": "Construction de l'infrastructure frontend pour la plateforme de deep-linking de Branch.",
+        "projects": {
+          "dashboard": {
+            "name": "Branch Dashboard and Solutions",
+            "summary": "Architecture de l'infrastructure frontend et optimisation des performances pour la plateforme de deep linking.",
+            "smartlinkTitle": "Branch",
+            "smartlinkDescription": "Numéro 1 du deep linking. Intégrez des liens robustes dans vos canaux marketing pour booster la croissance de l'app."
+          }
+        }
+      },
+      "yahooSenior": {
+        "title": "Ingénieur Logiciel Senior",
+        "location": "Sunnyvale, CA",
+        "displayName": "Yahoo",
+        "summary": "Plus de six ans chez Yahoo sur plusieurs produits — page d'accueil mobile, météo, news digest, et qualité logicielle.",
+        "projects": {
+          "homepage": {
+            "name": "Page d'accueil",
+            "summary": "Ingénierie de l'une des SPA les plus visitées au monde pour desktop, tablette et mobile.",
+            "smartlinkTitle": "Yahoo",
+            "smartlinkDescription": "La nouvelle expérience Yahoo facilite la découverte des actualités qui vous importent le plus."
+          },
+          "weather": {
+            "name": "Météo",
+            "summary": "Amélioration de Yahoo Weather via une architecture React isomorphe.",
+            "smartlinkTitle": "Yahoo Weather",
+            "smartlinkDescription": "Préparez votre journée avec les prévisions les plus précises à 10 jours."
+          },
+          "newsDigest": {
+            "name": "News Digest",
+            "summary": "Développement de la plateforme web pour Yahoo News Digest, optimisant le SEO et le deep linking.",
+            "smartlinkTitle": "Yahoo News Digest",
+            "smartlinkDescription": "Yahoo News Digest fournit un résumé définitif des actualités essentielles."
+          },
+          "mobileHomepage": {
+            "name": "Page d'accueil Mobile",
+            "summary": "Pilotage de l'architecture SPA innovante pour la page d'accueil mobile de Yahoo."
+          }
+        }
+      },
+      "yahooLead": {
+        "title": "Lead Engineering Team",
+        "location": "Taipei, Taïwan",
+        "displayName": "Yahoo",
+        "summary": "Direction de l'équipe produit mobile APAC à Taipei.",
+        "projects": {
+          "apacMobile": {
+            "name": "APAC Mobile Homepage (Taïwan et Hong Kong)",
+            "summary": "Direction d'une équipe de 5 développeurs pour bâtir les expériences de consommation de contenu pour les marchés APAC.",
+            "smartlinkTitle": "Yahoo行動版",
+            "smartlinkDescription": "Accès aux news, informations et services Yahoo."
+          }
+        }
+      },
+      "yahooQe": {
+        "title": "Lead Quality Engineering / Ingénieur Logiciel",
+        "location": "Taipei, Taïwan",
+        "displayName": "Yahoo",
+        "summary": "Lead QE sur les plateformes électorales et l'infrastructure mondiale de news.",
+        "projects": {
+          "controlRoom": {
+            "name": "Élection Présidentielle 2012 - Control Room",
+            "summary": "Architecture et développement de Control Room, application tablette pour la couverture électorale en temps réel.",
+            "smartlinkTitle": "Yahoo 2012 Presidential Election",
+            "smartlinkDescription": "Couverture en direct des résultats électoraux jusqu'au niveau local."
+          },
+          "hashout": {
+            "name": "Élection Présidentielle 2012 - #Hashout",
+            "summary": "Développement de #Hashout, plateforme de talk-show en ligne pour faciliter les débats politiques.",
+            "smartlinkTitle": "Yahoo 2012 Presidential Election - #Hashout",
+            "smartlinkDescription": "Talk-show en ligne pour l'élection présidentielle 2012."
+          },
+          "globalNews": {
+            "name": "Global News",
+            "summary": "Architecture d'une plateforme unifiée pour toutes les propriétés Yahoo mondiales. Lead sur la stratégie de test frontend.",
+            "smartlinkTitle": "Yahoo News",
+            "smartlinkDescription": "Dernières actualités sur Yahoo News."
+          }
+        }
+      },
+      "army": {
+        "title": "Chef de Projet / Lead Ingénieur",
+        "location": "Taïwan",
+        "displayName": "Armée de Taïwan",
+        "summary": "Service militaire obligatoire — conception de simulateurs d'entraînement web et gestion d'une équipe de 6 ingénieurs.",
+        "projects": {
+          "equipmentSimulator": {
+            "name": "Simulateur d'Équipement",
+            "summary": "Conception de deux applications web d'entraînement pour l'éducation militaire."
+          }
+        }
+      }
+    }
+  },
+  "pageMeta": {
+    "siteName": "Roderick Hsiao",
+    "authorName": "Roderick Hsiao",
+    "home": {
+      "title": "Roderick Hsiao - Architecte Logiciel & Leader Communautaire",
+      "description": "Site personnel de Roderick Hsiao — architecte frontend et défenseur du web ouvert.",
+      "ogTitle": "Roderick Hsiao - Architecte Logiciel & Leader Communautaire",
+      "ogDescription": "Site personnel de Roderick Hsiao - Architecte Logiciel et passionné de technologie.",
+      "ogAlt": "Roderick Hsiao - Architecte Logiciel & Leader Communautaire",
+      "keywords": [
+        "Roderick Hsiao",
+        "Architecte Logiciel",
+        "Frontend",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Expérience"
+      ]
+    },
+    "activity": {
+      "title": "Activités & Conférences - Roderick Hsiao",
+      "description": "Découvrez mes interventions, conférences et activités communautaires.",
+      "ogTitle": "Activités & Conférences - Roderick Hsiao",
+      "ogDescription": "Explorez mes conférences, ateliers et activités communautaires.",
+      "ogAlt": "Activités & Conférences - Roderick Hsiao",
+      "ogImageTitle": "Activités & Conférences",
+      "ogImageSubtitle": "Conférences & Communauté",
+      "ogImageDescription": "Partager le savoir et bâtir des communautés tech",
+      "keywords": [
+        "Roderick Hsiao",
+        "Conférences",
+        "Tech Talks",
+        "Ateliers",
+        "Communauté"
+      ]
+    },
+    "projects": {
+      "title": "Projets - Roderick Hsiao",
+      "description": "Découvrez mes projets open source et outils pour développeurs.",
+      "keywords": [
+        "Roderick Hsiao",
+        "Projets",
+        "Open Source",
+        "GitHub",
+        "React",
+        "TypeScript",
+        "Outils Développeurs"
+      ]
+    },
+    "education": {
+      "title": "Éducation & Parcours - Roderick Hsiao",
+      "description": "En savoir plus sur ma formation académique et mon parcours en technologie.",
+      "ogTitle": "Éducation & Parcours - Roderick Hsiao",
+      "ogDescription": "Découvrez mon parcours académique et les bases de ma carrière.",
+      "ogAlt": "Éducation & Parcours - Roderick Hsiao",
+      "ogImageTitle": "Éducation & Parcours",
+      "ogImageSubtitle": "Fondation Académique",
+      "ogImageDescription": "Bâtir les bases d'une carrière en technologie",
+      "keywords": ["Roderick Hsiao", "Éducation", "Université", "Apprentissage"]
+    },
+    "travel": {
+      "title": "Aventures de Voyage - Roderick Hsiao",
+      "description": "Suivez mes aventures à travers le monde et les cultures.",
+      "ogTitle": "Aventures de Voyage - Roderick Hsiao",
+      "ogDescription": "Suivez mes voyages et découvrez différentes cultures.",
+      "ogAlt": "Aventures de Voyage - Roderick Hsiao",
+      "ogImageTitle": "Aventures de Voyage",
+      "ogImageSubtitle": "Explorer le Monde",
+      "ogImageDescription": "Découvrir des cultures et puiser l'inspiration partout",
+      "keywords": [
+        "Roderick Hsiao",
+        "Voyage",
+        "Aventures",
+        "Culture",
+        "Exploration"
+      ]
+    }
+  }
+}

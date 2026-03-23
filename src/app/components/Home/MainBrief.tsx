@@ -103,7 +103,7 @@ export default async function MainBrief() {
               <h1 className="text-sm sm:text-base font-bold text-(--gaudi-ink) leading-tight tracking-[-0.02em] text-balance">
                 {t('name')}
               </h1>
-              <p className="text-xs sm:text-sm text-(--gaudi-moss) font-semibold">
+              <p className="text-xs sm:text-sm text-(--gaudi-moss) font-semibold wrap-anywhere hyphens-auto">
                 {t('title')}
               </p>
               <div className="flex items-center gap-1 text-(--color-muted)">

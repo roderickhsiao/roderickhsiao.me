@@ -33,7 +33,7 @@ export default function TimelineRow({
 
   return (
     <article className="group relative grid grid-cols-[3.2rem_minmax(0,1fr)] gap-x-3 gap-y-3 pb-12 md:grid-cols-[minmax(18rem,26rem)_3.2rem_minmax(0,1fr)] md:gap-x-8 md:gap-y-0 md:pb-14 lg:grid-cols-[minmax(20rem,30rem)_3.2rem_minmax(0,1fr)] lg:gap-x-12">
-      <div className="col-span-2 space-y-2 md:col-span-1 md:pt-1 md:pr-4 md:text-left">
+      <div className="col-span-2 space-y-2 md:col-span-1 md:pt-1 md:pe-4 md:text-start">
         <p className="type-label text-ink/55 tabular-nums">{period}</p>
         <p className="type-caption wrap-break-word text-pretty leading-relaxed text-ink/58">{meta}</p>
       </div>

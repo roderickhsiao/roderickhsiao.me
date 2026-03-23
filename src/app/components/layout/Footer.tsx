@@ -109,7 +109,7 @@ export default function Footer() {
           {/* ── Column 1: Identity + contact ─────────── */}
           <div className="space-y-12">
             {/* Avatar + name + title badge */}
-            <div className="space-y-8 text-left">
+            <div className="space-y-8 text-start">
               <div className="flex items-center gap-6">
                 <div className="relative group w-20 h-20 shrink-0">
                   <div
@@ -134,14 +134,14 @@ export default function Footer() {
                   <h2 className="type-heading-md text-footer-text">
                     {tProfile('name')}
                   </h2>
-                  <span className="type-label inline-block px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 text-accent">
+                  <span className="type-label inline-block px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 text-accent wrap-anywhere hyphens-auto">
                     {tProfile('title')}
                   </span>
                 </div>
               </div>
 
               {/* Contact quote */}
-              <div className="relative pl-8 max-w-xl">
+              <div className="relative ps-8 max-w-xl">
                 <svg
                   viewBox="0 0 10 40"
                   className="absolute inset-s-0 top-0 w-2 h-full fill-none stroke-footer-text/10"
@@ -233,7 +233,7 @@ export default function Footer() {
                   <span>{t('messageButton')}</span>
                   {showForm && (
                     <span
-                      className="w-1.5 h-1.5 rounded-full bg-accent ml-1"
+                      className="w-1.5 h-1.5 rounded-full bg-accent ms-1"
                       aria-hidden
                     />
                   )}
@@ -282,7 +282,7 @@ export default function Footer() {
                     <span>{t('bookCallButton')}</span>
                     {showCalendly && (
                       <span
-                        className="w-1.5 h-1.5 rounded-full bg-sky ml-1"
+                        className="w-1.5 h-1.5 rounded-full bg-sky ms-1"
                         aria-hidden
                       />
                     )}
@@ -326,7 +326,7 @@ export default function Footer() {
           </div>
 
           {/* ── Column 2: Actions + notes ─────────────── */}
-          <div className="relative flex flex-col space-y-10 items-start lg:pl-20">
+          <div className="relative flex flex-col space-y-10 items-start lg:ps-20">
             {/* Decorative parabolic line (desktop only) */}
             <svg
               viewBox="0 0 40 400"
@@ -488,7 +488,7 @@ export default function Footer() {
                     })
                   }
                   aria-label={t('widgetClose')}
-                  className="text-footer-text/40 hover:text-footer-text transition-colors rounded p-1 -mr-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 cursor-pointer"
+                  className="text-footer-text/40 hover:text-footer-text transition-colors rounded p-1 -me-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 cursor-pointer"
                 >
                   <X size={16} />
                 </button>
@@ -562,7 +562,7 @@ export default function Footer() {
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center text-footer-text/20">
                 {(t.raw('residencyLocations') as string[]).map((loc, i, arr) => (
                   <span key={loc} className="flex items-center gap-3 whitespace-nowrap">
-                    <span>* {loc}</span>
+                    <span>{loc}</span>
                     {i < arr.length - 1 && (
                       <span
                         className="w-1 h-1 bg-footer-text/10 rounded-full"

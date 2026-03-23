@@ -4,7 +4,7 @@
       "eyebrow": "Product Engineering // Frontend Architecture",
       "titleLine1": "Roderick",
       "titleLine2": "Hsiao",
-      "description": "Product engineering consultant specializing in frontend infrastructure, design systems, and large-scale application development for global startups and Fortune 500 companies."
+      "description": "Product engineering consultant specialising in frontend infrastructure, design systems, and large-scale application development for global startups and Fortune 500 companies."
     },
     "fieldNotes": {
       "label": "CAREER LOG // STILL SHIPPING",
@@ -41,10 +41,7 @@
           "num": "04",
           "icon": "📣",
           "title": "Community",
-          "items": [
-            "International tech speaker.",
-            "Open web & OSS advocate."
-          ]
+          "items": ["International tech speaker.", "Open web & OSS advocate."]
         }
       ]
     }
@@ -82,12 +79,12 @@
     "sourceLink": "Archive Source Geometry",
     "siteNote": "Part portfolio, part playground, part late-night idea lab. Thanks for exploring.",
     "siteNoteByTime": {
-      "dawn": "🌅 Dawn mode is on. Soft colors, first-light energy, and yes, this is your sign to brew coffee ☕.",
+      "dawn": "🌅 Dawn mode is on. Soft colours, first-light energy, and yes, this is your sign to brew coffee ☕.",
       "morning": "🌞 Morning glow is active. Fresh aura, sharper focus, and a good time to explore ideas ✨.",
       "midday": "☀️ Midday light is in full swing. Clear mood, warm tones, and plenty of momentum ⚡.",
       "afternoon": "🍯 Afternoon warmth just kicked in. A little golden, a little grounded, still playful 🎈.",
-      "dusk": "🌇 Dusk colors are taking over. The site gets moodier as the day winds down 🎞️.",
-      "night": "🌙 Night palette unlocked. Cozy tones, calmer vibes, and late-night experiment energy 🧪."
+      "dusk": "🌇 Dusk colours are taking over. The site gets moodier as the day winds down 🎞️.",
+      "night": "🌙 Night palette unlocked. Cosy tones, calmer vibes, and late-night experiment energy 🧪."
     },
     "devNote": "* No developers were harmed in the making of this site.",
     "devNoteTitle": "Built with an unhealthy amount of coffee, countless AI conversations, and the occasional existential crisis about whether this div should be flex or grid.",
@@ -172,16 +169,16 @@
       "str8jacket": {
         "name": "Website Board / Diversity, Equity and Inclusion Lead",
         "org": "Str8jacket Dance Company",
-        "summary": "Led website development and DEI initiatives, creating inclusive processes and safe spaces for diverse dance community.",
+        "summary": "Led website development and DEI initiatives, creating inclusive processes and safe spaces for a diverse dance community.",
         "smartlinkTitle": "Str8jacket Dance Company",
         "smartlinkDescription": "Competition Hip Hop Team"
       },
       "hsnuAwb": {
         "name": "Technical Consultant",
         "org": "HSNU Alumni Windband",
-        "summary": "Architected modern website with SEO optimization, significantly increasing online visibility and engagement.",
+        "summary": "Architected modern website with SEO optimisation, significantly increasing online visibility and engagement.",
         "smartlinkTitle": "HSNU Alumni Windband",
-        "smartlinkDescription": "師大附中校友管樂團 HSNU Alumni Windband 官方網站"
+        "smartlinkDescription": "師大附中校友管樂團 HSNU Alumni Windband official website"
       },
       "orbis": {
         "name": "Voluntary Interpreter",
@@ -196,7 +193,7 @@
       "mannheimExchange": {
         "name": "Exchange Student",
         "org": "College of Commerce, Mannheim University, Germany",
-        "summary": "Completed international business program, gaining cross-cultural experience and global perspective."
+        "summary": "Completed international business programme, gaining cross-cultural experience and global perspective."
       }
     }
   },
@@ -260,7 +257,7 @@
         "name": "Universität Mannheim",
         "location": "Mannheim, Germany",
         "college": "Business School",
-        "degree": "Exchange program"
+        "degree": "Exchange programme"
       }
     }
   },
@@ -387,7 +384,7 @@
       "subscribeUiEvent": {
         "name": "subscribe-ui-event",
         "location": "Sunnyvale, CA",
-        "description": "Subscribe-ui-event provides a cross-browser and performant way to subscribe to browser UI Events. Optimizes event handling performance by using throttling and debouncing techniques.",
+        "description": "Subscribe-ui-event provides a cross-browser and performant way to subscribe to browser UI Events. Optimises event handling performance by using throttling and debouncing techniques.",
         "highlights": [
           "110+ GitHub stars",
           "Yahoo open source project",
@@ -481,7 +478,7 @@
     "metricsLabel": "Consolidated_Metrics_{year}",
     "territories": "Territories",
     "logged": "Logged",
-    "metroCenters": "Metro Centers",
+    "metroCenters": "Metro Centres",
     "units": "Units",
     "spheres": "Spheres",
     "continents": "Continents",
@@ -659,14 +656,14 @@
     "name": "Roderick Hsiao",
     "title": "Product Engineering Consultant",
     "location": "San Francisco Bay Area | Internet",
-    "brief": "Product engineering consultant specializing in frontend infrastructure and design systems. Open source advocate with extensive experience in large-scale applications and team mentorship across startup and enterprise environments.",
+    "brief": "Product engineering consultant specialising in frontend infrastructure and design systems. Open source advocate with extensive experience in large-scale applications and team mentorship across startup and enterprise environments.",
     "expertiseHeading": "Expertise",
     "skills": [
       "Design Systems",
       "Progressive Web Apps",
       "Frontend Infrastructure",
       "Web Accessibility",
-      "Internationalization",
+      "Internationalisation",
       "Team Mentorship",
       "Tech Speaker"
     ],
@@ -682,11 +679,17 @@
         "label": "Mandarin"
       }
     ],
-    "interests": ["Open Web Advocate", "House Dancer", "Music Lover", "Animal Lover", "Coffee Enthusiast"]
+    "interests": [
+      "Open Web Advocate",
+      "House Dancer",
+      "Music Lover",
+      "Animal Lover",
+      "Coffee Enthusiast"
+    ]
   },
   "experience": {
     "sectionTitle": "Professional Experience & Industry Impact",
-    "sectionDescription": "Decades in product engineering with extensive experience across startups to Fortune 500 companies. Specialized in frontend architecture, team leadership, and large-scale application development.",
+    "sectionDescription": "Decades in product engineering with extensive experience across startups to Fortune 500 companies. Specialised in frontend architecture, team leadership, and large-scale application development.",
     "experiencesHeading": "Experiences",
     "present": "Present",
     "featuredTalksDemos": "Featured Talks & Demos",
@@ -764,11 +767,11 @@
         "title": "Product Engineering Consultant",
         "location": "San Francisco, CA",
         "displayName": "Self Employed",
-        "summary": "Product engineering consultant specializing in AI adoption, frontend architecture design, team and individual mentorship, PWA and performance optimization, and career coaching.",
+        "summary": "Product engineering consultant specialising in AI adoption, frontend architecture design, team and individual mentorship, PWA and performance optimisation, and career coaching.",
         "projects": {
           "alt": {
             "name": "Alt Platform",
-            "summary": "Frontend and web engineering mentor — best practices, tooling, and career direction. Built a performance enhancement roadmap and an SEO improvement strategy. Architected the instrumentation layer and drove code modularization across the platform.",
+            "summary": "Frontend and web engineering mentor — best practices, tooling, and career direction. Built a performance enhancement roadmap and an SEO improvement strategy. Architected the instrumentation layer and drove code modularisation across the platform.",
             "smartlinkTitle": "Alt",
             "smartlinkDescription": "It's time to invest in what you love. ALT gives you access to utility and liquidity like never before."
           },
@@ -780,7 +783,7 @@
           },
           "publicSpeaker": {
             "name": "Public Speaker",
-            "summary": "Delivered technical presentations on Progressive Web Applications, web performance optimization, and large-scale web application architecture at international conferences and industry events.",
+            "summary": "Delivered technical presentations on Progressive Web Applications, web performance optimisation, and large-scale web application architecture at international conferences and industry events.",
             "demoTitles": [
               "React Norway 2021 | Progressively Enhance Your Web Application",
               "JSCAMP 2021 | Building Large-Scale Web Apps",
@@ -798,7 +801,7 @@
         "projects": {
           "dashboard": {
             "name": "Branch Dashboard and Solutions",
-            "summary": "Architected frontend infrastructure, established engineering best practices, and implemented website performance optimizations for deep linking platform.",
+            "summary": "Architected frontend infrastructure, established engineering best practices, and implemented website performance optimisations for deep linking platform.",
             "smartlinkTitle": "Branch",
             "smartlinkDescription": "Number 1 in deep linking. Integrate robust, durable links into email, SEM, ads and other traditional marketing channels for improved app growth."
           }
@@ -830,7 +833,7 @@
           },
           "mobileHomepage": {
             "name": "Mobile Homepage",
-            "summary": "Piloted innovative single-page application architecture for Yahoo mobile homepage, focusing on user-perceived performance enhancements and mobile optimization."
+            "summary": "Piloted innovative single-page application architecture for Yahoo mobile homepage, focusing on user-perceived performance enhancements and mobile optimisation."
           }
         }
       },
@@ -897,7 +900,16 @@
       "ogTitle": "Roderick Hsiao - Software Architect & Community Leader",
       "ogDescription": "Personal website of Roderick Hsiao - Software Architect, Community Leader, and technology enthusiast.",
       "ogAlt": "Roderick Hsiao - Software Architect & Community Leader",
-      "keywords": ["Roderick Hsiao", "Software Architect", "Community Leader", "Frontend", "React", "Next.js", "TypeScript", "Experience"]
+      "keywords": [
+        "Roderick Hsiao",
+        "Software Architect",
+        "Community Leader",
+        "Frontend",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Experience"
+      ]
     },
     "activity": {
       "title": "Activities & Speaking - Roderick Hsiao",
@@ -908,12 +920,29 @@
       "ogImageTitle": "Activities & Speaking",
       "ogImageSubtitle": "Conference Talks & Community",
       "ogImageDescription": "Sharing knowledge and building tech communities",
-      "keywords": ["Roderick Hsiao", "Speaking", "Conferences", "Tech Talks", "Workshops", "Community", "Activities"]
+      "keywords": [
+        "Roderick Hsiao",
+        "Speaking",
+        "Conferences",
+        "Tech Talks",
+        "Workshops",
+        "Community",
+        "Activities"
+      ]
     },
     "projects": {
       "title": "Projects - Roderick Hsiao",
       "description": "Explore my open source projects, personal tools, and contributions to the developer community. From React libraries to developer tools, discover projects built with passion for solving real-world problems.",
-      "keywords": ["Roderick Hsiao", "Projects", "Open Source", "GitHub", "React", "TypeScript", "Developer Tools", "Libraries"]
+      "keywords": [
+        "Roderick Hsiao",
+        "Projects",
+        "Open Source",
+        "GitHub",
+        "React",
+        "TypeScript",
+        "Developer Tools",
+        "Libraries"
+      ]
     },
     "education": {
       "title": "Education & Background - Roderick Hsiao",
@@ -924,7 +953,15 @@
       "ogImageTitle": "Education & Background",
       "ogImageSubtitle": "Academic Foundation",
       "ogImageDescription": "Building the foundation for a career in technology",
-      "keywords": ["Roderick Hsiao", "Education", "Background", "Academic", "University", "Learning", "Career Foundation"]
+      "keywords": [
+        "Roderick Hsiao",
+        "Education",
+        "Background",
+        "Academic",
+        "University",
+        "Learning",
+        "Career Foundation"
+      ]
     },
     "travel": {
       "title": "Travel Adventures - Roderick Hsiao",
@@ -935,7 +972,15 @@
       "ogImageTitle": "Travel Adventures",
       "ogImageSubtitle": "Exploring the World",
       "ogImageDescription": "Discovering cultures and drawing inspiration from global experiences",
-      "keywords": ["Roderick Hsiao", "Travel", "Adventures", "World Travel", "Culture", "Exploration", "Photography"]
+      "keywords": [
+        "Roderick Hsiao",
+        "Travel",
+        "Adventures",
+        "World Travel",
+        "Culture",
+        "Exploration",
+        "Photography"
+      ]
     }
   }
 }

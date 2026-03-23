@@ -1,0 +1,983 @@
+{
+  "home": {
+    "hero": {
+      "eyebrow": "プロダクトエンジニアリング // フロントエンドアーキテクチャ",
+      "titleLine1": "Roderick",
+      "titleLine2": "Hsiao",
+      "description": "グローバルなスタートアップやFortune 500企業向けに、フロントエンドインフラ、デザインシステム、大規模アプリケーション開発を専門とするプロダクトエンジニアリングコンサルタント。"
+    },
+    "fieldNotes": {
+      "label": "キャリアログ // 常時デプロイ中",
+      "heading": "経歴と\nハイライト",
+      "items": [
+        {
+          "num": "01",
+          "icon": "💼",
+          "title": "経験",
+          "items": [
+            "プロダクトエンジニアリングにおける数十年の実績。",
+            "スタートアップからFortune 500企業まで幅広く対応。"
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🚀",
+          "title": "リーダーシップ",
+          "items": [
+            "フロントエンド基盤およびデザインシステム。",
+            "チームへの技術的メンターシップ。"
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📈",
+          "title": "インパクト",
+          "items": [
+            "数百万人規模のユーザーへのサービス提供。",
+            "超大規模環境向けのアーキテクチャ設計。"
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "📣",
+          "title": "コミュニティ",
+          "items": [
+            "国際的なテック登壇者。",
+            "オープンウェブおよびOSSの提唱者。"
+          ]
+        }
+      ]
+    }
+  },
+  "chronicle": {
+    "heading": "クロニクル",
+    "section": "セクション {index}",
+    "talksHeading": "トーク ＆ デモ",
+    "collapse": "折りたたむ",
+    "details": "詳細",
+    "collapseAriaLabel": "プロジェクトの詳細を閉じる",
+    "expandAriaLabel": "プロジェクトの詳細を開く"
+  },
+  "contact": {
+    "heading": "お問い合わせ",
+    "subheading": "AIやウェブのアイデア、プロジェクト、コラボレーションについてお気軽にご相談ください。",
+    "namePlaceholder": "お名前",
+    "emailPlaceholder": "メールアドレス",
+    "subjectPlaceholder": "件名",
+    "messagePlaceholder": "プロジェクトについて、またはご相談内容をご記入ください...",
+    "submit": "メッセージを送信",
+    "submitting": "送信中...",
+    "success": "メッセージを送信しました。折り返しご連絡いたします。",
+    "error": "エラーが発生しました。 {error}",
+    "cardWelcome": "こんにちは！ 👋 お越しいただきありがとうございます！ <highlight1>AIやウェブのアイデア</highlight1>、面白いプロジェクト、あるいは <highlight2>ハウスミュージック</highlight2> についてメッセージをお待ちしています。",
+    "messageButton": "メッセージ",
+    "bookButton": "予約する",
+    "closeAriaLabel": "閉じる"
+  },
+  "footer": {
+    "messageButton": "メッセージ",
+    "bookCallButton": "ミーティングを予約",
+    "supportButton": "コーヒーを奢る",
+    "supportAriaLabel": "サポート — コーヒーを奢る",
+    "sourceLink": "アーカイブ・ソース・ジオメトリ",
+    "siteNote": "ポートフォリオであり、遊び場であり、深夜のアイデア研究所でもあります。探検していただきありがとうございます。",
+    "siteNoteByTime": {
+      "dawn": "🌅 夜明けモード。柔らかな色彩、始まりの光。コーヒーを淹れる合図です ☕。",
+      "morning": "🌞 モーニング・グロウ。フレッシュな空気と鋭い集中力。アイデアを広げるのに最適な時間 ✨。",
+      "midday": "☀️ ミッドデイ・ライト。クリアな思考、温かみのあるトーン、そして十分な勢い ⚡。",
+      "afternoon": "🍯 アフタヌーン・ウォーム。黄金色の落ち着いた雰囲気。遊び心も忘れずに 🎈。",
+      "dusk": "🌇 夕暮れの色。日が沈むにつれて、サイトも少し情緒的な雰囲気に変わります 🎞️。",
+      "night": "🌙 ナイトパレット。心地よいトーン、静かなバイブス。深夜の実験エネルギーが湧いてきます 🧪。"
+    },
+    "devNote": "* このサイトの制作過程で犠牲になった開発者は一人もいません。",
+    "devNoteTitle": "過剰なほどのコーヒー、数え切れないほどのAIとの対話、そして「このdivはflexにすべきかgridにすべきか」という時折の存亡の危機によって構築されました。",
+    "easterEgg": "これを見つけるとは。おめでとうございます — あなたこそ、私が一緒に働きたいタイプの人です。",
+    "widgetMessageTitle": "メッセージを送る",
+    "widgetCallTitle": "ミーティングを予約",
+    "widgetClose": "閉じる",
+    "contactDialogLabel": "お問い合わせフォーム",
+    "calendlyDialogLabel": "予約する",
+    "quote": "<highlight1>AIやウェブのアイデア</highlight1>、面白いプロジェクト、または <highlight2>ハウスミュージック</highlight2> についてメッセージをお待ちしています。",
+    "crafted": "AIとのコラボレーションによる制作",
+    "copyrightName": "R. Hsiao",
+    "residencyLocations": ["サンフランシスコ・ベイエリア", "台北"],
+    "languageSwitcher": {
+      "ariaLabel": "言語切り替え",
+      "menuLabel": "言語 ({count})",
+      "localeNames": {
+        "en": "英語",
+        "zh-Hant": "繁体字中国語"
+      }
+    }
+  },
+  "activity": {
+    "hero": {
+      "eyebrow": "登壇 // コミュニティ",
+      "title": "活動と\n登壇実績",
+      "description": "カンファレンストーク、ワークショップ、コミュニティ活動を通じて、テックエコシステム全体で知識を共有し、繋がりを築いています。"
+    },
+    "fieldNotes": {
+      "label": "トークトラック // スライド準備完了",
+      "heading": "コミュニティ\nログ",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎤",
+          "title": "登壇",
+          "items": [
+            "カンファレンストークおよびワークショップ。",
+            "JSConfやコミュニティテックイベント。"
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "コミュニティ",
+          "items": [
+            "オープンソースのリーダーシップと管理。",
+            "若手開発者のメンタリング。"
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "🌱",
+          "title": "公平性",
+          "items": [
+            "テック業界におけるインクルージョンと多様性の推進。",
+            "マイノリティの声の擁護。"
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "✨",
+          "title": "インパクト",
+          "items": [
+            "ポジティブな社会変化のためのテクノロジー。",
+            "価値あるコミュニティのための構築。"
+          ]
+        }
+      ]
+    },
+    "speaking": "登壇実績",
+    "community": "コミュニティ",
+    "ui": {
+      "playVideo": "動画を再生：{title}",
+      "openSource": "オープンソース：{title}",
+      "closeActiveTalk": "アクティブなトークを閉じる",
+      "closeVideo": "動画を閉じる",
+      "playlist": "プレイリスト",
+      "playlistHint": "フルステージアニメーションを再生せずに別のトークを選択。"
+    },
+    "items": {
+      "str8jacket": {
+        "name": "ウェブサイト理事 / 多様性・公平性・包括性（DEI）リード",
+        "org": "Str8jacket Dance Company",
+        "summary": "ウェブサイト開発とDEIイニシアチブを牽引し、多様なダンスコミュニティのための包括的なプロセスと安全な場所を構築。",
+        "smartlinkTitle": "Str8jacket Dance Company",
+        "smartlinkDescription": "コンペティション・ヒップホップ・チーム"
+      },
+      "hsnuAwb": {
+        "name": "テクニカルコンサルタント",
+        "org": "HSNU Alumni Windband",
+        "summary": "SEO最適化を施したモダンなウェブサイトを構築し、オンラインでの視認性とエンゲージメントを大幅に向上。",
+        "smartlinkTitle": "HSNU Alumni Windband",
+        "smartlinkDescription": "師大附中校友管樂団 HSNU Alumni Windband 公式ウェブサイト"
+      },
+      "orbis": {
+        "name": "ボランティア通訳",
+        "org": "ORBIS Flying Hospital",
+        "summary": "募金活動において、国際的な医療チームと地元の寄付者の間のコミュニケーションを促進。"
+      },
+      "armyFlood": {
+        "name": "水害救助活動",
+        "org": "台湾陸軍",
+        "summary": "災害復旧活動をコーディネートし、深刻な洪水の影響を受けたコミュニティの復旧を支援。"
+      },
+      "mannheimExchange": {
+        "name": "交換留学生",
+        "org": "マンハイム大学商学部（ドイツ）",
+        "summary": "国際ビジネスプログラムを修了し、異文化経験とグローバルな視点を習得。"
+      }
+    }
+  },
+  "education": {
+    "hero": {
+      "eyebrow": "学問的基礎 // 継続的学習",
+      "title": "学歴と\nバックグラウンド",
+      "description": "エンジニアリングへのアプローチ、プロダクト思考、そして価値あるものを創り出す姿勢を形作った学問と学習の基盤。"
+    },
+    "fieldNotes": {
+      "label": "学習ログ // なんとか生存",
+      "heading": "学習の軌跡と\n学問的基盤",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🎓",
+          "title": "アカデミック",
+          "items": [
+            "強固なコンピュータサイエンスの基礎。",
+            "研究と理論に裏打ちされたアプローチ。"
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "🔬",
+          "title": "好奇心",
+          "items": ["継続的な自己主導型学習。", "常に最新技術を探索。"]
+        },
+        {
+          "num": "03",
+          "icon": "🏫",
+          "title": "教育",
+          "items": [
+            "メンターシップを通じた知識共有。",
+            "テックカンファレンスやワークショップでの登壇。"
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "💡",
+          "title": "実践",
+          "items": [
+            "理論を実践へと繋げる。",
+            "現実世界のエンジニアリング課題の解決。"
+          ]
+        }
+      ]
+    },
+    "items": {
+      "nccu": {
+        "name": "国立政治大学 (NCCU)",
+        "location": "台北, 台湾",
+        "college": "商学部",
+        "degree": "経営学士",
+        "department": "管理情報システム学科 (MIS)"
+      },
+      "mannheim": {
+        "name": "マンハイム大学",
+        "location": "マンハイム, ドイツ",
+        "college": "ビジネススクール",
+        "degree": "交換留学プログラム"
+      }
+    }
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "オープンソース // 開発者ツール",
+      "title": "オープン\nソース",
+      "description": "Reactライブラリから開発者ツールまで — 現実世界の課題を解決するために構築され、コミュニティに公開されたプロジェクト集。"
+    },
+    "fieldNotes": {
+      "label": "ビルドログ // パブリックリポジトリ",
+      "heading": "構築台帳と\nデベロッパー\nツール",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🔧",
+          "title": "オープンソース",
+          "items": [
+            "オープンソースへの積極的な貢献。",
+            "開発者に愛されるツールの構築。"
+          ]
+        },
+        {
+          "num": "02",
+          "icon": "⚡",
+          "title": "パフォーマンス",
+          "items": [
+            "アクセシビリティとパフォーマンスを重視。",
+            "コミュニティ主導の開発。"
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "📦",
+          "title": "ライブラリ",
+          "items": [
+            "エコシステム向けにnpmパッケージを公開。",
+            "TypeScriptファーストな型安全API。"
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🤝",
+          "title": "コラボレーション",
+          "items": [
+            "コントリビューションやフィードバックを歓迎。",
+            "コミュニティと共にソリューションを構築。"
+          ]
+        }
+      ]
+    },
+    "sectionHeading": "プロジェクト ＆ ライブラリ",
+    "github": "GitHub",
+    "npm": "npm",
+    "demo": "ライブデモ",
+    "stars": "スター数",
+    "statusActive": "アクティブ",
+    "statusMaintained": "メンテナンス中",
+    "statusArchived": "アーカイブ済み",
+    "yearPresent": "現在",
+    "items": {
+      "reactInViewport": {
+        "name": "react-in-viewport",
+        "location": "パロアルト, カリフォルニア州",
+        "description": "Intersection Observer APIを使用してコンポーネントがビューポート内にあるかどうかを検出するReactライブラリ。優れたパフォーマンスでビューポートの可視性を検出するフックインターフェースを提供。",
+        "highlights": [
+          "350以上のGitHubスター",
+          "週4万6千回以上のダウンロード",
+          "Tinderや他の主要企業で使用",
+          "型定義内蔵のTypeScriptサポート"
+        ],
+        "githubTitle": "GitHubで見る",
+        "githubDescription": "ソースコード、ドキュメント、および例",
+        "demoTitle": "ライブデモ",
+        "demoDescription": "インタラクティブな例を試す",
+        "npmTitle": "NPMパッケージ",
+        "npmDescription": "npmまたはyarnでインストール"
+      },
+      "reactAspectRatio": {
+        "name": "react-aspect-ratio",
+        "location": "パロアルト, カリフォルニア州",
+        "description": "要素のスペースを確保し、ブラウザのリフロー（レイアウトシフト）を防ぐためのReactコンポーネント。レスポンシブなレイアウトを維持し、CLSを防止することでCore Web Vitalsを改善。",
+        "highlights": [
+          "104以上のGitHubスター",
+          "ブラウザのリフローとレイアウトシフトを防止",
+          "Core Web Vitalsのスコアを改善",
+          "TypeScriptサポート"
+        ],
+        "githubTitle": "GitHubで見る",
+        "githubDescription": "ソースコードとドキュメント",
+        "npmTitle": "NPMパッケージ",
+        "npmDescription": "npmまたはyarnでインストール"
+      },
+      "idleTracker": {
+        "name": "idle-tracker",
+        "location": "パロアルト, カリフォルニア州",
+        "description": "ブラウザの非アクティブ状態とユーザーのアイドル状態を追跡するための軽量なJavaScriptライブラリ。自動ログアウト機能の実装、非アクティブ時のアニメーション停止、ユーザーエンゲージメントの追跡に有用。",
+        "highlights": [
+          "21以上のGitHubスター",
+          "依存関係なし",
+          "クロスブラウザ対応",
+          "軽量で高いパフォーマンス"
+        ],
+        "githubTitle": "GitHubで見る",
+        "githubDescription": "ソースコードと例",
+        "npmTitle": "NPMパッケージ",
+        "npmDescription": "npmまたはyarnでインストール"
+      },
+      "reactI13n": {
+        "name": "react-i13n",
+        "location": "サニーベール, カリフォルニア州",
+        "description": "Reactアプリケーションを計測するための、パフォーマンスに優れたスケーラブルでプラグ可能なアプローチ。ユーザーインタラクションや分析を追跡するための包括的な計測フレームワークを提供。",
+        "highlights": [
+          "384以上のGitHubスター",
+          "Yahooのオープンソースプロジェクト",
+          "コアコントリビューターおよびメンテナー",
+          "大規模環境でのプロダクション対応"
+        ],
+        "githubTitle": "GitHubで見る",
+        "githubDescription": "Yahooのオープンソースプロジェクト - コアコントリビューター",
+        "npmTitle": "NPMパッケージ",
+        "npmDescription": "npmまたはyarnでインストール"
+      },
+      "subscribeUiEvent": {
+        "name": "subscribe-ui-event",
+        "location": "サニーベール, カリフォルニア州",
+        "description": "ブラウザのUIイベントを購読するための、クロスブラウザでパフォーマンスに優れた方法を提供。スロットリングやデバウンス技術を使用してイベント処理のパフォーマンスを最適化。",
+        "highlights": [
+          "110以上のGitHubスター",
+          "Yahooのオープンソースプロジェクト",
+          "コアコントリビューターおよびメンテナー",
+          "クロスブラウザ対応"
+        ],
+        "githubTitle": "GitHubで見る",
+        "githubDescription": "Yahooのオープンソースプロジェクト - コアコントリビューター",
+        "npmTitle": "NPMパッケージ",
+        "npmDescription": "npmまたはyarnでインストール"
+      }
+    }
+  },
+  "travel": {
+    "hero": {
+      "eyebrow": "空間ログ // フィールドアーカイブ",
+      "title": "トラベル\nジャーニー",
+      "description": "旅は、人間の文化、歴史、伝統の驚くべき多様性へと私たちの心を開いてくれます。それぞれの旅が独自の視点を与え、相互に繋がった世界の豊かなタペストリーを再発見させてくれます。"
+    },
+    "fieldNotes": {
+      "label": "フライトログ // 窓側の席",
+      "heading": "ルート、人々、そして\n文化的ノート",
+      "items": [
+        {
+          "num": "01",
+          "icon": "🌍",
+          "title": "文化の多様性",
+          "items": ["異なる伝統や習慣を体験。", "多様な料理や建築様式を発見。"]
+        },
+        {
+          "num": "02",
+          "icon": "🤝",
+          "title": "グローバルな理解",
+          "items": [
+            "異なるコミュニティ間の架け橋を築く。",
+            "歴史的背景と現代の視点を学ぶ。"
+          ]
+        },
+        {
+          "num": "03",
+          "icon": "✨",
+          "title": "自己成長",
+          "items": [
+            "適応力と問題解決能力を養う。",
+            "新しい経験を通じて自信を得る。"
+          ]
+        },
+        {
+          "num": "04",
+          "icon": "🗺️",
+          "title": "記憶に残る冒険",
+          "items": [
+            "大陸を超えて永続的な思い出を作る。",
+            "隠れた宝石や象徴的なランドマークを発見。"
+          ]
+        }
+      ]
+    },
+    "archiveExtract": "アーカイブ抽出 // 空間ログ",
+    "dismissRecord": "記録を閉じる",
+    "nationalParks": "国立公園",
+    "continentAsia": "アジア",
+    "continentEurope": "ヨーロッパ",
+    "continentNorthAmerica": "北アメリカ",
+    "continentSouthAmerica": "南アメリカ",
+    "continentOceania": "オセアニア",
+    "continentAfrica": "アフリカ",
+    "filterAll": "すべて",
+    "parkLabels": {
+      "yosemite": "ヨセミテ",
+      "yellowstone": "イエローストーン",
+      "grandCanyon": "グランドキャニオン",
+      "joshuaTree": "ジョシュアツリー",
+      "redwood": "レッドウッド",
+      "olympic": "オリンピック",
+      "deathValley": "デスバレー",
+      "taroko": "太魯閣（タロコ）",
+      "yangmingshan": "陽明山（ヤンミンシャン）",
+      "kenting": "墾丁（ケンティン）"
+    },
+    "metroUnits": "都市圏 • 単位",
+    "departure": "出発",
+    "arrival": "到着",
+    "explored": "探検済み",
+    "exploring": "探検中",
+    "stampAriaLabel": "{name} — {count} 都市",
+    "statsHeading": "アーカイブ\nサマリー",
+    "metricsLabel": "統合指標_{year}",
+    "territories": "領土・地域",
+    "logged": "記録済み",
+    "metroCenters": "都市中心部",
+    "units": "単位",
+    "spheres": "圏域",
+    "continents": "大陸",
+    "residency": "居住地",
+    "base": "拠点",
+    "statusBORN": "出生",
+    "statusHOME": "自宅",
+    "statusSTUDY": "留学",
+    "statusTRAVEL": "旅行",
+    "cityNames": {
+      "Bay Area": "ベイエリア",
+      "Los Angeles": "ロサンゼルス",
+      "San Diego": "サンディエゴ",
+      "Seattle": "シアトル",
+      "Portland": "ポートランド",
+      "Las Vegas": "ラスベガス",
+      "New York": "ニューヨーク",
+      "Chicago": "シカゴ",
+      "Austin": "オースティン",
+      "Miami": "マイアミ",
+      "Bozeman": "ボーズマン",
+      "Vancouver": "バンクーバー",
+      "Niagara Falls": "ナイアガラの滝",
+      "Los Cabos": "ロスカボス",
+      "Tulum": "トゥルム",
+      "George Town": "ジョージタウン",
+      "Paris": "パリ",
+      "Lyon": "リヨン",
+      "Marseille": "マルセイユ",
+      "Nice": "ニース",
+      "Chamonix": "シャモニー",
+      "Nantes": "ナント",
+      "Rennes": "レンヌ",
+      "Quiberon": "キブロン",
+      "Strasbourg": "ストラスブール",
+      "Bath": "バース",
+      "London": "ロンドン",
+      "Oxford": "オックスフォード",
+      "Cambridge": "ケンブリッジ",
+      "Mannheim": "マンハイム",
+      "Frankfurt": "フランクフルト",
+      "Cologne": "ケルン",
+      "Berlin": "ベルリン",
+      "Hamburg": "ハンブルク",
+      "Heidelberg": "ハイデルベルク",
+      "Munich": "ミュンヘン",
+      "Leipzig": "ライプツィヒ",
+      "Dresden": "ドレスデン",
+      "Konstanz": "コンスタンツ",
+      "Stuttgart": "シュトゥットガルト",
+      "Vienna": "ウィーン",
+      "Garz": "ガルツ",
+      "Brussels": "ブリュッセル",
+      "Ghent": "ヘント",
+      "Prague": "プラハ",
+      "Brno": "ブルノ",
+      "Amsterdam": "アムステルダム",
+      "Rotterdam": "ロッテルダム",
+      "Athens": "アテネ",
+      "Mykonos": "ミコノス",
+      "Santorini": "サントリーニ",
+      "Crete": "クレタ",
+      "Naxos": "ナクソス",
+      "Budapest": "ブダペスト",
+      "Milan": "ミラノ",
+      "Rome": "ローマ",
+      "Venice": "ベネチア",
+      "Florence": "フィレンツェ",
+      "Madrid": "マドリード",
+      "Barcelona": "バルセロナ",
+      "Segovia": "セゴビア",
+      "Seville": "セビリア",
+      "Lisboa": "リスボン",
+      "Porto": "ポルト",
+      "Wrocław": "ヴロツワフ",
+      "Kraków": "クラクフ",
+      "Bern": "ベルン",
+      "Zürich": "チューリッヒ",
+      "Interlaken": "インターラーケン",
+      "Grindelwald": "グリンデルワルト",
+      "Ljubljana": "リュブリャナ",
+      "Bled Lake Area": "ブレッド湖",
+      "Postojna Cave": "ポストイナ鍾乳洞",
+      "Zagreb": "ザグレブ",
+      "Plitvice Lakes National Park": "プリトヴィツェ湖群国立公園",
+      "Dubrovnik": "ドゥブロヴニク",
+      "Helsinki": "ヘルシンキ",
+      "Rovaniemi": "ロヴァニエミ",
+      "Istanbul": "イスタンブール",
+      "İzmir": "イズミル",
+      "Ephesus": "エフェソス",
+      "Selçuk": "セルチュク",
+      "Cappadocia": "カッパドキア",
+      "Vatican": "バチカン",
+      "Tokyo": "東京",
+      "Osaka": "大阪",
+      "Kyoto": "京都",
+      "Hamamatsu": "浜松",
+      "Okinawa": "沖縄",
+      "Beijing": "北京",
+      "Hong Kong": "香港",
+      "Singapore": "シンガポール",
+      "Taipei": "台北",
+      "New Taipei": "新北市",
+      "Taoyuan": "桃園",
+      "Hsinchu": "新竹",
+      "Miaoli": "苗栗",
+      "Taichung": "台中",
+      "Nantou": "南投",
+      "Changhua": "彰化",
+      "Yunlin": "雲林",
+      "Chiayi": "嘉義",
+      "Tainan": "台南",
+      "Kaohsiung": "高雄",
+      "Pingtung": "屏東",
+      "Keelung": "基隆",
+      "Yilan": "宜蘭",
+      "Hualien": "花蓮",
+      "Taitung": "台東",
+      "Bangkok": "バンコク",
+      "Phuket": "プーケット",
+      "Ko Samui": "サムイ島",
+      "Manila": "マニラ",
+      "Boracay": "ボラカイ",
+      "Siem Reap": "シェムリアップ",
+      "Yangon": "ヤンゴン",
+      "Bago": "バゴー",
+      "Bengaluru": "ベンガルール",
+      "Jerusalem": "エルサレム",
+      "Tel Aviv": "テルアビブ",
+      "Jerash": "ジェラシュ",
+      "Amman": "アンマン",
+      "Dead Sea": "死海",
+      "Dana Biosphere Reserve": "ダナ生物圏保護区",
+      "Petra": "ペトラ",
+      "Aqaba": "アカバ",
+      "Jeju": "済州",
+      "Malé": "マレ",
+      "Jeddah": "ジッダ",
+      "Brisbane": "ブリスベン",
+      "Cairns": "ケアンズ",
+      "Gold Coast": "ゴールドコースト",
+      "Adelaide": "アデレード",
+      "Esperance": "エスペランス",
+      "Perth": "パース",
+      "Christchurch": "クライストチャーチ",
+      "Lake Tekapo": "テカポ湖",
+      "Wanaka": "ワナカ",
+      "Queenstown": "クイーンズタウン",
+      "Invercargill": "インバーカーギル",
+      "Dunedin": "ダニーデン",
+      "Oamaru": "オアマル",
+      "Timaru": "ティマル",
+      "Picton": "ピクトン",
+      "Wellington": "ウェリントン",
+      "Taopo": "タウポ",
+      "Waitomo": "ワイトモ",
+      "Auckland": "オークランド",
+      "Kerikeri": "ケリケリ",
+      "Paihia": "パイヒア",
+      "Palau": "パラオ"
+    },
+    "searchPlaceholder": "国を検索...",
+    "searchAriaLabel": "国を検索"
+  },
+  "nav": {
+    "brandSubtitle": "フロントエンドアーキテクト",
+    "about": "プロフィール",
+    "activity": "活動",
+    "projects": "プロジェクト",
+    "travel": "旅",
+    "education": "学歴"
+  },
+  "profile": {
+    "name": "Roderick Hsiao",
+    "title": "プロダクトエンジニアリングコンサルタント",
+    "location": "サンフランシスコ・ベイエリア | インターネット",
+    "brief": "フロントエンドインフラとデザインシステムを専門とするプロダクトエンジニアリングコンサルタント。オープンソースの提唱者であり、スタートアップから大企業まで、大規模アプリケーションの開発とチームメンタリングに豊富な経験を持つ。",
+    "expertiseHeading": "専門分野",
+    "skills": [
+      "デザインシステム",
+      "プログレッシブウェブアプリ (PWA)",
+      "フロントエンドインフラ",
+      "ウェブアクセシビリティ",
+      "国際化 (i18n)",
+      "チームメンターシップ",
+      "テック登壇者"
+    ],
+    "languages": [
+      {
+        "flag": "🇺🇸",
+        "countryCode": "us",
+        "label": "英語"
+      },
+      {
+        "flag": "🇹🇼",
+        "countryCode": "tw",
+        "label": "標準中国語（マンダリン）"
+      }
+    ],
+    "interests": [
+      "オープンウェブ提唱者",
+      "ハウスダンサー",
+      "音楽愛好家",
+      "動物好き",
+      "コーヒー愛好家"
+    ]
+  },
+  "experience": {
+    "sectionTitle": "職務経験と業界へのインパクト",
+    "sectionDescription": "スタートアップからFortune 500企業まで、プロダクトエンジニアリングにおける数十年の経験。フロントエンドアーキテクチャ、チームリーダーシップ、大規模アプリケーション開発を専門としています。",
+    "experiencesHeading": "経験",
+    "present": "現在",
+    "featuredTalksDemos": "注目のトーク ＆ デモ",
+    "summaryItems": [
+      {
+        "title": "業界経験",
+        "items": [
+          "プロダクトエンジニアリングにおける数十年の実績。",
+          "スタートアップからFortune 500企業までの経験。"
+        ]
+      },
+      {
+        "title": "テクニカルリーダーシップ",
+        "items": [
+          "フロントエンドアーキテクチャおよびインフラ。",
+          "チームメンターシップと技術指導。"
+        ]
+      },
+      {
+        "title": "インパクトと規模",
+        "items": [
+          "数百万人規模のユーザーを支える大規模アプリケーション。",
+          "デザインシステムと開発者向けツール。"
+        ]
+      },
+      {
+        "title": "コミュニティと登壇",
+        "items": [
+          "国際会議のスピーカー。",
+          "オープンソースのコントリビューターおよび提唱者。"
+        ]
+      }
+    ],
+    "companies": {
+      "kindred": {
+        "title": "ファウンディング・エンジニア",
+        "location": "リモート",
+        "displayName": "Kindred",
+        "summary": "初期メンバーの一人として、フロントエンドアーキテクチャとコアプロダクト開発を統括。",
+        "projects": {
+          "main": {
+            "name": "Kindred",
+            "summary": "フロントエンドアーキテクチャ全体をゼロから構築し、コアプロダクト機能を出荷。エンジニアリング標準を確立し、開発ワークフローにAIツールを統合。",
+            "smartlinkTitle": "Kindred",
+            "smartlinkDescription": "会員限定のホームエクスチェンジコミュニティに参加して、従来のバケーションレンタルよりもはるかに安く旅行を楽しみましょう。"
+          }
+        }
+      },
+      "tinder": {
+        "title": "プリンシパル・ソフトウェア・エンジニア",
+        "location": "パロアルト, カリフォルニア州",
+        "displayName": "Tinder",
+        "summary": "tinder.comのプリンシパルエンジニアとして、世界中で毎日数千万人のアクティブユーザーを支えるウェブプラットフォームの技術アーキテクチャを主導。",
+        "projects": {
+          "tinderOnline": {
+            "name": "Tinder Online",
+            "summary": "Tinderのフラッグシップウェブプラットフォームであるtinder.comの技術アーキテクチャと開発を指揮。世界中の数千万人のデイリーアクティブユーザーに対応するスケーラブルなフロントエンドソリューションを構築。",
+            "smartlinkTitle": "Tinder",
+            "smartlinkDescription": "今日までに550億件のマッチが成立したTinder®は、世界で最も人気のあるデーティングアプリであり、新しい出会いを見つける場所です。",
+            "demoTitles": [
+              "Production Progressive Web Apps With JavaScript Frameworks (Google I/O 2017)",
+              "Fast By Default: Modern Loading Best Practices (Chrome Dev Summit 2017)",
+              "Adaptive Loading - Improving web performance on slow devices (Chrome Dev Summit 2019)",
+              "PWA patterns for window and service worker communication (Chrome Dev Summit 2020)",
+              "SMS OTP form best practices (Chrome Dev Summit 2020)"
+            ]
+          },
+          "swipeLife": {
+            "name": "Tinder Swipe Life",
+            "summary": "Tinderのライフスタイルマガジンプラットフォームを開発・立ち上げ、デーティングコミュニティに魅力的なコンテンツ体験を提供。"
+          }
+        }
+      },
+      "selfEmployed": {
+        "title": "プロダクトエンジニアリングコンサルタント",
+        "location": "サンフランシスコ, カリフォルニア州",
+        "displayName": "フリーランス",
+        "summary": "AI導入、フロントエンドアーキテクチャ設計、チームおよび個人のメンターシップ、PWAおよびパフォーマンス最適化、キャリアコーチングを専門とするプロダクトエンジニアリングコンサルタント。",
+        "projects": {
+          "alt": {
+            "name": "Alt プラットフォーム",
+            "summary": "フロントエンドおよびウェブエンジニアリングのメンター — ベストプラクティス、ツール、およびキャリアの方向性。パフォーマンス向上ロードマップとSEO改善戦略を構築。計測レイヤーを構築し、プラットフォーム全体でのコードモジュール化を推進。",
+            "smartlinkTitle": "Alt",
+            "smartlinkDescription": "好きなものに投資する時が来ました。ALTはこれまでにない実用性と流動性へのアクセスを提供します。"
+          },
+          "forethought": {
+            "name": "Forethought (2026年にZendeskにより買収)",
+            "summary": "CSSシステムの全面的なオーバーホールを含む、全社的なリブランディングプロジェクトを主導。ウェブウィジェットの永続的ステート管理を構築。プラットフォーム全体でパフォーマンス向上を実現。エンジニアリングチームへの継続的な技術メンターシップを提供。",
+            "smartlinkTitle": "Forethought",
+            "smartlinkDescription": "AIを使用してカスタマーエクスペリエンスを向上させます。"
+          },
+          "publicSpeaker": {
+            "name": "パブリックスピーカー",
+            "summary": "国際会議や業界イベントにおいて、プログレッシブウェブアプリケーション（PWA）、ウェブパフォーマンスの最適化、大規模ウェブアプリケーションアーキテクチャに関する技術プレゼンテーションを実施。",
+            "demoTitles": [
+              "React Norway 2021 | Progressively Enhance Your Web Application",
+              "JSCAMP 2021 | Building Large-Scale Web Apps",
+              "Accento 2020 | Progressively Enhance Your Web Application",
+              "Geekle 2020 | Building Large Scale Web App"
+            ]
+          }
+        }
+      },
+      "branch": {
+        "title": "ソフトウェアエンジニア",
+        "location": "パロアルト, カリフォルニア州",
+        "displayName": "Branch",
+        "summary": "Branchのディープリンクプラットフォーム向けに、フロントエンドインフラとエンジニアリング慣行を構築。",
+        "projects": {
+          "dashboard": {
+            "name": "Branch ダッシュボードとソリューション",
+            "summary": "フロントエンドインフラを設計し、エンジニアリングのベストプラクティスを確立。ディープリンクプラットフォームのウェブサイトパフォーマンス最適化を実装。",
+            "smartlinkTitle": "Branch",
+            "smartlinkDescription": "ディープリンクのナンバーワン。電子メール、SEM、広告、その他の従来のマーケティングチャネルに堅牢で耐久性のあるリンクを統合し、アプリの成長を改善します。"
+          }
+        }
+      },
+      "yahooSenior": {
+        "title": "シニアソフトウェアエンジニア",
+        "location": "サニーベール, カリフォルニア州",
+        "displayName": "Yahoo",
+        "summary": "Yahooで6年以上にわたり、モバイルホームページ、天気、News Digest、品質管理エンジニアリングなど、複数の製品ラインに従事。世界で最も訪問者数の多いSPAの一つを担当。",
+        "projects": {
+          "homepage": {
+            "name": "ホームページ",
+            "summary": "デスクトップ、タブレット、モバイルプラットフォームで数百万人規模のユーザーにサービスを提供する、世界で最も訪問者数の多いSPAの一つを開発。再利用可能なUIコンポーネント、ユーティリティ、Node.jsライブラリを開発。",
+            "smartlinkTitle": "Yahoo",
+            "smartlinkDescription": "Yahooの新しいウェルカム。新しいYahoo体験により、関心のあるニュースや情報をより簡単に発見できるようになります。"
+          },
+          "weather": {
+            "name": "天気",
+            "summary": "アイソモーフィックReactアーキテクチャを使用してYahoo Weatherプラットフォームを強化し、すべてのデバイスでシームレスなユーザー体験を提供。",
+            "smartlinkTitle": "Yahoo 天気",
+            "smartlinkDescription": "最も正確な1時間ごと、5日間、10日間の予報で1日の準備をしましょう。素晴らしいFlickrの写真があなたの場所、時間、現在の状況に一致します。"
+          },
+          "newsDigest": {
+            "name": "News Digest",
+            "summary": "Yahoo News Digestのウェブプラットフォームを開発し、人気のモバイルアプリケーションコンテンツのSEOパフォーマンスとディープリンク機能を向上。",
+            "smartlinkTitle": "Yahoo News Digest",
+            "smartlinkDescription": "Yahoo News Digestは、知っておくべきすべての重要なニュースの決定的なサマリーを提供します。"
+          },
+          "mobileHomepage": {
+            "name": "モバイルホームページ",
+            "summary": "Yahooモバイルホームページ向けに革新的なSPAアーキテクチャを試験的に導入し、ユーザーが感じるパフォーマンスの向上とモバイル最適化に注力。"
+          }
+        }
+      },
+      "yahooLead": {
+        "title": "エンジニアリングチームリード",
+        "location": "台北, 台湾",
+        "displayName": "Yahoo",
+        "summary": "台北にてAPACモバイル製品チームを主導。",
+        "projects": {
+          "apacMobile": {
+            "name": "APAC モバイルホームページ (台湾・香港)",
+            "summary": "5名の開発者からなるクロスファンクショナルチームを率い、アジア太平洋市場向けの包括的なコンテンツ消費体験を設計・提供。",
+            "smartlinkTitle": "Yahoo行動版",
+            "smartlinkDescription": "最も便利なウェブサイト検索、リアルタイムニュース、生活情報、Yahoo奇摩サービスへの入り口を提供します。"
+          }
+        }
+      },
+      "yahooQe": {
+        "title": "品質管理エンジニアリングリード / ソフトウェアエンジニア",
+        "location": "台北, 台湾",
+        "displayName": "Yahoo",
+        "summary": "選挙プラットフォームおよびグローバルニュースインフラ全体の品質管理エンジニアリングをリード。",
+        "projects": {
+          "controlRoom": {
+            "name": "2012年大統領選挙 - コントロールルーム",
+            "summary": "主要ニュースソースからの厳選されたコンテンツと独自レポートにより、リアルタイムの選挙報道を提供する包括的なタブレットアプリケーション、Control Roomを設計・開発。",
+            "smartlinkTitle": "Yahoo 2012 Presidential Election",
+            "smartlinkDescription": "Yahooのコントロールルームには、ライブストリーミングビデオ、すべての下院、上院、知事選の報道と地図、郡レベルまでの大統領選挙結果、ライブブログ、ライブ投票、社会的感情分析があります。"
+          },
+          "hashout": {
+            "name": "2012年大統領選挙 - #Hashout",
+            "summary": "多様な視点を取り入れ、選挙期間中に有意義な政治対話を促進するように設計された、革新的なオンライントークショープラットフォーム「#Hashout」を開発。",
+            "smartlinkTitle": "Yahoo 2012 Presidential Election - #Hashout",
+            "smartlinkDescription": "Yahoo 2012年大統領選挙のためのオンライントークショー。"
+          },
+          "globalNews": {
+            "name": "グローバルニュース",
+            "summary": "世界中のすべてのYahooプロパティにサービスを提供する統一プラットフォームを構築。フロントエンドテスト戦略、フレームワーク開発、テスト自動化インフラを主導。",
+            "smartlinkTitle": "Yahoo ニュース",
+            "smartlinkDescription": "Yahooニュースで最新のニュースを閲覧。"
+          }
+        }
+      },
+      "army": {
+        "title": "プロジェクトマネージャー / エンジニアリード",
+        "location": "台湾",
+        "displayName": "台湾陸軍",
+        "summary": "義務兵役。軍事教育用のウェブベースのトレーニングシミュレーターを設計・開発し、6名のエンジニアチームを管理。",
+        "projects": {
+          "equipmentSimulator": {
+            "name": "機材シミュレーター",
+            "summary": "軍事教育目的の2つのウェブベーストレーニングアプリケーションを設計・開発。教育用シミュレーターソフトウェアソリューションを構築する6名のチームを管理・メンター。"
+          }
+        }
+      }
+    }
+  },
+  "pageMeta": {
+    "siteName": "Roderick Hsiao",
+    "authorName": "Roderick Hsiao",
+    "home": {
+      "title": "Roderick Hsiao - ソフトウェアアーキテクト ＆ コミュニティリーダー",
+      "description": "Roderick Hsiaoの個人ウェブサイト — 数十年の業界経験を持つフロントエンドアーキテクト、コミュニティリーダー、オープンウェブ提唱者。",
+      "ogTitle": "Roderick Hsiao - ソフトウェアアーキテクト ＆ コミュニティリーダー",
+      "ogDescription": "Roderick Hsiaoの個人ウェブサイト — ソフトウェアアーキテクト、コミュニティリーダー、テクノロジー愛好家。",
+      "ogAlt": "Roderick Hsiao - ソフトウェアアーキテクト ＆ コミュニティリーダー",
+      "keywords": [
+        "Roderick Hsiao",
+        "ソフトウェアアーキテクト",
+        "コミュニティリーダー",
+        "フロントエンド",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "経験"
+      ]
+    },
+    "activity": {
+      "title": "活動と登壇実績 - Roderick Hsiao",
+      "description": "登壇依頼、カンファレンストーク、ワークショップ、コミュニティ活動について。テックコミュニティへの貢献についてご紹介します。",
+      "ogTitle": "活動と登壇実績 - Roderick Hsiao",
+      "ogDescription": "登壇依頼、カンファレンストーク、ワークショップ、コミュニティ活動について詳しく見る。",
+      "ogAlt": "活動と登壇実績 - Roderick Hsiao",
+      "ogImageTitle": "活動と登壇実績",
+      "ogImageSubtitle": "カンファレンストーク ＆ コミュニティ",
+      "ogImageDescription": "知識の共有とテックコミュニティの構築",
+      "keywords": [
+        "Roderick Hsiao",
+        "登壇",
+        "カンファレンス",
+        "テックトーク",
+        "ワークショップ",
+        "コミュニティ",
+        "活動"
+      ]
+    },
+    "projects": {
+      "title": "プロジェクト - Roderick Hsiao",
+      "description": "オープンソースプロジェクト、個人ツール、開発者コミュニティへの貢献について。Reactライブラリから開発者ツールまで、現実世界の課題を解決するために構築したプロジェクトをご紹介します。",
+      "keywords": [
+        "Roderick Hsiao",
+        "プロジェクト",
+        "オープンソース",
+        "GitHub",
+        "React",
+        "TypeScript",
+        "開発者ツール",
+        "ライブラリ"
+      ]
+    },
+    "education": {
+      "title": "学歴とバックグラウンド - Roderick Hsiao",
+      "description": "学歴、学術的成果、そしてテクノロジーとプロダクト開発のキャリアを形作った基盤について紹介します。",
+      "ogTitle": "学歴とバックグラウンド - Roderick Hsiao",
+      "ogDescription": "学歴と私のキャリアを形作った基礎について紹介します。",
+      "ogAlt": "学歴とバックグラウンド - Roderick Hsiao",
+      "ogImageTitle": "学歴とバックグラウンド",
+      "ogImageSubtitle": "学問的基礎",
+      "ogImageDescription": "テクノロジー業界におけるキャリアの基盤構築",
+      "keywords": [
+        "Roderick Hsiao",
+        "学歴",
+        "バックグラウンド",
+        "学術",
+        "大学",
+        "学習",
+        "キャリアの基礎"
+      ]
+    },
+    "travel": {
+      "title": "トラベル・アドベンチャー - Roderick Hsiao",
+      "description": "世界中を巡る旅の記録。訪れた場所、経験、および異なる文化の探索から得たインスピレーションを紹介します。",
+      "ogTitle": "トラベル・アドベンチャー - Roderick Hsiao",
+      "ogDescription": "世界中を巡る旅を追い、異なる文化を発見する。",
+      "ogAlt": "トラベル・アドベンチャー - Roderick Hsiao",
+      "ogImageTitle": "トラベル・アドベンチャー",
+      "ogImageSubtitle": "世界を探索する",
+      "ogImageDescription": "文化を発見し、グローバルな経験からインスピレーションを得る",
+      "keywords": [
+        "Roderick Hsiao",
+        "旅",
+        "冒険",
+        "世界旅行",
+        "文化",
+        "探索",
+        "写真"
+      ]
+    }
+  }
+}
